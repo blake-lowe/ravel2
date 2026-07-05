@@ -36,6 +36,7 @@ def test_new_run_state_shape():
     for slot in s["shop"]["monsters"]:
         assert slot["cr"] <= 1 and slot["source"] == "MM"
         assert slot["price"] and slot["art"]
+        assert slot["hp"] > 0 and slot["ac"] > 0 and slot["size"]
     assert len(s["foresight"]) == 3
     assert s["enemy"] == [] and not s["scouted"], "the opposition is a paid secret"
     assert s["handle"] == "Testy"
@@ -45,8 +46,8 @@ def test_scouting_reveals_the_bill():
     s = start(seed=17)
     rid = s["run_id"]
     s = client.post(f"/api/fortune/run/{rid}/action", json={"action": "scout"}).json()
-    assert s["scouted"] and s["enemy"], "the bribe buys the composition"
-    assert s["purse_cp"] == 900
+    assert s["scouted"] and s["enemy"], "divination buys the composition"
+    assert s["purse_cp"] == 950
     r = client.post(f"/api/fortune/run/{rid}/action", json={"action": "scout"})
     assert r.status_code == 422                # once per round
     client.post(f"/api/fortune/run/{rid}/action", json={"action": "buy", "slot": 0})

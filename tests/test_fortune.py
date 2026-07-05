@@ -76,16 +76,18 @@ def test_shop_respects_cap_and_books():
             assert ITEMS[slot.name].rarity in ("common", "uncommon")
 
 
-def test_prices_flat_and_corrected():
-    flat = CatalogEntry("X", 2.0, "ALL")
-    assert price_cp(flat) == 300
-    over = CatalogEntry("X", 2.0, "ALL", best_cr=4.0)      # fights 2 CR above book
-    assert price_cp(over) == 600
-    under = CatalogEntry("X", 2.0, "ALL", best_cr=0.5)     # a dud: discounted
-    assert price_cp(under) == 100
-    for d in (-5.0, -1.3, -0.4, 0.0, 0.6, 1.7, 5.0):
-        p = price_cp(CatalogEntry("X", 2.0, "ALL", best_cr=2.0 + d))
-        assert 100 <= p <= 600
+def test_prices_scale_with_pr_over_tier():
+    par = CatalogEntry("X", 1.0, "ALL")
+    assert price_cp(par, 1) == 300                 # 3 gp x CR 1 at tier 1
+    assert price_cp(par, 3) == 100                 # the same creature, cheaper later
+    goblin = CatalogEntry("X", 0.25, "ALL")
+    assert price_cp(goblin, 1) == 75               # 7 sp 5 cp — change matters
+    dud = CatalogEntry("X", 1.0, "ALL", best_cr=0.5)
+    assert price_cp(dud, 1) == 150                 # playtested CR is the price tag
+    hot = CatalogEntry("X", 1.0, "ALL", best_cr=2.5)
+    assert price_cp(hot, 1) == 750                 # overtuned stock costs real coin
+    zero = CatalogEntry("X", 0.0, "ALL")
+    assert price_cp(zero, 4) == 5                  # even a commoner isn't free
 
 
 def test_freeze_survives_reroll():
@@ -105,11 +107,11 @@ def test_reroll_costs_5_sp():
     assert run.purse_cp == before - 50
 
 
-def test_scout_costs_1_gp_once_and_resets_on_battle():
+def test_scout_costs_5_sp_once_and_resets_on_battle():
     run = new_run(14, BOOKS, CATALOG)
     assert not run.scouted
     run.scout()
-    assert run.scouted and run.purse_cp == 900
+    assert run.scouted and run.purse_cp == 950
     with pytest.raises(FortuneError):          # the pit hand already talked
         run.scout()
     d = run.to_dict()

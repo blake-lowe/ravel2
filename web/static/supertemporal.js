@@ -74,6 +74,41 @@ function show(section) {
   for (const id of ["fw-lobby", "fw-shop", "fw-sands", "fw-over"])
     $("#" + id).hidden = id !== section;
   $("#fw-status").hidden = section === "fw-lobby";
+  $("#fw-ages").hidden = section !== "fw-lobby";   // the Book of Aeons stays at the gate
+}
+
+// ---------------------- a name in the cant of the Cage -------------------------
+// Planescape slang (theplanardm.com/planar-slang): pick an epithet and a station.
+
+const CANT_ADJ = ["Barmy", "Peery", "Clueless", "Leatherheaded", "Addle-Coved",
+  "Jink-Flush", "Well-Lanned", "Cage-Born", "Gate-Touched", "Dustbound",
+  "Bone-Boxed", "Bloodless"];
+const CANT_NOUN = ["Berks", "Cutters", "Bloods", "Bashers", "Sods", "Bubbers",
+  "Touts", "Knights of the Post", "Mimirs", "Primes", "Spivs", "Cagers"];
+let NAME_PICK = { adj: null, noun: null };
+
+function dealNames() {
+  const deal = (pool) => {
+    const bag = [...pool];
+    const out = [];
+    while (out.length < 3) out.push(bag.splice(Math.floor(Math.random() * bag.length), 1)[0]);
+    return out;
+  };
+  const adjs = deal(CANT_ADJ), nouns = deal(CANT_NOUN);
+  NAME_PICK = { adj: adjs[0], noun: nouns[0] };
+  const col = (el, words, key) => {
+    el.innerHTML = words.map((w) =>
+      `<button type="button" class="pick ${NAME_PICK[key] === w ? "on" : ""}"
+         data-word="${esc(w)}">${esc(w)}</button>`).join("");
+    el.querySelectorAll(".pick").forEach((b) => b.onclick = () => {
+      NAME_PICK[key] = b.dataset.word;
+      el.querySelectorAll(".pick").forEach((x) => x.classList.toggle("on", x === b));
+      $("#name-preview").textContent = `${NAME_PICK.adj} ${NAME_PICK.noun}`;
+    });
+  };
+  col($("#pick-adj"), adjs, "adj");
+  col($("#pick-noun"), nouns, "noun");
+  $("#name-preview").textContent = `${NAME_PICK.adj} ${NAME_PICK.noun}`;
 }
 
 // ------------------------------- lobby ----------------------------------------
@@ -83,8 +118,23 @@ async function boot() {
   $("#lob-books").innerHTML = META.books.map((b) => `
     <label class="check"><input type="checkbox" value="${esc(b.label)}" checked>
       ${esc(b.label)} <span class="odds-note">(${b.monsters})</span></label>`).join("");
+  dealNames();
+  $("#btn-reshuffle").onclick = dealNames;
   $("#lob-enter").onclick = newRun;
-  $("#btn-again").onclick = () => { localStorage.removeItem("fw-run"); RID = null; show("fw-lobby"); };
+  $("#btn-again").onclick = () => { localStorage.removeItem("fw-run"); RID = null; loadAges(); show("fw-lobby"); };
+  const restart = $("#btn-restart");
+  restart.onclick = () => {
+    if (!restart.classList.contains("armed")) {
+      restart.classList.add("armed");
+      restart.textContent = "✕ abandon the run?";
+      setTimeout(() => { restart.classList.remove("armed"); restart.textContent = "✕ restart"; }, 3000);
+      return;
+    }
+    restart.classList.remove("armed");
+    restart.textContent = "✕ restart";
+    localStorage.removeItem("fw-run"); RID = null; S = null;
+    dealNames(); loadAges(); show("fw-lobby");
+  };
   wireShop();
   wireSands();
   wireWheel();
@@ -98,7 +148,7 @@ async function boot() {
 async function newRun() {
   const books = [...document.querySelectorAll("#lob-books input:checked")].map((i) => i.value);
   const seedRaw = $("#lob-seed").value;
-  const body = { books, handle: $("#lob-handle").value || "Anonymous Berk" };
+  const body = { books, handle: `${NAME_PICK.adj} ${NAME_PICK.noun}` };
   if (seedRaw !== "") body.seed = Number(seedRaw);
   S = await api("/api/fortune/new", body, $("#lob-error"));
   RID = S.run_id;
@@ -123,7 +173,6 @@ function renderStatus() {
   $("#st-cap").textContent = `CR ${S.cap}`;
   const losses = S.history.filter((h) => !h.won).length;
   $("#st-record").textContent = `${S.wins} – ${losses}`;
-  $("#st-years").textContent = S.years.toLocaleString();
   $("#st-handle").textContent = S.handle;
 }
 
@@ -197,19 +246,32 @@ function renderStable() {
     card.onclick = () => TARGETING.go(+card.dataset.pick));
 }
 
+function speedStr(s) {
+  const best = Math.max(s.speed || 0, s.fly || 0, s.swim || 0);
+  const wing = s.fly && s.fly >= (s.speed || 0) ? "✈" : s.swim && s.swim >= (s.speed || 0) ? "≈" : "";
+  return `${best} ft${wing ? " " + wing : ""}`;
+}
+
 function renderStock() {
   const row = $("#stock-row");
+  const SIZE_ABBR = { Tiny: "T", Small: "S", Medium: "M", Large: "L",
+                      Huge: "H", Gargantuan: "G" };
   row.innerHTML = S.shop.monsters.map((s, i) => {
     if (!s) return `<div class="slot empty"></div>`;
     const owned = S.stable.findIndex((m) => m.name === s.name);
     const pr = s.best_cr != null && s.best_cr !== s.cr
       ? ` · <span title="the pit's own ledger disagrees with the book">PR ${s.best_cr}</span>` : "";
-    return `<div class="slot ${s.frozen ? "is-frozen" : ""}" data-name="${esc(s.name)}">
+    const topTier = s.cr === S.cap;                 // book CR at the stock tier
+    return `<div class="slot ${s.frozen ? "is-frozen" : ""} ${topTier ? "top-tier" : ""}"
+                 data-name="${esc(s.name)}">
       <button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
         title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>
       ${tokenImg(s.art, s.name)}
-      <div class="mname">${esc(s.name)}</div>
-      <div class="mmeta">CR ${crStr(s.cr)}${pr}<br>${esc(s.source)}</div>
+      <div class="mname">${esc(s.name)}
+        <a class="lore" href="/bestiary#${encodeURIComponent(s.name)}" target="_blank"
+           title="the full chant in the Bestiary">✧</a></div>
+      <div class="mmeta">CR ${crStr(s.cr)}${pr} · ${esc(s.source)}</div>
+      <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)} · ${SIZE_ABBR[s.size] || s.size}</div>
       <div class="price">${esc(s.price)}</div>
       <div class="btnrow">
         <button data-buy="${i}">buy</button>
@@ -284,7 +346,7 @@ function renderBill() {
   } else {
     el.innerHTML = `<span class="odds-note">the far corner keeps to the dark —
         no berk has sold you their number</span><br>
-      <button id="btn-scout">Bribe a pit hand (1 gp)</button>`;
+      <button id="btn-scout">Divine the future (5 sp)</button>`;
     const btn = $("#btn-scout");
     if (btn) btn.onclick = () => act({ action: "scout" });
   }
@@ -320,7 +382,7 @@ function renderSandsBrief() {
   const opp = DEPLOY.scouted && DEPLOY.enemy.length
     ? DEPLOY.enemy.map((e) => `${e.count}× ${esc(e.name)}`).join(", ") + " await."
     : `the far corner keeps to the dark
-       <button id="btn-scout2">bribe a pit hand (1 gp)</button>`;
+       <button id="btn-scout2">divine the future (5 sp)</button>`;
   $("#sands-brief").innerHTML = `
     <b>Battle ${DEPLOY.round}</b> — ${esc(DEPLOY.map || "the open floor")},
     ${WEATHER_GLYPH[DEPLOY.weather] || esc(DEPLOY.weather)}<br>
@@ -663,7 +725,7 @@ function renderOver() {
   const years = S.years.toLocaleString();
   $("#over-line").innerHTML = `Three chips spent. <b>${esc(S.handle)}</b> leaves the arena
     with <b>${S.wins}</b> victor${S.wins === 1 ? "y" : "ies"} across ${S.history.length}
-    battles — <b>${years} years</b> witnessed from the glass sphere. The Book of Ages
+    battles — <b>${years} years</b> witnessed from the glass sphere. The Book of Aeons
     remembers; Sigil, outside, has moved on without you.`;
   loadAges();
 }

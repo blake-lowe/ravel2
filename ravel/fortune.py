@@ -28,14 +28,12 @@ LIVES_START = 3
 START_PURSE_CP = 1000          # 10 gp
 INCOME_CP = 1000               # +10 gp per shop phase
 REROLL_CP = 50                 # 5 sp
-SCOUT_CP = 100                 # 1 gp bribes a pit hand: reveals tonight's opposition
+SCOUT_CP = 50                  # 5 sp divines tonight's opposition
 MONSTER_SLOTS = 5
 ITEM_SLOTS = 2
 ITEM_CAP = 3                   # items a single monster can carry
-BASE_PRICE_CP = 300            # 3 gp flat...
-PRICE_PER_CR_DELTA = 150       # ...corrected by the playtested-CR residual
-PRICE_CORR_MIN, PRICE_CORR_MAX = -200, 300
-PRICE_FLOOR_CP = 100
+BASE_PRICE_CP = 300            # 3 gp x playtested CR / shop tier (SPEC 18.8.4)
+PRICE_FLOOR_CP = 5             # even a commoner costs pocket change
 OWNED_SHOP_WEIGHT = 0.25       # duplicates are a lucky find (training is rare)
 TRAIN_AC, TRAIN_HP = 1, 1      # per elite level
 ITEM_PRICE_CP = {"common": 200, "uncommon": 400, "rare": 600}
@@ -159,12 +157,11 @@ class CatalogEntry:
     adjusted_xp: float | None = None
 
 
-def price_cp(e: CatalogEntry) -> int:
-    """3 gp flat, corrected by the playtested-CR residual (SPEC 18.8.4)."""
+def price_cp(e: CatalogEntry, tier: int) -> int:
+    """3 gp x the creature's playtested CR, divided by the shop tier — weaker
+    stock gets cheaper as the nights wear on (SPEC 18.8.4)."""
     best = e.best_cr if e.best_cr is not None else e.cr
-    corr = round(PRICE_PER_CR_DELTA * (best - e.cr))
-    corr = max(PRICE_CORR_MIN, min(PRICE_CORR_MAX, corr))
-    return max(PRICE_FLOOR_CP, BASE_PRICE_CP + corr)
+    return max(PRICE_FLOOR_CP, round(BASE_PRICE_CP * best / max(1, tier)))
 
 
 # --- Run state -----------------------------------------------------------------
@@ -279,7 +276,7 @@ class FortuneRun:
                 self.shop_monsters.append(prev)
                 continue
             e = self._weighted_pick(self._draw(), pool)
-            self.shop_monsters.append(ShopSlot(e.name, price_cp(e)))
+            self.shop_monsters.append(ShopSlot(e.name, price_cp(e, self.cap())))
         self.shop_items = []
         for i in range(ITEM_SLOTS):
             prev = old_i[i] if i < len(old_i) else None
@@ -308,7 +305,7 @@ class FortuneRun:
         self._roll_shop()
 
     def scout(self) -> None:
-        """Bribe a pit hand (1 gp): the round's opposing composition is revealed
+        """Divine the future (5 sp): the round's opposing composition is revealed
         until the battle is fought. The house sells everything, even secrets."""
         self._require("shop")
         if self.scouted:

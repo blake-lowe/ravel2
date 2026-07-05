@@ -54,6 +54,22 @@ body.supertemporal {
 .fw .chip.spent { border-color: var(--lacquer); background: none; position: relative; }
 .fw .chip.spent::after { content: "✕"; color: var(--lacquer); font-size: 11px;
                          position: absolute; inset: -4px 0 0 1px; }
+.fw .stat-box.name-box { display: flex; align-items: center; font-style: italic; }
+.fw .restart { margin-left: auto; align-self: center; font-size: 11px;
+               letter-spacing: 0; color: var(--ink-faint); background: none;
+               border: 1px solid var(--ink-hair); padding: 3px 8px; }
+.fw .restart:hover { color: var(--ink); border-color: var(--ink); }
+.fw .restart.armed { color: var(--lacquer); border-color: var(--lacquer); }
+
+/* the name-picker: an epithet and a station, in the cant */
+.fw .name-pick { display: flex; gap: 18px; margin: 4px 0 6px; }
+.fw .pick-col { display: flex; flex-direction: column; gap: 4px; }
+.fw .pick { text-align: left; font-size: 13px; padding: 3px 10px;
+            border: 1px solid var(--ink-hair); background: var(--paper); }
+.fw .pick.on { border: 2px solid var(--gilt); background: var(--gilt-wash);
+               font-weight: bold; padding: 2px 9px; }
+.fw .name-line { font-size: 14px; margin: 6px 0; }
+.fw .name-line button { font-size: 12px; padding: 1px 7px; margin-left: 6px; }
 
 /* ---- lobby -------------------------------------------------------------------- */
 .fw .lobby-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -73,16 +89,20 @@ body.supertemporal {
 .fw .slot-row { display: flex; gap: 10px; flex-wrap: wrap; }
 
 .fw .slot {
-  width: 122px; min-height: 172px; border: 2px solid var(--ink);
+  width: 122px; min-height: 184px; border: 2px solid var(--ink);
   background: var(--paper); box-shadow: 3px 3px 0 rgba(33,29,24,.18);
   padding: 6px 6px 7px; position: relative;
   display: flex; flex-direction: column; align-items: center; gap: 3px;
   text-align: center; font-size: 12px; }
 .fw .slot.empty { border: 2px dashed var(--ink-hair); background: transparent;
                   box-shadow: none; }
-.fw .slot.is-frozen { border-color: var(--gilt); }
+.fw .slot.is-frozen { outline: 2px dashed var(--gilt); outline-offset: 2px; }
 .fw .slot.is-frozen::before { content: ""; position: absolute; inset: 0;
                               background: rgba(184,145,46,.07); pointer-events: none; }
+.fw .slot.top-tier { border-color: var(--gilt-bright);
+                     box-shadow: 3px 3px 0 rgba(184,145,46,.45); }
+.fw .slot .lore { color: var(--gilt); text-decoration: none; font-size: 11px; }
+.fw .slot .lore:hover { color: var(--gilt-bright); }
 .fw .slot.targetable { border-color: var(--gilt); cursor: pointer;
                        box-shadow: 0 0 0 3px var(--gilt-wash), 3px 3px 0 rgba(138,109,31,.3); }
 .fw .slot .mtoken { width: 48px; height: 48px; border-radius: 50%;

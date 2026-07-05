@@ -2,7 +2,7 @@
 pure run-state machine in `ravel.fortune`.
 
 The engine owns every rule; this module owns the IO: run sessions in memory,
-finished runs persisted to sqlite (`data/fortune/runs.db`, the Book of Ages),
+finished runs persisted to sqlite (`data/fortune/runs.db`, the Book of Aeons),
 and battle payloads shaped exactly like `/api/battle` so the Pit's replay
 renderer works unchanged. Shemeshka thanks you for your patronage.
 """
@@ -90,7 +90,7 @@ def _persist(rid: str, run: FortuneRun) -> None:
 
 @router.get("/api/fortune/leaderboard")
 def leaderboard(limit: int = 20) -> list[dict]:
-    """The Book of Ages: the longest-lucky stables ever to leave the arena."""
+    """The Book of Aeons: the longest-lucky stables ever to leave the arena."""
     if not DB_PATH.exists():
         return []
     with _db() as conn:
@@ -118,9 +118,12 @@ def _shop_view(run: FortuneRun) -> dict:
             monsters.append(None)
             continue
         e = run.catalog[s.name]
+        md = content.get(s.name)
         monsters.append({"name": s.name, "price_cp": s.price_cp,
                          "price": coins(s.price_cp), "frozen": s.frozen,
                          "cr": e.cr, "best_cr": e.best_cr, "source": e.source,
+                         "ac": md.ac, "hp": md.hp, "speed": md.speed,
+                         "fly": md.fly, "swim": md.swim, "size": md.size.value,
                          "art": _art(s.name)})
     items = []
     for s in run.shop_items:

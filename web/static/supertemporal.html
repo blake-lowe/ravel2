@@ -29,8 +29,8 @@
     <div class="stat-box"><span class="lbl">Battle</span><span class="val" id="st-round"></span></div>
     <div class="stat-box"><span class="lbl">Stock Tier</span><span class="val" id="st-cap"></span></div>
     <div class="stat-box"><span class="lbl">Record</span><span class="val" id="st-record"></span></div>
-    <div class="stat-box" title="1 combat round in the arena = 10 years outside"><span class="lbl">Years Witnessed</span><span class="val" id="st-years"></span></div>
-    <div class="stat-box"><span class="lbl">Stable Master</span><span class="val" id="st-handle"></span></div>
+    <div class="stat-box name-box"><span class="val" id="st-handle"></span></div>
+    <button type="button" class="restart" id="btn-restart" title="abandon this run and return to the gate">✕ restart</button>
   </section>
 
   <!-- ====================== lobby ====================== -->
@@ -39,7 +39,12 @@
     <div class="lobby-grid">
       <fieldset>
         <legend>Your Mark in the Book</legend>
-        <label>Name <input type="text" id="lob-handle" maxlength="40" placeholder="Anonymous Berk"></label>
+        <div class="name-pick">
+          <div class="pick-col" id="pick-adj"></div>
+          <div class="pick-col" id="pick-noun"></div>
+        </div>
+        <div class="name-line">You'll be known as <b id="name-preview"></b>
+          <button type="button" id="btn-reshuffle" title="other names">↻</button></div>
         <label>Seed <input type="number" id="lob-seed" min="0" step="1" placeholder="the house picks"></label>
       </fieldset>
       <fieldset>
@@ -88,7 +93,7 @@
 
     <div class="shop-actions">
       <button type="button" id="btn-reroll"></button>
-      <span class="odds-note">❄ freezes a shelf through the reroll and into the next night</span>
+      <span class="odds-note">❄ freezes a creature through the reroll and into the next night</span>
     </div>
     <p class="error-line" id="shop-error"></p>
   </section>
@@ -129,9 +134,9 @@
     <button type="button" class="gilded" id="btn-again">Another evening</button>
   </section>
 
-  <!-- ====================== the Book of Ages ====================== -->
+  <!-- ============= the Book of Aeons (the landing view only) ============= -->
   <section class="frame ages" id="fw-ages">
-    <div class="gilt-title"><span class="flourish">✦</span> The Book of Ages <span class="flourish">✦</span></div>
+    <div class="gilt-title"><span class="flourish">✦</span> The Book of Aeons <span class="flourish">✦</span></div>
     <div id="ages-body"><p class="odds-note"><i>The pages wait, unwritten.</i></p></div>
   </section>
 
