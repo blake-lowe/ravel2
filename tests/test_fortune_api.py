@@ -37,8 +37,22 @@ def test_new_run_state_shape():
         assert slot["cr"] <= 1 and slot["source"] == "MM"
         assert slot["price"] and slot["art"]
     assert len(s["foresight"]) == 3
-    assert s["enemy"], "enemy composition is visible in the shop"
+    assert s["enemy"] == [] and not s["scouted"], "the opposition is a paid secret"
     assert s["handle"] == "Testy"
+
+
+def test_scouting_reveals_the_bill():
+    s = start(seed=17)
+    rid = s["run_id"]
+    s = client.post(f"/api/fortune/run/{rid}/action", json={"action": "scout"}).json()
+    assert s["scouted"] and s["enemy"], "the bribe buys the composition"
+    assert s["purse_cp"] == 900
+    r = client.post(f"/api/fortune/run/{rid}/action", json={"action": "scout"})
+    assert r.status_code == 422                # once per round
+    client.post(f"/api/fortune/run/{rid}/action", json={"action": "buy", "slot": 0})
+    d = client.get(f"/api/fortune/run/{rid}/deploy").json()
+    assert d["enemy"] and d["scouted"]
+    assert all(c["team"] == "A" for c in d["combatants"]), "deploy shows your side only"
 
 
 def test_unknown_books_rejected():

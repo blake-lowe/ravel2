@@ -105,6 +105,20 @@ def test_reroll_costs_5_sp():
     assert run.purse_cp == before - 50
 
 
+def test_scout_costs_1_gp_once_and_resets_on_battle():
+    run = new_run(14, BOOKS, CATALOG)
+    assert not run.scouted
+    run.scout()
+    assert run.scouted and run.purse_cp == 900
+    with pytest.raises(FortuneError):          # the pit hand already talked
+        run.scout()
+    d = run.to_dict()
+    assert d["scouted"] and FortuneRun.from_dict(d, run.catalog).scouted
+    run.buy(0)
+    run.fight()
+    assert not run.scouted                     # next round: a fresh secret
+
+
 def test_cannot_overspend():
     run = new_run(5, BOOKS, CATALOG)
     run.purse_cp = 10

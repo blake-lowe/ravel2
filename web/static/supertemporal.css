@@ -1,0 +1,197 @@
+/* ============================================================================
+   SUPERTEMPORAL ARENA (Slice 12e) — Shemeshka's private box.
+   The house stays ink; this page alone is allowed gilt (old gold leaf) and
+   tarnished silver, and the wheel alone is allowed lacquer red. Spend the
+   gold on the wheel; keep everything else quiet. Loaded after style.css.
+   ========================================================================== */
+
+body.supertemporal {
+  --gilt:        #8a6d1f;   /* old gold, printable ink */
+  --gilt-bright: #b8912e;   /* leaf catching the light */
+  --gilt-wash:   rgba(184, 145, 46, .12);
+  --silver:      #83898f;   /* tarnished silver chrome */
+  --lacquer:     #8f1f1a;   /* wheel pegs & loss pips ONLY */
+}
+
+.fw { max-width: 1220px; margin: 18px auto 60px; padding: 0 16px;
+      display: grid; gap: 16px; }
+.fw .gilt-title {
+  font-variant: small-caps; letter-spacing: 2px; font-size: 15px;
+  padding: 3px 10px; margin: -6px -10px 12px;
+  border-bottom: 3px double var(--gilt);
+}
+.fw .gilt-title .flourish { color: var(--gilt); }
+.fw .col-title { font-variant: small-caps; letter-spacing: 2px; font-size: 12px;
+                 color: var(--ink-faint); margin-bottom: 6px; }
+.fw .odds-note { font-style: italic; color: var(--ink-faint); font-size: 13px; }
+.fw .error-line { color: var(--lacquer); font-size: 13px; min-height: 18px; margin: 6px 0 0; }
+.fw button.gilded {
+  border: 2px solid var(--gilt); background: var(--gilt-wash); color: var(--ink);
+  font-size: 15px; padding: 6px 18px; box-shadow: 2px 2px 0 rgba(138,109,31,.35); }
+.fw button.gilded:hover { background: rgba(184,145,46,.22); }
+.fw button.gilded:disabled { opacity: .45; cursor: default; box-shadow: none; }
+
+/* ---- status row: each figure gets its own little frame ----------------------- */
+.fw .status-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.fw .stat-box {
+  border: 2px solid var(--ink); background: var(--paper); padding: 5px 14px 6px;
+  box-shadow: 3px 3px 0 rgba(33,29,24,.18); min-width: 86px; text-align: center; }
+.fw .stat-box .lbl { display: block; font-variant: small-caps; letter-spacing: 1px;
+                     font-size: 10px; color: var(--ink-faint); }
+.fw .stat-box .val { display: block; font-size: 15px; margin-top: 2px; white-space: nowrap; }
+.fw .stat-box.gilt-box { border-color: var(--gilt); background: var(--gilt-wash); }
+.fw .coin { display: inline-block; min-width: 19px; padding: 0 4px; text-align: center;
+            border-radius: 50%; border: 1.5px solid; font-family: var(--mono);
+            font-size: 11px; font-weight: bold; line-height: 16px; vertical-align: 1px; }
+.fw .coin.gp { border-color: var(--gilt); color: var(--gilt); background: var(--gilt-wash); }
+.fw .coin.sp { border-color: var(--silver); color: var(--silver);
+               background: rgba(131,137,143,.10); }
+.fw .coin.cp { border-color: #7a4a28; color: #7a4a28; background: rgba(122,74,40,.08); }
+.fw .chip { display: inline-block; width: 16px; height: 16px; border-radius: 50%;
+            border: 2px solid var(--gilt); margin: 0 2px; vertical-align: -3px;
+            background: repeating-conic-gradient(var(--gilt-wash) 0 20deg,
+                                                 transparent 20deg 40deg); }
+.fw .chip.spent { border-color: var(--lacquer); background: none; position: relative; }
+.fw .chip.spent::after { content: "✕"; color: var(--lacquer); font-size: 11px;
+                         position: absolute; inset: -4px 0 0 1px; }
+
+/* ---- lobby -------------------------------------------------------------------- */
+.fw .lobby-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fw .lobby fieldset { border: 1px solid var(--ink-hair); margin: 0; }
+.fw .lobby legend { font-variant: small-caps; letter-spacing: 1px; font-size: 13px; }
+.fw .lobby label { display: block; margin: 6px 0; font-size: 14px; }
+.fw .lobby input[type="text"], .fw .lobby input[type="number"] {
+  font-family: var(--serif); border: 1px solid var(--ink); background: var(--paper);
+  padding: 3px 6px; }
+.fw .book-pick { display: flex; gap: 14px; flex-wrap: wrap; }
+.fw .enter-row { margin: 12px 0; }
+.fw .lobby .gilded { margin-top: 4px; }
+
+/* ---- the shop: Shemeshka's Offerings -------------------------------------------- */
+.fw .team-row { display: grid; grid-template-columns: 1fr 330px; gap: 18px;
+                align-items: start; }
+.fw .slot-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.fw .slot {
+  width: 122px; min-height: 172px; border: 2px solid var(--ink);
+  background: var(--paper); box-shadow: 3px 3px 0 rgba(33,29,24,.18);
+  padding: 6px 6px 7px; position: relative;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  text-align: center; font-size: 12px; }
+.fw .slot.empty { border: 2px dashed var(--ink-hair); background: transparent;
+                  box-shadow: none; }
+.fw .slot.is-frozen { border-color: var(--gilt); }
+.fw .slot.is-frozen::before { content: ""; position: absolute; inset: 0;
+                              background: rgba(184,145,46,.07); pointer-events: none; }
+.fw .slot.targetable { border-color: var(--gilt); cursor: pointer;
+                       box-shadow: 0 0 0 3px var(--gilt-wash), 3px 3px 0 rgba(138,109,31,.3); }
+.fw .slot .mtoken { width: 48px; height: 48px; border-radius: 50%;
+                    border: 1.5px solid var(--ink); object-fit: cover;
+                    background: var(--paper-deep); flex: none; }
+.fw .slot .mtoken.letter { display: flex; align-items: center; justify-content: center;
+                           font-size: 22px; font-variant: small-caps; }
+.fw .slot .mname { font-weight: bold; font-size: 11.5px; line-height: 1.15;
+                   max-height: 27px; overflow: hidden; }
+.fw .slot .stars { color: var(--gilt); letter-spacing: 1px; font-size: 11px; }
+.fw .slot .mmeta { color: var(--ink-faint); font-size: 10px; line-height: 1.25; }
+.fw .slot .price { font-family: var(--mono); font-size: 10.5px; margin-top: auto; }
+.fw .slot .btnrow { display: flex; gap: 3px; justify-content: center; width: 100%; }
+.fw .slot .btnrow button { font-size: 10px; padding: 2px 6px; letter-spacing: 0;
+                           flex: 1 1 auto; max-width: 100%; }
+.fw .slot .freeze {
+  position: absolute; top: 3px; right: 3px; width: 21px; height: 21px;
+  padding: 0; font-size: 12px; line-height: 1; border-width: 1px;
+  color: var(--silver); background: var(--paper); }
+.fw .slot .freeze.on { color: var(--paper); background: var(--gilt);
+                       border-color: var(--gilt); }
+.fw .slot .tags { display: flex; flex-wrap: wrap; gap: 2px; justify-content: center; }
+.fw .slot .tag { border: 1px solid var(--ink-hair); font-size: 8.5px;
+                 padding: 0 3px; border-radius: 2px; color: var(--ink-faint); }
+.fw .slot .rib { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+.fw .slot .rib.common { background: var(--ink-hair); }
+.fw .slot .rib.uncommon { background: var(--silver); }
+.fw .slot .rib.rare { background: var(--gilt-bright); }
+
+.fw .offer-row { display: grid; grid-template-columns: 1fr auto; gap: 18px;
+                 align-items: start; }
+.fw .offer-items { border-left: 1px solid var(--ink-hair); padding-left: 18px; }
+.fw .shop-actions { display: flex; gap: 12px; align-items: center; margin-top: 12px; }
+.fw .bank-row { margin-top: 10px; font-size: 12px; display: flex; gap: 6px;
+                flex-wrap: wrap; align-items: center; }
+.fw .bank-row button { font-size: 11px; padding: 2px 8px; letter-spacing: 0;
+                       border-color: var(--gilt); }
+
+/* ---- the battle panel (right of the team) ----------------------------------------- */
+.fw .battle-panel { border: 2px solid var(--ink); background: var(--paper);
+                    box-shadow: 3px 3px 0 rgba(33,29,24,.18); padding: 10px 12px;
+                    display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+.fw .battle-panel .ground { font-size: 16px; font-weight: bold; }
+.fw .battle-panel .after { color: var(--ink-faint); font-size: 11.5px; }
+.fw .bill { border: 1px dashed var(--ink-hair); padding: 7px 9px; min-height: 40px; }
+.fw .bill .bill-chip { display: inline-block; border: 1px solid var(--ink);
+                       padding: 1px 7px; margin: 2px 3px 2px 0; font-size: 12px;
+                       background: var(--paper-deep); border-radius: 2px; }
+.fw .bill .bill-chip .crtag { color: var(--ink-faint); font-size: 10.5px; }
+.fw .battle-panel .gilded { width: 100%; margin-top: 2px; }
+
+/* ---- the sands (deploy + replay) ---------------------------------------------------- */
+.fw .sands-grid { display: grid; grid-template-columns: auto 1fr; gap: 16px; }
+.fw .board-wrap { overflow: auto; max-width: 100%; }
+.fw #fw-board svg { display: block; background: var(--paper);
+                    border: 1px solid var(--ink-hair); }
+.fw .cell { fill: transparent; stroke: var(--grid-blue); stroke-width: .5; }
+.fw .cell.zone { fill: var(--gilt-wash); }
+.fw .cell.wall { fill: url(#fw-hatch); stroke: var(--ink); }
+.fw .cell.water { fill: rgba(125,144,155,.35); }
+.fw .cell.difficult { fill: rgba(33,29,24,.10); }
+.fw .cell.chasm { fill: rgba(33,29,24,.55); }
+.fw .tok.mine { cursor: grab; }
+.fw .tok.dragging { opacity: .6; }
+.fw .tok circle.body { fill: var(--paper-deep); stroke: var(--ink); stroke-width: 1.5; }
+.fw .tok.team-a circle.body { stroke: var(--gilt); stroke-width: 2.5; }
+.fw .tok.team-b circle.body { stroke: var(--ink); stroke-width: 2.5; }
+.fw .tok text { font-family: var(--serif); font-variant: small-caps;
+                text-anchor: middle; fill: var(--ink); pointer-events: none; }
+.fw .tok rect.hpback { fill: rgba(33,29,24,.25); }
+.fw .tok rect.hpbar { fill: var(--gilt); }
+.fw .tok.team-b rect.hpbar { fill: var(--silver); }
+.fw .tok.dead { opacity: .35; }
+.fw .sands-side { display: flex; flex-direction: column; gap: 10px; font-size: 13px;
+                  min-width: 0; }
+.fw .replay-controls { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.fw .fightlog { background: var(--paper-deep); border: 1px solid var(--ink-hair);
+                font-family: var(--mono); font-size: 11px; padding: 8px;
+                height: 300px; overflow-y: auto; white-space: pre-wrap; margin: 0; }
+.fw .verdict { font-size: 15px; font-variant: small-caps; letter-spacing: 1px;
+               padding: 6px 0; }
+.fw .verdict.won { color: var(--gilt); }
+.fw .verdict.lost { color: var(--lacquer); }
+
+/* ---- the wheel ----------------------------------------------------------------------- */
+.fw-veil { position: fixed; inset: 0; background: rgba(33,29,24,.55);
+           display: flex; align-items: center; justify-content: center; z-index: 40; }
+.fw-veil[hidden] { display: none; }
+.fw-veil .wheel-card { width: min(520px, 92vw); text-align: center; padding: 18px;
+                       max-height: 92vh; overflow-y: auto; }
+.fw-veil .wheel-card h2 { font-variant: small-caps; letter-spacing: 3px;
+                          margin: 0 0 4px; color: var(--gilt); }
+.fw-veil .whisper { font-style: italic; color: var(--ink-faint); font-size: 12px;
+                    margin: 0 0 10px; }
+#fw-wheel { max-width: 380px; margin: 0 auto; display: block; }
+#fw-wheel .ring { transition: transform 2.2s cubic-bezier(.15,.8,.25,1); }
+@media (prefers-reduced-motion: reduce) { #fw-wheel .ring { transition: none; } }
+.fw-veil .prize-line { min-height: 24px; font-size: 15px; margin: 10px 0 6px; }
+.fw-veil .prize-line strong { color: var(--gilt); }
+
+/* ---- the Book of Ages ------------------------------------------------------------------- */
+.fw .ages table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.fw .ages th { font-variant: small-caps; letter-spacing: 1px; text-align: left;
+               border-bottom: 2px solid var(--ink); padding: 3px 6px; }
+.fw .ages td { border-bottom: 1px dotted var(--ink-hair); padding: 3px 6px; }
+.fw .ages .gold-row td { color: var(--gilt); font-weight: bold; }
+
+@media (max-width: 980px) {
+  .fw .team-row, .fw .offer-row, .fw .lobby-grid, .fw .sands-grid {
+    grid-template-columns: 1fr; }
+  .fw .offer-items { border-left: none; padding-left: 0; }
+}

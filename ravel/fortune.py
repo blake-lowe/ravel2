@@ -28,6 +28,7 @@ LIVES_START = 3
 START_PURSE_CP = 1000          # 10 gp
 INCOME_CP = 1000               # +10 gp per shop phase
 REROLL_CP = 50                 # 5 sp
+SCOUT_CP = 100                 # 1 gp bribes a pit hand: reveals tonight's opposition
 MONSTER_SLOTS = 5
 ITEM_SLOTS = 2
 ITEM_CAP = 3                   # items a single monster can carry
@@ -206,6 +207,7 @@ class FortuneRun:
     shop_items: list[ShopSlot | None] = field(default_factory=list)
     bank: list[str] = field(default_factory=list)   # unattached wheel-won items
     history: list[dict] = field(default_factory=list)
+    scouted: bool = False          # paid this round to see the opposing composition
 
     # -- randomness: one fresh RNG per draw, keyed by (seed, draws) --------------
     def _draw(self) -> RNG:
@@ -304,6 +306,15 @@ class FortuneRun:
         self._require("shop")
         self._spend(REROLL_CP)
         self._roll_shop()
+
+    def scout(self) -> None:
+        """Bribe a pit hand (1 gp): the round's opposing composition is revealed
+        until the battle is fought. The house sells everything, even secrets."""
+        self._require("shop")
+        if self.scouted:
+            raise FortuneError("the pit hand already talked")
+        self._spend(SCOUT_CP)
+        self.scouted = True
 
     def toggle_freeze(self, kind: str, slot: int) -> None:
         self._require("shop")
@@ -450,6 +461,7 @@ class FortuneRun:
             "years": result.rounds * YEARS_PER_COMBAT_ROUND,
         })
         self.round += 1
+        self.scouted = False           # next round's opposition is a fresh secret
         if won:
             self.wins += 1
             self.phase = "wheel"
@@ -539,6 +551,7 @@ class FortuneRun:
                            {"name": s.name, "price_cp": s.price_cp,
                             "frozen": s.frozen} for s in self.shop_items],
             "bank": list(self.bank), "history": list(self.history),
+            "scouted": self.scouted,
         }
 
     @classmethod
@@ -556,6 +569,7 @@ class FortuneRun:
                           for s in d["shop_items"]]
         run.bank = list(d["bank"])
         run.history = list(d["history"])
+        run.scouted = d.get("scouted", False)
         return run
 
 

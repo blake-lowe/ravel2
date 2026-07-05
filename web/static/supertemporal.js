@@ -15,7 +15,7 @@ let RID = localStorage.getItem("fw-run") || null;
 let DEPLOY = null;    // current /deploy payload
 let PLACEMENTS = [];  // stable-index -> [x,y] | null
 let BATTLE = null;    // last battle payload
-let TARGETING = null; // {verb, label, filter} while picking a stable member
+let TARGETING = null; // {label, filter, go} while picking one of your creatures
 
 // ------------------------------- plumbing ------------------------------------
 
@@ -34,21 +34,29 @@ async function api(path, body, errEl) {
   return res.json();
 }
 
+// Full change, every denomination shown: 1046 -> [10 gp][4 sp][6 cp]
 function coinsHtml(cp) {
   const gp = Math.floor(cp / 100), sp = Math.floor((cp % 100) / 10), c = cp % 10;
-  const bits = [];
-  if (gp) bits.push(`<span class="coin gp" title="gold">${gp}</span>`);
-  if (sp) bits.push(`<span class="coin sp" title="silver">${sp}</span>`);
-  if (c || !bits.length) bits.push(`<span class="coin cp" title="copper">${c}</span>`);
-  return bits.join(" ");
+  return `<span class="coin gp" title="gold">${gp}</span>
+          <span class="coin sp" title="silver">${sp}</span>
+          <span class="coin cp" title="copper">${c}</span>`;
+}
+
+function coinsFlat(cp) {
+  const gp = Math.floor(cp / 100), sp = Math.floor((cp % 100) / 10), c = cp % 10;
+  return [gp && `${gp} gp`, sp && `${sp} sp`, c && `${c} cp`].filter(Boolean).join(" ") || "0 cp";
+}
+
+function crStr(cr) {
+  return cr === 0.125 ? "1/8" : cr === 0.25 ? "1/4" : cr === 0.5 ? "1/2" : String(cr);
 }
 
 // Token art: walk the candidate URLs on error, fall back to an initial.
-function tokenImg(arts, name, cls) {
-  const letter = `<span class="mtoken letter ${cls || ""}">${esc(name[0] || "?")}</span>`;
+function tokenImg(arts, name) {
+  const letter = `<span class="mtoken letter">${esc(name[0] || "?")}</span>`;
   if (!arts || !arts.length) return letter;
   const chain = esc(JSON.stringify(arts.slice(1)));
-  return `<img class="mtoken ${cls || ""}" src="${esc(arts[0])}" alt=""
+  return `<img class="mtoken" src="${esc(arts[0])}" alt=""
     data-rest='${chain}' onerror="fwArtErr(this)">`;
 }
 window.fwArtErr = function (img) {
@@ -56,7 +64,7 @@ window.fwArtErr = function (img) {
   if (rest.length) { img.dataset.rest = JSON.stringify(rest.slice(1)); img.src = rest[0]; }
   else {
     const sp = document.createElement("span");
-    sp.className = img.className + " letter";
+    sp.className = "mtoken letter";
     sp.textContent = (img.closest("[data-name]")?.dataset.name || "?")[0];
     img.replaceWith(sp);
   }
@@ -105,7 +113,7 @@ function resume() {
   else { renderShop(); show("fw-shop"); }
 }
 
-// ------------------------------- status strip ----------------------------------
+// ------------------------------- status row ------------------------------------
 
 function renderStatus() {
   $("#st-purse").innerHTML = coinsHtml(S.purse_cp);
@@ -114,12 +122,12 @@ function renderStatus() {
   $("#st-round").textContent = S.round;
   $("#st-cap").textContent = `CR ${S.cap}`;
   const losses = S.history.filter((h) => !h.won).length;
-  $("#st-record").textContent = `${S.wins}–${losses}`;
-  $("#st-years").textContent = `${S.years.toLocaleString()} years witnessed`;
+  $("#st-record").textContent = `${S.wins} – ${losses}`;
+  $("#st-years").textContent = S.years.toLocaleString();
   $("#st-handle").textContent = S.handle;
 }
 
-// ------------------------------- shop -------------------------------------------
+// ------------------------------- the shop ---------------------------------------
 
 function wireShop() {
   $("#btn-reroll").onclick = () => act({ action: "reroll" });
@@ -135,7 +143,7 @@ async function act(body) {
 
 function beginTargeting(t) {
   TARGETING = t;
-  $("#shop-error").textContent = t.label + " — pick a beast in your stable (or reroll to cancel)";
+  $("#shop-error").textContent = t.label + " — pick one of your creatures (or reroll to cancel)";
   renderStable();
 }
 
@@ -144,9 +152,8 @@ function renderShop() {
   renderStable();
   renderStock();
   renderBank();
-  renderForesight();
-  renderBill();
-  $("#btn-reroll").textContent = "Reroll the stock (5 sp)";
+  renderBattlePanel();
+  $("#btn-reroll").textContent = "Reroll the offerings (5 sp)";
   $("#btn-sands").disabled = !S.stable.length;
   if (S.phase === "over") { renderOver(); show("fw-over"); }
 }
@@ -159,24 +166,26 @@ function renderStable() {
       `<span class="tag" title="${esc(it.blurb)}">${esc(it.name)}</span>`).join("");
     const twin = S.stable.some((o, j) => j !== i && o.name === m.name);
     const targetable = TARGETING && (!TARGETING.filter || TARGETING.filter(m, i));
-    return `<div class="mcard ${targetable ? "is-frozen" : ""}" data-name="${esc(m.name)}" data-idx="${i}">
+    return `<div class="slot ${targetable ? "targetable" : ""}"
+                 data-name="${esc(m.name)}" ${targetable ? `data-pick="${i}"` : ""}>
       ${tokenImg(m.art, m.name)}
       <div class="mname">${esc(m.name)} ${stars}</div>
       <div class="mmeta">AC ${m.ac} · ${m.hp} hp · CR ${crStr(m.cr)}</div>
-      <div class="stable-items">${items}</div>
-      <div class="cardbtns">
-        ${targetable ? `<button data-pick="${i}">choose</button>` : `
-          <button data-sell="${i}" title="half of all coin invested comes back">sell (${coinsFlat(Math.floor(m.invested_cp / 2))})</button>
-          ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 HP">train ★</button>` : ""}`}
-      </div>
+      <div class="tags">${items}</div>
+      ${targetable ? `<div class="btnrow"><button>choose</button></div>` : `
+        <div class="btnrow">
+          <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
+          ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 HP">train ★</button>` : ""}
+        </div>`}
     </div>`;
   });
-  while (cards.length < S.team_cap) cards.push(`<div class="mcard empty">an empty stall</div>`);
+  while (cards.length < S.team_cap) cards.push(`<div class="slot empty"></div>`);
   row.innerHTML = cards.join("");
   row.querySelectorAll("[data-sell]").forEach((b) =>
-    b.onclick = () => act({ action: "sell", target: +b.dataset.sell }));
+    b.onclick = (ev) => { ev.stopPropagation(); act({ action: "sell", target: +b.dataset.sell }); });
   row.querySelectorAll("[data-train]").forEach((b) =>
-    b.onclick = () => {
+    b.onclick = (ev) => {
+      ev.stopPropagation();
       const i = +b.dataset.train;
       beginTargeting({
         label: `Training ${S.stable[i].name}: pick the twin to merge in`,
@@ -184,33 +193,25 @@ function renderStable() {
         go: (j) => act({ action: "train", target: i, other: j }),
       });
     });
-  row.querySelectorAll("[data-pick]").forEach((b) =>
-    b.onclick = () => TARGETING.go(+b.dataset.pick));
-}
-
-function crStr(cr) {
-  return cr === 0.125 ? "1/8" : cr === 0.25 ? "1/4" : cr === 0.5 ? "1/2" : String(cr);
-}
-
-function coinsFlat(cp) {
-  const gp = Math.floor(cp / 100), sp = Math.floor((cp % 100) / 10), c = cp % 10;
-  return [gp && `${gp} gp`, sp && `${sp} sp`, c && `${c} cp`].filter(Boolean).join(" ") || "0 cp";
+  row.querySelectorAll("[data-pick]").forEach((card) =>
+    card.onclick = () => TARGETING.go(+card.dataset.pick));
 }
 
 function renderStock() {
   const row = $("#stock-row");
   row.innerHTML = S.shop.monsters.map((s, i) => {
-    if (!s) return `<div class="mcard empty">sold</div>`;
+    if (!s) return `<div class="slot empty"></div>`;
     const owned = S.stable.findIndex((m) => m.name === s.name);
     const pr = s.best_cr != null && s.best_cr !== s.cr
-      ? `<span title="the pit's own ledger disagrees with the book">PR ${s.best_cr}</span>` : "";
-    return `<div class="mcard ${s.frozen ? "is-frozen" : ""}" data-name="${esc(s.name)}">
-      <span class="frozen-flag ${s.frozen ? "on" : ""}" data-freeze="${i}" title="freeze through the reroll">❄</span>
+      ? ` · <span title="the pit's own ledger disagrees with the book">PR ${s.best_cr}</span>` : "";
+    return `<div class="slot ${s.frozen ? "is-frozen" : ""}" data-name="${esc(s.name)}">
+      <button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
+        title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>
       ${tokenImg(s.art, s.name)}
       <div class="mname">${esc(s.name)}</div>
-      <div class="mmeta">CR ${crStr(s.cr)} ${pr} · ${esc(s.source)}</div>
+      <div class="mmeta">CR ${crStr(s.cr)}${pr}<br>${esc(s.source)}</div>
       <div class="price">${esc(s.price)}</div>
-      <div class="cardbtns">
+      <div class="btnrow">
         <button data-buy="${i}">buy</button>
         ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}"
             title="feed this copy straight to yours: +1 AC, +1 HP">train ★</button>` : ""}
@@ -225,18 +226,21 @@ function renderStock() {
     f.onclick = () => act({ action: "freeze", kind: "monster", slot: +f.dataset.freeze }));
 
   $("#item-shelf").innerHTML = S.shop.items.map((s, i) => {
-    if (!s) return `<div class="icard"><span class="blurb">sold</span></div>`;
-    return `<div class="icard ${s.frozen ? "is-frozen" : ""}">
-      <span class="frozen-flag ${s.frozen ? "on" : ""}" data-ifreeze="${i}">❄</span>
-      <span class="iname">${esc(s.name)}</span>
-      <span class="rarity ${esc(s.rarity)}">${esc(s.rarity)}</span> · <span class="price">${esc(s.price)}</span>
-      <div class="blurb">${esc(s.blurb)}</div>
-      <button data-ibuy="${i}">buy for a beast…</button>
+    if (!s) return `<div class="slot empty"></div>`;
+    return `<div class="slot ${s.frozen ? "is-frozen" : ""}">
+      <span class="rib ${esc(s.rarity)}"></span>
+      <button class="freeze ${s.frozen ? "on" : ""}" data-ifreeze="${i}"
+        title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>
+      <span class="mtoken letter" title="${esc(s.blurb)}">◈</span>
+      <div class="mname" title="${esc(s.blurb)}">${esc(s.name)}</div>
+      <div class="mmeta">${esc(s.rarity)}</div>
+      <div class="price">${esc(s.price)}</div>
+      <div class="btnrow"><button data-ibuy="${i}">buy</button></div>
     </div>`;
   }).join("");
   $("#item-shelf").querySelectorAll("[data-ibuy]").forEach((b) =>
     b.onclick = () => beginTargeting({
-      label: `Buying ${S.shop.items[+b.dataset.ibuy].name}: who carries it?`,
+      label: `Buying ${S.shop.items[+b.dataset.ibuy].name}: which creature carries it?`,
       filter: (m) => m.items.length < 3,
       go: (j) => act({ action: "buy_item", slot: +b.dataset.ibuy, target: j }),
     }));
@@ -252,7 +256,7 @@ function renderBank() {
       `<button data-bank="${i}" title="${esc(it.blurb)}">${esc(it.name)} → give</button>`).join(" ");
   el.querySelectorAll("[data-bank]").forEach((b) =>
     b.onclick = () => beginTargeting({
-      label: `Handing over ${S.bank[+b.dataset.bank].name}: who carries it?`,
+      label: `Handing over ${S.bank[+b.dataset.bank].name}: which creature carries it?`,
       filter: (m) => m.items.length < 3,
       go: (j) => act({ action: "attach", slot: +b.dataset.bank, target: j }),
     }));
@@ -260,26 +264,36 @@ function renderBank() {
 
 const WEATHER_GLYPH = { clear: "☀ clear", fog: "▒ fog", rain: "☂ rain", wind: "≋ wind" };
 
-function renderForesight() {
-  $("#fore-strip").innerHTML = S.foresight.map((f, i) => `
-    <div class="fore-card">
-      <div class="fr">${i === 0 ? "next" : "battle " + f.round}</div>
-      <div class="fmap">${esc(f.map || "the open floor")}</div>
-      <div>${WEATHER_GLYPH[f.weather] || esc(f.weather)}</div>
-    </div>`).join("");
+function renderBattlePanel() {
+  const now = S.foresight[0] || {};
+  const later = S.foresight.slice(1).map((f) =>
+    `battle ${f.round}: ${esc(f.map || "the open floor")}, ${WEATHER_GLYPH[f.weather] || esc(f.weather)}`);
+  $("#next-battle").innerHTML = `
+    <div class="ground">${esc(now.map || "the open floor")}</div>
+    <div>${WEATHER_GLYPH[now.weather] || esc(now.weather || "")}</div>
+    <div class="after">then — ${later.join(" · ")}</div>`;
+  renderBill();
 }
 
 function renderBill() {
-  $("#the-bill").innerHTML = S.enemy.length
-    ? S.enemy.map((e) => `<span class="bill-line">${e.count}× <b>${esc(e.name)}</b>
-        <span class="odds-note">CR ${crStr(e.cr)}</span></span>`).join("")
-    : `<span class="odds-note">the bill is being printed…</span>`;
+  const el = $("#the-bill");
+  if (S.scouted && S.enemy.length) {
+    el.innerHTML = `<div class="col-title">The Opposition</div>` +
+      S.enemy.map((e) => `<span class="bill-chip">${e.count}× ${esc(e.name)}
+        <span class="crtag">(CR ${crStr(e.cr)})</span></span>`).join("");
+  } else {
+    el.innerHTML = `<span class="odds-note">the far corner keeps to the dark —
+        no berk has sold you their number</span><br>
+      <button id="btn-scout">Bribe a pit hand (1 gp)</button>`;
+    const btn = $("#btn-scout");
+    if (btn) btn.onclick = () => act({ action: "scout" });
+  }
 }
 
 // ------------------------------- the sands ---------------------------------------
 
 function wireSands() {
-  $("#btn-back-shop").onclick = () => show("fw-shop");
+  $("#btn-back-shop").onclick = () => { renderShop(); show("fw-shop"); };
   $("#btn-gong").onclick = fight;
   $("#rp-play").onclick = togglePlay;
   $("#rp-skip").onclick = skipToEnd;
@@ -295,19 +309,35 @@ async function openSands() {
   $("#fw-log").hidden = true; $("#fw-log").textContent = "";
   $("#deploy-controls").hidden = false;
   $("#replay-controls").hidden = true;
-  $("#sands-brief").innerHTML = `
-    <b>Battle ${DEPLOY.round}</b> — ${esc(DEPLOY.map || "the open floor")},
-    ${WEATHER_GLYPH[DEPLOY.weather] || esc(DEPLOY.weather)}<br>
-    <span class="odds-note">drag your beasts anywhere in the gilded ground, then sound the gong.
-    The other corner's placement is the house's secret.</span><br>
-    ${DEPLOY.enemy.map((e) => `${e.count}× ${esc(e.name)}`).join(", ")} await.`;
+  renderSandsBrief();
   drawBoard(DEPLOY.grid, new Set(DEPLOY.zone.map((c) => c.join(","))));
-  // deployment shows only YOUR tokens at their default cells; the foe is a rumor
-  for (const c of DEPLOY.combatants.filter((c) => c.team === "A")) placeToken(c, true);
+  // deployment shows only YOUR creatures at their default cells
+  for (const c of DEPLOY.combatants) placeToken(c, true);
   show("fw-sands");
 }
 
-let BOARD = null;  // {svg, cell, w, h, zone, toks: {id: {g, foot}}}
+function renderSandsBrief() {
+  const opp = DEPLOY.scouted && DEPLOY.enemy.length
+    ? DEPLOY.enemy.map((e) => `${e.count}× ${esc(e.name)}`).join(", ") + " await."
+    : `the far corner keeps to the dark
+       <button id="btn-scout2">bribe a pit hand (1 gp)</button>`;
+  $("#sands-brief").innerHTML = `
+    <b>Battle ${DEPLOY.round}</b> — ${esc(DEPLOY.map || "the open floor")},
+    ${WEATHER_GLYPH[DEPLOY.weather] || esc(DEPLOY.weather)}<br>
+    <span class="odds-note">drag your creatures anywhere in the gilded ground,
+    then sound the gong.</span><br>${opp}`;
+  const b2 = $("#btn-scout2");
+  if (b2) b2.onclick = async () => {
+    try { S = await api(`/api/fortune/run/${RID}/action`, { action: "scout" }, $("#sands-error")); }
+    catch (e) { return; }
+    DEPLOY.scouted = true;
+    DEPLOY.enemy = S.enemy;
+    renderStatus();
+    renderSandsBrief();
+  };
+}
+
+let BOARD = null;  // {svg, cell, w, h, zone, toks: {id: {g, foot, pos, max}}}
 
 function drawBoard(grid, zone) {
   const cell = Math.max(18, Math.min(30, Math.floor(720 / grid.w)));
@@ -321,23 +351,22 @@ function drawBoard(grid, zone) {
       <rect width="5" height="5" fill="#f4efe2"/>
       <line x1="0" y1="0" x2="0" y2="5" stroke="#211d18" stroke-width="1.6"/>
     </pattern></defs>`;
-  const kinds = [["walls", "wall"], ["water", "water"], ["difficult", "difficult"]];
   const layer = (cls, cells) => {
     for (const [x, y] of cells) {
       const r = document.createElementNS(NS, "rect");
       r.setAttribute("x", x * cell); r.setAttribute("y", y * cell);
       r.setAttribute("width", cell); r.setAttribute("height", cell);
       r.setAttribute("class", `cell ${cls}`);
-      r.dataset.cell = `${x},${y}`;
       svg.appendChild(r);
     }
   };
-  // base grid + zone wash
   const base = [];
   for (let y = 0; y < grid.h; y++) for (let x = 0; x < grid.w; x++) base.push([x, y]);
   layer("", base);
   if (zone) layer("zone", [...zone].map((s) => s.split(",").map(Number)));
-  for (const [key, cls] of kinds) layer(cls, grid[key] || []);
+  layer("wall", grid.walls || []);
+  layer("water", grid.water || []);
+  layer("difficult", grid.difficult || []);
   layer("chasm", Object.keys(grid.chasm || {}).map((s) => s.split(",").map(Number)));
   $("#fw-board").innerHTML = "";
   $("#fw-board").appendChild(svg);
@@ -361,7 +390,7 @@ function placeToken(c, draggable) {
     <rect class="hpbar" x="${-r + 2}" y="${r - 4}" width="${2 * r - 4}" height="3"></rect>
     <title>${esc(c.name)} — AC ${c.ac}, ${c.hp}/${c.max_hp} hp</title>`;
   BOARD.svg.appendChild(g);
-  const tok = { g, foot, hpw: 2 * r - 4, pos: c.pos.slice(), name: c.name };
+  const tok = { g, foot, hpw: 2 * r - 4, pos: c.pos.slice(), name: c.name, max: c.max_hp };
   BOARD.toks[c.id] = tok;
   moveToken(c.id, c.pos);
   if (draggable) wireDrag(c.id, tok);
@@ -375,10 +404,11 @@ function moveToken(id, pos) {
   t.g.setAttribute("transform", `translate(${cx},${cy})`);
 }
 
-function setHp(id, hp, max, alive) {
+function setHp(id, hp, alive) {
   const t = BOARD.toks[id];
   if (!t) return;
-  t.g.querySelector(".hpbar").setAttribute("width", Math.max(0, t.hpw * hp / Math.max(1, max)));
+  t.g.querySelector(".hpbar").setAttribute("width",
+    Math.max(0, t.hpw * hp / Math.max(1, t.max || 1)));
   t.g.classList.toggle("dead", !alive);
 }
 
@@ -390,19 +420,18 @@ function wireDrag(id, tok) {
     tok.g.classList.add("dragging");
     const move = (e) => {
       const cell = cellAt(e);
-      if (cell) moveToken(id, [cell[0] - Math.floor(tok.foot / 2), cell[1] - Math.floor(tok.foot / 2)]);
+      if (cell) moveToken(id, [cell[0] - Math.floor(tok.foot / 2),
+                               cell[1] - Math.floor(tok.foot / 2)]);
     };
-    const up = (e) => {
+    const up = () => {
       window.removeEventListener("pointermove", move);
       window.removeEventListener("pointerup", up);
       tok.g.classList.remove("dragging");
-      const origin = tok.pos;
-      if (legalDrop(id, origin, tok.foot)) {
-        PLACEMENTS[idx] = origin.slice();
+      if (legalDrop(id, tok.pos, tok.foot)) {
+        PLACEMENTS[idx] = tok.pos.slice();
         $("#sands-error").textContent = "";
       } else {
         $("#sands-error").textContent = "the pit hands wave you off — that ground is not yours";
-        // revert to default spawn
         const dflt = DEPLOY.combatants.find((c) => c.id === id);
         moveToken(id, dflt.pos);
         PLACEMENTS[idx] = null;
@@ -460,13 +489,12 @@ function foldStep(e) {
     case "spawn":
       if (!t) placeToken({ id: e.actor, name: e.actor, team: (e.info || e.actor[0]),
                            pos: e.pos, size: "Medium", hp: e.hp, max_hp: e.hp, ac: "?" }, false);
-      else moveToken(e.actor, e.pos);
-      (BOARD.toks[e.actor] || {}).max = e.hp;
+      else { moveToken(e.actor, e.pos); t.max = e.hp; }
       break;
     case "move": if (t) moveToken(e.actor, e.pos); break;
     case "damage": case "heal": case "survive":
-      if (t) setHp(e.actor, e.hp, t.max || 1, e.hp > 0); break;
-    case "death": if (t) setHp(e.actor, 0, t.max || 1, false); break;
+      if (t) setHp(e.actor, e.hp, e.hp > 0); break;
+    case "death": if (t) setHp(e.actor, 0, false); break;
   }
 }
 
@@ -474,11 +502,8 @@ let RP = null;   // {events, log, i, timer, logShown}
 
 function startReplay(b) {
   drawBoard(b.grid, null);
-  for (const c of b.combatants) {
-    placeToken(c, false);
-    BOARD.toks[c.id].max = c.max_hp;
-  }
-  RP = { events: b.events, log: b.log, i: 0, timer: null, logShown: 0, winner: b.winner };
+  for (const c of b.combatants) placeToken(c, false);
+  RP = { events: b.events, log: b.log, i: 0, timer: null, logShown: 0 };
   $("#fw-log").textContent = "";
   $("#rp-round").textContent = "";
   togglePlay();
@@ -508,7 +533,7 @@ function step() {
 
 function skipToEnd() {
   if (!RP) return;
-  while (RP.i < RP.events.length) { foldStep(RP.events[RP.i++]); }
+  while (RP.i < RP.events.length) foldStep(RP.events[RP.i++]);
   $("#fw-log").textContent = RP.log.join("\n");
   $("#fw-log").scrollTop = $("#fw-log").scrollHeight;
   finishReplay();
@@ -522,7 +547,8 @@ function finishReplay() {
     ${won ? "Your corner stands — the touts weep." : "The sands take yours — a chip is spent."}
     <span class="odds-note">(${BATTLE.outcome.years} years passed outside)</span></div>`;
   $("#rp-done").hidden = false;
-  $("#rp-done").textContent = won ? "to the wheel ✦" : (S.phase === "over" ? "face the ledger" : "back to the shop");
+  $("#rp-done").textContent = won ? "to the wheel ✦"
+    : (S.phase === "over" ? "face the ledger" : "back to the offerings");
 }
 
 function afterBattle() {
@@ -602,8 +628,7 @@ async function doSpin() {
   S = res.state;
   const spinRing = (idx, stop, turns) => {
     const g = $(`#ring-${RINGS[idx].id}`);
-    const target = -(turns * 360 + (stop - 0.5) * 36);
-    g.style.transform = `rotate(${target}deg)`;
+    g.style.transform = `rotate(${-(turns * 360 + (stop - 0.5) * 36)}deg)`;
   };
   spinRing(0, res.spin.outer, 4);
   const seq = [];

@@ -5,31 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Supertemporal Arena — Ravel</title>
 <link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/supertemporal.css">
 </head>
 <body class="supertemporal">
 
 <header class="masthead">
   <h1>Ravel</h1>
-  <p class="subtitle">the Supertemporal Arena — Shemeshka's private box above the Fortune's Wheel, where a minute buys a century</p>
+  <p class="subtitle">at the edge of the Elemental Chaos in an infinity of dissipating energies.</p>
   <nav class="topnav">
     <a href="/pit">The Blood Pit</a>
     <a href="/bestiary">Bestiary</a>
     <a href="/builder">Character Builder</a>
-    <a href="/supertemporal" class="active">Supertemporal</a>
+    <a href="/supertemporal" class="active">Supertemporal Arena</a>
   </nav>
 </header>
 
 <main class="fw">
 
-  <!-- ====================== run status: the ledger line ====================== -->
-  <section class="frame status-strip" id="fw-status" hidden>
-    <span class="stat"><span class="lbl">purse</span><span id="st-purse"></span></span>
-    <span class="stat"><span class="lbl">lives</span><span id="st-lives"></span></span>
-    <span class="stat"><span class="lbl">battle</span><span id="st-round"></span></span>
-    <span class="stat"><span class="lbl">stock up to</span><span id="st-cap"></span></span>
-    <span class="stat"><span class="lbl">record</span><span id="st-record"></span></span>
-    <span class="stat years" id="st-years" title="1 combat round in the arena = 10 years outside"></span>
-    <span class="stat" id="st-handle"></span>
+  <!-- ====================== run status: one box per figure ====================== -->
+  <section class="status-row" id="fw-status" hidden>
+    <div class="stat-box gilt-box"><span class="lbl">Purse</span><span class="val" id="st-purse"></span></div>
+    <div class="stat-box"><span class="lbl">Lives</span><span class="val" id="st-lives"></span></div>
+    <div class="stat-box"><span class="lbl">Battle</span><span class="val" id="st-round"></span></div>
+    <div class="stat-box"><span class="lbl">Stock Tier</span><span class="val" id="st-cap"></span></div>
+    <div class="stat-box"><span class="lbl">Record</span><span class="val" id="st-record"></span></div>
+    <div class="stat-box" title="1 combat round in the arena = 10 years outside"><span class="lbl">Years Witnessed</span><span class="val" id="st-years"></span></div>
+    <div class="stat-box"><span class="lbl">Stable Master</span><span class="val" id="st-handle"></span></div>
   </section>
 
   <!-- ====================== lobby ====================== -->
@@ -40,51 +41,54 @@
         <legend>Your Mark in the Book</legend>
         <label>Name <input type="text" id="lob-handle" maxlength="40" placeholder="Anonymous Berk"></label>
         <label>Seed <input type="number" id="lob-seed" min="0" step="1" placeholder="the house picks"></label>
-        <p class="odds-note">Five beasts to a stable. Three losses and the gate closes.
-          The stock starts at CR 1 and climbs every second battle. Every victory earns a spin.</p>
       </fieldset>
       <fieldset>
         <legend>Books on the Table</legend>
         <div class="book-pick" id="lob-books"></div>
-        <p class="odds-note">Only the chosen books stock the shelves — and fill the other corner.</p>
       </fieldset>
     </div>
+
     <div class="enter-row">
-      <button type="button" class="gilded" id="lob-enter">Enter the Arena</button>
-      <span class="odds-note">the gate is violet, the seats are full of immortals, and the fee is your evening</span>
+      <span class="odds-note"><i>All manner of strange immortals fill rows of seating inside a gigantic glass viewing sphere floating amid swirling energy. An unfathomable distance away, two incredible beings composed of stars and crackling magic are locked in the throes of a cosmos-shaking battle while the audience shouts and cheers. A single gate filled with violet light exits the orb.</i></span>
     </div>
+    <button type="button" class="gilded" id="lob-enter">Enter the Arena</button>
     <p class="error-line" id="lob-error"></p>
   </section>
 
-  <!-- ====================== shop ====================== -->
+  <!-- ====================== the shop ====================== -->
   <section class="frame shop" id="fw-shop" hidden>
-    <div class="gilt-title"><span class="flourish">✦</span> The Cross-Trade <span class="flourish">✦</span></div>
-    <div class="shop-grid">
-      <div class="stable-col">
-        <div class="col-title">Your Stable</div>
-        <div class="card-row" id="stable-row"></div>
+    <div class="gilt-title"><span class="flourish">✦</span> Shemeshka's Offerings <span class="flourish">✦</span></div>
+
+    <div class="team-row">
+      <div class="team-col">
+        <div class="col-title">Your Creatures</div>
+        <div class="slot-row" id="stable-row"></div>
         <div class="bank-row" id="bank-row"></div>
       </div>
-      <div class="stock-col">
-        <div class="col-title">Tonight's Stock</div>
-        <div class="card-row" id="stock-row"></div>
-        <div class="itemshelf" id="item-shelf"></div>
-        <div class="shop-actions">
-          <button type="button" id="btn-reroll"></button>
-          <span class="odds-note">❄ freezes a shelf through the reroll</span>
-        </div>
+      <div class="battle-panel">
+        <div class="col-title">The Next Battle</div>
+        <div id="next-battle"></div>
+        <div class="bill" id="the-bill"></div>
+        <button type="button" class="gilded" id="btn-sands">To the Sands ⚔</button>
       </div>
     </div>
-    <div class="lower-row">
-      <div>
-        <div class="col-title">Foresight</div>
-        <div class="fore-strip" id="fore-strip"></div>
+
+    <hr class="hair">
+
+    <div class="offer-row">
+      <div class="offer-creatures">
+        <div class="col-title">Creatures for Sale</div>
+        <div class="slot-row" id="stock-row"></div>
       </div>
-      <div>
-        <div class="col-title">The Bill — tonight's opposition</div>
-        <div class="bill" id="the-bill"></div>
+      <div class="offer-items">
+        <div class="col-title">Equipment</div>
+        <div class="slot-row" id="item-shelf"></div>
       </div>
-      <button type="button" class="gilded to-sands" id="btn-sands">To the Sands ⚔</button>
+    </div>
+
+    <div class="shop-actions">
+      <button type="button" id="btn-reroll"></button>
+      <span class="odds-note">❄ freezes a shelf through the reroll and into the next night</span>
     </div>
     <p class="error-line" id="shop-error"></p>
   </section>
@@ -99,7 +103,7 @@
         <div id="sands-verdict"></div>
         <div class="replay-controls" id="deploy-controls">
           <button type="button" class="gilded" id="btn-gong">Sound the Gong</button>
-          <button type="button" id="btn-back-shop">back to the shop</button>
+          <button type="button" id="btn-back-shop">back to the offerings</button>
         </div>
         <div class="replay-controls" id="replay-controls" hidden>
           <button type="button" id="rp-play">▶</button>
@@ -128,7 +132,7 @@
   <!-- ====================== the Book of Ages ====================== -->
   <section class="frame ages" id="fw-ages">
     <div class="gilt-title"><span class="flourish">✦</span> The Book of Ages <span class="flourish">✦</span></div>
-    <div id="ages-body"><p class="odds-note">No stable has yet left the arena. The page waits.</p></div>
+    <div id="ages-body"><p class="odds-note"><i>The pages wait, unwritten.</i></p></div>
   </section>
 
 </main>
@@ -141,7 +145,7 @@
     <svg id="fw-wheel" viewBox="-110 -118 220 228"></svg>
     <p class="prize-line" id="wheel-prize"></p>
     <button type="button" class="gilded" id="btn-spin">Spin</button>
-    <button type="button" id="btn-wheel-done" hidden>collect &amp; return to the shop</button>
+    <button type="button" id="btn-wheel-done" hidden>collect &amp; return to the offerings</button>
   </div>
 </div>
 

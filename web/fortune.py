@@ -20,7 +20,7 @@ from pydantic import BaseModel
 
 from ravel import content
 from ravel.fortune import (
-    ITEM_PRICE_CP, ITEMS, LIVES_START, REROLL_CP, TEAM_CAP,
+    ITEM_PRICE_CP, ITEMS, LIVES_START, REROLL_CP, SCOUT_CP, TEAM_CAP,
     CatalogEntry, FortuneError, FortuneRun, apply_kit, coins, new_run,
 )
 from ravel.maps import MAPS
@@ -164,13 +164,15 @@ def _state(rid: str, run: FortuneRun) -> dict:
         "lives": run.lives, "lives_max": LIVES_START,
         "purse_cp": run.purse_cp, "purse": coins(run.purse_cp),
         "cap": run.cap(), "books": list(run.books),
-        "team_cap": TEAM_CAP, "reroll_cp": REROLL_CP,
+        "team_cap": TEAM_CAP, "reroll_cp": REROLL_CP, "scout_cp": SCOUT_CP,
+        "scouted": run.scouted,
         "shop": _shop_view(run),
         "stable": _stable_view(run),
         "bank": [{"name": n, "rarity": ITEMS[n].rarity, "blurb": ITEMS[n].blurb}
                  for n in run.bank],
         "foresight": run.foresight(3),
-        "enemy": _enemy_view(run) if run.phase == "shop" else [],
+        "enemy": (_enemy_view(run)
+                  if run.phase == "shop" and run.scouted else []),
         "history": run.history, "years": years,
         "handle": HANDLES.get(rid, "Anonymous Berk"),
     }
@@ -200,7 +202,8 @@ def meta() -> dict:
         "items": [asdict(i) for i in ITEMS.values()],
         "item_prices": {k: coins(v) for k, v in ITEM_PRICE_CP.items()},
         "team_cap": TEAM_CAP, "lives": LIVES_START,
-        "reroll": coins(REROLL_CP), "maps": sorted(MAPS),
+        "reroll": coins(REROLL_CP), "scout": coins(SCOUT_CP),
+        "maps": sorted(MAPS),
         "wheel": {"outer": {"none": 3, "common": 6, "middle": 1},
                   "middle": {"none": 1, "uncommon": 8, "center": 1},
                   "center": {"rare": 10}},
@@ -241,6 +244,8 @@ def act(rid: str, req: Action) -> dict:
     try:
         if req.action == "reroll":
             run.reroll()
+        elif req.action == "scout":
+            run.scout()
         elif req.action == "buy":
             run.buy(req.slot, train_into=req.target)
         elif req.action == "buy_item":
@@ -285,8 +290,10 @@ def deploy_info(rid: str) -> dict:
         "round": run.round, "map": map_name, "weather": weather,
         "zone": sorted(deployment_zone("A", map_name=map_name)),
         "grid": _grid_payload(enc),
-        "combatants": combs,
-        "enemy": _enemy_view(run),
+        # your side only: the far corner stays dark unless a pit hand was bribed
+        "combatants": [c for c in combs if c["team"] == "A"],
+        "enemy": _enemy_view(run) if run.scouted else [],
+        "scouted": run.scouted,
     }
 
 
