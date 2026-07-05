@@ -755,6 +755,8 @@ async function doSpin() {
       rare: `<strong>The center!</strong> Shemeshka's own ring yields <strong>${esc(p.label)}</strong>.`,
     };
     $("#wheel-prize").innerHTML = lines[res.spin.tier] || esc(p.label);
+    $("#btn-wheel-done").textContent = res.spin.tier === "none"
+      ? "return to the offerings" : "collect & return to the offerings";
     $("#btn-wheel-done").hidden = false;
     renderStatus();
   }, delay + 300);
