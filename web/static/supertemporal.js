@@ -115,8 +115,10 @@ function dealNames() {
 
 async function boot() {
   META = await api("/api/fortune/meta");
+  const hasMM = META.books.some((b) => b.label === "MM");
   $("#lob-books").innerHTML = META.books.map((b) => `
-    <label class="check"><input type="checkbox" value="${esc(b.label)}" checked>
+    <label class="check"><input type="checkbox" value="${esc(b.label)}"
+      ${!hasMM || b.label === "MM" ? "checked" : ""}>
       ${esc(b.label)} <span class="odds-note">(${b.monsters})</span></label>`).join("");
   dealNames();
   $("#btn-reshuffle").onclick = dealNames;
@@ -393,7 +395,8 @@ function renderBattlePanel() {
   const rows = S.foresight.map((f, i) => `
     <tr class="${i === 0 ? "now" : "later"}">
       <td>${i === 0 ? "next" : "battle " + f.round}</td>
-      <td>${esc(f.map || "the open floor")}</td>
+      <td>${esc(f.map || "the open floor")}
+          ${f.boss ? `<span class="boss-mark" title="a single huge monster carries the house's whole purse">boss</span>` : ""}</td>
       <td>${WEATHER_GLYPH[f.weather] || esc(f.weather)}</td>
     </tr>`).join("");
   $("#next-battle").innerHTML = `<table class="fore-table">${rows}</table>`;

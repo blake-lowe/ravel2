@@ -36,7 +36,6 @@ ITEM_SLOTS = 2
 ITEM_CAP = 3                   # items a single monster can carry
 BASE_PRICE_CP = 300            # 3 gp x playtested CR / shop tier (SPEC 18.8.4)
 PRICE_FLOOR_CP = 5             # even a commoner costs pocket change
-OWNED_SHOP_WEIGHT = 0.25       # duplicates are a lucky find (training is rare)
 TRAIN_AC, TRAIN_HP = 1, 1      # per elite level
 ITEM_PRICE_CP = {"common": 200, "uncommon": 400, "rare": 600}
 ENEMY_BUDGET_FRAC = 0.75
@@ -59,6 +58,13 @@ def cr_cap(round_no: int) -> int:
 
 def enemy_size(round_no: int) -> int:
     return min(TEAM_CAP, 2 + (round_no + 1) // 2)
+
+
+def is_boss_round(round_no: int) -> bool:
+    """Every other stock-tier increase is a boss night: the cap rises on rounds
+    3, 5, 7, ... and every second rise (3, 7, 11, ...) sends a single huge
+    monster, XP-matched to the round's whole team budget (SPEC 18.8.9)."""
+    return round_no >= 3 and (round_no - 3) % 4 == 0
 
 
 def _xp_of_cr(cr: float) -> float:
@@ -246,7 +252,7 @@ class FortuneRun:
 
     def foresight(self, k: int = 3) -> list[dict]:
         return [{"round": r, "map": self.round_env(r)[0],
-                 "weather": self.round_env(r)[1]}
+                 "weather": self.round_env(r)[1], "boss": is_boss_round(r)}
                 for r in range(self.round, self.round + k)]
 
     def battle_seed(self, round_no: int) -> int:
@@ -271,12 +277,9 @@ class FortuneRun:
 
     def _weighted_pick(self, rng: RNG, pool: list[CatalogEntry]) -> CatalogEntry:
         cap = self.cap()
-        owned = {m.name for m in self.stable}
         weights = []
         for e in pool:
             w = 1.0 / (1.0 + max(0.0, cap - e.cr))
-            if e.name in owned:
-                w *= OWNED_SHOP_WEIGHT
             weights.append(max(1, int(w * 1000)))
         total = sum(weights)
         roll = rng.randint(1, total)
@@ -462,6 +465,16 @@ class FortuneRun:
 
         def xp(e: CatalogEntry) -> float:
             return e.adjusted_xp if e.adjusted_xp else _xp_of_cr(e.cr)
+
+        if is_boss_round(r):
+            # one huge monster carrying the whole budget — the CR cap does not
+            # apply; the wheel of fortune turns for the house too
+            everyone = [self.catalog[n] for n in sorted(self.catalog)]
+            window = [e for e in everyone
+                      if budget * 0.65 <= xp(e) <= budget * 1.15]
+            if window:
+                return [window[rng.randint(0, len(window) - 1)].name]
+            return [min(everyone, key=lambda e: abs(xp(e) - budget)).name]
 
         for _ in range(size):
             affordable = [e for e in pool if spent + xp(e) <= budget * 1.15]

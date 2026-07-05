@@ -5,7 +5,7 @@ from ravel import content
 from ravel.fortune import (
     COMMON_ITEMS, ITEM_CAP, ITEMS, LIVES_START, RARE_ITEMS, UNCOMMON_ITEMS,
     CatalogEntry, FortuneError, FortuneRun, ShopSlot, StableMember, apply_kit,
-    coins, cr_cap, enemy_size, new_run, price_cp,
+    coins, cr_cap, enemy_size, is_boss_round, new_run, price_cp,
 )
 from ravel.sim import build_encounter, deployment_zone
 
@@ -249,12 +249,29 @@ def test_enemy_size_ramp():
 def test_enemy_generation_properties():
     for seed in (1, 5, 11, 23):
         run = new_run(seed, BOOKS, CATALOG)
-        for r in (1, 2, 3, 5):
+        for r in (1, 2, 4, 5):                             # non-boss rounds
             team = run.enemy_team(r)
             assert team == run.enemy_team(r)               # pure in (seed, round)
             assert 1 <= len(team) <= enemy_size(r)
             for name in team:
                 assert run.catalog[name].cr <= cr_cap(r)
+
+
+def test_boss_rounds_field_a_single_xp_matched_monster():
+    assert [r for r in range(1, 13) if is_boss_round(r)] == [3, 7, 11]
+    assert not is_boss_round(1) and not is_boss_round(5)
+    big = full_catalog(10.0)
+    for seed in (2, 9, 31):
+        run = FortuneRun(seed=seed, books=BOOKS, catalog=big)
+        for r in (3, 7):
+            team = run.enemy_team(r)
+            assert len(team) == 1                       # one huge monster
+            assert team == run.enemy_team(r)            # still deterministic
+            assert big[team[0]].cr > cr_cap(r), "the cap does not bind the boss"
+    # a shallow catalog falls back to the nearest thing it has to the budget
+    run = FortuneRun(seed=4, books=BOOKS, catalog=CATALOG)   # tops out at CR 3
+    boss = run.enemy_team(7)
+    assert len(boss) == 1 and CATALOG[boss[0]].cr == 3.0
 
 
 def test_foresight_is_stable_and_previewable():

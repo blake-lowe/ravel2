@@ -175,6 +175,11 @@ body.supertemporal {
 .fw .fore-table tr.now td:first-child { font-variant: small-caps; letter-spacing: 1px;
                                         color: var(--gilt); font-size: 12px; }
 .fw .fore-table tr.later td { color: var(--ink-hair); font-weight: normal; }
+.fw .boss-mark { display: inline-block; margin-left: 5px; padding: 0 6px;
+                 border: 1.5px solid var(--lacquer); color: var(--lacquer);
+                 font-variant: small-caps; letter-spacing: 2px; font-size: 10px;
+                 font-weight: bold; border-radius: 2px; vertical-align: 1px; }
+.fw tr.later .boss-mark { opacity: .55; }
 .fw .bill { border: 1px dashed var(--ink-hair); padding: 7px 9px; min-height: 40px; }
 .fw .bill .bill-chip { display: inline-block; border: 1px solid var(--ink);
                        padding: 1px 7px; margin: 2px 3px 2px 0; font-size: 12px;
