@@ -114,6 +114,7 @@ body.supertemporal {
                    max-height: 27px; overflow: hidden; }
 .fw .slot .stars { color: var(--gilt); letter-spacing: 1px; font-size: 11px; }
 .fw .slot .mmeta { color: var(--ink-faint); font-size: 10px; line-height: 1.25; }
+.fw .mmeta .wing { vertical-align: -1px; }
 .fw .slot .price { font-family: var(--mono); font-size: 10.5px; margin-top: auto; }
 .fw .slot .btnrow { display: flex; gap: 3px; justify-content: center; width: 100%; }
 .fw .slot .btnrow button { font-size: 10px; padding: 2px 6px; letter-spacing: 0;

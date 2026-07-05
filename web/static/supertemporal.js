@@ -292,10 +292,17 @@ function alignStr(a) {
   return a.split(/\s+/).map((t) => ALIGN_WORD[t] || t.toLowerCase()).join(" ");
 }
 
+// A small inked wing (inline SVG so it renders the same on every platform).
+const WING_SVG = `<svg class="wing" viewBox="0 0 20 12" width="13" height="8"
+  aria-label="flies" role="img"><path fill="currentColor"
+  d="M19,1 Q11,0 5,4 Q2,6 1,11 Q6,9 9,9 Q7,9 6,9.4 Q10,6.5 13,6 Q11,6 10,6.2
+     Q14,3.5 19,1 Z"/></svg>`;
+
 function speedStr(s) {
   const best = Math.max(s.speed || 0, s.fly || 0, s.swim || 0);
-  const wing = s.fly && s.fly >= (s.speed || 0) ? "✈" : s.swim && s.swim >= (s.speed || 0) ? "≈" : "";
-  return `${best} ft${wing ? " " + wing : ""}`;
+  const glyph = s.fly && s.fly >= (s.speed || 0) ? WING_SVG
+    : s.swim && s.swim >= (s.speed || 0) ? "≈" : "";
+  return `${best} ft${glyph ? " " + glyph : ""}`;
 }
 
 function renderStock() {
