@@ -806,10 +806,6 @@ function aeonCard(m) {
       <div class="mmeta">${esc(m.type || "")}${m.alignment ? " · " + esc(alignStr(m.alignment)) : ""}</div>
       <div class="mmeta">${m.hp} hp · AC ${m.ac} · ${speedStr(m)}</div>`}
     <div class="tags">${items}</div>
-    <div class="btnrow bottom">
-      <a class="btnlink" href="/bestiary#${encodeURIComponent(m.name)}" target="_blank"
-         title="the full chant, in the Bestiary">View in Bestiary</a>
-    </div>
   </div>`;
 }
 

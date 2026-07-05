@@ -271,7 +271,8 @@ body.supertemporal {
                  padding: 2px 8px 2px 11px; }
 .fw .aeon-who { line-height: 1.35; font-size: 13px; }
 .fw .aeon-stable { flex: 1; display: flex; gap: 8px; flex-wrap: wrap; }
-.fw .aeon-stable .slot { box-shadow: 2px 2px 0 rgba(33,29,24,.15); }
+.fw .aeon-stable .slot { box-shadow: 2px 2px 0 rgba(33,29,24,.15);
+                         min-height: 0; }   /* no button rows: let them sit low */
 .fw .slot.aeon-standby { border-style: dashed; border-color: var(--silver); }
 .fw .aeon-wins { flex: none; text-align: center; padding: 0 8px; }
 .fw .aeon-wins .lbl { display: block; font-variant: small-caps; letter-spacing: 2px;
