@@ -789,7 +789,7 @@ function renderOver() {
   loadAges();
 }
 
-// One mini card per creature as it stood at the gate — art, stars, kit and all.
+// The full card, exactly as the shop shows it, for a creature at the gate.
 function aeonCard(m) {
   const stars = m.elite ? ` <span class="stars">${"★".repeat(m.elite)}</span>` : "";
   const legacy = m.ac === undefined;      // rows carved before the card era
@@ -797,12 +797,19 @@ function aeonCard(m) {
     ? `<span class="tag">${esc(it)}</span>`
     : `<span class="tag" title="${esc(it.effect || "")} — ${esc(it.blurb || "")}">${esc(it.name)}</span>`
   ).join("");
-  return `<div class="aeon-card ${m.standby ? "standby" : ""}" data-name="${esc(m.name)}">
+  return `<div class="slot ${m.standby ? "aeon-standby" : ""}" data-name="${esc(m.name)}">
     ${m.standby ? `<span class="slot-tag">standby</span>` : ""}
     ${tokenImg(m.art, m.name)}
     <div class="mname">${esc(m.name)}${stars}</div>
-    ${legacy ? "" : `<div class="mmeta">CR ${crStr(m.cr)} · ${m.hp} hp · AC ${m.ac}</div>`}
+    ${legacy ? "" : `
+      <div class="mmeta">CR ${crStr(m.cr)} · ${esc(m.size)}</div>
+      <div class="mmeta">${esc(m.type || "")}${m.alignment ? " · " + esc(alignStr(m.alignment)) : ""}</div>
+      <div class="mmeta">${m.hp} hp · AC ${m.ac} · ${speedStr(m)}</div>`}
     <div class="tags">${items}</div>
+    <div class="btnrow bottom">
+      <a class="btnlink" href="/bestiary#${encodeURIComponent(m.name)}" target="_blank"
+         title="the full chant, in the Bestiary">View in Bestiary</a>
+    </div>
   </div>`;
 }
 
@@ -810,21 +817,17 @@ async function loadAges() {
   let rows;
   try { rows = await api("/api/fortune/leaderboard"); } catch (e) { return; }
   if (!rows.length) return;
-  const figure = (lbl, val) =>
-    `<span class="as"><span class="lbl">${lbl}</span><span class="val">${val}</span></span>`;
   $("#ages-body").innerHTML = rows.map((r, i) => `
     <div class="aeon-entry ${i === 0 ? "first" : ""}">
-      <div class="aeon-head">
+      <div class="aeon-id">
         <span class="aeon-mark">${esc(r.initials || "—")}</span>
         <div class="aeon-who"><b>${esc(r.handle)}</b><br>
           <span class="odds-note">${r.created ? new Date(r.created).toLocaleDateString() : ""}
-            · seed ${r.seed} · ${r.books.map(esc).join(" ")}</span></div>
-        <div class="aeon-stats">
-          ${figure("wins", r.wins)}${figure("battles", r.rounds)}
-        </div>
+            · seed ${r.seed}<br>${r.books.map(esc).join(" ")}</span></div>
       </div>
       <div class="aeon-stable">${(r.stable || []).map(aeonCard).join("")
         || `<span class="odds-note">the stalls stood empty</span>`}</div>
+      <div class="aeon-wins"><span class="lbl">wins</span><span class="val">${r.wins}</span></div>
     </div>`).join("");
 }
 
