@@ -1,0 +1,117 @@
+{
+  "name": "Vampire Spawn",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 5,
+  "alignment": "neutral evil",
+  "ac": 15,
+  "hp": 82,
+  "hit_dice": "11d8+33",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 16,
+    "CON": 16,
+    "INT": 11,
+    "WIS": 10,
+    "CHA": 12
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "DEX",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "necrotic"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "resist_nonmagical_physical": true,
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 10,
+    "stopped_by": [
+      "radiant"
+    ]
+  },
+  "traits": [
+    {
+      "name": "Regeneration (conditions)",
+      "text": "[APPROXIMATED as stopped_by radiant] Regains 10 hp at the start of its turn if it has at least 1 hp and isn't in sunlight or running water. The engine encodes the radiant/holy-water shutoff; the sunlight and running-water suppression are not modeled."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "[APPROXIMATED as climb speed] Can climb difficult surfaces, including upside down on ceilings, without an ability check."
+    },
+    {
+      "name": "Claws grapple",
+      "text": "[UNSUPPORTED] Instead of dealing damage, the Claws attack can grapple a Medium or smaller target (escape DC 13)."
+    },
+    {
+      "name": "Vampire Weaknesses",
+      "text": "[UNSUPPORTED] Forbiddance (can't enter a residence uninvited), Harmed by Running Water (20 acid damage if it ends its turn in running water), Stake to the Heart (paralyzed if a stake is driven through its heart while incapacitated in its resting place), Sunlight Hypersensitivity (20 radiant damage when starting its turn in sunlight; disadvantage on attacks and checks while in sunlight)."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d4+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5,
+      "reduces_max_hp": true
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claws",
+      "count": 1
+    },
+    {
+      "name": "Bite",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "strategy": "Open with Claws to soften a target, then sink the Bite for necrotic max-HP drain and self-healing, leaning on regeneration to outlast non-radiant attackers.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

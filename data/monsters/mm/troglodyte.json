@@ -1,0 +1,101 @@
+{
+  "name": "Troglodyte",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "C E",
+  "ac": 11,
+  "hp": 13,
+  "hit_dice": "2d8+4",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 10,
+    "CON": 14,
+    "INT": 6,
+    "WIS": 10,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 2
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Troglodyte"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Chameleon Skin",
+      "text": "The troglodyte has advantage on Dexterity (Stealth) checks made to hide."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Stench",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

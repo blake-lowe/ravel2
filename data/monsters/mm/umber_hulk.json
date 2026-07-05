@@ -1,0 +1,98 @@
+{
+  "name": "Umber Hulk",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 93,
+  "hit_dice": "11d10+33",
+  "speeds": {
+    "walk": 30,
+    "burrow": 20
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 13,
+    "CON": 16,
+    "INT": 9,
+    "WIS": 10,
+    "CHA": 10
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "tremorsense": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Umber Hulk"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Tunneler",
+      "text": "The umber hulk can burrow through solid rock at half its burrowing speed and leaves a 5 foot-wide, 8-foot-high tunnel in its wake."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d8+5",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Mandibles",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    },
+    {
+      "name": "Mandibles",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Confusing Gaze",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 15,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CHA",
+        "dc": 15,
+        "on_fail_condition": "incapacitated"
+      }
+    }
+  ],
+  "imported": "5etools-mm"
+}

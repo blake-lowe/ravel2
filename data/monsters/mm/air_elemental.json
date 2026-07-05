@@ -1,0 +1,112 @@
+{
+  "name": "Air Elemental",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 5,
+  "alignment": "neutral",
+  "ac": 15,
+  "hp": 90,
+  "hit_dice": "12d10+24",
+  "speeds": {
+    "walk": 0,
+    "fly": 90,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 20,
+    "CON": 14,
+    "INT": 6,
+    "WIS": 10,
+    "CHA": 6
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Auran"
+  ],
+  "damage_resistances": [
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist_nonmagical_physical": true,
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "traits": [
+    {
+      "name": "Air Form",
+      "text": "[UNSUPPORTED] The elemental can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Whirlwind (flung)",
+      "text": "[APPROXIMATED as area prone rider] On a failed Whirlwind save the target is also flung up to 20 feet away from the elemental in a random direction (the knock-prone part is encoded; the forced movement is not)."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Whirlwind",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "3d8+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "4-6",
+      "rider": {
+        "ability": "DEX",
+        "dc": 13,
+        "on_fail_condition": "prone",
+        "duration": 0
+      }
+    }
+  ],
+  "strategy": "Hover above the melee, open with Whirlwind to scatter and prone a cluster of foes, then pick off knocked-down targets with twin slams.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

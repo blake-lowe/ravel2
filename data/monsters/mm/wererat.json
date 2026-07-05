@@ -1,0 +1,95 @@
+{
+  "name": "Wererat",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "L E",
+  "ac": 12,
+  "hp": 33,
+  "hit_dice": "6d8+6",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 15,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 10,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Common (can't speak in rat form)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "text": "The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+    },
+    {
+      "name": "Keen Smell",
+      "text": "The wererat has advantage on Wisdom (Perception) checks that rely on smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite (Rat or Hybrid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortsword (Humanoid or Hybrid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Hand Crossbow (Humanoid or Hybrid Form Only)",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

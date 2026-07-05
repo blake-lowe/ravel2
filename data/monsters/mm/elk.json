@@ -1,0 +1,67 @@
+{
+  "name": "Elk",
+  "type": "beast",
+  "size": "Large",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 10,
+  "hp": 13,
+  "hit_dice": "2d10+2",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 10,
+    "CON": 12,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Ram",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d4+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 20,
+    "dc": 13,
+    "bonus_attack": "Ram"
+  }
+}

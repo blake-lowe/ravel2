@@ -1,0 +1,56 @@
+{
+  "name": "Giant Fire Beetle",
+  "type": "beast",
+  "size": "Small",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 4,
+  "hit_dice": "1d6+1",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 10,
+    "CON": 12,
+    "INT": 1,
+    "WIS": 7,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 8
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Illumination",
+      "text": "The beetle sheds bright light in a 10-foot radius and dim light for an additional 10 ft.."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 1,
+      "damage": [
+        {
+          "dice": "1d6-1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

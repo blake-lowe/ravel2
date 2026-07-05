@@ -1,0 +1,58 @@
+{
+  "name": "Weasel",
+  "type": "beast",
+  "size": "Tiny",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 1,
+  "hit_dice": "1d4-1",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 3,
+    "DEX": 16,
+    "CON": 8,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 5
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "text": "The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Kenku",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "C N",
+  "ac": 13,
+  "hp": 13,
+  "hit_dice": "3d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 16,
+    "CON": 10,
+    "INT": 11,
+    "WIS": 10,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 4,
+    "Perception": 2,
+    "Stealth": 5
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "understands Auran and Common but speaks only through the use of its Mimicry trait"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Ambusher",
+      "text": "In the first round of a combat, the kenku has advantage on attack rolls against any creature it surprised."
+    },
+    {
+      "name": "Mimicry",
+      "text": "The kenku can mimic any sounds it has heard, including voices. A creature that hears the sounds can tell they are imitations with a successful 14 Wisdom (Insight) check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortbow",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        80,
+        320
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

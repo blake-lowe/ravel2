@@ -1,0 +1,74 @@
+{
+  "name": "Gold Dragon Wyrmling",
+  "type": "dragon",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "L G",
+  "ac": 17,
+  "hp": 60,
+  "hit_dice": "8d8+24",
+  "speeds": {
+    "walk": 30,
+    "fly": 60,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 14,
+    "CON": 17,
+    "INT": 14,
+    "WIS": 11,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 4
+  },
+  "senses": {
+    "blindsight": 10,
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Breath Weapons {@recharge 5}",
+      "text": "The dragon uses one of the following breath weapons. Fire Breath: Weakening Breath:"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d10+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

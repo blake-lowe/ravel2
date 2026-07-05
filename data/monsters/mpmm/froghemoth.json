@@ -1,0 +1,109 @@
+{
+  "name": "Froghemoth",
+  "type": "monstrosity",
+  "size": "Huge",
+  "cr": 10.0,
+  "alignment": "U",
+  "ac": 14,
+  "hp": 161,
+  "hit_dice": "14d12+70",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 13,
+    "CON": 20,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 5
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 9,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 19
+  },
+  "languages": [],
+  "damage_resistances": [
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Tongue",
+      "text": "The froghemoth targets one Medium or smaller creature that it can see within 20 feet of it. The target must make a 18 Strength saving throw. On a failed save, the target is pulled into an unoccupied space within 5 feet of the froghemoth."
+    },
+    {
+      "name": "Shock Susceptibility",
+      "text": "If the froghemoth takes lightning damage, it suffers two effects until the end of its next turn: its speed is halved, and it has disadvantage on Dexterity saving throws."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "3d10+6",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 20,
+        "on_fail_condition": "blinded"
+      }
+    },
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "3d8+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 20,
+      "rider": {
+        "ability": "STR",
+        "dc": 16,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Tentacle",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

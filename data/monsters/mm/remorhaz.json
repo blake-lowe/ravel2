@@ -1,0 +1,94 @@
+{
+  "name": "Remorhaz",
+  "type": "monstrosity",
+  "size": "Huge",
+  "cr": 11.0,
+  "alignment": "U",
+  "ac": 17,
+  "hp": 195,
+  "hit_dice": "17d12+85",
+  "speeds": {
+    "walk": 30,
+    "burrow": 20
+  },
+  "abilities": {
+    "STR": 24,
+    "DEX": 13,
+    "CON": 21,
+    "INT": 4,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold",
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Heated Body",
+      "text": "A creature that touches the remorhaz or hits it with a melee attack while within 5 feet of it takes 10 (3d6) fire damage."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "6d10+7",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 17,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Swallow",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "6d6",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 15,
+        "on_fail_condition": "blinded",
+        "escalates_to": "prone"
+      }
+    }
+  ],
+  "imported": "5etools-mm"
+}

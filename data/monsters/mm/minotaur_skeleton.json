@@ -1,0 +1,76 @@
+{
+  "name": "Minotaur Skeleton",
+  "type": "undead",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "L E",
+  "ac": 12,
+  "hp": 67,
+  "hit_dice": "9d10+18",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 11,
+    "CON": 15,
+    "INT": 6,
+    "WIS": 8,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "bludgeoning"
+  ],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greataxe",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d12+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 10,
+    "dc": 14,
+    "bonus_attack": "Gore"
+  }
+}

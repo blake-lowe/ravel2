@@ -1,0 +1,124 @@
+{
+  "name": "Stone Giant Dreamwalker",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 10.0,
+  "alignment": "C N",
+  "ac": 18,
+  "hp": 161,
+  "hit_dice": "14d12+70",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 14,
+    "CON": 21,
+    "INT": 10,
+    "WIS": 8,
+    "CHA": 12
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Athletics": 14,
+    "Perception": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greatclub",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "4d8+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "3d10+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        240
+      ],
+      "rider": {
+        "ability": "STR",
+        "dc": 17,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatclub",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Petrifying Touch",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 17,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 17,
+        "on_fail_condition": "restrained",
+        "escalates_to": "petrified"
+      }
+    },
+    {
+      "name": "Dreamwalker's Charm",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CHA",
+        "dc": 13,
+        "on_fail_condition": "incapacitated",
+        "escalates_to": "charmed"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

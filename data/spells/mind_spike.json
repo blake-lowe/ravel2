@@ -1,0 +1,30 @@
+{
+  "name": "Mind Spike",
+  "level": 2,
+  "school": "divination",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 100,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "damage": [
+        {
+          "dice": "3d8",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

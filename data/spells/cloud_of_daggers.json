@@ -1,0 +1,36 @@
+{
+  "name": "Cloud of Daggers",
+  "level": 2,
+  "school": "conjuration",
+  "range": 60,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 5,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "auto_damage",
+      "damage": [
+        {
+          "dice": "4d4",
+          "type": "slashing"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "2d4"
+  },
+  "_approx": "one-shot slice; the lingering per-turn cube is dropped.",
+  "imported": "5etools"
+}

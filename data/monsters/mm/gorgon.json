@@ -1,0 +1,90 @@
+{
+  "name": "Gorgon",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "U",
+  "ac": 19,
+  "hp": 114,
+  "hit_dice": "12d10+48",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 11,
+    "CON": 18,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "petrified"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d12+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d10+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Petrifying Breath",
+      "shape": "cone",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "on_fail_condition": "restrained",
+        "escalates_to": "petrified"
+      }
+    }
+  ],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 20,
+    "dc": 16,
+    "bonus_attack": "Hooves"
+  }
+}

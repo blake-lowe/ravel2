@@ -1,0 +1,105 @@
+{
+  "name": "Duergar Mind Master",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "A",
+  "ac": 14,
+  "hp": 39,
+  "hit_dice": "6d8+12",
+  "speeds": {
+    "walk": 25
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 17,
+    "CON": 14,
+    "INT": 15,
+    "WIS": 10,
+    "CHA": 12
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 2,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "truesight": 30,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [
+    "poison"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Invisibility {@recharge 4}",
+      "text": "The duergar magically turns invisible for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its concentration is broken (as if concentration on a spell). Any equipment the duergar wears or carries is invisible with it."
+    },
+    {
+      "name": "Reduce (Recharges after a Short or Long Rest) (bonus)",
+      "text": "For 1 minute, the duergar magically decreases in size, along with anything it is wearing or carrying. While reduced, the duergar is Tiny, reduces its weapon damage to 1, and makes attack rolls, ability checks, and saving throws with disadvantage if they use Strength. It gains a +5 bonus to all Dexterity (Stealth) checks and a +5 bonus to its AC. It can also take a bonus action on each of its turns to take the Hide action."
+    },
+    {
+      "name": "Duergar Resilience",
+      "text": "The duergar has advantage on saving throws against spells and the charmed, paralyzed, and poisoned conditions."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Mind-Poison Dagger",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Mind Mastery",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "INT",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "INT",
+        "dc": 12,
+        "on_fail_condition": "charmed"
+      },
+      "max_targets": 1
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "save_advantages": [
+    "charmed",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

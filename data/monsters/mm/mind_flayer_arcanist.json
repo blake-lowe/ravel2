@@ -1,0 +1,135 @@
+{
+  "name": "Mind Flayer Arcanist",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 8.0,
+  "alignment": "L E",
+  "ac": 15,
+  "hp": 71,
+  "hit_dice": "13d8+13",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 12,
+    "CON": 12,
+    "INT": 19,
+    "WIS": 17,
+    "CHA": 17
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 7,
+    "Deception": 6,
+    "Insight": 6,
+    "Perception": 6,
+    "Persuasion": 6,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Deep Speech",
+    "Undercommon",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The mind flayer has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d10+4",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "INT",
+        "dc": 15,
+        "on_fail_condition": "grappled"
+      }
+    },
+    {
+      "name": "Extract Brain",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "10d10",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Mind Blast",
+      "shape": "cone",
+      "size": 60,
+      "origin_range": 0,
+      "save": "INT",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "4d8+4",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "INT",
+        "dc": 15,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 15,
+    "attack_bonus": 7,
+    "caster_level": 10,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2
+    },
+    "spells": [
+      "Blur",
+      "Confusion",
+      "Invisibility",
+      "Lightning Bolt",
+      "Shield",
+      "Shocking Grasp",
+      "Sleep"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "name": "Purple Worm",
+  "type": "monstrosity",
+  "size": "Gargantuan",
+  "cr": 15.0,
+  "alignment": "U",
+  "ac": 18,
+  "hp": 247,
+  "hit_dice": "15d20+90",
+  "speeds": {
+    "walk": 50,
+    "burrow": 30
+  },
+  "abilities": {
+    "STR": 28,
+    "DEX": 7,
+    "CON": 22,
+    "INT": 1,
+    "WIS": 8,
+    "CHA": 4
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "blindsight": 30,
+    "tremorsense": 60,
+    "passive_perception": 9
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Tunneler",
+      "text": "The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "3d8+9",
+          "type": "piercing"
+        },
+        {
+          "dice": "6d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "DEX",
+        "dc": 19,
+        "on_fail_condition": "blinded"
+      }
+    },
+    {
+      "name": "Tail Stinger",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "3d6+9",
+          "type": "piercing"
+        },
+        {
+          "dice": "12d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

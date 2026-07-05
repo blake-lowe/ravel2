@@ -1,0 +1,67 @@
+{
+  "name": "Spider",
+  "type": "beast",
+  "size": "Tiny",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 1,
+  "hit_dice": "1d4-1",
+  "speeds": {
+    "walk": 20,
+    "climb": 20
+  },
+  "abilities": {
+    "STR": 2,
+    "DEX": 14,
+    "CON": 8,
+    "INT": 1,
+    "WIS": 10,
+    "CHA": 2
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 30,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "text": "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    },
+    {
+      "name": "Web Sense",
+      "text": "While in contact with a web, the spider knows the exact location of any other creature in contact with the same web."
+    },
+    {
+      "name": "Web Walker",
+      "text": "The spider ignores movement restrictions caused by webbing."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

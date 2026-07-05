@@ -1,0 +1,64 @@
+{
+  "name": "Awakened Shrub",
+  "type": "plant",
+  "size": "Small",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 9,
+  "hp": 10,
+  "hit_dice": "3d6",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 3,
+    "DEX": 8,
+    "CON": 11,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "one language known by its creator"
+  ],
+  "damage_resistances": [
+    "piercing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "While the shrub remains motionless, it is indistinguishable from a normal shrub."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Rake",
+      "kind": "melee",
+      "attack_bonus": 1,
+      "damage": [
+        {
+          "dice": "1d4-1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

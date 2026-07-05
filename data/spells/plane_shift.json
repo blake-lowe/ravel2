@@ -1,0 +1,24 @@
+{
+  "name": "Plane Shift",
+  "level": 7,
+  "school": "conjuration",
+  "range": 5,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "banish",
+      "ability": "CHA"
+    }
+  ],
+  "_approx": "offensive use only: touched target CHA save or is shunted off the plane (banish; no return in an arena bout).",
+  "imported": "5etools"
+}

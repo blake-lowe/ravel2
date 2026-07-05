@@ -1,0 +1,65 @@
+{
+  "name": "Quetzalcoatlus",
+  "type": "beast",
+  "size": "Huge",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 30,
+  "hit_dice": "4d12+4",
+  "speeds": {
+    "walk": 10,
+    "fly": 80
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 13,
+    "CON": 13,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Flyby",
+      "text": "The quetzalcoatlus doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "3d6+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "flyby"
+  ],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Bless",
+  "level": 1,
+  "school": "enchantment",
+  "range": 30,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "multi",
+    "count": 3,
+    "affects": "allies"
+  },
+  "effects": [
+    {
+      "kind": "modifier",
+      "modifier": {
+        "attack_bonus": "1d4",
+        "save_bonus": "1d4"
+      }
+    }
+  ]
+}

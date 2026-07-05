@@ -1,0 +1,25 @@
+{
+  "name": "Charm Person",
+  "level": 1,
+  "school": "enchantment",
+  "range": 30,
+  "components": [
+    "V",
+    "S"
+  ],
+  "duration_rounds": 100,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "charmed",
+      "save_ends": false
+    }
+  ],
+  "_approx": "RAW advantage-if-fighting and 1-hour no-repeat simplified to a lasting charm (charmed = can't attack the caster).",
+  "imported": "5etools"
+}

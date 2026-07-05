@@ -1,0 +1,81 @@
+{
+  "name": "Swarm of Bats",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 22,
+  "hit_dice": "5d8",
+  "speeds": {
+    "walk": 0,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 5,
+    "DEX": 15,
+    "CON": 10,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Echolocation",
+      "text": "The swarm can't use its blindsight while deafened."
+    },
+    {
+      "name": "Keen Hearing",
+      "text": "The swarm has advantage on Wisdom (Perception) checks that rely on hearing."
+    },
+    {
+      "name": "Swarm",
+      "text": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny bat. The swarm can't regain hit points or gain temporary hit points."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bites",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "swarm"
+  ],
+  "imported": "5etools-mm"
+}

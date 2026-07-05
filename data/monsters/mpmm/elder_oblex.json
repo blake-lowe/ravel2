@@ -1,0 +1,128 @@
+{
+  "name": "Elder Oblex",
+  "type": "ooze",
+  "size": "Huge",
+  "cr": 10.0,
+  "alignment": "L E",
+  "ac": 16,
+  "hp": 115,
+  "hit_dice": "10d12+50",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 16,
+    "CON": 21,
+    "INT": 22,
+    "WIS": 13,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 10,
+    "Deception": 8,
+    "History": 10,
+    "Nature": 10,
+    "Perception": 5,
+    "Religion": 10
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Common plus six more languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Sulfurous Impersonation (bonus)",
+      "text": "The oblex extrudes a piece of itself that assumes the appearance of one Medium or smaller creature whose memories it has stolen. This simulacrum appears, feels, and sounds exactly like the creature it impersonates, though it smells faintly of sulfur. The oblex can impersonate 2d6 + 1 different creatures, each one tethered to its body by a strand of slime that can extend up to 120 feet away. The simulacrum is an extension of the oblex, meaning that the oblex occupies its space and the simulacrum's space simultaneously. The tether is immune to damage, but it is severed if there is no opening at least 1 inch wide between the oblex and the simulacrum. The simulacrum disappears if the tether is severed."
+    },
+    {
+      "name": "Amorphous",
+      "text": "The oblex can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Aversion to Fire",
+      "text": "If the oblex takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The oblex doesn't require sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d6+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Pseudopod",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Eat Memories",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "8d10",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 18,
+        "on_fail_condition": "unconscious"
+      },
+      "max_targets": 1
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 18,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Hypnotic Pattern": 3
+    }
+  }
+}

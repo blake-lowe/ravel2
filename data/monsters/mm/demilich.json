@@ -1,0 +1,119 @@
+{
+  "name": "Demilich",
+  "type": "undead",
+  "size": "Tiny",
+  "cr": 18.0,
+  "alignment": "N E",
+  "ac": 20,
+  "hp": 80,
+  "hit_dice": "32d4",
+  "speeds": {
+    "walk": 0,
+    "fly": 30,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 1,
+    "DEX": 20,
+    "CON": 10,
+    "INT": 20,
+    "WIS": 17,
+    "CHA": 20
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damage_immunities": [
+    "necrotic",
+    "poison",
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Avoidance",
+      "text": "If the demilich is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the demilich fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Turn Immunity",
+      "text": "The demilich is immune to effects that turn undead."
+    }
+  ],
+  "actions": [],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Howl",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 15,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 15,
+        "zero_hp_on_fail": true
+      }
+    },
+    {
+      "name": "Life Drain",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 19,
+      "damage": [
+        {
+          "dice": "6d6",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null,
+      "max_targets": 3,
+      "heal_owner": true
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": ""
+  }
+}

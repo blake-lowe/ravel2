@@ -1,0 +1,32 @@
+{
+  "name": "Circle of Death",
+  "level": 6,
+  "school": "necromancy",
+  "range": 150,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 60,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "damage": [
+        {
+          "dice": "8d6",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

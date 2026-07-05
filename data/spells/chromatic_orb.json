@@ -1,0 +1,32 @@
+{
+  "name": "Chromatic Orb",
+  "level": 1,
+  "school": "evocation",
+  "range": 90,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "3d8",
+          "type": "fire"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d8"
+  },
+  "_approx": "caster-chosen damage type flattened to fire.",
+  "imported": "5etools"
+}

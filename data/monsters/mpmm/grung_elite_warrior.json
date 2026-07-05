@@ -1,0 +1,120 @@
+{
+  "name": "Grung Elite Warrior",
+  "type": "humanoid",
+  "size": "Small",
+  "cr": 2.0,
+  "alignment": "A",
+  "ac": 13,
+  "hp": 49,
+  "hit_dice": "9d6+18",
+  "speeds": {
+    "walk": 25,
+    "climb": 25
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 16,
+    "CON": 15,
+    "INT": 10,
+    "WIS": 11,
+    "CHA": 12
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX"
+  ],
+  "skills": {
+    "Athletics": 2,
+    "Perception": 2,
+    "Stealth": 5,
+    "Survival": 2
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "Grung"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Poisonous Skin",
+      "text": "Any creature that grapples the grung or otherwise comes into direct contact with the grung's skin must succeed on a 12 Constitution saving throw or become poisoned for 1 minute. A poisoned creature no longer in direct contact with the grung can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+    },
+    {
+      "name": "Standing Leap",
+      "text": "The grung's long jump is up to 25 feet and its high jump is up to 15 feet, with or without a running start."
+    },
+    {
+      "name": "Water Dependency",
+      "text": "If the grung isn't immersed in water for at least 1 hour during a day, it suffers 1 level of exhaustion at the end of that day. The grung can recover from this exhaustion only through magic or by immersing itself in water for at least 1 hour."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d4",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortbow",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d4",
+          "type": "poison"
+        }
+      ],
+      "range": [
+        80,
+        320
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Mesmerizing Chirr",
+      "shape": "sphere",
+      "size": 15,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 12,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

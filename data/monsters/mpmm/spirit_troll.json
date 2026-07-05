@@ -1,0 +1,108 @@
+{
+  "name": "Spirit Troll",
+  "type": "giant",
+  "size": "Large",
+  "cr": 11.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 130,
+  "hit_dice": "20d10+20",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 1,
+    "DEX": 17,
+    "CON": 13,
+    "INT": 8,
+    "WIS": 9,
+    "CHA": 16
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Regeneration",
+      "text": "The troll regains 10 hit points at the start of each of its turns. If the troll takes psychic or force damage, this trait doesn't function at the start of the troll's next turn. The troll dies only if it starts its turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "3d10+3",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "stunned"
+      }
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "3d10+3",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 10,
+    "stopped_by": [
+      "force",
+      "psychic"
+    ]
+  },
+  "imported": "5etools-mpmm",
+  "incorporeal": true
+}

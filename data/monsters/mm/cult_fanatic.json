@@ -1,0 +1,84 @@
+{
+  "name": "Cult Fanatic",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "L NX C NY E",
+  "ac": 13,
+  "hp": 33,
+  "hit_dice": "6d8+6",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 13,
+    "CHA": 14
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 4,
+    "Persuasion": 4,
+    "Religion": 2
+  },
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Dark Devotion",
+      "text": "The fanatic has advantage on saving throws against being charmed or frightened."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 11,
+    "attack_bonus": 3,
+    "caster_level": 4,
+    "slots": {
+      "1": 4,
+      "2": 3
+    },
+    "spells": [
+      "Command",
+      "Hold Person",
+      "Inflict Wounds",
+      "Light",
+      "Sacred Flame",
+      "Shield of Faith",
+      "Spiritual Weapon"
+    ]
+  },
+  "save_advantages": [
+    "charmed",
+    "frightened"
+  ]
+}

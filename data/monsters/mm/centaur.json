@@ -1,0 +1,107 @@
+{
+  "name": "Centaur",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 2,
+  "alignment": "neutral good",
+  "ac": 12,
+  "hp": 45,
+  "hit_dice": "6d10+12",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 16,
+    "INT": 7,
+    "WIS": 13,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 6,
+    "Perception": 3,
+    "Survival": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "Elvish",
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Pike",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Pike",
+      "count": 1
+    },
+    {
+      "name": "Hooves",
+      "count": 1
+    }
+  ],
+  "bonus_damage": [
+    {
+      "name": "Charge",
+      "when": "charged",
+      "damage": {
+        "dice": "3d6",
+        "type": "piercing"
+      },
+      "once_per_turn": true,
+      "threshold": 30,
+      "kind": "melee"
+    }
+  ],
+  "strategy": "Charge in from at least 30 ft for extra pike damage, or soften foes with the longbow before closing.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

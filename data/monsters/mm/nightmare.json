@@ -1,0 +1,72 @@
+{
+  "name": "Nightmare",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 68,
+  "hit_dice": "8d10+24",
+  "speeds": {
+    "walk": 60,
+    "fly": 90
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 15,
+    "CON": 16,
+    "INT": 10,
+    "WIS": 13,
+    "CHA": 15
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [
+    "understands Abyssal, Common, and Infernal but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Ethereal Stride",
+      "text": "The nightmare and up to three willing creatures within 5 feet of it magically enter the Ethereal Plane from the Material Plane, or vice versa."
+    },
+    {
+      "name": "Confer Fire Resistance",
+      "text": "The nightmare can grant resistance to fire damage to anyone riding it."
+    },
+    {
+      "name": "Illumination",
+      "text": "The nightmare sheds bright light in a 10-foot radius and dim light for an additional 10 feet."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

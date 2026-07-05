@@ -1,0 +1,98 @@
+{
+  "name": "Shoosuva",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 8.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 136,
+  "hit_dice": "16d10+48",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 17,
+    "INT": 7,
+    "WIS": 14,
+    "CHA": 9
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Abyssal",
+    "Gnoll",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d10+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail Stinger",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 15,
+      "rider": {
+        "ability": "CON",
+        "dc": 14,
+        "on_fail_condition": "paralyzed"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Tail Stinger",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "triggered_abilities": [
+    "rampage"
+  ]
+}

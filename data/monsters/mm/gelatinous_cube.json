@@ -1,0 +1,98 @@
+{
+  "name": "Gelatinous Cube",
+  "type": "ooze",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 6,
+  "hp": 84,
+  "hit_dice": "8d10+40",
+  "speeds": {
+    "walk": 15
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 3,
+    "CON": 20,
+    "INT": 1,
+    "WIS": 6,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 8
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Transparent",
+      "text": "Even when the cube is in plain sight, it takes a successful 15 Wisdom (Perception) check to spot a cube that has neither moved nor attacked. A creature that tries to enter the cube's space while unaware of the cube is surprised by the cube."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Engulf",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 12,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "acid"
+        },
+        {
+          "dice": "6d6",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "DEX",
+        "dc": 12,
+        "on_fail_condition": "restrained",
+        "push": 5
+      }
+    }
+  ],
+  "imported": "5etools-mm",
+  "swallow": {
+    "acid": {
+      "dice": "3d6",
+      "type": "acid"
+    },
+    "escape_threshold": 15,
+    "escape_dc": 12,
+    "max_size": "Medium"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "name": "Hutijin",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 21.0,
+  "alignment": "L E",
+  "ac": 19,
+  "hp": 200,
+  "hit_dice": "16d10+112",
+  "speeds": {
+    "walk": 30,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 27,
+    "DEX": 15,
+    "CON": 25,
+    "INT": 23,
+    "WIS": 19,
+    "CHA": 25
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Intimidation": 14,
+    "Perception": 11
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 21
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "Hutijin teleports, along with any equipment he is wearing and carrying, up to 120 feet to an unoccupied space he can see."
+    },
+    {
+      "name": "Infernal Despair",
+      "text": "Each creature within 30 feet of Hutijin that isn't a devil makes saving throws with disadvantage."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Hutijin fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Hutijin has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Regeneration",
+      "text": "Hutijin regains 20 hit points at the start of his turn. If he takes radiant damage, this trait doesn't function at the start of his next turn. Hutijin dies only if he starts his turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 15,
+      "damage": [
+        {
+          "dice": "2d6+8",
+          "type": "fire"
+        },
+        {
+          "dice": "3d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 22,
+        "on_fail_condition": "poisoned"
+      }
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 15,
+      "damage": [
+        {
+          "dice": "2d8+8",
+          "type": "cold"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Mace",
+      "kind": "melee",
+      "attack_bonus": 15,
+      "damage": [
+        {
+          "dice": "2d6+8",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 15,
+      "damage": [
+        {
+          "dice": "2d10+8",
+          "type": "thunder"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    },
+    {
+      "name": "Mace",
+      "count": 1
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Fearful Voice (reaction)",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 22,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 22,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 20,
+    "stopped_by": [
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 22,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Hold Monster": 0,
+      "Lightning Bolt": 0,
+      "Suggestion": 0,
+      "Wall of Fire": 0,
+      "Dispel Magic": 3
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  }
+}

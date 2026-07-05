@@ -1,0 +1,107 @@
+{
+  "name": "Quasit",
+  "type": "fiend",
+  "size": "Tiny",
+  "cr": 1.0,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 7,
+  "hit_dice": "3d4",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 5,
+    "DEX": 17,
+    "CON": 10,
+    "INT": 7,
+    "WIS": 10,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Invisibility",
+      "text": "The quasit magically turns invisible until it attacks or uses Scare, or until its concentration ends (as if concentration on a spell). Any equipment the quasit wears or carries is invisible with it."
+    },
+    {
+      "name": "Shapechanger",
+      "text": "The quasit can use its action to polymorph into a beast form that resembles a bat (speed 10 ft. fly 40 ft.), a centipede (40 ft., climb 40 ft.), or a toad (40 ft., swim 40 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The quasit has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw (Bite in Beast Form)",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d4",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 10,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Scare",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 10,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "WIS",
+        "dc": 10,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

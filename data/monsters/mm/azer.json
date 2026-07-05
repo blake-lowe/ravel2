@@ -1,0 +1,80 @@
+{
+  "name": "Azer",
+  "type": "elemental",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "L N",
+  "ac": 17,
+  "hp": 39,
+  "hit_dice": "6d8+12",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 12,
+    "CON": 15,
+    "INT": 12,
+    "WIS": 13,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "CON"
+  ],
+  "skills": {},
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [
+    "Ignan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Heated Body",
+      "text": "A creature that touches the azer or hits it with a melee attack while within 5 feet of it takes 5 (1d10) fire damage."
+    },
+    {
+      "name": "Heated Weapons",
+      "text": "When the azer hits with a metal melee weapon, it deals an extra 3 (1d6) fire damage (included in the attack)."
+    },
+    {
+      "name": "Illumination",
+      "text": "The azer sheds bright light in a 10-foot radius and dim light for an additional 10 feet."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Warhammer",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d10+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,138 @@
+{
+  "name": "Phoenix",
+  "type": "elemental",
+  "size": "Gargantuan",
+  "cr": 16.0,
+  "alignment": "N",
+  "ac": 18,
+  "hp": 175,
+  "hit_dice": "10d20+70",
+  "speeds": {
+    "walk": 20,
+    "fly": 120
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 26,
+    "CON": 25,
+    "INT": 2,
+    "WIS": 21,
+    "CHA": 18
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Fire Form",
+      "text": "The phoenix can move through a space as narrow as 1 inch wide without squeezing. Any creature that touches the phoenix or hits it with a melee attack while within 5 feet of it takes 5 (1d10) fire damage. In addition, the phoenix can enter a hostile creature's space and stop there. The first time it enters a creature's space on a turn, that creature takes 5 (1d10) fire damage. With a touch, the phoenix can also ignite flammable objects that aren't worn or carried (no action required)."
+    },
+    {
+      "name": "Flyby",
+      "text": "The phoenix doesn't provoke opportunity attack when it flies out of an enemy's reach."
+    },
+    {
+      "name": "Illumination",
+      "text": "The phoenix sheds bright light in a 60-foot radius and dim light for an additional 30 feet."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the phoenix fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Siege Monster",
+      "text": "The phoenix deals double damage to objects and structures."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "2d6+8",
+          "type": "fire"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Fiery Talons",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "2d8+8",
+          "type": "fire"
+        }
+      ],
+      "reach": 15
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Beak",
+      "count": 1
+    },
+    {
+      "name": "Fiery Talons",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "flyby",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Beak"
+  },
+  "death_burst": {
+    "name": "Fiery Death and Rebirth",
+    "shape": "sphere",
+    "size": 60,
+    "origin_range": 0,
+    "save": "DEX",
+    "dc": 20,
+    "damage": [
+      {
+        "dice": "4d10",
+        "type": "fire"
+      },
+      {
+        "dice": "6d6",
+        "type": "fire"
+      }
+    ],
+    "half_on_save": true,
+    "recharge": "at-will",
+    "rider": null
+  }
+}

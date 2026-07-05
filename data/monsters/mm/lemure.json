@@ -1,0 +1,70 @@
+{
+  "name": "Lemure",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 0.0,
+  "alignment": "L E",
+  "ac": 7,
+  "hp": 13,
+  "hit_dice": "3d8",
+  "speeds": {
+    "walk": 15
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 5,
+    "CON": 11,
+    "INT": 1,
+    "WIS": 11,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands Infernal but can't speak"
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Hellish Rejuvenation",
+      "text": "A lemure that dies in the Nine Hells comes back to life with all its hit points in 1d10 days unless it is killed by a good-aligned creature with a bless spell cast on that creature or its remains are sprinkled with Holy Water (Flask)."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "devils_sight"
+  ]
+}

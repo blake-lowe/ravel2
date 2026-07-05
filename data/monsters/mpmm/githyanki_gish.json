@@ -1,0 +1,108 @@
+{
+  "name": "Githyanki Gish",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 10.0,
+  "alignment": "A",
+  "ac": 17,
+  "hp": 130,
+  "hit_dice": "20d8+40",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 15,
+    "CON": 14,
+    "INT": 16,
+    "WIS": 15,
+    "CHA": 16
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Insight": 6,
+    "Perception": 6,
+    "Stealth": 6
+  },
+  "senses": {
+    "passive_perception": 16
+  },
+  "languages": [
+    "Gith"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Astral Step {@recharge 4} (bonus)",
+      "text": "The githyanki teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+3",
+          "type": "slashing"
+        },
+        {
+          "dice": "5d8",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Telekinetic Bolt",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "8d6",
+          "type": "force"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 15,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Light": 0,
+      "Fireball": 3,
+      "Invisibility": 3,
+      "Plane Shift": 1
+    }
+  },
+  "teleport_bonus": 30
+}

@@ -1,0 +1,117 @@
+{
+  "name": "Choldrith",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 66,
+  "hit_dice": "12d8+12",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 16,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 14,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 5,
+    "Religion": 2,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Spectral Dagger (Recharges after a Short or Long Rest) (bonus)",
+      "text": "The choldrith conjures a floating, spectral dagger within 60 feet of itself. The choldrith can make a melee spell attack (4 to hit) against one creature within 5 feet of the dagger. On a hit, the target takes 6 (1d8 + 2) force damage. The dagger lasts for 1 minute. As a bonus action on later turns, the choldrith can move the dagger up to 20 feet and repeat the attack against one creature within 5 feet of the dagger."
+    },
+    {
+      "name": "Fey Ancestry",
+      "text": "The choldrith has advantage on saving throws against being charmed, and magic can't put the choldrith to sleep."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The choldrith can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    },
+    {
+      "name": "Web Sense",
+      "text": "While in contact with a web, the choldrith knows the exact location of any other creature in contact with the same web."
+    },
+    {
+      "name": "Web Walker",
+      "text": "The choldrith ignores movement restrictions caused by webbing."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Web",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [],
+      "range": [
+        30,
+        60
+      ],
+      "rider": {
+        "ability": "STR",
+        "dc": 11,
+        "on_fail_condition": "restrained",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Bane": 1,
+      "Hold Person": 1
+    }
+  },
+  "save_advantages": [
+    "charmed"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

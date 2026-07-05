@@ -1,0 +1,101 @@
+{
+  "name": "Archdruid",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 12.0,
+  "alignment": "A",
+  "ac": 14,
+  "hp": 154,
+  "hit_dice": "28d8+28",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 12,
+    "WIS": 20,
+    "CHA": 11
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Medicine": 9,
+    "Nature": 5,
+    "Perception": 9
+  },
+  "senses": {
+    "passive_perception": 19
+  },
+  "languages": [
+    "Druidic plus any two languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Change Shape (2/Day) (bonus)",
+      "text": "The archdruid magically transforms into a Beast or an Elemental with a challenge rating of 6 or less and can remain in that form for up to 9 hours. The archdruid can choose whether its equipment falls to the ground, melds with its new form, or is worn by the new form. The archdruid reverts to its true form if it dies or falls unconscious. The archdruid can revert to its true form using a bonus action. While in a new form, the archdruid's stat block is replaced by the stat block of that form, except the archdruid keeps its current hit points, its hit point maximum, this bonus action, its languages and ability to speak, and its Spellcasting action. The new form's attacks count as magical for the purpose of overcoming resistances and immunity to nonmagical attacks."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Staff",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "6d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Wildfire",
+      "kind": "ranged",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "6d6+5",
+          "type": "fire"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Staff",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 17,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Entangle": 0,
+      "Faerie Fire": 3,
+      "Mass Cure Wounds": 1
+    }
+  }
+}

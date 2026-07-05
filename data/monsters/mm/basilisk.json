@@ -1,0 +1,81 @@
+{
+  "name": "Basilisk",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 3,
+  "alignment": "unaligned",
+  "ac": 15,
+  "hp": 52,
+  "hit_dice": "8d8+16",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 8,
+    "CON": 15,
+    "INT": 2,
+    "WIS": 8,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Petrifying Gaze",
+      "text": "A creature that fails the DC 12 Constitution save is restrained (turning to stone); if it fails the save again at the end of its next turn it is petrified. (Implemented via multi-stage conditions; the 'must see the basilisk' line-of-sight trigger is simplified to an at-will area.)"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Petrifying Gaze",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "restrained",
+        "duration": null,
+        "escalates_to": "petrified"
+      }
+    }
+  ],
+  "strategy": "Lock down the strongest foe with the petrifying gaze, then close and bite the restrained, weakened target while it cannot fight back effectively.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

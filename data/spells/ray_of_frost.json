@@ -1,0 +1,28 @@
+{
+  "name": "Ray of Frost",
+  "level": 0,
+  "school": "evocation",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "cold"
+        }
+      ],
+      "melee": false
+    }
+  ],
+  "imported": "5etools"
+}

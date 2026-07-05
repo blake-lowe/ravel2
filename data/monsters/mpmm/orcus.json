@@ -1,0 +1,155 @@
+{
+  "name": "Orcus",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 26.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 405,
+  "hit_dice": "30d12+210",
+  "speeds": {
+    "walk": 40,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 27,
+    "DEX": 14,
+    "CON": 25,
+    "INT": 20,
+    "WIS": 20,
+    "CHA": 25
+  },
+  "proficiency_bonus": 8,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 13,
+    "Perception": 13
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 22
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Conjure Undead (1/Day)",
+      "text": "While holding the Wand of Orcus, Orcus conjures Undead creatures whose combined average hit points don't exceed 500. These creatures magically rise up from the ground or otherwise form in unoccupied spaces within 300 feet of Orcus and obey his commands until they are destroyed or until he dismisses them as an action."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Orcus fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Orcus has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Master of Undeath",
+      "text": "Orcus can cast animate dead (at will) and create undead (3/day). He chooses the level at which the spells are cast, and the creatures created by them remain under his control indefinitely. Additionally, he can cast create undead even when it isn't night."
+    },
+    {
+      "name": "Special Equipment",
+      "text": "Orcus wields the Wand of Orcus."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Wand of Orcus",
+      "kind": "melee",
+      "attack_bonus": 19,
+      "damage": [
+        {
+          "dice": "3d8+11",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d12",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "3d8+8",
+          "type": "force"
+        },
+        {
+          "dice": "2d8",
+          "type": "poison"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Necrotic Bolt",
+      "kind": "ranged",
+      "attack_bonus": 15,
+      "damage": [
+        {
+          "dice": "5d8+7",
+          "type": "necrotic"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Wand of Orcus",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 18,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Dispel Magic": 3,
+      "Blight": 0
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Wand of Orcus"
+  }
+}

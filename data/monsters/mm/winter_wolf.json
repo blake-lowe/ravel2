@@ -1,0 +1,98 @@
+{
+  "name": "Winter Wolf",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 75,
+  "hit_dice": "10d10+20",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 14,
+    "INT": 7,
+    "WIS": 12,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5,
+    "Stealth": 3
+  },
+  "senses": {
+    "passive_perception": 15
+  },
+  "languages": [
+    "Common",
+    "Giant",
+    "Winter Wolf"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "text": "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    },
+    {
+      "name": "Pack Tactics",
+      "text": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    },
+    {
+      "name": "Snow Camouflage",
+      "text": "The wolf has advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Cold Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 12,
+      "damage": [
+        {
+          "dice": "4d8",
+          "type": "cold"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mm"
+}

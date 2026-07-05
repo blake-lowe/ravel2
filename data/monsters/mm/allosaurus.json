@@ -1,0 +1,69 @@
+{
+  "name": "Allosaurus",
+  "type": "beast",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 51,
+  "hit_dice": "6d10+18",
+  "speeds": {
+    "walk": 60
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 13,
+    "CON": 17,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "passive_perception": 15
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d10+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 30,
+    "dc": 13,
+    "bonus_attack": "Bite"
+  }
+}

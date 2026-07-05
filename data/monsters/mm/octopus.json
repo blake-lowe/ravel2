@@ -1,0 +1,77 @@
+{
+  "name": "Octopus",
+  "type": "beast",
+  "size": "Small",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 3,
+  "hit_dice": "1d6",
+  "speeds": {
+    "walk": 5,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 4,
+    "DEX": 15,
+    "CON": 11,
+    "INT": 3,
+    "WIS": 10,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 30,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Ink Cloud (Recharges after a Short or Long Rest)",
+      "text": "A 5-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is Vision and Light for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action."
+    },
+    {
+      "name": "Hold Breath",
+      "text": "While out of water, the octopus can hold its breath for 30 minutes."
+    },
+    {
+      "name": "Underwater Camouflage",
+      "text": "The octopus has advantage on Dexterity (Stealth) checks made while underwater."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 10,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

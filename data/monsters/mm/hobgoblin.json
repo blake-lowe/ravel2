@@ -1,0 +1,81 @@
+{
+  "name": "Hobgoblin",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 11,
+  "hit_dice": "2d8+2",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 12,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d8+1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d8+1",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "bonus_damage": [
+    {
+      "name": "Martial Advantage",
+      "when": "ally_adjacent_to_target",
+      "damage": {
+        "dice": "2d6",
+        "type": "slashing"
+      },
+      "once_per_turn": true
+    }
+  ],
+  "curated": true,
+  "imported": "5etools-mm"
+}

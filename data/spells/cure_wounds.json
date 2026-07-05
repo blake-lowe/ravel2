@@ -1,0 +1,31 @@
+{
+  "name": "Cure Wounds",
+  "level": 1,
+  "school": "evocation",
+  "range": 5,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "allies"
+  },
+  "effects": [
+    {
+      "kind": "heal",
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "healing"
+        }
+      ],
+      "add_mod": true
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d8"
+  }
+}

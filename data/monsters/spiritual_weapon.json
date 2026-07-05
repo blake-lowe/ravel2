@@ -1,0 +1,36 @@
+{
+  "name": "Spiritual Weapon",
+  "type": "force",
+  "size": "Tiny",
+  "cr": 0,
+  "ac": 20,
+  "hp": 1000,
+  "speeds": {
+    "walk": 0,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 12,
+    "CON": 10,
+    "INT": 1,
+    "WIS": 1,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "actions": [
+    {
+      "name": "Force Slam",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "curated": true
+}

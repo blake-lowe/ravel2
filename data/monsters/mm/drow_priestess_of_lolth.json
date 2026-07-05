@@ -1,0 +1,113 @@
+{
+  "name": "Drow Priestess of Lolth",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 8.0,
+  "alignment": "N E",
+  "ac": 16,
+  "hp": 71,
+  "hit_dice": "13d8+13",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 13,
+    "WIS": 17,
+    "CHA": 18
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Insight": 6,
+    "Perception": 6,
+    "Religion": 4,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Summon Demon (1/Day)",
+      "text": "The drow attempts to magically summon a yochlol with a 30 chance of success. If the attempt fails, the drow takes 5 (1d10) psychic damage. Otherwise, the summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action."
+    },
+    {
+      "name": "Fey Ancestry",
+      "text": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scourge",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "5d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scourge",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 14,
+    "attack_bonus": 6,
+    "caster_level": 10,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2
+    },
+    "spells": [
+      "Cure Wounds",
+      "Dispel Magic",
+      "Insect Plague",
+      "Mass Cure Wounds",
+      "Poison Spray",
+      "Ray of Sickness",
+      "Web"
+    ],
+    "innate": {
+      "Darkness": 1,
+      "Faerie Fire": 1
+    }
+  },
+  "save_advantages": [
+    "charmed"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

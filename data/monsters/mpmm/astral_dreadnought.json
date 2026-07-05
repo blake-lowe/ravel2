@@ -1,0 +1,120 @@
+{
+  "name": "Astral Dreadnought",
+  "type": "monstrosity",
+  "size": "Gargantuan",
+  "cr": 21.0,
+  "alignment": "U",
+  "ac": 20,
+  "hp": 297,
+  "hit_dice": "17d20+119",
+  "speeds": {
+    "walk": 15,
+    "fly": 80,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 28,
+    "DEX": 7,
+    "CON": 25,
+    "INT": 5,
+    "WIS": 14,
+    "CHA": 18
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "DEX",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 9
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 19
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Antimagic Cone",
+      "text": "The dreadnought's eye creates an area of antimagic, as in the antimagic field spell, in a 150-foot cone. At the start of each of its turns, it decides which way the cone faces. The cone doesn't function while the eye is closed or while the dreadnought is blinded."
+    },
+    {
+      "name": "Astral Entity",
+      "text": "The dreadnought can't leave the Astral Plane, nor can it be banished or otherwise transported out of that plane."
+    },
+    {
+      "name": "Demiplanar Donjon",
+      "text": "Anything the dreadnought swallows is transported to a demiplane that can be entered by no other means except a wish spell or the dreadnought's Bite and Donjon Visit. A creature can leave the demiplane only by using magic that enables planar travel, such as the plane shift spell. The demiplane resembles a stone cave roughly 1,000 feet in diameter with a ceiling 100 feet high. Like a stomach, it contains the remains of past meals. The dreadnought can't be harmed from within the demiplane. If the dreadnought dies, the demiplane disappears, and everything inside it appears around the dreadnought's corpse. The demiplane is otherwise indestructible."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the dreadnought fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Sever Silver Cord",
+      "text": "If the dreadnought scores a critical hit against a creature traveling by means of the astral projection spell, the dreadnought can cut the target's silver cord instead of dealing damage."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The dreadnought doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "5d10+9",
+          "type": "force"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "3d6+9",
+          "type": "force"
+        }
+      ],
+      "reach": 20
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  }
+}

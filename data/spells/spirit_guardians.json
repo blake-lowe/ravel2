@@ -1,0 +1,35 @@
+{
+  "name": "Spirit Guardians",
+  "level": 3,
+  "school": "conjuration",
+  "casting_time": "action",
+  "range": 0,
+  "range_type": "self",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "self",
+    "affects": "self"
+  },
+  "effects": [
+    {
+      "kind": "aura",
+      "ability": "WIS",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "3d8",
+          "type": "radiant"
+        }
+      ],
+      "shape": "sphere",
+      "size": 15,
+      "difficult_terrain": true
+    }
+  ]
+}

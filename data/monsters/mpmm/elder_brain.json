@@ -1,0 +1,132 @@
+{
+  "name": "Elder Brain",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 14.0,
+  "alignment": "L E",
+  "ac": 10,
+  "hp": 210,
+  "hit_dice": "20d10+100",
+  "speeds": {
+    "walk": 5,
+    "swim": 10
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 10,
+    "CON": 20,
+    "INT": 21,
+    "WIS": 19,
+    "CHA": 24
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 10,
+    "Deception": 12,
+    "Insight": 14,
+    "Intimidation": 12,
+    "Persuasion": 12
+  },
+  "senses": {
+    "blindsight": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "understands Common",
+    "Deep Speech",
+    "and Undercommon but can't speak",
+    "telepathy 5 miles"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Psychic Link (bonus)",
+      "text": "The elder brain targets one incapacitated creature it senses with its Creature Sense trait and establishes a psychic link with the target. Until the link ends, the elder brain can perceive everything the target senses. The target becomes aware that something is linked to its mind once it is no longer incapacitated, and the elder brain can terminate the link at any time (no action required). The target can use an action on its turn to attempt to break the link, doing so with a successful 18 Charisma saving throw. On a successful save, the target takes 10 (3d6) psychic damage. The link also ends if the target and the elder brain are more than 5 miles apart. The elder brain can form psychic links with up to ten creatures at a time."
+    },
+    {
+      "name": "Sense Thoughts (bonus)",
+      "text": "The elder brain targets a creature with which it has a psychic link. The elder brain gains insight into the target's emotional state and foremost thoughts (including worries, loves, and hates)."
+    },
+    {
+      "name": "Creature Sense",
+      "text": "The elder brain is aware of creatures within 5 miles of it that have an Intelligence score of 4 or higher. It knows the distance and direction to each creature, as well as each one's Intelligence score, but can't sense anything else about it. A creature protected by a mind blank spell, a nondetection spell, or similar magic can't be perceived in this manner."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the elder brain fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The elder brain has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Telepathic Hub",
+      "text": "The elder brain can use its telepathy to initiate and maintain telepathic conversations with up to ten creatures at a time. The elder brain can let those creatures telepathically hear each other while connected in this way."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d8+2",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d8+5",
+          "type": "psychic"
+        }
+      ],
+      "reach": 30,
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Mind Blast",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "INT",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "5d10+5",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "INT",
+        "dc": 18,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Tentacle"
+  }
+}

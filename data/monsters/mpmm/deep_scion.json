@@ -1,0 +1,121 @@
+{
+  "name": "Deep Scion",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 11,
+  "hp": 67,
+  "hit_dice": "9d8+27",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 16,
+    "INT": 10,
+    "WIS": 12,
+    "CHA": 14
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 6,
+    "Insight": 3,
+    "Sleight Of Hand": 3,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Aquan",
+    "Common",
+    "thieves' cant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Change Shape (bonus)",
+      "text": "The deep scion transforms into a hybrid form (humanoid-piscine) or back into its true form, which is humanlike. Its statistics, other than its speed, are the same in each form. Any equipment it is wearing or carrying isn't transformed. The deep scion reverts to its true form if it dies."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Battleaxe",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Bite (Hybrid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d4+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw (Hybrid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Battleaxe",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Psychic Screech (Hybrid Form Only; Recharges after a Short or Long Rest)",
+      "shape": "sphere",
+      "size": 300,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "WIS",
+        "dc": 13,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

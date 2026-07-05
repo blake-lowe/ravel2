@@ -1,0 +1,84 @@
+{
+  "name": "Gnoll Flesh Gnawer",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 22,
+  "hit_dice": "4d8+4",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 8,
+    "WIS": 10,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Gnoll"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Sudden Rush",
+      "text": "Until the end of the turn, the gnoll's speed increases by 60 feet and it doesn't provoke opportunity attack."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Shortsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "triggered_abilities": [
+    "rampage"
+  ]
+}

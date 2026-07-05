@@ -1,0 +1,76 @@
+{
+  "name": "Guard Drake",
+  "type": "dragon",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 14,
+  "hp": 52,
+  "hit_dice": "7d8+21",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 11,
+    "CON": 16,
+    "INT": 4,
+    "WIS": 10,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "understands Draconic but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

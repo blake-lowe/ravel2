@@ -1,0 +1,24 @@
+{
+  "name": "Mirror Image",
+  "level": 2,
+  "school": "illusion",
+  "range": 0,
+  "range_type": "self",
+  "components": [
+    "V",
+    "S"
+  ],
+  "duration_rounds": 10,
+  "target": {
+    "mode": "self",
+    "affects": "self"
+  },
+  "effects": [
+    {
+      "kind": "modifier",
+      "modifier": {
+        "attackers_have_disadvantage": true
+      }
+    }
+  ]
+}

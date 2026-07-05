@@ -1,0 +1,93 @@
+{
+  "name": "Peryton",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 33,
+  "hit_dice": "6d8+6",
+  "speeds": {
+    "walk": 20,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 13,
+    "INT": 9,
+    "WIS": 12,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "passive_perception": 15
+  },
+  "languages": [
+    "understands Common and Elvish but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Dive Attack",
+      "text": "If the peryton is flying and dives at least 30 feet straight toward a target and then hits it with a melee weapon attack, the attack deals an extra 9 (2d8) damage to the target."
+    },
+    {
+      "name": "Flyby",
+      "text": "The peryton doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+    },
+    {
+      "name": "Keen Sight and Smell",
+      "text": "The peryton has advantage on Wisdom (Perception) checks that rely on sight or smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Talons",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d4+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Gore",
+      "count": 1
+    },
+    {
+      "name": "Talons",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "flyby",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

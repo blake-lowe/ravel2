@@ -1,0 +1,134 @@
+{
+  "name": "Armanite",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 7.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 94,
+  "hit_dice": "9d10+45",
+  "speeds": {
+    "walk": 60
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 18,
+    "CON": 21,
+    "INT": 8,
+    "WIS": 12,
+    "CHA": 13
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The armanite has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d4+5",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d8",
+          "type": "lightning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 16,
+        "on_fail_condition": "prone"
+      }
+    },
+    {
+      "name": "Serrated Tail",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d10+5",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 1
+    },
+    {
+      "name": "Hooves",
+      "count": 1
+    },
+    {
+      "name": "Serrated Tail",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Lightning Lance",
+      "shape": "line",
+      "size": 60,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "8d8",
+          "type": "lightning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm"
+}

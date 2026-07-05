@@ -1,0 +1,171 @@
+{
+  "name": "Titivilus",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 16.0,
+  "alignment": "L E",
+  "ac": 20,
+  "hp": 150,
+  "hit_dice": "20d8+60",
+  "speeds": {
+    "walk": 40,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 22,
+    "CON": 17,
+    "INT": 24,
+    "WIS": 22,
+    "CHA": 26
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 13,
+    "Insight": 11,
+    "Intimidation": 13,
+    "Persuasion": 13
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "Titivilus teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Titivilus fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Titivilus has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Regeneration",
+      "text": "Titivilus regains 10 hit points at the start of his turn. If he takes cold or radiant damage, this trait doesn't function at the start of his next turn. Titivilus dies only if he starts his turn with 0 hit points and doesn't regenerate."
+    },
+    {
+      "name": "Ventriloquism",
+      "text": "Whenever Titivilus speaks, he can choose a point within 60 feet of him; his voice emanates from that point."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Silver Sword",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "force"
+        },
+        {
+          "dice": "1d10+4",
+          "type": "force"
+        },
+        {
+          "dice": "3d10",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5,
+      "reduces_max_hp": true
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Silver Sword",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Frightful Word",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 21,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 21,
+        "on_fail_condition": "frightened"
+      },
+      "max_targets": 1
+    },
+    {
+      "name": "Twisting Words",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 21,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CHA",
+        "dc": 21,
+        "on_fail_condition": "charmed"
+      },
+      "max_targets": 1
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 10,
+    "stopped_by": [
+      "cold",
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 21,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Suggestion": 0
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Silver Sword"
+  }
+}

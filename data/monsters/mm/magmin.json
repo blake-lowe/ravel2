@@ -1,0 +1,65 @@
+{
+  "name": "Magmin",
+  "type": "elemental",
+  "size": "Small",
+  "cr": 0.5,
+  "alignment": "C N",
+  "ac": 14,
+  "hp": 9,
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 15,
+    "CON": 12,
+    "INT": 8,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Ignan"
+  ],
+  "damage_immunities": [
+    "fire"
+  ],
+  "actions": [
+    {
+      "name": "Touch",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "death_burst": {
+    "name": "Death Burst",
+    "shape": "sphere",
+    "size": 10,
+    "origin_range": 0,
+    "save": "DEX",
+    "dc": 11,
+    "damage": [
+      {
+        "dice": "2d6",
+        "type": "fire"
+      }
+    ],
+    "half_on_save": true,
+    "recharge": "at-will"
+  },
+  "hit_dice": "2d6+2",
+  "curated": true,
+  "imported": "5etools-mm",
+  "resist_nonmagical_physical": true
+}

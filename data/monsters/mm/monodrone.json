@@ -1,0 +1,75 @@
+{
+  "name": "Monodrone",
+  "type": "construct",
+  "size": "Medium",
+  "cr": 0.125,
+  "alignment": "L N",
+  "ac": 15,
+  "hp": 5,
+  "hit_dice": "1d8+1",
+  "speeds": {
+    "walk": 30,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 13,
+    "CON": 12,
+    "INT": 4,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Modron"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Axiomatic Mind",
+      "text": "The monodrone can't be compelled to act in a manner contrary to its nature or its instructions."
+    },
+    {
+      "name": "Disintegration",
+      "text": "If the monodrone dies, its body disintegrates into dust, leaving behind its weapons and anything else it was carrying."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Javelin",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,104 @@
+{
+  "name": "Warlock of the Archfey",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "A",
+  "ac": 13,
+  "hp": 67,
+  "hit_dice": "15d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 9,
+    "DEX": 16,
+    "CON": 11,
+    "INT": 11,
+    "WIS": 12,
+    "CHA": 18
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 2,
+    "Deception": 6,
+    "Nature": 2,
+    "Persuasion": 6
+  },
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [
+    "any two languages (usually Sylvan)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Rapier",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d6",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Rapier",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Bewildering Word",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 14,
+      "damage": [
+        {
+          "dice": "2d8",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 14,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 1,
+      "Hold Monster": 1
+    }
+  },
+  "triggered_abilities": [
+    "misty_escape"
+  ]
+}

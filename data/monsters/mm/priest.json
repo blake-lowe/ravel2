@@ -1,0 +1,76 @@
+{
+  "name": "Priest",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2,
+  "alignment": "A",
+  "ac": 13,
+  "hp": 27,
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 10,
+    "CON": 12,
+    "INT": 13,
+    "WIS": 15,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS"
+  ],
+  "actions": [
+    {
+      "name": "Mace",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 13,
+    "attack_bonus": 5,
+    "caster_level": 5,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 2
+    },
+    "spells": [
+      "Sacred Flame",
+      "Cure Wounds",
+      "Healing Word",
+      "Bless",
+      "Hold Person",
+      "Bane",
+      "Spirit Guardians",
+      "Spiritual Weapon",
+      "Moonbeam",
+      "Silence",
+      "Dispel Magic"
+    ]
+  },
+  "hit_dice": "5d8+5",
+  "skills": {
+    "Medicine": 7,
+    "Persuasion": 3,
+    "Religion": 5
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "any two languages"
+  ],
+  "curated": true,
+  "imported": "5etools-mm"
+}

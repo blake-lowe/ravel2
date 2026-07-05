@@ -1,0 +1,99 @@
+{
+  "name": "Nilbog",
+  "type": "fey",
+  "size": "Small",
+  "cr": 1.0,
+  "alignment": "C N",
+  "ac": 13,
+  "hp": 7,
+  "hit_dice": "2d6",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 14,
+    "CON": 10,
+    "INT": 10,
+    "WIS": 8,
+    "CHA": 15
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Reversal of Fortune (reaction)",
+      "text": "In response to another creature dealing damage to the nilbog, the nilbog reduces the damage to 0 and regains 3 (1d6) hit points."
+    },
+    {
+      "name": "Nimble Escape (bonus)",
+      "text": "The nilbog takes the Disengage or Hide action."
+    },
+    {
+      "name": "Nilbogism",
+      "text": "Any creature that attempts to damage the nilbog must first succeed on a 12 Charisma saving throw or be charmed until the end of the creature's next turn. A creature charmed in this way must use its action praising the nilbog. The nilbog can't regain hit points, including through magical healing, except through its Reversal of Fortune reaction."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fool's Scepter",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Mocking Word",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 12,
+      "damage": [
+        {
+          "dice": "2d4",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null,
+      "max_targets": 1
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Tasha's Hideous Laughter": 0
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "name": "Deathlock Wight",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "N E",
+  "ac": 12,
+  "hp": 37,
+  "hit_dice": "5d8+15",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 14,
+    "CON": 16,
+    "INT": 12,
+    "WIS": 14,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 3,
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "necrotic"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "text": "The deathlock doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Life Drain",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5,
+      "reduces_max_hp": true
+    },
+    {
+      "name": "Grave Bolt",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "necrotic"
+        }
+      ],
+      "range": [
+        60,
+        60
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Life Drain",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical",
+    "sunlight_sensitivity"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Mage Armor": 0,
+      "Fear": 1,
+      "Hold Person": 1
+    }
+  }
+}

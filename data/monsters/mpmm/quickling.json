@@ -1,0 +1,73 @@
+{
+  "name": "Quickling",
+  "type": "fey",
+  "size": "Tiny",
+  "cr": 1.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 10,
+  "hit_dice": "3d4+3",
+  "speeds": {
+    "walk": 120
+  },
+  "abilities": {
+    "STR": 4,
+    "DEX": 23,
+    "CON": 13,
+    "INT": 10,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Acrobatics": 8,
+    "Sleight Of Hand": 8,
+    "Stealth": 8,
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Common",
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Blurred Movement",
+      "text": "Attack rolls against the quickling have disadvantage unless it is incapacitated or its speed is 0."
+    },
+    {
+      "name": "Evasion",
+      "text": "If the quickling is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw and only half damage if it fails, provided it isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d4+6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Dagger",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

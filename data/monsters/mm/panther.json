@@ -1,0 +1,76 @@
+{
+  "name": "Panther",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 13,
+  "hit_dice": "3d8",
+  "speeds": {
+    "walk": 50,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 15,
+    "CON": 10,
+    "INT": 3,
+    "WIS": 14,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 6
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "text": "The panther has advantage on Wisdom (Perception) checks that rely on smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 20,
+    "dc": 12,
+    "bonus_attack": "Bite"
+  }
+}

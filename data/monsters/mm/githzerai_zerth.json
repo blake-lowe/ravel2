@@ -1,0 +1,88 @@
+{
+  "name": "Githzerai Zerth",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 6.0,
+  "alignment": "L N",
+  "ac": 17,
+  "hp": 84,
+  "hit_dice": "13d8+26",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 18,
+    "CON": 15,
+    "INT": 16,
+    "WIS": 17,
+    "CHA": 12
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "STR",
+    "DEX",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 6,
+    "Insight": 6,
+    "Perception": 6
+  },
+  "senses": {
+    "passive_perception": 16
+  },
+  "languages": [
+    "Gith"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Psychic Defense",
+      "text": "While the githzerai is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Unarmed Strike",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d8",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Unarmed Strike",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 0,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Shield": 3,
+      "Phantasmal Killer": 1,
+      "Plane Shift": 1
+    }
+  }
+}

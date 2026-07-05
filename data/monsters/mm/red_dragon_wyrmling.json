@@ -1,0 +1,88 @@
+{
+  "name": "Red Dragon Wyrmling",
+  "type": "dragon",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 75,
+  "hit_dice": "10d8+30",
+  "speeds": {
+    "walk": 30,
+    "climb": 30,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 10,
+    "CON": 17,
+    "INT": 12,
+    "WIS": 11,
+    "CHA": 15
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 2
+  },
+  "senses": {
+    "blindsight": 10,
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d10+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Fire Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "7d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm"
+}

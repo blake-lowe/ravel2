@@ -1,0 +1,95 @@
+{
+  "name": "Werewolf",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 11,
+  "hp": 58,
+  "hit_dice": "9d8+18",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 13,
+    "CON": 14,
+    "INT": 10,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 3
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [
+    "Common (can't speak in wolf form)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "text": "The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+    },
+    {
+      "name": "Keen Hearing and Smell",
+      "text": "The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite (Wolf or Hybrid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws (Hybrid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spear (Humanoid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

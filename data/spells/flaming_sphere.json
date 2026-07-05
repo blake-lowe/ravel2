@@ -1,0 +1,36 @@
+{
+  "name": "Flaming Sphere",
+  "level": 2,
+  "school": "conjuration",
+  "casting_time": "action",
+  "range": 60,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 5,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "aura",
+      "ability": "DEX",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "fire"
+        }
+      ],
+      "shape": "sphere",
+      "size": 5,
+      "anchor": "point"
+    }
+  ]
+}

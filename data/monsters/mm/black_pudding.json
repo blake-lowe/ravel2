@@ -1,0 +1,84 @@
+{
+  "name": "Black Pudding",
+  "type": "ooze",
+  "size": "Large",
+  "cr": 4.0,
+  "alignment": "U",
+  "ac": 7,
+  "hp": 85,
+  "hit_dice": "10d10+30",
+  "speeds": {
+    "walk": 20,
+    "climb": 20
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 5,
+    "CON": 16,
+    "INT": 1,
+    "WIS": 6,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 8
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "acid",
+    "cold",
+    "lightning",
+    "slashing"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Split (reaction)",
+      "text": "When a pudding that is Medium or larger is subjected to lightning or slashing damage, it splits into two new puddings if it has at least 10 hit points. Each new pudding has hit points equal to half the original pudding's, rounded down. New puddings are one size smaller than the original pudding."
+    },
+    {
+      "name": "Amorphous",
+      "text": "The pudding can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Corrosive Form",
+      "text": "A creature that touches the pudding or hits it with a melee attack while within 5 feet of it takes 4 (1d8) acid damage. Any nonmagical weapon made of metal or wood that hits the pudding corrodes. After dealing damage, the weapon takes a permanent and cumulative \u22121 penalty to damage rolls. If its penalty drops to \u22125, the weapon is destroyed. Nonmagical ammunition made of metal or wood that hits the pudding is destroyed after dealing damage. The pudding can eat through 2-inch-thick, nonmagical wood or metal in 1 round."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The pudding can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d8",
+          "type": "acid"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

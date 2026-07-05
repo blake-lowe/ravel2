@@ -1,0 +1,143 @@
+{
+  "name": "Drow Arachnomancer",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 13.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 162,
+  "hit_dice": "25d8+50",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 17,
+    "CON": 14,
+    "INT": 19,
+    "WIS": 14,
+    "CHA": 16
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 9,
+    "Nature": 9,
+    "Perception": 7,
+    "Stealth": 8
+  },
+  "senses": {
+    "blindsight": 10,
+    "darkvision": 120,
+    "passive_perception": 17
+  },
+  "languages": [
+    "Elvish",
+    "Undercommon",
+    "can speak with spiders"
+  ],
+  "damage_resistances": [
+    "poison"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Change Shape (Recharges after a Short or Long Rest) (bonus)",
+      "text": "The drow magically transforms into a Large spider, remaining in that form for up to 1 hour, or back into its true form. Its statistics, other than its size, are the same in each form. It can speak and cast spells while in spider form. Any equipment it is wearing or carrying in Humanoid form melds into the spider form. It can't activate, use, wield, or otherwise benefit from any of its equipment. It reverts to its Humanoid form if it dies."
+    },
+    {
+      "name": "Fey Ancestry",
+      "text": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The drow can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    },
+    {
+      "name": "Web Walker",
+      "text": "The drow ignores movement restrictions caused by webbing."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite (Spider Form Only)",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "7d8",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 15,
+        "on_fail_condition": "paralyzed"
+      }
+    },
+    {
+      "name": "Poisonous Touch (Humanoid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "10d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Web (Spider Form Only;)",
+      "kind": "ranged",
+      "attack_bonus": 8,
+      "damage": [],
+      "range": [
+        30,
+        60
+      ],
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "restrained",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 17,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 1,
+      "Dispel Magic": 1,
+      "Faerie Fire": 1,
+      "Insect Plague": 1,
+      "Invisibility": 1
+    }
+  },
+  "save_advantages": [
+    "charmed"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

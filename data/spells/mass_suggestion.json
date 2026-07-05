@@ -1,0 +1,26 @@
+{
+  "name": "Mass Suggestion",
+  "level": 6,
+  "school": "enchantment",
+  "range": 60,
+  "components": [
+    "V",
+    "M"
+  ],
+  "duration_rounds": 100,
+  "target": {
+    "mode": "multi",
+    "count": 6,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "charmed",
+      "save_ends": false
+    }
+  ],
+  "_approx": "as Suggestion, up to six creatures.",
+  "imported": "5etools"
+}

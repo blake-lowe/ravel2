@@ -1,0 +1,36 @@
+{
+  "name": "Vitriolic Sphere",
+  "level": 4,
+  "school": "evocation",
+  "range": 150,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "damage": [
+        {
+          "dice": "10d4",
+          "type": "acid"
+        },
+        {
+          "dice": "5d4",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false
+    }
+  ],
+  "imported": "5etools"
+}

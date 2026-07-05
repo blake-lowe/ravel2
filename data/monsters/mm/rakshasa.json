@@ -1,0 +1,86 @@
+{
+  "name": "Rakshasa",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 13.0,
+  "alignment": "L E",
+  "ac": 16,
+  "hp": 110,
+  "hit_dice": "13d8+52",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 17,
+    "CON": 18,
+    "INT": 13,
+    "WIS": 16,
+    "CHA": 20
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 10,
+    "Insight": 8
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Common",
+    "Infernal"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [
+    "piercing"
+  ],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Limited Magic Immunity",
+      "text": "The rakshasa can't be affected or detected by spells of 6th level or lower unless it wishes to be. It has advantage on saving throws against all other spells and magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 18,
+    "attack_bonus": 10,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 3,
+      "Invisibility": 3,
+      "Suggestion": 3,
+      "Plane Shift": 1
+    }
+  }
+}

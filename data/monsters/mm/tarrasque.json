@@ -1,0 +1,192 @@
+{
+  "name": "Tarrasque",
+  "type": "monstrosity",
+  "size": "Gargantuan",
+  "cr": 30.0,
+  "alignment": "U",
+  "ac": 25,
+  "hp": 676,
+  "hit_dice": "33d20+330",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 30,
+    "DEX": 11,
+    "CON": 30,
+    "INT": 3,
+    "WIS": 11,
+    "CHA": 11
+  },
+  "proficiency_bonus": 9,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "blindsight": 120,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the tarrasque fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The tarrasque has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Reflective Carapace",
+      "text": "Any time the tarrasque is targeted by a magic missile spell, a line spell, or a spell that requires a ranged attack roll, roll a d6. On a 1 to 5, the tarrasque is unaffected. On a 6, the tarrasque is unaffected, and the effect is reflected back at the caster as though it originated from the tarrasque, turning the caster into the target."
+    },
+    {
+      "name": "Siege Monster",
+      "text": "The tarrasque deals double damage to objects and structures."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 19,
+      "damage": [
+        {
+          "dice": "4d12+10",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 20,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 19,
+      "damage": [
+        {
+          "dice": "4d8+10",
+          "type": "slashing"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Horns",
+      "kind": "melee",
+      "attack_bonus": 19,
+      "damage": [
+        {
+          "dice": "4d10+10",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 19,
+      "damage": [
+        {
+          "dice": "4d6+10",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 20,
+      "rider": {
+        "ability": "STR",
+        "dc": 20,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    },
+    {
+      "name": "Horns",
+      "count": 1
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Swallow",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 20,
+      "damage": [
+        {
+          "dice": "16d6",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 20,
+        "on_fail_condition": "blinded",
+        "escalates_to": "prone"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  },
+  "frightful_presence": {
+    "name": "Frightful Presence",
+    "shape": "sphere",
+    "size": 120,
+    "origin_range": 0,
+    "save": "WIS",
+    "dc": 17,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": {
+      "ability": "WIS",
+      "dc": 17,
+      "on_fail_condition": "frightened"
+    }
+  }
+}

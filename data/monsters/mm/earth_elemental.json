@@ -1,0 +1,81 @@
+{
+  "name": "Earth Elemental",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "N",
+  "ac": 17,
+  "hp": 126,
+  "hit_dice": "12d10+60",
+  "speeds": {
+    "walk": 30,
+    "burrow": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 8,
+    "CON": 20,
+    "INT": 5,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Terran"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "thunder"
+  ],
+  "condition_immunities": [
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Earth Glide",
+      "text": "The elemental can burrow through nonmagical, unworked earth and stone. While doing so, the elemental doesn't disturb the material it moves through."
+    },
+    {
+      "name": "Siege Monster",
+      "text": "The elemental deals double damage to objects and structures."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

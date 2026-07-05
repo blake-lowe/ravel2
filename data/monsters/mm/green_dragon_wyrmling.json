@@ -1,0 +1,93 @@
+{
+  "name": "Green Dragon Wyrmling",
+  "type": "dragon",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "L E",
+  "ac": 17,
+  "hp": 38,
+  "hit_dice": "7d8+7",
+  "speeds": {
+    "walk": 30,
+    "fly": 60,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 12,
+    "CON": 13,
+    "INT": 14,
+    "WIS": 11,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 3
+  },
+  "senses": {
+    "blindsight": 10,
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Poison Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 11,
+      "damage": [
+        {
+          "dice": "6d6",
+          "type": "poison"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

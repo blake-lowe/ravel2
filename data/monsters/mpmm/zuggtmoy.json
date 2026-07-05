@@ -1,0 +1,134 @@
+{
+  "name": "Zuggtmoy",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 23.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 304,
+  "hit_dice": "32d10+128",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 15,
+    "CON": 18,
+    "INT": 20,
+    "WIS": 19,
+    "CHA": 24
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 11
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 21
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Protective Thrall (reaction)",
+      "text": "When Zuggtmoy is hit by an attack roll, one creature within 10 feet of her that is charmed by her is hit by the attack instead."
+    },
+    {
+      "name": "Infestation Spores (3/Day) (bonus)",
+      "text": "Zuggtmoy releases spores that burst out in a cloud that fills a 20-foot-radius sphere centered on her, and it lingers for 1 minute. Any creature in the cloud when it appears, or that enters it later, must make a 19 Constitution saving throw. On a successful save, the creature can't be infected by these spores for 24 hours. On a failed save, the creature is infected with a disease called the spores of Zuggtmoy, which lasts until the creature is cured of the disease or dies. While infected in this way, the creature can't be reinfected, and it must repeat the saving throw at the end of every 24 hours, ending the infection on a success. On a failure, the infected creature's body is slowly taken over by fungal growth, and after three such failed saves, the creature dies and is reanimated as a quaggoth spore servant if it's a type of creature that can be."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Zuggtmoy fails a saving throw, she can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Zuggtmoy has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "kind": "melee",
+      "attack_bonus": 0,
+      "damage": [
+        {
+          "dice": "2d8+6",
+          "type": "force"
+        },
+        {
+          "dice": "2d8",
+          "type": "poison"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Pseudopod",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Mind Control Spores (bonus)",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 19,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 19,
+        "on_fail_condition": "charmed"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 22,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Dispel Magic": 3,
+      "Entangle": 3
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Pseudopod"
+  }
+}

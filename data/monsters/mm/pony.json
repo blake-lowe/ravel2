@@ -1,0 +1,50 @@
+{
+  "name": "Pony",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.125,
+  "alignment": "U",
+  "ac": 10,
+  "hp": 11,
+  "hit_dice": "2d8+2",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 10,
+    "CON": 13,
+    "INT": 2,
+    "WIS": 11,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d4+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

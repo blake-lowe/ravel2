@@ -1,0 +1,82 @@
+{
+  "name": "Frost Giant",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 8,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 138,
+  "hit_dice": "12d12+60",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 9,
+    "CON": 21,
+    "INT": 9,
+    "WIS": 10,
+    "CHA": 12
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Athletics": 9,
+    "Perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greataxe",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "3d12+6",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "4d10+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        240
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greataxe",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "curated": true,
+  "imported": "5etools-mm"
+}

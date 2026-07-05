@@ -1,0 +1,33 @@
+{
+  "name": "Melf's Acid Arrow",
+  "level": 2,
+  "school": "evocation",
+  "range": 90,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "4d4",
+          "type": "acid"
+        },
+        {
+          "dice": "2d4",
+          "type": "acid"
+        }
+      ],
+      "melee": false
+    }
+  ],
+  "imported": "5etools"
+}

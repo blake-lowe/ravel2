@@ -1,0 +1,121 @@
+{
+  "name": "Blue Abishai",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 17.0,
+  "alignment": "L E",
+  "ac": 19,
+  "hp": 202,
+  "hit_dice": "27d8+81",
+  "speeds": {
+    "walk": 30,
+    "fly": 50
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 17,
+    "INT": 22,
+    "WIS": 23,
+    "CHA": 18
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 12
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Draconic",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "lightning",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport (bonus)",
+      "text": "The abishai teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space that it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The abishai has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d10+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "4d6",
+          "type": "lightning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Lightning Strike",
+      "kind": "ranged",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "8d8",
+          "type": "lightning"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 20,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 2,
+      "Dispel Magic": 2,
+      "Greater Invisibility": 2
+    }
+  },
+  "teleport_bonus": 30
+}

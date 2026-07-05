@@ -1,0 +1,86 @@
+{
+  "name": "Darkling",
+  "type": "fey",
+  "size": "Small",
+  "cr": 0.5,
+  "alignment": "C N",
+  "ac": 14,
+  "hp": 13,
+  "hit_dice": "3d6+3",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 9,
+    "DEX": 16,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 12,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Acrobatics": 5,
+    "Deception": 2,
+    "Perception": 5,
+    "Stealth": 7
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Elvish",
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Light Sensitivity",
+      "text": "While in bright light, the darkling has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Death Flash",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 10,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 10,
+        "on_fail_condition": "blinded"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

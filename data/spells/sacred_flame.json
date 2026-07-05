@@ -1,0 +1,27 @@
+{
+  "name": "Sacred Flame",
+  "level": 0,
+  "school": "evocation",
+  "range": 60,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": false,
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "radiant"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "name": "Pixie",
+  "type": "fey",
+  "size": "Tiny",
+  "cr": 0.25,
+  "alignment": "N G",
+  "ac": 15,
+  "hp": 1,
+  "hit_dice": "1d4-1",
+  "speeds": {
+    "walk": 10,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 2,
+    "DEX": 20,
+    "CON": 8,
+    "INT": 10,
+    "WIS": 14,
+    "CHA": 15
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 7
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Superior Invisibility",
+      "text": "The pixie magically turns invisible until its concentration ends (as if concentration on a spell). Any equipment the pixie wears or carries is invisible with it."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The pixie has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Confusion": 1,
+      "Dispel Magic": 1,
+      "Entangle": 1,
+      "Sleep": 1
+    }
+  }
+}

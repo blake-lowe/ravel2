@@ -1,0 +1,57 @@
+{
+  "name": "Warhorse Skeleton",
+  "type": "undead",
+  "size": "Large",
+  "cr": 0.5,
+  "alignment": "L E",
+  "ac": 13,
+  "hp": 22,
+  "hit_dice": "3d10+6",
+  "speeds": {
+    "walk": 60
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 12,
+    "CON": 15,
+    "INT": 2,
+    "WIS": 8,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "bludgeoning"
+  ],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

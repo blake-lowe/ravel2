@@ -1,0 +1,139 @@
+{
+  "name": "Yuan-ti Abomination",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 7.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 127,
+  "hit_dice": "15d10+45",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 16,
+    "CON": 17,
+    "INT": 17,
+    "WIS": 15,
+    "CHA": 18
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5,
+    "Stealth": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "text": "The yuan-ti can use its action to polymorph into a Large snake, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It doesn't change form if it dies."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The yuan-ti has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Constrict",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    },
+    {
+      "name": "Scimitar (Abomination Form Only)",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow (Abomination Form Only)",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "poison"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 15,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fear": 1,
+      "Suggestion": 3
+    }
+  }
+}

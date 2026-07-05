@@ -1,0 +1,128 @@
+{
+  "name": "Bodak",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 6.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 58,
+  "hit_dice": "9d8+18",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 16,
+    "CON": 15,
+    "INT": 7,
+    "WIS": 12,
+    "CHA": 12
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 6
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Abyssal",
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire"
+  ],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Aura of Annihilation (bonus)",
+      "text": "The bodak activates or deactivates this deathly aura. While active, the aura deals 5 necrotic damage to any creature that ends its turn within 30 feet of the bodak. Undead and Fiends ignore this effect."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The bodak doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d8",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Withering Gaze",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "4d10",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": null
+    },
+    {
+      "name": "Death Gaze",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "3d10",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "on_fail_condition": "incapacitated",
+        "escalates_to": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical",
+    "sunlight_sensitivity"
+  ],
+  "imported": "5etools-mpmm",
+  "save_advantages": [
+    "frightened",
+    "incapacitated"
+  ]
+}

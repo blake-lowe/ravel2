@@ -1,0 +1,29 @@
+{
+  "name": "Arms of Hadar",
+  "level": 1,
+  "school": "conjuration",
+  "range": 10,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "STR",
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": false
+    }
+  ],
+  "imported": "5etools"
+}

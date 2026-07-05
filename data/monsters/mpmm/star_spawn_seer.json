@@ -1,0 +1,132 @@
+{
+  "name": "Star Spawn Seer",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 13.0,
+  "alignment": "N E",
+  "ac": 17,
+  "hp": 153,
+  "hit_dice": "18d8+72",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 12,
+    "CON": 18,
+    "INT": 22,
+    "WIS": 19,
+    "CHA": 16
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 9
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 19
+  },
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "Undercommon"
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Bend Space (reaction)",
+      "text": "When the seer would be hit by an attack roll, it teleports, along with any equipment it is wearing or carrying, exchanging positions with another star spawn it can see within 60 feet of it. The other star spawn is hit by the attack instead."
+    },
+    {
+      "name": "Out-Of-Phase Movement",
+      "text": "The seer can move through other creatures and objects as if they were difficult terrain, and its movement doesn't provoke opportunity attack. Each creature it moves through takes 5 (1d10) psychic damage; no creature can take this damage more than once per turn. The seer takes 5 (1d10) force damage if it ends its turn inside an object."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Comet Staff",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "1d8+6",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d8",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 19,
+        "on_fail_condition": "incapacitated"
+      }
+    },
+    {
+      "name": "Psychic Orb",
+      "kind": "ranged",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "5d10",
+          "type": "psychic"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Comet Staff",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Collapse Distance",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 19,
+      "damage": [
+        {
+          "dice": "6d12",
+          "type": "psychic"
+        },
+        {
+          "dice": "3d12",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

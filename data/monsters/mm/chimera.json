@@ -1,0 +1,111 @@
+{
+  "name": "Chimera",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 6.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 114,
+  "hit_dice": "12d10+48",
+  "speeds": {
+    "walk": 30,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 11,
+    "CON": 19,
+    "INT": 3,
+    "WIS": 14,
+    "CHA": 10
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 8
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 18
+  },
+  "languages": [
+    "understands Draconic but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Horns",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d12+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Horns",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Fire Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "7d8",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm"
+}

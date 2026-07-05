@@ -1,0 +1,117 @@
+{
+  "name": "Glabrezu",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 9.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 157,
+  "hit_dice": "15d10+75",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 15,
+    "CON": 21,
+    "INT": 19,
+    "WIS": 17,
+    "CHA": 16
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The glabrezu has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pincer",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d10+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    },
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d4+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Pincer",
+      "count": 2
+    },
+    {
+      "name": "Fist",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 0,
+      "Dispel Magic": 0,
+      "Confusion": 1,
+      "Power Word Stun": 1
+    }
+  }
+}

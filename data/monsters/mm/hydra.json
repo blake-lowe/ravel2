@@ -1,0 +1,59 @@
+{
+  "name": "Hydra",
+  "type": "monstrosity",
+  "size": "Huge",
+  "cr": 8,
+  "alignment": "U",
+  "ac": 15,
+  "hp": 172,
+  "hit_dice": "15d12+75",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 12,
+    "CON": 20,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 7
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 16
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d10+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 5
+    }
+  ],
+  "areas": [],
+  "curated": true,
+  "imported": "5etools-mm"
+}

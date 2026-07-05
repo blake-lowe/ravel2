@@ -1,0 +1,75 @@
+{
+  "name": "Gnoll",
+  "type": "humanoid (gnoll)",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "chaotic evil",
+  "ac": 15,
+  "hp": 22,
+  "hit_dice": "5d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 12,
+    "CON": 11,
+    "INT": 6,
+    "WIS": 10,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Gnoll"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Rampage",
+      "text": "When the gnoll reduces a creature to 0 HP with a melee attack, it can take a bonus action to make a bite attack at a foe in reach. (Implemented via the event/trigger system.)"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "strategy": "Close to melee and use its spear, then exploit Rampage to chain extra bites whenever it drops a foe.",
+  "triggered_abilities": [
+    "rampage"
+  ],
+  "curated": true,
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,87 @@
+{
+  "name": "Green Hag",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "N E",
+  "ac": 17,
+  "hp": 82,
+  "hit_dice": "11d8+33",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 12,
+    "CON": 16,
+    "INT": 13,
+    "WIS": 14,
+    "CHA": 14
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Arcana": 3,
+    "Deception": 4,
+    "Perception": 4,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Common",
+    "Draconic",
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Illusory Appearance",
+      "text": "The hag covers herself and anything she is wearing or carrying with a magical illusion that makes her look like another creature of her general size and humanoid shape. The illusion ends if the hag takes a bonus action to end it or if she dies. The changes wrought by this effect fail to hold up to physical inspection. For example, the hag could appear to have smooth skin, but someone touching her would feel her rough flesh. Otherwise, a creature must take an action to visually inspect the illusion and succeed on a 20 Intelligence (Investigation) check to discern that the hag is disguised."
+    },
+    {
+      "name": "Invisible Passage",
+      "text": "The hag magically turns invisible until she attacks or casts a spell, or until her concentration ends (as if concentration on a spell). While invisible, she leaves no physical evidence of her passage, so she can be tracked only by magic. Any equipment she wears or carries is invisible with her."
+    },
+    {
+      "name": "Mimicry",
+      "text": "The hag can mimic animal sounds and humanoid voices. A creature that hears the sounds can tell they are imitations with a successful 14 Wisdom (Insight) check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Vicious Mockery": 0
+    }
+  },
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

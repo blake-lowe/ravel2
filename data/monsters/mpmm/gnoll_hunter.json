@@ -1,0 +1,95 @@
+{
+  "name": "Gnoll Hunter",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 22,
+  "hit_dice": "4d8+4",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 8,
+    "WIS": 12,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Gnoll"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "triggered_abilities": [
+    "rampage"
+  ]
+}

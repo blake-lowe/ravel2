@@ -1,0 +1,72 @@
+{
+  "name": "Aurochs",
+  "type": "beast",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 38,
+  "hit_dice": "4d10+16",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 10,
+    "CON": 19,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "extra_damage": {
+          "dice": "2d8",
+          "type": "piercing"
+        },
+        "half_on_save": false,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "bonus_damage": [
+    {
+      "name": "Gore",
+      "when": "charged",
+      "damage": {
+        "dice": "2d8",
+        "type": "piercing"
+      },
+      "threshold": 20,
+      "kind": "melee"
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

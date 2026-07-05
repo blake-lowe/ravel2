@@ -1,0 +1,29 @@
+{
+  "name": "Thorn Whip",
+  "level": 0,
+  "school": "transmutation",
+  "range": 30,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "piercing"
+        }
+      ],
+      "melee": true
+    }
+  ],
+  "imported": "5etools"
+}

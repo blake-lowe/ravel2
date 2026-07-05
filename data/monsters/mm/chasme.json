@@ -1,0 +1,90 @@
+{
+  "name": "Chasme",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 6.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 84,
+  "hit_dice": "13d10+13",
+  "speeds": {
+    "walk": 20,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 15,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 14,
+    "CHA": 10
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "DEX",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "blindsight": 10,
+    "darkvision": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Drone",
+      "text": "The chasme produces a horrid droning sound to which demons are immune. Any other creature that starts its turn with in 30 feet of the chasme must succeed on a 12 Constitution saving throw or fall unconscious for 10 minutes. A creature that can't hear the drone automatically succeeds on the save. The effect on the creature ends if it takes damage or if another creature takes an action to splash it with Holy Water (Flask). If a creature's saving throw is successful or the effect ends for it, it is immune to the drone for the next 24 hours."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The chasme has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The chasme can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Proboscis",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "4d6+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "7d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5,
+      "reduces_max_hp": true
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm"
+}

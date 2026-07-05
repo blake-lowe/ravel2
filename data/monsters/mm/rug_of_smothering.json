@@ -1,0 +1,84 @@
+{
+  "name": "Rug of Smothering",
+  "type": "construct",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 33,
+  "hit_dice": "6d10",
+  "speeds": {
+    "walk": 10
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 14,
+    "CON": 10,
+    "INT": 1,
+    "WIS": 3,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 6
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison",
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Antimagic Susceptibility",
+      "text": "The rug is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the rug must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute."
+    },
+    {
+      "name": "Damage Transfer",
+      "text": "While it is grappling a creature, the rug takes only half the damage dealt to it, and the creature grappled by the rug takes the other half."
+    },
+    {
+      "name": "False Appearance",
+      "text": "While the rug remains motionless, it is indistinguishable from a normal rug."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Smother",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 13,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

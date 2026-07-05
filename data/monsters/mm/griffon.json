@@ -1,0 +1,80 @@
+{
+  "name": "Griffon",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 59,
+  "hit_dice": "7d10+21",
+  "speeds": {
+    "walk": 30,
+    "fly": 80
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 15,
+    "CON": 16,
+    "INT": 2,
+    "WIS": 13,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "text": "The griffon has advantage on Wisdom (Perception) checks that rely on sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Beak",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

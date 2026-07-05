@@ -1,0 +1,95 @@
+{
+  "name": "Lonely Sorrowsworn",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 9.0,
+  "alignment": "N E",
+  "ac": 16,
+  "hp": 112,
+  "hit_dice": "15d8+45",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 17,
+    "INT": 6,
+    "WIS": 11,
+    "CHA": 6
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common"
+  ],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Sorrowful Embrace",
+      "text": "Each creature grappled by the sorrowsworn must make a 15 Wisdom saving throw, taking 18 (4d8) psychic damage on a failed save, or half as much damage on a successful one. In either case, the sorrowsworn pulls each of those creatures up to 30 feet straight toward it."
+    },
+    {
+      "name": "Thrives on Company",
+      "text": "The sorrowsworn has advantage on attack rolls while it is within 30 feet of at least two other creatures. It otherwise has disadvantage on attack rolls."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Harpoon Arm",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d8+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 60,
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Harpoon Arm",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Psychic Leech",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

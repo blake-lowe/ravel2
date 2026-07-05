@@ -1,0 +1,71 @@
+{
+  "name": "Dolphin",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.125,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 11,
+  "hit_dice": "2d8+2",
+  "speeds": {
+    "walk": 0,
+    "swim": 60
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 13,
+    "CON": 13,
+    "INT": 6,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "text": "The dolphin can hold its breath for 20 minutes."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "bonus_damage": [
+    {
+      "name": "Slam",
+      "when": "charged",
+      "damage": {
+        "dice": "1d6",
+        "type": "bludgeoning"
+      },
+      "threshold": 30,
+      "kind": "melee"
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

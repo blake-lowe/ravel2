@@ -1,0 +1,59 @@
+{
+  "name": "Giant Weasel",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.125,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 9,
+  "hit_dice": "2d8",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 16,
+    "CON": 10,
+    "INT": 4,
+    "WIS": 12,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "text": "The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

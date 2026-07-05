@@ -1,0 +1,60 @@
+{
+  "name": "Goat",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 10,
+  "hp": 4,
+  "hit_dice": "1d8",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 10,
+    "CON": 11,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Sure-Footed",
+      "text": "The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Ram",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 20,
+    "dc": 10,
+    "bonus_attack": "Ram"
+  }
+}

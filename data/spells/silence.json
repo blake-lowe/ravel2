@@ -1,0 +1,14 @@
+{
+  "name": "Silence",
+  "level": 2,
+  "school": "illusion",
+  "casting_time": "action",
+  "range": 120,
+  "components": ["V", "S"],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {"mode": "point", "shape": "sphere", "size": 20, "affects": "enemies"},
+  "effects": [
+    {"kind": "silence", "size": 20}
+  ]
+}

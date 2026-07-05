@@ -1,0 +1,104 @@
+{
+  "name": "Leucrotta",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 67,
+  "hit_dice": "9d10+18",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 15,
+    "INT": 9,
+    "WIS": 12,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 2,
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Abyssal",
+    "Gnoll"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Kicking Retreat (bonus)",
+      "text": "Immediately after the leucrotta makes a Hooves attack, it takes the Disengage action."
+    },
+    {
+      "name": "Mimicry",
+      "text": "The leucrotta can mimic Beast sounds and Humanoid voices. A creature that hears the sounds can tell they are imitations only with a successful 14 Wisdom (Insight) check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Hooves",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Stench",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

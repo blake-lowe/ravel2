@@ -1,0 +1,147 @@
+{
+  "name": "Sibriex",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 18.0,
+  "alignment": "C E",
+  "ac": 19,
+  "hp": 150,
+  "hit_dice": "12d12+72",
+  "speeds": {
+    "walk": 0,
+    "fly": 20,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 3,
+    "CON": 23,
+    "INT": 25,
+    "WIS": 24,
+    "CHA": 25
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 13,
+    "History": 13,
+    "Perception": 13
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 23
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Contamination",
+      "text": "The sibriex emits an aura of corruption 30 feet in every direction. Vegetation withers in the aura, and the ground in the aura is difficult terrain for other creatures. Any creature that starts its turn in the aura must succeed on a 20 Constitution saving throw or take 14 (4d6) poison damage. A creature that succeeds on the save is immune to this sibriex's Contamination for 24 hours."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the sibriex fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The sibriex has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Chain",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "2d12+7",
+          "type": "force"
+        }
+      ],
+      "reach": 15
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Chain",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Squirt Bile",
+      "shape": "sphere",
+      "size": 120,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 20,
+      "damage": [
+        {
+          "dice": "9d6",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null,
+      "max_targets": 1
+    },
+    {
+      "name": "Warp Creature",
+      "shape": "sphere",
+      "size": 120,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 20,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 20,
+        "on_fail_condition": "poisoned"
+      },
+      "max_targets": 3
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 21,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Command": 0,
+      "Dispel Magic": 0,
+      "Hold Monster": 0
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Chain"
+  }
+}

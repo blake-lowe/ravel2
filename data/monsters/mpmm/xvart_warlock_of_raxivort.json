@@ -1,0 +1,100 @@
+{
+  "name": "Xvart Warlock of Raxivort",
+  "type": "monstrosity",
+  "size": "Small",
+  "cr": 1.0,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 22,
+  "hit_dice": "5d6+5",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 8,
+    "WIS": 11,
+    "CHA": 12
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 30,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Abyssal"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Low Cunning (bonus)",
+      "text": "The xvart takes the Disengage action."
+    },
+    {
+      "name": "Raxivort's Tongue",
+      "text": "The xvart can communicate with ordinary bat and rat, as well as giant bat and giant rat."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Raxivort's Bite",
+      "kind": "ranged",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "poison"
+        }
+      ],
+      "range": [
+        30,
+        30
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scimitar",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 11,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Burning Hands": 1,
+      "Invisibility": 1
+    }
+  },
+  "temp_hp_on_kill": 4,
+  "triggered_abilities": [
+    "temp_hp_on_kill"
+  ]
+}

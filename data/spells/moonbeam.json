@@ -1,0 +1,36 @@
+{
+  "name": "Moonbeam",
+  "level": 2,
+  "school": "evocation",
+  "casting_time": "action",
+  "range": 120,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 5,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "aura",
+      "ability": "CON",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "2d10",
+          "type": "radiant"
+        }
+      ],
+      "shape": "cylinder",
+      "size": 5,
+      "anchor": "point"
+    }
+  ]
+}

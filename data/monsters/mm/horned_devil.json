@@ -1,0 +1,113 @@
+{
+  "name": "Horned Devil",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 11.0,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 178,
+  "hit_dice": "17d10+85",
+  "speeds": {
+    "walk": 20,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 17,
+    "CON": 21,
+    "INT": 12,
+    "WIS": 16,
+    "CHA": 17
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "STR",
+    "DEX",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The devil has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fork",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d8+6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "1d8+6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Hurl Flame",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "fire"
+        }
+      ],
+      "range": [
+        150,
+        150
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Fork",
+      "count": 2
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mm"
+}

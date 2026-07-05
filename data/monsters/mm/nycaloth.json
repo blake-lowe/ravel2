@@ -1,0 +1,117 @@
+{
+  "name": "Nycaloth",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 9.0,
+  "alignment": "N E",
+  "ac": 18,
+  "hp": 123,
+  "hit_dice": "13d10+52",
+  "speeds": {
+    "walk": 40,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 11,
+    "CON": 19,
+    "INT": 12,
+    "WIS": 10,
+    "CHA": 15
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {
+    "Intimidation": 6,
+    "Perception": 4,
+    "Stealth": 4
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "The nycaloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The nycaloth has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The nycaloth's weapon attacks are magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Greataxe",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d12+5",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 0,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 0,
+      "Dispel Magic": 0,
+      "Mirror Image": 0
+    }
+  }
+}

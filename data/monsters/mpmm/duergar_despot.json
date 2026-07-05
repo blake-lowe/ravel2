@@ -1,0 +1,133 @@
+{
+  "name": "Duergar Despot",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 12.0,
+  "alignment": "A",
+  "ac": 21,
+  "hp": 119,
+  "hit_dice": "14d8+56",
+  "speeds": {
+    "walk": 25
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 5,
+    "CON": 19,
+    "INT": 15,
+    "WIS": 14,
+    "CHA": 13
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The duergar has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Psychic Engine",
+      "text": "When the duergar suffers a critical hit or is reduced to 0 hit points, psychic energy erupts from its frame to deal 14 (4d6) psychic damage to each creature within 5 feet of it."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Iron Fist",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "4d8+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 17,
+        "on_fail_condition": "prone",
+        "push": 30
+      }
+    },
+    {
+      "name": "Stomping Foot",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d10+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Iron Fist",
+      "count": 2
+    },
+    {
+      "name": "Stomping Foot",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Flame Jet",
+      "shape": "line",
+      "size": 100,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "4d8",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "sunlight_sensitivity"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Stinking Cloud": 1
+    }
+  }
+}

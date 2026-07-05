@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Under Construction — Ravel</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>
+  .dig { max-width: 560px; margin: 60px auto; text-align: center; }
+  .dig .sign {
+    font-size: 22px; font-variant: small-caps; letter-spacing: 3px;
+    border: 4px double var(--ink); padding: 18px; background: var(--paper);
+    box-shadow: 4px 4px 0 rgba(33,29,24,.25);
+  }
+  .dig .stripes {
+    height: 14px; margin: 0 0 14px;
+    background: repeating-linear-gradient(45deg, var(--ink) 0 12px, var(--paper) 12px 24px);
+    border: 2px solid var(--ink);
+  }
+  .dig p { font-style: italic; color: var(--ink-faint); }
+  .dig .pick { font-size: 40px; animation: swing 1.6s ease-in-out infinite; display: inline-block; }
+  @keyframes swing { 0%,100% { transform: rotate(-18deg); } 50% { transform: rotate(14deg); } }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <h1>Ravel</h1>
+  <p class="subtitle">the chant on every basher, berk, and beast what's bled in the Blood Pit — no screed, cutter, just the dark</p>
+  <nav class="topnav">
+    <a href="/pit">The Blood Pit</a>
+    <a href="/bestiary">Bestiary</a>
+    <a href="/builder">Hire a Gladiator <span class="wip">[soon]</span></a>
+  </nav>
+</header>
+<main class="dig">
+  <div class="sign">
+    <div class="stripes"></div>
+    <span class="pick">⛏</span>
+    <div>Under Construction</div>
+    <p>The dabus are still hammering this ward together.<br>
+    It arrives with its numbered slice — see <code>docs/ROADMAP.md</code>, Slice 12b/12c.</p>
+    <div class="stripes"></div>
+  </div>
+  <p><a href="/bestiary">→ meanwhile, peruse the Bestiary</a></p>
+</main>
+</body>
+</html>

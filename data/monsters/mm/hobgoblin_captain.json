@@ -1,0 +1,79 @@
+{
+  "name": "Hobgoblin Captain",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "L E",
+  "ac": 17,
+  "hp": 39,
+  "hit_dice": "6d8+12",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 12,
+    "WIS": 10,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Martial Advantage",
+      "text": "Once per turn, the hobgoblin can deal an extra 10 (3d6) damage to a creature it hits with a weapon attack if that creature is within 5 feet of an ally of the hobgoblin that isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Javelin",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "leadership"
+  ]
+}

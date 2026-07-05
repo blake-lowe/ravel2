@@ -1,0 +1,128 @@
+{
+  "name": "Goristro",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 17.0,
+  "alignment": "C E",
+  "ac": 19,
+  "hp": 310,
+  "hit_dice": "23d12+161",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 25,
+    "DEX": 11,
+    "CON": 25,
+    "INT": 6,
+    "WIS": 13,
+    "CHA": 14
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "STR",
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 7
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 17
+  },
+  "languages": [
+    "Abyssal"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Labyrinthine Recall",
+      "text": "The goristro can perfectly recall any path it has traveled."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The goristro has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Siege Monster",
+      "text": "The goristro deals double damage to objects and structures."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "3d8+7",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Hoof",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "3d10+7",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 21,
+        "on_fail_condition": "prone"
+      }
+    },
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "7d10+7",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Fist",
+      "count": 2
+    },
+    {
+      "name": "Hoof",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 15,
+    "dc": 21,
+    "bonus_attack": "Gore"
+  }
+}

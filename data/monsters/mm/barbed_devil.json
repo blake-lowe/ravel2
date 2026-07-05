@@ -1,0 +1,120 @@
+{
+  "name": "Barbed Devil",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "L E",
+  "ac": 15,
+  "hp": 110,
+  "hit_dice": "13d8+52",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 17,
+    "CON": 18,
+    "INT": 12,
+    "WIS": 14,
+    "CHA": 14
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 5,
+    "Insight": 5,
+    "Perception": 8
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 18
+  },
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Barbed Hide",
+      "text": "At the start of each of its turns, the barbed devil deals 5 (1d10) piercing damage to any creature grappling it."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The devil has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Hurl Flame",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "fire"
+        }
+      ],
+      "range": [
+        150,
+        150
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tail",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mm"
+}

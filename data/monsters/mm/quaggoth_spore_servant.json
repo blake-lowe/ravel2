@@ -1,0 +1,65 @@
+{
+  "name": "Quaggoth Spore Servant",
+  "type": "plant",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 45,
+  "hit_dice": "6d8+18",
+  "speeds": {
+    "walk": 20,
+    "climb": 20
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 12,
+    "CON": 16,
+    "INT": 2,
+    "WIS": 6,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 8
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Guard",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.125,
+  "alignment": "A",
+  "ac": 16,
+  "hp": 11,
+  "hit_dice": "2d8+2",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 12,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

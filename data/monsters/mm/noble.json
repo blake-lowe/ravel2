@@ -1,0 +1,57 @@
+{
+  "name": "Noble",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.125,
+  "alignment": "A",
+  "ac": 15,
+  "hp": 9,
+  "hit_dice": "2d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 12,
+    "CON": 11,
+    "INT": 12,
+    "WIS": 14,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 5,
+    "Insight": 4,
+    "Persuasion": 5
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "any two languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Rapier",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d8+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "parry": 2
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Giant Badger",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 10,
+  "hp": 13,
+  "hit_dice": "2d8+4",
+  "speeds": {
+    "walk": 30,
+    "burrow": 10
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 10,
+    "CON": 15,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 30,
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "text": "The badger has advantage on Wisdom (Perception) checks that rely on smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d4+1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

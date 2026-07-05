@@ -1,0 +1,128 @@
+{
+  "name": "Nightwalker",
+  "type": "undead",
+  "size": "Huge",
+  "cr": 20.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 337,
+  "hit_dice": "25d12+175",
+  "speeds": {
+    "walk": 40,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 19,
+    "CON": 24,
+    "INT": 6,
+    "WIS": 9,
+    "CHA": 8
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "CON"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 9
+  },
+  "languages": [],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Life Eater",
+      "text": "A creature dies if reduced to 0 hit points by the nightwalker and can't be revived except by a wish spell."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The nightwalker doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Enervating Focus",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "5d8+6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 15,
+      "reduces_max_hp": true
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Enervating Focus",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Finger of Doom",
+      "shape": "sphere",
+      "size": 300,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 21,
+      "damage": [
+        {
+          "dice": "6d12",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 21,
+        "on_fail_condition": "frightened"
+      }
+    },
+    {
+      "name": "Annihilating Aura",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 21,
+      "damage": [
+        {
+          "dice": "6d6",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

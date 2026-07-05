@@ -1,0 +1,66 @@
+{
+  "name": "Worg",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 0.5,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 26,
+  "hit_dice": "4d10+4",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 13,
+    "CON": 13,
+    "INT": 7,
+    "WIS": 11,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Goblin",
+    "Worg"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "text": "The worg has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 13,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

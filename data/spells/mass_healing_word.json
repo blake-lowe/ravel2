@@ -1,0 +1,32 @@
+{
+  "name": "Mass Healing Word",
+  "level": 3,
+  "school": "evocation",
+  "casting_time": "bonus",
+  "range": 60,
+  "components": [
+    "V"
+  ],
+  "target": {
+    "mode": "multi",
+    "count": 6,
+    "affects": "allies"
+  },
+  "effects": [
+    {
+      "kind": "heal",
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "healing"
+        }
+      ],
+      "add_mod": true
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d4"
+  },
+  "imported": "5etools"
+}

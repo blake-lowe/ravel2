@@ -1,0 +1,81 @@
+{
+  "name": "Male Steeder",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 13,
+  "hit_dice": "2d8+4",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 12,
+    "CON": 14,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 5,
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 14
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Extraordinary Leap",
+      "text": "The distance of the steeder's long jumps is tripled; every foot of its walking speed that it spends on the jump allows it to jump 3 feet."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The steeder can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Sticky Leg",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 12,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,99 @@
+{
+  "name": "Sea Hag",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 52,
+  "hit_dice": "7d8+21",
+  "speeds": {
+    "walk": 30,
+    "swim": 40
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 13,
+    "CON": 16,
+    "INT": 12,
+    "WIS": 12,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Aquan",
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Illusory Appearance",
+      "text": "The hag covers herself and anything she is wearing or carrying with a magical illusion that makes her look like an ugly creature of her general size and humanoid shape. The effect ends if the hag takes a bonus action to end it or if she dies. The changes wrought by this effect fail to hold up to physical inspection. For example, the hag could appear to have no claws, but someone touching her hand might feel the claws. Otherwise, a creature must take an action to visually inspect the illusion and succeed on a 16 Intelligence (Investigation) check to discern that the hag is disguised."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Death Glare",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 11,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 11,
+        "zero_hp_on_fail": true
+      },
+      "max_targets": 1,
+      "requires_condition": "frightened"
+    },
+    {
+      "name": "Horrific Appearance",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 11,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 11,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

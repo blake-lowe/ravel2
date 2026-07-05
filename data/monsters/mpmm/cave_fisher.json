@@ -1,0 +1,90 @@
+{
+  "name": "Cave Fisher",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "U",
+  "ac": 16,
+  "hp": 58,
+  "hit_dice": "9d8+18",
+  "speeds": {
+    "walk": 20,
+    "climb": 20
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 13,
+    "CON": 14,
+    "INT": 3,
+    "WIS": 10,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2,
+    "Stealth": 5
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Adhesive Filament (bonus)",
+      "text": "The cave fisher extends a sticky filament up to 60 feet, and the filament adheres to anything that touches it. A creature the filament adheres to is grappled by the cave fisher (escape 13), and ability checks made to escape this grapple have disadvantage. The filament can be attacked (AC 15; 5 hit points; immunity to poison and psychic damage). A weapon that fails to sever it becomes stuck to it, requiring an action and a successful 13 Strength check to pull free. Destroying the filament deals no damage to the cave fisher. The filament crumbles away if the cave fisher takes this bonus action again."
+    },
+    {
+      "name": "Flammable Blood",
+      "text": "If the cave fisher drops to half its hit points or fewer, it gains vulnerability to fire damage."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The cave fisher can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Retract Filament",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "STR",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "STR",
+        "dc": 13,
+        "on_fail_condition": "grappled"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

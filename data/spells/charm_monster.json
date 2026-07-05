@@ -1,0 +1,25 @@
+{
+  "name": "Charm Monster",
+  "level": 4,
+  "school": "enchantment",
+  "range": 30,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "duration_rounds": 100,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "charmed",
+      "save_ends": false
+    }
+  ],
+  "imported": "5etools"
+}

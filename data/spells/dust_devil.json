@@ -1,0 +1,34 @@
+{
+  "name": "Dust Devil",
+  "level": 2,
+  "school": "conjuration",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 10,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "STR",
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

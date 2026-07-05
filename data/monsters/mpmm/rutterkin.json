@@ -1,0 +1,86 @@
+{
+  "name": "Rutterkin",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 37,
+  "hit_dice": "5d8+15",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 15,
+    "CON": 17,
+    "INT": 5,
+    "WIS": 12,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "3d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Immobilizing Fear",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 11,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 11,
+        "on_fail_condition": "frightened",
+        "escalates_to": "restrained"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

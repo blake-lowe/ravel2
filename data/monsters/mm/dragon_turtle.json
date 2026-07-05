@@ -1,0 +1,125 @@
+{
+  "name": "Dragon Turtle",
+  "type": "dragon",
+  "size": "Gargantuan",
+  "cr": 17.0,
+  "alignment": "N",
+  "ac": 20,
+  "hp": 341,
+  "hit_dice": "22d20+110",
+  "speeds": {
+    "walk": 20,
+    "swim": 40
+  },
+  "abilities": {
+    "STR": 25,
+    "DEX": 10,
+    "CON": 20,
+    "INT": 10,
+    "WIS": 12,
+    "CHA": 12
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Aquan",
+    "Draconic"
+  ],
+  "damage_resistances": [
+    "fire"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "3d12+7",
+          "type": "piercing"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "2d8+7",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "3d12+7",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 15,
+      "rider": {
+        "ability": "STR",
+        "dc": 20,
+        "on_fail_condition": "prone",
+        "push": 10
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Steam Breath",
+      "shape": "cone",
+      "size": 60,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "15d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

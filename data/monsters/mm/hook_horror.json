@@ -1,0 +1,71 @@
+{
+  "name": "Hook Horror",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "N",
+  "ac": 15,
+  "hp": 75,
+  "hit_dice": "10d10+20",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 10,
+    "CON": 15,
+    "INT": 6,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Hook Horror"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Echolocation",
+      "text": "The hook horror can't use its blindsight while deafened."
+    },
+    {
+      "name": "Keen Hearing",
+      "text": "The hook horror has advantage on Wisdom (Perception) checks that rely on hearing."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hook",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Hook",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

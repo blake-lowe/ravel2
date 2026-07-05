@@ -1,0 +1,82 @@
+{
+  "name": "Stone Cursed",
+  "type": "construct",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "L E",
+  "ac": 17,
+  "hp": 19,
+  "hit_dice": "3d8+6",
+  "speeds": {
+    "walk": 10
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 5,
+    "CON": 14,
+    "INT": 5,
+    "WIS": 8,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 9
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "bludgeoning"
+  ],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Cunning Opportunist",
+      "text": "The stone cursed has advantage on the attack rolls of opportunity attack."
+    },
+    {
+      "name": "False Appearance",
+      "text": "If the stone cursed is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the stone cursed move or act, that creature must succeed on a 18 Intelligence (Investigation) check to discern that the stone cursed isn't a statue."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The stone cursed doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Petrifying Claws",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "petrified"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mpmm"
+}

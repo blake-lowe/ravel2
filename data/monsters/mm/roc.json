@@ -1,0 +1,90 @@
+{
+  "name": "Roc",
+  "type": "monstrosity",
+  "size": "Gargantuan",
+  "cr": 11.0,
+  "alignment": "U",
+  "ac": 15,
+  "hp": 248,
+  "hit_dice": "16d20+80",
+  "speeds": {
+    "walk": 20,
+    "fly": 120
+  },
+  "abilities": {
+    "STR": 28,
+    "DEX": 10,
+    "CON": 20,
+    "INT": 3,
+    "WIS": 10,
+    "CHA": 9
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "text": "The roc has advantage on Wisdom (Perception) checks that rely on sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "4d8+9",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Talons",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "4d6+9",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 19,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Beak",
+      "count": 1
+    },
+    {
+      "name": "Talons",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Thug",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "L NX C NY E",
+  "ac": 11,
+  "hp": 32,
+  "hit_dice": "5d8+10",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 11,
+    "CON": 14,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Intimidation": 2
+  },
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "text": "The thug has advantage on an attack roll against a creature if at least one of the thug's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Mace",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Heavy Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d10",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        100,
+        400
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mm"
+}

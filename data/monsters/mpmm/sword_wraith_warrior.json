@@ -1,0 +1,92 @@
+{
+  "name": "Sword Wraith Warrior",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "L E",
+  "ac": 16,
+  "hp": 45,
+  "hit_dice": "6d8+18",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 12,
+    "CON": 17,
+    "INT": 6,
+    "WIS": 9,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "necrotic"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened",
+    "poisoned",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Martial Fury (bonus)",
+      "text": "The warrior makes one Battleaxe or Longbow attack, and attack rolls against it have advantage until the start of its next turn."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The warrior doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Battleaxe",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d8+1",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

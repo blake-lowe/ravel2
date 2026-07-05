@@ -1,0 +1,26 @@
+{
+  "name": "Spiritual Weapon",
+  "level": 2,
+  "school": "evocation",
+  "casting_time": "bonus",
+  "range": 60,
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": false,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "self",
+    "affects": "self"
+  },
+  "effects": [
+    {
+      "kind": "summon",
+      "creature": "Spiritual Weapon",
+      "count": 1,
+      "untargetable": true,
+      "summon_duration": 10
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Swarm of Rot Grubs",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 8,
+  "hp": 22,
+  "hit_dice": "5d8",
+  "speeds": {
+    "walk": 5,
+    "climb": 5
+  },
+  "abilities": {
+    "STR": 2,
+    "DEX": 7,
+    "CON": 10,
+    "INT": 1,
+    "WIS": 2,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 10,
+    "passive_perception": 6
+  },
+  "languages": [],
+  "damage_resistances": [
+    "piercing",
+    "slashing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Swarm",
+      "text": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny maggot. The swarm can't regain hit points or gain temporary hit points."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bites",
+      "kind": "melee",
+      "attack_bonus": 0,
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 10,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "swarm"
+  ],
+  "imported": "5etools-mpmm"
+}

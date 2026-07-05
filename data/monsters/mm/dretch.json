@@ -1,0 +1,100 @@
+{
+  "name": "Dretch",
+  "type": "fiend",
+  "size": "Small",
+  "cr": 0.25,
+  "alignment": "C E",
+  "ac": 11,
+  "hp": 18,
+  "hit_dice": "4d6+4",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 11,
+    "CON": 12,
+    "INT": 5,
+    "WIS": 8,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 60 ft. (works only with creatures that understand Abyssal)"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "2d4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Fetid Cloud",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 11,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "CON",
+        "dc": 11,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "imported": "5etools-mm"
+}

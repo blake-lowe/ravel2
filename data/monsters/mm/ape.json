@@ -1,0 +1,74 @@
+{
+  "name": "Ape",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 19,
+  "hit_dice": "3d8+6",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 6,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 5,
+    "Perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        25,
+        50
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Fist",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

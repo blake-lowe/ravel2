@@ -1,0 +1,83 @@
+{
+  "name": "Chuul",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 4.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 93,
+  "hit_dice": "11d10+33",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 10,
+    "CON": 16,
+    "INT": 5,
+    "WIS": 11,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "understands Deep Speech but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Tentacles",
+      "text": "One creature grappled by the chuul must succeed on a 13 Constitution saving throw or be poisoned for 1 minute. Until this poison ends, the target is paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+    },
+    {
+      "name": "Sense Magic",
+      "text": "The chuul senses magic within 120 feet of it at will. This trait otherwise works like the detect magic spell but isn't itself magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pincer",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Pincer",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

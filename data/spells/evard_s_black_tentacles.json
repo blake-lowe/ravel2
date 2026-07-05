@@ -1,0 +1,40 @@
+{
+  "name": "Evard's Black Tentacles",
+  "level": 4,
+  "school": "conjuration",
+  "range": 90,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d6",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": false,
+      "condition": "restrained",
+      "save_ends": false
+    }
+  ],
+  "imported": "5etools"
+}

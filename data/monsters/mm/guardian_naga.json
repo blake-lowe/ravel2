@@ -1,0 +1,113 @@
+{
+  "name": "Guardian Naga",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 10.0,
+  "alignment": "L G",
+  "ac": 18,
+  "hp": 127,
+  "hit_dice": "15d10+45",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 18,
+    "CON": 16,
+    "INT": 16,
+    "WIS": 19,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Celestial",
+    "Common"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Rejuvenation",
+      "text": "If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "10d8",
+          "type": "poison"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Spit Poison",
+      "kind": "ranged",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "10d8",
+          "type": "poison"
+        }
+      ],
+      "range": [
+        15,
+        30
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 16,
+    "attack_bonus": 8,
+    "caster_level": 11,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2,
+      "6": 1
+    },
+    "spells": [
+      "Banishment",
+      "Bestow Curse",
+      "Command",
+      "Cure Wounds",
+      "Flame Strike",
+      "Hold Person",
+      "Sacred Flame",
+      "Shield of Faith"
+    ]
+  }
+}

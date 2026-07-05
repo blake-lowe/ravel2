@@ -1,0 +1,96 @@
+{
+  "name": "Merregon",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "L E",
+  "ac": 16,
+  "hp": 45,
+  "hit_dice": "6d8+18",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 17,
+    "INT": 6,
+    "WIS": 12,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "understands Infernal but can't speak",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Loyal Bodyguard (reaction)",
+      "text": "When another Fiend within 5 feet of the merregon is hit by an attack roll, the merregon causes itself to be hit instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The merregon has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Halberd",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d10+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Heavy Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        100,
+        400
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Halberd",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mpmm"
+}

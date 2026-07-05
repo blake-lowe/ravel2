@@ -1,0 +1,127 @@
+{
+  "name": "Death Knight",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 17.0,
+  "alignment": "C E",
+  "ac": 20,
+  "hp": 180,
+  "hit_dice": "19d8+95",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 11,
+    "CON": 20,
+    "INT": 12,
+    "WIS": 16,
+    "CHA": 18
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "DEX",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The death knight has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Marshal Undead",
+      "text": "Unless the death knight is incapacitated, it and undead creatures of its choice within 60 feet of it have advantage on saving throws against features that turn undead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "1d8+5",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+5",
+          "type": "slashing"
+        },
+        {
+          "dice": "4d8",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Hellfire Orb",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "10d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "once",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 18,
+    "attack_bonus": 10,
+    "caster_level": 19,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2
+    },
+    "spells": [
+      "Banishment",
+      "Command",
+      "Dispel Magic",
+      "Hold Person"
+    ]
+  },
+  "parry": 6
+}

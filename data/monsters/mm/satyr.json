@@ -1,0 +1,93 @@
+{
+  "name": "Satyr",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "C N",
+  "ac": 14,
+  "hp": 31,
+  "hit_dice": "7d8",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 16,
+    "CON": 11,
+    "INT": 12,
+    "WIS": 10,
+    "CHA": 14
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2,
+    "Performance": 6,
+    "Stealth": 5
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The satyr has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Ram",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d4+1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortbow",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        80,
+        320
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm"
+}

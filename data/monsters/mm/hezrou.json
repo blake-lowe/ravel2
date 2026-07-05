@@ -1,0 +1,113 @@
+{
+  "name": "Hezrou",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 8.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 136,
+  "hit_dice": "13d10+65",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 17,
+    "CON": 20,
+    "INT": 5,
+    "WIS": 12,
+    "CHA": 13
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The hezrou has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d10+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Stench",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 14,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 14,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

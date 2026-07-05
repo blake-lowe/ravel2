@@ -1,0 +1,74 @@
+{
+  "name": "Neogi Hatchling",
+  "type": "aberration",
+  "size": "Tiny",
+  "cr": 0.125,
+  "alignment": "L E",
+  "ac": 11,
+  "hp": 7,
+  "hit_dice": "3d4",
+  "speeds": {
+    "walk": 20,
+    "climb": 20
+  },
+  "abilities": {
+    "STR": 3,
+    "DEX": 13,
+    "CON": 10,
+    "INT": 6,
+    "WIS": 10,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Mental Fortitude",
+      "text": "The neogi has advantage on saving throws against being charmed or frightened, and magic can't put the neogi to sleep."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The neogi can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 10,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "save_advantages": [
+    "charmed",
+    "frightened"
+  ]
+}

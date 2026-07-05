@@ -1,0 +1,64 @@
+{
+  "name": "Jackal",
+  "type": "beast",
+  "size": "Small",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 3,
+  "hit_dice": "1d6",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 15,
+    "CON": 11,
+    "INT": 3,
+    "WIS": 12,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "text": "The jackal has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    },
+    {
+      "name": "Pack Tactics",
+      "text": "The jackal has advantage on an attack roll against a creature if at least one of the jackal's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 1,
+      "damage": [
+        {
+          "dice": "1d4-1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mm"
+}

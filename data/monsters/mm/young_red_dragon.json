@@ -1,0 +1,111 @@
+{
+  "name": "Young Red Dragon",
+  "type": "dragon",
+  "size": "Large",
+  "cr": 10,
+  "alignment": "chaotic evil",
+  "ac": 18,
+  "hp": 178,
+  "hit_dice": "17d10+85",
+  "speeds": {
+    "walk": 40,
+    "fly": 80,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 10,
+    "CON": 21,
+    "INT": 14,
+    "WIS": 11,
+    "CHA": 19
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 8,
+    "Stealth": 4
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 120,
+    "passive_perception": 18
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d10+6",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d6+6",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Fire Breath",
+      "shape": "cone",
+      "size": 30,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 17,
+      "damage": [
+        {
+          "dice": "16d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "curated": true,
+  "imported": "5etools-mm"
+}

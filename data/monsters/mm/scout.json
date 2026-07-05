@@ -1,0 +1,94 @@
+{
+  "name": "Scout",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "any alignment",
+  "ac": 13,
+  "hp": 16,
+  "hit_dice": "3d8+3",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 13,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Nature": 4,
+    "Perception": 5,
+    "Stealth": 6,
+    "Survival": 5
+  },
+  "senses": {
+    "passive_perception": 15
+  },
+  "languages": [
+    "any one language"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Hearing and Sight",
+      "text": "The scout has advantage on Wisdom (Perception) checks that rely on hearing or sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Shortsword",
+      "count": 2
+    }
+  ],
+  "bonus_damage": [
+    {
+      "name": "Sneak Attack",
+      "when": "sneak_attack",
+      "damage": {
+        "dice": "2d6",
+        "type": "piercing"
+      },
+      "once_per_turn": true
+    }
+  ],
+  "strategy": "Kite with the longbow from range; deal Sneak Attack damage when a foe is flanked by an ally or when the scout has advantage.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

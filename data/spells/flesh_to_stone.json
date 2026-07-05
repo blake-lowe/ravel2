@@ -1,0 +1,27 @@
+{
+  "name": "Flesh to Stone",
+  "level": 6,
+  "school": "transmutation",
+  "range": 60,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "condition": "restrained",
+      "save_ends": true
+    }
+  ],
+  "_approx": "RAW petrifies after three cumulative failures; modelled as the restrained stage (conservative \u2014 no engine escalation on spells).",
+  "imported": "5etools"
+}

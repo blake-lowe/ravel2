@@ -1,0 +1,50 @@
+{
+  "name": "Stegosaurus",
+  "type": "beast",
+  "size": "Huge",
+  "cr": 4.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 76,
+  "hit_dice": "8d12+24",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 9,
+    "CON": 17,
+    "INT": 2,
+    "WIS": 11,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "6d6+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

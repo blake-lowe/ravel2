@@ -1,0 +1,82 @@
+{
+  "name": "Knight",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "A",
+  "ac": 18,
+  "hp": 52,
+  "hit_dice": "8d8+16",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 11,
+    "CON": 14,
+    "INT": 11,
+    "WIS": 11,
+    "CHA": 15
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Brave",
+      "text": "The knight has advantage on saving throws against being frightened."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Heavy Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d10",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        100,
+        400
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "leadership"
+  ],
+  "parry": 2,
+  "save_advantages": [
+    "frightened"
+  ]
+}

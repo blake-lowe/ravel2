@@ -1,0 +1,70 @@
+{
+  "name": "Acolyte",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "A",
+  "ac": 10,
+  "hp": 9,
+  "hit_dice": "2d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 10,
+    "CON": 10,
+    "INT": 10,
+    "WIS": 14,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Medicine": 4,
+    "Religion": 2
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Club",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 12,
+    "attack_bonus": 4,
+    "caster_level": 1,
+    "slots": {
+      "1": 3
+    },
+    "spells": [
+      "Bless",
+      "Cure Wounds",
+      "Light",
+      "Sacred Flame"
+    ]
+  }
+}

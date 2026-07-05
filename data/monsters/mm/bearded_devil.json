@@ -1,0 +1,105 @@
+{
+  "name": "Bearded Devil",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "L E",
+  "ac": 13,
+  "hp": 52,
+  "hit_dice": "8d8+16",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 15,
+    "CON": 15,
+    "INT": 9,
+    "WIS": 11,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The devil has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Steadfast",
+      "text": "The devil can't be frightened while it can see an allied creature within 30 feet of it."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beard",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "poisoned"
+      }
+    },
+    {
+      "name": "Glaive",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d10+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Beard",
+      "count": 1
+    },
+    {
+      "name": "Glaive",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mm"
+}

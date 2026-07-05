@@ -1,0 +1,89 @@
+{
+  "name": "Quadrone",
+  "type": "construct",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "L N",
+  "ac": 16,
+  "hp": 22,
+  "hit_dice": "4d8+4",
+  "speeds": {
+    "walk": 30,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Modron"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Axiomatic Mind",
+      "text": "The quadrone can't be compelled to act in a manner contrary to its nature or its instructions."
+    },
+    {
+      "name": "Disintegration",
+      "text": "If the quadrone dies, its body disintegrates into dust, leaving behind its weapons and anything else it was carrying."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortbow",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        80,
+        320
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Fist",
+      "count": 2
+    },
+    {
+      "name": "Shortbow",
+      "count": 4
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

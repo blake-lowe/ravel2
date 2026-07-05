@@ -1,0 +1,12 @@
+{
+  "name": "Light",
+  "level": 0,
+  "school": "evocation",
+  "casting_time": "action",
+  "range": 5,
+  "components": ["V", "M"],
+  "concentration": false,
+  "duration_rounds": 100,
+  "target": {"mode": "self", "affects": "self"},
+  "effects": [{"kind": "light", "size": 20}]
+}

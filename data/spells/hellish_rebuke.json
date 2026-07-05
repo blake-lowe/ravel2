@@ -1,0 +1,32 @@
+{
+  "name": "Hellish Rebuke",
+  "level": 1,
+  "school": "evocation",
+  "casting_time": "reaction",
+  "range": 60,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "2d10",
+          "type": "fire"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d6"
+  }
+}

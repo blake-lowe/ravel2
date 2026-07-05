@@ -1,0 +1,81 @@
+{
+  "name": "Firenewt Warrior",
+  "type": "elemental",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "N",
+  "ac": 13,
+  "hp": 27,
+  "hit_dice": "5d8+5",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 13,
+    "CON": 12,
+    "INT": 7,
+    "WIS": 11,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "Draconic",
+    "Ignan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scimitar",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Spit Fire",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 11,
+      "damage": [
+        {
+          "dice": "2d8",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "once",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

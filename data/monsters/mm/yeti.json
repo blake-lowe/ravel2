@@ -1,0 +1,104 @@
+{
+  "name": "Yeti",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 51,
+  "hit_dice": "6d10+18",
+  "speeds": {
+    "walk": 40,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 16,
+    "INT": 8,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Yeti"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Fear of Fire",
+      "text": "If the yeti takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+    },
+    {
+      "name": "Keen Smell",
+      "text": "The yeti has advantage on Wisdom (Perception) checks that rely on smell."
+    },
+    {
+      "name": "Snow Camouflage",
+      "text": "The yeti has advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d6",
+          "type": "cold"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Chilling Gaze",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "cold"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "on_fail_condition": "paralyzed"
+      },
+      "max_targets": 1
+    }
+  ],
+  "imported": "5etools-mm"
+}

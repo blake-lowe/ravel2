@@ -1,0 +1,99 @@
+{
+  "name": "Flumph",
+  "type": "aberration",
+  "size": "Small",
+  "cr": 0.125,
+  "alignment": "L G",
+  "ac": 12,
+  "hp": 7,
+  "hit_dice": "2d6",
+  "speeds": {
+    "walk": 5,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 15,
+    "CON": 10,
+    "INT": 14,
+    "WIS": 14,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Arcana": 4,
+    "History": 4,
+    "Religion": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "understands Undercommon but can't speak",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [
+    "psychic"
+  ],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Advanced Telepathy",
+      "text": "The flumph can perceive the content of any telepathic communication used within 60 feet of it, and it can't be surprised by creatures with any form of telepathy."
+    },
+    {
+      "name": "Prone Deficiency",
+      "text": "If the flumph is knocked prone, roll a die. On an odd result, the flumph lands upside-down and is incapacitated. At the end of each of its turns, the flumph can make a 10 Dexterity saving throw, righting itself and ending the incapacitated condition if it succeeds."
+    },
+    {
+      "name": "Telepathic Shroud",
+      "text": "The flumph is immune to any effect that would sense its emotions or read its thoughts, as well as all divination spells."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tendrils",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d4",
+          "type": "acid"
+        },
+        {
+          "dice": "1d4",
+          "type": "acid"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Stench Spray",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 10,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "DEX",
+        "dc": 10,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "imported": "5etools-mm"
+}

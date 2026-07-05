@@ -1,0 +1,180 @@
+{
+  "name": "Baphomet",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 23.0,
+  "alignment": "C E",
+  "ac": 22,
+  "hp": 319,
+  "hit_dice": "22d12+176",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 30,
+    "DEX": 14,
+    "CON": 26,
+    "INT": 18,
+    "WIS": 24,
+    "CHA": 16
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Intimidation": 17,
+    "Perception": 14
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 24
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Labyrinthine Recall",
+      "text": "Baphomet can perfectly recall any path he has traveled, and he is immune to the maze spell."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Baphomet fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Baphomet has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 17,
+      "damage": [
+        {
+          "dice": "2d8+10",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 17,
+      "damage": [
+        {
+          "dice": "2d6+10",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 25,
+        "extra_damage": {
+          "dice": "3d10",
+          "type": "piercing"
+        },
+        "half_on_save": false,
+        "on_fail_condition": "prone",
+        "push": 10
+      }
+    },
+    {
+      "name": "Heartcleaver",
+      "kind": "melee",
+      "attack_bonus": 17,
+      "damage": [
+        {
+          "dice": "2d10+10",
+          "type": "force"
+        }
+      ],
+      "reach": 15
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Gore",
+      "count": 1
+    },
+    {
+      "name": "Heartcleaver",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "bonus_damage": [
+    {
+      "name": "Gore",
+      "when": "charged",
+      "damage": {
+        "dice": "3d10",
+        "type": "piercing"
+      },
+      "threshold": 10,
+      "kind": "melee"
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 18,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Dispel Magic": 3
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  },
+  "frightful_presence": {
+    "name": "Frightful Presence",
+    "shape": "sphere",
+    "size": 120,
+    "origin_range": 0,
+    "save": "WIS",
+    "dc": 18,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": {
+      "ability": "WIS",
+      "dc": 18,
+      "on_fail_condition": "frightened"
+    }
+  }
+}

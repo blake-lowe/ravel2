@@ -1,0 +1,101 @@
+{
+  "name": "Flail Snail",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "U",
+  "ac": 16,
+  "hp": 52,
+  "hit_dice": "5d10+25",
+  "speeds": {
+    "walk": 10
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 5,
+    "CON": 20,
+    "INT": 3,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Shell Defense",
+      "text": "The flail snail withdraws into its shell. Until it emerges, it gains a +4 bonus to its AC and is restrained. It can emerge from its shell as a bonus action on its turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Flail Tentacle",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Flail Tentacle",
+      "count": 5
+    }
+  ],
+  "areas": [
+    {
+      "name": "Scintillating Shell",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "stunned"
+      }
+    },
+    {
+      "name": "Antimagic Shell",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "force"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

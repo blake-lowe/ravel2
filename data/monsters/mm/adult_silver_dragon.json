@@ -1,0 +1,135 @@
+{
+  "name": "Adult Silver Dragon",
+  "type": "dragon",
+  "size": "Huge",
+  "cr": 16.0,
+  "alignment": "L G",
+  "ac": 19,
+  "hp": 243,
+  "hit_dice": "18d12+126",
+  "speeds": {
+    "walk": 40,
+    "fly": 80
+  },
+  "abilities": {
+    "STR": 27,
+    "DEX": 10,
+    "CON": 25,
+    "INT": 16,
+    "WIS": 13,
+    "CHA": 21
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 8,
+    "History": 8,
+    "Perception": 11,
+    "Stealth": 5
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 120,
+    "passive_perception": 21
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Breath Weapons {@recharge 5}",
+      "text": "The dragon uses one of the following breath weapons. Cold Breath: Paralyzing Breath:"
+    },
+    {
+      "name": "Change Shape",
+      "text": "The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the dragon's choice). In a new form, the dragon retains its alignment, hit points, Hit Dice, ability to speak, proficiencies, Legendary Resistance, lair actions, and Intelligence, Wisdom, and Charisma scores, as well as this action. Its statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the dragon fails a saving throw, it can choose to succeed instead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "2d10+8",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "2d6+8",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "2d8+8",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 15
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  },
+  "frightful_presence": {
+    "name": "Frightful Presence",
+    "shape": "sphere",
+    "size": 120,
+    "origin_range": 0,
+    "save": "WIS",
+    "dc": 18,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": {
+      "ability": "WIS",
+      "dc": 18,
+      "on_fail_condition": "frightened"
+    }
+  }
+}

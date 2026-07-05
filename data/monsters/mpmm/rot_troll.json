@@ -1,0 +1,91 @@
+{
+  "name": "Rot Troll",
+  "type": "giant",
+  "size": "Large",
+  "cr": 9.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 138,
+  "hit_dice": "12d10+72",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 22,
+    "INT": 5,
+    "WIS": 8,
+    "CHA": 4
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "necrotic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Rancid Degeneration",
+      "text": "At the end of each of the troll's turns, each creature within 5 feet of it takes 11 (2d10) necrotic damage, unless the troll has taken acid or fire damage since the end of its last turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d10+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d10",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

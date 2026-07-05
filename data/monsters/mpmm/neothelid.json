@@ -1,0 +1,109 @@
+{
+  "name": "Neothelid",
+  "type": "aberration",
+  "size": "Gargantuan",
+  "cr": 13.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 232,
+  "hit_dice": "15d20+75",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 27,
+    "DEX": 7,
+    "CON": 21,
+    "INT": 3,
+    "WIS": 16,
+    "CHA": 12
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "blindsight": 120,
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Creature Sense",
+      "text": "The neothelid is aware of the presence of creatures within 1 mile of it that have an Intelligence score of 4 or higher. It knows the distance and direction to each creature, as well as each creature's Intelligence score, but can't sense anything else about it. A creature protected by a mind blank spell, a nondetection spell, or similar magic can't be perceived in this manner."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The neothelid has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "3d8+8",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d10",
+          "type": "psychic"
+        },
+        {
+          "dice": "6d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 15,
+      "rider": {
+        "ability": "STR",
+        "dc": 18,
+        "on_fail_condition": "blinded"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Acid Breath",
+      "shape": "cone",
+      "size": 60,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "10d6",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Confusion": 1
+    }
+  }
+}

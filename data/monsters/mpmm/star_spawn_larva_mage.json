@@ -1,0 +1,139 @@
+{
+  "name": "Star Spawn Larva Mage",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 16.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 168,
+  "hit_dice": "16d8+96",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 12,
+    "CON": 23,
+    "INT": 18,
+    "WIS": 12,
+    "CHA": 16
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Deep Speech"
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Feed on Weakness (reaction)",
+      "text": "When a creature within 20 feet of the mage fails a saving throw, the mage gains 10 temporary hit points."
+    },
+    {
+      "name": "Return to Worms",
+      "text": "When the mage is reduced to 0 hit points, it breaks apart into a swarm of insects in the same space. Unless the swarm is destroyed, the mage reforms from it 24 hours later."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "CON",
+        "dc": 19,
+        "on_fail_condition": "poisoned"
+      }
+    },
+    {
+      "name": "Eldritch Bolt",
+      "kind": "ranged",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "3d10+3",
+          "type": "force"
+        }
+      ],
+      "range": [
+        60,
+        60
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Plague of Worms",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 19,
+      "damage": [
+        {
+          "dice": "5d8",
+          "type": "necrotic"
+        },
+        {
+          "dice": "5d8",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "6",
+      "rider": {
+        "ability": "DEX",
+        "dc": 19,
+        "on_fail_condition": "blinded",
+        "escalates_to": "restrained"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Slam"
+  }
+}

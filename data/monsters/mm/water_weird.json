@@ -1,0 +1,84 @@
+{
+  "name": "Water Weird",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "N",
+  "ac": 13,
+  "hp": 58,
+  "hit_dice": "9d10+9",
+  "speeds": {
+    "walk": 0,
+    "swim": 60
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 16,
+    "CON": 13,
+    "INT": 11,
+    "WIS": 10,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands Aquan but doesn't speak"
+  ],
+  "damage_resistances": [
+    "fire"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "grappled",
+    "paralyzed",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Invisible in Water",
+      "text": "The water weird is invisible while fully immersed in water."
+    },
+    {
+      "name": "Water Bound",
+      "text": "The water weird dies if it leaves the water to which it is bound or if that water is destroyed."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Constrict",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "3d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 13,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false,
+        "push": -5
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

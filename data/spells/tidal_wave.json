@@ -1,0 +1,33 @@
+{
+  "name": "Tidal Wave",
+  "level": 3,
+  "school": "conjuration",
+  "range": 120,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 30,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": true,
+      "condition": "prone",
+      "damage": [
+        {
+          "dice": "4d8",
+          "type": "bludgeoning"
+        }
+      ]
+    }
+  ],
+  "_approx": "the 30x10 wave is a 30-ft cube template.",
+  "imported": "5etools"
+}

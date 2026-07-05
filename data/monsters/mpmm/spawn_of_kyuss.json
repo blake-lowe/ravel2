@@ -1,0 +1,107 @@
+{
+  "name": "Spawn of Kyuss",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "C E",
+  "ac": 10,
+  "hp": 76,
+  "hit_dice": "9d8+36",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 11,
+    "CON": 18,
+    "INT": 5,
+    "WIS": 7,
+    "CHA": 3
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Regeneration",
+      "text": "The spawn of Kyuss regains 10 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or a body of running water. If the spawn takes acid, fire, or radiant damage, this trait doesn't function at the start of the spawn's next turn. The spawn is destroyed only if it starts its turn with 0 hit points and doesn't regenerate."
+    },
+    {
+      "name": "Worms",
+      "text": "If the spawn of Kyuss is targeted by an effect that cures disease or removes a curse, all the worms infesting it wither away, and it loses its Burrowing Worm action."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The spawn of Kyuss requires no air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Burrowing Worm",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 11,
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null
+    }
+  ],
+  "regeneration": {
+    "amount": 10,
+    "stopped_by": [
+      "acid",
+      "fire",
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mpmm"
+}

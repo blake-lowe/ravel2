@@ -1,0 +1,105 @@
+{
+  "name": "Djinni",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 11.0,
+  "alignment": "C G",
+  "ac": 17,
+  "hp": 161,
+  "hit_dice": "14d10+84",
+  "speeds": {
+    "walk": 30,
+    "fly": 90
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 15,
+    "CON": 22,
+    "INT": 15,
+    "WIS": 16,
+    "CHA": 20
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Auran"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "lightning",
+    "thunder"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Elemental Demise",
+      "text": "If the djinni dies, its body disintegrates into a warm breeze, leaving behind only equipment the djinni was wearing or carrying."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d6",
+          "type": "lightning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scimitar",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Create Whirlwind",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "STR",
+      "dc": 18,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "STR",
+        "dc": 18,
+        "on_fail_condition": "restrained"
+      }
+    }
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 17,
+    "attack_bonus": 9,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Thunderwave": 0,
+      "Invisibility": 1,
+      "Plane Shift": 1
+    }
+  }
+}

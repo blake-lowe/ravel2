@@ -1,0 +1,142 @@
+{
+  "name": "Leviathan",
+  "type": "elemental",
+  "size": "Gargantuan",
+  "cr": 20.0,
+  "alignment": "N",
+  "ac": 17,
+  "hp": 328,
+  "hit_dice": "16d20+160",
+  "speeds": {
+    "walk": 40,
+    "swim": 120
+  },
+  "abilities": {
+    "STR": 27,
+    "DEX": 24,
+    "CON": 30,
+    "INT": 2,
+    "WIS": 18,
+    "CHA": 17
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the leviathan fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Partial Freeze",
+      "text": "If the leviathan takes 50 cold damage or more during a single turn, the leviathan partially freezes; until the end of its next turn, its speeds are reduced to 20 feet, and it makes attack rolls with disadvantage."
+    },
+    {
+      "name": "Siege Monster",
+      "text": "The leviathan deals double damage to objects and structures."
+    },
+    {
+      "name": "Water Form",
+      "text": "The leviathan can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "2d12+8",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d12",
+          "type": "acid"
+        }
+      ],
+      "reach": 20
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "2d10+8",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 20
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 1
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Tidal Wave",
+      "shape": "line",
+      "size": 250,
+      "origin_range": 5,
+      "save": "STR",
+      "dc": 24,
+      "damage": [
+        {
+          "dice": "7d12",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": {
+        "ability": "STR",
+        "dc": 24,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Slam"
+  }
+}

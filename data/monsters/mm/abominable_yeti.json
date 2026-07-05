@@ -1,0 +1,121 @@
+{
+  "name": "Abominable Yeti",
+  "type": "monstrosity",
+  "size": "Huge",
+  "cr": 9.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 137,
+  "hit_dice": "11d12+66",
+  "speeds": {
+    "walk": 40,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 24,
+    "DEX": 10,
+    "CON": 22,
+    "INT": 9,
+    "WIS": 13,
+    "CHA": 9
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Yeti"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Fear of Fire",
+      "text": "If the yeti takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+    },
+    {
+      "name": "Keen Smell",
+      "text": "The yeti has advantage on Wisdom (Perception) checks that rely on smell."
+    },
+    {
+      "name": "Snow Camouflage",
+      "text": "The yeti has advantage on Dexterity (Stealth) checks made to hide in snowy terrain."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "2d6+7",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d6",
+          "type": "cold"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Cold Breath",
+      "shape": "cone",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "10d8",
+          "type": "cold"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": null
+    },
+    {
+      "name": "Chilling Gaze",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "6d6",
+          "type": "cold"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 18,
+        "on_fail_condition": "paralyzed"
+      },
+      "max_targets": 1
+    }
+  ],
+  "imported": "5etools-mm"
+}

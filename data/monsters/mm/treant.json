@@ -1,0 +1,96 @@
+{
+  "name": "Treant",
+  "type": "plant",
+  "size": "Huge",
+  "cr": 9.0,
+  "alignment": "C G",
+  "ac": 16,
+  "hp": 138,
+  "hit_dice": "12d12+60",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 8,
+    "CON": 21,
+    "INT": 12,
+    "WIS": 16,
+    "CHA": 12
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "Common",
+    "Druidic",
+    "Elvish",
+    "Sylvan"
+  ],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Animate Trees (1/Day)",
+      "text": "The treant magically animates one or two trees it can see within 60 feet of it. These trees have the same statistics as a treant, except they have Intelligence and Charisma scores of 1, they can't speak, and they have only the Slam action option. An animated tree acts as an ally of the treant. The tree remains animate for 1 day or until it dies; until the treant dies or is more than 120 feet from the tree; or until the treant takes a bonus action to turn it back into an inanimate tree. The tree then takes root if possible."
+    },
+    {
+      "name": "False Appearance",
+      "text": "While the treant remains motionless, it is indistinguishable from a normal tree."
+    },
+    {
+      "name": "Siege Monster",
+      "text": "The treant deals double damage to objects and structures."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "3d6+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "4d10+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        180
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,81 @@
+{
+  "name": "Minotaur",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 76,
+  "hit_dice": "9d10+27",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 11,
+    "CON": 16,
+    "INT": 6,
+    "WIS": 16,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 7
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 17
+  },
+  "languages": [
+    "Abyssal"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Labyrinthine Recall",
+      "text": "The minotaur can perfectly recall any path it has traveled."
+    },
+    {
+      "name": "Reckless",
+      "text": "At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greataxe",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d12+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 10,
+    "dc": 14,
+    "bonus_attack": "Gore"
+  }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Blood Pit — Ravel</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bloodpit">
+
+<header class="masthead">
+  <h1>Ravel</h1>
+  <p class="subtitle">the famed fighting pit of the Hive Ward — book a match, cutter, and watch the dead-book fill</p>
+  <nav class="topnav">
+    <a href="/pit" class="active">The Blood Pit</a>
+    <a href="/bestiary">Bestiary</a>
+    <a href="/builder">Character Builder</a>
+    <a href="/supertemporal">Supertemporal</a>
+  </nav>
+</header>
+
+<main class="pit">
+
+  <!-- ====================== booking (config) ====================== -->
+  <section class="frame booking" id="booking">
+    <div class="panel-title hatch">Book a Match</div>
+    <div class="book-grid">
+      <fieldset class="team-box" id="team-A">
+        <legend>The Red Corner</legend>
+        <div class="team-add">
+          <input type="text" class="team-input" list="roster-list" placeholder="add a combatant&hellip;">
+          <button type="button" class="team-add-btn">Add</button>
+        </div>
+        <div class="team-roster"></div>
+        <p class="team-xp faint-note"></p>
+      </fieldset>
+
+      <fieldset class="team-box" id="team-B">
+        <legend>The Black Corner</legend>
+        <div class="team-add">
+          <input type="text" class="team-input" list="roster-list" placeholder="add a combatant&hellip;">
+          <button type="button" class="team-add-btn">Add</button>
+        </div>
+        <div class="team-roster"></div>
+        <p class="team-xp faint-note"></p>
+      </fieldset>
+
+      <fieldset class="rules-box">
+        <legend>The House Rules</legend>
+        <label>Ground <select id="cfg-map"><option value="">the open pit floor</option></select></label>
+        <label>Weather <select id="cfg-weather"></select></label>
+        <label>Cornermen <select id="cfg-ai"></select></label>
+        <label>Seed <input type="number" id="cfg-seed" value="1" min="0" step="1"></label>
+        <label>Surprise <select id="cfg-surprised">
+          <option value="">none</option>
+          <option value="B">Red ambushes</option>
+          <option value="A">Black ambushes</option>
+        </select></label>
+        <label class="check"><input type="checkbox" id="cfg-underwater"> underwater</label>
+        <label class="check"><input type="checkbox" id="cfg-flanking"> flanking (DMG)</label>
+        <label class="check"><input type="checkbox" id="cfg-avg-hp"> average HP (no rolling)</label>
+      </fieldset>
+    </div>
+    <datalist id="roster-list"></datalist>
+    <div class="gong-row">
+      <p class="odds-line" id="odds-line"></p>
+      <span class="llm-status" id="llm-status" hidden></span>
+      <button type="button" id="gong" class="gong">⚔ Fight ⚔</button>
+      <button type="button" id="copy-link" class="quiet" title="copy a permalink that reproduces this exact bout">copy permalink</button>
+    </div>
+    <p class="error" id="error"></p>
+  </section>
+
+  <!-- ====================== fight card + arena ====================== -->
+  <section class="frame arena-wrap" id="arena-wrap" hidden>
+    <div class="fightcard" id="fightcard"></div>
+    <div class="arena-grid">
+      <div class="arena-left">
+        <div id="board"></div>
+        <div class="board-tools">
+          <label title="shade the pit by the engine's own light &amp; shadow (display only — the fight is unchanged)">
+            <input type="checkbox" id="cfg-lighting" checked> <span class="sym">☀</span>lighting</label>
+          <span class="light-legend" id="light-legend" hidden></span>
+        </div>
+        <div class="legend" id="legend"></div>
+        <div class="controls" id="controls">
+          <button id="btn-start" title="to the first bell">|&#8678;</button>
+          <button id="btn-prev-round" title="previous round">&#8676;</button>
+          <button id="btn-prev" title="previous event">&#8672;</button>
+          <button id="btn-play" class="playbtn">▶</button>
+          <button id="btn-next" title="next event">&#8674;</button>
+          <button id="btn-next-round" title="next round">&#8677;</button>
+          <button id="btn-end" title="to the judgment">&#8680;|</button>
+          <select id="speed">
+            <option value="450">slow playback</option>
+            <option value="220" selected>medium playback</option>
+            <option value="80">fast playback</option>
+          </select>
+          <span class="round-ind" id="round-ind"></span>
+        </div>
+        <input type="range" id="scrub" min="0" value="0" step="1">
+      </div>
+      <div class="arena-right">
+        <div class="initiative" id="initiative"></div>
+        <div class="fightlog-wrap">
+          <div class="panel-title hatch">Log</div>
+          <pre class="fightlog" id="fightlog"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== gauntlet ====================== -->
+  <section class="frame gauntlet" id="gauntlet-box">
+    <div class="panel-title hatch">The Gauntlet — run the same match across many seeds</div>
+    <div class="gauntlet-controls">
+      <label>bouts <input type="number" id="g-n" value="50" min="1" max="500"></label>
+      <label>first seed <input type="number" id="g-seed0" value="1" min="0"></label>
+      <button type="button" id="g-run">Run the Gauntlet</button>
+      <span class="g-progress" id="g-progress"></span>
+    </div>
+    <div id="g-results"></div>
+  </section>
+
+</main>
+
+<script src="/static/pit.js"></script>
+</body>
+</html>

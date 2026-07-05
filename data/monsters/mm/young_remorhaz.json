@@ -1,0 +1,65 @@
+{
+  "name": "Young Remorhaz",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "U",
+  "ac": 14,
+  "hp": 93,
+  "hit_dice": "11d10+33",
+  "speeds": {
+    "walk": 30,
+    "burrow": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 17,
+    "INT": 3,
+    "WIS": 10,
+    "CHA": 4
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold",
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Heated Body",
+      "text": "A creature that touches the remorhaz or hits it with a melee attack while within 5 feet of it takes 7 (2d6) fire damage."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "3d10+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

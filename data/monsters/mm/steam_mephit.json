@@ -1,0 +1,110 @@
+{
+  "name": "Steam Mephit",
+  "type": "elemental",
+  "size": "Small",
+  "cr": 0.25,
+  "alignment": "N E",
+  "ac": 10,
+  "hp": 21,
+  "hit_dice": "6d6",
+  "speeds": {
+    "walk": 30,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 5,
+    "DEX": 11,
+    "CON": 10,
+    "INT": 11,
+    "WIS": 10,
+    "CHA": 12
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Aquan",
+    "Ignan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d4",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Steam Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 10,
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 0,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Blur": 0
+    }
+  },
+  "death_burst": {
+    "name": "Death Burst",
+    "shape": "sphere",
+    "size": 5,
+    "origin_range": 0,
+    "save": "DEX",
+    "dc": 10,
+    "damage": [
+      {
+        "dice": "1d8",
+        "type": "fire"
+      }
+    ],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": null
+  }
+}

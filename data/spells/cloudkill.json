@@ -1,0 +1,35 @@
+{
+  "name": "Cloudkill",
+  "level": 5,
+  "school": "conjuration",
+  "range": 120,
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "5d8",
+          "type": "poison"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d8"
+  }
+}

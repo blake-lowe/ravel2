@@ -1,0 +1,55 @@
+{
+  "name": "Ankylosaurus",
+  "type": "beast",
+  "size": "Huge",
+  "cr": 3.0,
+  "alignment": "U",
+  "ac": 15,
+  "hp": 68,
+  "hit_dice": "8d12+16",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 11,
+    "CON": 15,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d6+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

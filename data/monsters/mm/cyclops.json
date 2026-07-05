@@ -1,0 +1,77 @@
+{
+  "name": "Cyclops",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 6.0,
+  "alignment": "C N",
+  "ac": 14,
+  "hp": 138,
+  "hit_dice": "12d12+60",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 11,
+    "CON": 20,
+    "INT": 8,
+    "WIS": 6,
+    "CHA": 10
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 8
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Poor Depth Perception",
+      "text": "The cyclops has disadvantage on any attack roll against a target more than 30 feet away."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greatclub",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "3d8+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "4d10+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatclub",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

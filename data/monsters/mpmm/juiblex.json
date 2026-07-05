@@ -1,0 +1,153 @@
+{
+  "name": "Juiblex",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 23.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 350,
+  "hit_dice": "28d12+168",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 24,
+    "DEX": 10,
+    "CON": 23,
+    "INT": 20,
+    "WIS": 20,
+    "CHA": 16
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 12
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 22
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "stunned",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Juiblex fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Juiblex has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Regeneration",
+      "text": "Juiblex regains 20 hit points at the start of its turn. If it takes fire or radiant damage, this trait doesn't function at the start of its next turn. Juiblex dies only if it starts its turn with 0 hit points and doesn't regenerate."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "Juiblex can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Acid Lash",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "4d6+7",
+          "type": "acid"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Acid Lash",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Eject Slime",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 21,
+      "damage": [
+        {
+          "dice": "10d10",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": null
+    },
+    {
+      "name": "Foul",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 21,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 21,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 20,
+    "stopped_by": [
+      "fire",
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Acid Lash"
+  }
+}

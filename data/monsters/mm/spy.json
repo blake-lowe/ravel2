@@ -1,0 +1,84 @@
+{
+  "name": "Spy",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "A",
+  "ac": 12,
+  "hp": 27,
+  "hit_dice": "6d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 15,
+    "CON": 10,
+    "INT": 12,
+    "WIS": 14,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 5,
+    "Insight": 4,
+    "Investigation": 5,
+    "Perception": 6,
+    "Persuasion": 5,
+    "Sleight Of Hand": 4,
+    "Stealth": 4
+  },
+  "senses": {
+    "passive_perception": 16
+  },
+  "languages": [
+    "any two languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Cunning Action",
+      "text": "On each of its turns, the spy can use a bonus action to take the Dash, Disengage, or Hide action."
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "text": "The spy deals an extra 7 (2d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the spy that isn't incapacitated and the spy doesn't have disadvantage on the attack roll."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Hand Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

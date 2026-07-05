@@ -1,0 +1,98 @@
+{
+  "name": "Balhannoth",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 11.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 114,
+  "hit_dice": "12d10+48",
+  "speeds": {
+    "walk": 25,
+    "climb": 25
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 8,
+    "CON": 18,
+    "INT": 6,
+    "WIS": 15,
+    "CHA": 8
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON"
+  ],
+  "skills": {
+    "Perception": 6
+  },
+  "senses": {
+    "blindsight": 500,
+    "passive_perception": 16
+  },
+  "languages": [
+    "understands Deep Speech",
+    "telepathy 1 mile"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "text": "If the balhannoth fails a saving throw, it can choose to succeed instead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "3d10+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Tentacle",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  }
+}

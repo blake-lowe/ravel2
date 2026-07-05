@@ -1,0 +1,15 @@
+{
+  "name": "Counterspell",
+  "level": 3,
+  "school": "abjuration",
+  "casting_time": "reaction",
+  "range": 60,
+  "components": [
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": []
+}

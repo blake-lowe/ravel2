@@ -1,0 +1,86 @@
+{
+  "name": "Gnoll Witherling",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 11,
+  "hit_dice": "2d8+2",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 8,
+    "CON": 12,
+    "INT": 5,
+    "WIS": 5,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 7
+  },
+  "languages": [
+    "understands Gnoll but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Vengeful Strike (reaction)",
+      "text": "In response to a gnoll being reduced to 0 hit points within 30 feet of the witherling, the witherling makes one Bite or Spiked Club attack."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The witherling doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spiked Club",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "triggered_abilities": [
+    "rampage"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Thunder Step",
+  "level": 3,
+  "school": "conjuration",
+  "range": 90,
+  "range_type": "ranged",
+  "components": [
+    "V"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "damage": [
+        {
+          "dice": "3d10",
+          "type": "thunder"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

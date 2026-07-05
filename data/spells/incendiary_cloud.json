@@ -1,0 +1,33 @@
+{
+  "name": "Incendiary Cloud",
+  "level": 8,
+  "school": "conjuration",
+  "range": 150,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "damage": [
+        {
+          "dice": "10d8",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

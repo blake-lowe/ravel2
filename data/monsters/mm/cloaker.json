@@ -1,0 +1,115 @@
+{
+  "name": "Cloaker",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 8.0,
+  "alignment": "C N",
+  "ac": 14,
+  "hp": 78,
+  "hit_dice": "12d10+12",
+  "speeds": {
+    "walk": 10,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 15,
+    "CON": 12,
+    "INT": 13,
+    "WIS": 12,
+    "CHA": 14
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Deep Speech",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Phantasms (Recharges after a Short or Long Rest)",
+      "text": "The cloaker magically creates three illusory duplicates of itself if it isn't in bright light. The duplicates move with it and mimic its actions, shifting position so as to make it impossible to track which cloaker is the real one. If the cloaker is ever in an area of bright light, the duplicates disappear. Whenever any creature targets the cloaker with an attack or a harmful spell while a duplicate remains, that creature rolls randomly to determine whether it targets the cloaker or one of the duplicates. A creature is unaffected by this magical effect if it can't see or if it relies on senses other than sight. A duplicate has the cloaker's AC and uses its saving throws. If an attack hits a duplicate, or if a duplicate fails a saving throw against an effect that deals damage, the duplicate disappears."
+    },
+    {
+      "name": "Damage Transfer",
+      "text": "While attached to a creature, the cloaker takes only half the damage dealt to it (rounded down). and that creature takes the other half."
+    },
+    {
+      "name": "False Appearance",
+      "text": "While the cloaker remains motionless without its underside exposed, it is indistinguishable from a dark leather cloak."
+    },
+    {
+      "name": "Light Sensitivity",
+      "text": "While in bright light, the cloaker has disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Moan",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 13,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

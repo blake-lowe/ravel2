@@ -1,0 +1,133 @@
+{
+  "name": "Retriever",
+  "type": "construct",
+  "size": "Large",
+  "cr": 14.0,
+  "alignment": "L E",
+  "ac": 19,
+  "hp": 210,
+  "hit_dice": "20d10+100",
+  "speeds": {
+    "walk": 40,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 16,
+    "CON": 20,
+    "INT": 3,
+    "WIS": 11,
+    "CHA": 4
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 5,
+    "Stealth": 8
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "understands Abyssal",
+    "Elvish",
+    "and Undercommon but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "necrotic",
+    "poison",
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Faultless Tracker",
+      "text": "The retriever is given a quarry by its master. The quarry can be a specific creature or object the master is personally acquainted with, or it can be a general type of creature or object the master has seen before. The retriever knows the direction and distance to its quarry as long as the two of them are on the same plane of existence. The retriever can have only one such quarry at a time. The retriever also always knows the location of its master."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Foreleg",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "2d8+6",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Foreleg",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Force Beam",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "5d10",
+          "type": "force"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": null,
+      "max_targets": 1
+    },
+    {
+      "name": "Paralyzing Beam",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 18,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 18,
+        "on_fail_condition": "paralyzed"
+      },
+      "max_targets": 1
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Web": 3
+    }
+  }
+}

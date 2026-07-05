@@ -1,0 +1,108 @@
+{
+  "name": "Dust Mephit",
+  "type": "elemental",
+  "size": "Small",
+  "cr": 0.5,
+  "alignment": "N E",
+  "ac": 12,
+  "hp": 17,
+  "hit_dice": "5d6",
+  "speeds": {
+    "walk": 30,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 5,
+    "DEX": 14,
+    "CON": 10,
+    "INT": 9,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Auran",
+    "Terran"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Blinding Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 10,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "6",
+      "rider": {
+        "ability": "DEX",
+        "dc": 10,
+        "on_fail_condition": "blinded"
+      }
+    }
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 0,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Sleep": 0
+    }
+  },
+  "death_burst": {
+    "name": "Death Burst",
+    "shape": "sphere",
+    "size": 5,
+    "origin_range": 0,
+    "save": "CON",
+    "dc": 10,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": {
+      "ability": "CON",
+      "dc": 10,
+      "on_fail_condition": "blinded"
+    }
+  }
+}

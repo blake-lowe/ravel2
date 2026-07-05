@@ -1,0 +1,70 @@
+{
+  "name": "Silver Dragon Wyrmling",
+  "type": "dragon",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "L G",
+  "ac": 17,
+  "hp": 45,
+  "hit_dice": "6d8+18",
+  "speeds": {
+    "walk": 30,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 10,
+    "CON": 17,
+    "INT": 12,
+    "WIS": 11,
+    "CHA": 15
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 2
+  },
+  "senses": {
+    "blindsight": 10,
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Breath Weapons {@recharge 5}",
+      "text": "The dragon uses one of the following breath weapons. Cold Breath: Paralyzing Breath:"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d10+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

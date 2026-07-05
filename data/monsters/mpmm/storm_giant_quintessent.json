@@ -1,0 +1,94 @@
+{
+  "name": "Storm Giant Quintessent",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 16.0,
+  "alignment": "C G",
+  "ac": 12,
+  "hp": 230,
+  "hit_dice": "20d12+100",
+  "speeds": {
+    "walk": 50,
+    "fly": 50,
+    "swim": 50,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 29,
+    "DEX": 14,
+    "CON": 20,
+    "INT": 17,
+    "WIS": 20,
+    "CHA": 19
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 8,
+    "History": 8,
+    "Perception": 10
+  },
+  "senses": {
+    "truesight": 60,
+    "passive_perception": 20
+  },
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "lightning",
+    "thunder"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Wind Javelin",
+      "text": "The giant coalesces wind into a javelin-like form and hurls it at a creature it can see within 600 feet of it. The javelin deals 19 (3d6 + 9) force damage to the target, striking unerringly. The javelin disappears after it hits."
+    },
+    {
+      "name": "Legendary Resistance (1/Day)",
+      "text": "If the giant fails a saving throw, it can choose to succeed instead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Lightning Sword",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "9d6+9",
+          "type": "lightning"
+        }
+      ],
+      "reach": 15
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Lightning Sword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical",
+    "water_breathing"
+  ],
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Lightning Sword"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "name": "Eidolon",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 12.0,
+  "alignment": "A",
+  "ac": 9,
+  "hp": 63,
+  "hit_dice": "18d8-18",
+  "speeds": {
+    "walk": 0,
+    "fly": 40,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 8,
+    "CON": 9,
+    "INT": 14,
+    "WIS": 19,
+    "CHA": 16
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 8
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 18
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "acid",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Sacred Animation {@recharge 5}",
+      "text": "When the eidolon moves into a space occupied by a sacred statue, the eidolon can disappear, causing the statue to become a creature under the eidolon's control. The eidolon uses the sacred statue in place of its own."
+    },
+    {
+      "name": "Turn Resistance",
+      "text": "The eidolon has advantage on saving throws against any effect that turns Undead."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The eidolon doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Divine Dread",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "frightened",
+        "escalates_to": "stunned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "incorporeal": true
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Hadrosaurus",
+  "type": "beast",
+  "size": "Large",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 19,
+  "hit_dice": "3d10+3",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 10,
+    "CON": 13,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

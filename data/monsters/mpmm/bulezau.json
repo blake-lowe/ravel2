@@ -1,0 +1,100 @@
+{
+  "name": "Bulezau",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 52,
+  "hit_dice": "7d8+21",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 17,
+    "INT": 8,
+    "WIS": 9,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 9
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Standing Leap",
+      "text": "The bulezau's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+    },
+    {
+      "name": "Sure-Footed",
+      "text": "The bulezau has advantage on Strength and Dexterity saving throws made against effects that would knock it prone."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Barbed Tail",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d12+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Rotting Presence",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

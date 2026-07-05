@@ -1,0 +1,129 @@
+{
+  "name": "Clockwork Oaken Bolter",
+  "type": "construct",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "U",
+  "ac": 16,
+  "hp": 117,
+  "hit_dice": "18d8+36",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 18,
+    "CON": 15,
+    "INT": 3,
+    "WIS": 10,
+    "CHA": 1
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands one language of its creator but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Reel In (bonus)",
+      "text": "The clockwork pulls the creature grappled by its Harpoon up to 20 feet closer."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The clockwork has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The clockwork doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Lancing Bolt",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d10+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Harpoon",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d10+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d10",
+          "type": "slashing"
+        }
+      ],
+      "range": [
+        50,
+        200
+      ],
+      "rider": {
+        "ability": "STR",
+        "dc": 12,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Lancing Bolt",
+      "count": 2
+    },
+    {
+      "name": "Harpoon",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Explosive Bolt",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "5d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm"
+}

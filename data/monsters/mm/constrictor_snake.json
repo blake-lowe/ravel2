@@ -1,0 +1,70 @@
+{
+  "name": "Constrictor Snake",
+  "type": "beast",
+  "size": "Large",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 13,
+  "hit_dice": "2d10+2",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 1,
+    "WIS": 10,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 10,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Constrict",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

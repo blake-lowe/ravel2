@@ -1,0 +1,94 @@
+{
+  "name": "Young Silver Dragon",
+  "type": "dragon",
+  "size": "Large",
+  "cr": 9.0,
+  "alignment": "L G",
+  "ac": 18,
+  "hp": 168,
+  "hit_dice": "16d10+80",
+  "speeds": {
+    "walk": 40,
+    "fly": 80
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 10,
+    "CON": 21,
+    "INT": 14,
+    "WIS": 11,
+    "CHA": 19
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 6,
+    "History": 6,
+    "Perception": 8,
+    "Stealth": 4
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 120,
+    "passive_perception": 18
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Breath Weapons {@recharge 5}",
+      "text": "The dragon uses one of the following breath weapons. Cold Breath: Paralyzing Breath:"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d10+6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d6+6",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

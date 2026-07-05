@@ -1,0 +1,65 @@
+{
+  "name": "Githyanki Warrior",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "L E",
+  "ac": 17,
+  "hp": 49,
+  "hit_dice": "9d8+9",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 13,
+    "WIS": 13,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [
+    "Gith"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

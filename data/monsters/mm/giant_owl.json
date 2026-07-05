@@ -1,0 +1,70 @@
+{
+  "name": "Giant Owl",
+  "type": "beast",
+  "size": "Large",
+  "cr": 0.25,
+  "alignment": "N",
+  "ac": 12,
+  "hp": 19,
+  "hit_dice": "3d10+3",
+  "speeds": {
+    "walk": 5,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 15,
+    "CON": 12,
+    "INT": 8,
+    "WIS": 13,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Giant Owl",
+    "understands Common, Elvish, and Sylvan but can't speak them"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Flyby",
+      "text": "The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+    },
+    {
+      "name": "Keen Hearing and Sight",
+      "text": "The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Talons",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d6+1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "flyby"
+  ],
+  "imported": "5etools-mm"
+}

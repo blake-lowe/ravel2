@@ -1,0 +1,75 @@
+{
+  "name": "Hill Giant",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 5,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 105,
+  "hit_dice": "10d12+40",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 8,
+    "CON": 19,
+    "INT": 5,
+    "WIS": 9,
+    "CHA": 6
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greatclub",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "3d8+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "3d10+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        240
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatclub",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "curated": true,
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Dimetrodon",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 19,
+  "hit_dice": "3d8+6",
+  "speeds": {
+    "walk": 30,
+    "swim": 20
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 10,
+    "CON": 15,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

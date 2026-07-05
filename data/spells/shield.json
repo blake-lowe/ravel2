@@ -1,0 +1,25 @@
+{
+  "name": "Shield",
+  "level": 1,
+  "school": "abjuration",
+  "casting_time": "reaction",
+  "range": 0,
+  "range_type": "self",
+  "components": [
+    "V",
+    "S"
+  ],
+  "duration_rounds": 1,
+  "target": {
+    "mode": "self",
+    "affects": "self"
+  },
+  "effects": [
+    {
+      "kind": "modifier",
+      "modifier": {
+        "ac_bonus": 5
+      }
+    }
+  ]
+}

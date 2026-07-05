@@ -1,0 +1,63 @@
+{
+  "name": "Giant Shark",
+  "type": "beast",
+  "size": "Huge",
+  "cr": 5.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 126,
+  "hit_dice": "11d12+55",
+  "speeds": {
+    "swim": 50,
+    "walk": 0
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 11,
+    "CON": 21,
+    "INT": 1,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "text": "The shark has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "3d10+6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "blood_frenzy",
+    "water_breathing"
+  ],
+  "imported": "5etools-mm"
+}

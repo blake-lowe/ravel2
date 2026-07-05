@@ -1,0 +1,38 @@
+{
+  "name": "Ice Storm",
+  "level": 4,
+  "school": "evocation",
+  "range": 300,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "2d8",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d6",
+          "type": "cold"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d8"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "name": "Lizard King",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 78,
+  "hit_dice": "12d8+24",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 12,
+    "CON": 15,
+    "INT": 11,
+    "WIS": 11,
+    "CHA": 15
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 5,
+    "Survival": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Abyssal",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "text": "The lizardfolk can hold its breath for 15 minutes."
+    },
+    {
+      "name": "Skewer",
+      "text": "Once per turn, when the lizardfolk makes a melee attack with its trident and hits, the target takes an extra 10 (3d6) damage, and the lizardfolk gains temporary hit points equal to the extra damage dealt."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Trident",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    },
+    {
+      "name": "Trident",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

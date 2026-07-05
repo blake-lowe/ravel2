@@ -1,0 +1,106 @@
+{
+  "name": "Myconid Sovereign",
+  "type": "plant",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "L N",
+  "ac": 13,
+  "hp": 60,
+  "hit_dice": "8d10+16",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 10,
+    "CON": 14,
+    "INT": 13,
+    "WIS": 15,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Animating Spores (3/Day)",
+      "text": "The myconid targets one corpse of a humanoid or a Large or smaller beast within 5 feet of it and releases spores at the corpse. In 24 hours, the corpse rises as a spore servant. The corpse stays animated for 1d4 + 1 weeks or until destroyed, and it can't be animated again in this way."
+    },
+    {
+      "name": "Rapport Spores",
+      "text": "A 30-foot radius of spores extends from the myconid. These spores can go around corners and affect only creatures with an Intelligence of 2 or higher that aren't undead, constructs, or elementals. Affected creatures can communicate telepathically with one another while they are within 30 feet of each other. The effect lasts for 1 hour."
+    },
+    {
+      "name": "Distress Spores",
+      "text": "When the myconid takes damage, all other myconids within 240 feet of it can sense its pain."
+    },
+    {
+      "name": "Sun Sickness",
+      "text": "While in sunlight, the myconid has disadvantage on ability checks, attack rolls, and saving throws. The myconid dies if it spends more than 1 hour in direct sunlight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "3d4+1",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d4",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Hallucination Spores",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "poisoned",
+        "escalates_to": "incapacitated"
+      }
+    },
+    {
+      "name": "Pacifying Spores",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "imported": "5etools-mm"
+}

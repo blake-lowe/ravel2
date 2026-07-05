@@ -1,0 +1,82 @@
+{
+  "name": "Giant Scorpion",
+  "type": "beast",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "U",
+  "ac": 15,
+  "hp": 52,
+  "hit_dice": "7d10+14",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 13,
+    "CON": 15,
+    "INT": 1,
+    "WIS": 9,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 9
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 12,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    },
+    {
+      "name": "Sting",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "4d10",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    },
+    {
+      "name": "Sting",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

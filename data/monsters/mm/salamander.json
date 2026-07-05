@@ -1,0 +1,108 @@
+{
+  "name": "Salamander",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 90,
+  "hit_dice": "12d10+24",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 15,
+    "INT": 11,
+    "WIS": 10,
+    "CHA": 12
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Ignan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [
+    "cold"
+  ],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Heated Body",
+      "text": "A creature that touches the salamander or hits it with a melee attack while within 5 feet of it takes 7 (2d6) fire damage."
+    },
+    {
+      "name": "Heated Weapons",
+      "text": "Any metal melee weapon the salamander wields deals an extra 3 (1d6) fire damage on a hit (included in the attack)."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d8+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Spear",
+      "count": 1
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

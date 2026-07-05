@@ -1,0 +1,115 @@
+{
+  "name": "Banderhobb",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 84,
+  "hit_dice": "8d10+40",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 12,
+    "CON": 20,
+    "INT": 11,
+    "WIS": 14,
+    "CHA": 8
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 8,
+    "Stealth": 7
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "understands Common and the languages of its creator but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Shadow Step",
+      "text": "The banderhobb teleports up to 30 feet to an unoccupied space of dim light or darkness that it can see."
+    },
+    {
+      "name": "Shadow Stealth (bonus)",
+      "text": "While in dim light or darkness, the banderhobb takes the Hide action."
+    },
+    {
+      "name": "Resonant Connection",
+      "text": "If the banderhobb has even a tiny piece of a creature or an object in its possession, such as a lock of hair or a splinter of wood, it knows the most direct route to that creature or object if it is within 1 mile of the banderhobb."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "3d6+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 16,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    },
+    {
+      "name": "Tongue",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Swallow",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "3d6+5",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Tongue",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

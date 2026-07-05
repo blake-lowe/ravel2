@@ -1,0 +1,95 @@
+{
+  "name": "Duergar Xarrorn",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "A",
+  "ac": 18,
+  "hp": 26,
+  "hit_dice": "4d8+8",
+  "speeds": {
+    "walk": 25
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 11,
+    "CON": 14,
+    "INT": 11,
+    "WIS": 10,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [
+    "poison"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Invisibility (Recharges after a Short or Long Rest)",
+      "text": "The duergar magically turns invisible for up to 1 hour or until it attacks, it forces a creature to make a saving throw, or its concentration is broken (as if concentration on a spell). Any equipment the duergar wears or carries is invisible with it."
+    },
+    {
+      "name": "Enlarge (Recharges after a Short or Long Rest) (bonus)",
+      "text": "For 1 minute, the duergar magically increases in size, along with anything it is wearing or carrying. While enlarged, the duergar is Large, doubles its damage dice on Strength-based weapon attacks (included in the attacks), and makes Strength checks and Strength saving throws with advantage. If the duergar lacks the room to become Large, it attains the maximum size possible in the space available."
+    },
+    {
+      "name": "Duergar Resilience",
+      "text": "The duergar has advantage on saving throws against spells and the charmed, paralyzed, and poisoned conditions."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fire Lance",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d12+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Fire Spray",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 12,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "save_advantages": [
+    "charmed",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

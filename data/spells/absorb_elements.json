@@ -1,0 +1,11 @@
+{
+  "name": "Absorb Elements",
+  "level": 1,
+  "school": "abjuration",
+  "casting_time": "reaction",
+  "range": 0,
+  "range_type": "self",
+  "components": ["S"],
+  "target": {"mode": "self", "affects": "self"},
+  "effects": []
+}

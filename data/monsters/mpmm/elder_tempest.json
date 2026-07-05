@@ -1,0 +1,125 @@
+{
+  "name": "Elder Tempest",
+  "type": "elemental",
+  "size": "Gargantuan",
+  "cr": 23.0,
+  "alignment": "N",
+  "ac": 19,
+  "hp": 264,
+  "hit_dice": "16d20+96",
+  "speeds": {
+    "walk": 0,
+    "fly": 120,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 28,
+    "CON": 23,
+    "INT": 2,
+    "WIS": 21,
+    "CHA": 18
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "lightning",
+    "poison",
+    "thunder"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Air Form",
+      "text": "The tempest can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Flyby",
+      "text": "The tempest doesn't provoke opportunity attack when it flies out of an enemy's reach."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the tempest fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Living Storm",
+      "text": "The tempest is always at the center of a storm 1d6 + 4 miles in diameter. Heavy precipitation in the form of either rain or snow falls there, causing the area to be lightly obscured. Heavy rain also extinguishes open flames and imposes disadvantage on Wisdom (Perception) checks that rely on hearing. In addition, strong winds swirl in the area covered by the storm. The winds impose disadvantage on ranged attack rolls. They also extinguish open flames and disperse fog."
+    },
+    {
+      "name": "Siege Monster",
+      "text": "The tempest deals double damage to objects and structures."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Thunderous Slam",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "4d6+9",
+          "type": "thunder"
+        }
+      ],
+      "reach": 20
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Thunderous Slam",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Lightning Storm",
+      "shape": "sphere",
+      "size": 120,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 21,
+      "damage": [
+        {
+          "dice": "6d8",
+          "type": "lightning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": {
+        "ability": "DEX",
+        "dc": 21,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "flyby",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Thunderous Slam"
+  }
+}

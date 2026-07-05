@@ -1,0 +1,80 @@
+{
+  "name": "Archer",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "A",
+  "ac": 16,
+  "hp": 75,
+  "hit_dice": "10d8+30",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 18,
+    "CON": 16,
+    "INT": 11,
+    "WIS": 13,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Acrobatics": 6,
+    "Perception": 5
+  },
+  "senses": {
+    "passive_perception": 15
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Archer's Eye (3/Day) (bonus)",
+      "text": "Immediately after making an attack roll or a damage roll with a ranged weapon, the archer can roll a d10 and add the number rolled to the total."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Shortsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

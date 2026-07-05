@@ -1,0 +1,128 @@
+{
+  "name": "Allip",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 40,
+  "hit_dice": "9d8",
+  "speeds": {
+    "walk": 0,
+    "fly": 40,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 17,
+    "CON": 10,
+    "INT": 17,
+    "WIS": 15,
+    "CHA": 16
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 5,
+    "Stealth": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "acid",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Unusual Nature",
+      "text": "The allip doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Maddening Touch",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "4d6+3",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Howling Babble",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 14,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 14,
+        "on_fail_condition": "stunned"
+      }
+    },
+    {
+      "name": "Whispers of Compulsion",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 14,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null,
+      "max_targets": 3
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "incorporeal": true
+}

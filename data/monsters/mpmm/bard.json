@@ -1,0 +1,119 @@
+{
+  "name": "Bard",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "A",
+  "ac": 15,
+  "hp": 44,
+  "hit_dice": "8d8+8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 13,
+    "CHA": 14
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX",
+    "WIS"
+  ],
+  "skills": {
+    "Acrobatics": 4,
+    "Perception": 5,
+    "Performance": 6
+  },
+  "senses": {
+    "passive_perception": 15
+  },
+  "languages": [
+    "any two languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Taunt (2/Day) (bonus)",
+      "text": "The bard targets one creature within 30 feet of it. If the target can hear the bard, the target must succeed on a 12 Charisma saving throw or have disadvantage on ability checks, attack rolls, and saving throws until the start of the bard's next turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortbow",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        80,
+        320
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Shortsword",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Cacophony",
+      "shape": "cube",
+      "size": 15,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 12,
+      "damage": [
+        {
+          "dice": "2d8",
+          "type": "thunder"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "4-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "push": 10
+      }
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 1,
+      "Invisibility": 1,
+      "Sleep": 1
+    }
+  }
+}

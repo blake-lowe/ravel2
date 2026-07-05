@@ -1,0 +1,28 @@
+{
+  "name": "Bestow Curse",
+  "level": 3,
+  "school": "necromancy",
+  "range": 5,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "modifier_on_fail": {
+        "disadvantage_on_attacks": true
+      }
+    }
+  ],
+  "_approx": "of the four curse modes, the attack-disadvantage curse is modelled.",
+  "imported": "5etools"
+}

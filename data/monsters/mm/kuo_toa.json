@@ -1,0 +1,93 @@
+{
+  "name": "Kuo-toa",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 18,
+  "hit_dice": "4d8",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 10,
+    "CON": 11,
+    "INT": 11,
+    "WIS": 10,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Net",
+      "text": "rw 3 to hit, range 5/15 ft., one Large or smaller creature. The target is restrained. A creature can use its action to make a 10 Strength check to free itself or another creature in a net, ending the effect on a success. Dealing 5 slashing damage to the net (AC 10) frees the target without harming it and destroys the net."
+    },
+    {
+      "name": "Sticky Shield (reaction)",
+      "text": "When a creature misses the kuo-toa with a melee weapon attack, the kuo-toa uses its sticky shield to catch the weapon. The attacker must succeed on a 11 Strength saving throw, or the weapon becomes stuck to the kuo-toa's shield. If the weapon's wielder can't or won't let go of the weapon, the wielder is grappled while the weapon is stuck. While stuck, the weapon can't be used. A creature can pull the weapon free by taking an action to make a 11 Strength check and succeeding."
+    },
+    {
+      "name": "Otherworldly Perception",
+      "text": "The kuo-toa can sense the presence of any creature within 30 feet of it that is invisible or on the Ethereal Plane. It can pinpoint such a creature that is moving."
+    },
+    {
+      "name": "Slippery",
+      "text": "The kuo-toa has advantage on ability checks and saving throws made to escape a grapple."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing",
+    "sunlight_sensitivity"
+  ]
+}

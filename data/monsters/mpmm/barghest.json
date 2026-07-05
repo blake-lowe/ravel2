@@ -1,0 +1,120 @@
+{
+  "name": "Barghest",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 4.0,
+  "alignment": "N E",
+  "ac": 17,
+  "hp": 60,
+  "hit_dice": "8d10+16",
+  "speeds": {
+    "walk": 60
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 15,
+    "CON": 14,
+    "INT": 13,
+    "WIS": 12,
+    "CHA": 14
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 4,
+    "Intimidation": 4,
+    "Perception": 5,
+    "Stealth": 4
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Goblin",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Change Shape (bonus)",
+      "text": "The barghest transforms into a Small goblin or back into its true form. Other than its size and speed, its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. The barghest reverts to its true form if it dies."
+    },
+    {
+      "name": "Fire Banishment",
+      "text": "When the barghest starts its turn engulfed in flames that are at least 10 feet high or wide, it must succeed on a 15 Charisma saving throw or be instantly banished to Gehenna"
+    },
+    {
+      "name": "Soul Feeding",
+      "text": "The barghest can feed on the corpse of a Fey or Humanoid it killed within the past 10 minutes. This feeding takes at least 1 minute, and it destroys the corpse. The victim's soul is trapped in the barghest for 24 hours, after which time it is digested and the person is incapable of being revived. If the barghest dies before the soul is digested, the soul is released. While a soul is trapped in the barghest, any magic that tries to restore the soul to life has a 50 chance of failing and being wasted."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 1,
+      "Suggestion": 1
+    }
+  }
+}

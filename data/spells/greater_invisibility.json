@@ -1,0 +1,26 @@
+{
+  "name": "Greater Invisibility",
+  "level": 4,
+  "school": "illusion",
+  "casting_time": "action",
+  "range": 0,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "self",
+    "affects": "self"
+  },
+  "effects": [
+    {
+      "kind": "modifier",
+      "modifier": {
+        "attackers_have_disadvantage": true
+      }
+    }
+  ]
+}

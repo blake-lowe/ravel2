@@ -1,0 +1,105 @@
+{
+  "name": "Beholder Zombie",
+  "type": "undead",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 93,
+  "hit_dice": "11d10+33",
+  "speeds": {
+    "walk": 0,
+    "fly": 20,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 8,
+    "CON": 16,
+    "INT": 3,
+    "WIS": 8,
+    "CHA": 5
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [
+    "understands Deep Speech and Undercommon but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "text": "If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "eye_rays": [
+    {
+      "name": "Paralyzing Ray",
+      "ability": "CON",
+      "dc": 14,
+      "condition": "paralyzed",
+      "save_ends": true
+    },
+    {
+      "name": "Fear Ray",
+      "ability": "WIS",
+      "dc": 14,
+      "condition": "frightened",
+      "save_ends": true
+    },
+    {
+      "name": "Enervation Ray",
+      "ability": "CON",
+      "dc": 14,
+      "damage": {
+        "dice": "8d8",
+        "type": "necrotic"
+      },
+      "half_on_save": true
+    },
+    {
+      "name": "Disintegration Ray",
+      "ability": "DEX",
+      "dc": 14,
+      "damage": {
+        "dice": "10d8",
+        "type": "force"
+      },
+      "half_on_save": false
+    }
+  ],
+  "eye_ray_count": 1,
+  "eye_ray_range": 60,
+  "imported": "5etools-mm"
+}

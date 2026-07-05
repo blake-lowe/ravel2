@@ -1,0 +1,124 @@
+{
+  "name": "Young Red Shadow Dragon",
+  "type": "dragon",
+  "size": "Large",
+  "cr": 13.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 178,
+  "hit_dice": "17d10+85",
+  "speeds": {
+    "walk": 40,
+    "climb": 40,
+    "fly": 80
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 10,
+    "CON": 21,
+    "INT": 14,
+    "WIS": 11,
+    "CHA": 19
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 10,
+    "Stealth": 10
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 120,
+    "passive_perception": 18
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [
+    "necrotic"
+  ],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Living Shadow",
+      "text": "While in dim light or darkness, the dragon has resistance to damage that isn't force, psychic, or radiant."
+    },
+    {
+      "name": "Shadow Stealth",
+      "text": "While in dim light or darkness, the dragon can take the Hide action as a bonus action."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "2d10+6",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "2d6+6",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Shadow Breath",
+      "shape": "cone",
+      "size": 30,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "16d6",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

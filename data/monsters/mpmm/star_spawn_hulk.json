@@ -1,0 +1,91 @@
+{
+  "name": "Star Spawn Hulk",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 10.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 136,
+  "hit_dice": "13d10+65",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 8,
+    "CON": 21,
+    "INT": 7,
+    "WIS": 12,
+    "CHA": 9
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Deep Speech"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Psychic Mirror",
+      "text": "If the hulk takes psychic damage, each creature within 10 feet of the hulk takes that damage instead; the hulk takes none of the damage. In addition, the hulk's thoughts and location can't be discerned by magic."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Reaping Arms",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 17,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "DEX",
+        "dc": 17,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

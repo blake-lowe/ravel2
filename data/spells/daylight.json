@@ -1,0 +1,12 @@
+{
+  "name": "Daylight",
+  "level": 3,
+  "school": "evocation",
+  "casting_time": "action",
+  "range": 60,
+  "components": ["V", "S"],
+  "concentration": false,
+  "duration_rounds": 100,
+  "target": {"mode": "point", "shape": "sphere", "size": 60, "affects": "self"},
+  "effects": [{"kind": "daylight", "size": 60}]
+}

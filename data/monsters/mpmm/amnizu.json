@@ -1,0 +1,149 @@
+{
+  "name": "Amnizu",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 18.0,
+  "alignment": "L E",
+  "ac": 21,
+  "hp": 202,
+  "hit_dice": "27d8+81",
+  "speeds": {
+    "walk": 30,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 13,
+    "CON": 16,
+    "INT": 20,
+    "WIS": 12,
+    "CHA": 18
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 7
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 17
+  },
+  "languages": [
+    "Common",
+    "Infernal",
+    "telepathy 1,000 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Instinctive Charm (reaction)",
+      "text": "When a creature within 60 feet of the amnizu makes an attack roll against it, and another creature is within the attack's range, the attacker must make a 19 Wisdom saving throw. On a failed save, the attacker must target the creature that is closest to it, not including the amnizu or itself. If multiple creatures are closest, the attacker chooses which one to target. If the saving throw is successful, the attacker is immune to the amnizu's Instinctive Charm for 24 hours."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The amnizu has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Taskmaster Whip",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "1d8+5",
+          "type": "slashing"
+        },
+        {
+          "dice": "3d10",
+          "type": "force"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Taskmaster Whip",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Blinding Rot",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 19,
+      "damage": [
+        {
+          "dice": "4d12",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 19,
+        "on_fail_condition": "blinded"
+      }
+    },
+    {
+      "name": "Forgetfulness",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "INT",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "4d12",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "6",
+      "rider": {
+        "ability": "INT",
+        "dc": 18,
+        "on_fail_condition": "stunned"
+      },
+      "max_targets": 1
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 19,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Command": 0
+    }
+  }
+}

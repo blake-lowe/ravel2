@@ -1,0 +1,12 @@
+{
+  "name": "Darkness",
+  "level": 2,
+  "school": "evocation",
+  "casting_time": "action",
+  "range": 60,
+  "components": ["V", "M"],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {"mode": "point", "shape": "sphere", "size": 15, "affects": "enemies"},
+  "effects": [{"kind": "darkness", "size": 15}]
+}

@@ -1,0 +1,102 @@
+{
+  "name": "Jackalwere",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 18,
+  "hit_dice": "4d8",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 15,
+    "CON": 11,
+    "INT": 13,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 4,
+    "Perception": 2,
+    "Stealth": 4
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "Common (can't speak in jackal form)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Shapechanger",
+      "text": "The jackalwere can use its action to polymorph into a specific Medium human or a jackal-humanoid hybrid, or back into its true form (that of a Small jackal). Other than its size, its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+    },
+    {
+      "name": "Keen Hearing and Smell",
+      "text": "The jackalwere has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    },
+    {
+      "name": "Pack Tactics",
+      "text": "The jackalwere has advantage on an attack roll against a creature if at least one of the jackalwere's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite (Jackal or Hybrid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Scimitar (Human or Hybrid Form Only)",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Sleep Gaze",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 10,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 10,
+        "on_fail_condition": "unconscious"
+      }
+    }
+  ],
+  "traits_flags": [
+    "pack_tactics",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,94 @@
+{
+  "name": "Faerie Dragon (Yellow)",
+  "type": "dragon",
+  "size": "Tiny",
+  "cr": 1.0,
+  "alignment": "C G",
+  "ac": 15,
+  "hp": 14,
+  "hit_dice": "4d4+4",
+  "speeds": {
+    "walk": 10,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 3,
+    "DEX": 20,
+    "CON": 13,
+    "INT": 14,
+    "WIS": 12,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Arcana": 4,
+    "Perception": 3,
+    "Stealth": 7
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Draconic",
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Euphoria Breath {@recharge 5}",
+      "text": "The dragon exhales a puff of euphoria gas at one creature within 5 feet of it. The target must succeed on a 11 Wisdom saving throw, or for 1 minute, the target can't take reactions and must roll a d6 at the start of each of its turns to determine its behavior during the turn: 1\u20134. The target takes no action or bonus action and uses all of its movement to move in a random direction. 5\u20136. The target doesn't move, and the only thing it can do on its turn is make a 11 Wisdom saving throw, ending the effect on itself on a success."
+    },
+    {
+      "name": "The Colors of Age",
+      "text": "A faerie dragon's scales change hue as it ages, moving through all the colors of the rainbow. All faerie dragons have innate spellcasting ability, gaining new spells as they mature. Red\u20145 years or less Orange\u20146\u201310 years Yellow\u201411\u201320 years Green\u201421\u201330 years Blue\u201431\u201340 years Indigo\u201441\u201350 years Violet\u201451 years or more A green or older faerie dragon's CR increases to 2."
+    },
+    {
+      "name": "Superior Invisibility",
+      "text": "As a bonus action, the dragon can magically turn invisible until its concentration ends (as if concentration on a spell). Any equipment the dragon wears or carries is invisible with it."
+    },
+    {
+      "name": "Limited Telepathy",
+      "text": "Using telepathy, the dragon can magically communicate with any other faerie dragon within 60 feet of it."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The faerie dragon has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Mirror Image": 1
+    }
+  }
+}

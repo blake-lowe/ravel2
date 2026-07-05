@@ -1,0 +1,94 @@
+{
+  "name": "Babau",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 82,
+  "hit_dice": "11d8+33",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 16,
+    "CON": 16,
+    "INT": 11,
+    "WIS": 12,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Abyssal"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Weakening Gaze",
+      "text": "The babau targets one creature that it can see within 20 feet of it. The target must make a 13 Constitution saving throw. On a failed save, the target deals only half damage with weapon attacks that use Strength for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d4+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d4",
+          "type": "acid"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 11,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 0,
+      "Dispel Magic": 0,
+      "Fear": 0
+    }
+  }
+}

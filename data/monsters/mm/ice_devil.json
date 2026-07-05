@@ -1,0 +1,147 @@
+{
+  "name": "Ice Devil",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 14.0,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 180,
+  "hit_dice": "19d10+76",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 14,
+    "CON": 18,
+    "INT": 18,
+    "WIS": 15,
+    "CHA": 18
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The devil has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "cold"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d4+5",
+          "type": "slashing"
+        },
+        {
+          "dice": "3d6",
+          "type": "cold"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d6",
+          "type": "cold"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Wall of Ice",
+      "shape": "line",
+      "size": 30,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 17,
+      "damage": [
+        {
+          "dice": "10d6",
+          "type": "cold"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": {
+        "ability": "DEX",
+        "dc": 17,
+        "on_fail_condition": "incapacitated"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mm"
+}

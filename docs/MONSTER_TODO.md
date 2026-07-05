@@ -1,0 +1,473 @@
+# Monster Manual (2014) — import & full-support todo
+
+Parsed directly from `sources/bestiary-mm.json` (450 stat blocks) via the §17 importer `tools/import_5etools.py`. Stat blocks live under `data/monsters/mm/`. **450/450 imported** — ✅ **52 curated** (hand-authored, special mechanics fully wired), 🟩/🟨 **398 auto-imported** (faithful core stats/attacks/breath/save-areas/spellcasting + every other ability preserved verbatim in `traits`; 🟨 = has no attack, so it moves/dodges only until its abilities are mechanized). **0 not imported.**
+
+All imported monsters load and fight without crashing (roster smoke, 0 errors); HP is rolled from hit dice; determinism holds.
+
+**"Support fully" = the remaining work:** promoting 🟩/🟨 → ✅ by mechanizing the descriptive abilities (most map onto the enabler primitives/handlers; the marquee tail — Beholder eye rays, shapechangers, Demilich Howl — needs bespoke work).
+
+
+## CR < 1  (137)
+
+- [x] **Awakened Shrub** — CR 0, plant — 🟩 imported
+- [x] **Baboon** — CR 0, beast — 🟩 imported
+- [x] **Badger** — CR 0, beast — 🟩 imported
+- [x] **Bat** — CR 0, beast — 🟩 imported
+- [x] **Cat** — CR 0, beast — 🟩 imported
+- [x] **Commoner** — CR 0, humanoid — 🟩 imported
+- [x] **Crab** — CR 0, beast — 🟩 imported
+- [x] **Crawling Claw** — CR 0, undead — 🟩 imported
+- [x] **Deer** — CR 0, beast — 🟩 imported
+- [x] **Eagle** — CR 0, beast — 🟩 imported
+- [x] **Frog** — CR 0, beast — 🟨 imported (move/dodge only — no attack)
+- [x] **Giant Fire Beetle** — CR 0, beast — 🟩 imported
+- [x] **Goat** — CR 0, beast — 🟩 imported
+- [x] **Hawk** — CR 0, beast — 🟩 imported
+- [x] **Homunculus** — CR 0, construct — 🟩 imported
+- [x] **Hyena** — CR 0, beast — 🟩 imported
+- [x] **Jackal** — CR 0, beast — 🟩 imported
+- [x] **Lemure** — CR 0, fiend — 🟩 imported
+- [x] **Lizard** — CR 0, beast — 🟩 imported
+- [x] **Myconid Sprout** — CR 0, plant — 🟩 imported
+- [x] **Octopus** — CR 0, beast — 🟩 imported
+- [x] **Owl** — CR 0, beast — 🟩 imported
+- [x] **Quipper** — CR 0, beast — 🟩 imported
+- [x] **Rat** — CR 0, beast — 🟩 imported
+- [x] **Raven** — CR 0, beast — 🟩 imported
+- [x] **Scorpion** — CR 0, beast — 🟩 imported
+- [x] **Sea Horse** — CR 0, beast — 🟨 imported (move/dodge only — no attack)
+- [x] **Shrieker** — CR 0, plant — 🟨 imported (move/dodge only — no attack)
+- [x] **Spider** — CR 0, beast — 🟩 imported
+- [x] **Vulture** — CR 0, beast — 🟩 imported
+- [x] **Weasel** — CR 0, beast — 🟩 imported
+- [x] **Bandit** — CR 1/8, humanoid — ✅ curated
+- [x] **Blood Hawk** — CR 1/8, beast — 🟩 imported
+- [x] **Camel** — CR 1/8, beast — 🟩 imported
+- [x] **Cultist** — CR 1/8, humanoid — 🟩 imported
+- [x] **Flumph** — CR 1/8, aberration — 🟩 imported
+- [x] **Flying Snake** — CR 1/8, beast — 🟩 imported
+- [x] **Giant Crab** — CR 1/8, beast — 🟩 imported
+- [x] **Giant Rat** — CR 1/8, beast — 🟩 imported
+- [x] **Giant Weasel** — CR 1/8, beast — 🟩 imported
+- [x] **Guard** — CR 1/8, humanoid — 🟩 imported
+- [x] **Kobold** — CR 1/8, humanoid — ✅ curated
+- [x] **Manes** — CR 1/8, fiend — 🟩 imported
+- [x] **Mastiff** — CR 1/8, beast — 🟩 imported
+- [x] **Merfolk** — CR 1/8, humanoid — 🟩 imported
+- [x] **Monodrone** — CR 1/8, construct — 🟩 imported
+- [x] **Mule** — CR 1/8, beast — 🟩 imported
+- [x] **Noble** — CR 1/8, humanoid — 🟩 imported
+- [x] **Poisonous Snake** — CR 1/8, beast — 🟩 imported
+- [x] **Pony** — CR 1/8, beast — 🟩 imported
+- [x] **Slaad Tadpole** — CR 1/8, aberration — 🟩 imported
+- [x] **Stirge** — CR 1/8, beast — 🟩 imported
+- [x] **Tribal Warrior** — CR 1/8, humanoid — 🟩 imported
+- [x] **Twig Blight** — CR 1/8, plant — 🟩 imported
+- [x] **Aarakocra** — CR 1/4, humanoid — 🟩 imported
+- [x] **Acolyte** — CR 1/4, humanoid — 🟩 imported
+- [x] **Axe Beak** — CR 1/4, beast — 🟩 imported
+- [x] **Blink Dog** — CR 1/4, fey — ✅ curated
+- [x] **Boar** — CR 1/4, beast — 🟩 imported
+- [x] **Bullywug** — CR 1/4, humanoid — 🟩 imported
+- [x] **Constrictor Snake** — CR 1/4, beast — 🟩 imported
+- [x] **Draft Horse** — CR 1/4, beast — 🟩 imported
+- [x] **Dretch** — CR 1/4, fiend — 🟩 imported
+- [x] **Drow** — CR 1/4, humanoid — 🟩 imported
+- [x] **Duodrone** — CR 1/4, construct — 🟩 imported
+- [x] **Elk** — CR 1/4, beast — 🟩 imported
+- [x] **Flying Sword** — CR 1/4, construct — 🟩 imported
+- [x] **Giant Badger** — CR 1/4, beast — 🟩 imported
+- [x] **Giant Bat** — CR 1/4, beast — 🟩 imported
+- [x] **Giant Centipede** — CR 1/4, beast — 🟩 imported
+- [x] **Giant Frog** — CR 1/4, beast — 🟩 imported
+- [x] **Giant Lizard** — CR 1/4, beast — 🟩 imported
+- [x] **Giant Owl** — CR 1/4, beast — 🟩 imported
+- [x] **Giant Poisonous Snake** — CR 1/4, beast — 🟩 imported
+- [x] **Giant Wolf Spider** — CR 1/4, beast — 🟩 imported
+- [x] **Goblin** — CR 1/4, humanoid — ✅ curated
+- [x] **Grimlock** — CR 1/4, humanoid — 🟩 imported
+- [x] **Kenku** — CR 1/4, humanoid — 🟩 imported
+- [x] **Kuo-toa** — CR 1/4, humanoid — 🟩 imported
+- [x] **Mud Mephit** — CR 1/4, elemental — 🟩 imported
+- [x] **Needle Blight** — CR 1/4, plant — 🟩 imported
+- [x] **Panther** — CR 1/4, beast — 🟩 imported
+- [x] **Pixie** — CR 1/4, fey — 🟨 imported (move/dodge only — no attack)
+- [x] **Pseudodragon** — CR 1/4, dragon — 🟩 imported
+- [x] **Pteranodon** — CR 1/4, beast — 🟩 imported
+- [x] **Riding Horse** — CR 1/4, beast — 🟩 imported
+- [x] **Skeleton** — CR 1/4, undead — ✅ curated
+- [x] **Smoke Mephit** — CR 1/4, elemental — 🟩 imported
+- [x] **Sprite** — CR 1/4, fey — 🟩 imported
+- [x] **Steam Mephit** — CR 1/4, elemental — 🟩 imported
+- [x] **Swarm of Bats** — CR 1/4, beast — 🟩 imported
+- [x] **Swarm of Rats** — CR 1/4, beast — 🟩 imported
+- [x] **Swarm of Ravens** — CR 1/4, beast — 🟩 imported
+- [x] **Troglodyte** — CR 1/4, humanoid — 🟩 imported
+- [x] **Violet Fungus** — CR 1/4, plant — 🟩 imported
+- [x] **Winged Kobold** — CR 1/4, humanoid — 🟩 imported
+- [x] **Wolf** — CR 1/4, beast — ✅ curated
+- [x] **Zombie** — CR 1/4, undead — ✅ curated
+- [x] **Ape** — CR 1/2, beast — 🟩 imported
+- [x] **Black Bear** — CR 1/2, beast — ✅ curated
+- [x] **Cockatrice** — CR 1/2, monstrosity — 🟩 imported
+- [x] **Crocodile** — CR 1/2, beast — 🟩 imported
+- [x] **Darkmantle** — CR 1/2, monstrosity — 🟩 imported
+- [x] **Deep Gnome (Svirfneblin)** — CR 1/2, humanoid — 🟩 imported
+- [x] **Dust Mephit** — CR 1/2, elemental — 🟩 imported
+- [x] **Gas Spore** — CR 1/2, plant — 🟩 imported
+- [x] **Giant Goat** — CR 1/2, beast — 🟩 imported
+- [x] **Giant Sea Horse** — CR 1/2, beast — 🟩 imported
+- [x] **Giant Wasp** — CR 1/2, beast — 🟩 imported
+- [x] **Gnoll** — CR 1/2, humanoid — ✅ curated
+- [x] **Gray Ooze** — CR 1/2, ooze — 🟩 imported
+- [x] **Hobgoblin** — CR 1/2, humanoid — ✅ curated
+- [x] **Ice Mephit** — CR 1/2, elemental — 🟩 imported
+- [x] **Jackalwere** — CR 1/2, humanoid — 🟩 imported
+- [x] **Lizardfolk** — CR 1/2, humanoid — 🟩 imported
+- [x] **Magma Mephit** — CR 1/2, elemental — 🟩 imported
+- [x] **Magmin** — CR 1/2, elemental — ✅ curated
+- [x] **Myconid Adult** — CR 1/2, plant — 🟩 imported
+- [x] **Orc** — CR 1/2, humanoid — ✅ curated
+- [x] **Piercer** — CR 1/2, monstrosity — 🟩 imported
+- [x] **Reef Shark** — CR 1/2, beast — 🟩 imported
+- [x] **Rust Monster** — CR 1/2, monstrosity — 🟩 imported
+- [x] **Sahuagin** — CR 1/2, humanoid — 🟩 imported
+- [x] **Satyr** — CR 1/2, fey — 🟩 imported
+- [x] **Scout** — CR 1/2, humanoid — ✅ curated
+- [x] **Shadow** — CR 1/2, undead — 🟩 imported
+- [x] **Swarm of Beetles** — CR 1/2, beast — 🟩 imported
+- [x] **Swarm of Centipedes** — CR 1/2, beast — 🟩 imported
+- [x] **Swarm of Insects** — CR 1/2, beast — 🟩 imported
+- [x] **Swarm of Spiders** — CR 1/2, beast — 🟩 imported
+- [x] **Swarm of Wasps** — CR 1/2, beast — 🟩 imported
+- [x] **Thug** — CR 1/2, humanoid — 🟩 imported
+- [x] **Tridrone** — CR 1/2, construct — 🟩 imported
+- [x] **Vine Blight** — CR 1/2, plant — 🟩 imported
+- [x] **Warhorse** — CR 1/2, beast — 🟩 imported
+- [x] **Warhorse Skeleton** — CR 1/2, undead — 🟩 imported
+- [x] **Worg** — CR 1/2, monstrosity — 🟩 imported
+
+## CR 1–4  (156)
+
+- [x] **Animated Armor** — CR 1, construct — 🟩 imported
+- [x] **Brass Dragon Wyrmling** — CR 1, dragon — 🟩 imported
+- [x] **Brown Bear** — CR 1, beast — ✅ curated
+- [x] **Bugbear** — CR 1, humanoid — ✅ curated
+- [x] **Copper Dragon Wyrmling** — CR 1, dragon — 🟩 imported
+- [x] **Death Dog** — CR 1, monstrosity — 🟩 imported
+- [x] **Dire Wolf** — CR 1, beast — ✅ curated
+- [x] **Dryad** — CR 1, fey — 🟩 imported
+- [x] **Duergar** — CR 1, humanoid — 🟩 imported
+- [x] **Faerie Dragon (Orange)** — CR 1, dragon — 🟩 imported
+- [x] **Faerie Dragon (Red)** — CR 1, dragon — 🟩 imported
+- [x] **Faerie Dragon (Yellow)** — CR 1, dragon — 🟩 imported
+- [x] **Fire Snake** — CR 1, elemental — 🟩 imported
+- [x] **Ghoul** — CR 1, undead — ✅ curated
+- [x] **Giant Eagle** — CR 1, beast — ✅ curated
+- [x] **Giant Hyena** — CR 1, beast — 🟩 imported
+- [x] **Giant Octopus** — CR 1, beast — 🟩 imported
+- [x] **Giant Spider** — CR 1, beast — ✅ curated
+- [x] **Giant Toad** — CR 1, beast — ✅ curated
+- [x] **Giant Vulture** — CR 1, beast — 🟩 imported
+- [x] **Goblin Boss** — CR 1, humanoid — 🟩 imported
+- [x] **Half-Ogre (Ogrillon)** — CR 1, giant — 🟩 imported
+- [x] **Harpy** — CR 1, monstrosity — 🟩 imported
+- [x] **Hippogriff** — CR 1, monstrosity — 🟩 imported
+- [x] **Imp** — CR 1, fiend — 🟩 imported
+- [x] **Kuo-toa Whip** — CR 1, humanoid — 🟩 imported
+- [x] **Lion** — CR 1, beast — 🟩 imported
+- [x] **Quadrone** — CR 1, construct — 🟩 imported
+- [x] **Quaggoth Spore Servant** — CR 1, plant — 🟩 imported
+- [x] **Quasit** — CR 1, fiend — 🟩 imported
+- [x] **Scarecrow** — CR 1, construct — 🟩 imported
+- [x] **Specter** — CR 1, undead — ✅ curated
+- [x] **Spy** — CR 1, humanoid — 🟩 imported
+- [x] **Swarm of Quippers** — CR 1, beast — 🟩 imported
+- [x] **Thri-kreen** — CR 1, humanoid — 🟩 imported
+- [x] **Tiger** — CR 1, beast — 🟩 imported
+- [x] **Yuan-ti Pureblood** — CR 1, humanoid — 🟩 imported
+- [x] **Allosaurus** — CR 2, beast — 🟩 imported
+- [x] **Ankheg** — CR 2, monstrosity — ✅ curated
+- [x] **Awakened Tree** — CR 2, plant — 🟩 imported
+- [x] **Azer** — CR 2, elemental — 🟩 imported
+- [x] **Bandit Captain** — CR 2, humanoid — 🟩 imported
+- [x] **Berserker** — CR 2, humanoid — ✅ curated
+- [x] **Black Dragon Wyrmling** — CR 2, dragon — 🟩 imported
+- [x] **Bronze Dragon Wyrmling** — CR 2, dragon — 🟩 imported
+- [x] **Carrion Crawler** — CR 2, monstrosity — 🟩 imported
+- [x] **Cave Bear** — CR 2, beast — 🟩 imported
+- [x] **Centaur** — CR 2, monstrosity — ✅ curated
+- [x] **Cult Fanatic** — CR 2, humanoid — 🟩 imported
+- [x] **Druid** — CR 2, humanoid — 🟩 imported
+- [x] **Ettercap** — CR 2, monstrosity — 🟩 imported
+- [x] **Faerie Dragon (Blue)** — CR 2, dragon — 🟩 imported
+- [x] **Faerie Dragon (Green)** — CR 2, dragon — 🟩 imported
+- [x] **Faerie Dragon (Indigo)** — CR 2, dragon — 🟩 imported
+- [x] **Faerie Dragon (Violet)** — CR 2, dragon — 🟩 imported
+- [x] **Gargoyle** — CR 2, elemental — 🟩 imported
+- [x] **Gelatinous Cube** — CR 2, ooze — 🟩 imported
+- [x] **Ghast** — CR 2, undead — 🟩 imported
+- [x] **Giant Boar** — CR 2, beast — 🟩 imported
+- [x] **Giant Constrictor Snake** — CR 2, beast — 🟩 imported
+- [x] **Giant Elk** — CR 2, beast — 🟩 imported
+- [x] **Gibbering Mouther** — CR 2, aberration — 🟩 imported
+- [x] **Githzerai Monk** — CR 2, humanoid — 🟩 imported
+- [x] **Gnoll Pack Lord** — CR 2, humanoid — 🟩 imported
+- [x] **Green Dragon Wyrmling** — CR 2, dragon — 🟩 imported
+- [x] **Grick** — CR 2, monstrosity — 🟩 imported
+- [x] **Griffon** — CR 2, monstrosity — 🟩 imported
+- [x] **Hunter Shark** — CR 2, beast — 🟩 imported
+- [x] **Intellect Devourer** — CR 2, aberration — 🟩 imported
+- [x] **Lizardfolk Shaman** — CR 2, humanoid — 🟩 imported
+- [x] **Merrow** — CR 2, monstrosity — 🟩 imported
+- [x] **Mimic** — CR 2, monstrosity — 🟩 imported
+- [x] **Minotaur Skeleton** — CR 2, undead — 🟩 imported
+- [x] **Myconid Sovereign** — CR 2, plant — 🟩 imported
+- [x] **Nothic** — CR 2, aberration — 🟩 imported
+- [x] **Ochre Jelly** — CR 2, ooze — 🟩 imported
+- [x] **Ogre** — CR 2, giant — ✅ curated
+- [x] **Ogre Zombie** — CR 2, undead — 🟩 imported
+- [x] **Orc Eye of Gruumsh** — CR 2, humanoid — 🟩 imported
+- [x] **Orog** — CR 2, humanoid — 🟩 imported
+- [x] **Pegasus** — CR 2, celestial — 🟩 imported
+- [x] **Pentadrone** — CR 2, construct — 🟩 imported
+- [x] **Peryton** — CR 2, monstrosity — 🟩 imported
+- [x] **Plesiosaurus** — CR 2, beast — 🟩 imported
+- [x] **Polar Bear** — CR 2, beast — 🟩 imported
+- [x] **Poltergeist** — CR 2, undead — 🟩 imported
+- [x] **Priest** — CR 2, humanoid — ✅ curated
+- [x] **Quaggoth** — CR 2, humanoid — 🟩 imported
+- [x] **Rhinoceros** — CR 2, beast — 🟩 imported
+- [x] **Rug of Smothering** — CR 2, construct — 🟩 imported
+- [x] **Saber-Toothed Tiger** — CR 2, beast — ✅ curated
+- [x] **Sahuagin Priestess** — CR 2, humanoid — 🟩 imported
+- [x] **Sea Hag** — CR 2, fey — 🟩 imported
+- [x] **Silver Dragon Wyrmling** — CR 2, dragon — 🟩 imported
+- [x] **Spined Devil** — CR 2, fiend — 🟩 imported
+- [x] **Swarm of Poisonous Snakes** — CR 2, beast — 🟩 imported
+- [x] **Wererat** — CR 2, humanoid — 🟩 imported
+- [x] **White Dragon Wyrmling** — CR 2, dragon — 🟩 imported
+- [x] **Will-o'-Wisp** — CR 2, undead — 🟩 imported
+- [x] **Ankylosaurus** — CR 3, beast — 🟩 imported
+- [x] **Basilisk** — CR 3, monstrosity — ✅ curated
+- [x] **Bearded Devil** — CR 3, fiend — 🟩 imported
+- [x] **Blue Dragon Wyrmling** — CR 3, dragon — 🟩 imported
+- [x] **Bugbear Chief** — CR 3, humanoid — 🟩 imported
+- [x] **Displacer Beast** — CR 3, monstrosity — 🟩 imported
+- [x] **Doppelganger** — CR 3, monstrosity — 🟩 imported
+- [x] **Giant Scorpion** — CR 3, beast — 🟩 imported
+- [x] **Githyanki Warrior** — CR 3, humanoid — 🟩 imported
+- [x] **Gold Dragon Wyrmling** — CR 3, dragon — 🟩 imported
+- [x] **Green Hag** — CR 3, fey — 🟩 imported
+- [x] **Grell** — CR 3, aberration — 🟩 imported
+- [x] **Hell Hound** — CR 3, fiend — 🟩 imported
+- [x] **Hobgoblin Captain** — CR 3, humanoid — 🟩 imported
+- [x] **Hook Horror** — CR 3, monstrosity — 🟩 imported
+- [x] **Killer Whale** — CR 3, beast — 🟩 imported
+- [x] **Knight** — CR 3, humanoid — 🟩 imported
+- [x] **Kuo-toa Monitor** — CR 3, humanoid — 🟩 imported
+- [x] **Manticore** — CR 3, monstrosity — ✅ curated
+- [x] **Minotaur** — CR 3, monstrosity — 🟩 imported
+- [x] **Mummy** — CR 3, undead — ✅ curated
+- [x] **Nightmare** — CR 3, fiend — 🟩 imported
+- [x] **Owlbear** — CR 3, monstrosity — ✅ curated
+- [x] **Phase Spider** — CR 3, monstrosity — 🟩 imported
+- [x] **Quaggoth Thonot** — CR 3, humanoid — 🟩 imported
+- [x] **Spectator** — CR 3, aberration — 🟩 imported
+- [x] **Veteran** — CR 3, humanoid — ✅ curated
+- [x] **Water Weird** — CR 3, elemental — 🟩 imported
+- [x] **Werewolf** — CR 3, humanoid — 🟩 imported
+- [x] **Wight** — CR 3, undead — 🟩 imported
+- [x] **Winter Wolf** — CR 3, monstrosity — 🟩 imported
+- [x] **Yeti** — CR 3, monstrosity — 🟩 imported
+- [x] **Yuan-ti Malison (Type 1)** — CR 3, monstrosity — 🟩 imported
+- [x] **Yuan-ti Malison (Type 2)** — CR 3, monstrosity — 🟩 imported
+- [x] **Yuan-ti Malison (Type 3)** — CR 3, monstrosity — 🟩 imported
+- [x] **Banshee** — CR 4, undead — 🟩 imported
+- [x] **Black Pudding** — CR 4, ooze — 🟩 imported
+- [x] **Bone Naga (Guardian)** — CR 4, undead — 🟩 imported
+- [x] **Bone Naga (Spirit)** — CR 4, undead — 🟩 imported
+- [x] **Chuul** — CR 4, aberration — 🟩 imported
+- [x] **Couatl** — CR 4, celestial — 🟩 imported
+- [x] **Elephant** — CR 4, beast — 🟩 imported
+- [x] **Ettin** — CR 4, giant — ✅ curated
+- [x] **Flameskull** — CR 4, undead — 🟩 imported
+- [x] **Ghost** — CR 4, undead — 🟩 imported
+- [x] **Gnoll Fang of Yeenoghu** — CR 4, fiend — 🟩 imported
+- [x] **Helmed Horror** — CR 4, construct — 🟩 imported
+- [x] **Incubus** — CR 4, fiend — 🟩 imported
+- [x] **Lamia** — CR 4, monstrosity — 🟩 imported
+- [x] **Lizard King** — CR 4, humanoid — 🟩 imported
+- [x] **Lizard Queen** — CR 4, humanoid — 🟩 imported
+- [x] **Orc War Chief** — CR 4, humanoid — 🟩 imported
+- [x] **Red Dragon Wyrmling** — CR 4, dragon — 🟩 imported
+- [x] **Shadow Demon** — CR 4, fiend — 🟩 imported
+- [x] **Succubus** — CR 4, fiend — 🟩 imported
+- [x] **Wereboar** — CR 4, humanoid — 🟩 imported
+- [x] **Weretiger** — CR 4, humanoid — 🟩 imported
+
+## CR 5–10  (96)
+
+- [x] **Air Elemental** — CR 5, elemental — ✅ curated
+- [x] **Barbed Devil** — CR 5, fiend — 🟩 imported
+- [x] **Barlgura** — CR 5, fiend — 🟩 imported
+- [x] **Beholder Zombie** — CR 5, undead — 🟩 imported
+- [x] **Bulette** — CR 5, monstrosity — 🟩 imported
+- [x] **Cambion** — CR 5, fiend — 🟩 imported
+- [x] **Drow Elite Warrior** — CR 5, humanoid — 🟩 imported
+- [x] **Earth Elemental** — CR 5, elemental — 🟩 imported
+- [x] **Fire Elemental** — CR 5, elemental — 🟩 imported
+- [x] **Flesh Golem** — CR 5, construct — 🟩 imported
+- [x] **Giant Crocodile** — CR 5, beast — 🟩 imported
+- [x] **Giant Shark** — CR 5, beast — 🟩 imported
+- [x] **Gladiator** — CR 5, humanoid — ✅ curated
+- [x] **Gorgon** — CR 5, monstrosity — 🟩 imported
+- [x] **Half-Red Dragon Veteran** — CR 5, humanoid — 🟩 imported
+- [x] **Hill Giant** — CR 5, giant — ✅ curated
+- [x] **Mezzoloth** — CR 5, fiend — 🟩 imported
+- [x] **Night Hag** — CR 5, fiend — 🟩 imported
+- [x] **Otyugh** — CR 5, aberration — 🟩 imported
+- [x] **Red Slaad** — CR 5, aberration — 🟩 imported
+- [x] **Revenant** — CR 5, undead — 🟩 imported
+- [x] **Roper** — CR 5, monstrosity — 🟩 imported
+- [x] **Sahuagin Baron** — CR 5, humanoid — 🟩 imported
+- [x] **Salamander** — CR 5, elemental — 🟩 imported
+- [x] **Shambling Mound** — CR 5, plant — 🟩 imported
+- [x] **Triceratops** — CR 5, beast — 🟩 imported
+- [x] **Troll** — CR 5, giant — ✅ curated
+- [x] **Umber Hulk** — CR 5, monstrosity — 🟩 imported
+- [x] **Unicorn** — CR 5, celestial — 🟩 imported
+- [x] **Vampire Spawn** — CR 5, undead — ✅ curated
+- [x] **Water Elemental** — CR 5, elemental — 🟩 imported
+- [x] **Werebear** — CR 5, humanoid — 🟩 imported
+- [x] **Wraith** — CR 5, undead — ✅ curated
+- [x] **Xorn** — CR 5, elemental — 🟩 imported
+- [x] **Young Remorhaz** — CR 5, monstrosity — 🟩 imported
+- [x] **Chasme** — CR 6, fiend — 🟩 imported
+- [x] **Chimera** — CR 6, monstrosity — 🟩 imported
+- [x] **Cyclops** — CR 6, giant — 🟩 imported
+- [x] **Drider** — CR 6, monstrosity — 🟩 imported
+- [x] **Galeb Duhr** — CR 6, elemental — 🟩 imported
+- [x] **Githzerai Zerth** — CR 6, humanoid — 🟩 imported
+- [x] **Hobgoblin Warlord** — CR 6, humanoid — 🟩 imported
+- [x] **Invisible Stalker** — CR 6, elemental — 🟩 imported
+- [x] **Kuo-toa Archpriest** — CR 6, humanoid — 🟩 imported
+- [x] **Mage** — CR 6, humanoid — ✅ curated
+- [x] **Mammoth** — CR 6, beast — 🟩 imported
+- [x] **Medusa** — CR 6, monstrosity — 🟩 imported
+- [x] **Vrock** — CR 6, fiend — 🟩 imported
+- [x] **Wyvern** — CR 6, dragon — ✅ curated
+- [x] **Young Brass Dragon** — CR 6, dragon — 🟩 imported
+- [x] **Young White Dragon** — CR 6, dragon — 🟩 imported
+- [x] **Blue Slaad** — CR 7, aberration — 🟩 imported
+- [x] **Drow Mage** — CR 7, humanoid — ✅ curated
+- [x] **Giant Ape** — CR 7, beast — 🟩 imported
+- [x] **Grick Alpha** — CR 7, monstrosity — 🟩 imported
+- [x] **Mind Flayer** — CR 7, aberration — ✅ curated
+- [x] **Oni** — CR 7, giant — 🟩 imported
+- [x] **Shield Guardian** — CR 7, construct — 🟩 imported
+- [x] **Stone Giant** — CR 7, giant — ✅ curated
+- [x] **Young Black Dragon** — CR 7, dragon — 🟩 imported
+- [x] **Young Copper Dragon** — CR 7, dragon — 🟩 imported
+- [x] **Yuan-ti Abomination** — CR 7, monstrosity — 🟩 imported
+- [x] **Assassin** — CR 8, humanoid — 🟩 imported
+- [x] **Chain Devil** — CR 8, fiend — 🟩 imported
+- [x] **Cloaker** — CR 8, aberration — 🟩 imported
+- [x] **Drow Priestess of Lolth** — CR 8, humanoid — 🟩 imported
+- [x] **Fomorian** — CR 8, giant — 🟩 imported
+- [x] **Frost Giant** — CR 8, giant — ✅ curated
+- [x] **Githyanki Knight** — CR 8, humanoid — 🟩 imported
+- [x] **Green Slaad** — CR 8, aberration — 🟩 imported
+- [x] **Hezrou** — CR 8, fiend — 🟩 imported
+- [x] **Hydra** — CR 8, monstrosity — ✅ curated
+- [x] **Mind Flayer Arcanist** — CR 8, aberration — 🟩 imported
+- [x] **Spirit Naga** — CR 8, monstrosity — 🟩 imported
+- [x] **Tyrannosaurus Rex** — CR 8, beast — 🟩 imported
+- [x] **Young Bronze Dragon** — CR 8, dragon — 🟩 imported
+- [x] **Young Green Dragon** — CR 8, dragon — 🟩 imported
+- [x] **Abominable Yeti** — CR 9, monstrosity — 🟩 imported
+- [x] **Bone Devil** — CR 9, fiend — 🟩 imported
+- [x] **Clay Golem** — CR 9, construct — 🟩 imported
+- [x] **Cloud Giant** — CR 9, giant — 🟩 imported
+- [x] **Fire Giant** — CR 9, giant — ✅ curated
+- [x] **Glabrezu** — CR 9, fiend — 🟩 imported
+- [x] **Gray Slaad** — CR 9, aberration — 🟩 imported
+- [x] **Nycaloth** — CR 9, fiend — 🟩 imported
+- [x] **Treant** — CR 9, plant — 🟩 imported
+- [x] **Young Blue Dragon** — CR 9, dragon — ✅ curated
+- [x] **Young Silver Dragon** — CR 9, dragon — 🟩 imported
+- [x] **Aboleth** — CR 10, aberration — 🟩 imported
+- [x] **Death Slaad** — CR 10, aberration — 🟩 imported
+- [x] **Deva** — CR 10, celestial — 🟩 imported
+- [x] **Guardian Naga** — CR 10, monstrosity — 🟩 imported
+- [x] **Stone Golem** — CR 10, construct — ✅ curated
+- [x] **Yochlol** — CR 10, fiend — 🟩 imported
+- [x] **Young Gold Dragon** — CR 10, dragon — 🟩 imported
+- [x] **Young Red Dragon** — CR 10, dragon — ✅ curated
+
+## CR 11–16  (36)
+
+- [x] **Behir** — CR 11, monstrosity — 🟩 imported
+- [x] **Dao** — CR 11, elemental — 🟩 imported
+- [x] **Djinni** — CR 11, elemental — 🟩 imported
+- [x] **Efreeti** — CR 11, elemental — 🟩 imported
+- [x] **Gynosphinx** — CR 11, monstrosity — 🟩 imported
+- [x] **Horned Devil** — CR 11, fiend — 🟩 imported
+- [x] **Marid** — CR 11, elemental — 🟩 imported
+- [x] **Remorhaz** — CR 11, monstrosity — 🟩 imported
+- [x] **Roc** — CR 11, monstrosity — 🟩 imported
+- [x] **Arcanaloth** — CR 12, fiend — 🟩 imported
+- [x] **Archmage** — CR 12, humanoid — ✅ curated
+- [x] **Erinyes** — CR 12, fiend — 🟩 imported
+- [x] **Adult Brass Dragon** — CR 13, dragon — 🟩 imported
+- [x] **Adult White Dragon** — CR 13, dragon — 🟩 imported
+- [x] **Beholder** — CR 13, aberration — 🟩 imported
+- [x] **Nalfeshnee** — CR 13, fiend — 🟩 imported
+- [x] **Rakshasa** — CR 13, fiend — 🟩 imported
+- [x] **Storm Giant** — CR 13, giant — 🟩 imported
+- [x] **Ultroloth** — CR 13, fiend — 🟩 imported
+- [x] **Vampire** — CR 13, undead — 🟩 imported
+- [x] **Young Red Shadow Dragon** — CR 13, dragon — 🟩 imported
+- [x] **Adult Black Dragon** — CR 14, dragon — 🟩 imported
+- [x] **Adult Copper Dragon** — CR 14, dragon — 🟩 imported
+- [x] **Death Tyrant** — CR 14, undead — 🟩 imported
+- [x] **Ice Devil** — CR 14, fiend — 🟩 imported
+- [x] **Adult Bronze Dragon** — CR 15, dragon — 🟩 imported
+- [x] **Adult Green Dragon** — CR 15, dragon — 🟩 imported
+- [x] **Mummy Lord** — CR 15, undead — 🟩 imported
+- [x] **Purple Worm** — CR 15, monstrosity — 🟩 imported
+- [x] **Vampire Spellcaster** — CR 15, undead — 🟩 imported
+- [x] **Vampire Warrior** — CR 15, undead — 🟩 imported
+- [x] **Adult Blue Dragon** — CR 16, dragon — 🟩 imported
+- [x] **Adult Silver Dragon** — CR 16, dragon — 🟩 imported
+- [x] **Iron Golem** — CR 16, construct — 🟩 imported
+- [x] **Marilith** — CR 16, fiend — 🟩 imported
+- [x] **Planetar** — CR 16, celestial — 🟩 imported
+
+## CR 17+  (25)
+
+- [x] **Adult Blue Dracolich** — CR 17, undead — 🟩 imported
+- [x] **Adult Gold Dragon** — CR 17, dragon — 🟩 imported
+- [x] **Adult Red Dragon** — CR 17, dragon — ✅ curated
+- [x] **Androsphinx** — CR 17, monstrosity — 🟩 imported
+- [x] **Death Knight** — CR 17, undead — 🟩 imported
+- [x] **Dragon Turtle** — CR 17, dragon — 🟩 imported
+- [x] **Goristro** — CR 17, fiend — 🟩 imported
+- [x] **Demilich** — CR 18, undead — 🟨 imported (move/dodge only — no attack)
+- [x] **Balor** — CR 19, fiend — 🟩 imported
+- [x] **Ancient Brass Dragon** — CR 20, dragon — 🟩 imported
+- [x] **Ancient White Dragon** — CR 20, dragon — 🟩 imported
+- [x] **Pit Fiend** — CR 20, fiend — 🟩 imported
+- [x] **Ancient Black Dragon** — CR 21, dragon — 🟩 imported
+- [x] **Ancient Copper Dragon** — CR 21, dragon — 🟩 imported
+- [x] **Lich** — CR 21, undead — 🟩 imported
+- [x] **Solar** — CR 21, celestial — 🟩 imported
+- [x] **Ancient Bronze Dragon** — CR 22, dragon — 🟩 imported
+- [x] **Ancient Green Dragon** — CR 22, dragon — 🟩 imported
+- [x] **Ancient Blue Dragon** — CR 23, dragon — 🟩 imported
+- [x] **Ancient Silver Dragon** — CR 23, dragon — 🟩 imported
+- [x] **Empyrean** — CR 23, celestial — 🟩 imported
+- [x] **Kraken** — CR 23, monstrosity — 🟩 imported
+- [x] **Ancient Gold Dragon** — CR 24, dragon — 🟩 imported
+- [x] **Ancient Red Dragon** — CR 24, dragon — 🟩 imported
+- [x] **Tarrasque** — CR 30, monstrosity — 🟩 imported

@@ -1,0 +1,55 @@
+{
+  "name": "Rhinoceros",
+  "type": "beast",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 45,
+  "hit_dice": "6d10+12",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 8,
+    "CON": 15,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 20,
+    "dc": 15,
+    "bonus_attack": "Gore"
+  }
+}

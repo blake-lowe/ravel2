@@ -1,0 +1,137 @@
+{
+  "name": "Demogorgon",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 26.0,
+  "alignment": "C E",
+  "ac": 22,
+  "hp": 464,
+  "hit_dice": "32d12+256",
+  "speeds": {
+    "walk": 50,
+    "swim": 50
+  },
+  "abilities": {
+    "STR": 29,
+    "DEX": 14,
+    "CON": 26,
+    "INT": 20,
+    "WIS": 17,
+    "CHA": 25
+  },
+  "proficiency_bonus": 8,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Insight": 11,
+    "Perception": 19
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 29
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Demogorgon fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Demogorgon has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Two Heads",
+      "text": "Demogorgon has advantage on saving throws against being blinded, deafened, stunned, or knocked unconscious."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 17,
+      "damage": [
+        {
+          "dice": "3d12+9",
+          "type": "force"
+        }
+      ],
+      "reach": 10,
+      "reduces_max_hp": true
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacle",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Gaze",
+      "shape": "sphere",
+      "size": 120,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 23,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 23,
+        "on_fail_condition": "stunned",
+        "escalates_to": "charmed"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 23,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Dispel Magic": 3,
+      "Fear": 3
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Tentacle"
+  },
+  "save_advantages": [
+    "blinded",
+    "deafened",
+    "stunned",
+    "unconscious"
+  ]
+}

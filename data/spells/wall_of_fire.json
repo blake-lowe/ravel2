@@ -1,0 +1,13 @@
+{
+  "name": "Wall of Fire",
+  "level": 4,
+  "school": "evocation",
+  "casting_time": "action",
+  "range": 120,
+  "components": ["V", "S", "M"],
+  "concentration": false,
+  "duration_rounds": 5,
+  "target": {"mode": "point", "shape": "line", "size": 60, "affects": "enemies"},
+  "effects": [{"kind": "terrain", "half_on_save": false, "damage": [{"dice": "5d8", "type": "fire"}]}],
+  "scaling": {"mode": "damage", "amount": "1d8"}
+}

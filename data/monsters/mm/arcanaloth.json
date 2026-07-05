@@ -1,0 +1,130 @@
+{
+  "name": "Arcanaloth",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 12.0,
+  "alignment": "N E",
+  "ac": 17,
+  "hp": 104,
+  "hit_dice": "16d8+32",
+  "speeds": {
+    "walk": 30,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 12,
+    "CON": 14,
+    "INT": 20,
+    "WIS": 16,
+    "CHA": 17
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 13,
+    "Deception": 11,
+    "Insight": 11,
+    "Perception": 7
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 17
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "The arcanaloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The arcanaloth has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The arcanaloth's weapon attacks are magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d4+3",
+          "type": "slashing"
+        },
+        {
+          "dice": "3d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 17,
+    "attack_bonus": 9,
+    "caster_level": 16,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2,
+      "6": 1,
+      "7": 1,
+      "8": 1
+    },
+    "spells": [
+      "Banishment",
+      "Chain Lightning",
+      "Counterspell",
+      "Fear",
+      "Finger of Death",
+      "Fire Bolt",
+      "Fireball",
+      "Hold Monster",
+      "Mirror Image",
+      "Shield",
+      "Suggestion"
+    ],
+    "innate": {
+      "Darkness": 0,
+      "Magic Missile": 0
+    }
+  }
+}

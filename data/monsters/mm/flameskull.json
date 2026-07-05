@@ -1,0 +1,109 @@
+{
+  "name": "Flameskull",
+  "type": "undead",
+  "size": "Tiny",
+  "cr": 4.0,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 40,
+  "hit_dice": "9d4+18",
+  "speeds": {
+    "walk": 0,
+    "fly": 40,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 1,
+    "DEX": 17,
+    "CON": 14,
+    "INT": 16,
+    "WIS": 10,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Arcana": 5,
+    "Perception": 2
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Common"
+  ],
+  "damage_resistances": [
+    "lightning",
+    "necrotic",
+    "piercing"
+  ],
+  "damage_immunities": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Illumination",
+      "text": "The flameskull sheds either dim light in a 15-foot radius, or bright light in a 15-foot radius and dim light for an additional 15 feet. It can switch between the options as an action."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The flameskull has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Rejuvenation",
+      "text": "If the flameskull is destroyed, it regains all its hit points in 1 hour unless Holy Water (Flask) is sprinkled on its remains or a dispel magic or remove curse spell is cast on them."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fire Ray",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "fire"
+        }
+      ],
+      "range": [
+        30,
+        30
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 13,
+    "attack_bonus": 5,
+    "caster_level": 5,
+    "slots": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+    },
+    "spells": [
+      "Blur",
+      "Fireball",
+      "Flaming Sphere",
+      "Magic Missile",
+      "Shield"
+    ]
+  }
+}

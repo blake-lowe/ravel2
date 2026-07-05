@@ -1,0 +1,72 @@
+{
+  "name": "Skulk",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "C N",
+  "ac": 14,
+  "hp": 18,
+  "hit_dice": "4d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 19,
+    "CON": 10,
+    "INT": 10,
+    "WIS": 7,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "CON"
+  ],
+  "skills": {
+    "Stealth": 8
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 8
+  },
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded"
+  ],
+  "traits": [
+    {
+      "name": "Fallible Invisibility",
+      "text": "The skulk is invisible. This invisibility can be circumvented by three things: Charnel Candles: The skulk appears as a dim, translucent form in the light of a candle made of fat rendered from a corpse whose identity is unknown. Children: Humanoid children, aged 10 and under, can see through this invisibility. Reflective Surfaces: The skulk appears as a drab, smooth-skinned biped if its reflection can be seen in a mirror or on another surface."
+    },
+    {
+      "name": "Trackless",
+      "text": "The skulk leaves no tracks to indicate where it has been or where it's headed."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d4+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

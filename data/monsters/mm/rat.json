@@ -1,0 +1,56 @@
+{
+  "name": "Rat",
+  "type": "beast",
+  "size": "Tiny",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 10,
+  "hp": 1,
+  "hit_dice": "1d4-1",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 2,
+    "DEX": 11,
+    "CON": 9,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 30,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "text": "The rat has advantage on Wisdom (Perception) checks that rely on smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 0,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

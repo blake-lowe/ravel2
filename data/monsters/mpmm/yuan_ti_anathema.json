@@ -1,0 +1,170 @@
+{
+  "name": "Yuan-ti Anathema",
+  "type": "monstrosity",
+  "size": "Huge",
+  "cr": 12.0,
+  "alignment": "N E",
+  "ac": 16,
+  "hp": 189,
+  "hit_dice": "18d12+72",
+  "speeds": {
+    "walk": 40,
+    "climb": 40,
+    "swim": 40
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 13,
+    "CON": 19,
+    "INT": 19,
+    "WIS": 17,
+    "CHA": 20
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 11,
+    "Stealth": 5
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 60,
+    "passive_perception": 21
+  },
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [
+    "acid",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Change Shape (bonus)",
+      "text": "The anathema transforms into a Huge constrictor snake or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The anathema has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Six Heads",
+      "text": "The anathema has advantage on saves against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw (Anathema Form Only)",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d6+6",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Flurry of Bites (Anathema Form Only)",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "6d6+6",
+          "type": "piercing"
+        },
+        {
+          "dice": "4d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Constrict (Snake Form Only)",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "3d6+6",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6",
+          "type": "acid"
+        },
+        {
+          "dice": "3d6+6",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 15,
+      "rider": {
+        "ability": "STR",
+        "dc": 16,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Ophidiophobia Aura",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 17,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 17,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 17,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 3,
+      "Entangle": 3,
+      "Fear": 3,
+      "Suggestion": 3
+    }
+  },
+  "save_advantages": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "stunned",
+    "unconscious"
+  ]
+}

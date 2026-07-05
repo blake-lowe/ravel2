@@ -1,0 +1,60 @@
+{
+  "name": "Berserker",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2,
+  "alignment": "any chaotic alignment",
+  "ac": 13,
+  "hp": 67,
+  "hit_dice": "9d8+27",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 17,
+    "INT": 9,
+    "WIS": 11,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Reckless",
+      "text": "The berserker fights recklessly: it has advantage on its melee attack rolls, but attack rolls against it have advantage until its next turn. (Implemented via the conditional-modifier system.)"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greataxe",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d12+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "strategy": "A frenzied front-liner: charge the nearest foe and hew with the greataxe every round, ignoring any thought of defense.",
+  "reckless": true,
+  "curated": true,
+  "imported": "5etools-mm"
+}

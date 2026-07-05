@@ -1,0 +1,103 @@
+{
+  "name": "Assassin",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 8.0,
+  "alignment": "L NX C NY E",
+  "ac": 15,
+  "hp": 78,
+  "hit_dice": "12d8+24",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 16,
+    "CON": 14,
+    "INT": 13,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "DEX",
+    "INT"
+  ],
+  "skills": {
+    "Acrobatics": 6,
+    "Deception": 3,
+    "Perception": 3,
+    "Stealth": 9
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "Thieves' cant plus any two languages"
+  ],
+  "damage_resistances": [
+    "poison"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Assassinate",
+      "text": "During its first turn, the assassin has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the assassin scores against a surprised creature is a critical hit."
+    },
+    {
+      "name": "Evasion",
+      "text": "If the assassin is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the assassin instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+    },
+    {
+      "name": "Sneak Attack (1/Turn)",
+      "text": "The assassin deals an extra 14 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the assassin that isn't incapacitated and the assassin doesn't have disadvantage on the attack roll."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "7d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Light Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "7d6",
+          "type": "poison"
+        }
+      ],
+      "range": [
+        80,
+        320
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Shortsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

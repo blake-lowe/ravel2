@@ -1,0 +1,103 @@
+{
+  "name": "Spectator",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "L N",
+  "ac": 14,
+  "hp": 39,
+  "hit_dice": "6d8+12",
+  "speeds": {
+    "walk": 0,
+    "fly": 30,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 13,
+    "WIS": 14,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 6
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Deep Speech",
+    "Undercommon",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Create Food and Water",
+      "text": "The spectator magically creates enough food and water to sustain itself for 24 hours."
+    },
+    {
+      "name": "Spell Reflection (reaction)",
+      "text": "If the spectator makes a successful saving throw against a spell, or a spell attack misses it, the spectator can choose another creature (including the spellcaster) it can see within 30 feet of it. The spell targets the chosen creature instead of the spectator. If the spell forced a saving throw, the chosen creature makes its own save. If the spell was an attack, the attack roll is rerolled against the chosen creature."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 1,
+      "damage": [
+        {
+          "dice": "1d6-1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "eye_rays": [
+    {
+      "name": "Confusion Ray",
+      "ability": "WIS",
+      "dc": 13
+    },
+    {
+      "name": "Paralyzing Ray",
+      "ability": "CON",
+      "dc": 13,
+      "condition": "paralyzed",
+      "save_ends": true
+    },
+    {
+      "name": "Fear Ray",
+      "ability": "WIS",
+      "dc": 13,
+      "condition": "frightened",
+      "save_ends": true
+    },
+    {
+      "name": "Wounding Ray",
+      "ability": "CON",
+      "dc": 13,
+      "damage": {
+        "dice": "3d10",
+        "type": "necrotic"
+      },
+      "half_on_save": true
+    }
+  ],
+  "eye_ray_count": 2,
+  "eye_ray_range": 90,
+  "imported": "5etools-mm"
+}

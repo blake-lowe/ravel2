@@ -1,0 +1,49 @@
+{
+  "name": "Prismatic Spray",
+  "level": 7,
+  "school": "evocation",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "cone",
+    "size": 60,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "damage": [
+        {
+          "dice": "10d6",
+          "type": "fire"
+        },
+        {
+          "dice": "10d6",
+          "type": "acid"
+        },
+        {
+          "dice": "10d6",
+          "type": "lightning"
+        },
+        {
+          "dice": "10d6",
+          "type": "poison"
+        },
+        {
+          "dice": "10d6",
+          "type": "cold"
+        }
+      ],
+      "half_on_save": true,
+      "condition": "blinded",
+      "save_ends": true
+    }
+  ],
+  "imported": "5etools"
+}

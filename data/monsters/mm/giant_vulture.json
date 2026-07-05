@@ -1,0 +1,88 @@
+{
+  "name": "Giant Vulture",
+  "type": "beast",
+  "size": "Large",
+  "cr": 1.0,
+  "alignment": "N E",
+  "ac": 10,
+  "hp": 22,
+  "hit_dice": "3d10+6",
+  "speeds": {
+    "walk": 10,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 10,
+    "CON": 15,
+    "INT": 6,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Sight and Smell",
+      "text": "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell."
+    },
+    {
+      "name": "Pack Tactics",
+      "text": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Talons",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Beak",
+      "count": 1
+    },
+    {
+      "name": "Talons",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mm"
+}

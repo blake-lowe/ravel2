@@ -1,0 +1,115 @@
+{
+  "name": "Dhergoloth",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 7.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 119,
+  "hit_dice": "14d8+56",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 10,
+    "CON": 19,
+    "INT": 7,
+    "WIS": 10,
+    "CHA": 9
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "STR"
+  ],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "The dhergoloth teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The dhergoloth has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Flailing Claws",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 14,
+      "damage": [
+        {
+          "dice": "3d12+3",
+          "type": "force"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 10,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 0,
+      "Fear": 0
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "name": "Drow Favored Consort",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 18.0,
+  "alignment": "A",
+  "ac": 15,
+  "hp": 240,
+  "hit_dice": "32d8+96",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 20,
+    "CON": 16,
+    "INT": 18,
+    "WIS": 15,
+    "CHA": 18
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "CHA"
+  ],
+  "skills": {
+    "Acrobatics": 11,
+    "Athletics": 8,
+    "Perception": 8,
+    "Stealth": 11
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 18
+  },
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Protective Shield (3/Day) (reaction)",
+      "text": "When the drow or a creature within 10 feet of it is hit by an attack roll, the drow gives the target a +5 bonus to its AC until the start of the drow's next turn, which can cause the triggering attack roll to miss."
+    },
+    {
+      "name": "Fey Ancestry",
+      "text": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "1d6+5",
+          "type": "slashing"
+        },
+        {
+          "dice": "6d8",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Arcane Eruption",
+      "kind": "ranged",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "8d8",
+          "type": "force"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scimitar",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 18,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Mage Armor": 0,
+      "Fireball": 3,
+      "Invisibility": 3,
+      "Darkness": 1,
+      "Faerie Fire": 1
+    }
+  },
+  "save_advantages": [
+    "charmed"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

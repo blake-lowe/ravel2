@@ -1,0 +1,29 @@
+{
+  "name": "Fire Storm",
+  "level": 7,
+  "school": "evocation",
+  "range": 150,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 10,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "7d10",
+          "type": "fire"
+        }
+      ]
+    }
+  ]
+}

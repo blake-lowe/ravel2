@@ -1,0 +1,37 @@
+{
+  "name": "Sunbeam",
+  "level": 6,
+  "school": "evocation",
+  "range": 0,
+  "range_type": "self",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "self_area",
+    "shape": "line",
+    "size": 60,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "half_on_save": true,
+      "condition": "blinded",
+      "save_ends": true,
+      "damage": [
+        {
+          "dice": "6d8",
+          "type": "radiant"
+        }
+      ]
+    }
+  ],
+  "_approx": "one beam per cast; the re-beam-each-turn action is dropped.",
+  "imported": "5etools"
+}

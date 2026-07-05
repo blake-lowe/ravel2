@@ -1,0 +1,35 @@
+{
+  "name": "Chaos Bolt",
+  "level": 1,
+  "school": "evocation",
+  "range": 120,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "2d8",
+          "type": "fire"
+        },
+        {
+          "dice": "1d6",
+          "type": "fire"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d6"
+  },
+  "_approx": "the random damage type and the leap-on-doubles are flattened to fire.",
+  "imported": "5etools"
+}

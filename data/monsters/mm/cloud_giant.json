@@ -1,0 +1,97 @@
+{
+  "name": "Cloud Giant",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 9.0,
+  "alignment": "neutral good (50%) or neutral evil (50%)",
+  "ac": 14,
+  "hp": 200,
+  "hit_dice": "16d12+96",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 27,
+    "DEX": 10,
+    "CON": 22,
+    "INT": 12,
+    "WIS": 16,
+    "CHA": 16
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Insight": 7,
+    "Perception": 7
+  },
+  "senses": {
+    "passive_perception": 17
+  },
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "text": "The giant has advantage on Wisdom (Perception) checks that rely on smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Morningstar",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "3d8+8",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "4d10+8",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        240
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Morningstar",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 0,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fog Cloud": 0,
+      "Light": 0
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Dire Wolf",
+  "type": "beast",
+  "size": "Large",
+  "cr": 1,
+  "alignment": "U",
+  "ac": 14,
+  "hp": 37,
+  "hit_dice": "5d10+10",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 15,
+    "CON": 15,
+    "INT": 3,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 4
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 13,
+        "on_fail_condition": "prone",
+        "duration": 1
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "curated": true,
+  "imported": "5etools-mm"
+}

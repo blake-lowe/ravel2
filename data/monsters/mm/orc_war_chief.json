@@ -1,0 +1,94 @@
+{
+  "name": "Orc War Chief",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 93,
+  "hit_dice": "11d8+44",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 12,
+    "CON": 18,
+    "INT": 11,
+    "WIS": 11,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Intimidation": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Battle Cry (1/Day)",
+      "text": "Each creature of the war chief's choice that is within 30 feet of it, can hear it, and not already affected by Battle Cry gain advantage on attack rolls until the start of the war chief's next turn. The war chief can then make one attack as a bonus action."
+    },
+    {
+      "name": "Aggressive",
+      "text": "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Gruumsh's Fury",
+      "text": "The orc deals an extra 4 (1d8) damage when it hits with a weapon attack (included in the attacks)."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greataxe",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greataxe",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,128 @@
+{
+  "name": "Ultroloth",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 13.0,
+  "alignment": "N E",
+  "ac": 19,
+  "hp": 153,
+  "hit_dice": "18d8+72",
+  "speeds": {
+    "walk": 30,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 16,
+    "CON": 18,
+    "INT": 18,
+    "WIS": 15,
+    "CHA": 19
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [],
+  "skills": {
+    "Intimidation": 9,
+    "Perception": 7,
+    "Stealth": 8
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 17
+  },
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "The ultroloth magically teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The ultroloth has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The ultroloth's weapon attacks are magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Hypnotic Gaze",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 17,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 17,
+        "on_fail_condition": "charmed"
+      },
+      "max_targets": 1
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 17,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 0,
+      "Dispel Magic": 0,
+      "Suggestion": 0,
+      "Fear": 3,
+      "Wall of Fire": 3,
+      "Fire Storm": 1,
+      "Mass Suggestion": 1
+    }
+  }
+}

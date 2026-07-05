@@ -1,0 +1,106 @@
+{
+  "name": "Cadaver Collector",
+  "type": "construct",
+  "size": "Large",
+  "cr": 14.0,
+  "alignment": "L E",
+  "ac": 17,
+  "hp": 189,
+  "hit_dice": "18d10+90",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 14,
+    "CON": 20,
+    "INT": 5,
+    "WIS": 11,
+    "CHA": 8
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands all languages but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "necrotic",
+    "poison",
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Summon Specters (Recharges after a Short or Long Rest) (bonus)",
+      "text": "The collector calls up the enslaved spirits of those it has slain; 1d4 specter (without Sunlight Sensitivity) arise in unoccupied spaces within 15 feet of it. The specters act right after the collector on the same initiative count and fight until they're destroyed. They disappear when the collector is destroyed."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The collector has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The collector doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "3d8+5",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d10",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Paralyzing Breath",
+      "shape": "cone",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 18,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 18,
+        "on_fail_condition": "paralyzed"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

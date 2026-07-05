@@ -1,0 +1,90 @@
+{
+  "name": "Adult Kruthik",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 18,
+  "hp": 39,
+  "hit_dice": "6d8+12",
+  "speeds": {
+    "walk": 40,
+    "burrow": 20,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 16,
+    "CON": 15,
+    "INT": 7,
+    "WIS": 12,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Kruthik"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "text": "The kruthik has advantage on an attack roll against a creature if at least one of the kruthik's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    },
+    {
+      "name": "Tunneler",
+      "text": "The kruthik can burrow through solid rock at half its burrowing speed and leaves a 5-foot-diameter tunnel in its wake."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Stab",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spike",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        20,
+        60
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Stab",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,141 @@
+{
+  "name": "Balor",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 19.0,
+  "alignment": "C E",
+  "ac": 19,
+  "hp": 262,
+  "hit_dice": "21d12+126",
+  "speeds": {
+    "walk": 40,
+    "fly": 80
+  },
+  "abilities": {
+    "STR": 26,
+    "DEX": 15,
+    "CON": 22,
+    "INT": 20,
+    "WIS": 16,
+    "CHA": 22
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "The balor magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Fire Aura",
+      "text": "At the start of each of the balor's turns, each creature within 5 feet of it takes 10 (3d6) fire damage, and flammable objects in the aura that aren't being worn or carried ignite. A creature that touches the balor or hits it with a melee attack while within 5 feet of it takes 10 (3d6) fire damage."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The balor has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The balor's weapon attacks are magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "3d8+8",
+          "type": "slashing"
+        },
+        {
+          "dice": "3d8",
+          "type": "lightning"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Whip",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "2d6+8",
+          "type": "slashing"
+        },
+        {
+          "dice": "3d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 30,
+      "rider": {
+        "ability": "STR",
+        "dc": 20,
+        "push": -25
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 1
+    },
+    {
+      "name": "Whip",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "death_burst": {
+    "name": "Death Throes",
+    "shape": "sphere",
+    "size": 5,
+    "origin_range": 0,
+    "save": "DEX",
+    "dc": 20,
+    "damage": [
+      {
+        "dice": "20d6",
+        "type": "fire"
+      }
+    ],
+    "half_on_save": true,
+    "recharge": "at-will",
+    "rider": null
+  }
+}

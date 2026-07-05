@@ -1,0 +1,74 @@
+{
+  "name": "Brown Bear",
+  "type": "beast",
+  "size": "Large",
+  "cr": 1,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 34,
+  "hit_dice": "4d10+12",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 10,
+    "CON": 16,
+    "INT": 2,
+    "WIS": 13,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "curated": true,
+  "imported": "5etools-mm"
+}

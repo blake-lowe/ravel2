@@ -1,0 +1,67 @@
+{
+  "name": "Blink Dog",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "lawful good",
+  "ac": 13,
+  "hp": 22,
+  "hit_dice": "4d8+4",
+  "speeds": {
+    "walk": 40,
+    "teleport": 40
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 17,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 13,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 5
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "Blink Dog",
+    "understands Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Hearing and Smell",
+      "text": "The blink dog has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    },
+    {
+      "name": "Teleport",
+      "text": "The blink dog magically teleports, along with any equipment it is wearing or carrying, up to 40 feet to an unoccupied space it can see. (Implemented: moves ignoring terrain and provoking no opportunity attacks.)"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "strategy": "Teleport in to bite, then teleport away before the enemy can retaliate — hit-and-run without provoking.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

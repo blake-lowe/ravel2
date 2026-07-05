@@ -1,0 +1,26 @@
+{
+  "name": "Faerie Fire",
+  "level": 1,
+  "school": "evocation",
+  "range": 60,
+  "components": [
+    "V"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "modifier_on_fail": {
+        "attackers_have_advantage": true
+      }
+    }
+  ]
+}

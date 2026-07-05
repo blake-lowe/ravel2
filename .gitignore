@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.benchmarks/
+
+# runtime state, not content
+data/fortune/runs.db
+.claude/settings.local.json
+
+# raw 5e.tools bestiary dumps: 12 MB of verbatim third-party data, re-downloadable
+# inputs to the import-monsters skill — kept out of the public repo by default
+sources/

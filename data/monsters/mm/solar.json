@@ -1,0 +1,128 @@
+{
+  "name": "Solar",
+  "type": "celestial",
+  "size": "Large",
+  "cr": 21.0,
+  "alignment": "L G",
+  "ac": 21,
+  "hp": 243,
+  "hit_dice": "18d10+144",
+  "speeds": {
+    "walk": 50,
+    "fly": 150
+  },
+  "abilities": {
+    "STR": 26,
+    "DEX": 22,
+    "CON": 26,
+    "INT": 25,
+    "WIS": 25,
+    "CHA": 30
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 14
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 24
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "radiant"
+  ],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Flying Sword",
+      "text": "The solar releases its greatsword to hover magically in an unoccupied space within 5 feet of it. If the solar can see the sword, the solar can mentally command it as a bonus action to fly up to 50 feet and either make one attack against a target or return to the solar's hands. If the hovering sword is targeted by any effect, the solar is considered to be holding it. The hovering sword falls if the solar dies."
+    },
+    {
+      "name": "Healing Touch (4/Day)",
+      "text": "The solar touches another creature. The target magically regains 40 (8d8 + 4) hit points and is freed from any curse, disease, poison, blindness, or deafness."
+    },
+    {
+      "name": "Angelic Weapons",
+      "text": "The solar's weapon attacks are magical. When the solar hits with any weapon, the weapon deals an extra 6d8 radiant damage (included in the attack)."
+    },
+    {
+      "name": "Divine Awareness",
+      "text": "The solar knows if it hears a lie."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The solar has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 15,
+      "damage": [
+        {
+          "dice": "4d6+8",
+          "type": "slashing"
+        },
+        {
+          "dice": "6d8",
+          "type": "radiant"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Slaying Longbow",
+      "kind": "ranged",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "2d8+6",
+          "type": "piercing"
+        },
+        {
+          "dice": "6d8",
+          "type": "radiant"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Greatsword"
+  }
+}

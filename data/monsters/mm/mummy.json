@@ -1,0 +1,101 @@
+{
+  "name": "Mummy",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 3,
+  "alignment": "lawful evil",
+  "ac": 11,
+  "hp": 58,
+  "hit_dice": "9d8+18",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 8,
+    "CON": 15,
+    "INT": 6,
+    "WIS": 10,
+    "CHA": 12
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [
+    "charmed",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Mummy Rot",
+      "text": "On a failed DC 12 Constitution save the target is cursed with mummy rot and can't regain hit points. (Implemented as a lasting curse via the condition framework; the per-24h max-HP decay is out of combat scope.)"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Rotting Fist",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "mummy_rot",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Rotting Fist",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "frightful_presence": {
+    "name": "Dreadful Glare",
+    "shape": "sphere",
+    "size": 60,
+    "origin_range": 0,
+    "save": "WIS",
+    "dc": 11,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": null
+  },
+  "strategy": "Open with Dreadful Glare to frighten a key foe, then close and pound it with the rotting fist, letting mummy rot whittle down anyone it touches.",
+  "curated": true,
+  "imported": "5etools-mm",
+  "resist_nonmagical_physical": true
+}

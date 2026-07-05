@@ -1,0 +1,135 @@
+{
+  "name": "Vrock",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 6.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 104,
+  "hit_dice": "11d10+44",
+  "speeds": {
+    "walk": 40,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 15,
+    "CON": 18,
+    "INT": 8,
+    "WIS": 13,
+    "CHA": 8
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "DEX",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The vrock has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Talons",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d10+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Beak",
+      "count": 1
+    },
+    {
+      "name": "Talons",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Spores",
+      "shape": "sphere",
+      "size": 15,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 14,
+      "damage": [
+        {
+          "dice": "1d10",
+          "type": "poison"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "6",
+      "rider": {
+        "ability": "CON",
+        "dc": 14,
+        "on_fail_condition": "poisoned"
+      }
+    },
+    {
+      "name": "Stunning Screech",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 14,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "CON",
+        "dc": 14,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

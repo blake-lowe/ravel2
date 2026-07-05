@@ -1,0 +1,114 @@
+{
+  "name": "Warlock of the Great Old One",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 6.0,
+  "alignment": "A",
+  "ac": 13,
+  "hp": 91,
+  "hit_dice": "14d8+28",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 9,
+    "DEX": 16,
+    "CON": 15,
+    "INT": 12,
+    "WIS": 12,
+    "CHA": 18
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 4,
+    "History": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "any two languages",
+    "telepathy 30 ft."
+  ],
+  "damage_resistances": [
+    "psychic"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Dagger",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Howling Void",
+      "shape": "cube",
+      "size": 20,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "2d8",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "frightened"
+      }
+    },
+    {
+      "name": "Whispering Aura",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "incapacitated"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

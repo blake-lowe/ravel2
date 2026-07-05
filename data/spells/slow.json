@@ -1,0 +1,29 @@
+{
+  "name": "Slow",
+  "level": 3,
+  "school": "transmutation",
+  "range": 120,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 40,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "modifier_on_fail": {
+        "ac_bonus": -2,
+        "speed_delta": -15
+      }
+    }
+  ]
+}

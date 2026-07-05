@@ -1,0 +1,71 @@
+{
+  "name": "Brass Dragon Wyrmling",
+  "type": "dragon",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "C G",
+  "ac": 16,
+  "hp": 16,
+  "hit_dice": "3d8+3",
+  "speeds": {
+    "walk": 30,
+    "burrow": 15,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 10,
+    "CON": 13,
+    "INT": 10,
+    "WIS": 11,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 2
+  },
+  "senses": {
+    "blindsight": 10,
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Breath Weapons {@recharge 5}",
+      "text": "The dragon uses one of the following breath weapons. Fire Breath: Sleep Breath:"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

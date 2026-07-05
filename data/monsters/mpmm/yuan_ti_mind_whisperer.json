@@ -1,0 +1,134 @@
+{
+  "name": "Yuan-ti Mind Whisperer",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "N E",
+  "ac": 14,
+  "hp": 71,
+  "hit_dice": "13d8+13",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 14,
+    "CON": 13,
+    "INT": 14,
+    "WIS": 14,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 5,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Change Shape (bonus)",
+      "text": "The yuan-ti transforms into a Medium snake or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. If it dies, it stays in its current form."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The yuan-ti has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Scimitar (Yuan-ti Form Only)",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spectral Fangs",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "3d8+3",
+          "type": "psychic"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 2
+    },
+    {
+      "name": "Spectral Fangs",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "devils_sight"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Suggestion": 3,
+      "Hypnotic Pattern": 2
+    }
+  },
+  "temp_hp_on_kill": 9,
+  "triggered_abilities": [
+    "temp_hp_on_kill"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Mage Armor",
+  "level": 1,
+  "school": "abjuration",
+  "range": 5,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "duration_rounds": 100,
+  "target": {
+    "mode": "self",
+    "affects": "self"
+  },
+  "effects": [
+    {
+      "kind": "modifier",
+      "modifier": {
+        "ac_bonus": 3
+      }
+    }
+  ],
+  "_approx": "13+DEX vs an unarmored 10+DEX chassis = +3 AC.",
+  "imported": "5etools"
+}

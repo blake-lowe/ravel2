@@ -1,0 +1,108 @@
+{
+  "name": "Kruthik Hive Lord",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "U",
+  "ac": 20,
+  "hp": 102,
+  "hit_dice": "12d10+36",
+  "speeds": {
+    "walk": 40,
+    "burrow": 20,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 16,
+    "CON": 17,
+    "INT": 10,
+    "WIS": 14,
+    "CHA": 10
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 8
+  },
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 18
+  },
+  "languages": [
+    "Kruthik"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "text": "The kruthik has advantage on an attack roll against a creature if at least one of the kruthik's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    },
+    {
+      "name": "Tunneler",
+      "text": "The kruthik can burrow through solid rock at half its burrowing speed and leaves a 10-foot-diameter tunnel in its wake."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Stab",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d10+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Spike",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Stab",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Acid Spray",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 14,
+      "damage": [
+        {
+          "dice": "4d10",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mpmm"
+}

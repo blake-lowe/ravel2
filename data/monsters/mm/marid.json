@@ -1,0 +1,117 @@
+{
+  "name": "Marid",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 11.0,
+  "alignment": "C N",
+  "ac": 17,
+  "hp": 229,
+  "hit_dice": "17d10+136",
+  "speeds": {
+    "walk": 30,
+    "fly": 60,
+    "swim": 90
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 12,
+    "CON": 26,
+    "INT": 18,
+    "WIS": 17,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Aquan"
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "lightning"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Elemental Demise",
+      "text": "If the marid dies, its body disintegrates into a burst of water and foam, leaving behind only equipment the marid was wearing or carrying."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Trident",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d6+6",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d8+6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Trident",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Water Jet",
+      "shape": "line",
+      "size": 60,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "6d6",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "DEX",
+        "dc": 16,
+        "on_fail_condition": "prone",
+        "push": 20
+      }
+    }
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 16,
+    "attack_bonus": 8,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fog Cloud": 0,
+      "Invisibility": 1,
+      "Plane Shift": 1
+    }
+  },
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

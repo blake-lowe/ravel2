@@ -1,0 +1,85 @@
+{
+  "name": "Myconid Adult",
+  "type": "plant",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "L N",
+  "ac": 12,
+  "hp": 22,
+  "hit_dice": "4d8+4",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 10,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 13,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Rapport Spores",
+      "text": "A 20-foot radius of spores extends from the myconid. These spores can go around corners and affect only creatures with an Intelligence of 2 or higher that aren't undead, constructs, or elementals. Affected creatures can communicate telepathically with one another while they are within 30 feet of each other. The effect lasts for 1 hour."
+    },
+    {
+      "name": "Distress Spores",
+      "text": "When the myconid takes damage, all other myconids within 240 feet of it can sense its pain."
+    },
+    {
+      "name": "Sun Sickness",
+      "text": "While in sunlight, the myconid has disadvantage on ability checks, attack rolls, and saving throws. The myconid dies if it spends more than 1 hour in direct sunlight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "2d4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d4",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Pacifying Spores",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 11,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "CON",
+        "dc": 11,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "imported": "5etools-mm"
+}

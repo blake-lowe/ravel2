@@ -1,0 +1,117 @@
+{
+  "name": "Marilith",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 16.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 189,
+  "hit_dice": "18d10+90",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 20,
+    "CON": 20,
+    "INT": 18,
+    "WIS": 16,
+    "CHA": 20
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "The marilith magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The marilith has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The marilith's weapon attacks are magical."
+    },
+    {
+      "name": "Reactive",
+      "text": "The marilith can take one reaction on every turn in combat."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d10+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 19,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 6
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "parry": 5
+}

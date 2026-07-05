@@ -1,0 +1,86 @@
+{
+  "name": "Swarm of Poisonous Snakes",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 14,
+  "hp": 36,
+  "hit_dice": "8d8",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 18,
+    "CON": 11,
+    "INT": 1,
+    "WIS": 10,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 10,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Swarm",
+      "text": "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny snake. The swarm can't regain hit points or gain temporary hit points."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bites",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "piercing"
+        },
+        {
+          "dice": "4d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 10,
+        "extra_damage": {
+          "dice": "4d6",
+          "type": "poison"
+        },
+        "half_on_save": true
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "swarm"
+  ],
+  "imported": "5etools-mm"
+}

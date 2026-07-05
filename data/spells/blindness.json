@@ -1,0 +1,22 @@
+{
+  "name": "Blindness",
+  "level": 2,
+  "school": "necromancy",
+  "range": 30,
+  "components": [
+    "V"
+  ],
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "condition": "blinded",
+      "condition_duration": 10
+    }
+  ]
+}

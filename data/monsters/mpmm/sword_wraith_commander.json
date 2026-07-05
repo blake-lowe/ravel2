@@ -1,0 +1,107 @@
+{
+  "name": "Sword Wraith Commander",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 8.0,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 127,
+  "hit_dice": "15d8+60",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 18,
+    "INT": 11,
+    "WIS": 12,
+    "CHA": 14
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "necrotic"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened",
+    "poisoned",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Call to Honor (1/Day)",
+      "text": "If the commander has taken damage during this combat, it gives itself advantage on attack rolls until the end of its next turn, and 1d4 + 1 sword wraith warrior appear in unoccupied spaces within 30 feet of it. The warriors last until they drop to 0 hit points, and they take their turns immediately after the commander's turn on the same initiative count."
+    },
+    {
+      "name": "Martial Fury (bonus)",
+      "text": "The commander makes one Longsword or Longbow attack, which deals an extra 9 (2d8) necrotic damage on a hit, and attack rolls against it have advantage until the start of its next turn."
+    },
+    {
+      "name": "Turning Defiance",
+      "text": "The commander and any other sword wraiths within 30 feet of it have advantage on saving throws against effects that turn Undead."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The commander doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

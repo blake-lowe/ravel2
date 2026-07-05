@@ -1,0 +1,103 @@
+{
+  "name": "Corpse Flower",
+  "type": "plant",
+  "size": "Large",
+  "cr": 8.0,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 127,
+  "hit_dice": "15d10+45",
+  "speeds": {
+    "walk": 20,
+    "climb": 20
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 14,
+    "CON": 16,
+    "INT": 7,
+    "WIS": 15,
+    "CHA": 3
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 120,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "deafened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Harvest the Dead",
+      "text": "The corpse flower swallows one unsecured Humanoid corpse within 10 feet of it, along with any equipment the corpse is wearing or carrying."
+    },
+    {
+      "name": "Digest (bonus)",
+      "text": "The corpse flower digests one corpse in its body and instantly regains 11 (2d10) hit points. Nothing of the digested corpse remains. Any equipment on the corpse is expelled from the corpse flower in its space."
+    },
+    {
+      "name": "Reanimate (bonus)",
+      "text": "The corpse flower animates one corpse in its body, turning it into a zombie. The zombie appears in an unoccupied space within 5 feet of the corpse flower and acts immediately after it in the initiative order. The zombie acts as an ally of the corpse flower but isn't under its control, and the flower's stench clings to it (see Stench of Death)."
+    },
+    {
+      "name": "Corpses",
+      "text": "When first encountered, a corpse flower contains the corpses of 1d6 + 3 Humanoids. A corpse flower can hold the remains of up to nine Humanoids. These remains have Cover against attacks and other effects outside the corpse flower. If the corpse flower dies, the corpses within it can be pulled free."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The corpse flower can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacle",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Stench of Death",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 14,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 14,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

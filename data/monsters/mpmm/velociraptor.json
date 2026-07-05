@@ -1,0 +1,81 @@
+{
+  "name": "Velociraptor",
+  "type": "beast",
+  "size": "Tiny",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 10,
+  "hit_dice": "3d4+3",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 14,
+    "CON": 13,
+    "INT": 4,
+    "WIS": 12,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "text": "The velociraptor has advantage on an attack roll against a creature if at least one of the velociraptor's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mpmm"
+}

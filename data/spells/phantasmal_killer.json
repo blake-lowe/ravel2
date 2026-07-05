@@ -1,0 +1,36 @@
+{
+  "name": "Phantasmal Killer",
+  "level": 4,
+  "school": "illusion",
+  "range": 120,
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "frightened",
+      "save_ends": true,
+      "damage": [
+        {
+          "dice": "4d10",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d10"
+  },
+  "imported": "5etools"
+}

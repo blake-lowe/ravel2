@@ -1,0 +1,34 @@
+{
+  "name": "Burning Hands",
+  "level": 1,
+  "school": "evocation",
+  "range": 0,
+  "range_type": "self",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "self_area",
+    "shape": "cone",
+    "size": 15,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "fire"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d6"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "name": "Bone Naga (Guardian)",
+  "type": "undead",
+  "size": "Large",
+  "cr": 4.0,
+  "alignment": "L E",
+  "ac": 15,
+  "hp": 58,
+  "hit_dice": "9d10+9",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 16,
+    "CON": 12,
+    "INT": 15,
+    "WIS": 15,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Common plus one other language"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 12,
+    "attack_bonus": 4,
+    "caster_level": 5,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 2
+    },
+    "spells": [
+      "Bestow Curse",
+      "Command",
+      "Hold Person",
+      "Sacred Flame",
+      "Shield of Faith"
+    ]
+  }
+}

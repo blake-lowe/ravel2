@@ -1,0 +1,28 @@
+{
+  "name": "Grease",
+  "level": 1,
+  "school": "conjuration",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 10,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "condition": "prone",
+      "save_ends": false
+    }
+  ],
+  "imported": "5etools"
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Manes",
+  "type": "fiend",
+  "size": "Small",
+  "cr": 0.125,
+  "alignment": "C E",
+  "ac": 9,
+  "hp": 9,
+  "hit_dice": "2d6+2",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 9,
+    "CON": 13,
+    "INT": 3,
+    "WIS": 8,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "2d4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

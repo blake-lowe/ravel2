@@ -1,0 +1,131 @@
+{
+  "name": "Orthon",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 10.0,
+  "alignment": "L E",
+  "ac": 17,
+  "hp": 105,
+  "hit_dice": "10d10+50",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 16,
+    "CON": 21,
+    "INT": 15,
+    "WIS": 15,
+    "CHA": 16
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 10,
+    "Stealth": 11,
+    "Survival": 10
+  },
+  "senses": {
+    "darkvision": 120,
+    "truesight": 30,
+    "passive_perception": 20
+  },
+  "languages": [
+    "Common",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Invisibility Field {@recharge 4} (bonus)",
+      "text": "The orthon becomes invisible. Any equipment it wears or carries is also invisible as long as the equipment is on its person. This invisibility ends immediately after it makes an attack roll or is hit by an attack roll."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The orthon has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Infernal Dagger",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d4+6",
+          "type": "force"
+        },
+        {
+          "dice": "4d10",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 17,
+        "on_fail_condition": "poisoned"
+      }
+    },
+    {
+      "name": "Brass Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d10+3",
+          "type": "force"
+        }
+      ],
+      "range": [
+        100,
+        400
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "death_burst": {
+    "name": "Explosive Retribution (reaction)",
+    "shape": "sphere",
+    "size": 5,
+    "origin_range": 0,
+    "save": "DEX",
+    "dc": 17,
+    "damage": [
+      {
+        "dice": "2d8",
+        "type": "fire"
+      },
+      {
+        "dice": "2d8",
+        "type": "thunder"
+      }
+    ],
+    "half_on_save": true,
+    "recharge": "at-will",
+    "rider": null
+  }
+}

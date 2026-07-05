@@ -1,0 +1,30 @@
+{
+  "name": "Vicious Mockery",
+  "level": 0,
+  "school": "enchantment",
+  "range": 60,
+  "components": [
+    "V"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "half_on_save": false,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "psychic"
+        }
+      ],
+      "modifier_on_fail": {
+        "disadvantage_on_attacks": true
+      }
+    }
+  ],
+  "duration_rounds": 1
+}

@@ -1,0 +1,148 @@
+{
+  "name": "Wastrilith",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 13.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 157,
+  "hit_dice": "15d10+75",
+  "speeds": {
+    "walk": 30,
+    "swim": 80
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 18,
+    "CON": 21,
+    "INT": 19,
+    "WIS": 12,
+    "CHA": 14
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "STR",
+    "CON"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Undertow (bonus)",
+      "text": "If the wastrilith is underwater, it causes all water within 60 feet of it to be difficult terrain for other creatures until the start of its next turn."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The wastrilith has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "4d12+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "4d6+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Grasping Spout",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "STR",
+      "dc": 17,
+      "damage": [
+        {
+          "dice": "4d8+4",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "STR",
+        "dc": 17,
+        "push": -60
+      }
+    },
+    {
+      "name": "Corrupt Water",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "poison"
+        },
+        {
+          "dice": "4d8",
+          "type": "poison"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 18,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "water_breathing"
+  ],
+  "imported": "5etools-mpmm"
+}

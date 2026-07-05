@@ -1,0 +1,68 @@
+{
+  "name": "Twig Blight",
+  "type": "plant",
+  "size": "Small",
+  "cr": 0.125,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 4,
+  "hit_dice": "1d6+1",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 13,
+    "CON": 12,
+    "INT": 4,
+    "WIS": 8,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 3
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 9
+  },
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [
+    "blinded",
+    "deafened"
+  ],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "While the blight remains motionless, it is indistinguishable from a dead shrub."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

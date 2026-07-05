@@ -1,0 +1,97 @@
+{
+  "name": "Lamia",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 4.0,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 97,
+  "hit_dice": "13d10+26",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 13,
+    "CON": 15,
+    "INT": 14,
+    "WIS": 15,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 7,
+    "Insight": 4,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Intoxicating Touch",
+      "text": "ms 5 to hit, reach 5 ft., one creature. The target is magically cursed for 1 hour. Until the curse ends, the target has disadvantage on Wisdom saving throws and all ability checks."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d10+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claws",
+      "count": 1
+    },
+    {
+      "name": "Dagger",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 3,
+      "Mirror Image": 3,
+      "Suggestion": 3
+    }
+  }
+}

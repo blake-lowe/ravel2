@@ -1,0 +1,28 @@
+{
+  "name": "Mass Heal",
+  "level": 9,
+  "school": "evocation",
+  "range": 60,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "multi",
+    "count": 6,
+    "affects": "allies"
+  },
+  "effects": [
+    {
+      "kind": "heal",
+      "damage": [
+        {
+          "dice": "70d1",
+          "type": "healing"
+        }
+      ]
+    }
+  ],
+  "_approx": "RAW restores 700 hp split freely; modelled as 70 hp to each of up to six allies.",
+  "imported": "5etools"
+}

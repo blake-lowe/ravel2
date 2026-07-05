@@ -1,0 +1,24 @@
+name,nominal_cr,heuristic_cr,llm_cr,delta,flag
+Ogre,2,2.54,2.54,0.0,ok
+Mage,6,4.06,5.8,1.74,ok
+Archmage,12,8.18,13.53,5.35,ok
+Drow Mage,7,2.38,4.26,1.88,ok
+Priest,2,0.98,0.74,-0.24,ok
+Spirit Naga,8.0,4.8,6.29,1.49,ok
+Kuo-toa Archpriest,6.0,4.1,2.71,-1.39,ok
+Mind Flayer,7,8.51,8.71,0.2,ok
+Drow Priestess of Lolth,8.0,6.11,4.62,-1.49,ok
+Young White Dragon,6.0,7.72,8.58,0.86,ok
+Young Red Dragon,10,9.53,10.44,0.91,ok
+Young Blue Dragon,9,8.66,12.18,3.52,ok
+Adult Brass Dragon,13.0,10.48,8.98,-1.5,ok
+Beholder,13.0,21.81,21.81,0.0,ok
+Medusa,6.0,5.99,6.93,0.94,ok
+Vrock,6.0,5.17,6.83,1.66,ok
+Rakshasa,13.0,6.24,6.78,0.54,ok
+Djinni,11.0,4.17,7.17,3.0,ok
+Efreeti,11.0,8.72,8.64,-0.08,ok
+Erinyes,12.0,12.0,9.17,-2.83,ok
+Hill Giant,5,6.49,6.29,-0.2,ok
+Owlbear,3,4.59,2.78,-1.81,ok
+Bugbear,1,1.58,1.58,0.0,ok

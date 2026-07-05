@@ -1,0 +1,82 @@
+{
+  "name": "Kobold Dragonshield",
+  "type": "dragon",
+  "size": "Small",
+  "cr": 1.0,
+  "alignment": "A",
+  "ac": 15,
+  "hp": 44,
+  "hit_dice": "8d6+16",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 15,
+    "CON": 14,
+    "INT": 8,
+    "WIS": 9,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 1
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Dragon's Resistance",
+      "text": "The kobold has resistance to a type of damage based on the color of dragon that invested it with power (choose or roll a d10): 1\u20132, acid (black or copper); 3\u20134, cold (silver or white); 5\u20136, fire (brass, gold, or red); 7\u20138, lightning (blue or bronze); 9\u201310, poison (green)."
+    },
+    {
+      "name": "Heart of the Dragon",
+      "text": "If the kobold is frightened or paralyzed by an effect that allows a saving throw, it can repeat the save at the start of its turn to end the effect on itself and all kobolds within 30 feet of it. Any kobold that benefits from this trait (including the dragonshield) has advantage on its next attack roll."
+    },
+    {
+      "name": "Pack Tactics",
+      "text": "The kobold has advantage on an attack roll against a creature if at least one of the kobold's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Spear",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics",
+    "sunlight_sensitivity"
+  ],
+  "imported": "5etools-mpmm"
+}

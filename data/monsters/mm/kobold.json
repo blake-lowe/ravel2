@@ -1,0 +1,73 @@
+{
+  "name": "Kobold",
+  "type": "humanoid",
+  "size": "Small",
+  "cr": 0.125,
+  "alignment": "L E",
+  "ac": 12,
+  "hp": 5,
+  "hit_dice": "2d6-2",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 15,
+    "CON": 9,
+    "INT": 8,
+    "WIS": 7,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Sling",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "curated": true,
+  "imported": "5etools-mm"
+}

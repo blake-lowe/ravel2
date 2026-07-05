@@ -1,0 +1,34 @@
+{
+  "name": "Fireball",
+  "level": 3,
+  "school": "evocation",
+  "range": 150,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "8d6",
+          "type": "fire"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d6"
+  }
+}

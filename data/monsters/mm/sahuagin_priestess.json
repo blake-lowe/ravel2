@@ -1,0 +1,108 @@
+{
+  "name": "Sahuagin Priestess",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "L E",
+  "ac": 12,
+  "hp": 33,
+  "hit_dice": "6d8+6",
+  "speeds": {
+    "walk": 30,
+    "swim": 40
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 11,
+    "CON": 12,
+    "INT": 12,
+    "WIS": 14,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 6,
+    "Religion": 3
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Sahuagin"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "text": "The sahuagin has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+    },
+    {
+      "name": "Shark Telepathy",
+      "text": "The sahuagin can magically command any shark within 120 feet of it, using a limited telepathy."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "blood_frenzy",
+    "water_breathing"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 12,
+    "attack_bonus": 4,
+    "caster_level": 6,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3
+    },
+    "spells": [
+      "Bless",
+      "Guiding Bolt",
+      "Hold Person",
+      "Mass Healing Word"
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Giant Frog",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 18,
+  "hit_dice": "4d8",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 13,
+    "CON": 11,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 30,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Standing Leap",
+      "text": "The frog's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 11,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "swallow": {
+    "acid": {
+      "dice": "2d4",
+      "type": "acid"
+    },
+    "escape_threshold": 15,
+    "escape_dc": 12,
+    "max_size": "Small"
+  },
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

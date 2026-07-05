@@ -1,0 +1,111 @@
+{
+  "name": "War Priest",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 9.0,
+  "alignment": "A",
+  "ac": 18,
+  "hp": 117,
+  "hit_dice": "18d8+36",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 10,
+    "CON": 14,
+    "INT": 11,
+    "WIS": 17,
+    "CHA": 13
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Intimidation": 5,
+    "Religion": 4
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "any two languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Healing Light {@recharge 4} (bonus)",
+      "text": "The war priest or one creature of its choice within 60 feet of it regains 12 (2d8 + 3) hit points."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Maul",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d6",
+          "type": "radiant"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Maul",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Holy Fire",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "radiant"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "blinded"
+      },
+      "max_targets": 1
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 15,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Light": 0,
+      "Banishment": 1,
+      "Command": 1,
+      "Dispel Magic": 1,
+      "Flame Strike": 1,
+      "Hold Person": 1
+    }
+  }
+}

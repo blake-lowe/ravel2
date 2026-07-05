@@ -1,0 +1,12 @@
+{
+  "name": "Spike Growth",
+  "level": 2,
+  "school": "transmutation",
+  "casting_time": "action",
+  "range": 150,
+  "components": ["V", "S", "M"],
+  "concentration": false,
+  "duration_rounds": 10,
+  "target": {"mode": "point", "shape": "sphere", "size": 20, "affects": "enemies"},
+  "effects": [{"kind": "terrain", "difficult_terrain": true, "damage": [{"dice": "2d4", "type": "piercing"}]}]
+}

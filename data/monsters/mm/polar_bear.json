@@ -1,0 +1,79 @@
+{
+  "name": "Polar Bear",
+  "type": "beast",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 42,
+  "hit_dice": "5d10+15",
+  "speeds": {
+    "walk": 40,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 10,
+    "CON": 16,
+    "INT": 2,
+    "WIS": 13,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "text": "The bear has advantage on Wisdom (Perception) checks that rely on smell."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d8+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

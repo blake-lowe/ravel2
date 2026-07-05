@@ -1,0 +1,105 @@
+{
+  "name": "Abjurer Wizard",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 9.0,
+  "alignment": "A",
+  "ac": 12,
+  "hp": 104,
+  "hit_dice": "16d8+32",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 9,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 18,
+    "WIS": 12,
+    "CHA": 11
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 8,
+    "History": 8
+  },
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [
+    "any four languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Arcane Ward {@recharge 4} (reaction)",
+      "text": "When the abjurer or a creature it can see within 30 feet of it takes damage, the abjurer magically creates a protective barrier around itself or the other creature. The barrier reduces the damage to the protected creature by 26 (4d10 + 4), to a minimum of 0, and then vanishes."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Arcane Burst",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "3d10+4",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Arcane Burst",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Force Blast",
+      "shape": "cube",
+      "size": 20,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "8d8",
+          "type": "force"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 16,
+        "push": 10
+      }
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Dispel Magic": 2,
+      "Lightning Bolt": 2,
+      "Mage Armor": 2,
+      "Banishment": 1,
+      "Invisibility": 1
+    }
+  }
+}

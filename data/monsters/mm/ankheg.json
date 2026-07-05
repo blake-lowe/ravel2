@@ -1,0 +1,92 @@
+{
+  "name": "Ankheg",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 2,
+  "alignment": "unaligned",
+  "ac": 14,
+  "hp": 39,
+  "hit_dice": "6d10+6",
+  "speeds": {
+    "walk": 30,
+    "burrow": 10
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 11,
+    "CON": 13,
+    "INT": 1,
+    "WIS": 13,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Bite Grapple",
+      "text": "[APPROXIMATED as a STR DC 13 save rider applying grappled] On a hit, if the target is a Large or smaller creature it is grappled (escape DC 13). Until this grapple ends the ankheg can bite only the grappled creature and has advantage to do so. The bite-only restriction and advantage are not modeled."
+    },
+    {
+      "name": "AC While Prone",
+      "text": "[UNSUPPORTED] The ankheg's AC is 11 while prone. The engine uses a single AC value."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 13,
+        "on_fail_condition": "grappled",
+        "duration": null
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Acid Spray",
+      "shape": "line",
+      "size": 30,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": null
+    }
+  ],
+  "strategy": "Burrow up beneath a victim, bite to grapple and hold it, and save the 30-ft acid line for a moment when several foes cluster and nothing is grappled.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

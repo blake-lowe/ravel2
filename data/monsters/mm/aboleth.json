@@ -1,0 +1,118 @@
+{
+  "name": "Aboleth",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 10.0,
+  "alignment": "L E",
+  "ac": 17,
+  "hp": 135,
+  "hit_dice": "18d10+36",
+  "speeds": {
+    "walk": 10,
+    "swim": 40
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 9,
+    "CON": 15,
+    "INT": 18,
+    "WIS": 15,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "History": 12,
+    "Perception": 10
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 20
+  },
+  "languages": [
+    "Deep Speech",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Mucous Cloud",
+      "text": "While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater."
+    },
+    {
+      "name": "Probing Telepathy",
+      "text": "If a creature communicates telepathically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d12",
+          "type": "acid"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "3d6+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacle",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Enslave",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 14,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "WIS",
+        "dc": 14,
+        "on_fail_condition": "charmed"
+      },
+      "max_targets": 1
+    }
+  ],
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Tentacle"
+  },
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

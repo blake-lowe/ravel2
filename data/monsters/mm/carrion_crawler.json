@@ -1,0 +1,89 @@
+{
+  "name": "Carrion Crawler",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 51,
+  "hit_dice": "6d10+18",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 13,
+    "CON": 16,
+    "INT": 1,
+    "WIS": 12,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Smell",
+      "text": "The carrion crawler has advantage on Wisdom (Perception) checks that rely on smell."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The carrion crawler can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "poison"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "on_fail_condition": "paralyzed"
+      }
+    },
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacles",
+      "count": 1
+    },
+    {
+      "name": "Bite",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

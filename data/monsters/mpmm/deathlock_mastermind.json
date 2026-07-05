@@ -1,0 +1,118 @@
+{
+  "name": "Deathlock Mastermind",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 8.0,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 110,
+  "hit_dice": "20d8+20",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 16,
+    "CON": 12,
+    "INT": 15,
+    "WIS": 12,
+    "CHA": 17
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 5,
+    "History": 5,
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "necrotic"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Turn Resistance",
+      "text": "The deathlock has advantage on saving throws against any effect that turns Undead."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The deathlock doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Deathly Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "3d6+3",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Grave Bolt",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "3d8",
+          "type": "necrotic"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ],
+      "rider": {
+        "ability": "STR",
+        "dc": 16,
+        "on_fail_condition": "restrained"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Deathly Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 14,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Mage Armor": 0,
+      "Darkness": 1,
+      "Dispel Magic": 1,
+      "Invisibility": 1
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Martial Arts Adept",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "A",
+  "ac": 16,
+  "hp": 60,
+  "hit_dice": "11d8+11",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 17,
+    "CON": 13,
+    "INT": 11,
+    "WIS": 16,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Acrobatics": 5,
+    "Insight": 5,
+    "Stealth": 5
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Deflect Missile (reaction)",
+      "text": "In response to being hit by a ranged weapon attack, the adept deflects the missile. The damage it takes from the attack is reduced by 1d10 + 3. If the damage is reduced to 0, the adept catches the missile if it's small enough to hold in one hand and the adept has a hand free."
+    },
+    {
+      "name": "Unarmored Defense",
+      "text": "While the adept is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Unarmed Strike",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Dart",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        20,
+        60
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Unarmed Strike",
+      "count": 3
+    },
+    {
+      "name": "Dart",
+      "count": 5
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

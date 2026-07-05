@@ -1,0 +1,130 @@
+{
+  "name": "Flind",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 9.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 127,
+  "hit_dice": "15d8+60",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 14,
+    "CON": 19,
+    "INT": 11,
+    "WIS": 13,
+    "CHA": 12
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Intimidation": 5,
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Gnoll",
+    "Abyssal"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Aura of Blood Thirst",
+      "text": "If the flind isn't incapacitated, any creature with the Rampage trait can make a Bite attack as a bonus action while within 10 feet of the flind."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Flail of Chaos",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d10+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Flail of Pain",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d10+5",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d10",
+          "type": "psychic"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Flail of Paralysis",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d10+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "CON",
+        "dc": 16,
+        "on_fail_condition": "paralyzed"
+      }
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Flail of Chaos",
+      "count": 1
+    },
+    {
+      "name": "Flail of Pain",
+      "count": 1
+    },
+    {
+      "name": "Flail of Paralysis",
+      "count": 1
+    },
+    {
+      "name": "Longbow",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Giant Centipede",
+  "type": "beast",
+  "size": "Small",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 4,
+  "hit_dice": "1d6+1",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 5,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 1,
+    "WIS": 7,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 8
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 11,
+        "on_fail_condition": "paralyzed"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

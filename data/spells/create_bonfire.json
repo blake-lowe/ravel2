@@ -1,0 +1,33 @@
+{
+  "name": "Create Bonfire",
+  "level": 0,
+  "school": "conjuration",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 5,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": false
+    }
+  ],
+  "imported": "5etools"
+}

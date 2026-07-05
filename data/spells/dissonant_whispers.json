@@ -1,0 +1,28 @@
+{
+  "name": "Dissonant Whispers",
+  "level": 1,
+  "school": "enchantment",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

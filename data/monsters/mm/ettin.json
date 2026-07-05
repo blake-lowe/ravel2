@@ -1,0 +1,78 @@
+{
+  "name": "Ettin",
+  "type": "giant",
+  "size": "Large",
+  "cr": 4,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 85,
+  "hit_dice": "10d10+30",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 8,
+    "CON": 17,
+    "INT": 6,
+    "WIS": 10,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Giant",
+    "Orc"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Battleaxe",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Morningstar",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Battleaxe",
+      "count": 1
+    },
+    {
+      "name": "Morningstar",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "curated": true,
+  "imported": "5etools-mm"
+}

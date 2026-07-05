@@ -1,0 +1,93 @@
+{
+  "name": "Ogre Chain Brute",
+  "type": "giant",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 11,
+  "hp": 59,
+  "hit_dice": "7d10+21",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 8,
+    "CON": 16,
+    "INT": 5,
+    "WIS": 7,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d4+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Chain Smash",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "CON",
+        "dc": 14,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Chain Sweep",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 14,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "DEX",
+        "dc": 14,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

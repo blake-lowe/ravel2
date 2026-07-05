@@ -1,0 +1,302 @@
+======================================================================
+RUN 1  (seed 7001)  ->  winner: B  in 2 rounds   [LLM decisions: 1, fallbacks: 0]
+======================================================================
+Initiative: B2=13, B1=12, A1=6
+
+=== Round 1 ===
+-- B2 (Troll) turn [84/84 HP @ (13, 10)]
+    B2 moves to (7, 8)
+-- B1 (Troll) turn [84/84 HP @ (13, 5)]
+    B1 moves to (6, 6)
+-- A1 (Archmage) turn [99/99 HP @ (6, 8)]
+  [llm A1] -> spell:Fireball->B1
+    A1 moves to (0, 8)
+    >> opportunity attack from B1
+  >> A1 casts Shield (reaction, +5 AC)
+  B1 Claw vs A1: d20=5+7=12 vs AC 17 -> miss
+    >> opportunity attack from B2
+  B2 Claw vs A1: d20=12+7=19 vs AC 17 -> HIT
+    A1 takes 11 slashing -> 88/99 HP
+  A1 casts Fireball
+    -> targets: ['B1', 'B2']
+    B1 DEX save vs DC 17: FAIL
+    B1 takes 27 fire -> 57/84 HP
+    B2 DEX save vs DC 17: FAIL
+    B2 takes 34 fire -> 50/84 HP
+
+=== Round 2 ===
+-- B2 (Troll) turn [50/84 HP @ (7, 8)]
+    B2 moves to (1, 8)
+  B2 Bite vs A1: d20=3+7=10 vs AC 12 -> miss
+  B2 Claw vs A1: d20=5+7=12 vs AC 12 -> HIT
+    A1 takes 15 slashing -> 73/99 HP
+  B2 Claw vs A1: d20=9+7=16 vs AC 12 -> HIT
+    A1 takes 6 slashing -> 67/99 HP
+-- B1 (Troll) turn [57/84 HP @ (6, 6)]
+    B1 moves to (0, 6)
+  B1 Bite vs A1: d20=17+7=24 vs AC 12 -> HIT
+    A1 takes 10 piercing -> 57/99 HP
+  B1 Claw vs A1: d20=15+7=22 vs AC 12 -> HIT
+    A1 takes 13 slashing -> 44/99 HP
+  B1 Claw vs A1: d20=3+7=10 vs AC 12 -> miss
+-- A1 (Archmage) turn [44/99 HP @ (0, 8)]
+  A1's morale breaks — it flees!
+  A1 escapes the battle!
+
+### Winner: B (round 2) ###
+
+
+======================================================================
+RUN 2  (seed 7002)  ->  winner: A  in 3 rounds   [LLM decisions: 3, fallbacks: 0]
+======================================================================
+Initiative: A1=20, B1=18, B2=4
+
+=== Round 1 ===
+-- A1 (Archmage) turn [99/99 HP @ (6, 8)]
+  [llm A1] -> spell:Fireball->B2
+  A1 casts Fireball
+    -> targets: ['B1', 'B2']
+    B1 DEX save vs DC 17: success
+    B1 takes 11 fire -> 73/84 HP
+    B2 DEX save vs DC 17: success
+    B2 takes 14 fire -> 70/84 HP
+-- B1 (Troll) turn [73/84 HP @ (13, 5)]
+    B1 moves to (7, 7)
+-- B2 (Troll) turn [70/84 HP @ (13, 10)]
+    B2 moves to (6, 9)
+
+=== Round 2 ===
+-- A1 (Archmage) turn [99/99 HP @ (6, 8)]
+  [llm A1] -> spell:Fireball->B2
+    A1 moves to (0, 8)
+    >> opportunity attack from B1
+  B1 Claw vs A1: d20=3+7=10 vs AC 12 -> miss
+    >> opportunity attack from B2
+  B2 Claw vs A1: d20=3+7=10 vs AC 12 -> miss
+  A1 casts Fireball
+    -> targets: ['B1', 'B2']
+    B1 DEX save vs DC 17: FAIL
+    B1 takes 34 fire -> 39/84 HP
+    B2 DEX save vs DC 17: FAIL
+    B2 takes 34 fire -> 36/84 HP
+-- B1 (Troll) turn [39/84 HP @ (7, 7)]
+  B1's morale breaks — it flees!
+    B1 moves to (0, 6)
+  B1 escapes the battle!
+-- B2 (Troll) turn [36/84 HP @ (6, 9)]
+    B2 moves to (1, 8)
+  >> A1 casts Shield (reaction, +5 AC)
+  B2 Bite vs A1: d20=7+7=14 vs AC 17 -> miss
+  B2 Claw vs A1: d20=18+7=25 vs AC 17 -> HIT
+    A1 takes 13 slashing -> 86/99 HP
+  B2 Claw vs A1: d20=7+7=14 vs AC 17 -> miss
+
+=== Round 3 ===
+-- A1 (Archmage) turn [86/99 HP @ (0, 8)]
+  [llm A1] -> spell:Banishment->B2
+    A1 moves to (0, 2)
+    >> opportunity attack from B2
+  B2 Claw vs A1: d20=12+7=19 vs AC 17 -> HIT
+    A1 takes 9 slashing -> 77/99 HP
+  A1 casts Banishment [concentration]
+    -> targets: ['B2']
+    B2 CHA save vs DC 17: FAIL
+    ** B2 is BANISHED from the fight! **
+
+### Winner: A (round 3) ###
+
+
+======================================================================
+RUN 3  (seed 7003)  ->  winner: B  in 4 rounds   [LLM decisions: 4, fallbacks: 0]
+======================================================================
+Initiative: B1=17, B2=10, A1=6
+
+=== Round 1 ===
+-- B1 (Troll) turn [84/84 HP @ (13, 5)]
+    B1 moves to (7, 7)
+-- B2 (Troll) turn [84/84 HP @ (13, 10)]
+    B2 moves to (6, 9)
+-- A1 (Archmage) turn [99/99 HP @ (6, 8)]
+  [llm A1] -> spell:Fireball->B1
+    A1 moves to (0, 8)
+    >> opportunity attack from B1
+  B1 Claw vs A1: d20=10+7=17 vs AC 12 -> HIT
+    A1 takes 11 slashing -> 88/99 HP
+    >> opportunity attack from B2
+  >> A1 casts Shield (reaction, +5 AC)
+  B2 Claw vs A1: d20=5+7=12 vs AC 17 -> miss
+  A1 casts Fireball
+    -> targets: ['B1', 'B2']
+    B1 DEX save vs DC 17: FAIL
+    B1 takes 31 fire -> 53/84 HP
+    B2 DEX save vs DC 17: FAIL
+    B2 takes 28 fire -> 56/84 HP
+
+=== Round 2 ===
+-- B1 (Troll) turn [53/84 HP @ (7, 7)]
+    B1 moves to (1, 7)
+  B1 Bite vs A1: d20=8+7=15 vs AC 12 -> HIT
+    A1 takes 5 piercing -> 83/99 HP
+  B1 Claw vs A1: NAT 1 - miss
+  B1 Claw vs A1: d20=3+7=10 vs AC 12 -> miss
+-- B2 (Troll) turn [56/84 HP @ (6, 9)]
+    B2 moves to (0, 9)
+  B2 Bite vs A1: d20=4+7=11 vs AC 12 -> miss
+  B2 Claw vs A1: d20=4+7=11 vs AC 12 -> miss
+  B2 Claw vs A1: d20=10+7=17 vs AC 12 -> HIT
+    A1 takes 7 slashing -> 76/99 HP
+-- A1 (Archmage) turn [76/99 HP @ (0, 8)]
+  [llm A1] -> spell:Fireball->B1
+    A1 moves to (0, 2)
+    >> opportunity attack from B1
+  B1 Claw vs A1: d20=16+7=23 vs AC 12 -> HIT
+    A1 takes 8 slashing -> 68/99 HP
+    >> opportunity attack from B2
+  B2 Claw vs A1: d20=4+7=11 vs AC 12 -> miss
+  A1 casts Fireball
+    -> targets: ['B1', 'B2']
+    B1 DEX save vs DC 17: FAIL
+    B1 takes 30 fire -> 23/84 HP
+    B2 DEX save vs DC 17: FAIL
+    B2 takes 39 fire -> 17/84 HP
+
+=== Round 3 ===
+-- B1 (Troll) turn [23/84 HP @ (1, 7)]
+    B1 moves to (0, 3)
+  B1 Bite vs A1: NAT 1 - miss
+  B1 Claw vs A1: d20=18+7=25 vs AC 12 -> HIT
+    A1 takes 10 slashing -> 58/99 HP
+  >> A1 casts Shield (reaction, +5 AC)
+  B1 Claw vs A1: d20=5+7=12 vs AC 17 -> miss
+-- B2 (Troll) turn [17/84 HP @ (0, 9)]
+    B2 moves to (1, 1)
+-- A1 (Archmage) turn [58/99 HP @ (0, 2)]
+  [llm A1] -> spell:Fireball->B2
+    A1 moves to (4, 0)
+    >> opportunity attack from B1
+  B1 Claw vs A1: d20=18+7=25 vs AC 17 -> HIT
+    A1 takes 10 slashing -> 48/99 HP
+    >> opportunity attack from B2
+  B2 Claw vs A1: d20=20+7=27 vs AC 17 -> HIT CRIT!
+    A1 takes 15 slashing -> 33/99 HP
+  A1 casts Fireball
+    -> targets: ['B1', 'B2']
+    B1 DEX save vs DC 17: success
+    B1 takes 12 fire -> 11/84 HP
+    B2 DEX save vs DC 17: FAIL
+    B2 takes 26 fire -> 0/84 HP
+    *** B2 (Troll) drops! ***
+
+=== Round 4 ===
+-- B1 (Troll) turn [11/84 HP @ (0, 3)]
+    B1 moves to (2, 0)
+  B1 Bite vs A1: d20=15+7=22 vs AC 12 -> HIT
+    A1 takes 7 piercing -> 26/99 HP
+  B1 Claw vs A1: d20=19+7=26 vs AC 12 -> HIT
+    A1 takes 10 slashing -> 16/99 HP
+  B1 Claw vs A1: d20=13+7=20 vs AC 12 -> HIT
+    A1 takes 6 slashing -> 10/99 HP
+-- A1 (Archmage) turn [10/99 HP @ (4, 0)]
+  [llm A1] -> spell:Magic Missile->B1
+    A1 moves to (10, 0)
+    >> opportunity attack from B1
+  B1 Claw vs A1: d20=12+7=19 vs AC 12 -> HIT
+    A1 takes 11 slashing -> 0/99 HP
+    *** A1 (Archmage) drops! ***
+
+### Winner: B (round 4) ###
+
+
+======================================================================
+RUN 4  (seed 7004)  ->  winner: A  in 4 rounds   [LLM decisions: 4, fallbacks: 0]
+======================================================================
+Initiative: B2=8, A1=7, B1=5
+
+=== Round 1 ===
+-- B2 (Troll) turn [84/84 HP @ (13, 10)]
+    B2 moves to (7, 8)
+-- A1 (Archmage) turn [99/99 HP @ (6, 8)]
+  [llm A1] -> spell:Cone of Cold->B2
+  A1 casts Cone of Cold
+    -> targets: ['B1', 'B2']
+    B1 CON save vs DC 17: success
+    B1 takes 16 cold -> 68/84 HP
+    B2 CON save vs DC 17: FAIL
+    B2 takes 34 cold -> 50/84 HP
+  B1 regenerates -> 78/84
+-- B1 (Troll) turn [78/84 HP @ (13, 5)]
+    B1 moves to (6, 6)
+
+=== Round 2 ===
+  B2 regenerates -> 60/84
+-- B2 (Troll) turn [60/84 HP @ (7, 8)]
+  B2 Bite vs A1: d20=16+7=23 vs AC 12 -> HIT
+    A1 takes 9 piercing -> 90/99 HP
+  >> A1 casts Shield (reaction, +5 AC)
+  B2 Claw vs A1: d20=5+7=12 vs AC 17 -> miss
+  B2 Claw vs A1: d20=8+7=15 vs AC 17 -> miss
+-- A1 (Archmage) turn [90/99 HP @ (6, 8)]
+  [llm A1] -> spell:Fireball->B2
+    A1 moves to (0, 8)
+    >> opportunity attack from B1
+  B1 Claw vs A1: d20=13+7=20 vs AC 17 -> HIT
+    A1 takes 11 slashing -> 79/99 HP
+    >> opportunity attack from B2
+  B2 Claw vs A1: d20=2+7=9 vs AC 17 -> miss
+  A1 casts Fireball
+    -> targets: ['B1', 'B2']
+    B1 DEX save vs DC 17: success
+    B1 takes 12 fire -> 66/84 HP
+    B2 DEX save vs DC 17: FAIL
+    B2 takes 36 fire -> 24/84 HP
+-- B1 (Troll) turn [66/84 HP @ (6, 6)]
+    B1 moves to (1, 7)
+  B1 Bite vs A1: d20=2+7=9 vs AC 12 -> miss
+  B1 Claw vs A1: d20=14+7=21 vs AC 12 -> HIT
+    A1 takes 8 slashing -> 71/99 HP
+  B1 Claw vs A1: d20=12+7=19 vs AC 12 -> HIT
+    A1 takes 13 slashing -> 58/99 HP
+
+=== Round 3 ===
+-- B2 (Troll) turn [24/84 HP @ (7, 8)]
+    B2 moves to (0, 9)
+-- A1 (Archmage) turn [58/99 HP @ (0, 8)]
+  [llm A1] -> spell:Fireball->B2
+    A1 moves to (0, 2)
+    >> opportunity attack from B1
+  B1 Claw vs A1: d20=14+7=21 vs AC 12 -> HIT
+    A1 takes 15 slashing -> 43/99 HP
+    >> opportunity attack from B2
+  B2 Claw vs A1: d20=4+7=11 vs AC 12 -> miss
+  A1 casts Fireball
+    -> targets: ['B1', 'B2']
+    B1 DEX save vs DC 17: FAIL
+    B1 takes 24 fire -> 42/84 HP
+    B2 DEX save vs DC 17: success
+    B2 takes 11 fire -> 13/84 HP
+-- B1 (Troll) turn [42/84 HP @ (1, 7)]
+  B1's morale breaks — it flees!
+    B1 moves to (0, 6)
+  B1 escapes the battle!
+
+=== Round 4 ===
+-- B2 (Troll) turn [13/84 HP @ (0, 9)]
+    B2 moves to (0, 3)
+  B2 Bite vs A1: d20=4+7=11 vs AC 12 -> miss
+  B2 Claw vs A1: d20=13+7=20 vs AC 12 -> HIT
+    A1 takes 6 slashing -> 37/99 HP
+  B2 Claw vs A1: d20=14+7=21 vs AC 12 -> HIT
+    A1 takes 8 slashing -> 29/99 HP
+-- A1 (Archmage) turn [29/99 HP @ (0, 2)]
+  [llm A1] -> spell:Banishment->B2
+    A1 moves to (6, 2)
+    >> opportunity attack from B2
+  B2 Claw vs A1: d20=3+7=10 vs AC 12 -> miss
+  A1 casts Banishment [concentration]
+    -> targets: ['B2']
+    B2 CHA save vs DC 17: FAIL
+    ** B2 is BANISHED from the fight! **
+
+### Winner: A (round 4) ###
+
+

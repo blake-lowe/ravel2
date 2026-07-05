@@ -1,0 +1,111 @@
+{
+  "name": "Kuo-toa Whip",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "N E",
+  "ac": 11,
+  "hp": 65,
+  "hit_dice": "10d8+20",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 10,
+    "CON": 14,
+    "INT": 12,
+    "WIS": 14,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 6,
+    "Religion": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Otherworldly Perception",
+      "text": "The kuo-toa can sense the presence of any creature within 30 feet of it that is invisible or on the Ethereal Plane. It can pinpoint such a creature that is moving."
+    },
+    {
+      "name": "Slippery",
+      "text": "The kuo-toa has advantage on ability checks and saving throws made to escape a grapple."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Pincer Staff",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Pincer Staff",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 12,
+    "attack_bonus": 4,
+    "caster_level": 2,
+    "slots": {
+      "1": 3
+    },
+    "spells": [
+      "Bane",
+      "Sacred Flame",
+      "Shield of Faith"
+    ]
+  },
+  "traits_flags": [
+    "water_breathing",
+    "sunlight_sensitivity"
+  ]
+}

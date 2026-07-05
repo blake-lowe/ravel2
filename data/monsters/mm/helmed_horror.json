@@ -1,0 +1,91 @@
+{
+  "name": "Helmed Horror",
+  "type": "construct",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "U",
+  "ac": 20,
+  "hp": 60,
+  "hit_dice": "8d8+24",
+  "speeds": {
+    "walk": 30,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 16,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "force",
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The helmed horror has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Spell Immunity",
+      "text": "The helmed horror is immune to three spells chosen by its creator. Typical immunities include fireball, heat metal, and lightning bolt."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

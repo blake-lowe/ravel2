@@ -1,0 +1,40 @@
+{
+  "name": "Hunger of Hadar",
+  "level": 3,
+  "school": "conjuration",
+  "range": 150,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "cold"
+        },
+        {
+          "dice": "2d6",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false,
+      "condition": "blinded",
+      "save_ends": false
+    }
+  ],
+  "imported": "5etools"
+}

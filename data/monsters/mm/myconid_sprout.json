@@ -1,0 +1,68 @@
+{
+  "name": "Myconid Sprout",
+  "type": "plant",
+  "size": "Small",
+  "cr": 0.0,
+  "alignment": "L N",
+  "ac": 10,
+  "hp": 7,
+  "hit_dice": "2d6",
+  "speeds": {
+    "walk": 10
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 10,
+    "CON": 10,
+    "INT": 8,
+    "WIS": 11,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Rapport Spores (3/Day)",
+      "text": "A 10-foot radius of spores extends from the myconid. These spores can go around corners and affect only creatures with an Intelligence of 2 or higher that aren't undead, constructs, or elementals. Affected creatures can communicate telepathically with one another while they are within 30 feet of each other. The effect lasts for 1 hour."
+    },
+    {
+      "name": "Distress Spores",
+      "text": "When the myconid takes damage, all other myconids within 240 feet of it can sense its pain."
+    },
+    {
+      "name": "Sun Sickness",
+      "text": "While in sunlight, the myconid has disadvantage on ability checks, attack rolls, and saving throws. The myconid dies if it spends more than 1 hour in direct sunlight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 1,
+      "damage": [
+        {
+          "dice": "1d4-1",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d4",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

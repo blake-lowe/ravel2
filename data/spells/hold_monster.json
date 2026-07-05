@@ -1,0 +1,25 @@
+{
+  "name": "Hold Monster",
+  "level": 5,
+  "school": "enchantment",
+  "range": 90,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "paralyzed",
+      "save_ends": true
+    }
+  ]
+}

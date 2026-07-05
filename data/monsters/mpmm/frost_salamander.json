@@ -1,0 +1,113 @@
+{
+  "name": "Frost Salamander",
+  "type": "elemental",
+  "size": "Huge",
+  "cr": 9.0,
+  "alignment": "U",
+  "ac": 17,
+  "hp": 168,
+  "hit_dice": "16d12+64",
+  "speeds": {
+    "walk": 60,
+    "burrow": 40,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 12,
+    "CON": 18,
+    "INT": 7,
+    "WIS": 11,
+    "CHA": 7
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Primordial"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Burning Fury",
+      "text": "When the salamander takes fire damage, its Freezing Breath automatically recharges."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d8+5",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d10",
+          "type": "cold"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d6+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 4
+    }
+  ],
+  "areas": [
+    {
+      "name": "Freezing Breath",
+      "shape": "cone",
+      "size": 60,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 17,
+      "damage": [
+        {
+          "dice": "8d10",
+          "type": "cold"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

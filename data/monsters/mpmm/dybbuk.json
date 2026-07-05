@@ -1,0 +1,94 @@
+{
+  "name": "Dybbuk",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 37,
+  "hit_dice": "5d8+15",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 19,
+    "CON": 16,
+    "INT": 16,
+    "WIS": 15,
+    "CHA": 14
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 6,
+    "Intimidation": 4,
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Abyssal",
+    "Common",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Possess Corpse {@recharge}",
+      "text": "The dybbuk disappears into an intact corpse within 5 feet of it that belonged to a Large or smaller Beast or Humanoid. The dybbuk gains 20 temporary hit points. While possessing the corpse, the dybbuk adopts the corpse's size and can't use Incorporeal Movement. Its game statistics otherwise remain the same. The possession lasts until the temporary hit points are lost or the dybbuk ends it as a bonus action. When the possession ends, the dybbuk appears in an unoccupied space within 5 feet of the corpse."
+    },
+    {
+      "name": "Control Corpse (bonus)",
+      "text": "While Possess Corpse is active, the dybbuk makes the corpse do something unnatural, such as vomit blood, twist its head all the way around, or cause a quadruped to move as a biped. Any Beast or Humanoid that sees this behavior must succeed on a 12 Wisdom saving throw or become frightened of the dybbuk for 1 minute. The frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. A creature that succeeds on a saving throw against this ability is immune to Control Corpse for 24 hours."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The dybbuk has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "incorporeal": true
+}

@@ -1,0 +1,164 @@
+{
+  "name": "Death Tyrant",
+  "type": "undead",
+  "size": "Large",
+  "cr": 14.0,
+  "alignment": "L E",
+  "ac": 19,
+  "hp": 187,
+  "hit_dice": "25d10+50",
+  "speeds": {
+    "walk": 0,
+    "fly": 20,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 19,
+    "WIS": 15,
+    "CHA": 19
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 12
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 22
+  },
+  "languages": [
+    "Deep Speech",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Negative Energy Cone",
+      "text": "The death tyrant's central eye emits an invisible, magical 150-foot cone of negative energy. At the start of each of its turns, the tyrant decides which way the cone faces and whether the cone is active. Any creature in that area can't regain hit points. Any humanoid that dies there becomes a zombie under the tyrant's command. The dead humanoid retains its place in the initiative order and animates at the start of its next turn, provided that its body hasn't been completely destroyed."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "eye_rays": [
+    {
+      "name": "Charm Ray",
+      "ability": "WIS",
+      "dc": 17,
+      "condition": "charmed",
+      "save_ends": false
+    },
+    {
+      "name": "Paralyzing Ray",
+      "ability": "CON",
+      "dc": 17,
+      "condition": "paralyzed",
+      "save_ends": true
+    },
+    {
+      "name": "Fear Ray",
+      "ability": "WIS",
+      "dc": 17,
+      "condition": "frightened",
+      "save_ends": true
+    },
+    {
+      "name": "Slowing Ray",
+      "ability": "DEX",
+      "dc": 17
+    },
+    {
+      "name": "Enervation Ray",
+      "ability": "CON",
+      "dc": 17,
+      "damage": {
+        "dice": "8d8",
+        "type": "necrotic"
+      },
+      "half_on_save": true
+    },
+    {
+      "name": "Telekinetic Ray",
+      "ability": "STR",
+      "dc": 17,
+      "condition": "restrained",
+      "save_ends": false
+    },
+    {
+      "name": "Sleep Ray",
+      "ability": "WIS",
+      "dc": 17,
+      "condition": "unconscious",
+      "save_ends": false
+    },
+    {
+      "name": "Petrification Ray",
+      "ability": "DEX",
+      "dc": 17,
+      "condition": "restrained",
+      "save_ends": true,
+      "escalates_to": "petrified"
+    },
+    {
+      "name": "Disintegration Ray",
+      "ability": "DEX",
+      "dc": 17,
+      "damage": {
+        "dice": "10d8",
+        "type": "force"
+      },
+      "half_on_save": false
+    },
+    {
+      "name": "Death Ray",
+      "ability": "DEX",
+      "dc": 17,
+      "damage": {
+        "dice": "10d10",
+        "type": "necrotic"
+      },
+      "half_on_save": false
+    }
+  ],
+  "eye_ray_count": 3,
+  "eye_ray_range": 120,
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Bite"
+  }
+}

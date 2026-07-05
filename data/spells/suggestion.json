@@ -1,0 +1,26 @@
+{
+  "name": "Suggestion",
+  "level": 2,
+  "school": "enchantment",
+  "range": 30,
+  "components": [
+    "V",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 100,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "charmed",
+      "save_ends": false
+    }
+  ],
+  "_approx": "a battlefield suggestion ('stand down') modelled as a lasting charm.",
+  "imported": "5etools"
+}

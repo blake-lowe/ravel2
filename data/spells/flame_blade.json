@@ -1,0 +1,32 @@
+{
+  "name": "Flame Blade",
+  "level": 2,
+  "school": "evocation",
+  "casting_time": "bonus",
+  "range": 5,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 100,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "melee": true,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "fire"
+        }
+      ]
+    }
+  ],
+  "_approx": "each cast is one blade swing (the persistent blade re-attack is dropped).",
+  "imported": "5etools"
+}

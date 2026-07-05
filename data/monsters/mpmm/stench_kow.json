@@ -1,0 +1,84 @@
+{
+  "name": "Stench Kow",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 10,
+  "hp": 15,
+  "hit_dice": "2d10+4",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 10,
+    "CON": 14,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Stench",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "bonus_damage": [
+    {
+      "name": "Gore",
+      "when": "charged",
+      "damage": {
+        "dice": "2d6",
+        "type": "piercing"
+      },
+      "threshold": 20,
+      "kind": "melee"
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Star Spawn Mangler",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 71,
+  "hit_dice": "13d8+13",
+  "speeds": {
+    "walk": 40,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 18,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "DEX",
+    "CON"
+  ],
+  "skills": {
+    "Stealth": 7
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Deep Speech"
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Flurry of Claws {@recharge 5}",
+      "text": "The mangler makes six Claw attacks. Either before or after these attacks, it can move up to its speed without provoking opportunity attack."
+    },
+    {
+      "name": "Shadow Stealth (bonus)",
+      "text": "While in dim light or darkness, the mangler takes the Hide action."
+    },
+    {
+      "name": "Ambusher",
+      "text": "The mangler has advantage on initiative rolls."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

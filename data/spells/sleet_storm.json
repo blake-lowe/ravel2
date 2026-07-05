@@ -1,0 +1,25 @@
+{
+  "name": "Sleet Storm",
+  "level": 3,
+  "school": "conjuration",
+  "range": 150,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 40,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "terrain",
+      "difficult_terrain": true
+    }
+  ]
+}

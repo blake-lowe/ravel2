@@ -1,0 +1,135 @@
+{
+  "name": "Nagpa",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 17.0,
+  "alignment": "N E",
+  "ac": 19,
+  "hp": 203,
+  "hit_dice": "37d8+37",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 9,
+    "DEX": 15,
+    "CON": 12,
+    "INT": 23,
+    "WIS": 18,
+    "CHA": 21
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 12,
+    "Deception": 11,
+    "History": 12,
+    "Insight": 10,
+    "Perception": 10
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 20
+  },
+  "languages": [
+    "Common plus up to five other languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Staff",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "7d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Deathly Ray",
+      "kind": "ranged",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "7d6+6",
+          "type": "necrotic"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Staff",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Corruption (bonus)",
+      "shape": "sphere",
+      "size": 90,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 20,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CHA",
+        "dc": 20,
+        "on_fail_condition": "charmed"
+      },
+      "max_targets": 1
+    },
+    {
+      "name": "Paralysis (bonus)",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 20,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "6-6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 20,
+        "on_fail_condition": "paralyzed"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 20,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fireball": 2,
+      "Hold Person": 2,
+      "Suggestion": 2,
+      "Wall of Fire": 2
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Ice Knife",
+  "level": 1,
+  "school": "conjuration",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "1d10",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d6",
+          "type": "cold"
+        }
+      ],
+      "melee": false
+    }
+  ],
+  "imported": "5etools"
+}

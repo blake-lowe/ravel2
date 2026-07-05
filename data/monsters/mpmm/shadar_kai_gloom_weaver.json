@@ -1,0 +1,100 @@
+{
+  "name": "Shadar-kai Gloom Weaver",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 9.0,
+  "alignment": "N E",
+  "ac": 14,
+  "hp": 104,
+  "hit_dice": "16d8+32",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 18,
+    "CON": 14,
+    "INT": 15,
+    "WIS": 12,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "necrotic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed"
+  ],
+  "traits": [
+    {
+      "name": "Burden of Time",
+      "text": "Beasts and Humanoids (except elves) have disadvantage on saving throws while within 10 feet of the shadar-kai."
+    },
+    {
+      "name": "Fey Ancestry",
+      "text": "The shadar-kai has advantage on saving throws against being charmed, and magic can't put it to sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shadow Spear",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "4d12",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Shadow Spear",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Mage Armor": 0,
+      "Bane": 1,
+      "Confusion": 1,
+      "Darkness": 1,
+      "Fear": 1
+    }
+  },
+  "triggered_abilities": [
+    "misty_escape"
+  ],
+  "save_advantages": [
+    "charmed"
+  ]
+}

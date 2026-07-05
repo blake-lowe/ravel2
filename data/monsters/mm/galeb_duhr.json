@@ -1,0 +1,78 @@
+{
+  "name": "Galeb Duhr",
+  "type": "elemental",
+  "size": "Medium",
+  "cr": 6.0,
+  "alignment": "N",
+  "ac": 16,
+  "hp": 85,
+  "hit_dice": "9d8+45",
+  "speeds": {
+    "walk": 15
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 14,
+    "CON": 20,
+    "INT": 11,
+    "WIS": 12,
+    "CHA": 11
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "tremorsense": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Terran"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Animate Boulders (1/Day)",
+      "text": "The galeb duhr magically animates up to two boulders it can see within 60 feet of it. A boulder has statistics like those of a galeb duhr, except it has Intelligence 1 and Charisma 1, it can't be charmed or frightened, and it lacks this action option. A boulder remains animated as long as the galeb duhr maintains concentration, up to 1 minute (as if concentration on a spell)."
+    },
+    {
+      "name": "False Appearance",
+      "text": "While the galeb duhr remains motionless, it is indistinguishable from a normal boulder."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 20,
+    "dc": 16,
+    "bonus_attack": "Slam"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "name": "Yeth Hound",
+  "type": "fey",
+  "size": "Large",
+  "cr": 4.0,
+  "alignment": "N E",
+  "ac": 14,
+  "hp": 51,
+  "hit_dice": "6d10+18",
+  "speeds": {
+    "walk": 40,
+    "fly": 40,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 17,
+    "CON": 16,
+    "INT": 5,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "understands Common, Elvish and Sylvan but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Sunlight Banishment",
+      "text": "If the yeth hound starts its turn in sunlight, it is transported to the Ethereal Plane. While sunlight shines on the spot from which it vanished, the hound must remain in the Deep Ethereal. After sunset, it returns to the Border Ethereal at the same spot, whereupon it typically sets out to find its pack or its master. The hound is visible on the Material Plane while it is in the Border Ethereal, and vice versa, but it can't affect or be affected by anything on the other plane. Once it is adjacent to its master or a pack mate that is on the Material Plane, a yeth hound in the Border Ethereal can return to the Material Plane as an action."
+    },
+    {
+      "name": "Telepathic Bond",
+      "text": "While the yeth hound is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically with each other."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "4d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Baleful Baying",
+      "shape": "sphere",
+      "size": 300,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 13,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

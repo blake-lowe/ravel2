@@ -1,0 +1,26 @@
+{
+  "name": "Produce Flame",
+  "level": 0,
+  "school": "conjuration",
+  "range": 30,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "fire"
+        }
+      ]
+    }
+  ],
+  "imported": "5etools"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Shocking Grasp",
+  "level": 0,
+  "school": "evocation",
+  "range": 5,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "lightning"
+        }
+      ],
+      "melee": true
+    }
+  ],
+  "imported": "5etools"
+}

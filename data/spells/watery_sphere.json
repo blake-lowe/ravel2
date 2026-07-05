@@ -1,0 +1,29 @@
+{
+  "name": "Watery Sphere",
+  "level": 4,
+  "school": "conjuration",
+  "range": 90,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 5,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "STR",
+      "condition": "prone",
+      "save_ends": true
+    }
+  ],
+  "imported": "5etools"
+}

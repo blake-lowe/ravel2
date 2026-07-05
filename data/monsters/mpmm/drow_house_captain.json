@@ -1,0 +1,134 @@
+{
+  "name": "Drow House Captain",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 9.0,
+  "alignment": "A",
+  "ac": 16,
+  "hp": 162,
+  "hit_dice": "25d8+50",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 19,
+    "CON": 15,
+    "INT": 12,
+    "WIS": 14,
+    "CHA": 13
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 6,
+    "Stealth": 8
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Battle Command (bonus)",
+      "text": "Choose one creature within 30 feet of the drow that the drow can see. If the chosen creature can see or hear the drow, that creature can use its reaction to make one melee attack or to take the Dodge or Hide action."
+    },
+    {
+      "name": "Fey Ancestry",
+      "text": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "4d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Whip",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d4+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Hand Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ],
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scimitar",
+      "count": 2
+    },
+    {
+      "name": "Whip",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 1,
+      "Faerie Fire": 1
+    }
+  },
+  "parry": 3,
+  "save_advantages": [
+    "charmed"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

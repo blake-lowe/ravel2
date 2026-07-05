@@ -1,0 +1,90 @@
+{
+  "name": "Specter",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 1,
+  "alignment": "chaotic evil",
+  "ac": 12,
+  "hp": 22,
+  "hit_dice": "5d8",
+  "speeds": {
+    "walk": 0,
+    "fly": 50,
+    "hover": true
+  },
+  "incorporeal": true,
+  "abilities": {
+    "STR": 1,
+    "DEX": 14,
+    "CON": 11,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands all languages it knew in life but can't speak"
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "resist_nonmagical_physical": true,
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "traits": [
+    {
+      "name": "Incorporeal Movement",
+      "text": "The specter can move through other creatures and objects as difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object. (Implemented: the pather passes through walls and creatures.)"
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "text": "[UNSUPPORTED] While in sunlight, the specter has disadvantage on attack rolls and Perception checks relying on sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Life Drain",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5,
+      "reduces_max_hp": true
+    }
+  ],
+  "multiattack": [],
+  "strategy": "Phase through walls and allies to reach the softest target, then drain its life; retreat into solid cover when threatened.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

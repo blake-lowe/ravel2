@@ -1,0 +1,28 @@
+{
+  "name": "Ray of Sickness",
+  "level": 1,
+  "school": "necromancy",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "2d8",
+          "type": "poison"
+        }
+      ],
+      "melee": false
+    }
+  ],
+  "imported": "5etools"
+}

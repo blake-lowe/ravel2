@@ -1,0 +1,99 @@
+{
+  "name": "Tortle Druid",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "A",
+  "ac": 17,
+  "hp": 33,
+  "hit_dice": "6d8+6",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 10,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 15,
+    "CHA": 12
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Animal Handling": 4,
+    "Nature": 2,
+    "Survival": 4
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "Aquan",
+    "Common"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Shell Defense",
+      "text": "The tortle withdraws into its shell. Until it emerges, it gains a +4 bonus to AC and has advantage on Strength and Constitution saving throws. While in its shell, the tortle is prone, its speed is 0 and can't increase, it has disadvantage on Dexterity saving throws, it can't take reactions, and the only action it can take is a bonus action to emerge."
+    },
+    {
+      "name": "Hold Breath",
+      "text": "The tortle can hold its breath for 1 hour."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Nature's Wrath",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "cold"
+        }
+      ],
+      "range": [
+        90,
+        90
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 4
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Cure Wounds": 2,
+      "Hold Person": 2,
+      "Thunderwave": 2
+    }
+  }
+}

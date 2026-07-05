@@ -1,0 +1,167 @@
+{
+  "name": "Drow Matron Mother",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 20.0,
+  "alignment": "N E",
+  "ac": 17,
+  "hp": 247,
+  "hit_dice": "33d8+99",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 18,
+    "CON": 16,
+    "INT": 17,
+    "WIS": 21,
+    "CHA": 22
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Insight": 11,
+    "Perception": 11,
+    "Religion": 9,
+    "Stealth": 10
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 21
+  },
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Lolth's Fickle Favor (bonus)",
+      "text": "The drow bestows the Spider Queen's blessing on one ally she can see within 30 feet of her. The ally takes 7 (2d6) psychic damage but has advantage on the next attack roll it makes before the end of its next turn."
+    },
+    {
+      "name": "Summon Servant (1/Day) (bonus)",
+      "text": "The drow magically summons a glabrezu or a yochlol. The summoned creature appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 10 minutes, until it or its summoner dies, or until its summoner dismisses it as an action."
+    },
+    {
+      "name": "Fey Ancestry",
+      "text": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+    },
+    {
+      "name": "Special Equipment",
+      "text": "The drow wields a tentacle rod."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Demon Staff",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d8+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "WIS",
+        "dc": 19,
+        "on_fail_condition": "frightened"
+      }
+    },
+    {
+      "name": "Tentacle Rod",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 15
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Demon Staff",
+      "count": 2
+    },
+    {
+      "name": "Tentacle Rod",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Divine Flame",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 20,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "once",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 20,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Command": 0,
+      "Banishment": 2,
+      "Cure Wounds": 2,
+      "Hold Person": 2,
+      "Plane Shift": 2,
+      "Silence": 2,
+      "Darkness": 1,
+      "Dispel Magic": 1,
+      "Faerie Fire": 1,
+      "Suggestion": 1
+    }
+  },
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Demon Staff"
+  },
+  "save_advantages": [
+    "charmed"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

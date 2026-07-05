@@ -1,0 +1,121 @@
+{
+  "name": "Storm Giant",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 13.0,
+  "alignment": "C G",
+  "ac": 16,
+  "hp": 230,
+  "hit_dice": "20d12+100",
+  "speeds": {
+    "walk": 50,
+    "swim": 50
+  },
+  "abilities": {
+    "STR": 29,
+    "DEX": 14,
+    "CON": 20,
+    "INT": 16,
+    "WIS": 18,
+    "CHA": 18
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 8,
+    "Athletics": 14,
+    "History": 8,
+    "Perception": 9
+  },
+  "senses": {
+    "passive_perception": 19
+  },
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "lightning",
+    "thunder"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "6d6+9",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "4d12+9",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        240
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatsword",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Lightning Strike",
+      "shape": "sphere",
+      "size": 500,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 17,
+      "damage": [
+        {
+          "dice": "12d8",
+          "type": "lightning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 17,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Light": 0
+    }
+  },
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

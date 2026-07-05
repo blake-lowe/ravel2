@@ -1,0 +1,29 @@
+{
+  "name": "Holy Aura",
+  "level": 8,
+  "school": "abjuration",
+  "range": 0,
+  "range_type": "self",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "multi",
+    "count": 6,
+    "affects": "allies"
+  },
+  "effects": [
+    {
+      "kind": "modifier",
+      "modifier": {
+        "attackers_have_disadvantage": true
+      }
+    }
+  ],
+  "_approx": "advantage-on-saves and the blind-on-melee-hit clause are dropped.",
+  "imported": "5etools"
+}

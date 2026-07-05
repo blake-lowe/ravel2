@@ -1,0 +1,81 @@
+{
+  "name": "Stone Giant",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 7,
+  "alignment": "N",
+  "ac": 17,
+  "hp": 126,
+  "hit_dice": "11d12+55",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 15,
+    "CON": 20,
+    "INT": 10,
+    "WIS": 12,
+    "CHA": 9
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Athletics": 12,
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greatclub",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "3d8+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "4d10+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        240
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatclub",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "curated": true,
+  "imported": "5etools-mm"
+}

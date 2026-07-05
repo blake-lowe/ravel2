@@ -1,0 +1,31 @@
+{
+  "name": "Confusion",
+  "level": 4,
+  "school": "enchantment",
+  "range": 90,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 10,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "incapacitated",
+      "save_ends": true
+    }
+  ],
+  "scaling": {
+    "mode": "none",
+    "amount": "0"
+  }
+}

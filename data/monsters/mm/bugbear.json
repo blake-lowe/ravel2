@@ -1,0 +1,73 @@
+{
+  "name": "Bugbear",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 1,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 27,
+  "hit_dice": "5d8+5",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 13,
+    "INT": 8,
+    "WIS": 11,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 6,
+    "Survival": 2
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Morningstar",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Javelin",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "curated": true,
+  "imported": "5etools-mm"
+}

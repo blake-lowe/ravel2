@@ -1,0 +1,81 @@
+{
+  "name": "Water Elemental Myrmidon",
+  "type": "elemental",
+  "size": "Medium",
+  "cr": 7.0,
+  "alignment": "N",
+  "ac": 18,
+  "hp": 127,
+  "hit_dice": "17d8+51",
+  "speeds": {
+    "walk": 40,
+    "swim": 40
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 16,
+    "INT": 8,
+    "WIS": 10,
+    "CHA": 10
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Aquan",
+    "one language of its creator's choice"
+  ],
+  "damage_resistances": [
+    "acid"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Freezing Strikes {@recharge}",
+      "text": "The myrmidon uses Multiattack. Each attack that hits deals an extra 5 (1d10) cold damage. A target that is hit by one or more of these attacks has its speed reduced by 10 feet until the end of the myrmidon's next turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Trident",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "force"
+        },
+        {
+          "dice": "1d8+4",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Trident",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

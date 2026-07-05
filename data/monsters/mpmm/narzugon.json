@@ -1,0 +1,118 @@
+{
+  "name": "Narzugon",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 13.0,
+  "alignment": "L E",
+  "ac": 20,
+  "hp": 112,
+  "hit_dice": "15d8+45",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 10,
+    "CON": 17,
+    "INT": 16,
+    "WIS": 14,
+    "CHA": 19
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 12
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 22
+  },
+  "languages": [
+    "Common",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Infernal Command",
+      "text": "Each ally of the narzugon within 60 feet of it can't be charmed or frightened until the end of the narzugon's next turn."
+    },
+    {
+      "name": "Healing (1/Day)",
+      "text": "The narzugon, or one creature it touches, regains 100 hit points."
+    },
+    {
+      "name": "Infernal Tack",
+      "text": "The narzugon wears spurs that are part of infernal tack, which allow it to summon its nightmare companion as an action."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The narzugon has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hellfire Lance",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "1d12+5",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d10",
+          "type": "fire"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Hellfire Lance",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Terrifying Command",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 17,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CHA",
+        "dc": 17,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

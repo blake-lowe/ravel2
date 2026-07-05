@@ -1,0 +1,142 @@
+{
+  "name": "Mummy Lord",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 15.0,
+  "alignment": "L E",
+  "ac": 17,
+  "hp": 97,
+  "hit_dice": "13d8+39",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 10,
+    "CON": 17,
+    "INT": 11,
+    "WIS": 18,
+    "CHA": 16
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "History": 5,
+    "Religion": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The mummy lord has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Rejuvenation",
+      "text": "A destroyed mummy lord gains a new body in 24 hours if its heart is intact, regaining all its hit points and becoming active again. The new body appears within 5 feet of the mummy lord's heart."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Rotting Fist",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "3d6+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "6d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Rotting Fist",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Dreadful Glare",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 16,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 16,
+        "on_fail_condition": "frightened"
+      },
+      "max_targets": 1
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 17,
+    "attack_bonus": 9,
+    "caster_level": 10,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2,
+      "6": 1
+    },
+    "spells": [
+      "Command",
+      "Dispel Magic",
+      "Guiding Bolt",
+      "Harm",
+      "Hold Person",
+      "Insect Plague",
+      "Sacred Flame",
+      "Shield of Faith",
+      "Silence",
+      "Spiritual Weapon"
+    ]
+  },
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Rotting Fist"
+  }
+}

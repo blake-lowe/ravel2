@@ -1,0 +1,116 @@
+{
+  "name": "Couatl",
+  "type": "celestial",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "L G",
+  "ac": 19,
+  "hp": 97,
+  "hit_dice": "13d8+39",
+  "speeds": {
+    "walk": 30,
+    "fly": 90
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 20,
+    "CON": 17,
+    "INT": 18,
+    "WIS": 20,
+    "CHA": 18
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "radiant"
+  ],
+  "damage_immunities": [
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Change Shape",
+      "text": "The couatl magically polymorphs into a humanoid or beast that has a challenge rating equal to or less than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the couatl's choice). In a new form, the couatl retains its game statistics and ability to speak, but its AC, movement modes, Strength, Dexterity, and other actions are replaced by those of the new form, and it gains any statistics and capabilities (except class features, legendary actions, and lair actions) that the new form has but that it lacks. If the new form has a bite attack, the couatl can use its bite in that form."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The couatl's weapon attacks are magical."
+    },
+    {
+      "name": "Shielded Mind",
+      "text": "The couatl is immune to scrying and to any effect that would sense its emotions, read its thoughts, or detect its location."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d6+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "on_fail_condition": "poisoned"
+      }
+    },
+    {
+      "name": "Constrict",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 14,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Bless": 3,
+      "Cure Wounds": 3,
+      "Shield": 3
+    }
+  }
+}

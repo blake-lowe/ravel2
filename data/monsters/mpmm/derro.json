@@ -1,0 +1,80 @@
+{
+  "name": "Derro",
+  "type": "aberration",
+  "size": "Small",
+  "cr": 0.25,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 13,
+  "hit_dice": "3d6+3",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 5,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 7
+  },
+  "languages": [
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The derro has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hooked Spear",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Light Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        80,
+        320
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "sunlight_sensitivity"
+  ],
+  "imported": "5etools-mpmm"
+}

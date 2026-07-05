@@ -1,0 +1,83 @@
+{
+  "name": "Tridrone",
+  "type": "construct",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "L N",
+  "ac": 15,
+  "hp": 16,
+  "hit_dice": "3d8+3",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 13,
+    "CON": 12,
+    "INT": 9,
+    "WIS": 10,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Modron"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Axiomatic Mind",
+      "text": "The tridrone can't be compelled to act in a manner contrary to its nature or its instructions."
+    },
+    {
+      "name": "Disintegration",
+      "text": "If the tridrone dies, its body disintegrates into dust, leaving behind its weapons and anything else it was carrying."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Javelin",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Fist",
+      "count": 3
+    },
+    {
+      "name": "Javelin",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

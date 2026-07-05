@@ -1,0 +1,119 @@
+{
+  "name": "Dire Troll",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 13.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 172,
+  "hit_dice": "15d12+75",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 15,
+    "CON": 21,
+    "INT": 9,
+    "WIS": 11,
+    "CHA": 5
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Regeneration",
+      "text": "The troll regains 10 hit points at the start of its turn. If the troll takes acid or fire damage, it regains only 5 hit points at the start of its next turn. The troll dies only if it is hit by an attack that deals 10 or more acid or fire damage while the troll has 0 hit points."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "1d8+6",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d10",
+          "type": "poison"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "3d6+6",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 4
+    }
+  ],
+  "areas": [
+    {
+      "name": "Whirlwind of Claws",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 19,
+      "damage": [
+        {
+          "dice": "8d10",
+          "type": "slashing"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 10,
+    "stopped_by": [
+      "acid",
+      "fire"
+    ]
+  },
+  "imported": "5etools-mpmm"
+}

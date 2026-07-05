@@ -1,0 +1,63 @@
+{
+  "name": "Reef Shark",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 22,
+  "hit_dice": "4d8+4",
+  "speeds": {
+    "swim": 40,
+    "walk": 0
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 13,
+    "CON": 13,
+    "INT": 1,
+    "WIS": 10,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "text": "The shark has advantage on an attack roll against a creature if at least one of the shark's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics",
+    "water_breathing"
+  ],
+  "imported": "5etools-mm"
+}

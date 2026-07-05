@@ -1,0 +1,28 @@
+{
+  "name": "Entangle",
+  "level": 1,
+  "school": "conjuration",
+  "range": 90,
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "STR",
+      "condition": "restrained",
+      "save_ends": true
+    }
+  ],
+  "_approx": "RAW is a 20-ft square of difficult terrain; the restrain is the bite.",
+  "imported": "5etools"
+}

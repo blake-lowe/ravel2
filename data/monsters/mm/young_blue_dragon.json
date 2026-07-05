@@ -1,0 +1,112 @@
+{
+  "name": "Young Blue Dragon",
+  "type": "dragon",
+  "size": "Large",
+  "cr": 9,
+  "alignment": "lawful evil",
+  "ac": 18,
+  "hp": 152,
+  "hit_dice": "16d10+64",
+  "speeds": {
+    "walk": 40,
+    "fly": 80,
+    "burrow": 30
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 10,
+    "CON": 19,
+    "INT": 14,
+    "WIS": 13,
+    "CHA": 17
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 9,
+    "Stealth": 4
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 120,
+    "passive_perception": 19
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "lightning"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d10+5",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d10",
+          "type": "lightning"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Lightning Breath",
+      "shape": "line",
+      "size": 60,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "10d10",
+          "type": "lightning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "strategy": "Burrow or fly to line up multiple foes for the 60-foot Lightning Breath, then close to rend with bite-and-claws multiattack between recharges.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

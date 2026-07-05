@@ -1,0 +1,129 @@
+{
+  "name": "Steel Predator",
+  "type": "construct",
+  "size": "Large",
+  "cr": 16.0,
+  "alignment": "L N",
+  "ac": 20,
+  "hp": 207,
+  "hit_dice": "18d10+108",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 24,
+    "DEX": 17,
+    "CON": 22,
+    "INT": 4,
+    "WIS": 14,
+    "CHA": 6
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 7,
+    "Stealth": 8,
+    "Survival": 7
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 60,
+    "passive_perception": 17
+  },
+  "languages": [
+    "understands Modron and the language of its owner but can't speak"
+  ],
+  "damage_resistances": [
+    "cold",
+    "lightning",
+    "necrotic",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "poison",
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The steel predator has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The steel predator doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "2d10+7",
+          "type": "lightning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "2d8+7",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Stunning Roar",
+      "shape": "cone",
+      "size": 60,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 19,
+      "damage": [
+        {
+          "dice": "6d10",
+          "type": "thunder"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 19,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

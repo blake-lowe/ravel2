@@ -1,0 +1,64 @@
+{
+  "name": "Crocodile",
+  "type": "beast",
+  "size": "Large",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 19,
+  "hit_dice": "3d10+3",
+  "speeds": {
+    "walk": 20,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 10,
+    "CON": 13,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 2
+  },
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Hold Breath",
+      "text": "The crocodile can hold its breath for 15 minutes."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 12,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

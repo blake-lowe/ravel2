@@ -1,0 +1,69 @@
+{
+  "name": "Ogre Bolt Launcher",
+  "type": "giant",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 59,
+  "hit_dice": "7d10+21",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 12,
+    "CON": 16,
+    "INT": 5,
+    "WIS": 7,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d4+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Bolt Launcher",
+      "kind": "ranged",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "3d10+1",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        120,
+        480
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

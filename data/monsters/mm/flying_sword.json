@@ -1,0 +1,78 @@
+{
+  "name": "Flying Sword",
+  "type": "construct",
+  "size": "Small",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 17,
+  "hp": 17,
+  "hit_dice": "5d6",
+  "speeds": {
+    "walk": 0,
+    "fly": 50,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 15,
+    "CON": 11,
+    "INT": 1,
+    "WIS": 5,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX"
+  ],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 7
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison",
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Antimagic Susceptibility",
+      "text": "The sword is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the sword must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute."
+    },
+    {
+      "name": "False Appearance",
+      "text": "While the sword remains motionless and isn't flying, it is indistinguishable from a normal sword."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d8+1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

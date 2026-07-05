@@ -1,0 +1,15 @@
+{
+  "name": "Antimagic Field",
+  "level": 8,
+  "school": "abjuration",
+  "casting_time": "action",
+  "range": 0,
+  "range_type": "self",
+  "components": ["V", "S", "M"],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {"mode": "self", "affects": "self"},
+  "effects": [
+    {"kind": "antimagic", "size": 10}
+  ]
+}

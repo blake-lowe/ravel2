@@ -1,0 +1,70 @@
+{
+  "name": "Young Kruthik",
+  "type": "monstrosity",
+  "size": "Small",
+  "cr": 0.125,
+  "alignment": "U",
+  "ac": 16,
+  "hp": 9,
+  "hit_dice": "2d6+2",
+  "speeds": {
+    "walk": 30,
+    "burrow": 10,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 16,
+    "CON": 13,
+    "INT": 4,
+    "WIS": 10,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 30,
+    "tremorsense": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Kruthik"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Pack Tactics",
+      "text": "The kruthik has advantage on an attack roll against a creature if at least one of the kruthik's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    },
+    {
+      "name": "Tunneler",
+      "text": "The kruthik can burrow through solid rock at half its burrowing speed and leaves a 2\u00bd-foot-diameter tunnel in its wake."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Stab",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mpmm"
+}

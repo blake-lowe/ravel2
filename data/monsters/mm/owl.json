@@ -1,0 +1,67 @@
+{
+  "name": "Owl",
+  "type": "beast",
+  "size": "Tiny",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 1,
+  "hit_dice": "1d4-1",
+  "speeds": {
+    "walk": 5,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 3,
+    "DEX": 13,
+    "CON": 8,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Flyby",
+      "text": "The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+    },
+    {
+      "name": "Keen Hearing and Sight",
+      "text": "The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Talons",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "flyby"
+  ],
+  "imported": "5etools-mm"
+}

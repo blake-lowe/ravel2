@@ -1,0 +1,124 @@
+{
+  "name": "Banshee",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 58,
+  "hit_dice": "13d8",
+  "speeds": {
+    "walk": 0,
+    "fly": 40,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 1,
+    "DEX": 14,
+    "CON": 10,
+    "INT": 12,
+    "WIS": 11,
+    "CHA": 17
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "damage_resistances": [
+    "acid",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Detect Life",
+      "text": "The banshee can magically sense the presence of living creatures up to 5 miles away that aren't undead or constructs. She knows the general direction they're in but not their exact locations."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Corrupting Touch",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "3d6+2",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Horrifying Visage",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 13,
+        "on_fail_condition": "frightened"
+      }
+    },
+    {
+      "name": "Wail",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "zero_hp_on_fail": true
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "incorporeal": true
+}

@@ -1,0 +1,85 @@
+{
+  "name": "Death Kiss",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 10.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 142,
+  "hit_dice": "15d10+60",
+  "speeds": {
+    "walk": 0,
+    "fly": 30,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 18,
+    "INT": 10,
+    "WIS": 12,
+    "CHA": 10
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Deep Speech",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "lightning"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Blood Drain",
+      "text": "One creature grappled by a tentacle of the death kiss must make a 16 Constitution saving throw. On a failed save, the target takes 22 (4d10) lightning damage, and the death kiss regains half as many hit points."
+    },
+    {
+      "name": "Lightning Blood",
+      "text": "A creature within 5 feet of the death kiss takes 5 (1d10) lightning damage whenever it hits the death kiss with a melee attack that deals piercing or slashing damage."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 20,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacle",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

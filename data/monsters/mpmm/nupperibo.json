@@ -1,0 +1,89 @@
+{
+  "name": "Nupperibo",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "L E",
+  "ac": 13,
+  "hp": 11,
+  "hit_dice": "2d8+2",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 11,
+    "CON": 13,
+    "INT": 3,
+    "WIS": 8,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 1
+  },
+  "senses": {
+    "blindsight": 20,
+    "passive_perception": 11
+  },
+  "languages": [
+    "understands Infernal but can't speak"
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Driven Tracker",
+      "text": "In the Nine Hells, the nupperibo can flawlessly track any creature that has taken damage from any nupperibo's Cloud of Vermin within the previous 24 hours."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Cloud of Vermin",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 11,
+      "damage": [
+        {
+          "dice": "2d4",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

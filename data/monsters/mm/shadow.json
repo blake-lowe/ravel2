@@ -1,0 +1,88 @@
+{
+  "name": "Shadow",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 16,
+  "hit_dice": "3d8+3",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 14,
+    "CON": 13,
+    "INT": 6,
+    "WIS": 10,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "radiant"
+  ],
+  "condition_immunities": [
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Amorphous",
+      "text": "The shadow can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Shadow Stealth",
+      "text": "While in dim light or darkness, the shadow can take the Hide action as a bonus action. Its stealth bonus is also improved to +6."
+    },
+    {
+      "name": "Sunlight Weakness",
+      "text": "While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Strength Drain",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

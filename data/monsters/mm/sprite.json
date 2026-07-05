@@ -1,0 +1,87 @@
+{
+  "name": "Sprite",
+  "type": "fey",
+  "size": "Tiny",
+  "cr": 0.25,
+  "alignment": "N G",
+  "ac": 15,
+  "hp": 2,
+  "hit_dice": "1d4",
+  "speeds": {
+    "walk": 10,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 3,
+    "DEX": 18,
+    "CON": 10,
+    "INT": 14,
+    "WIS": 13,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 8
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Heart Sight",
+      "text": "The sprite touches a creature and magically knows the creature's current emotional state. If the target fails a 10 Charisma saving throw, the sprite also knows the creature's alignment. Celestials, fiends, and undead automatically fail the saving throw."
+    },
+    {
+      "name": "Invisibility",
+      "text": "The sprite magically turns invisible until it attacks or casts a spell, or until its concentration ends (as if concentration on a spell). Any equipment the sprite wears or carries is invisible with it."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortbow",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        40,
+        160
+      ],
+      "rider": {
+        "ability": "CON",
+        "dc": 10,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

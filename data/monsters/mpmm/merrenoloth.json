@@ -1,0 +1,125 @@
+{
+  "name": "Merrenoloth",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 40,
+  "hit_dice": "9d8",
+  "speeds": {
+    "walk": 30,
+    "swim": 40
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 17,
+    "CON": 10,
+    "INT": 17,
+    "WIS": 14,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX",
+    "INT"
+  ],
+  "skills": {
+    "History": 5,
+    "Nature": 5,
+    "Perception": 4,
+    "Survival": 4
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport (bonus)",
+      "text": "The merrenoloth teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The merrenoloth has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Oar",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d4+3",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Oar",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Fear Gaze",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 13,
+        "on_fail_condition": "frightened"
+      },
+      "max_targets": 1
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 0,
+      "Darkness": 0,
+      "Dispel Magic": 0,
+      "Gust of Wind": 0
+    }
+  },
+  "teleport_bonus": 60
+}

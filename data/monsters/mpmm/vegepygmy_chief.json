@@ -1,0 +1,123 @@
+{
+  "name": "Vegepygmy Chief",
+  "type": "plant",
+  "size": "Small",
+  "cr": 2.0,
+  "alignment": "N",
+  "ac": 14,
+  "hp": 33,
+  "hit_dice": "6d6+12",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 7,
+    "WIS": 12,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Vegepygmy"
+  ],
+  "damage_resistances": [
+    "lightning",
+    "piercing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Plant Camouflage",
+      "text": "The vegepygmy has advantage on Dexterity (Stealth) checks it makes in any terrain with ample obscuring vegetation."
+    },
+    {
+      "name": "Regeneration",
+      "text": "The vegepygmy regains 5 hit points at the start of its turn. If it takes cold, fire, or necrotic damage, this trait doesn't function at the start of the vegepygmy's next turn. The vegepygmy dies only if it starts its turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claws",
+      "count": 2
+    },
+    {
+      "name": "Spear",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Spores",
+      "shape": "sphere",
+      "size": 15,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 12,
+      "damage": [
+        {
+          "dice": "2d8",
+          "type": "poison"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "regeneration": {
+    "amount": 5,
+    "stopped_by": [
+      "cold",
+      "fire",
+      "necrotic"
+    ]
+  },
+  "imported": "5etools-mpmm"
+}

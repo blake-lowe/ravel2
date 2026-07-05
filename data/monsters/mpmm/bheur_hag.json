@@ -1,0 +1,134 @@
+{
+  "name": "Bheur Hag",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 7.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 91,
+  "hit_dice": "14d8+28",
+  "speeds": {
+    "walk": 30,
+    "fly": 50,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 16,
+    "CON": 14,
+    "INT": 12,
+    "WIS": 13,
+    "CHA": 16
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {
+    "Nature": 4,
+    "Perception": 4,
+    "Stealth": 6,
+    "Survival": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Auran",
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Control Weather (1/Day)",
+      "text": "The hag can cast the control weather spell, requiring no material components and using Charisma as the spellcasting ability."
+    },
+    {
+      "name": "Graystaff Magic",
+      "text": "The hag carries a graystaff, a magic staff. The hag can use its flying speed only while astride the staff. If the staff is lost or destroyed, the hag must craft another, which takes a year and a day. Only a bheur hag can use a graystaff"
+    },
+    {
+      "name": "Ice Walk",
+      "text": "The hag can move across and climb icy surfaces without needing to make an ability check, and difficult terrain composed of ice or snow doesn't cost the hag extra moment."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d8+1",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d8",
+          "type": "cold"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Frost Shard",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "6d8+3",
+          "type": "cold"
+        }
+      ],
+      "range": [
+        60,
+        60
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Horrific Feast",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "frightened",
+        "escalates_to": "incapacitated"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 14,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Hold Person": 0,
+      "Cone of Cold": 1,
+      "Ice Storm": 1
+    }
+  }
+}

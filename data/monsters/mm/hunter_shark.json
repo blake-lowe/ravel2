@@ -1,0 +1,63 @@
+{
+  "name": "Hunter Shark",
+  "type": "beast",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 45,
+  "hit_dice": "6d10+12",
+  "speeds": {
+    "swim": 40,
+    "walk": 0
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 15,
+    "INT": 1,
+    "WIS": 10,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Blood Frenzy",
+      "text": "The shark has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "blood_frenzy",
+    "water_breathing"
+  ],
+  "imported": "5etools-mm"
+}

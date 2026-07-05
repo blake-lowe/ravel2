@@ -1,0 +1,79 @@
+{
+  "name": "Tyrannosaurus Rex",
+  "type": "beast",
+  "size": "Huge",
+  "cr": 8.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 136,
+  "hit_dice": "13d12+52",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 25,
+    "DEX": 10,
+    "CON": 19,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 9
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "4d12+7",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 17,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "3d8+7",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

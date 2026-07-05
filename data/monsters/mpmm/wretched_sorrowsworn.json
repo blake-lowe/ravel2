@@ -1,0 +1,67 @@
+{
+  "name": "Wretched Sorrowsworn",
+  "type": "monstrosity",
+  "size": "Small",
+  "cr": 0.25,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 10,
+  "hit_dice": "4d6-4",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 12,
+    "CON": 9,
+    "INT": 5,
+    "WIS": 6,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Wretched Pack Tactics",
+      "text": "The sorrowsworn has advantage on an attack roll against a creature if at least one of the sorrowsworn's allies is within 5 feet of the creature and the ally isn't incapacitated. The sorrowsworn otherwise has disadvantage on attack rolls."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d10+1",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d10+1",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mpmm"
+}

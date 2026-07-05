@@ -1,0 +1,52 @@
+{
+  "name": "Stirge",
+  "type": "beast",
+  "size": "Tiny",
+  "cr": 0.125,
+  "alignment": "U",
+  "ac": 14,
+  "hp": 2,
+  "hit_dice": "1d4",
+  "speeds": {
+    "walk": 10,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 4,
+    "DEX": 16,
+    "CON": 11,
+    "INT": 2,
+    "WIS": 8,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Blood Drain",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

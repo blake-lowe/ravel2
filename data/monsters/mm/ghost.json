@@ -1,0 +1,119 @@
+{
+  "name": "Ghost",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "A",
+  "ac": 11,
+  "hp": 45,
+  "hit_dice": "10d8",
+  "speeds": {
+    "walk": 0,
+    "fly": 40,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 13,
+    "CON": 10,
+    "INT": 10,
+    "WIS": 12,
+    "CHA": 17
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "any languages it knew in life"
+  ],
+  "damage_resistances": [
+    "acid",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Etherealness",
+      "text": "The ghost enters the Ethereal Plane from the Material Plane, or vice versa. It is visible on the Material Plane while it is in the Border Ethereal, and vice versa, yet it can't affect or be affected by anything on the other plane."
+    },
+    {
+      "name": "Ethereal Sight",
+      "text": "The ghost can see 60 feet into the Ethereal Plane when it is on the Material Plane, and vice versa."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Withering Touch",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "4d6+3",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Horrifying Visage",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 13,
+        "on_fail_condition": "frightened"
+      }
+    },
+    {
+      "name": "Possession",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "6",
+      "rider": {
+        "ability": "CHA",
+        "dc": 13,
+        "on_fail_condition": "incapacitated"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "incorporeal": true
+}

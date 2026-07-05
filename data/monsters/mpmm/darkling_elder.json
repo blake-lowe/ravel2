@@ -1,0 +1,91 @@
+{
+  "name": "Darkling Elder",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "C N",
+  "ac": 15,
+  "hp": 27,
+  "hit_dice": "5d8+5",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 17,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 14,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Acrobatics": 5,
+    "Deception": 3,
+    "Perception": 6,
+    "Stealth": 7
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Elvish",
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scimitar",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Death Burn",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 11,
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "radiant"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 11,
+        "on_fail_condition": "blinded"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

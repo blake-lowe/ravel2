@@ -1,0 +1,128 @@
+{
+  "name": "White Abishai",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 6.0,
+  "alignment": "L E",
+  "ac": 15,
+  "hp": 68,
+  "hit_dice": "8d8+32",
+  "speeds": {
+    "walk": 30,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 11,
+    "CON": 18,
+    "INT": 11,
+    "WIS": 12,
+    "CHA": 13
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "STR",
+    "CON"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Draconic",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Vicious Reprisal (reaction)",
+      "text": "In response to taking damage, the abishai makes one Bite attack against a random creature within 5 feet of it. If no creature is within reach, the abishai moves up to half its speed toward an enemy it can see, without provoking opportunity attack."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The abishai has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Reckless",
+      "text": "At the start of its turn, the abishai can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "cold"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d10+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "force"
+        },
+        {
+          "dice": "1d10+3",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    },
+    {
+      "name": "Longsword",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,126 @@
+{
+  "name": "Nabassu",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 15.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 190,
+  "hit_dice": "20d8+100",
+  "speeds": {
+    "walk": 40,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 14,
+    "CON": 21,
+    "INT": 14,
+    "WIS": 15,
+    "CHA": 17
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "STR",
+    "DEX"
+  ],
+  "skills": {
+    "Perception": 7
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 17
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Demonic Shadows",
+      "text": "The nabassu darkens the area around its body in a 10-foot radius. Nonmagical light can't illuminate this area of dim light."
+    },
+    {
+      "name": "Devour Soul",
+      "text": "A nabassu can eat the soul of a creature it has killed within the last hour, provided that creature is neither a Construct nor an Undead. The devouring requires the nabassu to be within 5 feet of the corpse for at least 10 minutes, after which it gains a number of Hit Dice (d8s) equal to half the creature's number of Hit Dice. Roll those dice, and increase the nabassu's hit points by the numbers rolled. For every 4 Hit Dice the nabassu gains in this way, its attacks deal an extra 3 (1d6) damage on a hit. The nabassu retains these benefits for 6 days. A creature devoured by a nabassu can be restored to life only by a wish spell."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The nabassu has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "5d12+6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "4d10+6",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Soul-Stealing Gaze",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "2d12",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": null,
+      "max_targets": 1,
+      "heal_owner": true
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

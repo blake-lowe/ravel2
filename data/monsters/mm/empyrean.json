@@ -1,0 +1,106 @@
+{
+  "name": "Empyrean",
+  "type": "celestial",
+  "size": "Huge",
+  "cr": 23.0,
+  "alignment": "chaotic good (75%) or neutral evil (25%)",
+  "ac": 22,
+  "hp": 313,
+  "hit_dice": "19d12+190",
+  "speeds": {
+    "walk": 50,
+    "fly": 50,
+    "swim": 50
+  },
+  "abilities": {
+    "STR": 30,
+    "DEX": 21,
+    "CON": 30,
+    "INT": 21,
+    "WIS": 22,
+    "CHA": 27
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "STR",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Insight": 13,
+    "Persuasion": 15
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "all"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Bolt",
+      "text": "rs 15 to hit, range 600 ft., one target. 24 (7d6) damage of one of the following types (empyrean's choice): acid, cold, fire, force, lightning, radiant, or thunder."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the empyrean fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The empyrean has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The empyrean's weapon attacks are magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Maul",
+      "kind": "melee",
+      "attack_bonus": 17,
+      "damage": [
+        {
+          "dice": "6d6+10",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "CON",
+        "dc": 15,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 23,
+    "attack_bonus": 15,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fire Storm": 1
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Maul"
+  }
+}

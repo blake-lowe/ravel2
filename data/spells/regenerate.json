@@ -1,0 +1,29 @@
+{
+  "name": "Regenerate",
+  "level": 7,
+  "school": "transmutation",
+  "range": 5,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "allies"
+  },
+  "effects": [
+    {
+      "kind": "heal",
+      "damage": [
+        {
+          "dice": "4d8+15",
+          "type": "healing"
+        }
+      ]
+    }
+  ],
+  "_approx": "the 1-hp-per-round trickle over an hour is dropped.",
+  "imported": "5etools"
+}

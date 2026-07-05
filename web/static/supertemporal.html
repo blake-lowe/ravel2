@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Supertemporal Arena — Ravel</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="supertemporal">
+
+<header class="masthead">
+  <h1>Ravel</h1>
+  <p class="subtitle">the Supertemporal Arena — Shemeshka's private box above the Fortune's Wheel, where a minute buys a century</p>
+  <nav class="topnav">
+    <a href="/pit">The Blood Pit</a>
+    <a href="/bestiary">Bestiary</a>
+    <a href="/builder">Character Builder</a>
+    <a href="/supertemporal" class="active">Supertemporal</a>
+  </nav>
+</header>
+
+<main class="fw">
+
+  <!-- ====================== run status: the ledger line ====================== -->
+  <section class="frame status-strip" id="fw-status" hidden>
+    <span class="stat"><span class="lbl">purse</span><span id="st-purse"></span></span>
+    <span class="stat"><span class="lbl">lives</span><span id="st-lives"></span></span>
+    <span class="stat"><span class="lbl">battle</span><span id="st-round"></span></span>
+    <span class="stat"><span class="lbl">stock up to</span><span id="st-cap"></span></span>
+    <span class="stat"><span class="lbl">record</span><span id="st-record"></span></span>
+    <span class="stat years" id="st-years" title="1 combat round in the arena = 10 years outside"></span>
+    <span class="stat" id="st-handle"></span>
+  </section>
+
+  <!-- ====================== lobby ====================== -->
+  <section class="frame lobby" id="fw-lobby">
+    <div class="gilt-title"><span class="flourish">✦</span> The Night's Terms <span class="flourish">✦</span></div>
+    <div class="lobby-grid">
+      <fieldset>
+        <legend>Your Mark in the Book</legend>
+        <label>Name <input type="text" id="lob-handle" maxlength="40" placeholder="Anonymous Berk"></label>
+        <label>Seed <input type="number" id="lob-seed" min="0" step="1" placeholder="the house picks"></label>
+        <p class="odds-note">Five beasts to a stable. Three losses and the gate closes.
+          The stock starts at CR 1 and climbs every second battle. Every victory earns a spin.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Books on the Table</legend>
+        <div class="book-pick" id="lob-books"></div>
+        <p class="odds-note">Only the chosen books stock the shelves — and fill the other corner.</p>
+      </fieldset>
+    </div>
+    <div class="enter-row">
+      <button type="button" class="gilded" id="lob-enter">Enter the Arena</button>
+      <span class="odds-note">the gate is violet, the seats are full of immortals, and the fee is your evening</span>
+    </div>
+    <p class="error-line" id="lob-error"></p>
+  </section>
+
+  <!-- ====================== shop ====================== -->
+  <section class="frame shop" id="fw-shop" hidden>
+    <div class="gilt-title"><span class="flourish">✦</span> The Cross-Trade <span class="flourish">✦</span></div>
+    <div class="shop-grid">
+      <div class="stable-col">
+        <div class="col-title">Your Stable</div>
+        <div class="card-row" id="stable-row"></div>
+        <div class="bank-row" id="bank-row"></div>
+      </div>
+      <div class="stock-col">
+        <div class="col-title">Tonight's Stock</div>
+        <div class="card-row" id="stock-row"></div>
+        <div class="itemshelf" id="item-shelf"></div>
+        <div class="shop-actions">
+          <button type="button" id="btn-reroll"></button>
+          <span class="odds-note">❄ freezes a shelf through the reroll</span>
+        </div>
+      </div>
+    </div>
+    <div class="lower-row">
+      <div>
+        <div class="col-title">Foresight</div>
+        <div class="fore-strip" id="fore-strip"></div>
+      </div>
+      <div>
+        <div class="col-title">The Bill — tonight's opposition</div>
+        <div class="bill" id="the-bill"></div>
+      </div>
+      <button type="button" class="gilded to-sands" id="btn-sands">To the Sands ⚔</button>
+    </div>
+    <p class="error-line" id="shop-error"></p>
+  </section>
+
+  <!-- ====================== the sands: deploy, then replay ====================== -->
+  <section class="frame sands" id="fw-sands" hidden>
+    <div class="gilt-title"><span class="flourish">✦</span> The Sands <span class="flourish">✦</span></div>
+    <div class="sands-grid">
+      <div class="board-wrap"><div id="fw-board"></div></div>
+      <div class="sands-side">
+        <div id="sands-brief"></div>
+        <div id="sands-verdict"></div>
+        <div class="replay-controls" id="deploy-controls">
+          <button type="button" class="gilded" id="btn-gong">Sound the Gong</button>
+          <button type="button" id="btn-back-shop">back to the shop</button>
+        </div>
+        <div class="replay-controls" id="replay-controls" hidden>
+          <button type="button" id="rp-play">▶</button>
+          <select id="rp-speed">
+            <option value="400">slow</option>
+            <option value="180" selected>steady</option>
+            <option value="60">swift</option>
+          </select>
+          <button type="button" id="rp-skip">to the judgment</button>
+          <button type="button" id="rp-done" hidden>continue</button>
+          <span id="rp-round"></span>
+        </div>
+        <pre class="fightlog" id="fw-log" hidden></pre>
+        <p class="error-line" id="sands-error"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== game over ====================== -->
+  <section class="frame" id="fw-over" hidden>
+    <div class="gilt-title"><span class="flourish">✦</span> The Gate Closes <span class="flourish">✦</span></div>
+    <p id="over-line"></p>
+    <button type="button" class="gilded" id="btn-again">Another evening</button>
+  </section>
+
+  <!-- ====================== the Book of Ages ====================== -->
+  <section class="frame ages" id="fw-ages">
+    <div class="gilt-title"><span class="flourish">✦</span> The Book of Ages <span class="flourish">✦</span></div>
+    <div id="ages-body"><p class="odds-note">No stable has yet left the arena. The page waits.</p></div>
+  </section>
+
+</main>
+
+<!-- ====================== the wheel (overlay) ====================== -->
+<div class="fw-veil" id="fw-veil" hidden>
+  <div class="frame wheel-card">
+    <h2>Fortune's Wheel</h2>
+    <p class="whisper">three rings, gold on gold — the outer pays small, the middle pays fair, and the center pays in years</p>
+    <svg id="fw-wheel" viewBox="-110 -118 220 228"></svg>
+    <p class="prize-line" id="wheel-prize"></p>
+    <button type="button" class="gilded" id="btn-spin">Spin</button>
+    <button type="button" id="btn-wheel-done" hidden>collect &amp; return to the shop</button>
+  </div>
+</div>
+
+<script src="/static/supertemporal.js"></script>
+</body>
+</html>

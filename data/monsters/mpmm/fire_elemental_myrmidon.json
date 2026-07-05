@@ -1,0 +1,83 @@
+{
+  "name": "Fire Elemental Myrmidon",
+  "type": "elemental",
+  "size": "Medium",
+  "cr": 7.0,
+  "alignment": "N",
+  "ac": 18,
+  "hp": 123,
+  "hit_dice": "19d8+38",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 18,
+    "CON": 15,
+    "INT": 9,
+    "WIS": 10,
+    "CHA": 10
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Ignan",
+    "one language of its creator's choice"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Fiery Strikes {@recharge}",
+      "text": "The myrmidon uses Multiattack. Each attack that hits deals an extra 7 (2d6) fire damage."
+    },
+    {
+      "name": "Illumination",
+      "text": "The myrmidon sheds bright light in a 20-foot radius and dim light in a 40-foot radius."
+    },
+    {
+      "name": "Water Susceptibility",
+      "text": "For every 5 feet the myrmidon moves in 1 foot or more of water, it takes 2 (1d4) cold damage."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scimitar",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

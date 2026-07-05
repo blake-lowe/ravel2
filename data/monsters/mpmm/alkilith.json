@@ -1,0 +1,109 @@
+{
+  "name": "Alkilith",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 11.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 168,
+  "hit_dice": "16d8+96",
+  "speeds": {
+    "walk": 40,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 19,
+    "CON": 22,
+    "INT": 6,
+    "WIS": 11,
+    "CHA": 7
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON"
+  ],
+  "skills": {
+    "Stealth": 8
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Abyssal Rift",
+      "text": "If the alkilith surrounds a door, window, or similar opening continuously for 6d6 days, the opening becomes a permanent portal to a random layer of the Abyss."
+    },
+    {
+      "name": "Amorphous",
+      "text": "The alkilith can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "False Appearance",
+      "text": "If the alkilith is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the alkilith move or act, that creature must succeed on a 18 Intelligence (Investigation) check to discern that the alkilith isn't ordinary slime or fungus."
+    },
+    {
+      "name": "Foment Confusion",
+      "text": "Any creature that isn't a demon that starts its turn within 30 feet of the alkilith must succeed on a 18 Wisdom saving throw, or it hears a faint buzzing in its head for a moment and has disadvantage on its next attack roll, saving throw, or ability check. If the saving throw against Foment Confusion fails by 5 or more, the creature is instead subjected to the confusion spell for 1 minute (no concentration required by the alkilith). While under the effect of that confusion, the creature is immune to Foment Confusion."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The alkilith has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The alkilith can climb difficult surfaces, such as upside down on ceilings, without making an ability check."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The alkilith doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "4d6+4",
+          "type": "acid"
+        }
+      ],
+      "reach": 15
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacle",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance",
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

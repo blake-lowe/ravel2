@@ -1,0 +1,102 @@
+{
+  "name": "Gazer",
+  "type": "aberration",
+  "size": "Tiny",
+  "cr": 0.5,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 13,
+  "hit_dice": "3d4+6",
+  "speeds": {
+    "walk": 0,
+    "fly": 30,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 3,
+    "DEX": 17,
+    "CON": 14,
+    "INT": 3,
+    "WIS": 10,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Aggressive (bonus)",
+      "text": "The gazer moves up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Mimicry",
+      "text": "The gazer can mimic simple sounds of speech it has heard, in any language. A creature that hears the sounds can tell they are imitations with a successful 10 Wisdom (Insight) check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "eye_rays": [
+    {
+      "name": "1: Dazing Ray",
+      "ability": "WIS",
+      "dc": 12,
+      "condition": "charmed",
+      "save_ends": false
+    },
+    {
+      "name": "2: Fear Ray",
+      "ability": "WIS",
+      "dc": 12,
+      "condition": "frightened",
+      "save_ends": false
+    },
+    {
+      "name": "3: Frost Ray",
+      "ability": "DEX",
+      "dc": 12,
+      "damage": {
+        "dice": "3d6",
+        "type": "cold"
+      },
+      "half_on_save": false
+    },
+    {
+      "name": "4: Telekinetic Ray",
+      "ability": "STR",
+      "dc": 12
+    }
+  ],
+  "eye_ray_count": 2,
+  "eye_ray_range": 60,
+  "imported": "5etools-mpmm"
+}

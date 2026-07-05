@@ -1,0 +1,133 @@
+{
+  "name": "Oinoloth",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 12.0,
+  "alignment": "N E",
+  "ac": 17,
+  "hp": 119,
+  "hit_dice": "14d8+56",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 17,
+    "CON": 18,
+    "INT": 17,
+    "WIS": 16,
+    "CHA": 19
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Deception": 8,
+    "Intimidation": 8,
+    "Perception": 7
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 60,
+    "passive_perception": 17
+  },
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Corrupted Healing {@recharge}",
+      "text": "The oinoloth touches one willing creature within 5 feet of it. The target regains all its hit points. In addition, the oinoloth can end one disease on the target or remove one of the following conditions from it: blinded, deafened, paralyzed, or poisoned. The target then gains 1 level of exhaustion, and its hit point maximum is reduced by 7 (2d6). This reduction can be removed only by a wish spell or by casting greater restoration on the target three times within the same hour. The target dies if its hit point maximum is reduced to 0."
+    },
+    {
+      "name": "Teleport",
+      "text": "The oinoloth teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The oinoloth has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "3d6+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "4d10",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Bringer of Plagues (bonus)",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "poison"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 16,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 0,
+      "Dispel Magic": 0,
+      "Hold Monster": 0
+    }
+  }
+}

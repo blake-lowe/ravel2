@@ -1,0 +1,133 @@
+{
+  "name": "Drider",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 6.0,
+  "alignment": "C E",
+  "ac": 19,
+  "hp": 123,
+  "hit_dice": "13d10+52",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 16,
+    "CON": 18,
+    "INT": 13,
+    "WIS": 14,
+    "CHA": 12
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5,
+    "Stealth": 9
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "text": "The drider has advantage on saving throws against being charmed, and magic can't put the drider to sleep."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The drider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    },
+    {
+      "name": "Web Walker",
+      "text": "The drider ignores movement restrictions caused by webbing."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d8",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8",
+          "type": "poison"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 1,
+      "Faerie Fire": 1
+    }
+  },
+  "save_advantages": [
+    "charmed"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

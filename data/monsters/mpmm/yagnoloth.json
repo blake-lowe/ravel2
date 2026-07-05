@@ -1,0 +1,154 @@
+{
+  "name": "Yagnoloth",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 11.0,
+  "alignment": "N E",
+  "ac": 17,
+  "hp": 147,
+  "hit_dice": "14d10+70",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 14,
+    "CON": 21,
+    "INT": 16,
+    "WIS": 15,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 8,
+    "Insight": 6,
+    "Perception": 6,
+    "Persuasion": 8
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 60,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Battlefield Cunning {@recharge 4}",
+      "text": "Up to two allied yugoloths within 60 feet of the yagnoloth that can hear it can use their reactions to make one melee attack each."
+    },
+    {
+      "name": "Teleport",
+      "text": "The yagnoloth teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The yagnoloth has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Electrified Touch",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "6d8",
+          "type": "lightning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Massive Arm",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "3d12+4",
+          "type": "force"
+        }
+      ],
+      "reach": 15,
+      "rider": {
+        "ability": "CON",
+        "dc": 16,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Electrified Touch",
+      "count": 1
+    },
+    {
+      "name": "Massive Arm",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Life Leech",
+      "shape": "sphere",
+      "size": 15,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "7d8+4",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CON",
+        "dc": 16,
+        "on_fail_condition": "incapacitated"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 0,
+      "Dispel Magic": 0,
+      "Suggestion": 0,
+      "Lightning Bolt": 3
+    }
+  }
+}

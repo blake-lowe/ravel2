@@ -1,0 +1,109 @@
+{
+  "name": "Drow Inquisitor",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 14.0,
+  "alignment": "N E",
+  "ac": 16,
+  "hp": 149,
+  "hit_dice": "23d8+46",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 15,
+    "CON": 14,
+    "INT": 16,
+    "WIS": 21,
+    "CHA": 20
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Insight": 10,
+    "Perception": 10,
+    "Religion": 8,
+    "Stealth": 7
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 20
+  },
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Spectral Dagger (Recharges after a Short or Long Rest) (bonus)",
+      "text": "The drow conjures a floating, spectral dagger within 60 feet of itself. The drow can make a melee spell attack (10 to hit) against one creature within 5 feet of the dagger. On a hit, the target takes 9 (1d8 + 5) force damage. The dagger lasts for 1 minute. As a bonus action on later turns, the drow can move the dagger up to 20 feet and repeat the attack against one creature within 5 feet of the dagger."
+    },
+    {
+      "name": "Discern Lie",
+      "text": "The drow discerns when a creature in earshot speaks a lie in a language the drow knows."
+    },
+    {
+      "name": "Fey Ancestry",
+      "text": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Death Lance",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "1d6+5",
+          "type": "piercing"
+        },
+        {
+          "dice": "4d8",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5,
+      "reduces_max_hp": true
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Death Lance",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 18,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 1,
+      "Dispel Magic": 1,
+      "Faerie Fire": 1,
+      "Silence": 1,
+      "Suggestion": 1
+    }
+  },
+  "save_advantages": [
+    "charmed"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

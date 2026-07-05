@@ -1,0 +1,95 @@
+{
+  "name": "Derro Savant",
+  "type": "aberration",
+  "size": "Small",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 36,
+  "hit_dice": "8d6+8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 9,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 5,
+    "CHA": 14
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 7
+  },
+  "languages": [
+    "Dwarvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The derro has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "kind": "melee",
+      "attack_bonus": 1,
+      "damage": [
+        {
+          "dice": "1d6-1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Chromatic Beam",
+      "shape": "line",
+      "size": 60,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 12,
+      "damage": [
+        {
+          "dice": "6d6",
+          "type": "radiant"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "sunlight_sensitivity"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Invisibility": 1,
+      "Sleep": 1
+    }
+  }
+}

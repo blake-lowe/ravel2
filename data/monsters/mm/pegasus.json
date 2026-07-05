@@ -1,0 +1,62 @@
+{
+  "name": "Pegasus",
+  "type": "celestial",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "C G",
+  "ac": 12,
+  "hp": 59,
+  "hit_dice": "7d10+21",
+  "speeds": {
+    "walk": 60,
+    "fly": 90
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 15,
+    "CON": 16,
+    "INT": 10,
+    "WIS": 15,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 6
+  },
+  "senses": {
+    "passive_perception": 16
+  },
+  "languages": [
+    "understands Celestial",
+    "Common",
+    "Elvish",
+    "and Sylvan but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

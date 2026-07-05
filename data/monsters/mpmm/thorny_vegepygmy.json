@@ -1,0 +1,78 @@
+{
+  "name": "Thorny Vegepygmy",
+  "type": "plant",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "N",
+  "ac": 14,
+  "hp": 27,
+  "hit_dice": "5d8+5",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 12,
+    "CON": 13,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [],
+  "damage_resistances": [
+    "lightning",
+    "piercing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Plant Camouflage",
+      "text": "The thorny has advantage on Dexterity (Stealth) checks it makes in any terrain with ample obscuring vegetation."
+    },
+    {
+      "name": "Regeneration",
+      "text": "The thorny regains 5 hit points at the start of its turn. If it takes cold, fire, or necrotic damage, this trait doesn't function at the start of the thorny's next turn. The thorny dies only if it starts its turn with 0 hit points and doesn't regenerate."
+    },
+    {
+      "name": "Thorny Body",
+      "text": "At the start of its turn, the thorny deals 2 (1d4) piercing damage to any creature grappling it."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d8+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "regeneration": {
+    "amount": 5,
+    "stopped_by": [
+      "cold",
+      "fire",
+      "necrotic"
+    ]
+  },
+  "imported": "5etools-mpmm"
+}

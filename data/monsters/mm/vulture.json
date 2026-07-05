@@ -1,0 +1,65 @@
+{
+  "name": "Vulture",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 10,
+  "hp": 5,
+  "hit_dice": "1d8+1",
+  "speeds": {
+    "walk": 10,
+    "fly": 50
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 10,
+    "CON": 13,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Sight and Smell",
+      "text": "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell."
+    },
+    {
+      "name": "Pack Tactics",
+      "text": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 feet of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "pack_tactics"
+  ],
+  "imported": "5etools-mm"
+}

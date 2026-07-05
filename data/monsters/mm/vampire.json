@@ -1,0 +1,138 @@
+{
+  "name": "Vampire",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 13.0,
+  "alignment": "L E",
+  "ac": 16,
+  "hp": 144,
+  "hit_dice": "17d8+68",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 18,
+    "CON": 18,
+    "INT": 17,
+    "WIS": 15,
+    "CHA": 18
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 7,
+    "Stealth": 9
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 17
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "necrotic"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Children of the Night (1/Day)",
+      "text": "The vampire magically calls 2d4 swarms of swarm of bats or swarm of rats, provided that the sun isn't up. While outdoors, the vampire can call 3d6 wolf instead. The called creatures arrive in 1d4 rounds, acting as allies of the vampire and obeying its spoken commands. The beasts remain for 1 hour, until the vampire dies, or until the vampire dismisses them as a bonus action."
+    },
+    {
+      "name": "Shapechanger",
+      "text": "If the vampire isn't in sunlight or running water, it can use its action to polymorph into a Tiny bat or a Medium cloud of mist, or back into its true form. While in bat form, the vampire can't speak, its walking speed is 5 feet, and it has a flying speed of 30 feet. Its statistics, other than its size and speed, are unchanged. Anything it is wearing transforms with it, but nothing it is carrying does. It reverts to its true form if it dies. While in mist form, the vampire can't take any actions, speak, or manipulate objects. It is weightless, has a flying speed of 20 feet, can hover, and can enter a hostile creature's space and stop there. In addition, if air can pass through a space, the mist can do so without squeezing, and it can't pass through water. It has advantage on Strength, Dexterity, and Constitution saving throws, and it is immune to all nonmagical damage, except the damage it takes from sunlight."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the vampire fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Regeneration",
+      "text": "The vampire regains 20 hit points at the start of its turn if it has at least 1 hit point and isn't in sunlight or running water. If the vampire takes radiant damage or damage from Holy Water (Flask), this trait doesn't function at the start of the vampire's next turn."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    },
+    {
+      "name": "Vampire Weaknesses",
+      "text": "The vampire has the following flaws: Forbiddance: Harmed by Running Water: Stake to the Heart: Sunlight Hypersensitivity:"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Unarmed Strike (Vampire Form Only)",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Bite (Bat or Vampire Form Only)",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5,
+      "reduces_max_hp": true
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Charm",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 17,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 17,
+        "on_fail_condition": "charmed"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 20,
+    "stopped_by": [
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Unarmed Strike (Vampire Form Only)"
+  },
+  "triggered_abilities": [
+    "misty_escape"
+  ]
+}

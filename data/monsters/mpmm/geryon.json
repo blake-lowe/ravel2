@@ -1,0 +1,152 @@
+{
+  "name": "Geryon",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 22.0,
+  "alignment": "L E",
+  "ac": 19,
+  "hp": 300,
+  "hit_dice": "24d12+144",
+  "speeds": {
+    "walk": 30,
+    "fly": 50
+  },
+  "abilities": {
+    "STR": 29,
+    "DEX": 17,
+    "CON": 22,
+    "INT": 19,
+    "WIS": 16,
+    "CHA": 23
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 13,
+    "Intimidation": 13,
+    "Perception": 10
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 20
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold",
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "Geryon teleports, along with any equipment he is wearing and carrying, up to 120 feet to an unoccupied space he can see."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Geryon fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Geryon has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Regeneration",
+      "text": "Geryon regains 20 hit points at the start of his turn. If he takes radiant damage, this trait doesn't function at the start of his next turn. Geryon dies only if he starts his turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "4d6+9",
+          "type": "cold"
+        },
+        {
+          "dice": "6d8",
+          "type": "cold"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Stinger",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "2d4+9",
+          "type": "force"
+        },
+        {
+          "dice": "2d12",
+          "type": "poison"
+        }
+      ],
+      "reach": 20,
+      "rider": {
+        "ability": "CON",
+        "dc": 21,
+        "on_fail_condition": "poisoned"
+      },
+      "reduces_max_hp": true
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 1
+    },
+    {
+      "name": "Stinger",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 20,
+    "stopped_by": [
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 21,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Ice Storm": 0,
+      "Suggestion": 0,
+      "Banishment": 1
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Claw"
+  }
+}

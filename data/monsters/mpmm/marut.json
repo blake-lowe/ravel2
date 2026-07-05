@@ -1,0 +1,137 @@
+{
+  "name": "Marut",
+  "type": "construct",
+  "size": "Large",
+  "cr": 25.0,
+  "alignment": "L N",
+  "ac": 22,
+  "hp": 432,
+  "hit_dice": "32d10+256",
+  "speeds": {
+    "walk": 40,
+    "fly": 30,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 28,
+    "DEX": 12,
+    "CON": 26,
+    "INT": 19,
+    "WIS": 15,
+    "CHA": 18
+  },
+  "proficiency_bonus": 8,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Insight": 10,
+    "Intimidation": 12,
+    "Perception": 10
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 20
+  },
+  "languages": [
+    "all but rarely speaks"
+  ],
+  "damage_resistances": [
+    "thunder"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Immutable Form",
+      "text": "The marut is immune to any spell or effect that would alter its form."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the marut fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The marut has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The marut doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Unerring Slam",
+      "kind": "melee",
+      "attack_bonus": 0,
+      "damage": [
+        {
+          "dice": "60d1",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Unerring Slam",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Blazing Edict",
+      "shape": "cube",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 20,
+      "damage": [
+        {
+          "dice": "45d1",
+          "type": "radiant"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 20,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 20,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Plane Shift": 3
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 0,
+    "attack": ""
+  }
+}

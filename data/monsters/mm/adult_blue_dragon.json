@@ -1,0 +1,148 @@
+{
+  "name": "Adult Blue Dragon",
+  "type": "dragon",
+  "size": "Huge",
+  "cr": 16.0,
+  "alignment": "L E",
+  "ac": 19,
+  "hp": 225,
+  "hit_dice": "18d12+108",
+  "speeds": {
+    "walk": 40,
+    "burrow": 30,
+    "fly": 80
+  },
+  "abilities": {
+    "STR": 25,
+    "DEX": 10,
+    "CON": 23,
+    "INT": 16,
+    "WIS": 15,
+    "CHA": 19
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 12,
+    "Stealth": 5
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 120,
+    "passive_perception": 22
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "lightning"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the dragon fails a saving throw, it can choose to succeed instead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "2d10+7",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d10",
+          "type": "lightning"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "2d6+7",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "2d8+7",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 15
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Lightning Breath",
+      "shape": "line",
+      "size": 90,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 19,
+      "damage": [
+        {
+          "dice": "12d10",
+          "type": "lightning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  },
+  "frightful_presence": {
+    "name": "Frightful Presence",
+    "shape": "sphere",
+    "size": 120,
+    "origin_range": 0,
+    "save": "WIS",
+    "dc": 17,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": {
+      "ability": "WIS",
+      "dc": 17,
+      "on_fail_condition": "frightened"
+    }
+  }
+}

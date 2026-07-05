@@ -1,0 +1,13 @@
+{
+  "name": "Dispel Magic",
+  "level": 3,
+  "school": "abjuration",
+  "casting_time": "action",
+  "range": 120,
+  "components": ["V", "S"],
+  "target": {"mode": "single", "affects": "enemies"},
+  "effects": [
+    {"kind": "dispel"}
+  ],
+  "scaling": {"mode": "none", "amount": 0}
+}

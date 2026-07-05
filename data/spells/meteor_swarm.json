@@ -1,0 +1,35 @@
+{
+  "name": "Meteor Swarm",
+  "level": 9,
+  "school": "evocation",
+  "range": 0,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 40,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "damage": [
+        {
+          "dice": "20d6",
+          "type": "fire"
+        },
+        {
+          "dice": "20d6",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

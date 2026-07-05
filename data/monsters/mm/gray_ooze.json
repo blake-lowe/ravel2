@@ -1,0 +1,84 @@
+{
+  "name": "Gray Ooze",
+  "type": "ooze",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 8,
+  "hp": 22,
+  "hit_dice": "3d8+9",
+  "speeds": {
+    "walk": 10,
+    "climb": 10
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 6,
+    "CON": 16,
+    "INT": 1,
+    "WIS": 6,
+    "CHA": 2
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 2
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 8
+  },
+  "languages": [],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Amorphous",
+      "text": "The ooze can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Corrode Metal",
+      "text": "Any nonmagical weapon made of metal that hits the ooze corrodes. After dealing damage, the weapon takes a permanent and cumulative \u22121 penalty to damage rolls. If its penalty drops to \u22125, the weapon is destroyed. Nonmagical ammunition made of metal that hits the ooze is destroyed after dealing damage. The ooze can eat through 2-inch-thick, nonmagical metal in 1 round."
+    },
+    {
+      "name": "False Appearance",
+      "text": "While the ooze remains motionless, it is indistinguishable from an oily pool or wet rock."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

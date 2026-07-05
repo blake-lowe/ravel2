@@ -1,0 +1,90 @@
+{
+  "name": "Wood Woad",
+  "type": "plant",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "L N",
+  "ac": 18,
+  "hp": 75,
+  "hit_dice": "10d8+30",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 12,
+    "CON": 16,
+    "INT": 10,
+    "WIS": 13,
+    "CHA": 8
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 7,
+    "Perception": 4,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Sylvan"
+  ],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Plant Camouflage",
+      "text": "The wood woad has advantage on Dexterity (Stealth) checks it makes in any terrain with ample obscuring vegetation."
+    },
+    {
+      "name": "Regeneration",
+      "text": "The wood woad regains 10 hit points at the start of its turn if it is in contact with the ground. If the wood woad takes fire damage, this trait doesn't function at the start of the wood woad's next turn. The wood woad dies only if it starts its turn with 0 hit points and doesn't regenerate."
+    },
+    {
+      "name": "Tree Stride",
+      "text": "Once on each of its turns, the wood woad can use 10 feet of its movement to step magically into one living tree within 5 feet of it and emerge from a second living tree within 60 feet of it that it can see, appearing in an unoccupied space within 5 feet of the second tree. Both trees must be Large or bigger."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d4+4",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Club",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "regeneration": {
+    "amount": 10,
+    "stopped_by": [
+      "fire"
+    ]
+  },
+  "imported": "5etools-mpmm"
+}

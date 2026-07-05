@@ -1,0 +1,94 @@
+{
+  "name": "Bugbear Chief",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 65,
+  "hit_dice": "10d8+20",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 11,
+    "WIS": 12,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Intimidation": 2,
+    "Stealth": 6,
+    "Survival": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Brute",
+      "text": "A melee weapon deals one extra die of its damage when the bugbear hits with it (included in the attack)."
+    },
+    {
+      "name": "Surprise Attack",
+      "text": "If the bugbear surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack."
+    },
+    {
+      "name": "Heart of Hruggek",
+      "text": "The bugbear has advantage on saving throws against being charmed, frightened, paralyzed, poisoned, stunned, or put to sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Morningstar",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Javelin",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "save_advantages": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "stunned"
+  ]
+}

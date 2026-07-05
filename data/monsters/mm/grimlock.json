@@ -1,0 +1,76 @@
+{
+  "name": "Grimlock",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "N E",
+  "ac": 11,
+  "hp": 11,
+  "hit_dice": "2d8+2",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 12,
+    "INT": 9,
+    "WIS": 8,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 5,
+    "Perception": 3,
+    "Stealth": 3
+  },
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded"
+  ],
+  "traits": [
+    {
+      "name": "Blind Senses",
+      "text": "The grimlock can't use its blindsight while deafened and unable to smell."
+    },
+    {
+      "name": "Keen Hearing and Smell",
+      "text": "The grimlock has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    },
+    {
+      "name": "Stone Camouflage",
+      "text": "The grimlock has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spiked Bone Club",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

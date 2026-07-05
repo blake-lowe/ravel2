@@ -1,0 +1,81 @@
+{
+  "name": "Grick",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "N",
+  "ac": 14,
+  "hp": 27,
+  "hit_dice": "6d8",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 14,
+    "CON": 11,
+    "INT": 3,
+    "WIS": 14,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Stone Camouflage",
+      "text": "The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Beak",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacles",
+      "count": 1
+    },
+    {
+      "name": "Beak",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

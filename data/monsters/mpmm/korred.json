@@ -1,0 +1,117 @@
+{
+  "name": "Korred",
+  "type": "fey",
+  "size": "Small",
+  "cr": 7.0,
+  "alignment": "C N",
+  "ac": 17,
+  "hp": 93,
+  "hit_dice": "11d6+55",
+  "speeds": {
+    "walk": 30,
+    "burrow": 30
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 14,
+    "CON": 20,
+    "INT": 10,
+    "WIS": 15,
+    "CHA": 9
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 9,
+    "Perception": 5,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "tremorsense": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Dwarvish",
+    "Gnomish",
+    "Sylvan",
+    "Terran",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Stone Camouflage",
+      "text": "The korred has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greatclub",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d8+6",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d8+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d8+6",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d8+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatclub",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Command Hair (bonus)",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 13,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "DEX",
+        "dc": 13,
+        "on_fail_condition": "grappled",
+        "escalates_to": "incapacitated"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

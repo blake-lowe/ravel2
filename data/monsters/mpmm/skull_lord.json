@@ -1,0 +1,133 @@
+{
+  "name": "Skull Lord",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 15.0,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 112,
+  "hit_dice": "15d8+45",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 16,
+    "CON": 17,
+    "INT": 16,
+    "WIS": 15,
+    "CHA": 21
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 7,
+    "History": 8,
+    "Perception": 12,
+    "Stealth": 8
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 22
+  },
+  "languages": [
+    "all the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "cold",
+    "necrotic"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "poisoned",
+    "stunned",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Evasion",
+      "text": "If the skull lord is subjected to an effect that allows it to make a Dexterity saving throw to take only half the damage, the skull lord instead takes no damage if it succeeds on the saving throw and only half damage if it fails, provided it isn't incapacitated."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the skull lord fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Master of the Grave",
+      "text": "While within 30 feet of the skull lord, any Undead ally of the skull lord makes saving throws with advantage, and that ally regains 1d6 hit points whenever it starts its turn there."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The skull lord doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bone Staff",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "6d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Deathly Ray",
+      "kind": "ranged",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "5d8+5",
+          "type": "necrotic"
+        }
+      ],
+      "range": [
+        60,
+        60
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bone Staff",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 18,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fear": 2,
+      "Cloudkill": 1,
+      "Cone of Cold": 1
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bone Staff"
+  }
+}

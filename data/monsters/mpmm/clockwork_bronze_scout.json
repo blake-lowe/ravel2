@@ -1,0 +1,103 @@
+{
+  "name": "Clockwork Bronze Scout",
+  "type": "construct",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 36,
+  "hit_dice": "8d8",
+  "speeds": {
+    "walk": 30,
+    "burrow": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 16,
+    "CON": 11,
+    "INT": 3,
+    "WIS": 14,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 6,
+    "Stealth": 7
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 16
+  },
+  "languages": [
+    "understands one language of its creator but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Earth Armor",
+      "text": "The clockwork doesn't provoke opportunity attack when it burrows."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The clockwork has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The clockwork doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "lightning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Lightning Flare",
+      "shape": "sphere",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "lightning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "once",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm"
+}

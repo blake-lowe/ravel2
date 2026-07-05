@@ -1,0 +1,91 @@
+{
+  "name": "Meazel",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 35,
+  "hit_dice": "10d8-10",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 17,
+    "CON": 9,
+    "INT": 14,
+    "WIS": 13,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Common"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Shadow Teleport {@recharge 5}",
+      "text": "The meazel, any equipment it is wearing or carrying, and any creature it is grappling teleport to an unoccupied space within 500 feet of it, provided that the starting space and the destination are in dim light or darkness. The destination must be a place the meazel has seen before, but it need not be within line of sight. If the destination space is occupied, the teleportation leads to the nearest unoccupied space. Any other creature the meazel teleports becomes cursed for 1 hour or until the curse is ended by remove curse or greater restoration. Until this curse ends, every Undead and every creature native to the Shadowfell within 300 feet of the cursed creature can sense it, which prevents that creature from hiding from them."
+    },
+    {
+      "name": "Shadow Stealth (bonus)",
+      "text": "While in dim light or darkness, the meazel takes the Hide action."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Garrote",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 13,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    },
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

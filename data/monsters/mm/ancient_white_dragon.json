@@ -1,0 +1,153 @@
+{
+  "name": "Ancient White Dragon",
+  "type": "dragon",
+  "size": "Gargantuan",
+  "cr": 20.0,
+  "alignment": "C E",
+  "ac": 20,
+  "hp": 333,
+  "hit_dice": "18d20+144",
+  "speeds": {
+    "walk": 40,
+    "burrow": 40,
+    "fly": 80,
+    "swim": 40
+  },
+  "abilities": {
+    "STR": 26,
+    "DEX": 10,
+    "CON": 26,
+    "INT": 10,
+    "WIS": 13,
+    "CHA": 14
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 13,
+    "Stealth": 6
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 120,
+    "passive_perception": 23
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Ice Walk",
+      "text": "The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost it extra movement."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the dragon fails a saving throw, it can choose to succeed instead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "2d10+8",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d8",
+          "type": "cold"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "2d6+8",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "2d8+8",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 20
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Cold Breath",
+      "shape": "cone",
+      "size": 90,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 22,
+      "damage": [
+        {
+          "dice": "16d8",
+          "type": "cold"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  },
+  "frightful_presence": {
+    "name": "Frightful Presence",
+    "shape": "sphere",
+    "size": 120,
+    "origin_range": 0,
+    "save": "WIS",
+    "dc": 16,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": {
+      "ability": "WIS",
+      "dc": 16,
+      "on_fail_condition": "frightened"
+    }
+  }
+}

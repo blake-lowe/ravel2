@@ -1,0 +1,28 @@
+{
+  "name": "Hex",
+  "level": 1,
+  "school": "enchantment",
+  "range": 90,
+  "casting_time": "bonus",
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "mark",
+      "modifier": {
+        "damage_rider": {
+          "dice": "1d6",
+          "type": "necrotic"
+        }
+      }
+    }
+  ]
+}

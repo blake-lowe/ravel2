@@ -1,0 +1,85 @@
+{
+  "name": "Fomorian",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 8.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 149,
+  "hit_dice": "13d12+65",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 10,
+    "CON": 20,
+    "INT": 9,
+    "WIS": 14,
+    "CHA": 6
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 8,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 18
+  },
+  "languages": [
+    "Giant",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Curse of the Evil Eye (Recharges after a Short or Long Rest)",
+      "text": "With a stare, the fomorian uses Evil Eye, but on a failed save, the creature is also cursed with magical deformities. While deformed, the creature has its speed halved and has disadvantage on ability checks, saving throws, and attacks based on Strength or Dexterity. The transformed creature can repeat the saving throw whenever it finishes a long rest, ending the effect on a success."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greatclub",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "3d8+6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 15
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatclub",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Evil Eye",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 14,
+      "damage": [
+        {
+          "dice": "6d8",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Dolphin Delighter",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "C G",
+  "ac": 14,
+  "hp": 27,
+  "hit_dice": "5d8+5",
+  "speeds": {
+    "walk": 0,
+    "swim": 60
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 13,
+    "CON": 13,
+    "INT": 11,
+    "WIS": 12,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 3,
+    "Performance": 5
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Aquan",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Delightful Light {@recharge 5} (bonus)",
+      "text": "The dolphin magically emanates light in a 10-foot radius for a moment. The dolphin and each creature of its choice in that light gain 11 (2d10) temporary hit points."
+    },
+    {
+      "name": "Fey Leap (bonus)",
+      "text": "The dolphin teleports up to 30 feet to an unoccupied space it can see. Immediately before teleporting, the dolphin can choose one creature within 5 feet of it. That creature can teleport with the dolphin, appearing in an unoccupied space within 5 feet of the dolphin's destination space."
+    },
+    {
+      "name": "Hold Breath",
+      "text": "The dolphin can hold its breath for 20 minutes."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dazzling Slam",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Dazzling Slam",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "teleport_bonus": 30
+}

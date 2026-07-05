@@ -1,0 +1,114 @@
+{
+  "name": "Slithering Tracker",
+  "type": "ooze",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 39,
+  "hit_dice": "6d8+12",
+  "speeds": {
+    "walk": 30,
+    "climb": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 19,
+    "CON": 15,
+    "INT": 10,
+    "WIS": 14,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 8,
+    "Survival": 6
+  },
+  "senses": {
+    "blindsight": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "understands languages it knew in its previous form but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [
+    "cold",
+    "fire"
+  ],
+  "condition_immunities": [
+    "blinded",
+    "deafened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Watery Stealth (bonus)",
+      "text": "If underwater, the slithering tracker takes the Hide action, and it makes the Dexterity (Stealth) check with advantage."
+    },
+    {
+      "name": "False Appearance",
+      "text": "If the slithering tracker is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the slithering tracker move or act, that creature must succeed on a 18 Intelligence (Investigation) check to discern that the slithering tracker isn't a puddle."
+    },
+    {
+      "name": "Liquid Form",
+      "text": "The slithering tracker can enter an enemy's space and stop there. It can also move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The slithering tracker can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d10+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Life Leech",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "3d10",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "DEX",
+        "dc": 13,
+        "on_fail_condition": "grappled",
+        "escalates_to": "restrained"
+      }
+    }
+  ],
+  "traits_flags": [
+    "false_appearance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

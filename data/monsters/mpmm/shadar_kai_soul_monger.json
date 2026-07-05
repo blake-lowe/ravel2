@@ -1,0 +1,128 @@
+{
+  "name": "Shadar-kai Soul Monger",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 11.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 136,
+  "hit_dice": "21d8+42",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 17,
+    "CON": 14,
+    "INT": 19,
+    "WIS": 16,
+    "CHA": 13
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 7
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 17
+  },
+  "languages": [
+    "Common",
+    "Elvish"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "necrotic",
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "text": "The shadar-kai has advantage on saving throws against being charmed, and magic can't put it to sleep."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The shadar-kai has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Soul Thirst",
+      "text": "When it reduces a creature to 0 hit points, the shadar-kai can gain temporary hit points equal to half the creature's hit point maximum. While the shadar-kai has temporary hit points from this trait, it has advantage on attack rolls."
+    },
+    {
+      "name": "Weight of Ages",
+      "text": "Any Beast or Humanoid (except an elf) that starts its turn within 5 feet of the shadar-kai has its speed reduced by 20 feet until the start of that creature's next turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shadow Dagger",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d4+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d12",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Shadow Dagger",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Wave of Weariness",
+      "shape": "cube",
+      "size": 60,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "10d8",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "4-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Bestow Curse": 1,
+      "Finger of Death": 1
+    }
+  },
+  "save_advantages": [
+    "charmed"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "name": "Black Dragon Wyrmling",
+  "type": "dragon",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 33,
+  "hit_dice": "6d8+6",
+  "speeds": {
+    "walk": 30,
+    "fly": 60,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 13,
+    "INT": 10,
+    "WIS": 11,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 4
+  },
+  "senses": {
+    "blindsight": 10,
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "acid"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d4",
+          "type": "acid"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Acid Breath",
+      "shape": "line",
+      "size": 15,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 11,
+      "damage": [
+        {
+          "dice": "5d8",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

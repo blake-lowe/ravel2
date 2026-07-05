@@ -1,0 +1,115 @@
+{
+  "name": "Drow Shadowblade",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 11.0,
+  "alignment": "A",
+  "ac": 17,
+  "hp": 150,
+  "hit_dice": "20d8+60",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 21,
+    "CON": 16,
+    "INT": 12,
+    "WIS": 14,
+    "CHA": 13
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Perception": 6,
+    "Stealth": 9
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Shadow Step (bonus)",
+      "text": "While in dim light or darkness, the drow teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see that is also in dim light or darkness. It then has advantage on the first melee attack it makes before the end of the turn."
+    },
+    {
+      "name": "Fey Ancestry",
+      "text": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shadow Sword",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "7d6+5",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Hand Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "1d6+5",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ],
+      "rider": {
+        "ability": "CON",
+        "dc": 13,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Shadow Sword",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 0,
+      "Faerie Fire": 1
+    }
+  },
+  "teleport_bonus": 60,
+  "traits_flags": [
+    "devils_sight",
+    "sunlight_sensitivity"
+  ],
+  "save_advantages": [
+    "charmed"
+  ]
+}

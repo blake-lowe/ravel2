@@ -1,0 +1,99 @@
+{
+  "name": "Red Slaad",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "C N",
+  "ac": 14,
+  "hp": 93,
+  "hit_dice": "11d10+33",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 16,
+    "INT": 6,
+    "WIS": 6,
+    "CHA": 7
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 1
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Slaad",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The slaad has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Regeneration",
+      "text": "The slaad regains 10 hit points at the start of its turn if it has at least 1 hit point."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d4+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "regeneration": {
+    "amount": 10,
+    "stopped_by": []
+  },
+  "imported": "5etools-mm"
+}

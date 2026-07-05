@@ -1,0 +1,63 @@
+{
+  "name": "Violet Fungus",
+  "type": "plant",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 5,
+  "hp": 18,
+  "hit_dice": "4d8",
+  "speeds": {
+    "walk": 5
+  },
+  "abilities": {
+    "STR": 3,
+    "DEX": 1,
+    "CON": 10,
+    "INT": 1,
+    "WIS": 3,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 6
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "deafened",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "While the violet fungus remains motionless, it is indistinguishable from an ordinary fungus."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Rotting Touch",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

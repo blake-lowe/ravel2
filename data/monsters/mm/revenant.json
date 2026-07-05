@@ -1,0 +1,125 @@
+{
+  "name": "Revenant",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "N",
+  "ac": 13,
+  "hp": 136,
+  "hit_dice": "16d8+64",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 18,
+    "INT": 13,
+    "WIS": 16,
+    "CHA": 18
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 13
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "necrotic",
+    "psychic"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Regeneration",
+      "text": "The revenant regains 10 hit points at the start of its turn. If the revenant takes fire or radiant damage, this trait doesn't function at the start of the revenant's next turn. The revenant's body is destroyed only if it starts its turn with 0 hit points and doesn't regenerate."
+    },
+    {
+      "name": "Rejuvenation",
+      "text": "When the revenant's body is destroyed, its soul lingers. After 24 hours, the soul inhabits and animates another humanoid corpse on the same plane of existence and regains all its hit points. While the soul is bodiless, a wish spell can be used to force the soul to go to the afterlife and not return."
+    },
+    {
+      "name": "Turn Immunity",
+      "text": "The revenant is immune to effects that turn undead."
+    },
+    {
+      "name": "Vengeful Tracker",
+      "text": "The revenant knows the distance to and direction of any creature against which it seeks revenge, even if the creature and the revenant are on different planes of existence. If the creature being tracked by the revenant dies, the revenant knows."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Fist",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Vengeful Glare",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "paralyzed",
+        "escalates_to": "frightened"
+      },
+      "max_targets": 1
+    }
+  ],
+  "regeneration": {
+    "amount": 10,
+    "stopped_by": [
+      "fire",
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mm",
+  "save_advantages": [
+    "frightened",
+    "paralyzed"
+  ]
+}

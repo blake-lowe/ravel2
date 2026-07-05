@@ -1,0 +1,32 @@
+{
+  "name": "Disintegrate",
+  "level": 6,
+  "school": "transmutation",
+  "range": 60,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": false,
+      "damage": [
+        {
+          "dice": "10d6+40",
+          "type": "force"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "3d6"
+  }
+}

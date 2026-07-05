@@ -1,0 +1,28 @@
+{
+  "name": "Invisibility",
+  "level": 2,
+  "school": "illusion",
+  "range": 5,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 100,
+  "target": {
+    "mode": "self",
+    "affects": "self"
+  },
+  "effects": [
+    {
+      "kind": "modifier",
+      "modifier": {
+        "attackers_have_disadvantage": true
+      }
+    }
+  ],
+  "_approx": "as Greater Invisibility but RAW it should break on attack/cast \u2014 the engine's effect persists (a known over-credit, same as Blur).",
+  "imported": "5etools"
+}

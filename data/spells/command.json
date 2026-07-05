@@ -1,0 +1,23 @@
+{
+  "name": "Command",
+  "level": 1,
+  "school": "enchantment",
+  "range": 60,
+  "components": [
+    "V"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "prone",
+      "condition_duration": 1
+    }
+  ],
+  "_approx": "the 'grovel' command: fail = drop prone for a round.",
+  "imported": "5etools"
+}

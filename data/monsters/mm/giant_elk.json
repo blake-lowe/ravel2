@@ -1,0 +1,72 @@
+{
+  "name": "Giant Elk",
+  "type": "beast",
+  "size": "Huge",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 14,
+  "hp": 42,
+  "hit_dice": "5d12+10",
+  "speeds": {
+    "walk": 60
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 16,
+    "CON": 14,
+    "INT": 7,
+    "WIS": 14,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [
+    "Giant Elk",
+    "understands Common, Elvish, Sylvan but can't speak them"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Ram",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Hooves",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "4d8+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 20,
+    "dc": 14,
+    "bonus_attack": "Ram"
+  }
+}

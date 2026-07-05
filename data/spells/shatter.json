@@ -1,0 +1,32 @@
+{
+  "name": "Shatter",
+  "level": 2,
+  "school": "evocation",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 10,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "damage": [
+        {
+          "dice": "3d8",
+          "type": "thunder"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Cranium Rat",
+  "type": "aberration",
+  "size": "Tiny",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 2,
+  "hit_dice": "1d4",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 2,
+    "DEX": 14,
+    "CON": 10,
+    "INT": 4,
+    "WIS": 11,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 30,
+    "passive_perception": 10
+  },
+  "languages": [
+    "telepathy 30 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Illumination (bonus)",
+      "text": "The cranium rat sheds dim light from its exposed brain in a 5-foot radius or extinguishes the light."
+    },
+    {
+      "name": "Telepathic Shroud",
+      "text": "The cranium rat is immune to any effect that would sense its emotions or read its thoughts, as well as to all divination spells."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

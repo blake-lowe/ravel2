@@ -1,0 +1,111 @@
+{
+  "name": "Barlgura",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 68,
+  "hit_dice": "8d10+24",
+  "speeds": {
+    "walk": 40,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 15,
+    "CON": 16,
+    "INT": 7,
+    "WIS": 14,
+    "CHA": 9
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "DEX",
+    "CON"
+  ],
+  "skills": {
+    "Perception": 5,
+    "Stealth": 5
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Reckless",
+      "text": "At the start of its turn, the barlgura can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn."
+    },
+    {
+      "name": "Running Leap",
+      "text": "The barlgura's long jump is up to 40 feet and its high jump is up to 20 feet when it has a running start."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d10+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Fist",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Entangle": 1
+    }
+  }
+}

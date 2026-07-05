@@ -1,0 +1,79 @@
+{
+  "name": "Druid",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "A",
+  "ac": 11,
+  "hp": 27,
+  "hit_dice": "5d8+5",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 12,
+    "CON": 13,
+    "INT": 12,
+    "WIS": 15,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Medicine": 4,
+    "Nature": 3,
+    "Perception": 4
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [
+    "Druidic plus any two languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d8",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d8+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 12,
+    "attack_bonus": 4,
+    "caster_level": 4,
+    "slots": {
+      "1": 4,
+      "2": 3
+    },
+    "spells": [
+      "Entangle",
+      "Produce Flame",
+      "Thunderwave"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "name": "Githyanki Kith'rak",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 12.0,
+  "alignment": "A",
+  "ac": 18,
+  "hp": 180,
+  "hit_dice": "24d8+72",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 16,
+    "CON": 17,
+    "INT": 16,
+    "WIS": 15,
+    "CHA": 17
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Intimidation": 7,
+    "Perception": 6
+  },
+  "senses": {
+    "passive_perception": 16
+  },
+  "languages": [
+    "Gith"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Astral Step {@recharge 4} (bonus)",
+      "text": "The githyanki teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Rally the Troops (bonus)",
+      "text": "The githyanki magically ends the charmed and frightened conditions on itself and each creature of its choice that it can see within 30 feet of it."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "5d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatsword",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 15,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Blur": 3,
+      "Plane Shift": 1
+    }
+  },
+  "parry": 4,
+  "teleport_bonus": 30
+}

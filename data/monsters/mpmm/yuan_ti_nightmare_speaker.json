@@ -1,0 +1,159 @@
+{
+  "name": "Yuan-ti Nightmare Speaker",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "N E",
+  "ac": 14,
+  "hp": 71,
+  "hit_dice": "13d8+13",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 14,
+    "CON": 13,
+    "INT": 14,
+    "WIS": 12,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 5,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Draconic"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Change Shape (bonus)",
+      "text": "The yuan-ti transforms into a Medium snake or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. If it dies, it stays in its current form."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The yuan-ti has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Constrict",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    },
+    {
+      "name": "Scimitar (Yuan-ti Form Only)",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Spectral Fangs",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "3d8+3",
+          "type": "necrotic"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Constrict",
+      "count": 1
+    },
+    {
+      "name": "Spectral Fangs",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Invoke Nightmare",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "INT",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "4d10",
+          "type": "psychic"
+        },
+        {
+          "dice": "2d10",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "INT",
+        "dc": 13,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "devils_sight"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Suggestion": 3,
+      "Darkness": 2,
+      "Fear": 2
+    }
+  }
+}

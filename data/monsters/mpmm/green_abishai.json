@@ -1,0 +1,109 @@
+{
+  "name": "Green Abishai",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 15.0,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 195,
+  "hit_dice": "26d8+78",
+  "speeds": {
+    "walk": 30,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 17,
+    "CON": 16,
+    "INT": 17,
+    "WIS": 12,
+    "CHA": 19
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 9,
+    "Insight": 6,
+    "Perception": 6,
+    "Persuasion": 9
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Draconic",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The abishai has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fiendish Claw",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "force"
+        },
+        {
+          "dice": "3d10",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 16,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Fiendish Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 17,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 3,
+      "Fear": 3,
+      "Confusion": 1,
+      "Mass Suggestion": 1
+    }
+  }
+}

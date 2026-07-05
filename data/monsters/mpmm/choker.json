@@ -1,0 +1,79 @@
+{
+  "name": "Choker",
+  "type": "aberration",
+  "size": "Small",
+  "cr": 1.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 13,
+  "hit_dice": "3d6+3",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 14,
+    "CON": 13,
+    "INT": 4,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Deep Speech"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Aberrant Quickness (Recharges after a Short or Long Rest)",
+      "text": "The choker can take an extra action on its turn."
+    },
+    {
+      "name": "Boneless",
+      "text": "The choker can move through and occupy a space as narrow as 4 inches wide without squeezing."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The choker can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacle",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

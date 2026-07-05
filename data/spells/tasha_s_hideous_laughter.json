@@ -1,0 +1,27 @@
+{
+  "name": "Tasha's Hideous Laughter",
+  "level": 1,
+  "school": "enchantment",
+  "range": 30,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "incapacitated",
+      "save_ends": true
+    }
+  ],
+  "_approx": "prone + incapacitated collapsed to incapacitated (the stronger half).",
+  "imported": "5etools"
+}

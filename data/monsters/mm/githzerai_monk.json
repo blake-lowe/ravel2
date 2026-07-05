@@ -1,0 +1,85 @@
+{
+  "name": "Githzerai Monk",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "L N",
+  "ac": 14,
+  "hp": 38,
+  "hit_dice": "7d8+7",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 15,
+    "CON": 12,
+    "INT": 13,
+    "WIS": 14,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "STR",
+    "DEX",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Insight": 4,
+    "Perception": 4
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [
+    "Gith"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Psychic Defense",
+      "text": "While the githzerai is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Unarmed Strike",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d8",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Unarmed Strike",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 0,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Shield": 3
+    }
+  }
+}

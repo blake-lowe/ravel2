@@ -1,0 +1,125 @@
+{
+  "name": "Spined Devil",
+  "type": "fiend",
+  "size": "Small",
+  "cr": 2.0,
+  "alignment": "L E",
+  "ac": 13,
+  "hp": 22,
+  "hit_dice": "5d6+5",
+  "speeds": {
+    "walk": 20,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 15,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 14,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Flyby",
+      "text": "The devil doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+    },
+    {
+      "name": "Limited Spines",
+      "text": "The devil has twelve tail spines. Used spines regrow by the time the devil finishes a long rest."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The devil has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "2d4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Fork",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tail Spine",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "fire"
+        }
+      ],
+      "range": [
+        20,
+        80
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Fork",
+      "count": 1
+    },
+    {
+      "name": "Tail Spine",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "flyby",
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mm"
+}

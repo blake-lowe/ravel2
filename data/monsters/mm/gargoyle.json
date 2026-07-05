@@ -1,0 +1,89 @@
+{
+  "name": "Gargoyle",
+  "type": "elemental",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 52,
+  "hit_dice": "7d8+21",
+  "speeds": {
+    "walk": 30,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 11,
+    "CON": 16,
+    "INT": 6,
+    "WIS": 11,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Terran"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "While the gargoyle remains motionless, it is indistinguishable from an inanimate statue."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

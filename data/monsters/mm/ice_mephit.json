@@ -1,0 +1,124 @@
+{
+  "name": "Ice Mephit",
+  "type": "elemental",
+  "size": "Small",
+  "cr": 0.5,
+  "alignment": "N E",
+  "ac": 11,
+  "hp": 21,
+  "hit_dice": "6d6",
+  "speeds": {
+    "walk": 30,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 13,
+    "CON": 10,
+    "INT": 9,
+    "WIS": 11,
+    "CHA": 12
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Aquan",
+    "Auran"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold",
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "bludgeoning",
+    "fire"
+  ],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "While the mephit remains motionless, it is indistinguishable from an ordinary shard of ice."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d4",
+          "type": "cold"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Frost Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 10,
+      "damage": [
+        {
+          "dice": "2d4",
+          "type": "cold"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 0,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fog Cloud": 0
+    }
+  },
+  "death_burst": {
+    "name": "Death Burst",
+    "shape": "sphere",
+    "size": 5,
+    "origin_range": 0,
+    "save": "DEX",
+    "dc": 10,
+    "damage": [
+      {
+        "dice": "1d8",
+        "type": "slashing"
+      }
+    ],
+    "half_on_save": true,
+    "recharge": "at-will",
+    "rider": null
+  }
+}

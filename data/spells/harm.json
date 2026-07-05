@@ -1,0 +1,29 @@
+{
+  "name": "Harm",
+  "level": 6,
+  "school": "necromancy",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "damage": [
+        {
+          "dice": "14d6",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

@@ -1,0 +1,122 @@
+{
+  "name": "Yeenoghu",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 24.0,
+  "alignment": "C E",
+  "ac": 20,
+  "hp": 333,
+  "hit_dice": "23d12+184",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 29,
+    "DEX": 16,
+    "CON": 26,
+    "INT": 16,
+    "WIS": 24,
+    "CHA": 15
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Intimidation": 9,
+    "Perception": 14
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 24
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Yeenoghu fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Yeenoghu has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Flail",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "2d12+9",
+          "type": "force"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "2d10+9",
+          "type": "acid"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Flail",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 17,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Dispel Magic": 3,
+      "Fear": 3,
+      "Invisibility": 3
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Flail"
+  },
+  "triggered_abilities": [
+    "rampage"
+  ]
+}

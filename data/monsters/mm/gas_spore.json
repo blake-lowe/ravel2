@@ -1,0 +1,88 @@
+{
+  "name": "Gas Spore",
+  "type": "plant",
+  "size": "Large",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 5,
+  "hp": 1,
+  "hit_dice": "1d10-4",
+  "speeds": {
+    "walk": 0,
+    "fly": 10,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 5,
+    "DEX": 1,
+    "CON": 3,
+    "INT": 1,
+    "WIS": 1,
+    "CHA": 1
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 5
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Eerie Resemblance",
+      "text": "The gas spore resembles a beholder. A creature that can see the gas spore can discern its true nature with a successful 15 Intelligence (Nature) check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Touch",
+      "kind": "melee",
+      "attack_bonus": 0,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "death_burst": {
+    "name": "Death Burst",
+    "shape": "sphere",
+    "size": 5,
+    "origin_range": 0,
+    "save": "CON",
+    "dc": 15,
+    "damage": [
+      {
+        "dice": "3d6",
+        "type": "poison"
+      }
+    ],
+    "half_on_save": true,
+    "recharge": "at-will",
+    "rider": {
+      "ability": "CON",
+      "dc": 15,
+      "on_fail_condition": "poisoned"
+    }
+  }
+}

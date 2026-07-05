@@ -1,0 +1,100 @@
+{
+  "name": "Otyugh",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "N",
+  "ac": 14,
+  "hp": 114,
+  "hit_dice": "12d10+48",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 11,
+    "CON": 19,
+    "INT": 6,
+    "WIS": 13,
+    "CHA": 6
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "CON"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Otyugh"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Tentacle Slam",
+      "text": "The otyugh slams creatures grappled by it into each other or a solid surface. Each creature must succeed on a 14 Constitution saving throw or take 10 (2d6 + 3) bludgeoning damage and be stunned until the end of the otyugh's next turn. On a successful save, the target takes half the bludgeoning damage and isn't stunned."
+    },
+    {
+      "name": "Limited Telepathy",
+      "text": "The otyugh can magically transmit simple messages and images to any creature within 120 feet of it that can understand a language. This form of telepathy doesn't allow the receiving creature to telepathically respond."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d8+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 15,
+        "on_fail_condition": "poisoned"
+      }
+    },
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d8",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 13,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Tentacle",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

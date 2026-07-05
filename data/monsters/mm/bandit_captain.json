@@ -1,0 +1,81 @@
+{
+  "name": "Bandit Captain",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "NX C G NY E",
+  "ac": 15,
+  "hp": 65,
+  "hit_dice": "10d8+20",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 16,
+    "CON": 14,
+    "INT": 14,
+    "WIS": 11,
+    "CHA": 14
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "STR",
+    "DEX",
+    "WIS"
+  ],
+  "skills": {
+    "Athletics": 4,
+    "Deception": 4
+  },
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "any two languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scimitar",
+      "count": 2
+    },
+    {
+      "name": "Dagger",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "parry": 2
+}

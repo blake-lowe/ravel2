@@ -1,0 +1,105 @@
+{
+  "name": "Dryad",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "N",
+  "ac": 11,
+  "hp": 22,
+  "hit_dice": "5d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 12,
+    "CON": 11,
+    "INT": 14,
+    "WIS": 15,
+    "CHA": 18
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Elvish",
+    "Sylvan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The dryad has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Speak with Beasts and Plants",
+      "text": "The dryad can communicate with beasts and plants as if they shared a language."
+    },
+    {
+      "name": "Tree Stride",
+      "text": "Once on her turn, the dryad can use 10 feet of her movement to step magically into one living tree within her reach and emerge from a second living tree within 60 feet of the first tree, appearing in an unoccupied space within 5 feet of the second tree. Both trees must be large or bigger."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Club",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d8+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Fey Charm",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 14,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 14,
+        "on_fail_condition": "charmed"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 14,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Entangle": 3
+    }
+  }
+}

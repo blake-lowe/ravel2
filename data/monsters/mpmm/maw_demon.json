@@ -1,0 +1,85 @@
+{
+  "name": "Maw Demon",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 33,
+  "hit_dice": "6d8+6",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 8,
+    "CON": 13,
+    "INT": 5,
+    "WIS": 8,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 9
+  },
+  "languages": [
+    "understands Abyssal but can't speak"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Disgorge",
+      "shape": "cube",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 11,
+      "damage": [
+        {
+          "dice": "2d10",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": {
+        "ability": "DEX",
+        "dc": 11,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

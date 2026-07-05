@@ -1,0 +1,177 @@
+{
+  "name": "Pit Fiend",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 20.0,
+  "alignment": "L E",
+  "ac": 19,
+  "hp": 300,
+  "hit_dice": "24d10+168",
+  "speeds": {
+    "walk": 30,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 26,
+    "DEX": 14,
+    "CON": 24,
+    "INT": 22,
+    "WIS": 18,
+    "CHA": 24
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The pit fiend has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The pit fiend's weapon attacks are magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "4d6+8",
+          "type": "piercing"
+        },
+        {
+          "dice": "6d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 21,
+        "on_fail_condition": "poisoned"
+      }
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "2d8+8",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Mace",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "2d6+8",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "6d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "damage": [
+        {
+          "dice": "3d10+8",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    },
+    {
+      "name": "Mace",
+      "count": 1
+    },
+    {
+      "name": "Tail",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Fear Aura",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 21,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 21,
+        "on_fail_condition": "incapacitated",
+        "escalates_to": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 21,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fireball": 0,
+      "Hold Monster": 3,
+      "Wall of Fire": 3
+    }
+  }
+}

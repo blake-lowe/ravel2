@@ -1,0 +1,97 @@
+{
+  "name": "Githzerai Anarch",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 16.0,
+  "alignment": "A",
+  "ac": 20,
+  "hp": 144,
+  "hit_dice": "17d8+68",
+  "speeds": {
+    "walk": 30,
+    "fly": 40,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 21,
+    "CON": 18,
+    "INT": 18,
+    "WIS": 20,
+    "CHA": 14
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "STR",
+    "DEX",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 9,
+    "Insight": 10,
+    "Perception": 10
+  },
+  "senses": {
+    "passive_perception": 20
+  },
+  "languages": [
+    "Gith"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the githzerai fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Psychic Defense",
+      "text": "While the githzerai is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Unarmed Strike",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "1d8+5",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d8",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Unarmed Strike",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 18,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Plane Shift": 1
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Unarmed Strike"
+  }
+}

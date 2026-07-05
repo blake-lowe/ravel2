@@ -1,0 +1,67 @@
+{
+  "name": "Piercer",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 15,
+  "hp": 22,
+  "hit_dice": "3d8+9",
+  "speeds": {
+    "walk": 5,
+    "climb": 5
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 13,
+    "CON": 16,
+    "INT": 1,
+    "WIS": 7,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 5
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "While the piercer remains motionless on the ceiling, it is indistinguishable from a normal stalactite."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The piercer can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Drop",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,67 @@
+{
+  "name": "Mammoth",
+  "type": "beast",
+  "size": "Huge",
+  "cr": 6.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 126,
+  "hit_dice": "11d12+55",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 24,
+    "DEX": 9,
+    "CON": 21,
+    "INT": 3,
+    "WIS": 11,
+    "CHA": 6
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Gore",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "4d8+7",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Stomp",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "4d10+7",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 20,
+    "dc": 18,
+    "bonus_attack": "Stomp"
+  }
+}

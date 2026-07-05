@@ -1,0 +1,69 @@
+{
+  "name": "Zombie",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "neutral evil",
+  "ac": 8,
+  "hp": 22,
+  "hit_dice": "3d8+9",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 6,
+    "CON": 16,
+    "INT": 3,
+    "WIS": 6,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [
+    "understands the languages it knew in life but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Undead Fortitude",
+      "text": "If damage reduces the zombie to 0 HP, it makes a Constitution save (DC 5 + the damage taken); on a success it drops to 1 HP instead, unless the damage is radiant or from a critical hit. (Implemented via the event/trigger system.)"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "strategy": "Shamble straight at the nearest living foe and pound it relentlessly; it has no tactics beyond closing to melee.",
+  "triggered_abilities": [
+    "undead_fortitude"
+  ],
+  "curated": true,
+  "imported": "5etools-mm"
+}

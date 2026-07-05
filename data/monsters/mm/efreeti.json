@@ -1,0 +1,102 @@
+{
+  "name": "Efreeti",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 11.0,
+  "alignment": "L E",
+  "ac": 17,
+  "hp": 200,
+  "hit_dice": "16d10+112",
+  "speeds": {
+    "walk": 40,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 12,
+    "CON": 24,
+    "INT": 16,
+    "WIS": 15,
+    "CHA": 16
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Ignan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Elemental Demise",
+      "text": "If the efreeti dies, its body disintegrates in a flash of fire and puff of smoke, leaving behind only equipment the efreeti was wearing or carrying."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d6+6",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Hurl Flame",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "5d6",
+          "type": "fire"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Scimitar",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 15,
+    "attack_bonus": 7,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Invisibility": 1,
+      "Plane Shift": 1,
+      "Wall of Fire": 1
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Immolation",
+  "level": 5,
+  "school": "evocation",
+  "range": 90,
+  "components": [
+    "V"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "8d6",
+          "type": "fire"
+        }
+      ]
+    }
+  ],
+  "_approx": "the ongoing 4d6 burn while wreathed is dropped.",
+  "imported": "5etools"
+}

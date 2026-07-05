@@ -1,0 +1,82 @@
+{
+  "name": "Fire Giant",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 9,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 162,
+  "hit_dice": "13d12+78",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 25,
+    "DEX": 9,
+    "CON": 23,
+    "INT": 10,
+    "WIS": 14,
+    "CHA": 13
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "CHA"
+  ],
+  "skills": {
+    "Athletics": 11,
+    "Perception": 6
+  },
+  "senses": {
+    "passive_perception": 16
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "6d6+7",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "4d10+7",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        240
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "curated": true,
+  "imported": "5etools-mm"
+}

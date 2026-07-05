@@ -1,0 +1,96 @@
+{
+  "name": "Githyanki Supreme Commander",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 14.0,
+  "alignment": "A",
+  "ac": 18,
+  "hp": 187,
+  "hit_dice": "22d8+88",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 17,
+    "CON": 18,
+    "INT": 16,
+    "WIS": 16,
+    "CHA": 18
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Intimidation": 9,
+    "Perception": 8
+  },
+  "senses": {
+    "passive_perception": 18
+  },
+  "languages": [
+    "Gith"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Astral Step (bonus)",
+      "text": "The githyanki teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the githyanki fails a saving throw, it can choose to succeed instead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Silver Greatsword",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "2d6+7",
+          "type": "slashing"
+        },
+        {
+          "dice": "5d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Silver Greatsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Mass Suggestion": 1,
+      "Plane Shift": 1
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Silver Greatsword"
+  },
+  "parry": 5,
+  "teleport_bonus": 30
+}

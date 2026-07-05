@@ -1,0 +1,112 @@
+{
+  "name": "Kraken Priest",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 75,
+  "hit_dice": "10d8+30",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 10,
+    "CON": 16,
+    "INT": 10,
+    "WIS": 15,
+    "CHA": 14
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "passive_perception": 15
+  },
+  "languages": [
+    "any two languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Thunderous Touch",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "5d10",
+          "type": "thunder"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Thunderbolt",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d10",
+          "type": "lightning"
+        },
+        {
+          "dice": "2d10",
+          "type": "thunder"
+        }
+      ],
+      "range": [
+        60,
+        60
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Thunderous Touch",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Voice of the Kraken",
+      "shape": "sphere",
+      "size": 300,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 14,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "WIS",
+        "dc": 14,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Command": 0,
+      "Evard's Black Tentacles": 1,
+      "Darkness": 3
+    }
+  },
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

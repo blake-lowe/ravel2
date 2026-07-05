@@ -1,0 +1,31 @@
+{
+  "name": "Synaptic Static",
+  "level": 5,
+  "school": "enchantment",
+  "range": 120,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "INT",
+      "damage": [
+        {
+          "dice": "8d6",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": true
+    }
+  ],
+  "imported": "5etools"
+}

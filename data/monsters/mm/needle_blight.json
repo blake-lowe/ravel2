@@ -1,0 +1,71 @@
+{
+  "name": "Needle Blight",
+  "type": "plant",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "N E",
+  "ac": 12,
+  "hp": 11,
+  "hit_dice": "2d8+2",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 12,
+    "CON": 13,
+    "INT": 4,
+    "WIS": 8,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 9
+  },
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "deafened"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d4+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Needles",
+      "kind": "ranged",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d6+1",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        60
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

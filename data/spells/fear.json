@@ -1,0 +1,28 @@
+{
+  "name": "Fear",
+  "level": 3,
+  "school": "illusion",
+  "range": 0,
+  "range_type": "self",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "self_area",
+    "shape": "cone",
+    "size": 30,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "frightened",
+      "save_ends": true
+    }
+  ]
+}

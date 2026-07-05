@@ -1,0 +1,147 @@
+{
+  "name": "Gauth",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 6.0,
+  "alignment": "L E",
+  "ac": 15,
+  "hp": 52,
+  "hit_dice": "7d8+21",
+  "speeds": {
+    "walk": 0,
+    "fly": 20,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 14,
+    "CON": 16,
+    "INT": 15,
+    "WIS": 15,
+    "CHA": 13
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 15
+  },
+  "languages": [
+    "Deep Speech",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "prone"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d8",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Stunning Gaze",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 14,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 14,
+        "on_fail_condition": "incapacitated",
+        "escalates_to": "stunned"
+      }
+    }
+  ],
+  "eye_rays": [
+    {
+      "name": "1: Devour Magic Ray",
+      "ability": "DEX",
+      "dc": 14
+    },
+    {
+      "name": "2: Enervation Ray",
+      "ability": "CON",
+      "dc": 14,
+      "damage": {
+        "dice": "4d8",
+        "type": "necrotic"
+      },
+      "half_on_save": true
+    },
+    {
+      "name": "3: Fire Ray",
+      "ability": "DEX",
+      "dc": 14,
+      "damage": {
+        "dice": "4d10",
+        "type": "fire"
+      },
+      "half_on_save": false
+    },
+    {
+      "name": "4: Paralyzing Ray",
+      "ability": "CON",
+      "dc": 14,
+      "condition": "paralyzed",
+      "save_ends": true
+    },
+    {
+      "name": "5: Pushing Ray",
+      "ability": "STR",
+      "dc": 14
+    },
+    {
+      "name": "6: Sleep Ray",
+      "ability": "WIS",
+      "dc": 14,
+      "condition": "unconscious",
+      "save_ends": false
+    }
+  ],
+  "eye_ray_count": 3,
+  "eye_ray_range": 120,
+  "imported": "5etools-mpmm",
+  "death_burst": {
+    "name": "Death Throes",
+    "shape": "sphere",
+    "size": 5,
+    "origin_range": 0,
+    "save": "DEX",
+    "dc": 14,
+    "damage": [
+      {
+        "dice": "3d8",
+        "type": "force"
+      }
+    ],
+    "half_on_save": true,
+    "recharge": "at-will",
+    "rider": null
+  }
+}

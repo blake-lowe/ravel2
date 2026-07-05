@@ -1,0 +1,76 @@
+{
+  "name": "Oblex Spawn",
+  "type": "ooze",
+  "size": "Tiny",
+  "cr": 0.25,
+  "alignment": "L E",
+  "ac": 13,
+  "hp": 18,
+  "hit_dice": "4d4+8",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 16,
+    "CON": 15,
+    "INT": 14,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "INT",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Amorphous",
+      "text": "The oblex can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Aversion to Fire",
+      "text": "If the oblex takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The oblex doesn't require sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d4",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

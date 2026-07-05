@@ -1,0 +1,89 @@
+{
+  "name": "Grell",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "N E",
+  "ac": 12,
+  "hp": 55,
+  "hit_dice": "10d8+10",
+  "speeds": {
+    "walk": 10,
+    "fly": 30,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 13,
+    "INT": 12,
+    "WIS": 11,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 6
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Grell"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "lightning"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "prone"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "CON",
+        "dc": 11,
+        "on_fail_condition": "grappled"
+      }
+    },
+    {
+      "name": "Beak",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacles",
+      "count": 1
+    },
+    {
+      "name": "Beak",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Bane",
+  "level": 1,
+  "school": "enchantment",
+  "range": 30,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "multi",
+    "count": 3,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CHA",
+      "modifier_on_fail": {
+        "attack_penalty": "1d4",
+        "save_penalty": "1d4"
+      }
+    }
+  ]
+}

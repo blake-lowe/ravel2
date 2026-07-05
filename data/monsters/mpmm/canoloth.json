@@ -1,0 +1,136 @@
+{
+  "name": "Canoloth",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 8.0,
+  "alignment": "N E",
+  "ac": 16,
+  "hp": 120,
+  "hit_dice": "16d8+48",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 10,
+    "CON": 17,
+    "INT": 5,
+    "WIS": 17,
+    "CHA": 12
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Investigation": 3,
+    "Perception": 9
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 19
+  },
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Dimensional Lock",
+      "text": "Other creatures can't teleport to or from a space within 60 feet of the canoloth. Any attempt to do so is wasted."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The canoloth has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Uncanny Senses",
+      "text": "The canoloth can't be surprised unless it's incapacitated."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "4d8",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "2d8",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tongue",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d12+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 30,
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false,
+        "push": -30
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

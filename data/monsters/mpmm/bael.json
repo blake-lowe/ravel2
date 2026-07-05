@@ -1,0 +1,151 @@
+{
+  "name": "Bael",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 19.0,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 189,
+  "hit_dice": "18d10+90",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 24,
+    "DEX": 17,
+    "CON": 20,
+    "INT": 21,
+    "WIS": 24,
+    "CHA": 24
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Intimidation": 13,
+    "Perception": 13,
+    "Persuasion": 13
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 23
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Infernal Command",
+      "text": "Each of Bael's allies within 60 feet of him can't be charmed or frightened until the end of his next turn."
+    },
+    {
+      "name": "Teleport",
+      "text": "Bael teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Bael fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Bael have advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Regeneration",
+      "text": "Bael regains 20 hit points at the start of his turn. If he takes cold or radiant damage, this trait doesn't function at the start of his next turn. Bael dies only if he starts his turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hellish Morningstar",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "2d8+7",
+          "type": "force"
+        },
+        {
+          "dice": "2d8",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 20
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Hellish Morningstar",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Dread",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 22,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 22,
+        "on_fail_condition": "frightened",
+        "escalates_to": "incapacitated"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 20,
+    "stopped_by": [
+      "cold",
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 21,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 0,
+      "Invisibility": 0,
+      "Dispel Magic": 3,
+      "Suggestion": 3,
+      "Wall of Fire": 3
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Hellish Morningstar"
+  }
+}

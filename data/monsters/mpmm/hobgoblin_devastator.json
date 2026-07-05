@@ -1,0 +1,103 @@
+{
+  "name": "Hobgoblin Devastator",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "L N",
+  "ac": 13,
+  "hp": 45,
+  "hit_dice": "7d8+14",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 12,
+    "CON": 14,
+    "INT": 16,
+    "WIS": 13,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Arcana": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Army Arcana",
+      "text": "When the hobgoblin casts a spell that causes damage or that forces other creatures to make a saving throw, it can choose itself and any number of allies to be immune to the damage caused by the spell and to succeed on the required saving throw."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Quarterstaff",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d8+1",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d8",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Devastating Bolt",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "4d8+3",
+          "type": "force"
+        }
+      ],
+      "range": [
+        60,
+        60
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Quarterstaff",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fireball": 2,
+      "Fog Cloud": 2,
+      "Gust of Wind": 2,
+      "Lightning Bolt": 2
+    }
+  }
+}

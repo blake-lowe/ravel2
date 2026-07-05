@@ -1,0 +1,93 @@
+{
+  "name": "Hungry Sorrowsworn",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 11.0,
+  "alignment": "N E",
+  "ac": 17,
+  "hp": 225,
+  "hit_dice": "30d8+90",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 10,
+    "CON": 17,
+    "INT": 6,
+    "WIS": 11,
+    "CHA": 6
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common"
+  ],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Life Hunger",
+      "text": "If a creature within 60 feet of the sorrowsworn regains hit points, the sorrowsworn gains two benefits until the end of its next turn: it has advantage on attack rolls, and its Bite deals an extra 22 (4d10) necrotic damage on a hit."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d8",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "4d6+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10,
+      "rider": {
+        "ability": "STR",
+        "dc": 16,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

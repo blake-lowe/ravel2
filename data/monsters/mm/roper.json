@@ -1,0 +1,97 @@
+{
+  "name": "Roper",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "N E",
+  "ac": 20,
+  "hp": 93,
+  "hit_dice": "11d10+33",
+  "speeds": {
+    "walk": 10,
+    "climb": 10
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 8,
+    "CON": 17,
+    "INT": 7,
+    "WIS": 16,
+    "CHA": 6
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 6,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 16
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Reel",
+      "text": "The roper pulls each creature grappled by it up to 25 feet straight toward it."
+    },
+    {
+      "name": "False Appearance",
+      "text": "While the roper remains motionless, it is indistinguishable from a normal cave formation, such as a stalagmite."
+    },
+    {
+      "name": "Grasping Tendrils",
+      "text": "The roper can have up to six tendrils at a time. Each tendril can be attacked (AC 20; 10 hit points; immunity to poison and psychic damage). Destroying a tendril deals no damage to the roper, which can extrude a replacement tendril on its next turn. A tendril can also be broken if a creature takes an action and succeeds on a 15 Strength check against it."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The roper can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tendril",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [],
+      "reach": 50,
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tendril",
+      "count": 4
+    },
+    {
+      "name": "Bite",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

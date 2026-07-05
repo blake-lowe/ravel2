@@ -1,0 +1,75 @@
+{
+  "name": "Giant Strider",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 1.0,
+  "alignment": "U",
+  "ac": 14,
+  "hp": 22,
+  "hit_dice": "3d10+6",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 14,
+    "INT": 4,
+    "WIS": 12,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Fire Absorption",
+      "text": "Whenever the giant strider is subjected to fire damage, it takes no damage and regains a number of hit points equal to half the fire damage dealt."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Fire Burst",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 12,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

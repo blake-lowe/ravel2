@@ -1,0 +1,110 @@
+{
+  "name": "Sacred Statue",
+  "type": "construct",
+  "size": "Large",
+  "cr": 0.0,
+  "alignment": "",
+  "ac": 19,
+  "hp": 95,
+  "hit_dice": "10d10+40",
+  "speeds": {
+    "walk": 25
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 8,
+    "CON": 19,
+    "INT": 14,
+    "WIS": 19,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "the languages the eidolon knew in life"
+  ],
+  "damage_resistances": [
+    "acid",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "cold",
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "If the statue is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the statue move or act, that creature must succeed on a 18 Intelligence (Investigation) check to discern that the statue isn't an object."
+    },
+    {
+      "name": "Ghostly Inhabitant",
+      "text": "The eidolon that enters the statue remains inside it until the statue drops to 0 hit points, the eidolon uses a bonus action to move out of the statue, or the eidolon is turned or forced out by an effect such as the dispel evil and good spell. When the eidolon leaves the statue, it appears in an unoccupied space within 5 feet of the statue."
+    },
+    {
+      "name": "Inert",
+      "text": "Without an eidolon inside, the statue is an object."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The statue doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "6d12+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "6d10+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        60
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

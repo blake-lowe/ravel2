@@ -1,0 +1,137 @@
+{
+  "name": "Morkoth",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 11.0,
+  "alignment": "C E",
+  "ac": 17,
+  "hp": 165,
+  "hit_dice": "22d10+44",
+  "speeds": {
+    "walk": 25,
+    "swim": 50
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 20,
+    "WIS": 15,
+    "CHA": 13
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 9,
+    "History": 9,
+    "Perception": 10,
+    "Stealth": 6
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 120,
+    "passive_perception": 20
+  },
+  "languages": [
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Spell Reflection (reaction)",
+      "text": "If the morkoth makes a successful saving throw against a spell or a spell attack misses it, the morkoth can choose another creature (including the spellcaster) it can see within 120 feet of it. The spell targets the chosen creature instead of the morkoth. If the spell forced a saving throw, the chosen creature makes its own save. If the spell was an attack, the attack roll is rerolled against the chosen creature."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "slashing"
+        },
+        {
+          "dice": "3d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tentacles",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "3d8+2",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "3d8+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 15,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 2
+    },
+    {
+      "name": "Tentacles",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Hypnosis",
+      "shape": "cone",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 17,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 17,
+        "on_fail_condition": "charmed"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 17,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 3,
+      "Dispel Magic": 3,
+      "Lightning Bolt": 3
+    }
+  },
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

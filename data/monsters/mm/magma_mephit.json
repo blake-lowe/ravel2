@@ -1,0 +1,111 @@
+{
+  "name": "Magma Mephit",
+  "type": "elemental",
+  "size": "Small",
+  "cr": 0.5,
+  "alignment": "N E",
+  "ac": 11,
+  "hp": 22,
+  "hit_dice": "5d6+5",
+  "speeds": {
+    "walk": 30,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 12,
+    "CON": 12,
+    "INT": 7,
+    "WIS": 10,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Ignan",
+    "Terran"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "cold"
+  ],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "While the mephit remains motionless, it is indistinguishable from an ordinary mound of magma."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d4",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Fire Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 11,
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm",
+  "death_burst": {
+    "name": "Death Burst",
+    "shape": "sphere",
+    "size": 5,
+    "origin_range": 0,
+    "save": "DEX",
+    "dc": 11,
+    "damage": [
+      {
+        "dice": "2d6",
+        "type": "fire"
+      }
+    ],
+    "half_on_save": true,
+    "recharge": "at-will",
+    "rider": null
+  }
+}

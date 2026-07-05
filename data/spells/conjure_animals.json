@@ -1,0 +1,24 @@
+{
+  "name": "Conjure Animals",
+  "level": 3,
+  "school": "conjuration",
+  "casting_time": "action",
+  "range": 60,
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "self",
+    "affects": "self"
+  },
+  "effects": [
+    {
+      "kind": "summon",
+      "creature": "Wolf",
+      "count": 3
+    }
+  ]
+}

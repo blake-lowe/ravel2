@@ -1,0 +1,65 @@
+{
+  "name": "Awakened Tree",
+  "type": "plant",
+  "size": "Huge",
+  "cr": 2.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 59,
+  "hit_dice": "7d12+14",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 6,
+    "CON": 15,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "one language known by its creator"
+  ],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "While the tree remains motionless, it is indistinguishable from a normal tree."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "3d6+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

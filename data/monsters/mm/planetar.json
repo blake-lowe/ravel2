@@ -1,0 +1,103 @@
+{
+  "name": "Planetar",
+  "type": "celestial",
+  "size": "Large",
+  "cr": 16.0,
+  "alignment": "L G",
+  "ac": 19,
+  "hp": 200,
+  "hit_dice": "16d10+112",
+  "speeds": {
+    "walk": 40,
+    "fly": 120
+  },
+  "abilities": {
+    "STR": 24,
+    "DEX": 20,
+    "CON": 24,
+    "INT": 19,
+    "WIS": 22,
+    "CHA": 25
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 11
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 21
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "radiant"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Healing Touch (4/Day)",
+      "text": "The planetar touches another creature. The target magically regains 30 (6d8 + 3) hit points and is freed from any curse, disease, poison, blindness, or deafness."
+    },
+    {
+      "name": "Angelic Weapons",
+      "text": "The planetar's weapon attacks are magical. When the planetar hits with any weapon, the weapon deals an extra 5d8 radiant damage (included in the attack)."
+    },
+    {
+      "name": "Divine Awareness",
+      "text": "The planetar knows if it hears a lie."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The planetar has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "4d6+7",
+          "type": "slashing"
+        },
+        {
+          "dice": "5d8",
+          "type": "radiant"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 20,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Flame Strike": 3,
+      "Insect Plague": 1
+    }
+  }
+}

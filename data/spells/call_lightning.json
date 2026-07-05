@@ -1,0 +1,37 @@
+{
+  "name": "Call Lightning",
+  "level": 3,
+  "school": "conjuration",
+  "range": 120,
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 100,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 5,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "3d10",
+          "type": "lightning"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d10"
+  },
+  "_approx": "one 5-ft-radius bolt; the recall-a-bolt-each-round action is dropped.",
+  "imported": "5etools"
+}

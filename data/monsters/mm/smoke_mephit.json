@@ -1,0 +1,85 @@
+{
+  "name": "Smoke Mephit",
+  "type": "elemental",
+  "size": "Small",
+  "cr": 0.25,
+  "alignment": "N E",
+  "ac": 12,
+  "hp": 22,
+  "hit_dice": "5d6+5",
+  "speeds": {
+    "walk": 30,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 2,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Auran",
+    "Ignan"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Death Burst",
+      "text": "When the mephit dies, it leaves behind a cloud of smoke that fills a 5-foot-radius sphere centered on its space. The sphere is Vision and Light. Wind disperses the cloud, which otherwise lasts for 1 minute."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Cinder Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 10,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "6",
+      "rider": {
+        "ability": "DEX",
+        "dc": 10,
+        "on_fail_condition": "blinded"
+      }
+    }
+  ],
+  "imported": "5etools-mm"
+}

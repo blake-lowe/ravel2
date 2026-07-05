@@ -1,0 +1,98 @@
+{
+  "name": "Devourer",
+  "type": "undead",
+  "size": "Large",
+  "cr": 13.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 189,
+  "hit_dice": "18d10+90",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 12,
+    "CON": 20,
+    "INT": 13,
+    "WIS": 10,
+    "CHA": 16
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Imprison Soul",
+      "text": "The devourer chooses a living Humanoid with 0 hit points that it can see within 30 feet of it. That creature is teleported inside the devourer's ribcage and imprisoned there. While imprisoned in this way, the creature is restrained and has disadvantage on death saving throws. If the creature dies while imprisoned, the devourer regains 25 hit points and immediately recharges Soul Rend. Additionally, at the start of its next turn, the devourer regurgitates the slain creature as a bonus action, and the creature becomes an undead. If the victim had 2 or fewer Hit Dice, it becomes a zombie. If it had 3 to 5 Hit Dice, it becomes a ghoul. Otherwise, it becomes a wight. A devourer can imprison only one creature at a time."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "A devourer doesn't require air, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "slashing"
+        },
+        {
+          "dice": "6d6",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Soul Rend",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 18,
+      "damage": [
+        {
+          "dice": "8d10",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "6",
+      "rider": null
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

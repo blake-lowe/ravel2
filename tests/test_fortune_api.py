@@ -1,0 +1,138 @@
+"""Slice 12e web layer: the Supertemporal Arena API - lobby, shop actions,
+deployment, battle payload (replay-shaped), the wheel, and the Book of Ages.
+Skipped wholesale if FastAPI isn't installed (the engine suite must not require it)."""
+import pytest
+
+fastapi = pytest.importorskip("fastapi")
+from fastapi.testclient import TestClient        # noqa: E402
+
+import web.fortune as wf                          # noqa: E402
+from web.app import app                           # noqa: E402
+
+client = TestClient(app)
+
+
+def start(seed=42, books=("MM",), handle="Testy"):
+    r = client.post("/api/fortune/new",
+                    json={"books": list(books), "seed": seed, "handle": handle})
+    assert r.status_code == 200, r.text
+    return r.json()
+
+
+def test_meta_lists_books_items_and_odds():
+    m = client.get("/api/fortune/meta").json()
+    labels = {b["label"] for b in m["books"]}
+    assert "MM" in labels
+    assert len(m["items"]) == 12
+    assert m["wheel"]["outer"] == {"none": 3, "common": 6, "middle": 1}
+    assert m["team_cap"] == 5 and m["lives"] == 3
+
+
+def test_new_run_state_shape():
+    s = start()
+    assert s["phase"] == "shop" and s["round"] == 1 and s["lives"] == 3
+    assert s["purse_cp"] == 1000 and s["cap"] == 1
+    assert len(s["shop"]["monsters"]) == 5 and len(s["shop"]["items"]) == 2
+    for slot in s["shop"]["monsters"]:
+        assert slot["cr"] <= 1 and slot["source"] == "MM"
+        assert slot["price"] and slot["art"]
+    assert len(s["foresight"]) == 3
+    assert s["enemy"], "enemy composition is visible in the shop"
+    assert s["handle"] == "Testy"
+
+
+def test_unknown_books_rejected():
+    r = client.post("/api/fortune/new", json={"books": ["NOPE"], "seed": 1})
+    assert r.status_code == 422
+
+
+def test_shop_actions_roundtrip():
+    s = start(seed=7)
+    rid = s["run_id"]
+    s = client.post(f"/api/fortune/run/{rid}/action",
+                    json={"action": "buy", "slot": 0}).json()
+    assert len(s["stable"]) == 1 and s["purse_cp"] < 1000
+    member = s["stable"][0]
+    assert member["ac"] and member["hp"] and member["art"]
+    s = client.post(f"/api/fortune/run/{rid}/action",
+                    json={"action": "freeze", "kind": "monster", "slot": 1}).json()
+    kept = s["shop"]["monsters"][1]["name"]
+    s = client.post(f"/api/fortune/run/{rid}/action",
+                    json={"action": "reroll"}).json()
+    assert s["shop"]["monsters"][1]["name"] == kept
+    r = client.post(f"/api/fortune/run/{rid}/action",
+                    json={"action": "sell", "target": 99})
+    assert r.status_code == 422
+
+
+def test_deploy_battle_and_wheel_flow():
+    s = start(seed=11)
+    rid = s["run_id"]
+    for slot in range(3):
+        r = client.post(f"/api/fortune/run/{rid}/action",
+                        json={"action": "buy", "slot": slot})
+        if r.status_code != 200:      # purse ran dry: two is plenty
+            break
+    d = client.get(f"/api/fortune/run/{rid}/deploy").json()
+    assert d["zone"] and d["grid"]["w"] > 0 and d["combatants"]
+    a_tokens = [c for c in d["combatants"] if c["team"] == "A"]
+    assert a_tokens and all(c["token_art"] for c in a_tokens)
+    cell = next(c for c in d["zone"])
+    r = client.post(f"/api/fortune/run/{rid}/battle",
+                    json={"placements": [list(cell)]})
+    assert r.status_code == 200, r.text
+    payload = r.json()
+    b = payload["battle"]
+    assert set(b) >= {"winner", "rounds", "log", "events", "grid", "combatants"}
+    assert payload["outcome"]["years"] == b["rounds"] * 10
+    st = payload["state"]
+    assert st["round"] == 2
+    if payload["outcome"]["won"]:
+        assert st["phase"] == "wheel" and payload["outcome"]["spin_owed"]
+        sp = client.post(f"/api/fortune/run/{rid}/spin").json()
+        assert sp["spin"]["tier"] in ("none", "common", "uncommon", "rare")
+        assert sp["state"]["phase"] == "shop"
+    else:
+        assert st["lives"] == 2 and st["phase"] == "shop"
+
+
+def test_illegal_placement_rejected():
+    s = start(seed=13)
+    rid = s["run_id"]
+    client.post(f"/api/fortune/run/{rid}/action", json={"action": "buy", "slot": 0})
+    r = client.post(f"/api/fortune/run/{rid}/battle",
+                    json={"placements": [[19, 0]]})    # enemy half of the floor
+    assert r.status_code == 422
+
+
+def test_battle_seed_is_deterministic():
+    logs = []
+    for _ in range(2):
+        s = start(seed=99)
+        rid = s["run_id"]
+        client.post(f"/api/fortune/run/{rid}/action", json={"action": "buy", "slot": 0})
+        r = client.post(f"/api/fortune/run/{rid}/battle", json={"placements": []})
+        logs.append(r.json()["battle"]["log"])
+    assert logs[0] == logs[1]
+
+
+def test_book_of_ages_persists(tmp_path, monkeypatch):
+    monkeypatch.setattr(wf, "DB_PATH", tmp_path / "runs.db")
+    s = start(seed=55, handle="Shemeshka's Debtor")
+    rid = s["run_id"]
+    run = wf.RUNS[rid]
+    wf._persist(rid, run)
+    rows = client.get("/api/fortune/leaderboard").json()
+    assert rows and rows[0]["handle"] == "Shemeshka's Debtor"
+    assert rows[0]["seed"] == 55 and rows[0]["books"] == ["MM"]
+
+
+def test_missing_run_is_404():
+    assert client.get("/api/fortune/run/deadbeef").status_code == 404
+
+
+def test_page_serves():
+    r = client.get("/supertemporal")
+    assert r.status_code == 200 and "Supertemporal Arena" in r.text
+    for other in ("/pit", "/bestiary", "/builder"):
+        assert "/supertemporal" in client.get(other).text, f"nav link missing on {other}"

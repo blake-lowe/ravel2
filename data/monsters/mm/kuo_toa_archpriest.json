@@ -1,0 +1,107 @@
+{
+  "name": "Kuo-toa Archpriest",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 6.0,
+  "alignment": "N E",
+  "ac": 13,
+  "hp": 97,
+  "hit_dice": "13d8+39",
+  "speeds": {
+    "walk": 30,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 14,
+    "CON": 16,
+    "INT": 13,
+    "WIS": 16,
+    "CHA": 14
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 9,
+    "Religion": 7
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 19
+  },
+  "languages": [
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Otherworldly Perception",
+      "text": "The kuo-toa can sense the presence of any creature within 30 feet of it that is invisible or on the Ethereal Plane. It can pinpoint such a creature that is moving."
+    },
+    {
+      "name": "Slippery",
+      "text": "The kuo-toa has advantage on ability checks and saving throws made to escape a grapple."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scepter",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d6",
+          "type": "lightning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Unarmed Strike",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 14,
+    "attack_bonus": 6,
+    "caster_level": 10,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2
+    },
+    "spells": [
+      "Hold Person",
+      "Mass Cure Wounds",
+      "Sacred Flame",
+      "Shield of Faith",
+      "Spirit Guardians",
+      "Spiritual Weapon"
+    ]
+  },
+  "traits_flags": [
+    "water_breathing",
+    "sunlight_sensitivity"
+  ]
+}

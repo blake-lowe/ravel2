@@ -1,0 +1,58 @@
+{
+  "name": "Eagle",
+  "type": "beast",
+  "size": "Small",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 12,
+  "hp": 3,
+  "hit_dice": "1d6",
+  "speeds": {
+    "walk": 10,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 15,
+    "CON": 10,
+    "INT": 2,
+    "WIS": 14,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Keen Sight",
+      "text": "The eagle has advantage on Wisdom (Perception) checks that rely on sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Talons",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,98 @@
+{
+  "name": "Tanarukk",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 95,
+  "hit_dice": "10d8+50",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 13,
+    "CON": 20,
+    "INT": 9,
+    "WIS": 9,
+    "CHA": 9
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Intimidation": 2,
+    "Perception": 2
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Abyssal",
+    "Common",
+    "plus any one language"
+  ],
+  "damage_resistances": [
+    "fire",
+    "poison"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Unbridled Fury (reaction)",
+      "text": "In response to being hit by a melee attack, the tanarukk can make one Bite or Greatsword attack with advantage against the attacker."
+    },
+    {
+      "name": "Aggressive (bonus)",
+      "text": "The tanarukk moves up to its speed toward an enemy that it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The tanarukk has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Greatsword",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm"
+}

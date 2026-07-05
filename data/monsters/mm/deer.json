@@ -1,0 +1,50 @@
+{
+  "name": "Deer",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 4,
+  "hit_dice": "1d8",
+  "speeds": {
+    "walk": 50
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 16,
+    "CON": 11,
+    "INT": 2,
+    "WIS": 14,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

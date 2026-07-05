@@ -1,0 +1,80 @@
+{
+  "name": "Mage",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 6,
+  "alignment": "A",
+  "ac": 15,
+  "hp": 40,
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 9,
+    "DEX": 14,
+    "CON": 11,
+    "INT": 17,
+    "WIS": 12,
+    "CHA": 11
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 6,
+    "History": 6
+  },
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [
+    "any four languages"
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 14,
+    "attack_bonus": 6,
+    "caster_level": 9,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3
+    },
+    "spells": [
+      "Fire Bolt",
+      "Magic Missile",
+      "Burning Hands",
+      "Scorching Ray",
+      "Fireball",
+      "Lightning Bolt",
+      "Shield",
+      "Counterspell",
+      "Hellish Rebuke",
+      "Flaming Sphere",
+      "Dispel Magic",
+      "Absorb Elements"
+    ],
+    "innate": {
+      "Magic Missile": 1
+    }
+  },
+  "hit_dice": "9d8",
+  "curated": true,
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Acid Splash",
+  "level": 0,
+  "school": "conjuration",
+  "range": 60,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false
+    }
+  ],
+  "imported": "5etools"
+}

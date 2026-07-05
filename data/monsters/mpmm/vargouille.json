@@ -1,0 +1,101 @@
+{
+  "name": "Vargouille",
+  "type": "fiend",
+  "size": "Tiny",
+  "cr": 1.0,
+  "alignment": "C E",
+  "ac": 12,
+  "hp": 18,
+  "hit_dice": "4d4+8",
+  "speeds": {
+    "walk": 5,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 4,
+    "WIS": 7,
+    "CHA": 2
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [
+    "understands Abyssal",
+    "Infernal",
+    "and any languages it knew before becoming a vargouille but can't speak"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Abyssal Curse",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CHA",
+        "dc": 12,
+        "on_fail_condition": "incapacitated"
+      }
+    },
+    {
+      "name": "Stunning Shriek",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 12,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 12,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

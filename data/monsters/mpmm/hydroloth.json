@@ -1,0 +1,150 @@
+{
+  "name": "Hydroloth",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 9.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 135,
+  "hit_dice": "18d8+54",
+  "speeds": {
+    "walk": 20,
+    "swim": 40
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 21,
+    "CON": 16,
+    "INT": 19,
+    "WIS": 10,
+    "CHA": 14
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {
+    "Insight": 4,
+    "Perception": 4
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Abyssal",
+    "Infernal",
+    "telepathy 60 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "acid",
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "The hydroloth teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The hydroloth has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Secure Memory",
+      "text": "The hydroloth is immune to the waters of the River Styx, as well as any effect that would steal or modify its memories or detect or read its thoughts."
+    },
+    {
+      "name": "Watery Advantage",
+      "text": "While submerged in liquid, the hydroloth has advantage on attack rolls."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d10+5",
+          "type": "force"
+        },
+        {
+          "dice": "2d10",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "force"
+        },
+        {
+          "dice": "2d10",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Steal Memory",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "INT",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": null,
+      "max_targets": 1
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "water_breathing"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Darkness": 0,
+      "Dispel Magic": 0,
+      "Fear": 3,
+      "Suggestion": 3
+    }
+  }
+}

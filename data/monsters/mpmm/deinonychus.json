@@ -1,0 +1,78 @@
+{
+  "name": "Deinonychus",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 26,
+  "hit_dice": "4d8+8",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 15,
+    "CON": 14,
+    "INT": 4,
+    "WIS": 12,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 3
+  },
+  "senses": {
+    "passive_perception": 13
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "pounce": {
+    "distance": 20,
+    "dc": 12,
+    "bonus_attack": "Bite"
+  }
+}

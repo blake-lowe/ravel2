@@ -1,0 +1,60 @@
+{
+  "name": "Giant Goat",
+  "type": "beast",
+  "size": "Large",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 19,
+  "hit_dice": "3d10+3",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 11,
+    "CON": 12,
+    "INT": 3,
+    "WIS": 12,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Sure-Footed",
+      "text": "The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Ram",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d4+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "pounce": {
+    "distance": 20,
+    "dc": 13,
+    "bonus_attack": "Ram"
+  }
+}

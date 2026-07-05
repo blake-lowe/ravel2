@@ -1,0 +1,79 @@
+{
+  "name": "Xvart",
+  "type": "monstrosity",
+  "size": "Small",
+  "cr": 0.125,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 7,
+  "hit_dice": "2d6",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 14,
+    "CON": 10,
+    "INT": 8,
+    "WIS": 7,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 30,
+    "passive_perception": 8
+  },
+  "languages": [
+    "Abyssal"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Low Cunning (bonus)",
+      "text": "The xvart takes the Disengage action."
+    },
+    {
+      "name": "Raxivort's Tongue",
+      "text": "The xvart can communicate with ordinary bat and rat, as well as giant bat and giant rat."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Sling",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

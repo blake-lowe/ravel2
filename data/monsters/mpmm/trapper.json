@@ -1,0 +1,81 @@
+{
+  "name": "Trapper",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 3.0,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 68,
+  "hit_dice": "8d10+24",
+  "speeds": {
+    "walk": 20,
+    "climb": 20
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 10,
+    "CON": 17,
+    "INT": 2,
+    "WIS": 13,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 2
+  },
+  "senses": {
+    "blindsight": 30,
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "If the trapper is motionless on a floor, wall, or ceiling at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the trapper move or act, that creature must succeed on a 18 Intelligence (Investigation) check to discern that the trapper isn't part of the floor, wall, or ceiling."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The trapper can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Smother",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 13,
+      "damage": [
+        {
+          "dice": "3d6+3",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d6",
+          "type": "acid"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "DEX",
+        "dc": 13,
+        "on_fail_condition": "grappled",
+        "escalates_to": "blinded"
+      }
+    }
+  ],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,92 @@
+{
+  "name": "Harpy",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "C E",
+  "ac": 11,
+  "hp": 38,
+  "hit_dice": "7d8+7",
+  "speeds": {
+    "walk": 20,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 13,
+    "CON": 12,
+    "INT": 7,
+    "WIS": 10,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d4+1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Club",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claws",
+      "count": 1
+    },
+    {
+      "name": "Club",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Luring Song",
+      "shape": "sphere",
+      "size": 300,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 11,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 11,
+        "on_fail_condition": "charmed",
+        "escalates_to": "incapacitated"
+      }
+    }
+  ],
+  "imported": "5etools-mm"
+}

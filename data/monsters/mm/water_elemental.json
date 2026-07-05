@@ -1,0 +1,110 @@
+{
+  "name": "Water Elemental",
+  "type": "elemental",
+  "size": "Large",
+  "cr": 5.0,
+  "alignment": "N",
+  "ac": 14,
+  "hp": 114,
+  "hit_dice": "12d10+48",
+  "speeds": {
+    "walk": 30,
+    "swim": 90
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 18,
+    "INT": 5,
+    "WIS": 10,
+    "CHA": 8
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Aquan"
+  ],
+  "damage_resistances": [
+    "acid"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "Water Form",
+      "text": "The elemental can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Freeze",
+      "text": "If the elemental takes cold damage, it partially freezes; its speed is reduced by 20 feet until the end of its next turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Whelm",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "STR",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d8+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "4-6",
+      "rider": {
+        "ability": "STR",
+        "dc": 15,
+        "on_fail_condition": "grappled",
+        "escalates_to": "restrained"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,115 @@
+{
+  "name": "Iron Golem",
+  "type": "construct",
+  "size": "Large",
+  "cr": 16.0,
+  "alignment": "U",
+  "ac": 20,
+  "hp": 210,
+  "hit_dice": "20d10+100",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 24,
+    "DEX": 9,
+    "CON": 20,
+    "INT": 3,
+    "WIS": 11,
+    "CHA": 1
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire",
+    "poison",
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Fire Absorption",
+      "text": "Whenever the golem is subjected to fire damage, it takes no damage and instead regains a number of hit points equal to the fire damage dealt."
+    },
+    {
+      "name": "Immutable Form",
+      "text": "The golem is immune to any spell or effect that would alter its form."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The golem has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The golem's weapon attacks are magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "3d8+7",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Sword",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "3d10+7",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Poison Breath",
+      "shape": "cone",
+      "size": 15,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 19,
+      "damage": [
+        {
+          "dice": "10d8",
+          "type": "poison"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

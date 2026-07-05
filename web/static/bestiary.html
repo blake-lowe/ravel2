@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bestiary — Ravel</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Ravel</h1>
+  <p class="subtitle">the chant on every basher, berk, and beast what's bled in the Blood Pit — no screed, cutter, just the dark</p>
+  <nav class="topnav">
+    <a href="/pit">The Blood Pit</a>
+    <a href="/bestiary" class="active">Bestiary</a>
+    <a href="/builder">Character Builder</a>
+    <a href="/supertemporal">Supertemporal</a>
+  </nav>
+</header>
+
+<main class="bestiary">
+  <aside class="roster">
+    <div class="filters">
+      <input type="search" id="q" placeholder="Search by name&hellip;" autocomplete="off">
+      <select id="type"><option value="">every type</option></select>
+      <select id="cr"><option value="">every challenge</option></select>
+      <select id="source"><option value="">every source</option></select>
+    </div>
+    <div id="slip" class="bookslip" hidden></div>
+    <p class="count" id="count"></p>
+    <ul id="list"></ul>
+  </aside>
+
+  <section class="sheet frame" id="sheet">
+    <p class="none">Choose a creature from the roster, cutter.</p>
+  </section>
+</main>
+
+<script src="/static/bestiary.js"></script>
+</body>
+</html>

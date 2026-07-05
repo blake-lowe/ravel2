@@ -1,0 +1,151 @@
+{
+  "name": "Fraz-Urb'luu",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 23.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 337,
+  "hit_dice": "27d10+189",
+  "speeds": {
+    "walk": 40,
+    "fly": 40
+  },
+  "abilities": {
+    "STR": 29,
+    "DEX": 12,
+    "CON": 25,
+    "INT": 26,
+    "WIS": 24,
+    "CHA": 26
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Deception": 15,
+    "Perception": 14,
+    "Stealth": 8
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 24
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Fraz-Urb'luu fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Fraz-Urb'luu has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Undetectable",
+      "text": "Fraz-Urb'luu can't be targeted by divination magic, perceived through magical scrying sensors, or detected by abilities that sense demons or Fiends."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "3d6+9",
+          "type": "force"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Fist",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "3d8+9",
+          "type": "force"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Fist",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Phantasmal Terror",
+      "shape": "sphere",
+      "size": 120,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 23,
+      "damage": [
+        {
+          "dice": "3d10",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 23,
+        "on_fail_condition": "frightened"
+      },
+      "max_targets": 1
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 23,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Dispel Magic": 0
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  }
+}

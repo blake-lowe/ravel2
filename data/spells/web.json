@@ -1,0 +1,29 @@
+{
+  "name": "Web",
+  "level": 2,
+  "school": "conjuration",
+  "range": 60,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 100,
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "condition": "restrained",
+      "save_ends": true
+    }
+  ],
+  "_approx": "the burning-web fire clause is dropped (webs are rarely lit).",
+  "imported": "5etools"
+}

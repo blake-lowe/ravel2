@@ -1,0 +1,64 @@
+{
+  "name": "Crawling Claw",
+  "type": "undead",
+  "size": "Tiny",
+  "cr": 0.0,
+  "alignment": "N E",
+  "ac": 12,
+  "hp": 2,
+  "hit_dice": "1d4",
+  "speeds": {
+    "walk": 20,
+    "climb": 20
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 14,
+    "CON": 11,
+    "INT": 5,
+    "WIS": 10,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands Common but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Turn Immunity",
+      "text": "The claw is immune to effects that turn undead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d4+1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,100 @@
+{
+  "name": "Scarecrow",
+  "type": "construct",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "C E",
+  "ac": 11,
+  "hp": 36,
+  "hit_dice": "8d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 13,
+    "CON": 11,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands the languages of its creator but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [
+    "fire"
+  ],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned",
+    "unconscious"
+  ],
+  "traits": [
+    {
+      "name": "False Appearance",
+      "text": "While the scarecrow remains motionless, it is indistinguishable from an ordinary, inanimate scarecrow."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d4+1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "WIS",
+        "dc": 11,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Terrifying Glare",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 11,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 11,
+        "on_fail_condition": "frightened"
+      },
+      "max_targets": 1
+    }
+  ],
+  "traits_flags": [
+    "false_appearance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

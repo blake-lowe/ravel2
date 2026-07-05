@@ -1,0 +1,160 @@
+{
+  "name": "Neogi Master",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "L E",
+  "ac": 15,
+  "hp": 71,
+  "hit_dice": "11d8+22",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 16,
+    "CON": 14,
+    "INT": 16,
+    "WIS": 12,
+    "CHA": 18
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 5,
+    "Deception": 6,
+    "Intimidation": 6,
+    "Perception": 3,
+    "Persuasion": 6
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 13
+  },
+  "languages": [
+    "Common",
+    "Deep Speech",
+    "Undercommon",
+    "telepathy 30 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Mental Fortitude",
+      "text": "The neogi has advantage on saving throws against being charmed or frightened, and magic can't put the neogi to sleep."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The neogi can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "4d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "poisoned"
+      }
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d4+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Tentacle of Hadar",
+      "kind": "ranged",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "3d6+4",
+          "type": "necrotic"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    },
+    {
+      "name": "Tentacle of Hadar",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Enslave (bonus)",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 14,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "once",
+      "rider": {
+        "ability": "WIS",
+        "dc": 14,
+        "on_fail_condition": "charmed"
+      },
+      "max_targets": 1
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 14,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Hold Person": 1,
+      "Hunger of Hadar": 1
+    }
+  },
+  "traits_flags": [
+    "devils_sight"
+  ],
+  "save_advantages": [
+    "charmed",
+    "frightened"
+  ]
+}

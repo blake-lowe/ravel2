@@ -1,0 +1,119 @@
+{
+  "name": "Nalfeshnee",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 13.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 184,
+  "hit_dice": "16d10+96",
+  "speeds": {
+    "walk": 20,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 10,
+    "CON": 22,
+    "INT": 19,
+    "WIS": 12,
+    "CHA": 15
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "The nalfeshnee magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The nalfeshnee has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "5d10+5",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 10,
+      "damage": [
+        {
+          "dice": "3d6+5",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Horror Nimbus",
+      "shape": "sphere",
+      "size": 15,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm"
+}

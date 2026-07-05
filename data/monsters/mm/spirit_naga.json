@@ -1,0 +1,94 @@
+{
+  "name": "Spirit Naga",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 8.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 75,
+  "hit_dice": "10d10+20",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 17,
+    "CON": 14,
+    "INT": 16,
+    "WIS": 15,
+    "CHA": 16
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Abyssal",
+    "Common"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Rejuvenation",
+      "text": "If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "7d8",
+          "type": "poison"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 14,
+    "attack_bonus": 6,
+    "caster_level": 10,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2
+    },
+    "spells": [
+      "Blight",
+      "Charm Person",
+      "Hold Person",
+      "Lightning Bolt",
+      "Ray of Frost",
+      "Sleep"
+    ]
+  }
+}

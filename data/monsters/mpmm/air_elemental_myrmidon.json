@@ -1,0 +1,79 @@
+{
+  "name": "Air Elemental Myrmidon",
+  "type": "elemental",
+  "size": "Medium",
+  "cr": 7.0,
+  "alignment": "N",
+  "ac": 18,
+  "hp": 117,
+  "hit_dice": "18d8+36",
+  "speeds": {
+    "walk": 30,
+    "fly": 30,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 9,
+    "WIS": 10,
+    "CHA": 10
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Auran",
+    "one language of its creator's choice"
+  ],
+  "damage_resistances": [
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Lightning Strike {@recharge}",
+      "text": "The myrmidon makes one Flail attack. On a hit, the target takes an extra 18 (4d8) lightning damage, and the target must succeed on a 13 Constitution saving throw or be stunned until the end of the myrmidon's next turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Flail",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "force"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Flail",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm"
+}

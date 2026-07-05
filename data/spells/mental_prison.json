@@ -1,0 +1,31 @@
+{
+  "name": "Mental Prison",
+  "level": 6,
+  "school": "illusion",
+  "range": 60,
+  "components": [
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "INT",
+      "damage": [
+        {
+          "dice": "5d10",
+          "type": "psychic"
+        }
+      ],
+      "condition": "restrained",
+      "save_ends": true
+    }
+  ],
+  "_approx": "the illusory cell is a restrain; the 10d10 breakout burst is dropped.",
+  "imported": "5etools"
+}

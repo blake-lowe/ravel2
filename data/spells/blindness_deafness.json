@@ -1,0 +1,24 @@
+{
+  "name": "Blindness/Deafness",
+  "level": 2,
+  "school": "necromancy",
+  "range": 30,
+  "range_type": "ranged",
+  "components": [
+    "V"
+  ],
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "condition": "blinded",
+      "save_ends": true
+    }
+  ],
+  "imported": "5etools"
+}

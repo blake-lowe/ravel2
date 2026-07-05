@@ -1,0 +1,30 @@
+{
+  "name": "Heal",
+  "level": 6,
+  "school": "evocation",
+  "range": 60,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "allies"
+  },
+  "effects": [
+    {
+      "kind": "heal",
+      "damage": [
+        {
+          "dice": "70d1",
+          "type": "healing"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "10d1"
+  },
+  "imported": "5etools"
+}

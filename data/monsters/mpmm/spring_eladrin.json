@@ -1,0 +1,134 @@
+{
+  "name": "Spring Eladrin",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 10.0,
+  "alignment": "C N",
+  "ac": 19,
+  "hp": 165,
+  "hit_dice": "22d8+66",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 16,
+    "CON": 16,
+    "INT": 18,
+    "WIS": 11,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 8,
+    "Persuasion": 8
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "damage_resistances": [
+    "psychic"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Fey Step {@recharge 4} (bonus)",
+      "text": "The eladrin teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The eladrin has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+2",
+          "type": "slashing"
+        },
+        {
+          "dice": "5d8",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "5d8",
+          "type": "psychic"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Joyful Presence",
+      "shape": "sphere",
+      "size": 60,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 16,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 16,
+        "on_fail_condition": "charmed"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Tasha's Hideous Laughter": 0,
+      "Suggestion": 1
+    }
+  },
+  "teleport_bonus": 30
+}

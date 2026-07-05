@@ -1,0 +1,91 @@
+{
+  "name": "Lost Sorrowsworn",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 7.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 78,
+  "hit_dice": "12d8+24",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 17,
+    "DEX": 12,
+    "CON": 15,
+    "INT": 6,
+    "WIS": 7,
+    "CHA": 5
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 6
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [
+    "Common"
+  ],
+  "damage_resistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Tightening Embrace (reaction)",
+      "text": "If the sorrowsworn takes damage, the creature grappled by Embrace takes 18 (4d8) psychic damage."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Arm Spike",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d10+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Embrace",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "4d10+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "6d8",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Arm Spike",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

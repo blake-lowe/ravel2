@@ -1,0 +1,35 @@
+{
+  "name": "Earth Tremor",
+  "level": 1,
+  "school": "evocation",
+  "range": 0,
+  "range_type": "self",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "self_area",
+    "shape": "sphere",
+    "size": 10,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "DEX",
+      "condition": "prone",
+      "damage": [
+        {
+          "dice": "1d6",
+          "type": "bludgeoning"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d6"
+  },
+  "imported": "5etools"
+}

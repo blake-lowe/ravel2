@@ -1,0 +1,23 @@
+{
+  "name": "Power Word Stun",
+  "level": 8,
+  "school": "enchantment",
+  "range": 60,
+  "components": [
+    "V"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "condition": "stunned",
+      "save_ends": true
+    }
+  ],
+  "_approx": "RAW is no-save if the target is at 150 hp or less; modelled as a CON save vs stunned regardless of hp.",
+  "imported": "5etools"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Vampiric Touch",
+  "level": 3,
+  "school": "necromancy",
+  "range": 0,
+  "range_type": "self",
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "necrotic"
+        }
+      ],
+      "melee": true
+    }
+  ],
+  "imported": "5etools"
+}

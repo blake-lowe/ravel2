@@ -1,0 +1,98 @@
+{
+  "name": "Fire Giant Dreadnought",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 14.0,
+  "alignment": "L E",
+  "ac": 21,
+  "hp": 187,
+  "hit_dice": "15d12+90",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 27,
+    "DEX": 9,
+    "CON": 23,
+    "INT": 8,
+    "WIS": 10,
+    "CHA": 11
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "CHA"
+  ],
+  "skills": {
+    "Athletics": 13,
+    "Perception": 5
+  },
+  "senses": {
+    "passive_perception": 15
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "fire"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Shield Charge {@recharge 5}",
+      "text": "The giant moves up to 30 feet in a straight line and can move through the space of any creature smaller than Huge. The first time it enters a creature's space during this move, that creature must succeed on a 21 Strength saving throw or take 36 (8d6 + 8) bludgeoning damage plus 14 (4d6) fire damage and be pushed up to 30 feet and knocked prone."
+    },
+    {
+      "name": "Dual Shields",
+      "text": "The giant carries two shields, which together give the giant +3 to its AC (accounted for above)."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Fireshield",
+      "kind": "melee",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "4d6+8",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6",
+          "type": "fire"
+        },
+        {
+          "dice": "2d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 13,
+      "damage": [
+        {
+          "dice": "4d10+8",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        240
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Fireshield",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,4102 @@
+[
+  {
+    "name": "Rakshasa",
+    "nominal_cr": 13.0,
+    "raw_cr": 4.39,
+    "adjusted_cr": 6.14,
+    "ci_lo": 4.21,
+    "ci_hi": 8.43,
+    "flag": "ok",
+    "residual": -6.86
+  },
+  {
+    "name": "Djinni",
+    "nominal_cr": 11.0,
+    "raw_cr": 2.77,
+    "adjusted_cr": 4.3,
+    "ci_lo": 1.77,
+    "ci_hi": 10.37,
+    "flag": "left/ok",
+    "residual": -6.7
+  },
+  {
+    "name": "Cloaker",
+    "nominal_cr": 8.0,
+    "raw_cr": 1.87,
+    "adjusted_cr": 2.85,
+    "ci_lo": 1.43,
+    "ci_hi": 4.61,
+    "flag": "ok",
+    "residual": -5.15
+  },
+  {
+    "name": "Drow Mage",
+    "nominal_cr": 7,
+    "raw_cr": 1.58,
+    "adjusted_cr": 2.44,
+    "ci_lo": 1.77,
+    "ci_hi": 4.16,
+    "flag": "ok",
+    "residual": -4.56
+  },
+  {
+    "name": "Assassin",
+    "nominal_cr": 8.0,
+    "raw_cr": 3.17,
+    "adjusted_cr": 4.59,
+    "ci_lo": 1.34,
+    "ci_hi": 8.84,
+    "flag": "ok",
+    "residual": -3.41
+  },
+  {
+    "name": "Archmage",
+    "nominal_cr": 12,
+    "raw_cr": 7.31,
+    "adjusted_cr": 8.62,
+    "ci_lo": 6.92,
+    "ci_hi": 12.51,
+    "flag": "ok",
+    "residual": -3.38
+  },
+  {
+    "name": "Young Red Shadow Dragon",
+    "nominal_cr": 13.0,
+    "raw_cr": 8.89,
+    "adjusted_cr": 9.64,
+    "ci_lo": 8.22,
+    "ci_hi": 11.84,
+    "flag": "ok",
+    "residual": -3.36
+  },
+  {
+    "name": "Ultroloth",
+    "nominal_cr": 13.0,
+    "raw_cr": 8.91,
+    "adjusted_cr": 9.66,
+    "ci_lo": 8.46,
+    "ci_hi": 11.03,
+    "flag": "ok",
+    "residual": -3.34
+  },
+  {
+    "name": "Spirit Naga",
+    "nominal_cr": 8.0,
+    "raw_cr": 3.29,
+    "adjusted_cr": 4.68,
+    "ci_lo": 2.61,
+    "ci_hi": 8.4,
+    "flag": "ok",
+    "residual": -3.32
+  },
+  {
+    "name": "Kuo-toa Archpriest",
+    "nominal_cr": 6.0,
+    "raw_cr": 1.81,
+    "adjusted_cr": 2.76,
+    "ci_lo": 1.63,
+    "ci_hi": 7.21,
+    "flag": "ok",
+    "residual": -3.24
+  },
+  {
+    "name": "Adult Brass Dragon",
+    "nominal_cr": 13.0,
+    "raw_cr": 9.17,
+    "adjusted_cr": 9.83,
+    "ci_lo": 9.08,
+    "ci_hi": 10.3,
+    "flag": "ok",
+    "residual": -3.17
+  },
+  {
+    "name": "Vrock",
+    "nominal_cr": 6.0,
+    "raw_cr": 1.96,
+    "adjusted_cr": 2.97,
+    "ci_lo": 1.83,
+    "ci_hi": 7.6,
+    "flag": "ok",
+    "residual": -3.03
+  },
+  {
+    "name": "Revenant",
+    "nominal_cr": 5.0,
+    "raw_cr": 1.42,
+    "adjusted_cr": 2.21,
+    "ci_lo": 1.13,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -2.79
+  },
+  {
+    "name": "Efreeti",
+    "nominal_cr": 11.0,
+    "raw_cr": 6.52,
+    "adjusted_cr": 8.3,
+    "ci_lo": 4.88,
+    "ci_hi": 9.31,
+    "flag": "ok",
+    "residual": -2.7
+  },
+  {
+    "name": "Remorhaz",
+    "nominal_cr": 11.0,
+    "raw_cr": 6.91,
+    "adjusted_cr": 8.44,
+    "ci_lo": 7.54,
+    "ci_hi": 9.54,
+    "flag": "ok",
+    "residual": -2.56
+  },
+  {
+    "name": "Yuan-ti Abomination",
+    "nominal_cr": 7.0,
+    "raw_cr": 3.07,
+    "adjusted_cr": 4.52,
+    "ci_lo": 2.86,
+    "ci_hi": 5.52,
+    "flag": "ok",
+    "residual": -2.48
+  },
+  {
+    "name": "Behir",
+    "nominal_cr": 11.0,
+    "raw_cr": 7.14,
+    "adjusted_cr": 8.54,
+    "ci_lo": 8.17,
+    "ci_hi": 8.89,
+    "flag": "ok",
+    "residual": -2.46
+  },
+  {
+    "name": "Nalfeshnee",
+    "nominal_cr": 13.0,
+    "raw_cr": 10.14,
+    "adjusted_cr": 10.59,
+    "ci_lo": 9.08,
+    "ci_hi": 12.15,
+    "flag": "ok",
+    "residual": -2.41
+  },
+  {
+    "name": "Green Hag",
+    "nominal_cr": 3.0,
+    "raw_cr": 0.38,
+    "adjusted_cr": 0.63,
+    "ci_lo": 0.29,
+    "ci_hi": 1.58,
+    "flag": "ok",
+    "residual": -2.37
+  },
+  {
+    "name": "Marid",
+    "nominal_cr": 11.0,
+    "raw_cr": 7.54,
+    "adjusted_cr": 8.73,
+    "ci_lo": 7.54,
+    "ci_hi": 10.26,
+    "flag": "ok",
+    "residual": -2.27
+  },
+  {
+    "name": "Bone Naga (Guardian)",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.04,
+    "adjusted_cr": 1.81,
+    "ci_lo": 0.66,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -2.19
+  },
+  {
+    "name": "Drow Priestess of Lolth",
+    "nominal_cr": 8.0,
+    "raw_cr": 4.24,
+    "adjusted_cr": 5.84,
+    "ci_lo": 3.67,
+    "ci_hi": 8.28,
+    "flag": "ok",
+    "residual": -2.16
+  },
+  {
+    "name": "Roc",
+    "nominal_cr": 11.0,
+    "raw_cr": 7.83,
+    "adjusted_cr": 8.86,
+    "ci_lo": 8.31,
+    "ci_hi": 10.26,
+    "flag": "ok",
+    "residual": -2.14
+  },
+  {
+    "name": "Yochlol",
+    "nominal_cr": 10.0,
+    "raw_cr": 5.7,
+    "adjusted_cr": 7.98,
+    "ci_lo": 4.77,
+    "ci_hi": 9.01,
+    "flag": "ok",
+    "residual": -2.02
+  },
+  {
+    "name": "Chasme",
+    "nominal_cr": 6.0,
+    "raw_cr": 2.53,
+    "adjusted_cr": 4.11,
+    "ci_lo": 1.46,
+    "ci_hi": 6.97,
+    "flag": "ok",
+    "residual": -1.89
+  },
+  {
+    "name": "Adult White Dragon",
+    "nominal_cr": 13.0,
+    "raw_cr": 10.66,
+    "adjusted_cr": 11.11,
+    "ci_lo": 9.79,
+    "ci_hi": 12.6,
+    "flag": "ok",
+    "residual": -1.89
+  },
+  {
+    "name": "Orc War Chief",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.35,
+    "adjusted_cr": 2.13,
+    "ci_lo": 0.95,
+    "ci_hi": 4.3,
+    "flag": "ok",
+    "residual": -1.87
+  },
+  {
+    "name": "Young Gold Dragon",
+    "nominal_cr": 10.0,
+    "raw_cr": 6.16,
+    "adjusted_cr": 8.16,
+    "ci_lo": 5.77,
+    "ci_hi": 9.01,
+    "flag": "ok",
+    "residual": -1.84
+  },
+  {
+    "name": "Faerie Dragon (Blue)",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.08,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": -1.82
+  },
+  {
+    "name": "Faerie Dragon (Green)",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.08,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": -1.82
+  },
+  {
+    "name": "Faerie Dragon (Indigo)",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.08,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": -1.82
+  },
+  {
+    "name": "Faerie Dragon (Violet)",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.08,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": -1.82
+  },
+  {
+    "name": "Mage",
+    "nominal_cr": 6,
+    "raw_cr": 2.62,
+    "adjusted_cr": 4.18,
+    "ci_lo": 2.6,
+    "ci_hi": 5.52,
+    "flag": "ok",
+    "residual": -1.82
+  },
+  {
+    "name": "Bone Naga (Spirit)",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.42,
+    "adjusted_cr": 2.21,
+    "ci_lo": 0.95,
+    "ci_hi": 7.45,
+    "flag": "ok",
+    "residual": -1.79
+  },
+  {
+    "name": "Hobgoblin Warlord",
+    "nominal_cr": 6.0,
+    "raw_cr": 2.76,
+    "adjusted_cr": 4.28,
+    "ci_lo": 2.33,
+    "ci_hi": 5.57,
+    "flag": "ok",
+    "residual": -1.72
+  },
+  {
+    "name": "Wereboar",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.48,
+    "adjusted_cr": 2.3,
+    "ci_lo": 1.27,
+    "ci_hi": 4.27,
+    "flag": "ok",
+    "residual": -1.7
+  },
+  {
+    "name": "Drider",
+    "nominal_cr": 6.0,
+    "raw_cr": 2.82,
+    "adjusted_cr": 4.33,
+    "ci_lo": 2.33,
+    "ci_hi": 6.9,
+    "flag": "ok",
+    "residual": -1.67
+  },
+  {
+    "name": "Doppelganger",
+    "nominal_cr": 3.0,
+    "raw_cr": 0.75,
+    "adjusted_cr": 1.4,
+    "ci_lo": 0.69,
+    "ci_hi": 2.33,
+    "flag": "ok",
+    "residual": -1.6
+  },
+  {
+    "name": "Beholder",
+    "nominal_cr": 13.0,
+    "raw_cr": 10.96,
+    "adjusted_cr": 11.42,
+    "ci_lo": 9.08,
+    "ci_hi": 13.0,
+    "flag": "ok",
+    "residual": -1.58
+  },
+  {
+    "name": "Wyvern",
+    "nominal_cr": 6,
+    "raw_cr": 2.95,
+    "adjusted_cr": 4.43,
+    "ci_lo": 1.46,
+    "ci_hi": 7.08,
+    "flag": "ok",
+    "residual": -1.57
+  },
+  {
+    "name": "Incubus",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.61,
+    "adjusted_cr": 2.49,
+    "ci_lo": 1.46,
+    "ci_hi": 4.3,
+    "flag": "ok",
+    "residual": -1.51
+  },
+  {
+    "name": "Succubus",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.61,
+    "adjusted_cr": 2.49,
+    "ci_lo": 1.46,
+    "ci_hi": 4.3,
+    "flag": "ok",
+    "residual": -1.51
+  },
+  {
+    "name": "Yuan-ti Malison (Type 1)",
+    "nominal_cr": 3.0,
+    "raw_cr": 0.84,
+    "adjusted_cr": 1.54,
+    "ci_lo": 0.9,
+    "ci_hi": 2.89,
+    "flag": "ok",
+    "residual": -1.46
+  },
+  {
+    "name": "Horned Devil",
+    "nominal_cr": 11.0,
+    "raw_cr": 8.77,
+    "adjusted_cr": 9.54,
+    "ci_lo": 8.89,
+    "ci_hi": 10.73,
+    "flag": "ok",
+    "residual": -1.46
+  },
+  {
+    "name": "Sahuagin Priestess",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.36,
+    "adjusted_cr": 0.55,
+    "ci_lo": 0.33,
+    "ci_hi": 1.7,
+    "flag": "ok",
+    "residual": -1.45
+  },
+  {
+    "name": "Grell",
+    "nominal_cr": 3.0,
+    "raw_cr": 0.87,
+    "adjusted_cr": 1.58,
+    "ci_lo": 0.47,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -1.42
+  },
+  {
+    "name": "Yuan-ti Malison (Type 3)",
+    "nominal_cr": 3.0,
+    "raw_cr": 0.89,
+    "adjusted_cr": 1.6,
+    "ci_lo": 0.9,
+    "ci_hi": 2.89,
+    "flag": "ok",
+    "residual": -1.4
+  },
+  {
+    "name": "Ghost",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.7,
+    "adjusted_cr": 2.6,
+    "ci_lo": 0.95,
+    "ci_hi": 5.03,
+    "flag": "ok",
+    "residual": -1.4
+  },
+  {
+    "name": "Werewolf",
+    "nominal_cr": 3.0,
+    "raw_cr": 0.91,
+    "adjusted_cr": 1.64,
+    "ci_lo": 0.69,
+    "ci_hi": 2.41,
+    "flag": "ok",
+    "residual": -1.36
+  },
+  {
+    "name": "Elephant",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.76,
+    "adjusted_cr": 2.69,
+    "ci_lo": 0.95,
+    "ci_hi": 5.6,
+    "flag": "ok",
+    "residual": -1.31
+  },
+  {
+    "name": "Deva",
+    "nominal_cr": 10.0,
+    "raw_cr": 7.52,
+    "adjusted_cr": 8.72,
+    "ci_lo": 7.15,
+    "ci_hi": 10.25,
+    "flag": "ok",
+    "residual": -1.28
+  },
+  {
+    "name": "Erinyes",
+    "nominal_cr": 12.0,
+    "raw_cr": 10.28,
+    "adjusted_cr": 10.73,
+    "ci_lo": 9.78,
+    "ci_hi": 11.78,
+    "flag": "ok",
+    "residual": -1.27
+  },
+  {
+    "name": "Galeb Duhr",
+    "nominal_cr": 6.0,
+    "raw_cr": 3.4,
+    "adjusted_cr": 4.76,
+    "ci_lo": 2.6,
+    "ci_hi": 6.97,
+    "flag": "ok",
+    "residual": -1.24
+  },
+  {
+    "name": "Mummy",
+    "nominal_cr": 3,
+    "raw_cr": 1.0,
+    "adjusted_cr": 1.77,
+    "ci_lo": 0.47,
+    "ci_hi": 4.3,
+    "flag": "ok",
+    "residual": -1.23
+  },
+  {
+    "name": "Cult Fanatic",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.43,
+    "adjusted_cr": 0.78,
+    "ci_lo": 0.43,
+    "ci_hi": 1.4,
+    "flag": "ok",
+    "residual": -1.22
+  },
+  {
+    "name": "Spectator",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.01,
+    "adjusted_cr": 1.78,
+    "ci_lo": 0.47,
+    "ci_hi": 4.39,
+    "flag": "ok",
+    "residual": -1.22
+  },
+  {
+    "name": "Knight",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.05,
+    "adjusted_cr": 1.81,
+    "ci_lo": 0.69,
+    "ci_hi": 2.89,
+    "flag": "ok",
+    "residual": -1.19
+  },
+  {
+    "name": "Black Pudding",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.85,
+    "adjusted_cr": 2.81,
+    "ci_lo": 0.95,
+    "ci_hi": 6.97,
+    "flag": "ok",
+    "residual": -1.19
+  },
+  {
+    "name": "Quaggoth Thonot",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.09,
+    "adjusted_cr": 1.85,
+    "ci_lo": 0.97,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -1.15
+  },
+  {
+    "name": "Phase Spider",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.15,
+    "adjusted_cr": 1.91,
+    "ci_lo": 0.47,
+    "ci_hi": 4.3,
+    "flag": "ok",
+    "residual": -1.09
+  },
+  {
+    "name": "Gnoll Fang of Yeenoghu",
+    "nominal_cr": 4.0,
+    "raw_cr": 1.93,
+    "adjusted_cr": 2.92,
+    "ci_lo": 2.02,
+    "ci_hi": 4.84,
+    "flag": "ok",
+    "residual": -1.08
+  },
+  {
+    "name": "Aboleth",
+    "nominal_cr": 10.0,
+    "raw_cr": 7.96,
+    "adjusted_cr": 8.92,
+    "ci_lo": 7.15,
+    "ci_hi": 10.45,
+    "flag": "ok",
+    "residual": -1.08
+  },
+  {
+    "name": "Death Slaad",
+    "nominal_cr": 10.0,
+    "raw_cr": 7.95,
+    "adjusted_cr": 8.92,
+    "ci_lo": 8.47,
+    "ci_hi": 10.22,
+    "flag": "ok",
+    "residual": -1.08
+  },
+  {
+    "name": "Gold Dragon Wyrmling",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.18,
+    "adjusted_cr": 1.93,
+    "ci_lo": 0.97,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -1.07
+  },
+  {
+    "name": "Guardian Naga",
+    "nominal_cr": 10.0,
+    "raw_cr": 7.99,
+    "adjusted_cr": 8.94,
+    "ci_lo": 6.7,
+    "ci_hi": 13.0,
+    "flag": "ok",
+    "residual": -1.06
+  },
+  {
+    "name": "Hell Hound",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.23,
+    "adjusted_cr": 1.97,
+    "ci_lo": 0.69,
+    "ci_hi": 3.73,
+    "flag": "ok",
+    "residual": -1.03
+  },
+  {
+    "name": "Vampire",
+    "nominal_cr": 13.0,
+    "raw_cr": 11.69,
+    "adjusted_cr": 11.99,
+    "ci_lo": 9.99,
+    "ci_hi": 13.0,
+    "flag": "ok",
+    "residual": -1.01
+  },
+  {
+    "name": "Priest",
+    "nominal_cr": 2,
+    "raw_cr": 0.49,
+    "adjusted_cr": 1.0,
+    "ci_lo": 0.33,
+    "ci_hi": 2.0,
+    "flag": "ok",
+    "residual": -1.0
+  },
+  {
+    "name": "Hobgoblin Captain",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.27,
+    "adjusted_cr": 2.01,
+    "ci_lo": 1.03,
+    "ci_hi": 4.39,
+    "flag": "ok",
+    "residual": -0.99
+  },
+  {
+    "name": "Young Red Dragon",
+    "nominal_cr": 10,
+    "raw_cr": 8.19,
+    "adjusted_cr": 9.04,
+    "ci_lo": 8.52,
+    "ci_hi": 11.18,
+    "flag": "ok",
+    "residual": -0.96
+  },
+  {
+    "name": "Myconid Sovereign",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.56,
+    "adjusted_cr": 1.11,
+    "ci_lo": 0.2,
+    "ci_hi": 3.73,
+    "flag": "ok",
+    "residual": -0.89
+  },
+  {
+    "name": "Young Copper Dragon",
+    "nominal_cr": 7.0,
+    "raw_cr": 4.38,
+    "adjusted_cr": 6.11,
+    "ci_lo": 4.57,
+    "ci_hi": 8.03,
+    "flag": "ok",
+    "residual": -0.89
+  },
+  {
+    "name": "Faerie Dragon (Orange)",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.1,
+    "adjusted_cr": 0.13,
+    "ci_lo": 0.08,
+    "ci_hi": 0.17,
+    "flag": "ok",
+    "residual": -0.87
+  },
+  {
+    "name": "Faerie Dragon (Red)",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.1,
+    "adjusted_cr": 0.13,
+    "ci_lo": 0.08,
+    "ci_hi": 0.17,
+    "flag": "ok",
+    "residual": -0.87
+  },
+  {
+    "name": "Young Blue Dragon",
+    "nominal_cr": 9,
+    "raw_cr": 6.06,
+    "adjusted_cr": 8.13,
+    "ci_lo": 5.98,
+    "ci_hi": 8.87,
+    "flag": "ok",
+    "residual": -0.87
+  },
+  {
+    "name": "Dao",
+    "nominal_cr": 11.0,
+    "raw_cr": 9.62,
+    "adjusted_cr": 10.14,
+    "ci_lo": 8.94,
+    "ci_hi": 12.21,
+    "flag": "ok",
+    "residual": -0.86
+  },
+  {
+    "name": "Young Silver Dragon",
+    "nominal_cr": 9.0,
+    "raw_cr": 6.11,
+    "adjusted_cr": 8.15,
+    "ci_lo": 5.98,
+    "ci_hi": 9.07,
+    "flag": "ok",
+    "residual": -0.85
+  },
+  {
+    "name": "Faerie Dragon (Yellow)",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.12,
+    "adjusted_cr": 0.16,
+    "ci_lo": 0.08,
+    "ci_hi": 0.25,
+    "flag": "ok",
+    "residual": -0.84
+  },
+  {
+    "name": "Blue Dragon Wyrmling",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.38,
+    "adjusted_cr": 2.16,
+    "ci_lo": 0.97,
+    "ci_hi": 4.27,
+    "flag": "ok",
+    "residual": -0.84
+  },
+  {
+    "name": "Giant Shark",
+    "nominal_cr": 5.0,
+    "raw_cr": 2.64,
+    "adjusted_cr": 4.2,
+    "ci_lo": 1.51,
+    "ci_hi": 6.38,
+    "flag": "ok",
+    "residual": -0.8
+  },
+  {
+    "name": "Barlgura",
+    "nominal_cr": 5.0,
+    "raw_cr": 2.67,
+    "adjusted_cr": 4.22,
+    "ci_lo": 1.97,
+    "ci_hi": 5.6,
+    "flag": "ok",
+    "residual": -0.78
+  },
+  {
+    "name": "Weretiger",
+    "nominal_cr": 4.0,
+    "raw_cr": 2.07,
+    "adjusted_cr": 3.23,
+    "ci_lo": 1.69,
+    "ci_hi": 5.09,
+    "flag": "ok",
+    "residual": -0.77
+  },
+  {
+    "name": "Red Dragon Wyrmling",
+    "nominal_cr": 4.0,
+    "raw_cr": 2.07,
+    "adjusted_cr": 3.25,
+    "ci_lo": 1.46,
+    "ci_hi": 5.24,
+    "flag": "ok",
+    "residual": -0.75
+  },
+  {
+    "name": "Gray Slaad",
+    "nominal_cr": 9.0,
+    "raw_cr": 6.4,
+    "adjusted_cr": 8.25,
+    "ci_lo": 7.58,
+    "ci_hi": 8.77,
+    "flag": "ok",
+    "residual": -0.75
+  },
+  {
+    "name": "Druid",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.66,
+    "adjusted_cr": 1.27,
+    "ci_lo": 0.55,
+    "ci_hi": 2.0,
+    "flag": "ok",
+    "residual": -0.73
+  },
+  {
+    "name": "Basilisk",
+    "nominal_cr": 3,
+    "raw_cr": 1.46,
+    "adjusted_cr": 2.28,
+    "ci_lo": 1.03,
+    "ci_hi": 4.95,
+    "flag": "ok",
+    "residual": -0.72
+  },
+  {
+    "name": "Killer Whale",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.46,
+    "adjusted_cr": 2.28,
+    "ci_lo": 0.97,
+    "ci_hi": 4.84,
+    "flag": "ok",
+    "residual": -0.72
+  },
+  {
+    "name": "Kuo-toa Whip",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.24,
+    "adjusted_cr": 0.29,
+    "ci_lo": 0.24,
+    "ci_hi": 0.61,
+    "flag": "ok",
+    "residual": -0.71
+  },
+  {
+    "name": "Bugbear Chief",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.47,
+    "adjusted_cr": 2.29,
+    "ci_lo": 1.03,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -0.71
+  },
+  {
+    "name": "Water Weird",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.47,
+    "adjusted_cr": 2.29,
+    "ci_lo": 1.03,
+    "ci_hi": 5.68,
+    "flag": "ok",
+    "residual": -0.71
+  },
+  {
+    "name": "Wererat",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.68,
+    "adjusted_cr": 1.3,
+    "ci_lo": 0.78,
+    "ci_hi": 1.99,
+    "flag": "ok",
+    "residual": -0.7
+  },
+  {
+    "name": "Bronze Dragon Wyrmling",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.69,
+    "adjusted_cr": 1.31,
+    "ci_lo": 0.49,
+    "ci_hi": 1.89,
+    "flag": "ok",
+    "residual": -0.69
+  },
+  {
+    "name": "Clay Golem",
+    "nominal_cr": 9.0,
+    "raw_cr": 6.58,
+    "adjusted_cr": 8.32,
+    "ci_lo": 7.24,
+    "ci_hi": 9.65,
+    "flag": "ok",
+    "residual": -0.68
+  },
+  {
+    "name": "Gnoll Pack Lord",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.72,
+    "adjusted_cr": 1.36,
+    "ci_lo": 0.78,
+    "ci_hi": 1.85,
+    "flag": "ok",
+    "residual": -0.64
+  },
+  {
+    "name": "Githyanki Knight",
+    "nominal_cr": 8.0,
+    "raw_cr": 5.0,
+    "adjusted_cr": 7.37,
+    "ci_lo": 4.75,
+    "ci_hi": 8.42,
+    "flag": "ok",
+    "residual": -0.63
+  },
+  {
+    "name": "Medusa",
+    "nominal_cr": 6.0,
+    "raw_cr": 3.96,
+    "adjusted_cr": 5.38,
+    "ci_lo": 2.33,
+    "ci_hi": 8.39,
+    "flag": "ok",
+    "residual": -0.62
+  },
+  {
+    "name": "Nycaloth",
+    "nominal_cr": 9.0,
+    "raw_cr": 6.74,
+    "adjusted_cr": 8.38,
+    "ci_lo": 7.85,
+    "ci_hi": 8.86,
+    "flag": "ok",
+    "residual": -0.62
+  },
+  {
+    "name": "Hunter Shark",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.77,
+    "adjusted_cr": 1.42,
+    "ci_lo": 0.48,
+    "ci_hi": 3.73,
+    "flag": "ok",
+    "residual": -0.58
+  },
+  {
+    "name": "Mind Flayer Arcanist",
+    "nominal_cr": 8.0,
+    "raw_cr": 5.06,
+    "adjusted_cr": 7.42,
+    "ci_lo": 3.67,
+    "ci_hi": 11.78,
+    "flag": "ok",
+    "residual": -0.58
+  },
+  {
+    "name": "Lizardfolk Shaman",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.77,
+    "adjusted_cr": 1.43,
+    "ci_lo": 0.95,
+    "ci_hi": 2.33,
+    "flag": "ok",
+    "residual": -0.57
+  },
+  {
+    "name": "Quasit",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.31,
+    "adjusted_cr": 0.44,
+    "ci_lo": 0.21,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": -0.56
+  },
+  {
+    "name": "Gibbering Mouther",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.79,
+    "adjusted_cr": 1.45,
+    "ci_lo": 0.78,
+    "ci_hi": 2.17,
+    "flag": "ok",
+    "residual": -0.55
+  },
+  {
+    "name": "Invisible Stalker",
+    "nominal_cr": 6.0,
+    "raw_cr": 4.01,
+    "adjusted_cr": 5.46,
+    "ci_lo": 4.21,
+    "ci_hi": 8.07,
+    "flag": "ok",
+    "residual": -0.54
+  },
+  {
+    "name": "Brass Dragon Wyrmling",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.33,
+    "adjusted_cr": 0.47,
+    "ci_lo": 0.24,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": -0.53
+  },
+  {
+    "name": "Unicorn",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.02,
+    "adjusted_cr": 4.47,
+    "ci_lo": 2.71,
+    "ci_hi": 6.57,
+    "flag": "ok",
+    "residual": -0.53
+  },
+  {
+    "name": "Gas Spore",
+    "nominal_cr": 0.5,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": -0.5
+  },
+  {
+    "name": "Dryad",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.34,
+    "adjusted_cr": 0.5,
+    "ci_lo": 0.24,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": -0.5
+  },
+  {
+    "name": "Spy",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.34,
+    "adjusted_cr": 0.5,
+    "ci_lo": 0.24,
+    "ci_hi": 1.4,
+    "flag": "ok",
+    "residual": -0.5
+  },
+  {
+    "name": "Yuan-ti Pureblood",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.34,
+    "adjusted_cr": 0.5,
+    "ci_lo": 0.24,
+    "ci_hi": 1.4,
+    "flag": "ok",
+    "residual": -0.5
+  },
+  {
+    "name": "Ghast",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.82,
+    "adjusted_cr": 1.5,
+    "ci_lo": 0.49,
+    "ci_hi": 3.3,
+    "flag": "ok",
+    "residual": -0.5
+  },
+  {
+    "name": "Half-Red Dragon Veteran",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.05,
+    "adjusted_cr": 4.5,
+    "ci_lo": 1.97,
+    "ci_hi": 7.53,
+    "flag": "ok",
+    "residual": -0.5
+  },
+  {
+    "name": "Copper Dragon Wyrmling",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.34,
+    "adjusted_cr": 0.51,
+    "ci_lo": 0.31,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": -0.49
+  },
+  {
+    "name": "Wraith",
+    "nominal_cr": 5,
+    "raw_cr": 3.09,
+    "adjusted_cr": 4.53,
+    "ci_lo": 3.07,
+    "ci_hi": 6.38,
+    "flag": "ok",
+    "residual": -0.47
+  },
+  {
+    "name": "Mammoth",
+    "nominal_cr": 6.0,
+    "raw_cr": 4.05,
+    "adjusted_cr": 5.53,
+    "ci_lo": 2.33,
+    "ci_hi": 8.7,
+    "flag": "ok",
+    "residual": -0.47
+  },
+  {
+    "name": "Green Slaad",
+    "nominal_cr": 8.0,
+    "raw_cr": 5.18,
+    "adjusted_cr": 7.53,
+    "ci_lo": 5.5,
+    "ci_hi": 8.6,
+    "flag": "ok",
+    "residual": -0.47
+  },
+  {
+    "name": "Githzerai Zerth",
+    "nominal_cr": 6.0,
+    "raw_cr": 4.06,
+    "adjusted_cr": 5.55,
+    "ci_lo": 4.21,
+    "ci_hi": 8.39,
+    "flag": "ok",
+    "residual": -0.45
+  },
+  {
+    "name": "Winter Wolf",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.67,
+    "adjusted_cr": 2.56,
+    "ci_lo": 1.63,
+    "ci_hi": 4.3,
+    "flag": "ok",
+    "residual": -0.44
+  },
+  {
+    "name": "Chain Devil",
+    "nominal_cr": 8.0,
+    "raw_cr": 5.21,
+    "adjusted_cr": 7.56,
+    "ci_lo": 5.64,
+    "ci_hi": 8.82,
+    "flag": "ok",
+    "residual": -0.44
+  },
+  {
+    "name": "Giant Crocodile",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.15,
+    "adjusted_cr": 4.57,
+    "ci_lo": 2.71,
+    "ci_hi": 6.38,
+    "flag": "ok",
+    "residual": -0.43
+  },
+  {
+    "name": "Young Brass Dragon",
+    "nominal_cr": 6.0,
+    "raw_cr": 4.08,
+    "adjusted_cr": 5.57,
+    "ci_lo": 4.21,
+    "ci_hi": 8.17,
+    "flag": "ok",
+    "residual": -0.43
+  },
+  {
+    "name": "Rug of Smothering",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.9,
+    "adjusted_cr": 1.61,
+    "ci_lo": 0.49,
+    "ci_hi": 3.3,
+    "flag": "ok",
+    "residual": -0.39
+  },
+  {
+    "name": "Lion",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.38,
+    "adjusted_cr": 0.62,
+    "ci_lo": 0.26,
+    "ci_hi": 1.7,
+    "flag": "ok",
+    "residual": -0.38
+  },
+  {
+    "name": "Yuan-ti Malison (Type 2)",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.71,
+    "adjusted_cr": 2.62,
+    "ci_lo": 1.63,
+    "ci_hi": 4.39,
+    "flag": "ok",
+    "residual": -0.38
+  },
+  {
+    "name": "Giant Ape",
+    "nominal_cr": 7.0,
+    "raw_cr": 4.61,
+    "adjusted_cr": 6.62,
+    "ci_lo": 4.46,
+    "ci_hi": 8.71,
+    "flag": "ok",
+    "residual": -0.38
+  },
+  {
+    "name": "White Dragon Wyrmling",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.92,
+    "adjusted_cr": 1.65,
+    "ci_lo": 0.49,
+    "ci_hi": 3.3,
+    "flag": "ok",
+    "residual": -0.35
+  },
+  {
+    "name": "Nightmare",
+    "nominal_cr": 3.0,
+    "raw_cr": 1.73,
+    "adjusted_cr": 2.65,
+    "ci_lo": 1.63,
+    "ci_hi": 4.3,
+    "flag": "ok",
+    "residual": -0.35
+  },
+  {
+    "name": "Flameskull",
+    "nominal_cr": 4.0,
+    "raw_cr": 2.23,
+    "adjusted_cr": 3.65,
+    "ci_lo": 2.66,
+    "ci_hi": 4.65,
+    "flag": "ok",
+    "residual": -0.35
+  },
+  {
+    "name": "Quaggoth",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.93,
+    "adjusted_cr": 1.66,
+    "ci_lo": 0.78,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -0.34
+  },
+  {
+    "name": "Myconid Adult",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.13,
+    "adjusted_cr": 0.17,
+    "ci_lo": 0.09,
+    "ci_hi": 0.33,
+    "flag": "ok",
+    "residual": -0.33
+  },
+  {
+    "name": "Sea Hag",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.94,
+    "adjusted_cr": 1.68,
+    "ci_lo": 0.78,
+    "ci_hi": 3.3,
+    "flag": "ok",
+    "residual": -0.32
+  },
+  {
+    "name": "Silver Dragon Wyrmling",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.94,
+    "adjusted_cr": 1.69,
+    "ci_lo": 0.78,
+    "ci_hi": 3.3,
+    "flag": "ok",
+    "residual": -0.31
+  },
+  {
+    "name": "Drow Elite Warrior",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.31,
+    "adjusted_cr": 4.69,
+    "ci_lo": 2.43,
+    "ci_hi": 8.52,
+    "flag": "ok",
+    "residual": -0.31
+  },
+  {
+    "name": "Cloud Giant",
+    "nominal_cr": 9.0,
+    "raw_cr": 7.46,
+    "adjusted_cr": 8.69,
+    "ci_lo": 8.24,
+    "ci_hi": 9.89,
+    "flag": "ok",
+    "residual": -0.31
+  },
+  {
+    "name": "Green Dragon Wyrmling",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.96,
+    "adjusted_cr": 1.71,
+    "ci_lo": 0.95,
+    "ci_hi": 2.89,
+    "flag": "ok",
+    "residual": -0.29
+  },
+  {
+    "name": "Mimic",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.96,
+    "adjusted_cr": 1.71,
+    "ci_lo": 0.78,
+    "ci_hi": 3.3,
+    "flag": "ok",
+    "residual": -0.29
+  },
+  {
+    "name": "Dust Mephit",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.17,
+    "adjusted_cr": 0.22,
+    "ci_lo": 0.14,
+    "ci_hi": 0.29,
+    "flag": "ok",
+    "residual": -0.28
+  },
+  {
+    "name": "Magmin",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.17,
+    "adjusted_cr": 0.22,
+    "ci_lo": 0.14,
+    "ci_hi": 0.33,
+    "flag": "ok",
+    "residual": -0.28
+  },
+  {
+    "name": "Ankheg",
+    "nominal_cr": 2,
+    "raw_cr": 0.97,
+    "adjusted_cr": 1.73,
+    "ci_lo": 0.45,
+    "ci_hi": 3.73,
+    "flag": "ok",
+    "residual": -0.27
+  },
+  {
+    "name": "Treant",
+    "nominal_cr": 9.0,
+    "raw_cr": 7.56,
+    "adjusted_cr": 8.74,
+    "ci_lo": 8.3,
+    "ci_hi": 9.31,
+    "flag": "ok",
+    "residual": -0.26
+  },
+  {
+    "name": "Acolyte",
+    "nominal_cr": 0.25,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": -0.25
+  },
+  {
+    "name": "Pixie",
+    "nominal_cr": 0.25,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": -0.25
+  },
+  {
+    "name": "Cockatrice",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.22,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.22,
+    "ci_hi": 0.36,
+    "flag": "ok",
+    "residual": -0.25
+  },
+  {
+    "name": "Hobgoblin",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.2,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.18,
+    "ci_hi": 0.33,
+    "flag": "ok",
+    "residual": -0.25
+  },
+  {
+    "name": "Duergar",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.42,
+    "adjusted_cr": 0.75,
+    "ci_lo": 0.26,
+    "ci_hi": 1.7,
+    "flag": "ok",
+    "residual": -0.25
+  },
+  {
+    "name": "Grick",
+    "nominal_cr": 2.0,
+    "raw_cr": 0.98,
+    "adjusted_cr": 1.75,
+    "ci_lo": 0.78,
+    "ci_hi": 3.3,
+    "flag": "ok",
+    "residual": -0.25
+  },
+  {
+    "name": "Giant Sea Horse",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.23,
+    "adjusted_cr": 0.27,
+    "ci_lo": 0.21,
+    "ci_hi": 0.95,
+    "flag": "ok",
+    "residual": -0.23
+  },
+  {
+    "name": "Black Dragon Wyrmling",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.01,
+    "adjusted_cr": 1.78,
+    "ci_lo": 0.95,
+    "ci_hi": 3.73,
+    "flag": "ok",
+    "residual": -0.22
+  },
+  {
+    "name": "Berserker",
+    "nominal_cr": 2,
+    "raw_cr": 1.02,
+    "adjusted_cr": 1.79,
+    "ci_lo": 0.78,
+    "ci_hi": 2.89,
+    "flag": "ok",
+    "residual": -0.21
+  },
+  {
+    "name": "Scout",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.24,
+    "adjusted_cr": 0.31,
+    "ci_lo": 0.22,
+    "ci_hi": 0.49,
+    "flag": "ok",
+    "residual": -0.19
+  },
+  {
+    "name": "Giant Boar",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.04,
+    "adjusted_cr": 1.81,
+    "ci_lo": 0.78,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -0.19
+  },
+  {
+    "name": "Otyugh",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.48,
+    "adjusted_cr": 4.82,
+    "ci_lo": 2.1,
+    "ci_hi": 7.21,
+    "flag": "ok",
+    "residual": -0.18
+  },
+  {
+    "name": "Young Remorhaz",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.48,
+    "adjusted_cr": 4.83,
+    "ci_lo": 1.9,
+    "ci_hi": 8.28,
+    "flag": "ok",
+    "residual": -0.17
+  },
+  {
+    "name": "Giant Vulture",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.45,
+    "adjusted_cr": 0.85,
+    "ci_lo": 0.25,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": -0.15
+  },
+  {
+    "name": "Crocodile",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.26,
+    "adjusted_cr": 0.36,
+    "ci_lo": 0.22,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": -0.14
+  },
+  {
+    "name": "Ochre Jelly",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.12,
+    "adjusted_cr": 1.88,
+    "ci_lo": 0.49,
+    "ci_hi": 4.46,
+    "flag": "ok",
+    "residual": -0.12
+  },
+  {
+    "name": "Orc Eye of Gruumsh",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.12,
+    "adjusted_cr": 1.88,
+    "ci_lo": 0.49,
+    "ci_hi": 4.39,
+    "flag": "ok",
+    "residual": -0.12
+  },
+  {
+    "name": "Gorgon",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.56,
+    "adjusted_cr": 4.88,
+    "ci_lo": 3.07,
+    "ci_hi": 7.53,
+    "flag": "ok",
+    "residual": -0.12
+  },
+  {
+    "name": "Triceratops",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.55,
+    "adjusted_cr": 4.88,
+    "ci_lo": 3.44,
+    "ci_hi": 7.16,
+    "flag": "ok",
+    "residual": -0.12
+  },
+  {
+    "name": "Oni",
+    "nominal_cr": 7.0,
+    "raw_cr": 4.73,
+    "adjusted_cr": 6.88,
+    "ci_lo": 5.42,
+    "ci_hi": 8.4,
+    "flag": "ok",
+    "residual": -0.12
+  },
+  {
+    "name": "Lizardfolk",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.28,
+    "adjusted_cr": 0.39,
+    "ci_lo": 0.22,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": -0.11
+  },
+  {
+    "name": "Ettercap",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.14,
+    "adjusted_cr": 1.89,
+    "ci_lo": 0.78,
+    "ci_hi": 4.53,
+    "flag": "ok",
+    "residual": -0.11
+  },
+  {
+    "name": "Poltergeist",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.14,
+    "adjusted_cr": 1.89,
+    "ci_lo": 0.49,
+    "ci_hi": 4.46,
+    "flag": "ok",
+    "residual": -0.11
+  },
+  {
+    "name": "Giant Centipede",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.12,
+    "adjusted_cr": 0.15,
+    "ci_lo": 0.12,
+    "ci_hi": 0.23,
+    "flag": "ok",
+    "residual": -0.1
+  },
+  {
+    "name": "Violet Fungus",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.12,
+    "adjusted_cr": 0.15,
+    "ci_lo": 0.12,
+    "ci_hi": 0.19,
+    "flag": "ok",
+    "residual": -0.1
+  },
+  {
+    "name": "Abominable Yeti",
+    "nominal_cr": 9.0,
+    "raw_cr": 7.92,
+    "adjusted_cr": 8.9,
+    "ci_lo": 8.24,
+    "ci_hi": 9.79,
+    "flag": "ok",
+    "residual": -0.1
+  },
+  {
+    "name": "Tiger",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.46,
+    "adjusted_cr": 0.91,
+    "ci_lo": 0.37,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": -0.09
+  },
+  {
+    "name": "Giant Elk",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.16,
+    "adjusted_cr": 1.91,
+    "ci_lo": 0.45,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -0.09
+  },
+  {
+    "name": "Pseudodragon",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.13,
+    "adjusted_cr": 0.17,
+    "ci_lo": 0.03,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": -0.08
+  },
+  {
+    "name": "Gnoll",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.3,
+    "adjusted_cr": 0.42,
+    "ci_lo": 0.22,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": -0.08
+  },
+  {
+    "name": "Ice Mephit",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.3,
+    "adjusted_cr": 0.42,
+    "ci_lo": 0.21,
+    "ci_hi": 1.6,
+    "flag": "ok",
+    "residual": -0.08
+  },
+  {
+    "name": "Pentadrone",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.17,
+    "adjusted_cr": 1.92,
+    "ci_lo": 0.95,
+    "ci_hi": 4.39,
+    "flag": "ok",
+    "residual": -0.08
+  },
+  {
+    "name": "Spined Devil",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.17,
+    "adjusted_cr": 1.92,
+    "ci_lo": 0.95,
+    "ci_hi": 2.89,
+    "flag": "ok",
+    "residual": -0.08
+  },
+  {
+    "name": "Poisonous Snake",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.05,
+    "adjusted_cr": 0.05,
+    "ci_lo": 0.02,
+    "ci_hi": 0.11,
+    "flag": "ok",
+    "residual": -0.07
+  },
+  {
+    "name": "Aarakocra",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.12,
+    "ci_hi": 0.29,
+    "flag": "ok",
+    "residual": -0.07
+  },
+  {
+    "name": "Goblin",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.13,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.12,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": -0.07
+  },
+  {
+    "name": "Roper",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.62,
+    "adjusted_cr": 4.93,
+    "ci_lo": 1.9,
+    "ci_hi": 8.58,
+    "flag": "ok",
+    "residual": -0.07
+  },
+  {
+    "name": "Boar",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.15,
+    "adjusted_cr": 0.19,
+    "ci_lo": 0.16,
+    "ci_hi": 0.23,
+    "flag": "ok",
+    "residual": -0.06
+  },
+  {
+    "name": "Drow",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.15,
+    "adjusted_cr": 0.19,
+    "ci_lo": 0.13,
+    "ci_hi": 0.33,
+    "flag": "ok",
+    "residual": -0.06
+  },
+  {
+    "name": "Deep Gnome (Svirfneblin)",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.31,
+    "adjusted_cr": 0.44,
+    "ci_lo": 0.21,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": -0.06
+  },
+  {
+    "name": "Rhinoceros",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.19,
+    "adjusted_cr": 1.94,
+    "ci_lo": 0.78,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -0.06
+  },
+  {
+    "name": "Giant Wasp",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.32,
+    "adjusted_cr": 0.45,
+    "ci_lo": 0.22,
+    "ci_hi": 1.7,
+    "flag": "ok",
+    "residual": -0.05
+  },
+  {
+    "name": "Vine Blight",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.32,
+    "adjusted_cr": 0.45,
+    "ci_lo": 0.25,
+    "ci_hi": 1.1,
+    "flag": "ok",
+    "residual": -0.05
+  },
+  {
+    "name": "Giant Constrictor Snake",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.2,
+    "adjusted_cr": 1.95,
+    "ci_lo": 0.78,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": -0.05
+  },
+  {
+    "name": "Stirge",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.07,
+    "adjusted_cr": 0.09,
+    "ci_lo": 0.02,
+    "ci_hi": 0.14,
+    "flag": "ok",
+    "residual": -0.04
+  },
+  {
+    "name": "Giant Spider",
+    "nominal_cr": 1,
+    "raw_cr": 0.48,
+    "adjusted_cr": 0.96,
+    "ci_lo": 0.31,
+    "ci_hi": 1.97,
+    "flag": "ok",
+    "residual": -0.04
+  },
+  {
+    "name": "Tyrannosaurus Rex",
+    "nominal_cr": 8.0,
+    "raw_cr": 5.67,
+    "adjusted_cr": 7.96,
+    "ci_lo": 5.33,
+    "ci_hi": 8.64,
+    "flag": "ok",
+    "residual": -0.04
+  },
+  {
+    "name": "Panther",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.18,
+    "adjusted_cr": 0.22,
+    "ci_lo": 0.18,
+    "ci_hi": 0.29,
+    "flag": "ok",
+    "residual": -0.03
+  },
+  {
+    "name": "Steam Mephit",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.17,
+    "adjusted_cr": 0.22,
+    "ci_lo": 0.16,
+    "ci_hi": 0.25,
+    "flag": "ok",
+    "residual": -0.03
+  },
+  {
+    "name": "Jackalwere",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.33,
+    "adjusted_cr": 0.47,
+    "ci_lo": 0.22,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": -0.03
+  },
+  {
+    "name": "Thug",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.33,
+    "adjusted_cr": 0.47,
+    "ci_lo": 0.22,
+    "ci_hi": 0.95,
+    "flag": "ok",
+    "residual": -0.03
+  },
+  {
+    "name": "Lamia",
+    "nominal_cr": 4.0,
+    "raw_cr": 2.36,
+    "adjusted_cr": 3.97,
+    "ci_lo": 1.46,
+    "ci_hi": 5.6,
+    "flag": "ok",
+    "residual": -0.03
+  },
+  {
+    "name": "Kuo-toa",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.19,
+    "adjusted_cr": 0.23,
+    "ci_lo": 0.19,
+    "ci_hi": 0.29,
+    "flag": "ok",
+    "residual": -0.02
+  },
+  {
+    "name": "Darkmantle",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.33,
+    "adjusted_cr": 0.48,
+    "ci_lo": 0.22,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": -0.02
+  },
+  {
+    "name": "Giant Goat",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.33,
+    "adjusted_cr": 0.48,
+    "ci_lo": 0.25,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": -0.02
+  },
+  {
+    "name": "Wolf",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.2,
+    "adjusted_cr": 0.24,
+    "ci_lo": 0.19,
+    "ci_hi": 0.33,
+    "flag": "ok",
+    "residual": -0.01
+  },
+  {
+    "name": "Commoner",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.01,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.02,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Baboon",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Bat",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Badger",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Crab",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Cat",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Frog",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Hawk",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.01,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Lizard",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Jackal",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Octopus",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Quipper",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Owl",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Rat",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Sea Horse",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Spider",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.01,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Raven",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Shrieker",
+    "nominal_cr": 0.0,
+    "raw_cr": 0,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "left",
+    "residual": 0.0
+  },
+  {
+    "name": "Weasel",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.01,
+    "adjusted_cr": 0.0,
+    "ci_lo": 0.0,
+    "ci_hi": 0.0,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Bullywug",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.22,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.16,
+    "ci_hi": 0.35,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Constrictor Snake",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.21,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.22,
+    "ci_hi": 0.43,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Dretch",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.2,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.15,
+    "ci_hi": 0.33,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Grimlock",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.21,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.15,
+    "ci_hi": 0.61,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Kenku",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.2,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.15,
+    "ci_hi": 0.33,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Needle Blight",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.21,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.16,
+    "ci_hi": 0.33,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Riding Horse",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.22,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.19,
+    "ci_hi": 0.95,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Skeleton",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.2,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.22,
+    "ci_hi": 0.29,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Mud Mephit",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.22,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.18,
+    "ci_hi": 0.32,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Orc",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.34,
+    "adjusted_cr": 0.5,
+    "ci_lo": 0.21,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Piercer",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.34,
+    "adjusted_cr": 0.5,
+    "ci_lo": 0.22,
+    "ci_hi": 1.4,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Bugbear",
+    "nominal_cr": 1,
+    "raw_cr": 0.49,
+    "adjusted_cr": 1.0,
+    "ci_lo": 0.31,
+    "ci_hi": 2.23,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Half-Ogre (Ogrillon)",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.49,
+    "adjusted_cr": 1.0,
+    "ci_lo": 0.37,
+    "ci_hi": 1.84,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Ogre",
+    "nominal_cr": 2,
+    "raw_cr": 1.26,
+    "adjusted_cr": 2.0,
+    "ci_lo": 0.78,
+    "ci_hi": 3.73,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Owlbear",
+    "nominal_cr": 3,
+    "raw_cr": 1.99,
+    "adjusted_cr": 3.0,
+    "ci_lo": 2.0,
+    "ci_hi": 4.84,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Ettin",
+    "nominal_cr": 4,
+    "raw_cr": 2.37,
+    "adjusted_cr": 4.0,
+    "ci_lo": 1.27,
+    "ci_hi": 7.21,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Hill Giant",
+    "nominal_cr": 5,
+    "raw_cr": 3.72,
+    "adjusted_cr": 5.0,
+    "ci_lo": 2.71,
+    "ci_hi": 8.28,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Cyclops",
+    "nominal_cr": 6.0,
+    "raw_cr": 4.33,
+    "adjusted_cr": 6.0,
+    "ci_lo": 4.21,
+    "ci_hi": 8.07,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Stone Giant",
+    "nominal_cr": 7,
+    "raw_cr": 4.79,
+    "adjusted_cr": 7.0,
+    "ci_lo": 4.57,
+    "ci_hi": 8.52,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Frost Giant",
+    "nominal_cr": 8,
+    "raw_cr": 5.73,
+    "adjusted_cr": 8.0,
+    "ci_lo": 5.11,
+    "ci_hi": 8.71,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Fire Giant",
+    "nominal_cr": 9,
+    "raw_cr": 8.15,
+    "adjusted_cr": 9.0,
+    "ci_lo": 8.24,
+    "ci_hi": 9.89,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Stone Golem",
+    "nominal_cr": 10,
+    "raw_cr": 9.46,
+    "adjusted_cr": 10.0,
+    "ci_lo": 8.63,
+    "ci_hi": 12.51,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Storm Giant",
+    "nominal_cr": 13.0,
+    "raw_cr": 12.88,
+    "adjusted_cr": 13.0,
+    "ci_lo": 11.27,
+    "ci_hi": 13.0,
+    "flag": "ok",
+    "residual": 0.0
+  },
+  {
+    "name": "Sahuagin",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.35,
+    "adjusted_cr": 0.51,
+    "ci_lo": 0.25,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": 0.01
+  },
+  {
+    "name": "Imp",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.49,
+    "adjusted_cr": 1.01,
+    "ci_lo": 0.37,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.01
+  },
+  {
+    "name": "Crawling Claw",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.02,
+    "adjusted_cr": 0.02,
+    "ci_lo": 0.0,
+    "ci_hi": 0.05,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Awakened Shrub",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.02,
+    "adjusted_cr": 0.02,
+    "ci_lo": 0.0,
+    "ci_hi": 0.05,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Giant Fire Beetle",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.02,
+    "adjusted_cr": 0.02,
+    "ci_lo": 0.0,
+    "ci_hi": 0.05,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Scorpion",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.02,
+    "adjusted_cr": 0.02,
+    "ci_lo": 0.0,
+    "ci_hi": 0.02,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Cultist",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.11,
+    "adjusted_cr": 0.15,
+    "ci_lo": 0.11,
+    "ci_hi": 0.22,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Manes",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.11,
+    "adjusted_cr": 0.14,
+    "ci_lo": 0.09,
+    "ci_hi": 0.16,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Slaad Tadpole",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.11,
+    "adjusted_cr": 0.15,
+    "ci_lo": 0.11,
+    "ci_hi": 0.2,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Twig Blight",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.11,
+    "adjusted_cr": 0.14,
+    "ci_lo": 0.05,
+    "ci_hi": 0.16,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Pteranodon",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.23,
+    "adjusted_cr": 0.27,
+    "ci_lo": 0.19,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Merrow",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.28,
+    "adjusted_cr": 2.02,
+    "ci_lo": 1.13,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Red Slaad",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.73,
+    "adjusted_cr": 5.02,
+    "ci_lo": 3.07,
+    "ci_hi": 6.88,
+    "flag": "ok",
+    "residual": 0.02
+  },
+  {
+    "name": "Giant Wolf Spider",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.24,
+    "adjusted_cr": 0.28,
+    "ci_lo": 0.22,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": 0.03
+  },
+  {
+    "name": "Smoke Mephit",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.24,
+    "adjusted_cr": 0.28,
+    "ci_lo": 0.22,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": 0.03
+  },
+  {
+    "name": "Giant Octopus",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.5,
+    "adjusted_cr": 1.03,
+    "ci_lo": 0.33,
+    "ci_hi": 1.7,
+    "flag": "ok",
+    "residual": 0.03
+  },
+  {
+    "name": "Pegasus",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.28,
+    "adjusted_cr": 2.03,
+    "ci_lo": 0.95,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": 0.03
+  },
+  {
+    "name": "Giant Rat",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.12,
+    "adjusted_cr": 0.16,
+    "ci_lo": 0.11,
+    "ci_hi": 0.2,
+    "flag": "ok",
+    "residual": 0.04
+  },
+  {
+    "name": "Kobold",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.12,
+    "adjusted_cr": 0.16,
+    "ci_lo": 0.09,
+    "ci_hi": 0.19,
+    "flag": "ok",
+    "residual": 0.04
+  },
+  {
+    "name": "Mastiff",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.12,
+    "adjusted_cr": 0.16,
+    "ci_lo": 0.09,
+    "ci_hi": 0.19,
+    "flag": "ok",
+    "residual": 0.04
+  },
+  {
+    "name": "Giant Frog",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.24,
+    "adjusted_cr": 0.29,
+    "ci_lo": 0.24,
+    "ci_hi": 0.81,
+    "flag": "ok",
+    "residual": 0.04
+  },
+  {
+    "name": "Hippogriff",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.51,
+    "adjusted_cr": 1.04,
+    "ci_lo": 0.37,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.04
+  },
+  {
+    "name": "Homunculus",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.05,
+    "adjusted_cr": 0.05,
+    "ci_lo": 0.0,
+    "ci_hi": 0.05,
+    "flag": "ok",
+    "residual": 0.05
+  },
+  {
+    "name": "Blood Hawk",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.14,
+    "ci_hi": 0.19,
+    "flag": "ok",
+    "residual": 0.05
+  },
+  {
+    "name": "Camel",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.09,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": 0.05
+  },
+  {
+    "name": "Giant Weasel",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.12,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": 0.05
+  },
+  {
+    "name": "Monodrone",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.13,
+    "adjusted_cr": 0.17,
+    "ci_lo": 0.11,
+    "ci_hi": 0.25,
+    "flag": "ok",
+    "residual": 0.05
+  },
+  {
+    "name": "Mule",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.18,
+    "ci_lo": 0.12,
+    "ci_hi": 0.25,
+    "flag": "ok",
+    "residual": 0.05
+  },
+  {
+    "name": "Reef Shark",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.36,
+    "adjusted_cr": 0.55,
+    "ci_lo": 0.33,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": 0.05
+  },
+  {
+    "name": "Flumph",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.15,
+    "adjusted_cr": 0.19,
+    "ci_lo": 0.12,
+    "ci_hi": 0.33,
+    "flag": "ok",
+    "residual": 0.07
+  },
+  {
+    "name": "Merfolk",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.15,
+    "adjusted_cr": 0.19,
+    "ci_lo": 0.12,
+    "ci_hi": 0.25,
+    "flag": "ok",
+    "residual": 0.07
+  },
+  {
+    "name": "Tribal Warrior",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.15,
+    "adjusted_cr": 0.19,
+    "ci_lo": 0.12,
+    "ci_hi": 0.25,
+    "flag": "ok",
+    "residual": 0.07
+  },
+  {
+    "name": "Giant Poisonous Snake",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.25,
+    "adjusted_cr": 0.32,
+    "ci_lo": 0.24,
+    "ci_hi": 0.44,
+    "flag": "ok",
+    "residual": 0.07
+  },
+  {
+    "name": "Mind Flayer",
+    "nominal_cr": 7,
+    "raw_cr": 4.83,
+    "adjusted_cr": 7.07,
+    "ci_lo": 4.56,
+    "ci_hi": 9.25,
+    "flag": "ok",
+    "residual": 0.07
+  },
+  {
+    "name": "Young Bronze Dragon",
+    "nominal_cr": 8.0,
+    "raw_cr": 5.91,
+    "adjusted_cr": 8.07,
+    "ci_lo": 7.65,
+    "ci_hi": 8.51,
+    "flag": "ok",
+    "residual": 0.07
+  },
+  {
+    "name": "Bandit",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.17,
+    "adjusted_cr": 0.21,
+    "ci_lo": 0.16,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": 0.08
+  },
+  {
+    "name": "Flying Snake",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.16,
+    "adjusted_cr": 0.2,
+    "ci_lo": 0.19,
+    "ci_hi": 0.23,
+    "flag": "ok",
+    "residual": 0.08
+  },
+  {
+    "name": "Noble",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.16,
+    "adjusted_cr": 0.2,
+    "ci_lo": 0.11,
+    "ci_hi": 0.25,
+    "flag": "ok",
+    "residual": 0.08
+  },
+  {
+    "name": "Deer",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.07,
+    "adjusted_cr": 0.09,
+    "ci_lo": 0.0,
+    "ci_hi": 0.16,
+    "flag": "ok",
+    "residual": 0.09
+  },
+  {
+    "name": "Vulture",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.07,
+    "adjusted_cr": 0.09,
+    "ci_lo": 0.0,
+    "ci_hi": 0.16,
+    "flag": "ok",
+    "residual": 0.09
+  },
+  {
+    "name": "Azer",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.33,
+    "adjusted_cr": 2.09,
+    "ci_lo": 1.13,
+    "ci_hi": 4.46,
+    "flag": "ok",
+    "residual": 0.09
+  },
+  {
+    "name": "Goat",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.09,
+    "adjusted_cr": 0.11,
+    "ci_lo": 0.05,
+    "ci_hi": 0.14,
+    "flag": "ok",
+    "residual": 0.11
+  },
+  {
+    "name": "Elk",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.26,
+    "adjusted_cr": 0.36,
+    "ci_lo": 0.24,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": 0.11
+  },
+  {
+    "name": "Guard",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.23,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.12,
+    "ci_hi": 0.35,
+    "flag": "ok",
+    "residual": 0.12
+  },
+  {
+    "name": "Pony",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.22,
+    "adjusted_cr": 0.25,
+    "ci_lo": 0.22,
+    "ci_hi": 0.61,
+    "flag": "ok",
+    "residual": 0.12
+  },
+  {
+    "name": "Blink Dog",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.27,
+    "adjusted_cr": 0.37,
+    "ci_lo": 0.22,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": 0.12
+  },
+  {
+    "name": "Giant Owl",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.27,
+    "adjusted_cr": 0.37,
+    "ci_lo": 0.24,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": 0.12
+  },
+  {
+    "name": "Centaur",
+    "nominal_cr": 2,
+    "raw_cr": 1.35,
+    "adjusted_cr": 2.12,
+    "ci_lo": 0.95,
+    "ci_hi": 4.39,
+    "flag": "ok",
+    "residual": 0.12
+  },
+  {
+    "name": "Myconid Sprout",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.1,
+    "adjusted_cr": 0.13,
+    "ci_lo": 0.09,
+    "ci_hi": 0.15,
+    "flag": "ok",
+    "residual": 0.13
+  },
+  {
+    "name": "Lemure",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.1,
+    "adjusted_cr": 0.13,
+    "ci_lo": 0.0,
+    "ci_hi": 0.16,
+    "flag": "ok",
+    "residual": 0.13
+  },
+  {
+    "name": "Worg",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.38,
+    "adjusted_cr": 0.63,
+    "ci_lo": 0.22,
+    "ci_hi": 1.6,
+    "flag": "ok",
+    "residual": 0.13
+  },
+  {
+    "name": "Werebear",
+    "nominal_cr": 5.0,
+    "raw_cr": 3.8,
+    "adjusted_cr": 5.13,
+    "ci_lo": 3.07,
+    "ci_hi": 7.21,
+    "flag": "ok",
+    "residual": 0.13
+  },
+  {
+    "name": "Arcanaloth",
+    "nominal_cr": 12.0,
+    "raw_cr": 11.88,
+    "adjusted_cr": 12.13,
+    "ci_lo": 9.78,
+    "ci_hi": 13.0,
+    "flag": "ok",
+    "residual": 0.13
+  },
+  {
+    "name": "Eagle",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.11,
+    "adjusted_cr": 0.14,
+    "ci_lo": 0.0,
+    "ci_hi": 0.14,
+    "flag": "ok",
+    "residual": 0.14
+  },
+  {
+    "name": "Sprite",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.28,
+    "adjusted_cr": 0.39,
+    "ci_lo": 0.16,
+    "ci_hi": 0.88,
+    "flag": "ok",
+    "residual": 0.14
+  },
+  {
+    "name": "Chimera",
+    "nominal_cr": 6.0,
+    "raw_cr": 4.39,
+    "adjusted_cr": 6.14,
+    "ci_lo": 4.21,
+    "ci_hi": 8.07,
+    "flag": "ok",
+    "residual": 0.14
+  },
+  {
+    "name": "Zombie",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.29,
+    "adjusted_cr": 0.4,
+    "ci_lo": 0.25,
+    "ci_hi": 0.95,
+    "flag": "ok",
+    "residual": 0.15
+  },
+  {
+    "name": "Rust Monster",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.39,
+    "adjusted_cr": 0.65,
+    "ci_lo": 0.25,
+    "ci_hi": 1.6,
+    "flag": "ok",
+    "residual": 0.15
+  },
+  {
+    "name": "Troglodyte",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.29,
+    "adjusted_cr": 0.41,
+    "ci_lo": 0.16,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": 0.16
+  },
+  {
+    "name": "Allosaurus",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.38,
+    "adjusted_cr": 2.16,
+    "ci_lo": 0.95,
+    "ci_hi": 4.53,
+    "flag": "ok",
+    "residual": 0.16
+  },
+  {
+    "name": "Veteran",
+    "nominal_cr": 3,
+    "raw_cr": 2.04,
+    "adjusted_cr": 3.16,
+    "ci_lo": 1.7,
+    "ci_hi": 6.14,
+    "flag": "ok",
+    "residual": 0.16
+  },
+  {
+    "name": "Giant Crab",
+    "nominal_cr": 0.125,
+    "raw_cr": 0.24,
+    "adjusted_cr": 0.3,
+    "ci_lo": 0.11,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": 0.17
+  },
+  {
+    "name": "Ghoul",
+    "nominal_cr": 1,
+    "raw_cr": 0.6,
+    "adjusted_cr": 1.18,
+    "ci_lo": 0.54,
+    "ci_hi": 2.51,
+    "flag": "ok",
+    "residual": 0.18
+  },
+  {
+    "name": "Harpy",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.6,
+    "adjusted_cr": 1.18,
+    "ci_lo": 0.58,
+    "ci_hi": 1.84,
+    "flag": "ok",
+    "residual": 0.18
+  },
+  {
+    "name": "Hyena",
+    "nominal_cr": 0.0,
+    "raw_cr": 0.14,
+    "adjusted_cr": 0.19,
+    "ci_lo": 0.09,
+    "ci_hi": 0.24,
+    "flag": "ok",
+    "residual": 0.19
+  },
+  {
+    "name": "Axe Beak",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.32,
+    "adjusted_cr": 0.45,
+    "ci_lo": 0.25,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": 0.2
+  },
+  {
+    "name": "Magma Mephit",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.4,
+    "adjusted_cr": 0.7,
+    "ci_lo": 0.33,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.2
+  },
+  {
+    "name": "Fomorian",
+    "nominal_cr": 8.0,
+    "raw_cr": 6.25,
+    "adjusted_cr": 8.2,
+    "ci_lo": 7.37,
+    "ci_hi": 8.74,
+    "flag": "ok",
+    "residual": 0.2
+  },
+  {
+    "name": "Quadrone",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.63,
+    "adjusted_cr": 1.22,
+    "ci_lo": 0.76,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.22
+  },
+  {
+    "name": "Carrion Crawler",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.42,
+    "adjusted_cr": 2.22,
+    "ci_lo": 0.95,
+    "ci_hi": 4.84,
+    "flag": "ok",
+    "residual": 0.22
+  },
+  {
+    "name": "Giant Badger",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.34,
+    "adjusted_cr": 0.49,
+    "ci_lo": 0.23,
+    "ci_hi": 1.4,
+    "flag": "ok",
+    "residual": 0.24
+  },
+  {
+    "name": "Shadow Demon",
+    "nominal_cr": 4.0,
+    "raw_cr": 2.71,
+    "adjusted_cr": 4.25,
+    "ci_lo": 1.46,
+    "ci_hi": 7.6,
+    "flag": "ok",
+    "residual": 0.25
+  },
+  {
+    "name": "Nothic",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.45,
+    "adjusted_cr": 2.26,
+    "ci_lo": 1.87,
+    "ci_hi": 3.3,
+    "flag": "ok",
+    "residual": 0.26
+  },
+  {
+    "name": "Giant Bat",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.35,
+    "adjusted_cr": 0.52,
+    "ci_lo": 0.29,
+    "ci_hi": 1.03,
+    "flag": "ok",
+    "residual": 0.27
+  },
+  {
+    "name": "Peryton",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.46,
+    "adjusted_cr": 2.27,
+    "ci_lo": 1.77,
+    "ci_hi": 4.1,
+    "flag": "ok",
+    "residual": 0.27
+  },
+  {
+    "name": "Gray Ooze",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.42,
+    "adjusted_cr": 0.78,
+    "ci_lo": 0.21,
+    "ci_hi": 2.33,
+    "flag": "ok",
+    "residual": 0.28
+  },
+  {
+    "name": "Dire Wolf",
+    "nominal_cr": 1,
+    "raw_cr": 0.67,
+    "adjusted_cr": 1.28,
+    "ci_lo": 0.58,
+    "ci_hi": 2.55,
+    "flag": "ok",
+    "residual": 0.28
+  },
+  {
+    "name": "Young Green Dragon",
+    "nominal_cr": 8.0,
+    "raw_cr": 6.47,
+    "adjusted_cr": 8.28,
+    "ci_lo": 7.95,
+    "ci_hi": 9.25,
+    "flag": "ok",
+    "residual": 0.28
+  },
+  {
+    "name": "Ogre Zombie",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.48,
+    "adjusted_cr": 2.3,
+    "ci_lo": 0.95,
+    "ci_hi": 4.46,
+    "flag": "ok",
+    "residual": 0.3
+  },
+  {
+    "name": "Minotaur Skeleton",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.49,
+    "adjusted_cr": 2.32,
+    "ci_lo": 0.45,
+    "ci_hi": 6.41,
+    "flag": "ok",
+    "residual": 0.32
+  },
+  {
+    "name": "Chuul",
+    "nominal_cr": 4.0,
+    "raw_cr": 2.8,
+    "adjusted_cr": 4.32,
+    "ci_lo": 2.18,
+    "ci_hi": 6.38,
+    "flag": "ok",
+    "residual": 0.32
+  },
+  {
+    "name": "Animated Armor",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.71,
+    "adjusted_cr": 1.33,
+    "ci_lo": 0.58,
+    "ci_hi": 2.23,
+    "flag": "ok",
+    "residual": 0.33
+  },
+  {
+    "name": "Giant Lizard",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.37,
+    "adjusted_cr": 0.59,
+    "ci_lo": 0.25,
+    "ci_hi": 1.22,
+    "flag": "ok",
+    "residual": 0.34
+  },
+  {
+    "name": "Shadow",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.44,
+    "adjusted_cr": 0.84,
+    "ci_lo": 0.36,
+    "ci_hi": 1.7,
+    "flag": "ok",
+    "residual": 0.34
+  },
+  {
+    "name": "Giant Toad",
+    "nominal_cr": 1,
+    "raw_cr": 0.71,
+    "adjusted_cr": 1.34,
+    "ci_lo": 0.33,
+    "ci_hi": 2.23,
+    "flag": "ok",
+    "residual": 0.34
+  },
+  {
+    "name": "Goblin Boss",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.73,
+    "adjusted_cr": 1.36,
+    "ci_lo": 0.58,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.36
+  },
+  {
+    "name": "Ape",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.45,
+    "adjusted_cr": 0.87,
+    "ci_lo": 0.39,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.37
+  },
+  {
+    "name": "Cave Bear",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.53,
+    "adjusted_cr": 2.37,
+    "ci_lo": 0.78,
+    "ci_hi": 4.53,
+    "flag": "ok",
+    "residual": 0.37
+  },
+  {
+    "name": "Polar Bear",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.53,
+    "adjusted_cr": 2.37,
+    "ci_lo": 0.78,
+    "ci_hi": 4.53,
+    "flag": "ok",
+    "residual": 0.37
+  },
+  {
+    "name": "Gynosphinx",
+    "nominal_cr": 11.0,
+    "raw_cr": 10.92,
+    "adjusted_cr": 11.37,
+    "ci_lo": 9.17,
+    "ci_hi": 13.0,
+    "flag": "ok",
+    "residual": 0.37
+  },
+  {
+    "name": "Fire Snake",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.74,
+    "adjusted_cr": 1.39,
+    "ci_lo": 0.58,
+    "ci_hi": 1.97,
+    "flag": "ok",
+    "residual": 0.39
+  },
+  {
+    "name": "Thri-kreen",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.75,
+    "adjusted_cr": 1.39,
+    "ci_lo": 0.58,
+    "ci_hi": 2.92,
+    "flag": "ok",
+    "residual": 0.39
+  },
+  {
+    "name": "Orog",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.55,
+    "adjusted_cr": 2.4,
+    "ci_lo": 1.13,
+    "ci_hi": 5.44,
+    "flag": "ok",
+    "residual": 0.4
+  },
+  {
+    "name": "Draft Horse",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.39,
+    "adjusted_cr": 0.66,
+    "ci_lo": 0.25,
+    "ci_hi": 1.4,
+    "flag": "ok",
+    "residual": 0.41
+  },
+  {
+    "name": "Satyr",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.47,
+    "adjusted_cr": 0.92,
+    "ci_lo": 0.4,
+    "ci_hi": 1.7,
+    "flag": "ok",
+    "residual": 0.42
+  },
+  {
+    "name": "Death Dog",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.77,
+    "adjusted_cr": 1.42,
+    "ci_lo": 0.58,
+    "ci_hi": 2.23,
+    "flag": "ok",
+    "residual": 0.42
+  },
+  {
+    "name": "Griffon",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.57,
+    "adjusted_cr": 2.42,
+    "ci_lo": 1.13,
+    "ci_hi": 4.53,
+    "flag": "ok",
+    "residual": 0.42
+  },
+  {
+    "name": "Flying Sword",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.4,
+    "adjusted_cr": 0.68,
+    "ci_lo": 0.26,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.43
+  },
+  {
+    "name": "Brown Bear",
+    "nominal_cr": 1,
+    "raw_cr": 0.77,
+    "adjusted_cr": 1.43,
+    "ci_lo": 0.76,
+    "ci_hi": 3.07,
+    "flag": "ok",
+    "residual": 0.43
+  },
+  {
+    "name": "Specter",
+    "nominal_cr": 1,
+    "raw_cr": 0.77,
+    "adjusted_cr": 1.43,
+    "ci_lo": 0.76,
+    "ci_hi": 1.97,
+    "flag": "ok",
+    "residual": 0.43
+  },
+  {
+    "name": "Winged Kobold",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.4,
+    "adjusted_cr": 0.69,
+    "ci_lo": 0.16,
+    "ci_hi": 1.66,
+    "flag": "ok",
+    "residual": 0.44
+  },
+  {
+    "name": "Will-o'-Wisp",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.58,
+    "adjusted_cr": 2.44,
+    "ci_lo": 1.2,
+    "ci_hi": 4.3,
+    "flag": "ok",
+    "residual": 0.44
+  },
+  {
+    "name": "Black Bear",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.48,
+    "adjusted_cr": 0.96,
+    "ci_lo": 0.49,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.46
+  },
+  {
+    "name": "Giant Eagle",
+    "nominal_cr": 1,
+    "raw_cr": 0.79,
+    "adjusted_cr": 1.46,
+    "ci_lo": 0.58,
+    "ci_hi": 2.97,
+    "flag": "ok",
+    "residual": 0.46
+  },
+  {
+    "name": "Manticore",
+    "nominal_cr": 3,
+    "raw_cr": 2.16,
+    "adjusted_cr": 3.47,
+    "ci_lo": 1.7,
+    "ci_hi": 6.92,
+    "flag": "ok",
+    "residual": 0.47
+  },
+  {
+    "name": "Bandit Captain",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.62,
+    "adjusted_cr": 2.49,
+    "ci_lo": 0.95,
+    "ci_hi": 4.46,
+    "flag": "ok",
+    "residual": 0.49
+  },
+  {
+    "name": "Githzerai Monk",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.62,
+    "adjusted_cr": 2.49,
+    "ci_lo": 1.13,
+    "ci_hi": 4.14,
+    "flag": "ok",
+    "residual": 0.49
+  },
+  {
+    "name": "Plesiosaurus",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.62,
+    "adjusted_cr": 2.49,
+    "ci_lo": 1.13,
+    "ci_hi": 4.63,
+    "flag": "ok",
+    "residual": 0.49
+  },
+  {
+    "name": "Swarm of Quippers",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.82,
+    "adjusted_cr": 1.5,
+    "ci_lo": 0.54,
+    "ci_hi": 4.47,
+    "flag": "ok",
+    "residual": 0.5
+  },
+  {
+    "name": "Warhorse",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.5,
+    "adjusted_cr": 1.02,
+    "ci_lo": 0.44,
+    "ci_hi": 1.6,
+    "flag": "ok",
+    "residual": 0.52
+  },
+  {
+    "name": "Blue Slaad",
+    "nominal_cr": 7.0,
+    "raw_cr": 5.18,
+    "adjusted_cr": 7.53,
+    "ci_lo": 4.57,
+    "ci_hi": 8.84,
+    "flag": "ok",
+    "residual": 0.53
+  },
+  {
+    "name": "Giant Hyena",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.85,
+    "adjusted_cr": 1.55,
+    "ci_lo": 0.58,
+    "ci_hi": 2.86,
+    "flag": "ok",
+    "residual": 0.55
+  },
+  {
+    "name": "Hezrou",
+    "nominal_cr": 8.0,
+    "raw_cr": 7.16,
+    "adjusted_cr": 8.55,
+    "ci_lo": 7.04,
+    "ci_hi": 9.25,
+    "flag": "ok",
+    "residual": 0.55
+  },
+  {
+    "name": "Hydra",
+    "nominal_cr": 8,
+    "raw_cr": 7.24,
+    "adjusted_cr": 8.59,
+    "ci_lo": 7.65,
+    "ci_hi": 9.59,
+    "flag": "ok",
+    "residual": 0.59
+  },
+  {
+    "name": "Night Hag",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.1,
+    "adjusted_cr": 5.61,
+    "ci_lo": 4.58,
+    "ci_hi": 8.52,
+    "flag": "ok",
+    "residual": 0.61
+  },
+  {
+    "name": "Glabrezu",
+    "nominal_cr": 9.0,
+    "raw_cr": 8.87,
+    "adjusted_cr": 9.62,
+    "ci_lo": 8.24,
+    "ci_hi": 11.78,
+    "flag": "ok",
+    "residual": 0.62
+  },
+  {
+    "name": "Duodrone",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.45,
+    "adjusted_cr": 0.88,
+    "ci_lo": 0.29,
+    "ci_hi": 2.0,
+    "flag": "ok",
+    "residual": 0.63
+  },
+  {
+    "name": "Swarm of Bats",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.46,
+    "adjusted_cr": 0.88,
+    "ci_lo": 0.43,
+    "ci_hi": 1.7,
+    "flag": "ok",
+    "residual": 0.63
+  },
+  {
+    "name": "Swarm of Rats",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.46,
+    "adjusted_cr": 0.88,
+    "ci_lo": 0.29,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.63
+  },
+  {
+    "name": "Kuo-toa Monitor",
+    "nominal_cr": 3.0,
+    "raw_cr": 2.23,
+    "adjusted_cr": 3.64,
+    "ci_lo": 2.33,
+    "ci_hi": 5.44,
+    "flag": "ok",
+    "residual": 0.64
+  },
+  {
+    "name": "Sahuagin Baron",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.13,
+    "adjusted_cr": 5.66,
+    "ci_lo": 2.43,
+    "ci_hi": 8.4,
+    "flag": "ok",
+    "residual": 0.66
+  },
+  {
+    "name": "Swarm of Beetles",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.61,
+    "adjusted_cr": 1.19,
+    "ci_lo": 0.41,
+    "ci_hi": 2.71,
+    "flag": "ok",
+    "residual": 0.69
+  },
+  {
+    "name": "Swarm of Centipedes",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.61,
+    "adjusted_cr": 1.19,
+    "ci_lo": 0.41,
+    "ci_hi": 2.71,
+    "flag": "ok",
+    "residual": 0.69
+  },
+  {
+    "name": "Swarm of Insects",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.61,
+    "adjusted_cr": 1.19,
+    "ci_lo": 0.41,
+    "ci_hi": 2.71,
+    "flag": "ok",
+    "residual": 0.69
+  },
+  {
+    "name": "Swarm of Spiders",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.61,
+    "adjusted_cr": 1.19,
+    "ci_lo": 0.41,
+    "ci_hi": 2.71,
+    "flag": "ok",
+    "residual": 0.69
+  },
+  {
+    "name": "Flesh Golem",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.15,
+    "adjusted_cr": 5.7,
+    "ci_lo": 4.3,
+    "ci_hi": 7.21,
+    "flag": "ok",
+    "residual": 0.7
+  },
+  {
+    "name": "Shield Guardian",
+    "nominal_cr": 7.0,
+    "raw_cr": 5.39,
+    "adjusted_cr": 7.71,
+    "ci_lo": 5.65,
+    "ci_hi": 8.9,
+    "flag": "ok",
+    "residual": 0.71
+  },
+  {
+    "name": "Swarm of Wasps",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.63,
+    "adjusted_cr": 1.22,
+    "ci_lo": 0.45,
+    "ci_hi": 3.07,
+    "flag": "ok",
+    "residual": 0.72
+  },
+  {
+    "name": "Warhorse Skeleton",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.64,
+    "adjusted_cr": 1.23,
+    "ci_lo": 0.36,
+    "ci_hi": 1.99,
+    "flag": "ok",
+    "residual": 0.73
+  },
+  {
+    "name": "Saber-Toothed Tiger",
+    "nominal_cr": 2,
+    "raw_cr": 1.79,
+    "adjusted_cr": 2.73,
+    "ci_lo": 1.77,
+    "ci_hi": 4.53,
+    "flag": "ok",
+    "residual": 0.73
+  },
+  {
+    "name": "Swarm of Ravens",
+    "nominal_cr": 0.25,
+    "raw_cr": 0.49,
+    "adjusted_cr": 1.0,
+    "ci_lo": 0.43,
+    "ci_hi": 1.77,
+    "flag": "ok",
+    "residual": 0.75
+  },
+  {
+    "name": "Quaggoth Spore Servant",
+    "nominal_cr": 1.0,
+    "raw_cr": 0.98,
+    "adjusted_cr": 1.75,
+    "ci_lo": 0.97,
+    "ci_hi": 4.47,
+    "flag": "ok",
+    "residual": 0.75
+  },
+  {
+    "name": "Young Black Dragon",
+    "nominal_cr": 7.0,
+    "raw_cr": 5.46,
+    "adjusted_cr": 7.77,
+    "ci_lo": 5.65,
+    "ci_hi": 8.55,
+    "flag": "ok",
+    "residual": 0.77
+  },
+  {
+    "name": "Fire Elemental",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.2,
+    "adjusted_cr": 5.79,
+    "ci_lo": 2.71,
+    "ci_hi": 8.4,
+    "flag": "ok",
+    "residual": 0.79
+  },
+  {
+    "name": "Banshee",
+    "nominal_cr": 4.0,
+    "raw_cr": 3.63,
+    "adjusted_cr": 4.93,
+    "ci_lo": 4.2,
+    "ci_hi": 5.86,
+    "flag": "ok",
+    "residual": 0.93
+  },
+  {
+    "name": "Troll",
+    "nominal_cr": 5,
+    "raw_cr": 4.32,
+    "adjusted_cr": 5.98,
+    "ci_lo": 3.96,
+    "ci_hi": 7.81,
+    "flag": "ok",
+    "residual": 0.98
+  },
+  {
+    "name": "Intellect Devourer",
+    "nominal_cr": 2.0,
+    "raw_cr": 1.99,
+    "adjusted_cr": 3.02,
+    "ci_lo": 1.89,
+    "ci_hi": 5.3,
+    "flag": "ok",
+    "residual": 1.02
+  },
+  {
+    "name": "Bearded Devil",
+    "nominal_cr": 3.0,
+    "raw_cr": 2.4,
+    "adjusted_cr": 4.02,
+    "ci_lo": 2.59,
+    "ci_hi": 4.53,
+    "flag": "ok",
+    "residual": 1.02
+  },
+  {
+    "name": "Tridrone",
+    "nominal_cr": 0.5,
+    "raw_cr": 0.86,
+    "adjusted_cr": 1.56,
+    "ci_lo": 0.49,
+    "ci_hi": 2.89,
+    "flag": "ok",
+    "residual": 1.06
+  },
+  {
+    "name": "Scarecrow",
+    "nominal_cr": 1.0,
+    "raw_cr": 1.32,
+    "adjusted_cr": 2.07,
+    "ci_lo": 1.22,
+    "ci_hi": 3.07,
+    "flag": "ok",
+    "residual": 1.07
+  },
+  {
+    "name": "Hook Horror",
+    "nominal_cr": 3.0,
+    "raw_cr": 2.52,
+    "adjusted_cr": 4.11,
+    "ci_lo": 2.65,
+    "ci_hi": 4.71,
+    "flag": "ok",
+    "residual": 1.11
+  },
+  {
+    "name": "Grick Alpha",
+    "nominal_cr": 7.0,
+    "raw_cr": 6.04,
+    "adjusted_cr": 8.12,
+    "ci_lo": 5.65,
+    "ci_hi": 9.59,
+    "flag": "ok",
+    "residual": 1.12
+  },
+  {
+    "name": "Gargoyle",
+    "nominal_cr": 2.0,
+    "raw_cr": 2.03,
+    "adjusted_cr": 3.15,
+    "ci_lo": 1.94,
+    "ci_hi": 4.84,
+    "flag": "ok",
+    "residual": 1.15
+  },
+  {
+    "name": "Lizard King",
+    "nominal_cr": 4.0,
+    "raw_cr": 3.81,
+    "adjusted_cr": 5.15,
+    "ci_lo": 2.45,
+    "ci_hi": 8.14,
+    "flag": "ok",
+    "residual": 1.15
+  },
+  {
+    "name": "Lizard Queen",
+    "nominal_cr": 4.0,
+    "raw_cr": 3.81,
+    "adjusted_cr": 5.15,
+    "ci_lo": 2.45,
+    "ci_hi": 8.14,
+    "flag": "ok",
+    "residual": 1.15
+  },
+  {
+    "name": "Minotaur",
+    "nominal_cr": 3.0,
+    "raw_cr": 2.69,
+    "adjusted_cr": 4.24,
+    "ci_lo": 2.65,
+    "ci_hi": 6.03,
+    "flag": "ok",
+    "residual": 1.24
+  },
+  {
+    "name": "Bone Devil",
+    "nominal_cr": 9.0,
+    "raw_cr": 9.78,
+    "adjusted_cr": 10.27,
+    "ci_lo": 9.03,
+    "ci_hi": 13.0,
+    "flag": "ok",
+    "residual": 1.27
+  },
+  {
+    "name": "Shambling Mound",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.46,
+    "adjusted_cr": 6.29,
+    "ci_lo": 4.3,
+    "ci_hi": 8.4,
+    "flag": "ok",
+    "residual": 1.29
+  },
+  {
+    "name": "Giant Scorpion",
+    "nominal_cr": 3.0,
+    "raw_cr": 2.8,
+    "adjusted_cr": 4.32,
+    "ci_lo": 2.59,
+    "ci_hi": 7.65,
+    "flag": "ok",
+    "residual": 1.32
+  },
+  {
+    "name": "Barbed Devil",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.49,
+    "adjusted_cr": 6.35,
+    "ci_lo": 3.07,
+    "ci_hi": 9.31,
+    "flag": "ok",
+    "residual": 1.35
+  },
+  {
+    "name": "Displacer Beast",
+    "nominal_cr": 3.0,
+    "raw_cr": 2.91,
+    "adjusted_cr": 4.4,
+    "ci_lo": 2.59,
+    "ci_hi": 5.6,
+    "flag": "ok",
+    "residual": 1.4
+  },
+  {
+    "name": "Ankylosaurus",
+    "nominal_cr": 3.0,
+    "raw_cr": 2.98,
+    "adjusted_cr": 4.45,
+    "ci_lo": 2.59,
+    "ci_hi": 6.92,
+    "flag": "ok",
+    "residual": 1.45
+  },
+  {
+    "name": "Githyanki Warrior",
+    "nominal_cr": 3.0,
+    "raw_cr": 3.1,
+    "adjusted_cr": 4.54,
+    "ci_lo": 2.59,
+    "ci_hi": 7.65,
+    "flag": "ok",
+    "residual": 1.54
+  },
+  {
+    "name": "Bulette",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.6,
+    "adjusted_cr": 6.58,
+    "ci_lo": 4.3,
+    "ci_hi": 8.4,
+    "flag": "ok",
+    "residual": 1.58
+  },
+  {
+    "name": "Gladiator",
+    "nominal_cr": 5,
+    "raw_cr": 4.6,
+    "adjusted_cr": 6.59,
+    "ci_lo": 4.95,
+    "ci_hi": 8.1,
+    "flag": "ok",
+    "residual": 1.59
+  },
+  {
+    "name": "Air Elemental",
+    "nominal_cr": 5,
+    "raw_cr": 4.63,
+    "adjusted_cr": 6.66,
+    "ci_lo": 3.44,
+    "ci_hi": 8.51,
+    "flag": "ok",
+    "residual": 1.66
+  },
+  {
+    "name": "Couatl",
+    "nominal_cr": 4.0,
+    "raw_cr": 4.13,
+    "adjusted_cr": 5.67,
+    "ci_lo": 4.06,
+    "ci_hi": 8.07,
+    "flag": "ok",
+    "residual": 1.67
+  },
+  {
+    "name": "Swarm of Poisonous Snakes",
+    "nominal_cr": 2.0,
+    "raw_cr": 2.28,
+    "adjusted_cr": 3.78,
+    "ci_lo": 0.95,
+    "ci_hi": 7.35,
+    "flag": "ok",
+    "residual": 1.78
+  },
+  {
+    "name": "Yeti",
+    "nominal_cr": 3.0,
+    "raw_cr": 3.42,
+    "adjusted_cr": 4.78,
+    "ci_lo": 2.9,
+    "ci_hi": 6.14,
+    "flag": "ok",
+    "residual": 1.78
+  },
+  {
+    "name": "Mezzoloth",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.7,
+    "adjusted_cr": 6.82,
+    "ci_lo": 6.26,
+    "ci_hi": 7.53,
+    "flag": "ok",
+    "residual": 1.82
+  },
+  {
+    "name": "Young White Dragon",
+    "nominal_cr": 6.0,
+    "raw_cr": 5.69,
+    "adjusted_cr": 7.97,
+    "ci_lo": 5.83,
+    "ci_hi": 9.1,
+    "flag": "ok",
+    "residual": 1.97
+  },
+  {
+    "name": "Wight",
+    "nominal_cr": 3.0,
+    "raw_cr": 3.81,
+    "adjusted_cr": 5.15,
+    "ci_lo": 4.32,
+    "ci_hi": 7.99,
+    "flag": "ok",
+    "residual": 2.15
+  },
+  {
+    "name": "Umber Hulk",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.89,
+    "adjusted_cr": 7.18,
+    "ci_lo": 4.95,
+    "ci_hi": 8.52,
+    "flag": "ok",
+    "residual": 2.18
+  },
+  {
+    "name": "Awakened Tree",
+    "nominal_cr": 2.0,
+    "raw_cr": 2.66,
+    "adjusted_cr": 4.21,
+    "ci_lo": 1.9,
+    "ci_hi": 5.3,
+    "flag": "ok",
+    "residual": 2.21
+  },
+  {
+    "name": "Xorn",
+    "nominal_cr": 5.0,
+    "raw_cr": 4.94,
+    "adjusted_cr": 7.27,
+    "ci_lo": 4.95,
+    "ci_hi": 9.31,
+    "flag": "ok",
+    "residual": 2.27
+  },
+  {
+    "name": "Gelatinous Cube",
+    "nominal_cr": 2.0,
+    "raw_cr": 2.86,
+    "adjusted_cr": 4.36,
+    "ci_lo": 2.81,
+    "ci_hi": 5.44,
+    "flag": "ok",
+    "residual": 2.36
+  },
+  {
+    "name": "Cambion",
+    "nominal_cr": 5.0,
+    "raw_cr": 5.25,
+    "adjusted_cr": 7.59,
+    "ci_lo": 5.51,
+    "ci_hi": 8.64,
+    "flag": "ok",
+    "residual": 2.59
+  },
+  {
+    "name": "Salamander",
+    "nominal_cr": 5.0,
+    "raw_cr": 5.34,
+    "adjusted_cr": 7.67,
+    "ci_lo": 5.51,
+    "ci_hi": 8.56,
+    "flag": "ok",
+    "residual": 2.67
+  },
+  {
+    "name": "Water Elemental",
+    "nominal_cr": 5.0,
+    "raw_cr": 5.63,
+    "adjusted_cr": 7.91,
+    "ci_lo": 6.85,
+    "ci_hi": 8.98,
+    "flag": "ok",
+    "residual": 2.91
+  },
+  {
+    "name": "Earth Elemental",
+    "nominal_cr": 5.0,
+    "raw_cr": 6.38,
+    "adjusted_cr": 8.25,
+    "ci_lo": 5.1,
+    "ci_hi": 9.31,
+    "flag": "ok",
+    "residual": 3.25
+  },
+  {
+    "name": "Vampire Spawn",
+    "nominal_cr": 5,
+    "raw_cr": 6.56,
+    "adjusted_cr": 8.31,
+    "ci_lo": 7.2,
+    "ci_hi": 9.1,
+    "flag": "ok",
+    "residual": 3.31
+  },
+  {
+    "name": "Beholder Zombie",
+    "nominal_cr": 5.0,
+    "raw_cr": 7.55,
+    "adjusted_cr": 8.73,
+    "ci_lo": 5.1,
+    "ci_hi": 9.74,
+    "flag": "ok",
+    "residual": 3.73
+  },
+  {
+    "name": "Helmed Horror",
+    "nominal_cr": 4.0,
+    "raw_cr": 6.43,
+    "adjusted_cr": 8.27,
+    "ci_lo": 7.12,
+    "ci_hi": 9.08,
+    "flag": "ok",
+    "residual": 4.27
+  }
+]

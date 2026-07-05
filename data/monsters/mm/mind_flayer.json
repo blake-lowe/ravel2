@@ -1,0 +1,114 @@
+{
+  "name": "Mind Flayer",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 7,
+  "alignment": "lawful evil",
+  "ac": 15,
+  "hp": 71,
+  "hit_dice": "13d8+13",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 12,
+    "CON": 12,
+    "INT": 19,
+    "WIS": 17,
+    "CHA": 17
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 7,
+    "Deception": 6,
+    "Insight": 6,
+    "Perception": 6,
+    "Persuasion": 6,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 16
+  },
+  "languages": [
+    "Deep Speech",
+    "Undercommon",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "magic_resistance": true,
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "traits": [
+    {
+      "name": "Innate Spellcasting (Psionics)",
+      "text": "[UNSUPPORTED] Innate spellcasting ability is Intelligence (save DC 15). At will: detect thoughts, levitate. 1/day each: dominate monster, plane shift (self only). None are modeled by the engine."
+    },
+    {
+      "name": "Tentacles stun-while-grappled",
+      "text": "[APPROXIMATED as a short stunned rider] On a Tentacles hit, a Medium or smaller target is grappled (escape DC 15) and must succeed on a DC 15 INT save or be stunned until the grapple ends. Encoded as a 1-round stun rider on a failed save; the grapple itself is not modeled."
+    },
+    {
+      "name": "Extract Brain",
+      "text": "[UNSUPPORTED] Melee attack vs. an incapacitated humanoid grappled by the flayer: 55 (10d10) piercing damage; if this reduces the target to 0 hp, the flayer kills it by extracting and devouring its brain."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Tentacles",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d10+4",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "INT",
+        "dc": 15,
+        "on_fail_condition": "stunned",
+        "duration": 1
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Mind Blast",
+      "shape": "cone",
+      "size": 60,
+      "origin_range": 5,
+      "save": "INT",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "4d8+4",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "INT",
+        "dc": 15,
+        "on_fail_condition": "stunned",
+        "duration": 10
+      }
+    }
+  ],
+  "strategy": "Lead with Mind Blast to stun a cluster, then exploit stunned foes with Tentacles, relying on Magic Resistance to shrug off enemy casters.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

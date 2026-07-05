@@ -1,0 +1,83 @@
+{
+  "name": "Vampiric Mist",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "C E",
+  "ac": 13,
+  "hp": 30,
+  "hit_dice": "4d8+12",
+  "speeds": {
+    "walk": 0,
+    "fly": 30,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 6,
+    "DEX": 16,
+    "CON": 16,
+    "INT": 6,
+    "WIS": 12,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "lightning",
+    "necrotic",
+    "thunder"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
+  "traits": [
+    {
+      "name": "Life Drain",
+      "text": "The mist touches one creature in its space. The target must succeed on a 13 Constitution saving throw (Undead and Constructs automatically succeed), or it takes 10 (2d6 + 3) necrotic damage, the mist regains 10 hit points, and the target's hit point maximum is reduced by an amount equal to the necrotic damage taken. This reduction lasts until the target finishes a long rest. The target dies if its hit point maximum is reduced to 0."
+    },
+    {
+      "name": "Life Sense",
+      "text": "The mist can sense the location of any creature within 60 feet of it, unless that creature's type is Construct or Undead."
+    },
+    {
+      "name": "Forbiddance",
+      "text": "The mist can't enter a residence without an invitation from one of the occupants."
+    },
+    {
+      "name": "Misty Form",
+      "text": "The mist can occupy another creature's space and vice versa. In addition, if air can pass through a space, the mist can pass through it without squeezing. Each foot of movement in water costs it 2 extra feet, rather than 1 extra foot. The mist can't manipulate objects in any way that requires fingers or manual dexterity."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The mist doesn't require air or sleep."
+    }
+  ],
+  "actions": [],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical",
+    "sunlight_sensitivity"
+  ],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,149 @@
+{
+  "name": "Alhoon",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 10.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 150,
+  "hit_dice": "20d8+60",
+  "speeds": {
+    "walk": 30,
+    "fly": 15,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 12,
+    "CON": 16,
+    "INT": 19,
+    "WIS": 17,
+    "CHA": 17
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 8,
+    "Deception": 7,
+    "History": 8,
+    "Insight": 7,
+    "Perception": 7,
+    "Stealth": 5
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 17
+  },
+  "languages": [
+    "Deep Speech",
+    "Undercommon",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "lightning",
+    "necrotic"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Negate Spell (3/Day) (reaction)",
+      "text": "The alhoon targets one creature it can see within 60 feet of it that is casting a spell. If the spell is 3rd level or lower, the spell fails, but any spell slots or charges are not wasted."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The alhoon has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Turn Resistance",
+      "text": "The alhoon has advantage on saving throws against any effect that turns Undead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Chilling Grasp",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "cold"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Arcane Bolt",
+      "kind": "ranged",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "8d6",
+          "type": "force"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Chilling Grasp",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Mind Blast",
+      "shape": "cone",
+      "size": 60,
+      "origin_range": 0,
+      "save": "INT",
+      "dc": 16,
+      "damage": [
+        {
+          "dice": "4d8+4",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "INT",
+        "dc": 16,
+        "on_fail_condition": "stunned"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Invisibility": 1
+    }
+  }
+}

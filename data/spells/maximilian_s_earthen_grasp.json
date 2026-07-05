@@ -1,0 +1,38 @@
+{
+  "name": "Maximilian's Earthen Grasp",
+  "level": 2,
+  "school": "transmutation",
+  "range": 30,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "STR",
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": true,
+      "condition": "restrained",
+      "save_ends": false
+    }
+  ],
+  "imported": "5etools"
+}

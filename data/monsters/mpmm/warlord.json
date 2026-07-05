@@ -1,0 +1,95 @@
+{
+  "name": "Warlord",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 12.0,
+  "alignment": "A",
+  "ac": 18,
+  "hp": 229,
+  "hit_dice": "27d8+108",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 20,
+    "DEX": 16,
+    "CON": 18,
+    "INT": 12,
+    "WIS": 12,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "STR",
+    "DEX",
+    "CON"
+  ],
+  "skills": {
+    "Athletics": 9,
+    "Intimidation": 8,
+    "Perception": 5,
+    "Persuasion": 8
+  },
+  "senses": {
+    "passive_perception": 15
+  },
+  "languages": [
+    "any two languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Indomitable (3/Day)",
+      "text": "The warlord can reroll a saving throw it fails. It must use the new roll."
+    },
+    {
+      "name": "Survivor",
+      "text": "The warlord regains 10 hit points at the start of its turn if it has fewer than half its hit points but at least 1 hit point."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greatsword",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d6+5",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortbow",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        80,
+        320
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greatsword",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Greatsword"
+  }
+}

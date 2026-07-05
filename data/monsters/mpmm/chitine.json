@@ -1,0 +1,81 @@
+{
+  "name": "Chitine",
+  "type": "monstrosity",
+  "size": "Small",
+  "cr": 0.5,
+  "alignment": "C E",
+  "ac": 14,
+  "hp": 18,
+  "hit_dice": "4d6+4",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 4,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Fey Ancestry",
+      "text": "The chitine has advantage on saving throws against being charmed, and magic can't put the chitine to sleep."
+    },
+    {
+      "name": "Web Sense",
+      "text": "While in contact with a web, the chitine knows the exact location of any other creature in contact with the same web."
+    },
+    {
+      "name": "Web Walker",
+      "text": "The chitine ignores movement restrictions caused by webbing."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Dagger",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "save_advantages": [
+    "charmed"
+  ],
+  "traits_flags": [
+    "sunlight_sensitivity"
+  ]
+}

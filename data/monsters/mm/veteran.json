@@ -1,0 +1,93 @@
+{
+  "name": "Veteran",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3,
+  "alignment": "any alignment",
+  "ac": 17,
+  "hp": 58,
+  "hit_dice": "9d8+18",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 13,
+    "CON": 14,
+    "INT": 10,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Athletics": 5,
+    "Perception": 2
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Shortsword",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Heavy Crossbow",
+      "kind": "ranged",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d10+1",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        100,
+        400
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 2
+    },
+    {
+      "name": "Shortsword",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "strategy": "A disciplined soldier: close to melee and make two longsword strikes plus a shortsword cut each turn, falling back on the heavy crossbow only when a foe is out of reach.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Pteranodon",
+  "type": "beast",
+  "size": "Medium",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 13,
+  "hit_dice": "3d8",
+  "speeds": {
+    "walk": 10,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 15,
+    "CON": 10,
+    "INT": 2,
+    "WIS": 9,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 1
+  },
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Flyby",
+      "text": "The pteranodon doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "2d4+1",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "flyby"
+  ],
+  "imported": "5etools-mm"
+}

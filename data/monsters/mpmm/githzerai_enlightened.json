@@ -1,0 +1,106 @@
+{
+  "name": "Githzerai Enlightened",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 10.0,
+  "alignment": "A",
+  "ac": 18,
+  "hp": 112,
+  "hit_dice": "15d8+45",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 19,
+    "CON": 16,
+    "INT": 17,
+    "WIS": 19,
+    "CHA": 13
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "STR",
+    "DEX",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 7,
+    "Insight": 8,
+    "Perception": 8
+  },
+  "senses": {
+    "passive_perception": 18
+  },
+  "languages": [
+    "Gith"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Slow Fall (reaction)",
+      "text": "When the githzerai falls, it reduces any falling damage it takes by 50."
+    },
+    {
+      "name": "Psychic Defense",
+      "text": "While the githzerai is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Unarmed Strike",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "4d8",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Temporal Strike",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "8d12",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Unarmed Strike",
+      "count": 3
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 16,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Plane Shift": 1
+    }
+  }
+}

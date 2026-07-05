@@ -1,0 +1,23 @@
+{
+  "name": "Imprisonment",
+  "level": 9,
+  "school": "abjuration",
+  "range": 30,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "banish",
+      "ability": "WIS"
+    }
+  ],
+  "_approx": "any imprisonment mode = out of the fight (banish, WIS save).",
+  "imported": "5etools"
+}

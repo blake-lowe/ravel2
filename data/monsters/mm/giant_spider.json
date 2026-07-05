@@ -1,0 +1,103 @@
+{
+  "name": "Giant Spider",
+  "type": "beast",
+  "size": "Large",
+  "cr": 1,
+  "alignment": "unaligned",
+  "ac": 14,
+  "hp": 26,
+  "hit_dice": "4d10+4",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 16,
+    "CON": 12,
+    "INT": 2,
+    "WIS": 11,
+    "CHA": 4
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 7
+  },
+  "senses": {
+    "blindsight": 10,
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Spider Climb",
+      "text": "[APPROXIMATED as a climb speed] The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    },
+    {
+      "name": "Web Sense",
+      "text": "[UNSUPPORTED] While in contact with a web, the spider knows the exact location of any other creature in contact with the same web."
+    },
+    {
+      "name": "Web Walker",
+      "text": "[UNSUPPORTED] The spider ignores movement restrictions caused by webbing."
+    },
+    {
+      "name": "Web (Recharge 5-6)",
+      "text": "[APPROXIMATED as a ranged attack named 'Web'] In the source this is a Dexterity save (DC 11) with no attack roll, range 30/60 ft., and it recharges on 5-6; here it is modeled as a ranged attack carrying a DEX DC 11 restrained rider. The restrained target can escape with a DC 12 Strength check; the webbing (AC 10, 5 hp) is vulnerable to fire."
+    },
+    {
+      "name": "Bite poison (paralysis on 0 HP)",
+      "text": "[APPROXIMATED as extra poison damage on the bite] The bite's DC 11 Constitution save deals 2d8 poison damage (half on save). In the source, if this poison reduces the target to 0 hit points, it is stable but poisoned for 1 hour (even after regaining hp) and paralyzed while so poisoned; that 0-HP follow-on effect is not modeled."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 11,
+        "extra_damage": {
+          "dice": "2d8",
+          "type": "poison"
+        },
+        "half_on_save": true
+      }
+    },
+    {
+      "name": "Web",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [],
+      "range": [
+        30,
+        60
+      ],
+      "rider": {
+        "ability": "DEX",
+        "dc": 11,
+        "on_fail_condition": "restrained",
+        "duration": null
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "strategy": "Open with Web to restrain a target from range, then close and bite the entangled prey to deliver its poison.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

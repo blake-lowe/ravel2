@@ -1,0 +1,91 @@
+{
+  "name": "Gray Render",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 12.0,
+  "alignment": "C N",
+  "ac": 19,
+  "hp": 189,
+  "hit_dice": "18d10+90",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 13,
+    "CON": 20,
+    "INT": 3,
+    "WIS": 6,
+    "CHA": 8
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "STR",
+    "CON"
+  ],
+  "skills": {
+    "Perception": 2
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Bloody Rampage (reaction)",
+      "text": "When the gray render takes damage, it makes one Claw attack against a random creature within its reach, other than its master."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d12+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 16,
+        "on_fail_condition": "prone"
+      }
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "3d6",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

@@ -1,0 +1,93 @@
+{
+  "name": "Ghoul",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 1,
+  "alignment": "chaotic evil",
+  "ac": 12,
+  "hp": 22,
+  "hit_dice": "5d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 13,
+    "DEX": 15,
+    "CON": 10,
+    "INT": 7,
+    "WIS": 10,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "exhaustion",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Paralysis (elf immunity)",
+      "text": "[APPROXIMATED as a paralyzing rider on the Claws attack] In the source, elves are immune to the ghoul's paralysis; the engine applies the DC 10 Constitution save to all targets regardless of race."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claws",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 10,
+        "on_fail_condition": "paralyzed",
+        "duration": 10
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claws",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "strategy": "Rake foes with its claws to paralyze them, then focus its bite on anyone it has locked down.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

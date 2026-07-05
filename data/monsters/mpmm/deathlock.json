@@ -1,0 +1,111 @@
+{
+  "name": "Deathlock",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 4.0,
+  "alignment": "N E",
+  "ac": 12,
+  "hp": 36,
+  "hit_dice": "8d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 15,
+    "CON": 10,
+    "INT": 14,
+    "WIS": 12,
+    "CHA": 16
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Arcana": 4,
+    "History": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "the languages it knew in life"
+  ],
+  "damage_resistances": [
+    "necrotic"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Turn Resistance",
+      "text": "The deathlock has advantage on saving throws against any effect that turns Undead."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The deathlock doesn't require air, food, drink, or sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Deathly Claw",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d6+2",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Grave Bolt",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d10+3",
+          "type": "necrotic"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Deathly Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 13,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Mage Armor": 0,
+      "Dispel Magic": 1,
+      "Hunger of Hadar": 1,
+      "Invisibility": 1
+    }
+  }
+}

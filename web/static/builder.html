@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Character Builder — Ravel</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Ravel</h1>
+  <p class="subtitle">roll up a basher worth the pit — every choice the engine's own, cutter, so what you build here fights true</p>
+  <nav class="topnav">
+    <a href="/pit">The Blood Pit</a>
+    <a href="/bestiary">Bestiary</a>
+    <a href="/builder" class="active">Character Builder</a>
+    <a href="/supertemporal">Supertemporal</a>
+  </nav>
+</header>
+
+<main class="builder">
+
+  <!-- ================= roster (browser-cached) ================= -->
+  <aside class="frame roster-pane">
+    <div class="panel-title hatch">The Roster</div>
+    <ul class="char-list" id="char-list"></ul>
+    <div class="roster-actions">
+      <button id="ch-new">New</button>
+      <button id="ch-save">Save</button>
+      <button id="ch-export">Download JSON</button>
+      <button id="ch-export-all">Download all</button>
+      <label class="btn import-label">Import JSON<input type="file" id="ch-import" accept=".json,application/json" multiple hidden></label>
+      <button id="ch-clear" class="quiet">Clear roster</button>
+    </div>
+    <p class="faint-note">kept in this browser's localStorage — download to keep them safe</p>
+  </aside>
+
+  <!-- ================= the build, in PHB order ================= -->
+  <section class="frame build-pane">
+    <div class="step" id="step-race">
+      <h3><span class="stepnum">1</span> Race</h3>
+      <div class="race-cards" id="race-cards"></div>
+    </div>
+
+    <div class="step" id="step-background">
+      <h3><span class="stepnum">2</span> Background</h3>
+      <div class="bg-chips" id="bg-chips"></div>
+    </div>
+
+    <div class="step" id="step-name">
+      <h3><span class="stepnum">3</span> Name</h3>
+      <input type="text" id="ch-name" placeholder="What do they call you?" maxlength="40">
+    </div>
+
+    <div class="step" id="step-abilities">
+      <h3><span class="stepnum">4</span> Ability Scores — point buy</h3>
+      <div class="pb-head">
+        <label>budget <input type="number" id="pb-budget" value="27" min="0" max="100"></label>
+        <span id="pb-remaining" class="pb-remaining"></span>
+      </div>
+      <table class="pb-table" id="pb-table"></table>
+    </div>
+
+    <div class="step" id="step-class">
+      <h3><span class="stepnum">5</span> Class &amp; Advancement</h3>
+      <ol class="level-list" id="level-list"></ol>
+      <div class="levelup" id="levelup"></div>
+    </div>
+
+    <div class="step" id="step-equipment">
+      <h3><span class="stepnum">6</span> Equipment</h3>
+      <div class="eq-grid" id="eq-grid"></div>
+    </div>
+
+    <p class="error" id="b-error"></p>
+    <div class="warnings" id="b-warnings"></div>
+    <p class="supp-legend">engine support:
+      <sup class="supp supp-gap">!</sup> not yet in the engine ·
+      <sup class="supp supp-approx">~</sup> approximated ·
+      <sup class="supp supp-utility">u</sup> out-of-combat ·
+      <sup class="supp supp-cosmetic">*</sup> flavor</p>
+  </section>
+
+  <!-- ================= live sheet ================= -->
+  <aside class="frame sheet-pane">
+    <div class="panel-title hatch">The Sheet</div>
+    <div id="sheet-body"><p class="none">choose a race to begin, berk</p></div>
+  </aside>
+
+</main>
+
+<script src="/static/builder.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "name": "Giant Eagle",
+  "type": "beast",
+  "size": "Large",
+  "cr": 1,
+  "alignment": "N G",
+  "ac": 13,
+  "hp": 26,
+  "speeds": {
+    "walk": 10,
+    "fly": 80
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 17,
+    "CON": 13,
+    "INT": 8,
+    "WIS": 14,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "passive_perception": 14
+  },
+  "languages": [
+    "Giant Eagle",
+    "understands Common and Auran but can't speak them"
+  ],
+  "actions": [
+    {
+      "name": "Beak",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Talons",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "2d6+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Beak",
+      "count": 1
+    },
+    {
+      "name": "Talons",
+      "count": 1
+    }
+  ],
+  "traits_flags": [
+    "flyby"
+  ],
+  "hit_dice": "4d10+4",
+  "curated": true,
+  "imported": "5etools-mm"
+}

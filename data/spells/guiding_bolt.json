@@ -1,0 +1,29 @@
+{
+  "name": "Guiding Bolt",
+  "level": 1,
+  "school": "evocation",
+  "range": 120,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "duration_rounds": 1,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "radiant"
+        }
+      ],
+      "melee": false
+    }
+  ],
+  "imported": "5etools"
+}

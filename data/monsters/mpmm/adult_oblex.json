@@ -1,0 +1,124 @@
+{
+  "name": "Adult Oblex",
+  "type": "ooze",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "L E",
+  "ac": 14,
+  "hp": 75,
+  "hit_dice": "10d8+30",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 8,
+    "DEX": 19,
+    "CON": 16,
+    "INT": 19,
+    "WIS": 12,
+    "CHA": 15
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 5,
+    "Perception": 4
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Common plus two more languages"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Sulfurous Impersonation (bonus)",
+      "text": "The oblex extrudes a piece of itself that assumes the appearance of one Medium or smaller creature whose memories it has stolen. This simulacrum appears, feels, and sounds exactly like the creature it impersonates, though it smells faintly of sulfur. The oblex can impersonate 1d4 + 1 different creatures, each one tethered to its body by a strand of slime that can extend up to 120 feet away. The simulacrum is an extension of the oblex, meaning that the oblex occupies its space and the simulacrum's space simultaneously. The tether is immune to damage, but it is severed if there is no opening at least 1 inch wide between the oblex and the simulacrum. The simulacrum disappears if the tether is severed."
+    },
+    {
+      "name": "Amorphous",
+      "text": "The oblex can move through a space as narrow as 1 inch wide without squeezing."
+    },
+    {
+      "name": "Aversion to Fire",
+      "text": "If the oblex takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn."
+    },
+    {
+      "name": "Unusual Nature",
+      "text": "The oblex doesn't require sleep."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Pseudopod",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "2d6+4",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "2d6",
+          "type": "psychic"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Pseudopod",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Eat Memories",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "4d8",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 15,
+        "on_fail_condition": "unconscious"
+      },
+      "max_targets": 1
+    }
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 15,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Hypnotic Pattern": 3
+    }
+  }
+}

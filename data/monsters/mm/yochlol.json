@@ -1,0 +1,112 @@
+{
+  "name": "Yochlol",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 10.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 136,
+  "hit_dice": "16d8+64",
+  "speeds": {
+    "walk": 30,
+    "climb": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 18,
+    "INT": 13,
+    "WIS": 15,
+    "CHA": 15
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 10,
+    "Insight": 6
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Abyssal",
+    "Elvish",
+    "Undercommon"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Mist Form",
+      "text": "The yochlol transforms into toxic mist or reverts to its true form. Any equipment it is wearing or carrying is also transformed. It reverts to its true form if it dies. While in mist form, the yochlol is incapacitated and can't speak. It has a flying speed of 30 feet, can hover, and can pass through any space that isn't airtight. It has advantage on Strength, Dexterity, and Constitution saving throws, and it is immune to nonmagical damage. While in mist form, the yochlol can enter a creature's space and stop there. Each time that creature starts its turn with the yochlol in its space, the creature must succeed on a 14 Constitution saving throw or be poisoned until the start of its next turn. While poisoned in this way, the target is incapacitated."
+    },
+    {
+      "name": "Shapechanger",
+      "text": "The yochlol can use its action to polymorph into a form that resembles a female drow or giant spider, or back into its true form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The yochlol has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Spider Climb",
+      "text": "The yochlol can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    },
+    {
+      "name": "Web Walker",
+      "text": "The yochlol ignores movement restrictions caused by webbing."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam (Bite in Spider Form)",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "6d6",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 14,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Web": 0
+    }
+  }
+}

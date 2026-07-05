@@ -1,0 +1,29 @@
+{
+  "name": "Poison Spray",
+  "level": 0,
+  "school": "conjuration",
+  "range": 10,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "damage": [
+        {
+          "dice": "1d12",
+          "type": "poison"
+        }
+      ],
+      "half_on_save": false
+    }
+  ],
+  "imported": "5etools"
+}

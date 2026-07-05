@@ -1,0 +1,109 @@
+{
+  "name": "Gynosphinx",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 11.0,
+  "alignment": "L N",
+  "ac": 17,
+  "hp": 136,
+  "hit_dice": "16d10+48",
+  "speeds": {
+    "walk": 40,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 15,
+    "CON": 16,
+    "INT": 18,
+    "WIS": 18,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {
+    "Arcana": 12,
+    "History": 12,
+    "Perception": 8,
+    "Religion": 8
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 18
+  },
+  "languages": [
+    "Common",
+    "Sphinx"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Inscrutable",
+      "text": "The sphinx is immune to any effect that would sense its emotions or read its thoughts, as well as any divination spell that it refuses. Wisdom (Insight) checks made to ascertain the sphinx's intentions or sincerity have disadvantage."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The sphinx's weapon attacks are magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "2d8+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 16,
+    "attack_bonus": 8,
+    "caster_level": 9,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 1
+    },
+    "spells": [
+      "Banishment",
+      "Darkness",
+      "Dispel Magic",
+      "Greater Invisibility",
+      "Shield",
+      "Suggestion"
+    ]
+  },
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Claw"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Giant Bat",
+  "type": "beast",
+  "size": "Large",
+  "cr": 0.25,
+  "alignment": "U",
+  "ac": 13,
+  "hp": 22,
+  "hit_dice": "4d10",
+  "speeds": {
+    "walk": 10,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 16,
+    "CON": 11,
+    "INT": 2,
+    "WIS": 12,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Echolocation",
+      "text": "The bat can't use its blindsight while deafened."
+    },
+    {
+      "name": "Keen Hearing",
+      "text": "The bat has advantage on Wisdom (Perception) checks that rely on hearing."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Crab",
+  "type": "beast",
+  "size": "Tiny",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 2,
+  "hit_dice": "1d4",
+  "speeds": {
+    "walk": 20,
+    "swim": 20
+  },
+  "abilities": {
+    "STR": 2,
+    "DEX": 11,
+    "CON": 10,
+    "INT": 1,
+    "WIS": 8,
+    "CHA": 2
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 2
+  },
+  "senses": {
+    "blindsight": 30,
+    "passive_perception": 9
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 0,
+      "damage": [
+        {
+          "dice": "1d1",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

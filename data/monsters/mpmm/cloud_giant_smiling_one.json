@@ -1,0 +1,120 @@
+{
+  "name": "Cloud Giant Smiling One",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 11.0,
+  "alignment": "C N",
+  "ac": 15,
+  "hp": 250,
+  "hit_dice": "20d12+120",
+  "speeds": {
+    "walk": 40,
+    "fly": 40,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 26,
+    "DEX": 12,
+    "CON": 22,
+    "INT": 15,
+    "WIS": 16,
+    "CHA": 17
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 11,
+    "Insight": 7,
+    "Perception": 11,
+    "Sleight Of Hand": 9
+  },
+  "senses": {
+    "passive_perception": 21
+  },
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Change Shape",
+      "text": "The giant magically transforms to look and feel like a Beast or a Humanoid it has seen or to return to its true form. Any equipment the giant is wearing or carrying is absorbed by the new form. Its statistics, other than its size, don't change. It reverts to its true form if it dies."
+    },
+    {
+      "name": "Cloud Step {@recharge 4} (bonus)",
+      "text": "The giant teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+    },
+    {
+      "name": "Control Weather (8th-level Spell)",
+      "text": "The giant can cast the control weather spell, requiring no material components and using Charisma as the spellcasting ability."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Slam",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "3d8+8",
+          "type": "bludgeoning"
+        },
+        {
+          "dice": "1d10",
+          "type": "psychic"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Telekinetic Strike",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "4d10+3",
+          "type": "force"
+        }
+      ],
+      "range": [
+        240,
+        240
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Slam",
+      "count": 2
+    },
+    {
+      "name": "Telekinetic Strike",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 15,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fog Cloud": 0,
+      "Light": 0,
+      "Invisibility": 3,
+      "Suggestion": 3
+    }
+  },
+  "teleport_bonus": 60
+}

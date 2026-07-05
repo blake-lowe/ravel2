@@ -1,0 +1,69 @@
+{
+  "name": "Slaad Tadpole",
+  "type": "aberration",
+  "size": "Tiny",
+  "cr": 0.125,
+  "alignment": "C N",
+  "ac": 12,
+  "hp": 10,
+  "hit_dice": "4d4",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 15,
+    "CON": 10,
+    "INT": 3,
+    "WIS": 5,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 7
+  },
+  "languages": [
+    "understands Slaad but can't speak"
+  ],
+  "damage_resistances": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Magic Resistance",
+      "text": "The slaad has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mm"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Blight",
+  "level": 4,
+  "school": "necromancy",
+  "range": 30,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "8d8",
+          "type": "necrotic"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d8"
+  }
+}

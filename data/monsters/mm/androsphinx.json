@@ -1,0 +1,117 @@
+{
+  "name": "Androsphinx",
+  "type": "monstrosity",
+  "size": "Large",
+  "cr": 17.0,
+  "alignment": "L N",
+  "ac": 17,
+  "hp": 199,
+  "hit_dice": "19d10+95",
+  "speeds": {
+    "walk": 40,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 22,
+    "DEX": 10,
+    "CON": 20,
+    "INT": 16,
+    "WIS": 18,
+    "CHA": 23
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 9,
+    "Perception": 10,
+    "Religion": 15
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 20
+  },
+  "languages": [
+    "Common",
+    "Sphinx"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "psychic"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Roar (3/Day)",
+      "text": "The sphinx emits a magical roar. Each time it roars before finishing a long rest, the roar is louder and the effect is different, as detailed below. Each creature within 500 feet of the sphinx and able to hear the roar must make a saving throw. First Roar: Second Roar: Third Roar:"
+    },
+    {
+      "name": "Inscrutable",
+      "text": "The sphinx is immune to any effect that would sense its emotions or read its thoughts, as well as any divination spell that it refuses. Wisdom (Insight) checks made to ascertain the sphinx's intentions or sincerity have disadvantage."
+    },
+    {
+      "name": "Magic Weapons",
+      "text": "The sphinx's weapon attacks are magical."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "2d10+6",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_weapons",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 18,
+    "attack_bonus": 10,
+    "caster_level": 12,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2,
+      "6": 1
+    },
+    "spells": [
+      "Banishment",
+      "Command",
+      "Dispel Magic",
+      "Flame Strike",
+      "Sacred Flame"
+    ]
+  },
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Claw"
+  }
+}

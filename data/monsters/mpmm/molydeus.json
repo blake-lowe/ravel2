@@ -1,0 +1,146 @@
+{
+  "name": "Molydeus",
+  "type": "fiend",
+  "size": "Huge",
+  "cr": 21.0,
+  "alignment": "C E",
+  "ac": 19,
+  "hp": 216,
+  "hit_dice": "16d12+112",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 28,
+    "DEX": 22,
+    "CON": 25,
+    "INT": 21,
+    "WIS": 24,
+    "CHA": 24
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 21
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 31
+  },
+  "languages": [
+    "Abyssal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "poisoned",
+    "stunned"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the molydeus fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The molydeus has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Demonic Weapon",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "4d12+9",
+          "type": "force"
+        },
+        {
+          "dice": "6d8",
+          "type": "force"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Snakebite",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "2d6+9",
+          "type": "poison"
+        }
+      ],
+      "reach": 15,
+      "reduces_max_hp": true
+    },
+    {
+      "name": "Wolf Bite",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "3d10+9",
+          "type": "necrotic"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Demonic Weapon",
+      "count": 1
+    },
+    {
+      "name": "Snakebite",
+      "count": 1
+    },
+    {
+      "name": "Wolf Bite",
+      "count": 1
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 22,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Dispel Magic": 0,
+      "Lightning Bolt": 3
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Demonic Weapon"
+  }
+}

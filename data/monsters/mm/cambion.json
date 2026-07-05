@@ -1,0 +1,130 @@
+{
+  "name": "Cambion",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 5.0,
+  "alignment": "L NX C E",
+  "ac": 19,
+  "hp": 82,
+  "hit_dice": "11d8+33",
+  "speeds": {
+    "walk": 30,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 18,
+    "CON": 16,
+    "INT": 14,
+    "WIS": 12,
+    "CHA": 16
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "INT",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 6,
+    "Intimidation": 6,
+    "Perception": 4,
+    "Stealth": 7
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Abyssal",
+    "Common",
+    "Infernal"
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "lightning",
+    "poison"
+  ],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Fiendish Blessing",
+      "text": "The AC of the cambion includes its Charisma bonus."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d6+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        },
+        {
+          "dice": "1d6",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Fire Ray",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "fire"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Fiendish Charm",
+      "shape": "sphere",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 14,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 14,
+        "on_fail_condition": "charmed"
+      }
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 14,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Command": 3
+    }
+  }
+}

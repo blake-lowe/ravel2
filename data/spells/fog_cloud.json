@@ -1,0 +1,12 @@
+{
+  "name": "Fog Cloud",
+  "level": 1,
+  "school": "conjuration",
+  "casting_time": "action",
+  "range": 120,
+  "components": ["V", "S"],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {"mode": "point", "shape": "sphere", "size": 20, "affects": "enemies"},
+  "effects": [{"kind": "fog", "size": 20}]
+}

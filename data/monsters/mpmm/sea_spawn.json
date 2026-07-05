@@ -1,0 +1,67 @@
+{
+  "name": "Sea Spawn",
+  "type": "monstrosity",
+  "size": "Medium",
+  "cr": 1.0,
+  "alignment": "N E",
+  "ac": 11,
+  "hp": 32,
+  "hit_dice": "5d8+10",
+  "speeds": {
+    "walk": 20,
+    "swim": 30
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 8,
+    "CON": 15,
+    "INT": 6,
+    "WIS": 10,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 10
+  },
+  "languages": [
+    "understands Aquan and Common but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Piscine Anatomy",
+      "text": "The sea spawn uses one of the following options (choose one or roll a d6): 1\u20132: Bite: mw 4 to hit, reach 5 ft., one target. 4 (1d4 + 2) piercing damage. 3\u20134: Poison Quills: mw 4 to hit, reach 5 ft., one creature. 3 (1d6) poison damage, and the target must succeed on a 12 Constitution saving throw or be poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. 5\u20136: Tentacle: mw 4 to hit, reach 10 ft., one target. 5 (1d6 + 2) bludgeoning damage, and the target is grappled (escape 12) if it is a Medium or smaller creature. Until this grapple ends, the sea spawn can't use this tentacle on another target."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Unarmed Strike",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Unarmed Strike",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

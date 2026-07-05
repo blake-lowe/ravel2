@@ -1,0 +1,141 @@
+{
+  "name": "Kraken",
+  "type": "monstrosity",
+  "size": "Gargantuan",
+  "cr": 23.0,
+  "alignment": "C E",
+  "ac": 18,
+  "hp": 472,
+  "hit_dice": "27d20+189",
+  "speeds": {
+    "walk": 20,
+    "swim": 60
+  },
+  "abilities": {
+    "STR": 30,
+    "DEX": 11,
+    "CON": 25,
+    "INT": 22,
+    "WIS": 18,
+    "CHA": 20
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "STR",
+    "DEX",
+    "CON",
+    "INT",
+    "WIS"
+  ],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Abyssal",
+    "Celestial",
+    "Infernal",
+    "Primordial",
+    "telepathy 120 ft. but can't speak"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "lightning"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened",
+    "paralyzed"
+  ],
+  "traits": [
+    {
+      "name": "Fling",
+      "text": "One Large or smaller object held or creature grappled by the kraken is thrown up to 60 feet in a random direction and knocked prone. If a thrown target strikes a solid surface, the target takes 3 (1d6) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a 18 Dexterity saving throw or take the same damage and be knocked prone."
+    },
+    {
+      "name": "Freedom of Movement",
+      "text": "The kraken ignores difficult terrain, and magical effects can't reduce its speed or cause it to be restrained. It can spend 5 feet of movement to escape from nonmagical restraints or being grappled."
+    },
+    {
+      "name": "Siege Monster",
+      "text": "The kraken deals double damage to objects and structures."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 17,
+      "damage": [
+        {
+          "dice": "3d8+10",
+          "type": "piercing"
+        },
+        {
+          "dice": "12d6",
+          "type": "acid"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 25,
+        "on_fail_condition": "blinded"
+      }
+    },
+    {
+      "name": "Tentacle",
+      "kind": "melee",
+      "attack_bonus": 17,
+      "damage": [
+        {
+          "dice": "3d6+10",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 30,
+      "rider": {
+        "ability": "STR",
+        "dc": 18,
+        "on_fail_condition": "grappled",
+        "condition_save_ends": false
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Tentacle",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Lightning Storm",
+      "shape": "sphere",
+      "size": 120,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 23,
+      "damage": [
+        {
+          "dice": "4d10",
+          "type": "lightning"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "at-will",
+      "rider": null
+    }
+  ],
+  "traits_flags": [
+    "resist_nonmagical_physical",
+    "water_breathing"
+  ],
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Bite"
+  }
+}

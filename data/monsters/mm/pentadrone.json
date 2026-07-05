@@ -1,0 +1,86 @@
+{
+  "name": "Pentadrone",
+  "type": "construct",
+  "size": "Large",
+  "cr": 2.0,
+  "alignment": "L N",
+  "ac": 16,
+  "hp": 32,
+  "hit_dice": "5d10+5",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 10,
+    "WIS": 10,
+    "CHA": 13
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Modron"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Axiomatic Mind",
+      "text": "The pentadrone can't be compelled to act in a manner contrary to its nature or its instructions."
+    },
+    {
+      "name": "Disintegration",
+      "text": "If the pentadrone dies, its body disintegrates into dust, leaving behind its weapons and anything else it was carrying."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Arm",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d6+2",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Arm",
+      "count": 5
+    }
+  ],
+  "areas": [
+    {
+      "name": "Paralysis Gas",
+      "shape": "cone",
+      "size": 30,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 11,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 11,
+        "on_fail_condition": "paralyzed"
+      }
+    }
+  ],
+  "imported": "5etools-mm"
+}

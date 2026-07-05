@@ -1,0 +1,86 @@
+{
+  "name": "Swashbuckler",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "A",
+  "ac": 17,
+  "hp": 66,
+  "hit_dice": "12d8+12",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 12,
+    "DEX": 18,
+    "CON": 12,
+    "INT": 14,
+    "WIS": 11,
+    "CHA": 15
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Acrobatics": 8,
+    "Athletics": 5,
+    "Persuasion": 6
+  },
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Lightfooted (bonus)",
+      "text": "The swashbuckler takes the Dash or Disengage action."
+    },
+    {
+      "name": "Suave Defense",
+      "text": "While the swashbuckler is wearing light or no armor and wielding no shield, its AC includes its Charisma modifier."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d4+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Rapier",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Dagger",
+      "count": 1
+    },
+    {
+      "name": "Rapier",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

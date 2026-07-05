@@ -1,0 +1,93 @@
+{
+  "name": "Archmage",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 12,
+  "alignment": "any alignment",
+  "ac": 12,
+  "hp": 99,
+  "hit_dice": "18d8+18",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 14,
+    "CON": 12,
+    "INT": 20,
+    "WIS": 15,
+    "CHA": 16
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 13,
+    "History": 13
+  },
+  "senses": {
+    "passive_perception": 12
+  },
+  "languages": [
+    "any six languages"
+  ],
+  "damage_resistances": [
+    "damage from spells",
+    "nonmagical bludgeoning",
+    "nonmagical piercing",
+    "nonmagical slashing"
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 17,
+    "attack_bonus": 9,
+    "caster_level": 18,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1
+    },
+    "spells": [
+      "Fire Bolt",
+      "Magic Missile",
+      "Shield",
+      "Counterspell",
+      "Fireball",
+      "Cone of Cold",
+      "Ice Storm",
+      "Wall of Fire",
+      "Banishment",
+      "Blur",
+      "Mirror Image",
+      "Dispel Magic"
+    ]
+  },
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "strategy": "Open with Blur or Mirror Image to survive, then hold Counterspell for enemy magic. Blast clustered foes with Fireball, Cone of Cold, and Ice Storm from range; use Wall of Fire to split the battlefield and Banishment to remove the most dangerous single threat. Keep distance and never enter melee if avoidable.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

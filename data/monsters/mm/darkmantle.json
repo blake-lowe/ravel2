@@ -1,0 +1,70 @@
+{
+  "name": "Darkmantle",
+  "type": "monstrosity",
+  "size": "Small",
+  "cr": 0.5,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 22,
+  "hit_dice": "5d6+5",
+  "speeds": {
+    "walk": 10,
+    "fly": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 13,
+    "INT": 2,
+    "WIS": 10,
+    "CHA": 5
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Stealth": 3
+  },
+  "senses": {
+    "blindsight": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Darkness Aura (1/Day)",
+      "text": "A 15-foot radius of magical darkness extends out from the darkmantle, moves with it, and spreads around corners. The darkness lasts as long as the darkmantle maintains concentration, up to 10 minutes (as if concentration on a spell). Darkvision can't penetrate this darkness, and no natural light can illuminate it. If any of the darkness overlaps with an area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled."
+    },
+    {
+      "name": "Echolocation",
+      "text": "The darkmantle can't use its blindsight while deafened."
+    },
+    {
+      "name": "False Appearance",
+      "text": "While the darkmantle remains motionless, it is indistinguishable from a cave formation such as a stalactite or stalagmite."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Crush",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "false_appearance"
+  ],
+  "imported": "5etools-mm"
+}

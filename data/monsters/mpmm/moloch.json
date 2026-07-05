@@ -1,0 +1,182 @@
+{
+  "name": "Moloch",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 21.0,
+  "alignment": "L E",
+  "ac": 19,
+  "hp": 253,
+  "hit_dice": "22d10+132",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 26,
+    "DEX": 19,
+    "CON": 22,
+    "INT": 21,
+    "WIS": 18,
+    "CHA": 23
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Deception": 13,
+    "Intimidation": 13,
+    "Perception": 11
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 21
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "Moloch teleports, along with any equipment he is wearing or carrying, up to 120 feet to an unoccupied space he can see."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Moloch fails a saving throw, he can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Moloch has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Regeneration",
+      "text": "Moloch regains 20 hit points at the start of his turn. If he takes radiant damage, this trait doesn't function at the start of his next turn. Moloch dies only if he starts his turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 15,
+      "damage": [
+        {
+          "dice": "4d8+8",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 15,
+      "damage": [
+        {
+          "dice": "2d8+8",
+          "type": "force"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Many-Tailed Whip",
+      "kind": "melee",
+      "attack_bonus": 15,
+      "damage": [
+        {
+          "dice": "2d4+8",
+          "type": "lightning"
+        },
+        {
+          "dice": "2d10",
+          "type": "thunder"
+        }
+      ],
+      "reach": 30,
+      "rider": {
+        "ability": "STR",
+        "dc": 24,
+        "push": -30
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Breath of Despair",
+      "shape": "cube",
+      "size": 30,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 21,
+      "damage": [
+        {
+          "dice": "5d10",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "WIS",
+        "dc": 21,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "regeneration": {
+    "amount": 20,
+    "stopped_by": [
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 21,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Confusion": 0,
+      "Stinking Cloud": 0,
+      "Suggestion": 0,
+      "Wall of Fire": 0
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Bite"
+  }
+}

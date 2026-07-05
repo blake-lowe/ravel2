@@ -1,0 +1,84 @@
+{
+  "name": "Drow Mage",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 7,
+  "alignment": "neutral evil",
+  "ac": 12,
+  "hp": 45,
+  "hit_dice": "10d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 9,
+    "DEX": 14,
+    "CON": 10,
+    "INT": 17,
+    "WIS": 13,
+    "CHA": 12
+  },
+  "proficiency_bonus": 3,
+  "saving_throws": [
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 6,
+    "Deception": 4,
+    "Perception": 4,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Elvish",
+    "Undercommon"
+  ],
+  "traits": [
+    "Fey Ancestry: The drow has advantage on saving throws against being charmed, and magic can't put it to sleep.",
+    "Sunlight Sensitivity: While in sunlight, the drow has disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight."
+  ],
+  "actions": [
+    {
+      "name": "Staff",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "1d4",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 14,
+    "attack_bonus": 6,
+    "caster_level": 10,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 2
+    },
+    "spells": [
+      "Fire Bolt",
+      "Magic Missile",
+      "Fireball",
+      "Lightning Bolt",
+      "Fear",
+      "Cloudkill",
+      "Dispel Magic",
+      "Faerie Fire"
+    ]
+  },
+  "strategy": "Stay at range in darkness where darkvision 120 gives the edge. Light up foes with Faerie Fire, then break clustered enemies with Fireball and Lightning Bolt. Use Fear to scatter melee attackers and Cloudkill to deny ground and grind down survivors. Fall back and avoid sunlight.",
+  "curated": true,
+  "imported": "5etools-mm"
+}

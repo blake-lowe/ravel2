@@ -1,0 +1,113 @@
+{
+  "name": "Erinyes",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 12.0,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 153,
+  "hit_dice": "18d8+72",
+  "speeds": {
+    "walk": 30,
+    "fly": 60
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 16,
+    "CON": 18,
+    "INT": 14,
+    "WIS": 14,
+    "CHA": 18
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {},
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Hellish Weapons",
+      "text": "The erinyes's weapon attacks are magical and deal an extra 13 (3d8) poison damage on a hit (included in the attacks)."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The erinyes has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 8,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "3d8",
+          "type": "poison"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Longbow",
+      "kind": "ranged",
+      "attack_bonus": 7,
+      "damage": [
+        {
+          "dice": "1d8+3",
+          "type": "piercing"
+        },
+        {
+          "dice": "3d8",
+          "type": "poison"
+        }
+      ],
+      "range": [
+        150,
+        600
+      ],
+      "rider": {
+        "ability": "CON",
+        "dc": 14,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "parry": 4
+}

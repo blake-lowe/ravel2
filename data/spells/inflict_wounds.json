@@ -1,0 +1,28 @@
+{
+  "name": "Inflict Wounds",
+  "level": 1,
+  "school": "necromancy",
+  "range": 5,
+  "range_type": "touch",
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "3d10",
+          "type": "necrotic"
+        }
+      ],
+      "melee": true
+    }
+  ],
+  "imported": "5etools"
+}

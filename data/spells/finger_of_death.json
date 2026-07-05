@@ -1,0 +1,27 @@
+{
+  "name": "Finger of Death",
+  "level": 7,
+  "school": "necromancy",
+  "range": 60,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "half_on_save": true,
+      "damage": [
+        {
+          "dice": "7d8+30",
+          "type": "necrotic"
+        }
+      ]
+    }
+  ]
+}

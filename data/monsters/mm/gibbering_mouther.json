@@ -1,0 +1,102 @@
+{
+  "name": "Gibbering Mouther",
+  "type": "aberration",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "N",
+  "ac": 9,
+  "hp": 67,
+  "hit_dice": "9d8+27",
+  "speeds": {
+    "walk": 10,
+    "swim": 10
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 8,
+    "CON": 16,
+    "INT": 3,
+    "WIS": 10,
+    "CHA": 6
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Aberrant Ground",
+      "text": "The ground in a 10-foot radius around the mouther is doughlike difficult terrain. Each creature that starts its turn in that area must succeed on a 10 Strength saving throw or have its speed reduced to 0 until the start of its next turn."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bites",
+      "kind": "melee",
+      "attack_bonus": 2,
+      "damage": [
+        {
+          "dice": "5d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "STR",
+        "dc": 10,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bites",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Gibbering",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 10,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 10,
+        "on_fail_condition": "incapacitated"
+      }
+    }
+  ],
+  "imported": "5etools-mm",
+  "death_burst": {
+    "name": "Blinding Spittle",
+    "shape": "sphere",
+    "size": 5,
+    "origin_range": 0,
+    "save": "DEX",
+    "dc": 13,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": {
+      "ability": "DEX",
+      "dc": 13,
+      "on_fail_condition": "blinded"
+    }
+  }
+}

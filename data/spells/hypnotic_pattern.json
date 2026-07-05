@@ -1,0 +1,26 @@
+{
+  "name": "Hypnotic Pattern",
+  "level": 3,
+  "school": "illusion",
+  "range": 120,
+  "components": [
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "cube",
+    "size": 30,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "condition": "incapacitated",
+      "save_ends": true
+    }
+  ]
+}

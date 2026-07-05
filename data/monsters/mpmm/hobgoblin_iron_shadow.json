@@ -1,0 +1,93 @@
+{
+  "name": "Hobgoblin Iron Shadow",
+  "type": "fey",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "L N",
+  "ac": 15,
+  "hp": 32,
+  "hit_dice": "5d8+10",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 14,
+    "DEX": 16,
+    "CON": 15,
+    "INT": 14,
+    "WIS": 15,
+    "CHA": 11
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Acrobatics": 5,
+    "Athletics": 4,
+    "Stealth": 5
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Common",
+    "Goblin"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Shadow Jaunt",
+      "text": "The hobgoblin teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see. Both the space it leaves and its destination must be in dim light or darkness."
+    },
+    {
+      "name": "Unarmored Defense",
+      "text": "While the hobgoblin is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Unarmed Strike",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Dart",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d4+3",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        20,
+        60
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 12,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Charm Person": 1
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "name": "Meenlock",
+  "type": "fey",
+  "size": "Small",
+  "cr": 2.0,
+  "alignment": "N E",
+  "ac": 15,
+  "hp": 31,
+  "hit_dice": "7d6+7",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 7,
+    "DEX": 15,
+    "CON": 12,
+    "INT": 11,
+    "WIS": 10,
+    "CHA": 8
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 4,
+    "Stealth": 6,
+    "Survival": 2
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 14
+  },
+  "languages": [
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened"
+  ],
+  "traits": [
+    {
+      "name": "Shadow Teleport {@recharge 5} (bonus)",
+      "text": "The meenlock teleports to an unoccupied space within 30 feet of it, provided that both the space it's teleporting from and its destination are in dim light or darkness. The destination need not be within line of sight."
+    },
+    {
+      "name": "Light Sensitivity",
+      "text": "While in bright light, the meenlock has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "2d4+2",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 11,
+        "on_fail_condition": "paralyzed"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [
+    {
+      "name": "Fear Aura",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "WIS",
+      "dc": 11,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "WIS",
+        "dc": 11,
+        "on_fail_condition": "frightened"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

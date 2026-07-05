@@ -1,0 +1,134 @@
+{
+  "name": "Lich",
+  "type": "undead",
+  "size": "Medium",
+  "cr": 21.0,
+  "alignment": "L NX C E",
+  "ac": 17,
+  "hp": 135,
+  "hit_dice": "18d8+54",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 16,
+    "CON": 16,
+    "INT": 20,
+    "WIS": 14,
+    "CHA": 16
+  },
+  "proficiency_bonus": 7,
+  "saving_throws": [
+    "CON",
+    "INT",
+    "WIS"
+  ],
+  "skills": {
+    "Arcana": 19,
+    "History": 12,
+    "Insight": 9,
+    "Perception": 9
+  },
+  "senses": {
+    "truesight": 120,
+    "passive_perception": 19
+  },
+  "languages": [
+    "Common plus up to five other languages"
+  ],
+  "damage_resistances": [
+    "cold",
+    "lightning",
+    "necrotic"
+  ],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "paralyzed",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the lich fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Rejuvenation",
+      "text": "If it has a phylactery, a destroyed lich gains a new body in 1d10 days, regaining all its hit points and becoming active again. The new body appears within 5 feet of the phylactery."
+    },
+    {
+      "name": "Turn Resistance",
+      "text": "The lich has advantage on saving throws against any effect that turns undead."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Paralyzing Touch",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "3d6",
+          "type": "cold"
+        }
+      ],
+      "reach": 5,
+      "rider": {
+        "ability": "CON",
+        "dc": 18,
+        "on_fail_condition": "paralyzed"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "traits_flags": [
+    "resist_nonmagical_physical"
+  ],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 20,
+    "attack_bonus": 12,
+    "caster_level": 18,
+    "slots": {
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1
+    },
+    "spells": [
+      "Blight",
+      "Cloudkill",
+      "Counterspell",
+      "Disintegrate",
+      "Dispel Magic",
+      "Finger of Death",
+      "Fireball",
+      "Invisibility",
+      "Magic Missile",
+      "Melf's Acid Arrow",
+      "Mirror Image",
+      "Plane Shift",
+      "Power Word Stun",
+      "Ray of Frost",
+      "Shield",
+      "Thunderwave"
+    ]
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Paralyzing Touch"
+  }
+}

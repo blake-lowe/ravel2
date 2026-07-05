@@ -1,0 +1,37 @@
+{
+  "name": "Insect Plague",
+  "level": 5,
+  "school": "conjuration",
+  "range": 300,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "terrain",
+      "ability": "CON",
+      "half_on_save": true,
+      "difficult_terrain": true,
+      "damage": [
+        {
+          "dice": "4d10",
+          "type": "piercing"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "damage",
+    "amount": "1d10"
+  }
+}

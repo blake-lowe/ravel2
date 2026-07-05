@@ -1,0 +1,147 @@
+{
+  "name": "Red Abishai",
+  "type": "fiend",
+  "size": "Medium",
+  "cr": 19.0,
+  "alignment": "L E",
+  "ac": 22,
+  "hp": 289,
+  "hit_dice": "34d8+136",
+  "speeds": {
+    "walk": 30,
+    "fly": 50
+  },
+  "abilities": {
+    "STR": 23,
+    "DEX": 16,
+    "CON": 19,
+    "INT": 14,
+    "WIS": 15,
+    "CHA": 19
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Intimidation": 10,
+    "Perception": 8
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 18
+  },
+  "languages": [
+    "Draconic",
+    "Infernal",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold"
+  ],
+  "damage_immunities": [
+    "fire",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Incite Fanaticism",
+      "text": "The abishai chooses up to four other creatures within 60 feet of it that can see it. Until the start of the abishai's next turn, each of those creatures makes attack rolls with advantage and can't be frightened."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The abishai has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "3d10+6",
+          "type": "piercing"
+        },
+        {
+          "dice": "7d10",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 12,
+      "damage": [
+        {
+          "dice": "2d10+6",
+          "type": "force"
+        },
+        {
+          "dice": "2d10",
+          "type": "fire"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 1
+    }
+  ],
+  "areas": [
+    {
+      "name": "Power of the Dragon Queen",
+      "shape": "sphere",
+      "size": 120,
+      "origin_range": 0,
+      "save": "CHA",
+      "dc": 18,
+      "damage": [],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "CHA",
+        "dc": 18,
+        "on_fail_condition": "charmed"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "imported": "5etools-mpmm",
+  "frightful_presence": {
+    "name": "Frightful Presence",
+    "shape": "sphere",
+    "size": 120,
+    "origin_range": 0,
+    "save": "WIS",
+    "dc": 18,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will",
+    "rider": {
+      "ability": "WIS",
+      "dc": 18,
+      "on_fail_condition": "frightened"
+    }
+  }
+}

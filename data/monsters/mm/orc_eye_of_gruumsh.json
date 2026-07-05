@@ -1,0 +1,84 @@
+{
+  "name": "Orc Eye of Gruumsh",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 2.0,
+  "alignment": "C E",
+  "ac": 16,
+  "hp": 45,
+  "hit_dice": "6d8+18",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 17,
+    "INT": 9,
+    "WIS": 13,
+    "CHA": 12
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Intimidation": 3,
+    "Religion": 1
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 11
+  },
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Aggressive",
+      "text": "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Gruumsh's Fury",
+      "text": "The orc deals an extra 4 (1d8) damage when it hits with a weapon attack (included in the attacks)."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Spear",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d8+3",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 11,
+    "attack_bonus": 3,
+    "caster_level": 3,
+    "slots": {
+      "1": 4,
+      "2": 2
+    },
+    "spells": [
+      "Bless",
+      "Command"
+    ]
+  }
+}

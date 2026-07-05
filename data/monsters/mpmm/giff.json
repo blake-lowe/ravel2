@@ -1,0 +1,135 @@
+{
+  "name": "Giff",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 3.0,
+  "alignment": "A",
+  "ac": 16,
+  "hp": 60,
+  "hit_dice": "8d8+24",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 18,
+    "DEX": 14,
+    "CON": 17,
+    "INT": 11,
+    "WIS": 12,
+    "CHA": 12
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "passive_perception": 11
+  },
+  "languages": [
+    "Common"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Firearms Knowledge",
+      "text": "The giff's mastery of its weapons enables it to ignore the loading property of muskets and pistols."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "1d8+4",
+          "type": "slashing"
+        },
+        {
+          "dice": "1d10+4",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Musket",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d12+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        40,
+        120
+      ]
+    },
+    {
+      "name": "Pistol",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d10+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        90
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Longsword",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Fragmentation Grenade",
+      "shape": "sphere",
+      "size": 20,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 15,
+      "damage": [
+        {
+          "dice": "5d6",
+          "type": "piercing"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "once",
+      "rider": null
+    },
+    {
+      "name": "Headfirst Charge",
+      "shape": "sphere",
+      "size": 5,
+      "origin_range": 0,
+      "save": "STR",
+      "dc": 14,
+      "damage": [
+        {
+          "dice": "2d6",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "STR",
+        "dc": 14,
+        "on_fail_condition": "prone"
+      }
+    }
+  ],
+  "imported": "5etools-mpmm"
+}

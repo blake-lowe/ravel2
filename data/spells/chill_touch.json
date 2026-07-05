@@ -1,0 +1,29 @@
+{
+  "name": "Chill Touch",
+  "level": 0,
+  "school": "necromancy",
+  "range": 120,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "duration_rounds": 1,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "1d8",
+          "type": "necrotic"
+        }
+      ],
+      "melee": false
+    }
+  ],
+  "imported": "5etools"
+}

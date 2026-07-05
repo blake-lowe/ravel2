@@ -1,0 +1,50 @@
+{
+  "name": "Frog",
+  "type": "beast",
+  "size": "Tiny",
+  "cr": 0.0,
+  "alignment": "U",
+  "ac": 11,
+  "hp": 1,
+  "hit_dice": "1d4-1",
+  "speeds": {
+    "walk": 20,
+    "swim": 20
+  },
+  "abilities": {
+    "STR": 1,
+    "DEX": 13,
+    "CON": 8,
+    "INT": 1,
+    "WIS": 8,
+    "CHA": 3
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 1,
+    "Stealth": 3
+  },
+  "senses": {
+    "darkvision": 30,
+    "passive_perception": 11
+  },
+  "languages": [],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Standing Leap",
+      "text": "The frog's long jump is up to 10 feet and its high jump is up to 5 feet, with or without a running start."
+    }
+  ],
+  "actions": [],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "traits_flags": [
+    "water_breathing"
+  ]
+}

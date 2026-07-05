@@ -1,0 +1,81 @@
+{
+  "name": "Orc",
+  "type": "humanoid (orc)",
+  "size": "Medium",
+  "cr": 0.5,
+  "alignment": "chaotic evil",
+  "ac": 13,
+  "hp": 15,
+  "hit_dice": "2d8+6",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 16,
+    "INT": 7,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Intimidation": 2
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 10
+  },
+  "languages": [
+    "Common",
+    "Orc"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Aggressive",
+      "text": "As a bonus action, the orc moves up to its speed toward a hostile creature it can see. (Implemented via the on_turn_start trigger.)"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greataxe",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d12+3",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Javelin",
+      "kind": "ranged",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "1d6+3",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ]
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "strategy": "Charge the nearest enemy using Aggressive to close fast, then hew with the greataxe; throw javelins only when it can't reach melee.",
+  "triggered_abilities": [
+    "aggressive"
+  ],
+  "curated": true,
+  "imported": "5etools-mm"
+}

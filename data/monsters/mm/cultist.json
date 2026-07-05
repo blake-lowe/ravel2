@@ -1,0 +1,64 @@
+{
+  "name": "Cultist",
+  "type": "humanoid",
+  "size": "Medium",
+  "cr": 0.125,
+  "alignment": "L NX C NY E",
+  "ac": 12,
+  "hp": 9,
+  "hit_dice": "2d8",
+  "speeds": {
+    "walk": 30
+  },
+  "abilities": {
+    "STR": 11,
+    "DEX": 12,
+    "CON": 10,
+    "INT": 10,
+    "WIS": 11,
+    "CHA": 10
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Deception": 2,
+    "Religion": 2
+  },
+  "senses": {
+    "passive_perception": 10
+  },
+  "languages": [
+    "any one language (usually Common)"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Dark Devotion",
+      "text": "The cultist has advantage on saving throws against being charmed or frightened."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Scimitar",
+      "kind": "melee",
+      "attack_bonus": 3,
+      "damage": [
+        {
+          "dice": "1d6+1",
+          "type": "slashing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "save_advantages": [
+    "charmed",
+    "frightened"
+  ]
+}

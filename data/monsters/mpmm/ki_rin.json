@@ -1,0 +1,137 @@
+{
+  "name": "Ki-rin",
+  "type": "celestial",
+  "size": "Large",
+  "cr": 12.0,
+  "alignment": "L G",
+  "ac": 20,
+  "hp": 153,
+  "hit_dice": "18d10+54",
+  "speeds": {
+    "walk": 60,
+    "fly": 120,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 21,
+    "DEX": 16,
+    "CON": 16,
+    "INT": 19,
+    "WIS": 20,
+    "CHA": 20
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [],
+  "skills": {
+    "Perception": 9,
+    "Insight": 9,
+    "Religion": 8
+  },
+  "senses": {
+    "darkvision": 120,
+    "truesight": 30,
+    "passive_perception": 19
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If the ki-rin fails a saving throw, it can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "The ki-rin has advantage on saving throws against spells and other magical effects."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Hoof",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d4+5",
+          "type": "force"
+        }
+      ],
+      "reach": 15
+    },
+    {
+      "name": "Horn",
+      "kind": "melee",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "2d8+5",
+          "type": "radiant"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Sacred Fire",
+      "kind": "ranged",
+      "attack_bonus": 9,
+      "damage": [
+        {
+          "dice": "3d8+5",
+          "type": "radiant"
+        }
+      ],
+      "range": [
+        120,
+        120
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Hoof",
+      "count": 2
+    },
+    {
+      "name": "Horn",
+      "count": 1
+    },
+    {
+      "name": "Sacred Fire",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "traits_flags": [
+    "magic_resistance"
+  ],
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "WIS",
+    "save_dc": 17,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Light": 0,
+      "Cure Wounds": 3,
+      "Dispel Magic": 3,
+      "Banishment": 1,
+      "Plane Shift": 1
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Hoof"
+  }
+}

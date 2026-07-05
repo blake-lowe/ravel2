@@ -1,0 +1,68 @@
+{
+  "name": "Ogre Battering Ram",
+  "type": "giant",
+  "size": "Large",
+  "cr": 4.0,
+  "alignment": "C E",
+  "ac": 11,
+  "hp": 76,
+  "hit_dice": "9d10+27",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 19,
+    "DEX": 8,
+    "CON": 16,
+    "INT": 5,
+    "WIS": 7,
+    "CHA": 7
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {},
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 8
+  },
+  "languages": [
+    "Common",
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Block the Path (reaction)",
+      "text": "When a creature enters a space within 5 feet of the ogre, the ogre makes a Bash attack against that creature. If the attack hits, the target's speed is reduced to 0 until the start of the ogre's next turn."
+    },
+    {
+      "name": "Siege Monster",
+      "text": "The ogre deals double damage to objects and structures."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bash",
+      "kind": "melee",
+      "attack_bonus": 6,
+      "damage": [
+        {
+          "dice": "2d10+4",
+          "type": "bludgeoning"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bash",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "imported": "5etools-mpmm"
+}

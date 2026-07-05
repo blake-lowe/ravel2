@@ -1,0 +1,35 @@
+{
+  "name": "Weird",
+  "level": 9,
+  "school": "illusion",
+  "range": 120,
+  "range_type": "ranged",
+  "components": [
+    "V",
+    "S"
+  ],
+  "concentration": true,
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 30,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "WIS",
+      "damage": [
+        {
+          "dice": "4d10",
+          "type": "psychic"
+        }
+      ],
+      "half_on_save": false,
+      "condition": "frightened",
+      "save_ends": false
+    }
+  ],
+  "imported": "5etools"
+}

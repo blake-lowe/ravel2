@@ -1,0 +1,100 @@
+{
+  "name": "Deep Gnome (Svirfneblin)",
+  "type": "humanoid",
+  "size": "Small",
+  "cr": 0.5,
+  "alignment": "N G",
+  "ac": 15,
+  "hp": 16,
+  "hit_dice": "3d6+6",
+  "speeds": {
+    "walk": 20
+  },
+  "abilities": {
+    "STR": 15,
+    "DEX": 14,
+    "CON": 14,
+    "INT": 12,
+    "WIS": 10,
+    "CHA": 9
+  },
+  "proficiency_bonus": 2,
+  "saving_throws": [],
+  "skills": {
+    "Investigation": 3,
+    "Perception": 2,
+    "Stealth": 4
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 12
+  },
+  "languages": [
+    "Gnomish",
+    "Terran",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Stone Camouflage",
+      "text": "The gnome has advantage on Dexterity (Stealth) checks made to hide in rocky terrain."
+    },
+    {
+      "name": "Gnome Cunning",
+      "text": "The gnome has advantage on Intelligence, Wisdom, and Charisma saving throws against magic."
+    }
+  ],
+  "actions": [
+    {
+      "name": "War Pick",
+      "kind": "melee",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d8+2",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    },
+    {
+      "name": "Poisoned Dart",
+      "kind": "ranged",
+      "attack_bonus": 4,
+      "damage": [
+        {
+          "dice": "1d4+2",
+          "type": "piercing"
+        }
+      ],
+      "range": [
+        30,
+        120
+      ],
+      "rider": {
+        "ability": "CON",
+        "dc": 12,
+        "on_fail_condition": "poisoned"
+      }
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "imported": "5etools-mm",
+  "spellcasting": {
+    "ability": "INT",
+    "save_dc": 11,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Blindness/Deafness": 1,
+      "Blur": 1
+    }
+  }
+}

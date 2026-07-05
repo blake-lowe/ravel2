@@ -1,0 +1,156 @@
+{
+  "name": "Beholder",
+  "type": "aberration",
+  "size": "Large",
+  "cr": 13.0,
+  "alignment": "L E",
+  "ac": 18,
+  "hp": 180,
+  "hit_dice": "19d10+76",
+  "speeds": {
+    "walk": 0,
+    "fly": 20,
+    "hover": true
+  },
+  "abilities": {
+    "STR": 10,
+    "DEX": 14,
+    "CON": 18,
+    "INT": 17,
+    "WIS": 15,
+    "CHA": 17
+  },
+  "proficiency_bonus": 5,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 12
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 22
+  },
+  "languages": [
+    "Deep Speech",
+    "Undercommon"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "prone"
+  ],
+  "traits": [
+    {
+      "name": "Antimagic Cone",
+      "text": "The beholder's central eye creates an area of antimagic, as in the antimagic field spell, in a 150-foot cone. At the start of each of its turns, the beholder decides which way the cone faces and whether the cone is active. The area works against the beholder's own eye rays."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 5,
+      "damage": [
+        {
+          "dice": "4d6",
+          "type": "piercing"
+        }
+      ],
+      "reach": 5
+    }
+  ],
+  "multiattack": [],
+  "areas": [],
+  "eye_rays": [
+    {
+      "name": "Charm Ray",
+      "ability": "WIS",
+      "dc": 16,
+      "condition": "charmed",
+      "save_ends": false
+    },
+    {
+      "name": "Paralyzing Ray",
+      "ability": "CON",
+      "dc": 16,
+      "condition": "paralyzed",
+      "save_ends": true
+    },
+    {
+      "name": "Fear Ray",
+      "ability": "WIS",
+      "dc": 16,
+      "condition": "frightened",
+      "save_ends": true
+    },
+    {
+      "name": "Slowing Ray",
+      "ability": "DEX",
+      "dc": 16
+    },
+    {
+      "name": "Enervation Ray",
+      "ability": "CON",
+      "dc": 16,
+      "damage": {
+        "dice": "8d8",
+        "type": "necrotic"
+      },
+      "half_on_save": true
+    },
+    {
+      "name": "Telekinetic Ray",
+      "ability": "STR",
+      "dc": 16,
+      "condition": "restrained",
+      "save_ends": false
+    },
+    {
+      "name": "Sleep Ray",
+      "ability": "WIS",
+      "dc": 16,
+      "condition": "unconscious",
+      "save_ends": false
+    },
+    {
+      "name": "Petrification Ray",
+      "ability": "DEX",
+      "dc": 16,
+      "condition": "restrained",
+      "save_ends": true,
+      "escalates_to": "petrified"
+    },
+    {
+      "name": "Disintegration Ray",
+      "ability": "DEX",
+      "dc": 16,
+      "damage": {
+        "dice": "10d8",
+        "type": "force"
+      },
+      "half_on_save": false
+    },
+    {
+      "name": "Death Ray",
+      "ability": "DEX",
+      "dc": 16,
+      "damage": {
+        "dice": "10d10",
+        "type": "necrotic"
+      },
+      "half_on_save": false
+    }
+  ],
+  "eye_ray_count": 3,
+  "eye_ray_range": 120,
+  "imported": "5etools-mm",
+  "legendary": {
+    "resistance": 0,
+    "actions": 3,
+    "attack": "Bite"
+  }
+}

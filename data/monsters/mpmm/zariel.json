@@ -1,0 +1,171 @@
+{
+  "name": "Zariel",
+  "type": "fiend",
+  "size": "Large",
+  "cr": 26.0,
+  "alignment": "L E",
+  "ac": 21,
+  "hp": 420,
+  "hit_dice": "29d10+261",
+  "speeds": {
+    "walk": 50,
+    "fly": 150
+  },
+  "abilities": {
+    "STR": 27,
+    "DEX": 24,
+    "CON": 28,
+    "INT": 26,
+    "WIS": 27,
+    "CHA": 30
+  },
+  "proficiency_bonus": 8,
+  "saving_throws": [
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Intimidation": 18,
+    "Perception": 16
+  },
+  "senses": {
+    "darkvision": 120,
+    "passive_perception": 26
+  },
+  "languages": [
+    "all",
+    "telepathy 120 ft."
+  ],
+  "damage_resistances": [
+    "cold",
+    "fire",
+    "radiant"
+  ],
+  "damage_immunities": [
+    "necrotic",
+    "poison"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [
+    "charmed",
+    "frightened",
+    "poisoned"
+  ],
+  "traits": [
+    {
+      "name": "Teleport",
+      "text": "Zariel teleports, along with any equipment she is wearing or carrying, up to 120 feet to an unoccupied space she can see."
+    },
+    {
+      "name": "Legendary Resistance (3/Day)",
+      "text": "If Zariel fails a saving throw, she can choose to succeed instead."
+    },
+    {
+      "name": "Magic Resistance",
+      "text": "Zariel has advantage on saving throws against spells and other magical effects."
+    },
+    {
+      "name": "Regeneration",
+      "text": "Zariel regains 20 hit points at the start of her turn. If she takes radiant damage, this trait doesn't function at the start of her next turn. Zariel dies only if she starts her turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Flail",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "2d8+8",
+          "type": "force"
+        },
+        {
+          "dice": "8d8",
+          "type": "fire"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Longsword",
+      "kind": "melee",
+      "attack_bonus": 16,
+      "damage": [
+        {
+          "dice": "2d8+8",
+          "type": "radiant"
+        },
+        {
+          "dice": "2d10+8",
+          "type": "radiant"
+        },
+        {
+          "dice": "8d8",
+          "type": "fire"
+        }
+      ],
+      "reach": 10
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Flail",
+      "count": 3
+    }
+  ],
+  "areas": [
+    {
+      "name": "Horrid Touch",
+      "shape": "sphere",
+      "size": 10,
+      "origin_range": 0,
+      "save": "CON",
+      "dc": 26,
+      "damage": [
+        {
+          "dice": "8d10",
+          "type": "necrotic"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "5-6",
+      "rider": {
+        "ability": "CON",
+        "dc": 26,
+        "on_fail_condition": "poisoned",
+        "escalates_to": "deafened"
+      }
+    }
+  ],
+  "traits_flags": [
+    "magic_resistance",
+    "resist_nonmagical_physical",
+    "devils_sight"
+  ],
+  "regeneration": {
+    "amount": 20,
+    "stopped_by": [
+      "radiant"
+    ]
+  },
+  "imported": "5etools-mpmm",
+  "spellcasting": {
+    "ability": "CHA",
+    "save_dc": 26,
+    "attack_bonus": 0,
+    "caster_level": 1,
+    "slots": {},
+    "spells": [],
+    "innate": {
+      "Fireball": 0,
+      "Wall of Fire": 0,
+      "Finger of Death": 3
+    }
+  },
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Flail"
+  }
+}

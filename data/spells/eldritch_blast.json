@@ -1,0 +1,30 @@
+{
+  "name": "Eldritch Blast",
+  "level": 0,
+  "school": "evocation",
+  "range": 120,
+  "components": [
+    "V",
+    "S"
+  ],
+  "target": {
+    "mode": "multi",
+    "count": 1,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "spell_attack",
+      "damage": [
+        {
+          "dice": "1d10",
+          "type": "force"
+        }
+      ]
+    }
+  ],
+  "scaling": {
+    "mode": "beams",
+    "amount": 1
+  }
+}

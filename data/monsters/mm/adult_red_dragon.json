@@ -1,0 +1,172 @@
+{
+  "name": "Adult Red Dragon",
+  "type": "dragon",
+  "size": "Huge",
+  "cr": 17,
+  "alignment": "chaotic evil",
+  "ac": 19,
+  "hp": 256,
+  "hit_dice": "19d12+133",
+  "speeds": {
+    "walk": 40,
+    "fly": 80,
+    "climb": 40
+  },
+  "abilities": {
+    "STR": 27,
+    "DEX": 10,
+    "CON": 25,
+    "INT": 16,
+    "WIS": 13,
+    "CHA": 21
+  },
+  "proficiency_bonus": 6,
+  "saving_throws": [
+    "DEX",
+    "CON",
+    "WIS",
+    "CHA"
+  ],
+  "skills": {
+    "Perception": 13,
+    "Stealth": 6
+  },
+  "senses": {
+    "blindsight": 60,
+    "darkvision": 120,
+    "passive_perception": 23
+  },
+  "languages": [
+    "Common",
+    "Draconic"
+  ],
+  "damage_immunities": [
+    "fire"
+  ],
+  "actions": [
+    {
+      "name": "Bite",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "reach": 10,
+      "damage": [
+        {
+          "dice": "2d10+8",
+          "type": "piercing"
+        },
+        {
+          "dice": "2d6",
+          "type": "fire"
+        }
+      ]
+    },
+    {
+      "name": "Claw",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "reach": 5,
+      "damage": [
+        {
+          "dice": "2d6+8",
+          "type": "slashing"
+        }
+      ]
+    },
+    {
+      "name": "Tail",
+      "kind": "melee",
+      "attack_bonus": 14,
+      "reach": 15,
+      "damage": [
+        {
+          "dice": "2d8+8",
+          "type": "bludgeoning"
+        }
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Bite",
+      "count": 1
+    },
+    {
+      "name": "Claw",
+      "count": 2
+    }
+  ],
+  "areas": [
+    {
+      "name": "Fire Breath",
+      "shape": "cone",
+      "size": 60,
+      "origin_range": 5,
+      "save": "DEX",
+      "dc": 21,
+      "damage": [
+        {
+          "dice": "18d6",
+          "type": "fire"
+        }
+      ],
+      "half_on_save": true,
+      "recharge": "5-6"
+    }
+  ],
+  "legendary": {
+    "resistance": 3,
+    "actions": 3,
+    "attack": "Tail",
+    "wing": {
+      "name": "Wing Attack",
+      "shape": "sphere",
+      "size": 15,
+      "origin_range": 0,
+      "save": "DEX",
+      "dc": 19,
+      "damage": [
+        {
+          "dice": "2d6+8",
+          "type": "bludgeoning"
+        }
+      ],
+      "half_on_save": false,
+      "recharge": "at-will",
+      "rider": {
+        "ability": "DEX",
+        "dc": 19,
+        "on_fail_condition": "prone",
+        "duration": 1
+      }
+    }
+  },
+  "lair_action": {
+    "name": "Volcanic Gases",
+    "shape": "sphere",
+    "size": 20,
+    "origin_range": 120,
+    "save": "CON",
+    "dc": 15,
+    "damage": [
+      {
+        "dice": "2d6",
+        "type": "poison"
+      }
+    ],
+    "half_on_save": false,
+    "recharge": "at-will"
+  },
+  "frightful_presence": {
+    "name": "Frightful Presence",
+    "shape": "sphere",
+    "size": 120,
+    "origin_range": 0,
+    "save": "WIS",
+    "dc": 19,
+    "damage": [],
+    "half_on_save": false,
+    "recharge": "at-will"
+  },
+  "curated": true,
+  "imported": "5etools-mm"
+}

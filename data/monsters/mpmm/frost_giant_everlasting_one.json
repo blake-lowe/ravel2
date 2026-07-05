@@ -1,0 +1,110 @@
+{
+  "name": "Frost Giant Everlasting One",
+  "type": "giant",
+  "size": "Huge",
+  "cr": 12.0,
+  "alignment": "C E",
+  "ac": 15,
+  "hp": 189,
+  "hit_dice": "14d12+98",
+  "speeds": {
+    "walk": 40
+  },
+  "abilities": {
+    "STR": 25,
+    "DEX": 9,
+    "CON": 24,
+    "INT": 9,
+    "WIS": 10,
+    "CHA": 12
+  },
+  "proficiency_bonus": 4,
+  "saving_throws": [
+    "STR",
+    "CON",
+    "WIS"
+  ],
+  "skills": {
+    "Athletics": 11,
+    "Perception": 4
+  },
+  "senses": {
+    "darkvision": 60,
+    "passive_perception": 14
+  },
+  "languages": [
+    "Giant"
+  ],
+  "damage_resistances": [],
+  "damage_immunities": [
+    "cold"
+  ],
+  "damage_vulnerabilities": [],
+  "condition_immunities": [],
+  "traits": [
+    {
+      "name": "Vaprak's Rage (Recharges after a Short or Long Rest) (bonus)",
+      "text": "The giant enters a rage. The rage lasts for 1 minute or until the giant is incapacitated. While raging, the giant gains the following benefits: The giant has advantage on Strength checks and Strength saving throws. When it makes a melee weapon attack, the giant gains a +4 bonus to the damage roll. The giant has resistance to bludgeoning, piercing, and slashing damage."
+    },
+    {
+      "name": "Extra Heads",
+      "text": "The giant has a 25 chance of having more than one head. If it has more than one, it has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious."
+    },
+    {
+      "name": "Regeneration",
+      "text": "The giant regains 10 hit points at the start of its turn. If the giant takes acid or fire damage, this trait doesn't function at the start of its next turn. The giant dies only if it starts its turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Greataxe",
+      "kind": "melee",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "3d12+7",
+          "type": "slashing"
+        }
+      ],
+      "reach": 10
+    },
+    {
+      "name": "Rock",
+      "kind": "ranged",
+      "attack_bonus": 11,
+      "damage": [
+        {
+          "dice": "4d10+7",
+          "type": "bludgeoning"
+        }
+      ],
+      "range": [
+        60,
+        240
+      ]
+    }
+  ],
+  "multiattack": [
+    {
+      "name": "Greataxe",
+      "count": 2
+    }
+  ],
+  "areas": [],
+  "regeneration": {
+    "amount": 10,
+    "stopped_by": [
+      "acid",
+      "fire"
+    ]
+  },
+  "imported": "5etools-mpmm",
+  "save_advantages": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "stunned",
+    "unconscious"
+  ]
+}

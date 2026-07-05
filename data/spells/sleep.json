@@ -1,0 +1,28 @@
+{
+  "name": "Sleep",
+  "level": 1,
+  "school": "enchantment",
+  "range": 90,
+  "components": [
+    "V",
+    "S",
+    "M"
+  ],
+  "duration_rounds": 10,
+  "target": {
+    "mode": "point",
+    "shape": "sphere",
+    "size": 20,
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "condition": "unconscious",
+      "save_ends": true
+    }
+  ],
+  "_approx": "RAW is a no-save 5d8 hp pool, weakest first; modelled as a CON save vs unconscious (save ends) over the same area.",
+  "imported": "5etools"
+}

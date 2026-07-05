@@ -1,0 +1,31 @@
+{
+  "name": "Destructive Wave",
+  "level": 5,
+  "school": "evocation",
+  "range": 30,
+  "range_type": "ranged",
+  "components": [
+    "V"
+  ],
+  "duration_rounds": 10,
+  "target": {
+    "mode": "single",
+    "affects": "enemies"
+  },
+  "effects": [
+    {
+      "kind": "save",
+      "ability": "CON",
+      "damage": [
+        {
+          "dice": "5d6",
+          "type": "thunder"
+        }
+      ],
+      "half_on_save": true,
+      "condition": "prone",
+      "save_ends": false
+    }
+  ],
+  "imported": "5etools"
+}
