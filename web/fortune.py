@@ -160,7 +160,9 @@ def _stable_view(run: FortuneRun) -> list[dict]:
             "items": [{"name": n, "rarity": ITEMS[n].rarity, "effect": ITEMS[n].effect,
                        "blurb": ITEMS[n].blurb} for n in m.items],
             "ac": md.ac, "hp": md.hp, "speed": md.speed,
+            "fly": md.fly, "swim": md.swim,
             "size": md.size.value, "cr": run.catalog[m.name].cr,
+            "type": md.mtype, "alignment": md.alignment,
             "art": _art(m.name),
         })
     return out

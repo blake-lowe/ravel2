@@ -220,7 +220,9 @@ function memberCard(m, i) {
     ${m.standby ? `<span class="slot-tag">standby</span>` : ""}
     ${tokenImg(m.art, m.name)}
     <div class="mname">${esc(m.name)} ${stars}</div>
-    <div class="mmeta">AC ${m.ac} · ${m.hp} hp · CR ${crStr(m.cr)}</div>
+    <div class="mmeta">CR ${crStr(m.cr)} · ${esc(m.size)}</div>
+    <div class="mmeta">${esc(m.type)}${m.alignment ? " · " + esc(alignStr(m.alignment)) : ""}</div>
+    <div class="mmeta">${m.hp} hp · AC ${m.ac} · ${speedStr(m)}</div>
     <div class="tags">${items}</div>
     ${targetable ? `<div class="btnrow bottom"><button>choose</button></div>` : `
       <div class="btnrow bottom">
@@ -308,9 +310,9 @@ function renderStock() {
         title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>
       ${tokenImg(s.art, s.name)}
       <div class="mname">${esc(s.name)}</div>
-      <div class="mmeta">CR ${crStr(s.cr)} · ${esc(s.source)}</div>
+      <div class="mmeta">CR ${crStr(s.cr)} · ${esc(s.size)}</div>
       <div class="mmeta">${esc(s.type)}${s.alignment ? " · " + esc(alignStr(s.alignment)) : ""}</div>
-      <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)} · ${esc(s.size)}</div>
+      <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)}</div>
       <div class="price">${esc(s.price)}</div>
       <div class="btnrow bottom">
         <a class="btnlink" href="/bestiary#${encodeURIComponent(s.name)}" target="_blank"
@@ -637,7 +639,7 @@ async function fight() {
   BATTLE = payload;
   S = payload.state;
   renderStatus();
-  $("#sands-title").textContent = "The Sands";
+  $("#sands-title").textContent = "The Field of Battle";
   $("#deploy-wrap").hidden = true;
   $("#battle-wrap").hidden = false;
   $("#rp-done").hidden = true;
