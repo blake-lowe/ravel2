@@ -72,21 +72,31 @@ def _db() -> sqlite3.Connection:
     conn.execute("""CREATE TABLE IF NOT EXISTS runs (
         id TEXT PRIMARY KEY, handle TEXT, seed INTEGER, books TEXT,
         wins INTEGER, rounds INTEGER, years INTEGER,
-        stable TEXT, history TEXT, created TEXT)""")
+        stable TEXT, history TEXT, created TEXT, initials TEXT DEFAULT '')""")
+    try:                                    # older Books of Aeons: add the column
+        conn.execute("ALTER TABLE runs ADD COLUMN initials TEXT DEFAULT ''")
+    except sqlite3.OperationalError:
+        pass
     return conn
 
 
-def _persist(rid: str, run: FortuneRun) -> None:
+def _persist(rid: str, run: FortuneRun, initials: str = "") -> None:
     years = sum(h.get("years", 0) for h in run.history)
     with _db() as conn:
         conn.execute(
-            "INSERT OR REPLACE INTO runs VALUES (?,?,?,?,?,?,?,?,?,?)",
+            "INSERT OR REPLACE INTO runs VALUES (?,?,?,?,?,?,?,?,?,?,?)",
             (rid, HANDLES.get(rid, "Anonymous Berk"), run.seed,
              json.dumps(list(run.books)), run.wins, len(run.history), years,
              json.dumps([{"name": m.name, "elite": m.elite, "items": m.items}
                          for m in run.stable]),
              json.dumps(run.history),
-             datetime.now(timezone.utc).isoformat(timespec="seconds")))
+             datetime.now(timezone.utc).isoformat(timespec="seconds"),
+             initials))
+
+
+def _inscribe(rid: str, initials: str) -> None:
+    with _db() as conn:
+        conn.execute("UPDATE runs SET initials = ? WHERE id = ?", (initials, rid))
 
 
 @router.get("/api/fortune/leaderboard")
@@ -100,7 +110,8 @@ def leaderboard(limit: int = 20) -> list[dict]:
             "SELECT * FROM runs ORDER BY wins DESC, rounds ASC, created ASC"
             " LIMIT ?", (max(1, min(100, limit)),)).fetchall()
     return [{
-        "handle": r["handle"], "seed": r["seed"], "books": json.loads(r["books"]),
+        "handle": r["handle"], "initials": r["initials"] or "",
+        "seed": r["seed"], "books": json.loads(r["books"]),
         "wins": r["wins"], "rounds": r["rounds"], "years": r["years"],
         "stable": json.loads(r["stable"]), "created": r["created"],
     } for r in rows]
@@ -145,6 +156,7 @@ def _stable_view(run: FortuneRun) -> list[dict]:
         md = apply_kit(content.get(m.name), m.elite, tuple(m.items))
         out.append({
             "name": m.name, "elite": m.elite, "invested_cp": m.invested_cp,
+            "standby": m.standby,
             "items": [{"name": n, "rarity": ITEMS[n].rarity, "effect": ITEMS[n].effect,
                        "blurb": ITEMS[n].blurb} for n in m.items],
             "ac": md.ac, "hp": md.hp, "speed": md.speed,
@@ -260,8 +272,8 @@ def act(rid: str, req: Action) -> dict:
             run.sell(req.target)
         elif req.action == "train":
             run.train(req.target, req.other)
-        elif req.action == "swap":
-            run.swap(req.target, req.other)
+        elif req.action == "bench":
+            run.bench(req.target)
         elif req.action == "freeze":
             run.toggle_freeze(req.kind, req.slot)
         elif req.action == "attach":
@@ -344,6 +356,23 @@ def battle(rid: str, req: Deployment) -> dict:
                     "spin_owed": run.phase == "wheel"},
         "state": _state(rid, run),
     }
+
+
+class Inscription(BaseModel):
+    initials: str
+
+
+@router.post("/api/fortune/run/{rid}/inscribe")
+def inscribe(rid: str, req: Inscription) -> dict:
+    """Carve up to three letters beside a finished run in the Book of Aeons."""
+    run = _get_run(rid)
+    if run.phase != "over":
+        raise HTTPException(422, "the Book only takes initials when the gate closes")
+    letters = "".join(c for c in req.initials.upper() if c.isalnum())[:3]
+    if not letters:
+        raise HTTPException(422, "give the Book something to carve (A-Z, 0-9)")
+    _inscribe(rid, letters)
+    return {"initials": letters}
 
 
 @router.post("/api/fortune/run/{rid}/spin")

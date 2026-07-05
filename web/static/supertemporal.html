@@ -74,7 +74,7 @@
         <div class="col-title">The Next Battle</div>
         <div id="next-battle"></div>
         <div class="bill" id="the-bill"></div>
-        <button type="button" class="gilded" id="btn-sands">To the Sands ⚔</button>
+        <button type="button" class="gilded" id="btn-sands">To battle ⚔</button>
       </div>
     </div>
 
@@ -130,9 +130,9 @@
             <button id="btn-next-round" title="next round">&#8677;</button>
             <button id="btn-end" title="to the judgment">&#8680;|</button>
             <select id="speed">
-              <option value="900">cinematic playback</option>
+              <option value="900" selected>cinematic playback</option>
               <option value="450">slow playback</option>
-              <option value="220" selected>steady playback</option>
+              <option value="220">steady playback</option>
               <option value="80">swift playback</option>
             </select>
             <span class="round-ind" id="round-ind"></span>
@@ -140,16 +140,14 @@
           <input type="range" id="scrub" min="0" value="0" step="1">
         </div>
         <div class="arena-right">
+          <div id="sands-verdict"></div>
+          <button type="button" class="gilded" id="rp-done" hidden>continue</button>
           <div class="initiative" id="initiative"></div>
           <div class="fightlog-wrap">
             <div class="panel-title hatch">Log</div>
             <pre class="fightlog" id="fightlog"></pre>
           </div>
         </div>
-      </div>
-      <div id="sands-verdict"></div>
-      <div class="replay-controls">
-        <button type="button" class="gilded" id="rp-done" hidden>continue</button>
       </div>
     </div>
   </section>
@@ -158,6 +156,13 @@
   <section class="frame" id="fw-over" hidden>
     <div class="gilt-title"><span class="flourish">✦</span> The Gate Closes <span class="flourish">✦</span></div>
     <p id="over-line"></p>
+    <div class="inscribe-row" id="inscribe-row">
+      <label>Carve your initials in the Book of Aeons
+        <input type="text" id="over-initials" maxlength="3" placeholder="AAA"
+               autocomplete="off" spellcheck="false"></label>
+      <button type="button" class="gilded" id="btn-inscribe">Inscribe</button>
+      <span class="odds-note" id="inscribe-done"></span>
+    </div>
     <button type="button" class="gilded" id="btn-again">Another evening</button>
   </section>
 

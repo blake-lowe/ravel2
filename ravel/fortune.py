@@ -202,6 +202,7 @@ class StableMember:
     elite: int = 0
     items: list[str] = field(default_factory=list)
     invested_cp: int = 0
+    standby: bool = False          # in the standby stall: sits out the battle
 
 
 class FortuneError(ValueError):
@@ -364,7 +365,9 @@ class FortuneRun:
                 raise FortuneError(
                     f"the stable is full ({TEAM_CAP} fighting + {STANDBY_SLOTS} standby)")
             self._spend(s.price_cp)
-            self.stable.append(StableMember(s.name, invested_cp=s.price_cp))
+            self.stable.append(StableMember(
+                s.name, invested_cp=s.price_cp,
+                standby=len(self.fielded()) >= TEAM_CAP))   # a 6th waits in the stall
         self.shop_monsters[slot] = None
 
     def buy_item(self, slot: int, target: int) -> None:
@@ -419,14 +422,28 @@ class FortuneRun:
         a.invested_cp += b.invested_cp
         del self.stable[j]
 
-    def swap(self, i: int, j: int) -> None:
-        """Trade two stalls' positions — the last stall is the standby bench,
-        so this is also how a creature is benched or fielded."""
+    def fielded(self) -> list[StableMember]:
+        return [m for m in self.stable if not m.standby]
+
+    def bench(self, i: int) -> None:
+        """Toggle a creature through the standby stall. Benching a fielded
+        creature trades places with the stall's occupant (if any); fielding the
+        standby needs an open spot on the field."""
         self._require("shop")
-        n = len(self.stable)
-        if i == j or not (0 <= i < n) or not (0 <= j < n):
-            raise FortuneError("pick two different stalls")
-        self.stable[i], self.stable[j] = self.stable[j], self.stable[i]
+        if not (0 <= i < len(self.stable)):
+            raise FortuneError("no such stall")
+        m = self.stable[i]
+        if m.standby:
+            if len(self.fielded()) >= TEAM_CAP:
+                raise FortuneError("the field is full — bench a fielded creature "
+                                   "to trade places")
+            m.standby = False
+        else:
+            for other in self.stable:
+                if other.standby:
+                    other.standby = False       # the stall's occupant takes the field
+                    break
+            m.standby = True
 
     # -- battle ---------------------------------------------------------------------
     def enemy_team(self, round_no: int | None = None) -> list[str]:
@@ -472,15 +489,15 @@ class FortuneRun:
         ready for `ravel.sim` (SPEC 18.8.11)."""
         from .content import get
         return [apply_kit(get(m.name), m.elite, tuple(m.items))
-                for m in self.stable[:TEAM_CAP]]
+                for m in self.fielded()[:TEAM_CAP]]
 
     def fight(self, placements: list | None = None) -> BattleResult:
         """Resolve the round's battle. Placements are per-stable-member origin cells
         (None entries auto-place). Win -> a wheel spin is owed; loss (draws count —
         the house always wins) -> a life. The 3rd loss ends the run."""
         self._require("shop")
-        if not self.stable:
-            raise FortuneError("the stable is empty — buy a monster first")
+        if not self.player_defs():
+            raise FortuneError("no creature stands on the field — buy or field one")
         map_name, weather = self.round_env(self.round)
         result = run_battle(self.player_defs(), self.enemy_team(),
                             seed=self.battle_seed(self.round), ai="heuristic",
@@ -575,7 +592,8 @@ class FortuneRun:
             "round": self.round, "wins": self.wins, "lives": self.lives,
             "purse_cp": self.purse_cp, "phase": self.phase,
             "stable": [{"name": m.name, "elite": m.elite, "items": list(m.items),
-                        "invested_cp": m.invested_cp} for m in self.stable],
+                        "invested_cp": m.invested_cp, "standby": m.standby}
+                       for m in self.stable],
             "shop_monsters": [None if s is None else
                               {"name": s.name, "price_cp": s.price_cp,
                                "frozen": s.frozen} for s in self.shop_monsters],
@@ -592,7 +610,8 @@ class FortuneRun:
                   draws=d["draws"], round=d["round"], wins=d["wins"],
                   lives=d["lives"], purse_cp=d["purse_cp"], phase=d["phase"])
         run.stable = [StableMember(m["name"], m["elite"], list(m["items"]),
-                                   m["invested_cp"]) for m in d["stable"]]
+                                   m["invested_cp"], m.get("standby", False))
+                      for m in d["stable"]]
         run.shop_monsters = [None if s is None else
                              ShopSlot(s["name"], s["price_cp"], s["frozen"])
                              for s in d["shop_monsters"]]

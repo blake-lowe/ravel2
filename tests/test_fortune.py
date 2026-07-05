@@ -191,22 +191,28 @@ def test_stable_cap_is_5_fighting_plus_1_standby():
     name = lowest_cr_name()
     run.stable = [StableMember(name) for _ in range(5)]
     run.buy(0)                                     # the 6th goes to the standby stall
-    assert len(run.stable) == 6
+    assert len(run.stable) == 6 and run.stable[5].standby
     assert len(run.player_defs()) == 5             # ...and sits out the battle
     with pytest.raises(FortuneError):              # no 7th
         run.buy(1)
+    with pytest.raises(FortuneError):              # can't field it onto a full field
+        run.bench(5)
 
 
-def test_swap_benches_and_fields():
+def test_bench_moves_and_trades():
     run = stocked_run()
     name = lowest_cr_name()
-    run.stable = [StableMember(name, elite=k) for k in range(6)]
-    run.swap(1, 5)                                 # bench the elite-1, field the elite-5
-    assert run.stable[1].elite == 5 and run.stable[5].elite == 1
+    run.stable = [StableMember(name, elite=k) for k in range(5)]
+    run.bench(1)                                   # to the stall
+    assert run.stable[1].standby and len(run.fielded()) == 4
+    run.bench(3)                                   # trades places with the occupant
+    assert not run.stable[1].standby and run.stable[3].standby
+    run.bench(3)                                   # back to the field (room exists)
+    assert not run.stable[3].standby
+    d = run.to_dict()
+    assert FortuneRun.from_dict(d, run.catalog).to_dict() == d
     with pytest.raises(FortuneError):
-        run.swap(2, 2)
-    with pytest.raises(FortuneError):
-        run.swap(0, 9)
+        run.bench(9)
 
 
 # --- kit application ---------------------------------------------------------------

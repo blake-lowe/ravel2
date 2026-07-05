@@ -145,6 +145,28 @@ def test_book_of_ages_persists(tmp_path, monkeypatch):
     assert rows[0]["seed"] == 55 and rows[0]["books"] == ["MM"]
 
 
+def test_bench_action_and_inscription(tmp_path, monkeypatch):
+    monkeypatch.setattr(wf, "DB_PATH", tmp_path / "runs.db")
+    s = start(seed=23)
+    rid = s["run_id"]
+    client.post(f"/api/fortune/run/{rid}/action", json={"action": "buy", "slot": 0})
+    s = client.post(f"/api/fortune/run/{rid}/action",
+                    json={"action": "bench", "target": 0}).json()
+    assert s["stable"][0]["standby"]
+    s = client.post(f"/api/fortune/run/{rid}/action",
+                    json={"action": "bench", "target": 0}).json()
+    assert not s["stable"][0]["standby"]
+    r = client.post(f"/api/fortune/run/{rid}/inscribe", json={"initials": "abc"})
+    assert r.status_code == 422, "the Book only takes initials at the gate's close"
+    run = wf.RUNS[rid]
+    run.phase = "over"
+    wf._persist(rid, run)
+    r = client.post(f"/api/fortune/run/{rid}/inscribe", json={"initials": "abc!"})
+    assert r.status_code == 200 and r.json()["initials"] == "ABC"
+    rows = client.get("/api/fortune/leaderboard").json()
+    assert rows[0]["initials"] == "ABC" and rows[0]["created"]
+
+
 def test_missing_run_is_404():
     assert client.get("/api/fortune/run/deadbeef").status_code == 404
 

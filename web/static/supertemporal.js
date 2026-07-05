@@ -203,43 +203,53 @@ function renderShop() {
   renderBank();
   renderBattlePanel();
   $("#btn-reroll").textContent = "Reroll the offerings (5 sp)";
-  $("#btn-sands").disabled = !S.stable.length;
+  $("#btn-sands").disabled = !S.stable.some((m) => !m.standby);
   if (S.phase === "over") { renderOver(); show("fw-over"); }
 }
 
+// One card shape for owned creatures — same skeleton as the for-sale cards.
 function memberCard(m, i) {
   const stars = m.elite ? `<span class="stars">${"★".repeat(m.elite)}</span>` : "";
   const items = m.items.map((it) =>
     `<span class="tag" title="${esc(it.effect)} — ${esc(it.blurb)}">${esc(it.name)}</span>`).join("");
   const twin = S.stable.some((o, j) => j !== i && o.name === m.name);
   const targetable = TARGETING && (!TARGETING.filter || TARGETING.filter(m, i));
-  const standby = i >= S.team_cap;
-  const benchInPlay = S.stable.length > S.team_cap;
+  const fieldFull = S.stable.filter((x) => !x.standby).length >= S.team_cap;
   return `<div class="slot ${targetable ? "targetable" : ""}"
                data-name="${esc(m.name)}" ${targetable ? `data-pick="${i}"` : ""}>
-    ${standby ? `<span class="slot-tag">standby</span>` : ""}
+    ${m.standby ? `<span class="slot-tag">standby</span>` : ""}
     ${tokenImg(m.art, m.name)}
     <div class="mname">${esc(m.name)} ${stars}</div>
     <div class="mmeta">AC ${m.ac} · ${m.hp} hp · CR ${crStr(m.cr)}</div>
     <div class="tags">${items}</div>
     ${targetable ? `<div class="btnrow bottom"><button>choose</button></div>` : `
       <div class="btnrow bottom">
+        <a class="btnlink" href="/bestiary#${encodeURIComponent(m.name)}" target="_blank"
+           title="the full chant, in the Bestiary">View in Bestiary</a>
+      </div>
+      <div class="btnrow">
         <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
+        ${m.standby
+          ? `<button data-field="${i}" title="take the field">field</button>`
+          : `<button data-bench="${i}" title="${fieldFull && S.stable.some((x) => x.standby)
+              ? "trade places with the standby stall" : "wait out the battles"}">standby</button>`}
         ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 HP">train ★</button>` : ""}
-        ${benchInPlay && !standby ? `<button data-bench="${i}" title="trade places with the standby stall">⇄</button>` : ""}
-        ${standby ? `<button data-field="${i}" title="take the field">⇄ field</button>` : ""}
       </div>`}
   </div>`;
 }
 
 function renderStable() {
   const row = $("#stable-row");
-  const active = S.stable.slice(0, S.team_cap).map((m, i) => memberCard(m, i));
+  const active = [];
+  let standbyCard = null;
+  S.stable.forEach((m, i) => {
+    if (m.standby) standbyCard = memberCard(m, i);
+    else active.push(memberCard(m, i));
+  });
   while (active.length < S.team_cap) active.push(`<div class="slot empty"></div>`);
-  const standby = S.stable.length > S.team_cap
-    ? memberCard(S.stable[S.team_cap], S.team_cap)
-    : `<div class="slot empty standby-empty"><span class="slot-tag">standby</span></div>`;
-  row.innerHTML = active.join("") + `<div class="standby-divider"></div>` + standby;
+  if (!standbyCard)
+    standbyCard = `<div class="slot empty"><span class="slot-tag">standby</span></div>`;
+  row.innerHTML = active.join("") + `<div class="standby-divider"></div>` + standbyCard;
   row.querySelectorAll("[data-sell]").forEach((b) =>
     b.onclick = (ev) => { ev.stopPropagation(); act({ action: "sell", target: +b.dataset.sell }); });
   row.querySelectorAll("[data-train]").forEach((b) =>
@@ -254,14 +264,17 @@ function renderStable() {
     });
   row.querySelectorAll("[data-bench]").forEach((b) =>
     b.onclick = (ev) => { ev.stopPropagation();
-      act({ action: "swap", target: +b.dataset.bench, other: S.team_cap }); });
+      act({ action: "bench", target: +b.dataset.bench }); });
   row.querySelectorAll("[data-field]").forEach((b) =>
     b.onclick = (ev) => {
       ev.stopPropagation();
+      const i = +b.dataset.field;
+      const room = S.stable.filter((x) => !x.standby).length < S.team_cap;
+      if (room) { act({ action: "bench", target: i }); return; }
       beginTargeting({
-        label: `Fielding ${S.stable[S.team_cap].name}: pick who steps down`,
-        filter: (m, j) => j < S.team_cap,
-        go: (j) => act({ action: "swap", target: S.team_cap, other: j }),
+        label: `Fielding ${S.stable[i].name}: pick who steps down`,
+        filter: (m, j) => !m.standby,
+        go: (j) => act({ action: "bench", target: j }),   // benching j trades places
       });
     });
   row.querySelectorAll("[data-pick]").forEach((card) =>
@@ -323,12 +336,13 @@ function renderStock() {
       <span class="rib ${esc(s.rarity)}"></span>
       <button class="freeze ${s.frozen ? "on" : ""}" data-ifreeze="${i}"
         title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>
+      <span class="mtoken letter equip-glyph ${esc(s.rarity)}">◈</span>
       <div class="mname">${esc(s.name)}</div>
       <div class="ieffect">${esc(s.effect)}</div>
       <div class="iflavor">${esc(s.blurb)}</div>
       <div class="mmeta">${esc(s.rarity)}</div>
       <div class="price">${esc(s.price)}</div>
-      <div class="btnrow"><button data-ibuy="${i}">buy</button></div>
+      <div class="btnrow bottom"><button data-ibuy="${i}">buy</button></div>
     </div>`;
   }).join("");
   $("#item-shelf").querySelectorAll("[data-ibuy]").forEach((b) =>
@@ -341,15 +355,24 @@ function renderStock() {
     f.onclick = () => act({ action: "freeze", kind: "item", slot: +f.dataset.ifreeze }));
 }
 
+// Wheel winnings sit under the standby stall until claimed onto a creature.
 function renderBank() {
   const el = $("#bank-row");
   if (!S.bank.length) { el.innerHTML = ""; return; }
-  el.innerHTML = `<span class="odds-note">won on the wheel, unclaimed:</span> ` +
-    S.bank.map((it, i) =>
-      `<button data-bank="${i}" title="${esc(it.blurb)}">${esc(it.name)} → give</button>`).join(" ");
+  el.innerHTML = `<div class="won-head">Won on the wheel</div><div class="won-row">` +
+    S.bank.map((it, i) => `
+      <div class="slot equip won">
+        <span class="rib ${esc(it.rarity)}"></span>
+        <span class="mtoken letter equip-glyph ${esc(it.rarity)}">◈</span>
+        <div class="mname">${esc(it.name)}</div>
+        <div class="ieffect">${esc(it.effect)}</div>
+        <div class="iflavor">${esc(it.blurb)}</div>
+        <div class="price">free — the wheel's gift</div>
+        <div class="btnrow bottom"><button data-bank="${i}">claim</button></div>
+      </div>`).join("") + `</div>`;
   el.querySelectorAll("[data-bank]").forEach((b) =>
     b.onclick = () => beginTargeting({
-      label: `Handing over ${S.bank[+b.dataset.bank].name}: which creature carries it?`,
+      label: `Claiming ${S.bank[+b.dataset.bank].name}: which creature carries it?`,
       filter: (m) => m.items.length < 3,
       go: (j) => act({ action: "attach", slot: +b.dataset.bank, target: j }),
     }));
@@ -429,7 +452,7 @@ function ensureReplay() {
 async function openSands() {
   try { DEPLOY = await api(`/api/fortune/run/${RID}/deploy`); }
   catch (e) { $("#shop-error").textContent = e.message; return; }
-  PLACEMENTS = S.stable.slice(0, S.team_cap).map(() => null);
+  PLACEMENTS = S.stable.filter((m) => !m.standby).map(() => null);
   BATTLE = null;
   $("#sands-title").textContent = "Preparation";
   $("#deploy-wrap").hidden = false;
@@ -740,6 +763,18 @@ function renderOver() {
     with <b>${S.wins}</b> victor${S.wins === 1 ? "y" : "ies"} across ${S.history.length}
     battles — <b>${years} years</b> witnessed from the glass sphere. The Book of Aeons
     remembers; Sigil, outside, has moved on without you.`;
+  $("#inscribe-row").hidden = false;
+  $("#inscribe-done").textContent = "";
+  $("#over-initials").value = "";
+  $("#btn-inscribe").onclick = async () => {
+    try {
+      const r = await api(`/api/fortune/run/${RID}/inscribe`,
+        { initials: $("#over-initials").value });
+      $("#inscribe-done").textContent = `${r.initials} — the Book remembers.`;
+      $("#inscribe-row").hidden = true;
+      loadAges();
+    } catch (e) { $("#inscribe-done").textContent = e.message; }
+  };
   loadAges();
 }
 
@@ -748,14 +783,17 @@ async function loadAges() {
   try { rows = await api("/api/fortune/leaderboard"); } catch (e) { return; }
   if (!rows.length) return;
   $("#ages-body").innerHTML = `<table><thead><tr>
-      <th>stable master</th><th>wins</th><th>battles</th><th>years witnessed</th>
-      <th>final stable</th><th>books</th><th>seed</th></tr></thead><tbody>` +
+      <th>mark</th><th>stable master</th><th>wins</th><th>battles</th>
+      <th>years witnessed</th><th>final stable</th><th>books</th><th>seed</th>
+      <th>date</th></tr></thead><tbody>` +
     rows.map((r, i) => `<tr class="${i === 0 ? "gold-row" : ""}">
+      <td class="mark">${esc(r.initials || "—")}</td>
       <td>${esc(r.handle)}</td><td>${r.wins}</td><td>${r.rounds}</td>
       <td>${r.years.toLocaleString()}</td>
       <td>${r.stable.map((m) => esc(m.name) + (m.elite ? " " + "★".repeat(m.elite) : ""))
             .join(", ") || "—"}</td>
       <td>${r.books.map(esc).join(" ")}</td><td>${r.seed}</td>
+      <td>${r.created ? new Date(r.created).toLocaleDateString() : ""}</td>
     </tr>`).join("") + `</tbody></table>`;
 }
 
