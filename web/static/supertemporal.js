@@ -436,9 +436,9 @@ function ensureReplay() {
       if (!BATTLE) return;
       if (atEnd) {
         const won = BATTLE.outcome.won;
+        const n = BATTLE.battle.rounds;
         $("#sands-verdict").innerHTML = `<div class="verdict ${won ? "won" : "lost"}">
-          ${won ? "Your corner stands — the touts weep." : "The sands take yours — a chip is spent."}
-          <span class="odds-note">(${BATTLE.outcome.years} years passed outside)</span></div>`;
+          ${won ? "Won" : "Lost"} in ${n} round${n === 1 ? "" : "s"}</div>`;
         $("#rp-done").hidden = false;
         $("#rp-done").textContent = won ? "to the wheel ✦"
           : (S.phase === "over" ? "face the ledger" : "back to the offerings");

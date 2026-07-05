@@ -53,9 +53,7 @@ body.supertemporal {
             border: 2px solid var(--gilt); margin: 0 2px; vertical-align: -3px;
             background: repeating-conic-gradient(var(--gilt-wash) 0 20deg,
                                                  transparent 20deg 40deg); }
-.fw .chip.spent { border-color: var(--lacquer); background: none; position: relative; }
-.fw .chip.spent::after { content: "✕"; color: var(--lacquer); font-size: 11px;
-                         position: absolute; inset: -4px 0 0 1px; }
+.fw .chip.spent { border-color: var(--lacquer); background: var(--lacquer); }
 .fw .stat-box.name-box { display: flex; align-items: center; font-style: italic; }
 .fw .restart { margin-left: auto; align-self: center; font-size: 11px;
                letter-spacing: 0; color: var(--ink-faint); background: none;
