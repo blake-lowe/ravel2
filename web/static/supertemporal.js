@@ -771,11 +771,9 @@ function closeWheel() {
 
 function renderOver() {
   renderStatus();
-  const years = S.years.toLocaleString();
   $("#over-line").innerHTML = `Three chips spent. <b>${esc(S.handle)}</b> leaves the arena
     with <b>${S.wins}</b> victor${S.wins === 1 ? "y" : "ies"} across ${S.history.length}
-    battles — <b>${years} years</b> witnessed from the glass sphere. The Book of Aeons
-    remembers; Sigil, outside, has moved on without you.`;
+    battles. The Book of Aeons remembers.`;
   $("#inscribe-row").hidden = false;
   $("#inscribe-done").textContent = "";
   $("#over-initials").value = "";
@@ -823,7 +821,6 @@ async function loadAges() {
             · seed ${r.seed} · ${r.books.map(esc).join(" ")}</span></div>
         <div class="aeon-stats">
           ${figure("wins", r.wins)}${figure("battles", r.rounds)}
-          ${figure("years witnessed", r.years.toLocaleString())}
         </div>
       </div>
       <div class="aeon-stable">${(r.stable || []).map(aeonCard).join("")

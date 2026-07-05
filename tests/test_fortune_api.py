@@ -102,7 +102,6 @@ def test_deploy_battle_and_wheel_flow():
     payload = r.json()
     b = payload["battle"]
     assert set(b) >= {"winner", "rounds", "log", "events", "grid", "combatants"}
-    assert payload["outcome"]["years"] == b["rounds"] * 10
     st = payload["state"]
     assert st["round"] == 2
     if payload["outcome"]["won"]:

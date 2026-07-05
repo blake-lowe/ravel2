@@ -81,7 +81,7 @@ def _db() -> sqlite3.Connection:
 
 
 def _persist(rid: str, run: FortuneRun, initials: str = "") -> None:
-    years = sum(h.get("years", 0) for h in run.history)
+    years = 0                               # legacy column, no longer scored
     with _db() as conn:
         conn.execute(
             "INSERT OR REPLACE INTO runs VALUES (?,?,?,?,?,?,?,?,?,?,?)",
@@ -113,7 +113,7 @@ def leaderboard(limit: int = 20) -> list[dict]:
     return [{
         "handle": r["handle"], "initials": r["initials"] or "",
         "seed": r["seed"], "books": json.loads(r["books"]),
-        "wins": r["wins"], "rounds": r["rounds"], "years": r["years"],
+        "wins": r["wins"], "rounds": r["rounds"],
         "stable": json.loads(r["stable"]), "created": r["created"],
     } for r in rows]
 
@@ -178,7 +178,6 @@ def _enemy_view(run: FortuneRun) -> list[dict]:
 
 
 def _state(rid: str, run: FortuneRun) -> dict:
-    years = sum(h.get("years", 0) for h in run.history)
     return {
         "run_id": rid, "phase": run.phase, "round": run.round, "wins": run.wins,
         "lives": run.lives, "lives_max": LIVES_START,
@@ -194,7 +193,7 @@ def _state(rid: str, run: FortuneRun) -> dict:
         "foresight": run.foresight(3),
         "enemy": (_enemy_view(run)
                   if run.phase == "shop" and run.scouted else []),
-        "history": run.history, "years": years,
+        "history": run.history,
         "handle": HANDLES.get(rid, "Anonymous Berk"),
     }
 
@@ -355,7 +354,6 @@ def battle(rid: str, req: Deployment) -> dict:
             "grid": _grid_payload(enc), "combatants": combs,
         },
         "outcome": {"won": result.winner == "A",
-                    "years": result.rounds * 10,
                     "spin_owed": run.phase == "wheel"},
         "state": _state(rid, run),
     }

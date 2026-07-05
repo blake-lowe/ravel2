@@ -8,8 +8,7 @@ resolve through `ravel.sim` with the heuristic controller on both sides; the
 web layer (`web/fortune.py`) is a thin wrapper and owns all IO.
 
 Fortune's Wheel flavor: Shemeshka presides; each battle won earns one spin of
-the three-ring wheel (SPEC 18.8.8). Time runs fast here — the presentation
-counts a round of combat as ten years.
+the three-ring wheel (SPEC 18.8.8). The score is battles won, nothing fancier.
 """
 from __future__ import annotations
 
@@ -41,7 +40,6 @@ ITEM_PRICE_CP = {"common": 200, "uncommon": 400, "rare": 600}
 ENEMY_BUDGET_FRAC = 0.75
 BOSS_BUDGET_MULT = 1.5         # a lone boss buys action economy with bulk
 WEATHERS = ("clear", "clear", "clear", "clear", "fog", "rain", "wind")
-YEARS_PER_COMBAT_ROUND = 10    # the Supertemporal conceit
 
 # The wheel's ring layouts, sector 1..10 (SPEC 18.8.8). Odds: outer 3 none /
 # 6 common / 1 advance; middle 1 none / 8 uncommon / 1 advance; center all rare.
@@ -523,7 +521,6 @@ class FortuneRun:
         self.history.append({
             "round": self.round, "won": won, "map": map_name, "weather": weather,
             "enemy": self.enemy_team(), "rounds": result.rounds,
-            "years": result.rounds * YEARS_PER_COMBAT_ROUND,
         })
         self.round += 1
         self.scouted = False           # next round's opposition is a fresh secret
