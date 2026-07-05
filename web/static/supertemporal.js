@@ -410,8 +410,7 @@ function renderBill() {
       S.enemy.map((e) => `<span class="bill-chip">${e.count}× ${esc(e.name)}
         <span class="crtag">(CR ${crStr(e.cr)})</span></span>`).join("");
   } else {
-    el.innerHTML = `<span class="odds-note">the far corner keeps to the dark —
-        no berk has sold you their number</span><br>
+    el.innerHTML = `<span class="odds-note">the chant of your opposition is shrouded.</span><br>
       <button id="btn-scout">Divine the future (5 sp)</button>`;
     const btn = $("#btn-scout");
     if (btn) btn.onclick = () => act({ action: "scout" });
@@ -821,7 +820,9 @@ async function loadAges() {
           <span class="odds-note">${r.created ? new Date(r.created).toLocaleDateString() : ""}
             · seed ${r.seed}<br>${r.books.map(esc).join(" ")}</span></div>
       </div>
-      <div class="aeon-stable">${(r.stable || []).map(aeonCard).join("")
+      <div class="aeon-stable">${[...(r.stable || [])]
+        .sort((a, b) => (a.standby ? 1 : 0) - (b.standby ? 1 : 0))   // standby last
+        .map(aeonCard).join("")
         || `<span class="odds-note">the stalls stood empty</span>`}</div>
       <div class="aeon-wins"><span class="lbl">wins</span><span class="val">${r.wins}</span></div>
     </div>`).join("");
