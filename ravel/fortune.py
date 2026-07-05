@@ -39,6 +39,7 @@ PRICE_FLOOR_CP = 5             # even a commoner costs pocket change
 TRAIN_AC, TRAIN_HP = 1, 1      # per elite level
 ITEM_PRICE_CP = {"common": 200, "uncommon": 400, "rare": 600}
 ENEMY_BUDGET_FRAC = 0.75
+BOSS_BUDGET_MULT = 1.5         # a lone boss buys action economy with bulk
 WEATHERS = ("clear", "clear", "clear", "clear", "fog", "rain", "wind")
 YEARS_PER_COMBAT_ROUND = 10    # the Supertemporal conceit
 
@@ -467,8 +468,10 @@ class FortuneRun:
             return e.adjusted_xp if e.adjusted_xp else _xp_of_cr(e.cr)
 
         if is_boss_round(r):
-            # one huge monster carrying the whole budget — the CR cap does not
-            # apply; the wheel of fortune turns for the house too
+            # one huge monster carrying the whole budget (x1.5: five creatures
+            # focus-firing one initiative slot is worth a premium) — the CR cap
+            # does not apply; the wheel of fortune turns for the house too
+            budget *= BOSS_BUDGET_MULT
             everyone = [self.catalog[n] for n in sorted(self.catalog)]
             window = [e for e in everyone
                       if budget * 0.65 <= xp(e) <= budget * 1.15]

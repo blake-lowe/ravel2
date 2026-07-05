@@ -87,8 +87,9 @@ def _persist(rid: str, run: FortuneRun, initials: str = "") -> None:
             "INSERT OR REPLACE INTO runs VALUES (?,?,?,?,?,?,?,?,?,?,?)",
             (rid, HANDLES.get(rid, "Anonymous Berk"), run.seed,
              json.dumps(list(run.books)), run.wins, len(run.history), years,
-             json.dumps([{"name": m.name, "elite": m.elite, "items": m.items}
-                         for m in run.stable]),
+             # the full card view (kitted stats, items, art, standby): the Book
+             # of Aeons displays the final stable as it stood at the gate
+             json.dumps(_stable_view(run)),
              json.dumps(run.history),
              datetime.now(timezone.utc).isoformat(timespec="seconds"),
              initials))

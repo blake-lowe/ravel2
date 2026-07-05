@@ -255,11 +255,35 @@ body.supertemporal {
 .fw-veil .prize-line strong { color: var(--gilt); }
 
 /* ---- the Book of Ages ------------------------------------------------------------------- */
-.fw .ages table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.fw .ages th { font-variant: small-caps; letter-spacing: 1px; text-align: left;
-               border-bottom: 2px solid var(--ink); padding: 3px 6px; }
-.fw .ages td { border-bottom: 1px dotted var(--ink-hair); padding: 3px 6px; }
-.fw .ages .gold-row td { color: var(--gilt); font-weight: bold; }
+/* each closed run entombed with its final stable */
+.fw .aeon-entry { border: 2px solid var(--ink); background: var(--paper);
+                  box-shadow: 3px 3px 0 rgba(33,29,24,.18);
+                  padding: 10px 14px; margin-bottom: 14px; }
+.fw .aeon-entry.first { border-color: var(--gilt-bright);
+                        box-shadow: 0 0 0 3px var(--gilt-wash),
+                                    4px 4px 0 rgba(138,109,31,.35); }
+.fw .aeon-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fw .aeon-mark { font-family: var(--mono); font-weight: bold; font-size: 20px;
+                 letter-spacing: 3px; color: var(--gilt);
+                 border: 2px solid var(--gilt); background: var(--gilt-wash);
+                 padding: 2px 8px 2px 11px; }
+.fw .aeon-entry.first .aeon-mark { font-size: 24px; }
+.fw .aeon-who { line-height: 1.35; font-size: 14px; }
+.fw .aeon-stats { margin-left: auto; display: flex; gap: 18px; }
+.fw .aeon-stats .as { text-align: center; }
+.fw .aeon-stats .as .lbl { display: block; font-variant: small-caps;
+                           letter-spacing: 1px; font-size: 10px;
+                           color: var(--ink-faint); white-space: nowrap; }
+.fw .aeon-stats .as .val { font-size: 17px; font-weight: bold; }
+.fw .aeon-stable { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.fw .aeon-card { width: 106px; border: 1.5px solid var(--ink); background: var(--paper);
+                 padding: 5px 5px 6px; position: relative; font-size: 10.5px;
+                 display: flex; flex-direction: column; align-items: center;
+                 gap: 3px; text-align: center; }
+.fw .aeon-card .mtoken { width: 40px; height: 40px; }
+.fw .aeon-card.standby { border-style: dashed; border-color: var(--silver); }
+.fw .aeon-card .mname { font-weight: bold; font-size: 10.5px; line-height: 1.15; }
+.fw .aeon-card .mmeta { color: var(--ink-faint); font-size: 9px; }
 
 @media (max-width: 980px) {
   .fw .team-row, .fw .offer-row, .fw .lobby-grid, .fw .sands-grid {

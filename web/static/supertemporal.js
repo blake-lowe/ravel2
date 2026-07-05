@@ -791,23 +791,44 @@ function renderOver() {
   loadAges();
 }
 
+// One mini card per creature as it stood at the gate — art, stars, kit and all.
+function aeonCard(m) {
+  const stars = m.elite ? ` <span class="stars">${"★".repeat(m.elite)}</span>` : "";
+  const legacy = m.ac === undefined;      // rows carved before the card era
+  const items = (m.items || []).map((it) => typeof it === "string"
+    ? `<span class="tag">${esc(it)}</span>`
+    : `<span class="tag" title="${esc(it.effect || "")} — ${esc(it.blurb || "")}">${esc(it.name)}</span>`
+  ).join("");
+  return `<div class="aeon-card ${m.standby ? "standby" : ""}" data-name="${esc(m.name)}">
+    ${m.standby ? `<span class="slot-tag">standby</span>` : ""}
+    ${tokenImg(m.art, m.name)}
+    <div class="mname">${esc(m.name)}${stars}</div>
+    ${legacy ? "" : `<div class="mmeta">CR ${crStr(m.cr)} · ${m.hp} hp · AC ${m.ac}</div>`}
+    <div class="tags">${items}</div>
+  </div>`;
+}
+
 async function loadAges() {
   let rows;
   try { rows = await api("/api/fortune/leaderboard"); } catch (e) { return; }
   if (!rows.length) return;
-  $("#ages-body").innerHTML = `<table><thead><tr>
-      <th>mark</th><th>stable master</th><th>wins</th><th>battles</th>
-      <th>years witnessed</th><th>final stable</th><th>books</th><th>seed</th>
-      <th>date</th></tr></thead><tbody>` +
-    rows.map((r, i) => `<tr class="${i === 0 ? "gold-row" : ""}">
-      <td class="mark">${esc(r.initials || "—")}</td>
-      <td>${esc(r.handle)}</td><td>${r.wins}</td><td>${r.rounds}</td>
-      <td>${r.years.toLocaleString()}</td>
-      <td>${r.stable.map((m) => esc(m.name) + (m.elite ? " " + "★".repeat(m.elite) : ""))
-            .join(", ") || "—"}</td>
-      <td>${r.books.map(esc).join(" ")}</td><td>${r.seed}</td>
-      <td>${r.created ? new Date(r.created).toLocaleDateString() : ""}</td>
-    </tr>`).join("") + `</tbody></table>`;
+  const figure = (lbl, val) =>
+    `<span class="as"><span class="lbl">${lbl}</span><span class="val">${val}</span></span>`;
+  $("#ages-body").innerHTML = rows.map((r, i) => `
+    <div class="aeon-entry ${i === 0 ? "first" : ""}">
+      <div class="aeon-head">
+        <span class="aeon-mark">${esc(r.initials || "—")}</span>
+        <div class="aeon-who"><b>${esc(r.handle)}</b><br>
+          <span class="odds-note">${r.created ? new Date(r.created).toLocaleDateString() : ""}
+            · seed ${r.seed} · ${r.books.map(esc).join(" ")}</span></div>
+        <div class="aeon-stats">
+          ${figure("wins", r.wins)}${figure("battles", r.rounds)}
+          ${figure("years witnessed", r.years.toLocaleString())}
+        </div>
+      </div>
+      <div class="aeon-stable">${(r.stable || []).map(aeonCard).join("")
+        || `<span class="odds-note">the stalls stood empty</span>`}</div>
+    </div>`).join("");
 }
 
 boot();
