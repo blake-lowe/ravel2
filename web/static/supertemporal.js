@@ -638,7 +638,8 @@ async function fight() {
   } catch (e) { return; }
   BATTLE = payload;
   S = payload.state;
-  renderStatus();
+  // no renderStatus() here: the chips would spoil the verdict — the status row
+  // keeps its pre-battle face until we return to the offerings
   $("#sands-title").textContent = "The Field of Battle";
   $("#deploy-wrap").hidden = true;
   $("#battle-wrap").hidden = false;
