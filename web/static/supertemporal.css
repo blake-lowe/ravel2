@@ -131,6 +131,21 @@ body.supertemporal {
 .fw .slot .rib.common { background: var(--ink-hair); }
 .fw .slot .rib.uncommon { background: var(--silver); }
 .fw .slot .rib.rare { background: var(--gilt-bright); }
+.fw .slot .btnrow.bottom { margin-top: auto; }
+.fw .slot .btnlink { display: block; width: 100%; text-align: center;
+                     font-variant: small-caps; letter-spacing: .5px; font-size: 10px;
+                     color: var(--ink); text-decoration: none;
+                     border: 1px solid var(--ink-hair); background: var(--paper-deep);
+                     padding: 2px 0; }
+.fw .slot .btnlink:hover { border-color: var(--ink); }
+.fw .slot.equip { width: 148px; }
+.fw .slot .ieffect { font-size: 10.5px; font-weight: bold; }
+.fw .slot .iflavor { font-style: italic; color: var(--ink-faint); font-size: 9.5px;
+                     line-height: 1.3; }
+.fw .slot-tag { position: absolute; top: 2px; left: 5px; font-variant: small-caps;
+                letter-spacing: 1px; font-size: 9px; color: var(--silver); }
+.fw .standby-divider { width: 1px; align-self: stretch;
+                       border-left: 1px dashed var(--ink-hair); }
 
 .fw .offer-row { display: grid; grid-template-columns: 1fr auto; gap: 18px;
                  align-items: start; }
@@ -145,8 +160,12 @@ body.supertemporal {
 .fw .battle-panel { border: 2px solid var(--ink); background: var(--paper);
                     box-shadow: 3px 3px 0 rgba(33,29,24,.18); padding: 10px 12px;
                     display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
-.fw .battle-panel .ground { font-size: 16px; font-weight: bold; }
-.fw .battle-panel .after { color: var(--ink-faint); font-size: 11.5px; }
+.fw .fore-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.fw .fore-table td { padding: 3px 6px 3px 0; border-bottom: 1px dotted var(--ink-hair); }
+.fw .fore-table tr.now td { font-weight: bold; font-size: 14px; }
+.fw .fore-table tr.now td:first-child { font-variant: small-caps; letter-spacing: 1px;
+                                        color: var(--gilt); font-size: 12px; }
+.fw .fore-table tr.later td { color: var(--ink-hair); font-weight: normal; }
 .fw .bill { border: 1px dashed var(--ink-hair); padding: 7px 9px; min-height: 40px; }
 .fw .bill .bill-chip { display: inline-block; border: 1px solid var(--ink);
                        padding: 1px 7px; margin: 2px 3px 2px 0; font-size: 12px;
@@ -154,8 +173,21 @@ body.supertemporal {
 .fw .bill .bill-chip .crtag { color: var(--ink-faint); font-size: 10.5px; }
 .fw .battle-panel .gilded { width: 100%; margin-top: 2px; }
 
-/* ---- the sands (deploy + replay) ---------------------------------------------------- */
-.fw .sands-grid { display: grid; grid-template-columns: auto 1fr; gap: 16px; }
+/* ---- the sands: deployment (the battle replay reuses the Pit's classes) ------------- */
+.fw .sands-grid { display: grid; grid-template-columns: auto auto minmax(220px, 1fr);
+                  gap: 16px; }
+.fw .deploy-roster { display: flex; flex-direction: column; gap: 6px; }
+.fw .dr-card { display: flex; align-items: center; gap: 7px; width: 190px;
+               border: 1px solid var(--ink-hair); background: var(--paper);
+               padding: 4px 7px; font-size: 11px; }
+.fw .dr-card .mtoken { width: 30px; height: 30px; font-size: 14px; }
+.fw .dr-badge { flex: none; width: 24px; height: 24px; border-radius: 50%;
+                border: 2px solid var(--gilt); color: var(--gilt);
+                font-weight: bold; font-size: 10.5px; display: flex;
+                align-items: center; justify-content: center; }
+.fw .dr-meta { line-height: 1.3; }
+.fw #battle-wrap { margin-top: 4px; }
+.fw #battle-wrap .verdict { text-align: center; }
 .fw .board-wrap { overflow: auto; max-width: 100%; }
 .fw #fw-board svg { display: block; background: var(--paper);
                     border: 1px solid var(--ink-hair); }
@@ -179,9 +211,6 @@ body.supertemporal {
 .fw .sands-side { display: flex; flex-direction: column; gap: 10px; font-size: 13px;
                   min-width: 0; }
 .fw .replay-controls { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
-.fw .fightlog { background: var(--paper-deep); border: 1px solid var(--ink-hair);
-                font-family: var(--mono); font-size: 11px; padding: 8px;
-                height: 300px; overflow-y: auto; white-space: pre-wrap; margin: 0; }
 .fw .verdict { font-size: 15px; font-variant: small-caps; letter-spacing: 1px;
                padding: 6px 0; }
 .fw .verdict.won { color: var(--gilt); }

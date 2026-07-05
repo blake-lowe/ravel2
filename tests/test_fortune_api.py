@@ -24,7 +24,10 @@ def test_meta_lists_books_items_and_odds():
     labels = {b["label"] for b in m["books"]}
     assert "MM" in labels
     assert len(m["items"]) == 12
-    assert m["wheel"]["outer"] == {"none": 3, "common": 6, "middle": 1}
+    ring = m["wheel"]["outer_ring"]
+    assert ring.count("none") == 3 and ring.count("common") == 6
+    assert ring.count("advance") == 1
+    assert "nonenone" not in "".join(ring), "no-prize sectors are spread out"
     assert m["team_cap"] == 5 and m["lives"] == 3
 
 

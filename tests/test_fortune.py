@@ -186,12 +186,27 @@ def test_items_attach_and_cap():
     assert "Planar Heartstone" in run.stable[0].items and not run.bank
 
 
-def test_stable_cap_is_5():
+def test_stable_cap_is_5_fighting_plus_1_standby():
     run = stocked_run()
     name = lowest_cr_name()
     run.stable = [StableMember(name) for _ in range(5)]
+    run.buy(0)                                     # the 6th goes to the standby stall
+    assert len(run.stable) == 6
+    assert len(run.player_defs()) == 5             # ...and sits out the battle
+    with pytest.raises(FortuneError):              # no 7th
+        run.buy(1)
+
+
+def test_swap_benches_and_fields():
+    run = stocked_run()
+    name = lowest_cr_name()
+    run.stable = [StableMember(name, elite=k) for k in range(6)]
+    run.swap(1, 5)                                 # bench the elite-1, field the elite-5
+    assert run.stable[1].elite == 5 and run.stable[5].elite == 1
     with pytest.raises(FortuneError):
-        run.buy(0)
+        run.swap(2, 2)
+    with pytest.raises(FortuneError):
+        run.swap(0, 9)
 
 
 # --- kit application ---------------------------------------------------------------

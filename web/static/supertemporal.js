@@ -207,29 +207,39 @@ function renderShop() {
   if (S.phase === "over") { renderOver(); show("fw-over"); }
 }
 
+function memberCard(m, i) {
+  const stars = m.elite ? `<span class="stars">${"★".repeat(m.elite)}</span>` : "";
+  const items = m.items.map((it) =>
+    `<span class="tag" title="${esc(it.effect)} — ${esc(it.blurb)}">${esc(it.name)}</span>`).join("");
+  const twin = S.stable.some((o, j) => j !== i && o.name === m.name);
+  const targetable = TARGETING && (!TARGETING.filter || TARGETING.filter(m, i));
+  const standby = i >= S.team_cap;
+  const benchInPlay = S.stable.length > S.team_cap;
+  return `<div class="slot ${targetable ? "targetable" : ""}"
+               data-name="${esc(m.name)}" ${targetable ? `data-pick="${i}"` : ""}>
+    ${standby ? `<span class="slot-tag">standby</span>` : ""}
+    ${tokenImg(m.art, m.name)}
+    <div class="mname">${esc(m.name)} ${stars}</div>
+    <div class="mmeta">AC ${m.ac} · ${m.hp} hp · CR ${crStr(m.cr)}</div>
+    <div class="tags">${items}</div>
+    ${targetable ? `<div class="btnrow bottom"><button>choose</button></div>` : `
+      <div class="btnrow bottom">
+        <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
+        ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 HP">train ★</button>` : ""}
+        ${benchInPlay && !standby ? `<button data-bench="${i}" title="trade places with the standby stall">⇄</button>` : ""}
+        ${standby ? `<button data-field="${i}" title="take the field">⇄ field</button>` : ""}
+      </div>`}
+  </div>`;
+}
+
 function renderStable() {
   const row = $("#stable-row");
-  const cards = S.stable.map((m, i) => {
-    const stars = m.elite ? `<span class="stars">${"★".repeat(m.elite)}</span>` : "";
-    const items = m.items.map((it) =>
-      `<span class="tag" title="${esc(it.blurb)}">${esc(it.name)}</span>`).join("");
-    const twin = S.stable.some((o, j) => j !== i && o.name === m.name);
-    const targetable = TARGETING && (!TARGETING.filter || TARGETING.filter(m, i));
-    return `<div class="slot ${targetable ? "targetable" : ""}"
-                 data-name="${esc(m.name)}" ${targetable ? `data-pick="${i}"` : ""}>
-      ${tokenImg(m.art, m.name)}
-      <div class="mname">${esc(m.name)} ${stars}</div>
-      <div class="mmeta">AC ${m.ac} · ${m.hp} hp · CR ${crStr(m.cr)}</div>
-      <div class="tags">${items}</div>
-      ${targetable ? `<div class="btnrow"><button>choose</button></div>` : `
-        <div class="btnrow">
-          <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
-          ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 HP">train ★</button>` : ""}
-        </div>`}
-    </div>`;
-  });
-  while (cards.length < S.team_cap) cards.push(`<div class="slot empty"></div>`);
-  row.innerHTML = cards.join("");
+  const active = S.stable.slice(0, S.team_cap).map((m, i) => memberCard(m, i));
+  while (active.length < S.team_cap) active.push(`<div class="slot empty"></div>`);
+  const standby = S.stable.length > S.team_cap
+    ? memberCard(S.stable[S.team_cap], S.team_cap)
+    : `<div class="slot empty standby-empty"><span class="slot-tag">standby</span></div>`;
+  row.innerHTML = active.join("") + `<div class="standby-divider"></div>` + standby;
   row.querySelectorAll("[data-sell]").forEach((b) =>
     b.onclick = (ev) => { ev.stopPropagation(); act({ action: "sell", target: +b.dataset.sell }); });
   row.querySelectorAll("[data-train]").forEach((b) =>
@@ -242,8 +252,29 @@ function renderStable() {
         go: (j) => act({ action: "train", target: i, other: j }),
       });
     });
+  row.querySelectorAll("[data-bench]").forEach((b) =>
+    b.onclick = (ev) => { ev.stopPropagation();
+      act({ action: "swap", target: +b.dataset.bench, other: S.team_cap }); });
+  row.querySelectorAll("[data-field]").forEach((b) =>
+    b.onclick = (ev) => {
+      ev.stopPropagation();
+      beginTargeting({
+        label: `Fielding ${S.stable[S.team_cap].name}: pick who steps down`,
+        filter: (m, j) => j < S.team_cap,
+        go: (j) => act({ action: "swap", target: S.team_cap, other: j }),
+      });
+    });
   row.querySelectorAll("[data-pick]").forEach((card) =>
     card.onclick = () => TARGETING.go(+card.dataset.pick));
+}
+
+// 5e.tools alignment codes ("L E", "U", "A") -> words; prose passes through
+const ALIGN_WORD = { L: "lawful", N: "neutral", C: "chaotic", G: "good", E: "evil",
+                     U: "unaligned", A: "any alignment", NX: "neutral", NY: "neutral" };
+function alignStr(a) {
+  if (!a) return "";
+  if (/[a-z]/.test(a)) return a;
+  return a.split(/\s+/).map((t) => ALIGN_WORD[t] || t.toLowerCase()).join(" ");
 }
 
 function speedStr(s) {
@@ -254,25 +285,24 @@ function speedStr(s) {
 
 function renderStock() {
   const row = $("#stock-row");
-  const SIZE_ABBR = { Tiny: "T", Small: "S", Medium: "M", Large: "L",
-                      Huge: "H", Gargantuan: "G" };
   row.innerHTML = S.shop.monsters.map((s, i) => {
     if (!s) return `<div class="slot empty"></div>`;
     const owned = S.stable.findIndex((m) => m.name === s.name);
-    const pr = s.best_cr != null && s.best_cr !== s.cr
-      ? ` · <span title="the pit's own ledger disagrees with the book">PR ${s.best_cr}</span>` : "";
     const topTier = s.cr === S.cap;                 // book CR at the stock tier
     return `<div class="slot ${s.frozen ? "is-frozen" : ""} ${topTier ? "top-tier" : ""}"
                  data-name="${esc(s.name)}">
       <button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
         title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>
       ${tokenImg(s.art, s.name)}
-      <div class="mname">${esc(s.name)}
-        <a class="lore" href="/bestiary#${encodeURIComponent(s.name)}" target="_blank"
-           title="the full chant in the Bestiary">✧</a></div>
-      <div class="mmeta">CR ${crStr(s.cr)}${pr} · ${esc(s.source)}</div>
-      <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)} · ${SIZE_ABBR[s.size] || s.size}</div>
+      <div class="mname">${esc(s.name)}</div>
+      <div class="mmeta">CR ${crStr(s.cr)} · ${esc(s.source)}</div>
+      <div class="mmeta">${esc(s.type)}${s.alignment ? " · " + esc(alignStr(s.alignment)) : ""}</div>
+      <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)} · ${esc(s.size)}</div>
       <div class="price">${esc(s.price)}</div>
+      <div class="btnrow bottom">
+        <a class="btnlink" href="/bestiary#${encodeURIComponent(s.name)}" target="_blank"
+           title="the full chant, in the Bestiary">View in Bestiary</a>
+      </div>
       <div class="btnrow">
         <button data-buy="${i}">buy</button>
         ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}"
@@ -288,13 +318,14 @@ function renderStock() {
     f.onclick = () => act({ action: "freeze", kind: "monster", slot: +f.dataset.freeze }));
 
   $("#item-shelf").innerHTML = S.shop.items.map((s, i) => {
-    if (!s) return `<div class="slot empty"></div>`;
-    return `<div class="slot ${s.frozen ? "is-frozen" : ""}">
+    if (!s) return `<div class="slot equip empty"></div>`;
+    return `<div class="slot equip ${s.frozen ? "is-frozen" : ""}">
       <span class="rib ${esc(s.rarity)}"></span>
       <button class="freeze ${s.frozen ? "on" : ""}" data-ifreeze="${i}"
         title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>
-      <span class="mtoken letter" title="${esc(s.blurb)}">◈</span>
-      <div class="mname" title="${esc(s.blurb)}">${esc(s.name)}</div>
+      <div class="mname">${esc(s.name)}</div>
+      <div class="ieffect">${esc(s.effect)}</div>
+      <div class="iflavor">${esc(s.blurb)}</div>
       <div class="mmeta">${esc(s.rarity)}</div>
       <div class="price">${esc(s.price)}</div>
       <div class="btnrow"><button data-ibuy="${i}">buy</button></div>
@@ -327,13 +358,13 @@ function renderBank() {
 const WEATHER_GLYPH = { clear: "☀ clear", fog: "▒ fog", rain: "☂ rain", wind: "≋ wind" };
 
 function renderBattlePanel() {
-  const now = S.foresight[0] || {};
-  const later = S.foresight.slice(1).map((f) =>
-    `battle ${f.round}: ${esc(f.map || "the open floor")}, ${WEATHER_GLYPH[f.weather] || esc(f.weather)}`);
-  $("#next-battle").innerHTML = `
-    <div class="ground">${esc(now.map || "the open floor")}</div>
-    <div>${WEATHER_GLYPH[now.weather] || esc(now.weather || "")}</div>
-    <div class="after">then — ${later.join(" · ")}</div>`;
+  const rows = S.foresight.map((f, i) => `
+    <tr class="${i === 0 ? "now" : "later"}">
+      <td>${i === 0 ? "next" : "battle " + f.round}</td>
+      <td>${esc(f.map || "the open floor")}</td>
+      <td>${WEATHER_GLYPH[f.weather] || esc(f.weather)}</td>
+    </tr>`).join("");
+  $("#next-battle").innerHTML = `<table class="fore-table">${rows}</table>`;
   renderBill();
 }
 
@@ -357,25 +388,71 @@ function renderBill() {
 function wireSands() {
   $("#btn-back-shop").onclick = () => { renderShop(); show("fw-shop"); };
   $("#btn-gong").onclick = fight;
-  $("#rp-play").onclick = togglePlay;
-  $("#rp-skip").onclick = skipToEnd;
   $("#rp-done").onclick = afterBattle;
+}
+
+// The battle itself replays through the Blood Pit's own machinery (replay.js),
+// gold corner vs the house's ink.
+let REPLAY = null;
+function ensureReplay() {
+  if (REPLAY) return REPLAY;
+  REPLAY = RavelReplay.create({
+    els: {
+      board: $("#board"), scrub: $("#scrub"), btnPlay: $("#btn-play"),
+      btnPrev: $("#btn-prev"), btnNext: $("#btn-next"), btnStart: $("#btn-start"),
+      btnEnd: $("#btn-end"), btnPrevRound: $("#btn-prev-round"),
+      btnNextRound: $("#btn-next-round"), speed: $("#speed"),
+      roundInd: $("#round-ind"), log: $("#fightlog"), initiative: $("#initiative"),
+      legend: $("#legend"),
+    },
+    corners: { A: { name: "Gold", color: "#8a6d1f", prefix: "G" },
+               B: { name: "House", color: "#211d18", prefix: "H" } },
+    onPosition: (atEnd) => {
+      if (!BATTLE) return;
+      if (atEnd) {
+        const won = BATTLE.outcome.won;
+        $("#sands-verdict").innerHTML = `<div class="verdict ${won ? "won" : "lost"}">
+          ${won ? "Your corner stands — the touts weep." : "The sands take yours — a chip is spent."}
+          <span class="odds-note">(${BATTLE.outcome.years} years passed outside)</span></div>`;
+        $("#rp-done").hidden = false;
+        $("#rp-done").textContent = won ? "to the wheel ✦"
+          : (S.phase === "over" ? "face the ledger" : "back to the offerings");
+      } else {
+        $("#sands-verdict").innerHTML = "";
+        $("#rp-done").hidden = true;
+      }
+    },
+  });
+  return REPLAY;
 }
 
 async function openSands() {
   try { DEPLOY = await api(`/api/fortune/run/${RID}/deploy`); }
   catch (e) { $("#shop-error").textContent = e.message; return; }
-  PLACEMENTS = S.stable.map(() => null);
+  PLACEMENTS = S.stable.slice(0, S.team_cap).map(() => null);
   BATTLE = null;
+  $("#sands-title").textContent = "Preparation";
+  $("#deploy-wrap").hidden = false;
+  $("#battle-wrap").hidden = true;
   $("#sands-verdict").innerHTML = "";
-  $("#fw-log").hidden = true; $("#fw-log").textContent = "";
-  $("#deploy-controls").hidden = false;
-  $("#replay-controls").hidden = true;
   renderSandsBrief();
   drawBoard(DEPLOY.grid, new Set(DEPLOY.zone.map((c) => c.join(","))));
   // deployment shows only YOUR creatures at their default cells
   for (const c of DEPLOY.combatants) placeToken(c, true);
+  renderDeployRoster();
   show("fw-sands");
+}
+
+// Abbreviated cards for the creatures being deployed, badge matching the board.
+function renderDeployRoster() {
+  $("#deploy-roster").innerHTML = `<div class="col-title">Your side</div>` +
+    DEPLOY.combatants.map((c) => `
+      <div class="dr-card" data-name="${esc(c.name)}">
+        <span class="dr-badge">${esc("G" + c.id.slice(1))}</span>
+        ${tokenImg(c.token_art, c.name)}
+        <span class="dr-meta"><b>${esc(c.name)}</b><br>
+          AC ${c.ac} · ${c.max_hp} hp</span>
+      </div>`).join("");
 }
 
 function renderSandsBrief() {
@@ -447,7 +524,7 @@ function placeToken(c, draggable) {
   const r = (foot * BOARD.cell) / 2;
   g.innerHTML = `
     <circle class="body" r="${r - 2}"></circle>
-    <text y="4" font-size="${r * 0.9}">${esc(c.name[0])}</text>
+    <text y="4" font-size="${r * 0.62}">${esc("G" + c.id.slice(1))}</text>
     <rect class="hpback" x="${-r + 2}" y="${r - 4}" width="${2 * r - 4}" height="3"></rect>
     <rect class="hpbar" x="${-r + 2}" y="${r - 4}" width="${2 * r - 4}" height="3"></rect>
     <title>${esc(c.name)} — AC ${c.ac}, ${c.hp}/${c.max_hp} hp</title>`;
@@ -537,80 +614,13 @@ async function fight() {
   BATTLE = payload;
   S = payload.state;
   renderStatus();
-  $("#deploy-controls").hidden = true;
-  $("#replay-controls").hidden = false;
+  $("#sands-title").textContent = "The Sands";
+  $("#deploy-wrap").hidden = true;
+  $("#battle-wrap").hidden = false;
   $("#rp-done").hidden = true;
-  $("#fw-log").hidden = false;
-  startReplay(payload.battle);
-}
-
-// The same pure fold the Pit uses: absolute snapshots make any prefix exact.
-function foldStep(e) {
-  const t = BOARD.toks[e.actor];
-  switch (e.kind) {
-    case "spawn":
-      if (!t) placeToken({ id: e.actor, name: e.actor, team: (e.info || e.actor[0]),
-                           pos: e.pos, size: "Medium", hp: e.hp, max_hp: e.hp, ac: "?" }, false);
-      else { moveToken(e.actor, e.pos); t.max = e.hp; }
-      break;
-    case "move": if (t) moveToken(e.actor, e.pos); break;
-    case "damage": case "heal": case "survive":
-      if (t) setHp(e.actor, e.hp, e.hp > 0); break;
-    case "death": if (t) setHp(e.actor, 0, false); break;
-  }
-}
-
-let RP = null;   // {events, log, i, timer, logShown}
-
-function startReplay(b) {
-  drawBoard(b.grid, null);
-  for (const c of b.combatants) placeToken(c, false);
-  RP = { events: b.events, log: b.log, i: 0, timer: null, logShown: 0 };
-  $("#fw-log").textContent = "";
-  $("#rp-round").textContent = "";
-  togglePlay();
-}
-
-function togglePlay() {
-  if (!RP) return;
-  if (RP.timer) { clearInterval(RP.timer); RP.timer = null; $("#rp-play").textContent = "▶"; return; }
-  $("#rp-play").textContent = "❚❚";
-  RP.timer = setInterval(step, Number($("#rp-speed").value));
-}
-
-function step() {
-  if (!RP) return;
-  if (RP.i >= RP.events.length) { finishReplay(); return; }
-  const e = RP.events[RP.i++];
-  foldStep(e);
-  if (e.round) $("#rp-round").textContent =
-    `round ${e.round} — the crowd ages ${e.round * 10} years`;
-  const upto = (e.log_index == null ? RP.logShown : e.log_index + 1);
-  if (upto > RP.logShown) {
-    $("#fw-log").textContent = RP.log.slice(0, upto).join("\n");
-    $("#fw-log").scrollTop = $("#fw-log").scrollHeight;
-    RP.logShown = upto;
-  }
-}
-
-function skipToEnd() {
-  if (!RP) return;
-  while (RP.i < RP.events.length) foldStep(RP.events[RP.i++]);
-  $("#fw-log").textContent = RP.log.join("\n");
-  $("#fw-log").scrollTop = $("#fw-log").scrollHeight;
-  finishReplay();
-}
-
-function finishReplay() {
-  if (RP && RP.timer) { clearInterval(RP.timer); RP.timer = null; }
-  $("#rp-play").textContent = "▶";
-  const won = BATTLE.outcome.won;
-  $("#sands-verdict").innerHTML = `<div class="verdict ${won ? "won" : "lost"}">
-    ${won ? "Your corner stands — the touts weep." : "The sands take yours — a chip is spent."}
-    <span class="odds-note">(${BATTLE.outcome.years} years passed outside)</span></div>`;
-  $("#rp-done").hidden = false;
-  $("#rp-done").textContent = won ? "to the wheel ✦"
-    : (S.phase === "over" ? "face the ledger" : "back to the offerings");
+  const rp = ensureReplay();
+  rp.load(payload.battle);
+  rp.play();               // an auto battler auto-plays; the scrubber is all yours
 }
 
 function afterBattle() {
@@ -632,21 +642,24 @@ function sectorPath(r0, r1, a0, a1) {
           L${x2},${y2} A${r0},${r0} 0 ${large} 0 ${x3},${y3} Z`;
 }
 
-// ring sector types, 1-indexed by the server's d10 stops
-const RINGS = [
-  { id: "outer", r0: 72, r1: 104, types: ["none", "none", "none", "common", "common",
-      "common", "common", "common", "common", "advance"] },
-  { id: "middle", r0: 42, r1: 70, types: ["none", "uncommon", "uncommon", "uncommon",
-      "uncommon", "uncommon", "uncommon", "uncommon", "uncommon", "advance"] },
-  { id: "center", r0: 12, r1: 40, types: ["rare", "rare", "rare", "rare", "rare",
-      "rare", "rare", "rare", "rare", "rare"] },
+// Ring geometry only — the sector layouts come from /api/fortune/meta, so the
+// picture is exactly what the engine rolls (no-prize sectors spread apart).
+const RING_GEO = [
+  { id: "outer", r0: 72, r1: 104 },
+  { id: "middle", r0: 42, r1: 70 },
+  { id: "center", r0: 12, r1: 40 },
 ];
+let RINGS = [];
 const SECTOR_FILL = { none: "#efe7d2", common: "rgba(184,145,46,.30)",
                       uncommon: "rgba(131,137,143,.38)", advance: "#b8912e",
                       rare: "rgba(184,145,46,.55)" };
 const SECTOR_GLYPH = { none: "—", common: "◆", uncommon: "◈", advance: "★", rare: "✦" };
 
 function wireWheel() {
+  const layouts = (META && META.wheel) || {};
+  RINGS = RING_GEO.map((g) => ({
+    ...g, types: layouts[`${g.id}_ring`] || Array(10).fill("rare"),
+  }));
   const svg = $("#fw-wheel");
   let parts = `<polygon points="-7,-114 7,-114 0,-100" fill="#8f1f1a"></polygon>`;
   for (const ring of RINGS) {

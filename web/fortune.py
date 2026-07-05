@@ -20,7 +20,8 @@ from pydantic import BaseModel
 
 from ravel import content
 from ravel.fortune import (
-    ITEM_PRICE_CP, ITEMS, LIVES_START, REROLL_CP, SCOUT_CP, TEAM_CAP,
+    ITEM_PRICE_CP, ITEMS, LIVES_START, MIDDLE_RING, OUTER_RING, REROLL_CP,
+    SCOUT_CP, STABLE_CAP, TEAM_CAP,
     CatalogEntry, FortuneError, FortuneRun, apply_kit, coins, new_run,
 )
 from ravel.maps import MAPS
@@ -124,6 +125,7 @@ def _shop_view(run: FortuneRun) -> dict:
                          "cr": e.cr, "best_cr": e.best_cr, "source": e.source,
                          "ac": md.ac, "hp": md.hp, "speed": md.speed,
                          "fly": md.fly, "swim": md.swim, "size": md.size.value,
+                         "type": md.mtype, "alignment": md.alignment,
                          "art": _art(s.name)})
     items = []
     for s in run.shop_items:
@@ -133,7 +135,7 @@ def _shop_view(run: FortuneRun) -> dict:
         it = ITEMS[s.name]
         items.append({"name": s.name, "price_cp": s.price_cp,
                       "price": coins(s.price_cp), "frozen": s.frozen,
-                      "rarity": it.rarity, "blurb": it.blurb})
+                      "rarity": it.rarity, "effect": it.effect, "blurb": it.blurb})
     return {"monsters": monsters, "items": items}
 
 
@@ -143,7 +145,7 @@ def _stable_view(run: FortuneRun) -> list[dict]:
         md = apply_kit(content.get(m.name), m.elite, tuple(m.items))
         out.append({
             "name": m.name, "elite": m.elite, "invested_cp": m.invested_cp,
-            "items": [{"name": n, "rarity": ITEMS[n].rarity,
+            "items": [{"name": n, "rarity": ITEMS[n].rarity, "effect": ITEMS[n].effect,
                        "blurb": ITEMS[n].blurb} for n in m.items],
             "ac": md.ac, "hp": md.hp, "speed": md.speed,
             "size": md.size.value, "cr": run.catalog[m.name].cr,
@@ -167,12 +169,13 @@ def _state(rid: str, run: FortuneRun) -> dict:
         "lives": run.lives, "lives_max": LIVES_START,
         "purse_cp": run.purse_cp, "purse": coins(run.purse_cp),
         "cap": run.cap(), "books": list(run.books),
-        "team_cap": TEAM_CAP, "reroll_cp": REROLL_CP, "scout_cp": SCOUT_CP,
+        "team_cap": TEAM_CAP, "stable_cap": STABLE_CAP,
+        "reroll_cp": REROLL_CP, "scout_cp": SCOUT_CP,
         "scouted": run.scouted,
         "shop": _shop_view(run),
         "stable": _stable_view(run),
-        "bank": [{"name": n, "rarity": ITEMS[n].rarity, "blurb": ITEMS[n].blurb}
-                 for n in run.bank],
+        "bank": [{"name": n, "rarity": ITEMS[n].rarity, "effect": ITEMS[n].effect,
+                  "blurb": ITEMS[n].blurb} for n in run.bank],
         "foresight": run.foresight(3),
         "enemy": (_enemy_view(run)
                   if run.phase == "shop" and run.scouted else []),
@@ -207,9 +210,9 @@ def meta() -> dict:
         "team_cap": TEAM_CAP, "lives": LIVES_START,
         "reroll": coins(REROLL_CP), "scout": coins(SCOUT_CP),
         "maps": sorted(MAPS),
-        "wheel": {"outer": {"none": 3, "common": 6, "middle": 1},
-                  "middle": {"none": 1, "uncommon": 8, "center": 1},
-                  "center": {"rare": 10}},
+        # the ring layouts ARE the mechanics — the client draws exactly these
+        "wheel": {"outer_ring": list(OUTER_RING), "middle_ring": list(MIDDLE_RING),
+                  "center_ring": ["rare"] * 10},
     }
 
 
@@ -257,6 +260,8 @@ def act(rid: str, req: Action) -> dict:
             run.sell(req.target)
         elif req.action == "train":
             run.train(req.target, req.other)
+        elif req.action == "swap":
+            run.swap(req.target, req.other)
         elif req.action == "freeze":
             run.toggle_freeze(req.kind, req.slot)
         elif req.action == "attach":

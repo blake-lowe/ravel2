@@ -23,7 +23,9 @@ from .sim import BattleResult, run_battle
 
 # --- Tuning constants (the numbers in SPEC 18.8) ----------------------------
 
-TEAM_CAP = 5
+TEAM_CAP = 5                   # creatures that take the field
+STANDBY_SLOTS = 1              # one stall sits out the battle
+STABLE_CAP = TEAM_CAP + STANDBY_SLOTS
 LIVES_START = 3
 START_PURSE_CP = 1000          # 10 gp
 INCOME_CP = 1000               # +10 gp per shop phase
@@ -40,6 +42,14 @@ ITEM_PRICE_CP = {"common": 200, "uncommon": 400, "rare": 600}
 ENEMY_BUDGET_FRAC = 0.75
 WEATHERS = ("clear", "clear", "clear", "clear", "fog", "rain", "wind")
 YEARS_PER_COMBAT_ROUND = 10    # the Supertemporal conceit
+
+# The wheel's ring layouts, sector 1..10 (SPEC 18.8.8). Odds: outer 3 none /
+# 6 common / 1 advance; middle 1 none / 8 uncommon / 1 advance; center all rare.
+# No-prize sectors are spread to opposite sides of the wheel, never bunched.
+OUTER_RING = ("none", "common", "common", "none", "common", "common",
+              "none", "common", "common", "advance")
+MIDDLE_RING = ("uncommon", "uncommon", "uncommon", "uncommon", "none",
+               "uncommon", "uncommon", "uncommon", "uncommon", "advance")
 
 
 def cr_cap(round_no: int) -> int:
@@ -69,37 +79,50 @@ class ArenaItem:
     hit: int = 0
     dmg: int = 0
     speed: int = 0
-    blurb: str = ""
+    effect: str = ""           # the mechanics, plainly stated
+    blurb: str = ""            # the flavor, italicized on the shelf
 
 
 ITEMS: dict[str, ArenaItem] = {i.name: i for i in [
     # common — 2 gp on the shelf
     ArenaItem("Whetstone of the Great Foundry", "common", dmg=1,
-              blurb="Sparks from Sigil's foundry never quite go out. +1 damage."),
+              effect="+1 damage",
+              blurb="Sparks from Sigil's foundry never quite go out."),
     ArenaItem("Rust-Ward Talisman", "common", ac=1,
-              blurb="Proof against rust dragons and worse. +1 AC."),
+              effect="+1 AC",
+              blurb="Proof against rust dragons and worse."),
     ArenaItem("Flask of Elemental Vigor", "common", hp=5,
-              blurb="Bottled at the edge of the Chaos. +5 HP."),
+              effect="+5 HP",
+              blurb="Bottled at the edge of the Chaos."),
     ArenaItem("Quicksilver Anklet", "common", speed=10,
-              blurb="It remembers being a modron's gear. +10 ft. speed."),
+              effect="+10 ft. speed",
+              blurb="It remembers being a modron's gear."),
     # uncommon — 4 gp on the shelf
     ArenaItem("Oil of Keen Edges", "uncommon", hit=1, dmg=1,
-              blurb="Bladelings swear by it. +1 to hit, +1 damage."),
+              effect="+1 to hit, +1 damage",
+              blurb="Bladelings swear by it."),
     ArenaItem("Bytopian Shield-Charm", "uncommon", ac=1, hp=5,
-              blurb="Honest gnomish work. +1 AC, +5 HP."),
+              effect="+1 AC, +5 HP",
+              blurb="Honest gnomish work."),
     ArenaItem("Heart of the Gray Waste", "uncommon", hp=15,
-              blurb="It beats, slowly, joylessly. +15 HP."),
+              effect="+15 HP",
+              blurb="It beats, slowly, joylessly."),
     ArenaItem("Githzerai Focus Bead", "uncommon", hit=2,
-              blurb="Stillness, then the strike. +2 to hit."),
+              effect="+2 to hit",
+              blurb="Stillness, then the strike."),
     # rare — the wheel's center ring only
     ArenaItem("Razorvine Edge", "rare", hit=2, dmg=2,
-              blurb="Pruned from the Lady's own ward. +2 to hit, +2 damage."),
+              effect="+2 to hit, +2 damage",
+              blurb="Pruned from the Lady's own ward."),
     ArenaItem("Modron Chassis Plating", "rare", ac=2, hp=10,
-              blurb="Salvage from the Great March. +2 AC, +10 HP."),
+              effect="+2 AC, +10 HP",
+              blurb="Salvage from the Great March."),
     ArenaItem("Planar Heartstone", "rare", hp=30,
-              blurb="A gate-key that chose flesh instead. +30 HP."),
+              effect="+30 HP",
+              blurb="A gate-key that chose flesh instead."),
     ArenaItem("Shemeshka's Favor", "rare", hit=1, dmg=1, ac=1, hp=10,
-              blurb="The King of the Cross-Trade smiles. Worry later. +1/+1/+1 AC/+10 HP."),
+              effect="+1 to hit, +1 damage, +1 AC, +10 HP",
+              blurb="The King of the Cross-Trade smiles. Worry later."),
 ]}
 
 COMMON_ITEMS = tuple(sorted(n for n, i in ITEMS.items() if i.rarity == "common"))
@@ -337,8 +360,9 @@ class FortuneRun:
             tgt.elite += 1
             tgt.invested_cp += s.price_cp
         else:
-            if len(self.stable) >= TEAM_CAP:
-                raise FortuneError(f"the stable is full ({TEAM_CAP})")
+            if len(self.stable) >= STABLE_CAP:
+                raise FortuneError(
+                    f"the stable is full ({TEAM_CAP} fighting + {STANDBY_SLOTS} standby)")
             self._spend(s.price_cp)
             self.stable.append(StableMember(s.name, invested_cp=s.price_cp))
         self.shop_monsters[slot] = None
@@ -395,6 +419,15 @@ class FortuneRun:
         a.invested_cp += b.invested_cp
         del self.stable[j]
 
+    def swap(self, i: int, j: int) -> None:
+        """Trade two stalls' positions — the last stall is the standby bench,
+        so this is also how a creature is benched or fielded."""
+        self._require("shop")
+        n = len(self.stable)
+        if i == j or not (0 <= i < n) or not (0 <= j < n):
+            raise FortuneError("pick two different stalls")
+        self.stable[i], self.stable[j] = self.stable[j], self.stable[i]
+
     # -- battle ---------------------------------------------------------------------
     def enemy_team(self, round_no: int | None = None) -> list[str]:
         """The opposing composition — a pure function of (seed, round), SPEC 18.8.9."""
@@ -435,9 +468,11 @@ class FortuneRun:
         return team
 
     def player_defs(self):
-        """The stable as kitted MonsterDefs, ready for `ravel.sim` (SPEC 18.8.11)."""
+        """The fielded stable (the standby stall sits out) as kitted MonsterDefs,
+        ready for `ravel.sim` (SPEC 18.8.11)."""
         from .content import get
-        return [apply_kit(get(m.name), m.elite, tuple(m.items)) for m in self.stable]
+        return [apply_kit(get(m.name), m.elite, tuple(m.items))
+                for m in self.stable[:TEAM_CAP]]
 
     def fight(self, placements: list | None = None) -> BattleResult:
         """Resolve the round's battle. Placements are per-stable-member origin cells
@@ -478,22 +513,22 @@ class FortuneRun:
     # -- the wheel -------------------------------------------------------------------
     def spin(self) -> dict:
         """One spin of the three-ring wheel (SPEC 18.8.8). Returns the ring stops and
-        the prize; the client only animates to these numbers."""
+        the prize; the client only animates to these numbers. The ring layouts are
+        the mechanics AND the picture — the no-prize sectors sit spread across the
+        wheel, not bunched — so what the player sees is what was rolled."""
         self._require("wheel")
         rng = self._draw()
         outer = rng.randint(1, 10)
         middle = center = None
-        if outer <= 3:
-            tier = "none"
-        elif outer <= 9:
-            tier = "common"
-        else:
+        o = OUTER_RING[outer - 1]
+        if o in ("none", "common"):
+            tier = o
+        else:                                   # the outer ★ advances inward
             middle = rng.randint(1, 10)
-            if middle == 1:
-                tier = "none"
-            elif middle <= 9:
-                tier = "uncommon"
-            else:
+            m = MIDDLE_RING[middle - 1]
+            if m in ("none", "uncommon"):
+                tier = m
+            else:                               # the middle ★: the center pays rare
                 center = rng.randint(1, 10)
                 tier = "rare"
         prize = self._award(tier, rng)

@@ -98,31 +98,58 @@
     <p class="error-line" id="shop-error"></p>
   </section>
 
-  <!-- ====================== the sands: deploy, then replay ====================== -->
+  <!-- ============== preparation (deploy), then the sands (replay) ============== -->
   <section class="frame sands" id="fw-sands" hidden>
-    <div class="gilt-title"><span class="flourish">✦</span> The Sands <span class="flourish">✦</span></div>
-    <div class="sands-grid">
+    <div class="gilt-title"><span class="flourish">✦</span> <span id="sands-title">Preparation</span> <span class="flourish">✦</span></div>
+
+    <div class="sands-grid" id="deploy-wrap">
+      <div class="deploy-roster" id="deploy-roster"></div>
       <div class="board-wrap"><div id="fw-board"></div></div>
       <div class="sands-side">
         <div id="sands-brief"></div>
-        <div id="sands-verdict"></div>
         <div class="replay-controls" id="deploy-controls">
-          <button type="button" class="gilded" id="btn-gong">Sound the Gong</button>
+          <button type="button" class="gilded" id="btn-gong">Ready ⚔</button>
           <button type="button" id="btn-back-shop">back to the offerings</button>
         </div>
-        <div class="replay-controls" id="replay-controls" hidden>
-          <button type="button" id="rp-play">▶</button>
-          <select id="rp-speed">
-            <option value="400">slow</option>
-            <option value="180" selected>steady</option>
-            <option value="60">swift</option>
-          </select>
-          <button type="button" id="rp-skip">to the judgment</button>
-          <button type="button" id="rp-done" hidden>continue</button>
-          <span id="rp-round"></span>
-        </div>
-        <pre class="fightlog" id="fw-log" hidden></pre>
         <p class="error-line" id="sands-error"></p>
+      </div>
+    </div>
+
+    <!-- the battle replay: the Blood Pit's own machinery (replay.js) -->
+    <div id="battle-wrap" hidden>
+      <div class="arena-grid">
+        <div class="arena-left">
+          <div id="board"></div>
+          <div class="legend" id="legend"></div>
+          <div class="controls">
+            <button id="btn-start" title="to the first bell">|&#8678;</button>
+            <button id="btn-prev-round" title="previous round">&#8676;</button>
+            <button id="btn-prev" title="previous event">&#8672;</button>
+            <button id="btn-play" class="playbtn">▶</button>
+            <button id="btn-next" title="next event">&#8674;</button>
+            <button id="btn-next-round" title="next round">&#8677;</button>
+            <button id="btn-end" title="to the judgment">&#8680;|</button>
+            <select id="speed">
+              <option value="900">cinematic playback</option>
+              <option value="450">slow playback</option>
+              <option value="220" selected>steady playback</option>
+              <option value="80">swift playback</option>
+            </select>
+            <span class="round-ind" id="round-ind"></span>
+          </div>
+          <input type="range" id="scrub" min="0" value="0" step="1">
+        </div>
+        <div class="arena-right">
+          <div class="initiative" id="initiative"></div>
+          <div class="fightlog-wrap">
+            <div class="panel-title hatch">Log</div>
+            <pre class="fightlog" id="fightlog"></pre>
+          </div>
+        </div>
+      </div>
+      <div id="sands-verdict"></div>
+      <div class="replay-controls">
+        <button type="button" class="gilded" id="rp-done" hidden>continue</button>
       </div>
     </div>
   </section>
@@ -154,6 +181,7 @@
   </div>
 </div>
 
+<script src="/static/replay.js"></script>
 <script src="/static/supertemporal.js"></script>
 </body>
 </html>
