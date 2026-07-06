@@ -706,16 +706,22 @@ def tick_conditions_end_of_turn(c: Combatant, rng: RNG, log: list[str]) -> None:
             if cond.duration <= 0:
                 expired.append(name)
         elif cond.save_ability is not None:
+            # The recovery save rolls free of the condition's OWN hindrance:
+            # restrained gives disadvantage on DEX saves, so a DEX-save-ends
+            # restraint (engulf) would nearly never end — and a save-ends
+            # paralysis with a STR/DEX save would literally never end (auto-
+            # fail). Lift the condition for the roll, reinstate on a failure.
+            c.conditions.pop(name, None)
             if saving_throw(c, cond.save_ability, cond.save_dc, rng):
                 log.append(f"    {c.id} shakes off {name} (save)")
-                expired.append(name)
             elif cond.escalates_to and cond.escalates_to not in c.md.condition_immunities:
                 # a multi-stage condition worsens on a repeated failure (e.g. a
                 # basilisk's gaze: restrained -> petrified). If the creature is immune
                 # to the worse condition, the current one simply persists (save-ends).
                 log.append(f"    {c.id}'s {name} worsens to {cond.escalates_to}!")
                 apply_condition(c, cond.escalates_to, cond.source_id, rng, log)
-                expired.append(name)
+            else:
+                c.conditions[name] = cond            # still held fast
     for name in expired:
         c.conditions.pop(name, None)
     cleanup_implied(c)

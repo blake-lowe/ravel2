@@ -81,22 +81,6 @@
         {
           "dice": "2d6",
           "type": "acid"
-        },
-        {
-          "dice": "1d4",
-          "type": "fire"
-        },
-        {
-          "dice": "1d10",
-          "type": "acid"
-        },
-        {
-          "dice": "1d10",
-          "type": "acid"
-        },
-        {
-          "dice": "1d8",
-          "type": "poison"
         }
       ],
       "half_on_save": true,

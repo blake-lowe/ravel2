@@ -74,7 +74,7 @@
     {
       "name": "Unerring Slam",
       "kind": "melee",
-      "attack_bonus": 0,
+      "attack_bonus": 99,
       "damage": [
         {
           "dice": "60d1",

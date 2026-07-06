@@ -2442,7 +2442,10 @@ class Encounter:
             if not saving_throw(actor, Ability.WIS, MORALE_DC, self.rng, log=self.log):
                 actor.routed = True
                 self.log.append(f"  {actor.id}'s morale breaks — it flees!")
-        if actor.routed:
+        cornered = actor.routed and not actor.can_move   # held fast: fights on
+        if cornered:
+            self.log.append(f"  {actor.id} cannot flee — cornered, it fights on")
+        if actor.routed and not cornered:
             self._flee(actor)
         elif actor.surprised:
             self.log.append(f"  {actor.id} is surprised, no action")

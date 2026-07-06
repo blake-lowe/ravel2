@@ -71,7 +71,7 @@
     {
       "name": "Pseudopod",
       "kind": "melee",
-      "attack_bonus": 0,
+      "attack_bonus": 13,
       "damage": [
         {
           "dice": "2d8+6",

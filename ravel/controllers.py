@@ -355,6 +355,20 @@ class HeuristicController:
             effective = [o for o in pool if tactics.expected_damage(enc, actor, o) > 0]
             if effective:                      # don't swing at foes immune to our damage
                 return min(effective, key=lambda o: (_target(enc, o).hp, o.target_id))
+        # 7b. an at-will area even on a SINGLE foe: creatures whose whole kit is
+        #     area abilities (Hellfire Engine, Eidolon) otherwise stand idle in
+        #     one-on-ones — the cluster gate in step 2 never opens for them.
+        #     Recharge areas stay held for clusters (step 2's conservatism).
+        aoe1 = [(tactics.expected_damage(enc, actor, o), o) for o in areas
+                if any(a.name == o.name and a.recharge_min == 0
+                       for a in actor.md.areas)]
+        aoe1 = [(d, o) for d, o in aoe1 if d > 0]
+        if aoe1:
+            top = max(d for d, _ in aoe1)
+            best = [o for d, o in aoe1 if d == top]
+            best.sort(key=lambda o: (getattr(_target(enc, o), "hp", 1 << 30),
+                                     o.target_id or ""))
+            return best[0]
         # can't attack this turn: escape a grapple, else close the gap (Dash > Advance)
         escape = [o for o in options if o.kind == "escape"]
         if escape:

@@ -135,8 +135,10 @@ def parse_attack(name: str, text: str):
     if not tag:
         return None
     kinds = tag.group(1)
-    hit = re.search(r"\{@hit (-?\d+)\}", text)
+    hit = re.search(r"\{@hit \+?(-?\d+)\}", text)   # Zuggtmoy writes "{@hit +13}"
     bonus = int(hit.group(1)) if hit else 0
+    if hit is None and "automatic hit" in text:     # the Marut's Unerring Slam
+        bonus = 99
     # drop a "...or N (XdY) damage if the swarm has half its hit points..." bloodied clause
     # (that reduction is modelled by the swarm flag, not a second damage entry)
     dtext = re.sub(r",?\s*or\s+[^.]*?(?:half (?:of )?its hit points|hit points or fewer)"

@@ -102,34 +102,6 @@
         {
           "dice": "4d8",
           "type": "acid"
-        },
-        {
-          "dice": "1d10",
-          "type": "fire"
-        },
-        {
-          "dice": "2d8",
-          "type": "acid"
-        },
-        {
-          "dice": "3d8+5",
-          "type": "bludgeoning"
-        },
-        {
-          "dice": "5d8",
-          "type": "lightning"
-        },
-        {
-          "dice": "5d8",
-          "type": "lightning"
-        },
-        {
-          "dice": "5d10",
-          "type": "bludgeoning"
-        },
-        {
-          "dice": "3d12",
-          "type": "thunder"
         }
       ],
       "half_on_save": true,
