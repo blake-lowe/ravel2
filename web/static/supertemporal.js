@@ -53,6 +53,20 @@ function crStr(cr) {
   return cr === 0.125 ? "1/8" : cr === 0.25 ? "1/4" : cr === 0.5 ? "1/2" : String(cr);
 }
 
+// Price ink by denomination: at least a gold, silver change, copper change.
+function priceClass(cp) {
+  return cp >= 100 ? "p-gold" : cp >= 10 ? "p-silver" : "p-copper";
+}
+
+// The house's seal, watermarked behind stock rated above the tier (> 3 gp).
+const SEAL_SVG = `<svg class="hot-seal" viewBox="0 0 100 100" aria-hidden="true">
+  <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="3.5"/>
+  <circle cx="50" cy="50" r="37" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-dasharray="4.5 3.5"/>
+  <text x="50" y="61" text-anchor="middle" font-size="34" fill="currentColor"
+        font-family="serif" font-weight="bold">✦</text>
+</svg>`;
+
 // Token art: walk the candidate URLs on error, fall back to an initial.
 function tokenImg(arts, name) {
   const letter = `<span class="mtoken letter">${esc(name[0] || "?")}</span>`;
@@ -451,8 +465,10 @@ function renderStock() {
       && m.elite < (S.train_cap || 3));
     const topTier = !s.overtier && s.cr === S.cap;  // book CR at the stock tier
     const broke = brokeAttrs(s.price_cp, liquid);
+    const hot = s.price_cp > 300;      // over 3 gp: rated above the stock tier
     return `<div class="slot ${s.frozen ? "is-frozen" : ""} ${topTier ? "top-tier" : ""}
-                 ${s.overtier ? "overtier" : ""}" data-name="${esc(s.name)}">
+                 ${s.overtier ? "overtier" : ""} ${hot ? "hot" : ""}" data-name="${esc(s.name)}">
+      ${hot ? SEAL_SVG : ""}
       ${bestiaryLink(s.name)}
       ${s.overtier
         ? `<span class="slot-tag over" title="earned stock from beyond the tier — it waits untilW bought">overtier</span>`
@@ -463,9 +479,8 @@ function renderStock() {
       <div class="mmeta">CR ${crStr(s.cr)} · ${esc(s.size)}</div>
       <div class="mmeta">${esc(s.type)}${s.alignment ? " · " + esc(alignStr(s.alignment)) : ""}</div>
       <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)}</div>
-      <div class="price ${s.price_cp > 300 ? "hot" : ""}">${esc(s.price)}${
-        s.price_cp > 300
-          ? ` <span class="hot-mark" title="over 3 gp: the pit rates this above the stock tier">▲</span>` : ""}</div>
+      <div class="price ${priceClass(s.price_cp)}"${hot
+        ? ` title="over 3 gp: the pit rates this above the stock tier"` : ""}>${esc(s.price)}</div>
       <div class="btnrow bottom">
         <button data-buy="${i}" ${broke}>buy</button>
         ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}"
@@ -492,7 +507,7 @@ function renderStock() {
       <div class="ieffect">${esc(s.effect)}</div>
       <div class="iflavor">${esc(s.blurb)}</div>
       <div class="mmeta">${esc(s.rarity)}</div>
-      <div class="price">${esc(s.price)}</div>
+      <div class="price ${priceClass(s.price_cp)}">${esc(s.price)}</div>
       <div class="btnrow bottom"><button data-ibuy="${i}" ${broke}>buy</button></div>
     </div>`;
   }).join("");

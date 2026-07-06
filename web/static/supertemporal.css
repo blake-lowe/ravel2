@@ -272,21 +272,26 @@ body.supertemporal {
 .fw .sands-side { display: flex; flex-direction: column; gap: 10px; font-size: 13px;
                   min-width: 0; }
 .fw .replay-controls { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+/* the verdict stamps straight down: slightly large, then pressed into place —
+   inline-block + a centered origin so the box hugs the words (a full-width
+   block scaling about its distant center reads as a sideways fly-in) */
 .fw .verdict { font-size: 15px; font-variant: small-caps; letter-spacing: 1px;
-               padding: 6px 0; transform: rotate(-1.5deg);   /* the notary's slant */
-               animation: fw-stamp .38s cubic-bezier(.2, 1.4, .4, 1) both; }
+               padding: 6px 0; display: inline-block; transform-origin: 50% 50%;
+               transform: rotate(-1.5deg);                  /* the notary's slant */
+               animation: fw-stamp .32s cubic-bezier(.25, .9, .3, 1.1) both; }
 .fw .verdict.won { color: var(--gilt); }
 .fw .verdict.lost { color: var(--lacquer); }
 @keyframes fw-stamp {
-  from { transform: rotate(-7deg) scale(1.7); opacity: 0; }
-  60%  { opacity: 1; }
+  from { transform: rotate(-5deg) scale(1.45); opacity: 0; }
+  55%  { opacity: 1; }
   to   { transform: rotate(-1.5deg) scale(1); } }
 /* the gong sounds: tokens drop onto their cells with a small bounce (animating
-   the token's INNER shapes — the group's transform carries its position) */
-.fw #battle-wrap .tok > * { animation: fw-drop .5s cubic-bezier(.2, 1.5, .4, 1) backwards; }
-.fw #battle-wrap .tok:nth-of-type(2n) > * { animation-delay: .07s; }
-.fw #battle-wrap .tok:nth-of-type(3n) > * { animation-delay: .13s; }
-.fw #battle-wrap .tok:nth-of-type(5n) > * { animation-delay: .19s; }
+   the token's INNER shapes — the group's transform carries its position; the
+   replay board's tokens are g.token, unlike the deploy board's g.tok) */
+.fw #battle-wrap .token > * { animation: fw-drop .5s cubic-bezier(.2, 1.5, .4, 1) backwards; }
+.fw #battle-wrap .token:nth-of-type(2n) > * { animation-delay: .07s; }
+.fw #battle-wrap .token:nth-of-type(3n) > * { animation-delay: .13s; }
+.fw #battle-wrap .token:nth-of-type(5n) > * { animation-delay: .19s; }
 @keyframes fw-drop { from { transform: translateY(-16px); opacity: 0; } }
 
 /* ---- the wheel ----------------------------------------------------------------------- */
@@ -397,10 +402,11 @@ body.supertemporal {
 @keyframes fw-swipe { from { clip-path: polygon(0 0, 0 0, 0 0); }
                       to   { clip-path: polygon(0 0, 250% 0, 0 250%); } }
 .fw .slot.reveal .btnrow, .fw .slot.reveal .corner-link, .fw .slot.reveal .freeze,
-.fw .slot.reveal .corner-bench, .fw .slot.reveal .slot-tag, .fw .slot.reveal .rib {
+.fw .slot.reveal .corner-bench, .fw .slot.reveal .slot-tag, .fw .slot.reveal .rib,
+.fw .slot.reveal .hot-seal {
   animation: fw-fade .35s both 1.7s;
 }
-@keyframes fw-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fw-fade { from { opacity: 0; } }   /* fades to each element's own ink */
 /* the border strips: top->right drawn from the top-left corner, while
    bottom->left is drawn from the bottom-right — meeting to close the ring */
 .fw .slot .rb { position: absolute; background: var(--rb); z-index: 3;
@@ -420,30 +426,31 @@ body.supertemporal {
 @keyframes fw-draw-x { to { transform: scaleX(1); } }
 @keyframes fw-draw-y { to { transform: scaleY(1); } }
 
-/* hot stock (over 3 gp: rated above the tier) — a gilded sheen on the price */
-.fw .slot .price.hot {
-  font-weight: 600;
-  background: linear-gradient(100deg, #8a6d1f 25%, #eed898 48%, #fdf3d0 52%,
-              #eed898 56%, #8a6d1f 75%);
-  background-size: 220% 100%;
+/* price ink by denomination: gold coin, silver coin, copper change */
+.fw .slot .price.p-gold {
+  font-weight: 600;                    /* a still sheen — dark gold, no cream */
+  background: linear-gradient(100deg, #6d5514 20%, #a8842a 42%, #c9a952 50%,
+              #a8842a 58%, #6d5514 80%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: fw-shine 2.6s linear infinite;
 }
-@keyframes fw-shine { from { background-position: 110% 0; }
-                      to   { background-position: -110% 0; } }
-.fw .slot .price.hot .hot-mark { display: inline-block; font-size: 9px;
-                                 animation: fw-ember 1.6s ease-in-out infinite; }
-@keyframes fw-ember { 0%, 100% { opacity: .5; transform: translateY(0); }
-                      50%      { opacity: 1;  transform: translateY(-1.5px); } }
+.fw .slot .price.p-silver { color: #4a4f54; }
+.fw .slot .price.p-copper { color: #a2653c; }
+
+/* hot stock (over 3 gp: rated above the tier): the house's lacquer seal,
+   watermarked behind the card's figures */
+.fw .slot.hot { z-index: 0; }          /* let the seal sit under the ink */
+.fw .slot .hot-seal {
+  position: absolute; z-index: -1; width: 82px; height: 82px;
+  left: 50%; top: 55%; transform: translate(-50%, -50%) rotate(-14deg);
+  color: var(--lacquer); opacity: .11; pointer-events: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .fw .slot.reveal *, .fw .slot .rb, .fw .slot .price.hot .hot-mark,
-  .fw .slot.overtier::after, .fw .slot .price.hot,
+  .fw .slot.reveal *, .fw .slot .rb, .fw .slot.overtier::after,
   .fw #st-purse, .fw .chip, .fw .verdict,
-  .fw #battle-wrap .tok > * { animation: none !important; }
+  .fw #battle-wrap .token > * { animation: none !important; }
   .fw .slot .rb { transform: none; }
   .fw .slot.reveal { border-color: var(--rb) !important; }
-  .fw .slot .price.hot { color: var(--gilt); background: none; }
 }
 
 /* the hover chant: the Bestiary's full stat block beside any creature card */
