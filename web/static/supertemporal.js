@@ -238,6 +238,7 @@ function memberCard(m, i) {
   const fieldFull = S.stable.filter((x) => !x.standby).length >= S.team_cap;
   return `<div class="slot ${targetable ? "targetable" : ""}"
                data-name="${esc(m.name)}" ${targetable ? `data-pick="${i}"` : ""}>
+    ${targetable ? "" : bestiaryLink(m.name)}
     ${m.standby ? `<span class="slot-tag">standby</span>` : ""}
     ${tokenImg(m.art, m.name)}
     <div class="mname">${esc(m.name)} ${stars}</div>
@@ -252,10 +253,6 @@ function memberCard(m, i) {
             ? "send to standby — trades places with the stall's occupant"
             : "send to standby (sits out the battles)"}">↧</button>`}
       <div class="btnrow bottom">
-        <a class="btnlink" href="/bestiary#${encodeURIComponent(m.name)}" target="_blank"
-           title="the full chant, in the Bestiary">View in Bestiary</a>
-      </div>
-      <div class="btnrow">
         <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
         ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 damage">train ★</button>` : ""}
         ${fusable ? `<button data-fuse="${i}"
@@ -384,15 +381,35 @@ function speedStr(s) {
   return `${best} ft${glyph ? " " + glyph : ""}`;
 }
 
+// A quiet chain link, top-left of a card: the full chant in the Bestiary.
+const LINK_SVG = `<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true">
+  <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+    d="M9.8 14.2 L14.2 9.8 M8.6 12.2 l-3 3 a3.4 3.4 0 0 0 4.8 4.8 l3 -3
+       M15.4 11.8 l3 -3 a3.4 3.4 0 0 0 -4.8 -4.8 l-3 3"/></svg>`;
+function bestiaryLink(name) {
+  return `<a class="corner-link" href="/bestiary#${encodeURIComponent(name)}"
+    target="_blank" title="the full chant, in the Bestiary">${LINK_SVG}</a>`;
+}
+
+// Coin the player could raise this instant: the purse plus half of everything
+// invested in the stable (selling is always on the table).
+function liquidCp() {
+  return S.purse_cp + S.stable.reduce((t, m) => t + Math.floor(m.invested_cp / 2), 0);
+}
+
 function renderStock() {
   const row = $("#stock-row");
+  const liquid = liquidCp();     // the purse plus what selling everything raises
   row.innerHTML = S.shop.monsters.map((s, i) => {
     if (!s) return `<div class="slot empty"></div>`;
     const owned = S.stable.findIndex((m) => m.name === s.name
       && m.elite < (S.train_cap || 3));
     const topTier = !s.overtier && s.cr === S.cap;  // book CR at the stock tier
+    const broke = s.price_cp > liquid;
+    const brokeTip = ` title="beyond your purse, even selling the stable"`;
     return `<div class="slot ${s.frozen ? "is-frozen" : ""} ${topTier ? "top-tier" : ""}
                  ${s.overtier ? "overtier" : ""}" data-name="${esc(s.name)}">
+      ${bestiaryLink(s.name)}
       ${s.overtier
         ? `<span class="slot-tag over" title="earned stock from beyond the tier — it waits until bought">overtier</span>`
         : `<button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
@@ -404,13 +421,10 @@ function renderStock() {
       <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)}</div>
       <div class="price">${esc(s.price)}</div>
       <div class="btnrow bottom">
-        <a class="btnlink" href="/bestiary#${encodeURIComponent(s.name)}" target="_blank"
-           title="the full chant, in the Bestiary">View in Bestiary</a>
-      </div>
-      <div class="btnrow">
-        <button data-buy="${i}">buy</button>
-        ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}"
-            title="feed this copy straight to yours: +1 AC, +1 damage (max ★★★)">train ★</button>` : ""}
+        <button data-buy="${i}" ${broke ? "disabled" + brokeTip : ""}>buy</button>
+        ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}" ${broke ? "disabled" : ""}
+            title="${broke ? "beyond your purse, even selling the stable"
+              : "feed this copy straight to yours: +1 AC, +1 damage (max ★★★)"}">train ★</button>` : ""}
       </div>
     </div>`;
   }).join("");
@@ -423,6 +437,7 @@ function renderStock() {
 
   $("#item-shelf").innerHTML = S.shop.items.map((s, i) => {
     if (!s) return `<div class="slot equip empty"></div>`;
+    const broke = s.price_cp > liquid;
     return `<div class="slot equip ${s.frozen ? "is-frozen" : ""}">
       <span class="rib ${esc(s.rarity)}"></span>
       <button class="freeze ${s.frozen ? "on" : ""}" data-ifreeze="${i}"
@@ -433,7 +448,8 @@ function renderStock() {
       <div class="iflavor">${esc(s.blurb)}</div>
       <div class="mmeta">${esc(s.rarity)}</div>
       <div class="price">${esc(s.price)}</div>
-      <div class="btnrow bottom"><button data-ibuy="${i}">buy</button></div>
+      <div class="btnrow bottom"><button data-ibuy="${i}"
+        ${broke ? `disabled title="beyond your purse, even selling the stable"` : ""}>buy</button></div>
     </div>`;
   }).join("");
   $("#item-shelf").querySelectorAll("[data-ibuy]").forEach((b) =>
