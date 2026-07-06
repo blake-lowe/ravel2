@@ -175,10 +175,25 @@ function resume() {
 
 // ------------------------------- status row ------------------------------------
 
+let PREV_PURSE = null;
+let PREV_LIVES = null;
+
 function renderStatus() {
-  $("#st-purse").innerHTML = coinsHtml(S.purse_cp);
+  const purse = $("#st-purse");
+  purse.innerHTML = coinsHtml(S.purse_cp);
+  if (PREV_PURSE != null && PREV_PURSE !== S.purse_cp) {
+    purse.classList.remove("tick-gain", "tick-spend");
+    void purse.offsetWidth;                       // restart the pulse
+    purse.classList.add(S.purse_cp > PREV_PURSE ? "tick-gain" : "tick-spend");
+  }
+  PREV_PURSE = S.purse_cp;
+  const burned = PREV_LIVES != null && S.lives < PREV_LIVES;
+  const rekindled = PREV_LIVES != null && S.lives > PREV_LIVES;
+  PREV_LIVES = S.lives;
   $("#st-lives").innerHTML = Array.from({ length: S.lives_max }, (_, i) =>
-    `<span class="chip ${i < S.lives ? "" : "spent"}"></span>`).join("");
+    `<span class="chip ${i < S.lives
+      ? (rekindled && i === S.lives - 1 ? "rekindle" : "")
+      : "spent" + (burned && i === S.lives ? " burn" : "")}"></span>`).join("");
   $("#st-round").textContent = S.round;
   $("#st-cap").textContent = `CR ${S.cap}`;
   const losses = S.history.filter((h) => !h.won).length;
@@ -448,9 +463,9 @@ function renderStock() {
       <div class="mmeta">CR ${crStr(s.cr)} · ${esc(s.size)}</div>
       <div class="mmeta">${esc(s.type)}${s.alignment ? " · " + esc(alignStr(s.alignment)) : ""}</div>
       <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)}</div>
-      <div class="price ${s.best_cr != null && s.best_cr > s.cr ? "hot" : ""}">${esc(s.price)}${
-        s.best_cr != null && s.best_cr > s.cr
-          ? ` <span class="hot-mark" title="the pit rates this stronger than its book CR — priced accordingly">▲</span>` : ""}</div>
+      <div class="price ${s.price_cp > 300 ? "hot" : ""}">${esc(s.price)}${
+        s.price_cp > 300
+          ? ` <span class="hot-mark" title="over 3 gp: the pit rates this above the stock tier">▲</span>` : ""}</div>
       <div class="btnrow bottom">
         <button data-buy="${i}" ${broke}>buy</button>
         ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}"
@@ -902,8 +917,8 @@ async function doSpin() {
   const seq = [];
   if (res.spin.middle != null) seq.push(() => spinRing(1, res.spin.middle, 5));
   if (res.spin.center != null) seq.push(() => spinRing(2, res.spin.center, 6));
-  let delay = 2300;
-  for (const fn of seq) { setTimeout(fn, delay); delay += 2300; }
+  let delay = 2600;                    // matches the ring's long settling tail
+  for (const fn of seq) { setTimeout(fn, delay); delay += 2600; }
   setTimeout(() => {
     const p = res.spin.prize;
     const lines = {

@@ -54,6 +54,30 @@ body.supertemporal {
             background: repeating-conic-gradient(var(--gilt-wash) 0 20deg,
                                                  transparent 20deg 40deg); }
 .fw .chip.spent { border-color: var(--lacquer); background: var(--lacquer); }
+/* coin tick: the purse pulses when it changes — gold on gain, lacquer on spend */
+.fw #st-purse.tick-gain { animation: fw-tick-gain .55s ease-out; }
+.fw #st-purse.tick-spend { animation: fw-tick-spend .55s ease-out; }
+@keyframes fw-tick-gain {
+  30% { transform: scale(1.12); text-shadow: 0 0 9px rgba(184, 145, 46, .8); } }
+@keyframes fw-tick-spend {
+  30% { transform: scale(.92); text-shadow: 0 0 9px rgba(143, 31, 26, .7); } }
+/* chip burn: the life just spent flares and shakes; a regained one rekindles */
+.fw .chip.burn { animation: fw-burn .8s ease-out; }
+@keyframes fw-burn {
+  0%   { background: repeating-conic-gradient(var(--gilt-wash) 0 20deg,
+                                              transparent 20deg 40deg);
+         border-color: var(--gilt); transform: translateX(0) scale(1.5); }
+  25%  { transform: translateX(-2px) scale(1.35); }
+  40%  { background: var(--lacquer); border-color: var(--lacquer);
+         transform: translateX(2px) scale(1.25); }
+  55%  { transform: translateX(-2px) scale(1.12); }
+  70%  { transform: translateX(1px) scale(1.05); }
+  100% { transform: translateX(0) scale(1); } }
+.fw .chip.rekindle { animation: fw-rekindle .7s ease-out; }
+@keyframes fw-rekindle {
+  0%  { background: var(--lacquer); border-color: var(--lacquer); transform: scale(.6); }
+  55% { transform: scale(1.3); box-shadow: 0 0 10px rgba(184, 145, 46, .8); }
+  100% { transform: scale(1); } }
 .fw .stat-box.name-box { display: flex; align-items: center; font-style: italic; }
 .fw .restart { margin-left: auto; align-self: center; font-size: 11px;
                letter-spacing: 0; color: var(--ink-faint); background: none;
@@ -249,9 +273,21 @@ body.supertemporal {
                   min-width: 0; }
 .fw .replay-controls { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .fw .verdict { font-size: 15px; font-variant: small-caps; letter-spacing: 1px;
-               padding: 6px 0; }
+               padding: 6px 0; transform: rotate(-1.5deg);   /* the notary's slant */
+               animation: fw-stamp .38s cubic-bezier(.2, 1.4, .4, 1) both; }
 .fw .verdict.won { color: var(--gilt); }
 .fw .verdict.lost { color: var(--lacquer); }
+@keyframes fw-stamp {
+  from { transform: rotate(-7deg) scale(1.7); opacity: 0; }
+  60%  { opacity: 1; }
+  to   { transform: rotate(-1.5deg) scale(1); } }
+/* the gong sounds: tokens drop onto their cells with a small bounce (animating
+   the token's INNER shapes — the group's transform carries its position) */
+.fw #battle-wrap .tok > * { animation: fw-drop .5s cubic-bezier(.2, 1.5, .4, 1) backwards; }
+.fw #battle-wrap .tok:nth-of-type(2n) > * { animation-delay: .07s; }
+.fw #battle-wrap .tok:nth-of-type(3n) > * { animation-delay: .13s; }
+.fw #battle-wrap .tok:nth-of-type(5n) > * { animation-delay: .19s; }
+@keyframes fw-drop { from { transform: translateY(-16px); opacity: 0; } }
 
 /* ---- the wheel ----------------------------------------------------------------------- */
 .fw-veil { position: fixed; inset: 0; background: rgba(33,29,24,.55);
@@ -264,7 +300,8 @@ body.supertemporal {
 .fw-veil .whisper { font-style: italic; color: var(--ink-faint); font-size: 12px;
                     margin: 0 0 10px; }
 #fw-wheel { max-width: 380px; margin: 0 auto; display: block; }
-#fw-wheel .ring { transition: transform 2.2s cubic-bezier(.15,.8,.25,1); }
+/* the long tail passes the pointer once and settles back — a near-miss tick */
+#fw-wheel .ring { transition: transform 2.45s cubic-bezier(.24, 1.14, .32, 1); }
 @media (prefers-reduced-motion: reduce) { #fw-wheel .ring { transition: none; } }
 .fw-veil .prize-line { min-height: 24px; font-size: 15px; margin: 10px 0 6px; }
 .fw-veil .prize-line strong { color: var(--gilt); }
@@ -383,8 +420,17 @@ body.supertemporal {
 @keyframes fw-draw-x { to { transform: scaleX(1); } }
 @keyframes fw-draw-y { to { transform: scaleY(1); } }
 
-/* hot stock: the pit rates it above its book CR — lacquer on the price tag */
-.fw .slot .price.hot { color: var(--lacquer); font-weight: 600; }
+/* hot stock (over 3 gp: rated above the tier) — a gilded sheen on the price */
+.fw .slot .price.hot {
+  font-weight: 600;
+  background: linear-gradient(100deg, #8a6d1f 25%, #eed898 48%, #fdf3d0 52%,
+              #eed898 56%, #8a6d1f 75%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: fw-shine 2.6s linear infinite;
+}
+@keyframes fw-shine { from { background-position: 110% 0; }
+                      to   { background-position: -110% 0; } }
 .fw .slot .price.hot .hot-mark { display: inline-block; font-size: 9px;
                                  animation: fw-ember 1.6s ease-in-out infinite; }
 @keyframes fw-ember { 0%, 100% { opacity: .5; transform: translateY(0); }
@@ -392,9 +438,12 @@ body.supertemporal {
 
 @media (prefers-reduced-motion: reduce) {
   .fw .slot.reveal *, .fw .slot .rb, .fw .slot .price.hot .hot-mark,
-  .fw .slot.overtier::after { animation: none !important; }
+  .fw .slot.overtier::after, .fw .slot .price.hot,
+  .fw #st-purse, .fw .chip, .fw .verdict,
+  .fw #battle-wrap .tok > * { animation: none !important; }
   .fw .slot .rb { transform: none; }
   .fw .slot.reveal { border-color: var(--rb) !important; }
+  .fw .slot .price.hot { color: var(--gilt); background: none; }
 }
 
 /* the hover chant: the Bestiary's full stat block beside any creature card */
