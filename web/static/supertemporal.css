@@ -378,8 +378,8 @@ body.supertemporal {
 @keyframes fw-sheen { 0%   { background-position: 100% 0; }
                       55%  { background-position: 0% 0; }
                       100% { background-position: 0% 0; } }
-.fw .slot .slot-tag.over {   /* top-right, opaque, square — kin to .set-progress */
-  left: auto; right: 4px; top: 4px; z-index: 2;
+.fw .slot .slot-tag.over {   /* beside the freeze ❄, opaque — kin to .set-progress */
+  left: auto; right: 28px; top: 4px; z-index: 2;
   font-family: var(--mono); font-variant: normal; letter-spacing: 1px;
   text-transform: uppercase;
   color: #2e5f8a; border: 1px solid #2e5f8a;

@@ -321,6 +321,24 @@ def test_training_caps_at_three_and_summons_overtier():
     assert FortuneRun.from_dict(d, run.catalog).to_dict() == d
 
 
+def test_overtier_freeze_controls_the_night_not_the_reroll():
+    name = lowest_cr_name()
+    run = stocked_run()
+    run.stable = [StableMember(name, elite=2), StableMember(name)]
+    run.train(0, 1)                                # summons the overtier slot
+    run.reroll()                                   # rerolls never touch it...
+    assert any(s and s.overtier for s in run.shop_monsters)
+    run._next_shop()                               # ...but the night sweeps it
+    assert not any(s and s.overtier for s in run.shop_monsters)
+    run.stable = [StableMember(name, elite=2), StableMember(name)]
+    run.train(0, 1)
+    idx = next(i for i, s in enumerate(run.shop_monsters) if s and s.overtier)
+    run.toggle_freeze("monster", idx)              # frozen: it crosses the night
+    run._next_shop()
+    kept = [s for s in run.shop_monsters if s and s.overtier]
+    assert len(kept) == 1 and kept[0].frozen
+
+
 def test_manual_of_gainful_exercise_trains():
     run = stocked_run()
     run.buy(0)

@@ -389,14 +389,16 @@ class FortuneRun:
                 return e
         return pool[-1]
 
-    def _roll_shop(self, keep_frozen: bool = True) -> None:
+    def _roll_shop(self, keep_frozen: bool = True, new_night: bool = False) -> None:
         pool = self._pool()
         if not pool:
             raise FortuneError("no monsters in the selected books at this CR")
         old_m = self.shop_monsters if keep_frozen else []
         old_i = self.shop_items if keep_frozen else []
-        # earned overtier offerings ride out rerolls AND fresh nights until bought
-        bonus = [s for s in self.shop_monsters if s is not None and s.overtier]
+        # earned overtier offerings ride out REROLLS untouched; crossing into a
+        # new night they survive only when frozen, like any other slot
+        bonus = [s for s in self.shop_monsters
+                 if s is not None and s.overtier and (not new_night or s.frozen)]
         self.shop_monsters = []
         for i in range(MONSTER_SLOTS):
             prev = old_m[i] if i < len(old_m) else None
@@ -782,7 +784,7 @@ class FortuneRun:
     def _next_shop(self) -> None:
         self.phase = "shop"
         self.purse_cp = START_PURSE_CP   # the house stakes the same 10 gp every
-        self._roll_shop()                # night; unspent coin is forfeit
+        self._roll_shop(new_night=True)  # night; unspent coin is forfeit
 
     # -- the wheel -------------------------------------------------------------------
     def spin(self) -> dict:

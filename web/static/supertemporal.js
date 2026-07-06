@@ -479,10 +479,10 @@ function renderStock() {
     return `<div class="slot ${s.frozen ? "is-frozen" : ""} ${topTier ? "top-tier" : ""}
                  ${s.overtier ? "overtier" : ""}" data-name="${esc(s.name)}">
       ${bestiaryLink(s.name)}
-      ${s.overtier
-        ? `<span class="slot-tag over" title="earned stock from beyond the tier — it waits untilW bought">overtier</span>`
-        : `<button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
-             title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>`}
+      ${s.overtier ? `<span class="slot-tag over"
+        title="earned stock from beyond the tier — rerolls never touch it; freeze it to keep it past the next battle">overtier</span>` : ""}
+      <button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
+        title="${s.frozen ? "unfreeze" : "freeze through the reroll and into the next night"}">❄</button>
       ${tokenImg(s.art, s.name, s.size)}
       <div class="mname">${esc(s.name)}</div>
       <div class="mmeta">CR ${crStr(s.cr)} · ${esc(s.size)}</div>
