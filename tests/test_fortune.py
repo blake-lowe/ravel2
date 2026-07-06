@@ -369,7 +369,7 @@ def test_apply_kit_deltas():
     kitted = apply_kit(md, elite=2, items=("Oil of Keen Edges", "Rust-Ward Talisman",
                                            "Flask of Elemental Vigor"))
     assert kitted.ac == md.ac + 2 + 1              # 2 training + talisman
-    assert kitted.hp == md.hp + 5                  # the flask; training pays in damage
+    assert kitted.hp == md.hp + 4                  # the flask; training pays in damage
     assert kitted.name == md.name + " ★★"
     for name, atk in md.attacks.items():
         assert kitted.attacks[name].attack_bonus == atk.attack_bonus + 1

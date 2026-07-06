@@ -39,7 +39,6 @@ TRAIN_AC, TRAIN_DMG = 1, 1     # per elite level: +1 AC, +1 damage
 TRAIN_CAP = 3                  # stars; a third star summons an overtier offering
 SET_SIZE = 5                   # owned creatures of one type that complete a set
 TRAIN_ITEM = "Manual of Gainful Exercise"
-TRAIN_ITEM_PRICE_CP = 500      # 5 gp for a level of training in a book
 ITEM_PRICE_CP = {"common": 200, "uncommon": 400, "rare": 600}
 ENEMY_BUDGET_FRAC = 0.75
 BOSS_BUDGET_MULT = 1.5         # a lone boss buys action economy with bulk
@@ -94,6 +93,7 @@ class ArenaItem:
     adv_types: tuple[str, ...] = ()   # attack advantage vs these creature types
     adv_aligns: tuple[str, ...] = ()  # ...and vs these alignments ("evil"/"good")
     train: bool = False               # a manual: +1 elite level instead of a kit boon
+    price_cp: int = 0                 # shelf price override (0 = rarity default)
     effect: str = ""           # the mechanics, plainly stated
     blurb: str = ""            # the flavor, italicized on the shelf
 
@@ -106,11 +106,11 @@ ITEMS: dict[str, ArenaItem] = {i.name: i for i in [
     ArenaItem("Rust-Ward Talisman", "common", ac=1,
               effect="+1 AC",
               blurb="Proof against rust dragons and worse."),
-    ArenaItem("Flask of Elemental Vigor", "common", hp=5,
-              effect="+5 HP",
+    ArenaItem("Flask of Elemental Vigor", "common", hp=4,
+              effect="+4 HP",
               blurb="Bottled at the edge of the Chaos."),
-    ArenaItem("Quicksilver Anklet", "common", speed=10,
-              effect="+10 ft. speed",
+    ArenaItem("Quicksilver Anklet", "common", ac=1, speed=10,
+              effect="+1 AC, +10 ft. speed",
               blurb="It remembers being a modron's gear."),
     # uncommon — 4 gp on the shelf
     ArenaItem("Oil of Keen Edges", "uncommon", hit=1, dmg=1,
@@ -119,23 +119,24 @@ ITEMS: dict[str, ArenaItem] = {i.name: i for i in [
     ArenaItem("Bytopian Shield-Charm", "uncommon", ac=1, hp=5,
               effect="+1 AC, +5 HP",
               blurb="Honest gnomish work."),
-    ArenaItem("Heart of the Gray Waste", "uncommon", hp=15,
-              effect="+15 HP",
+    ArenaItem("Heart of the Gray Waste", "uncommon", hp=8,
+              effect="+8 HP",
               blurb="It beats, slowly, joylessly."),
     ArenaItem("Githzerai Focus Bead", "uncommon", hit=2,
               effect="+2 to hit",
               blurb="Stillness, then the strike."),
-    ArenaItem(TRAIN_ITEM, "uncommon", train=True,
+    ArenaItem(TRAIN_ITEM, "uncommon", train=True, price_cp=500,
               effect="Trains a creature one level (+1 AC, +1 damage; max ★★★)",
               blurb="The yugoloth on the frontispiece counts your repetitions."),
-    # uncommon wards — real magic items, resistance in a clasp
-    ArenaItem("Ring of Warmth", "uncommon", resist=("cold",),
+    # uncommon wards — real magic items, resistance in a clasp. Nearly free of
+    # generic value, priced at 3 gp: a counter-buy after divining a typed foe
+    ArenaItem("Ring of Warmth", "uncommon", resist=("cold",), price_cp=300,
               effect="Resistance to cold damage",
               blurb="Warm as a hearth-stone smuggled out of Ysgard."),
-    ArenaItem("Armor of Fire Resistance", "uncommon", resist=("fire",),
+    ArenaItem("Armor of Fire Resistance", "uncommon", resist=("fire",), price_cp=300,
               effect="Resistance to fire damage",
               blurb="Salamander hide, quenched in the Oceanus."),
-    ArenaItem("Brooch of Shielding", "uncommon", resist=("force",),
+    ArenaItem("Brooch of Shielding", "uncommon", resist=("force",), price_cp=300,
               effect="Resistance to force damage",
               blurb="Turns aside magic missiles and sharper insults."),
     # rare — the wheel's center ring only
@@ -169,8 +170,8 @@ ITEMS: dict[str, ArenaItem] = {i.name: i for i in [
     ArenaItem("Talisman of Pure Good", "rare", adv_aligns=("evil",),
               effect="Advantage against evil creatures",
               blurb="It weighs nothing and judges everything."),
-    ArenaItem("Talisman of Ultimate Evil", "rare", adv_aligns=("good",),
-              effect="Advantage against good creatures",
+    ArenaItem("Talisman of Ultimate Evil", "rare", dmg=1, adv_aligns=("good",),
+              effect="+1 damage; advantage against good creatures",
               blurb="Best not to ask where Shemeshka found it."),
 ]}
 
@@ -180,9 +181,9 @@ RARE_ITEMS = tuple(sorted(n for n, i in ITEMS.items() if i.rarity == "rare"))
 
 
 def item_price_cp(name: str) -> int:
-    """Shelf price: rarity sets it, except the training manual's flat 5 gp."""
+    """Shelf price: the item's own tag when it carries one, else its rarity's."""
     it = ITEMS[name]
-    return TRAIN_ITEM_PRICE_CP if it.train else ITEM_PRICE_CP[it.rarity]
+    return it.price_cp or ITEM_PRICE_CP[it.rarity]
 
 
 def item_rarity(tier: int, rng: RNG) -> str:
