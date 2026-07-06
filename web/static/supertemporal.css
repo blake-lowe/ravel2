@@ -435,6 +435,9 @@ body.supertemporal {
   background: linear-gradient(100deg, #6d5514 20%, #a8842a 42%, #c9a952 50%,
               #a8842a 58%, #6d5514 80%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
+  /* synthetic bold inks the last glyph past its advance width, and clip:text
+     paints nothing outside the box — pad so the overhang stays painted */
+  padding: 0 4px;
 }
 .fw .slot .price.p-silver { color: #4a4f54; }
 .fw .slot .price.p-copper { color: #a2653c; }
