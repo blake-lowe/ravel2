@@ -247,7 +247,8 @@ function create(opts) {
       <text class="tok-label" text-anchor="middle" dy="4" font-size="${(11 + 2 * (c.cells - 1)) * (SIZE_SCALE[c.size] || 1)}"
         fill="${PAPER}" font-weight="bold">${esc(dispId(c.id))}</text>
       ${art ? `<image class="tok-art" href="${esc(art)}" x="${-r}" y="${-r}"
-        width="${2 * r}" height="${2 * r}" clip-path="url(#${clipId(r)})"/>
+        width="${2 * r}" height="${2 * r}" clip-path="url(#${clipId(r)})"
+        preserveAspectRatio="xMidYMid slice"/>
       <circle class="tok-ring" r="${r - 0.5}" fill="none" stroke="${color}" stroke-width="3"/>
       <text class="tok-badge" y="${r - 1}" text-anchor="middle" font-size="9.5" font-weight="bold"
         fill="${color}" stroke="${PAPER}" stroke-width="2.5" paint-order="stroke">${esc(dispId(c.id))}</text>` : ""}
