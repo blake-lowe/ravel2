@@ -524,12 +524,18 @@ class FortuneRun:
             raise FortuneError(f"{member.name} already carries {ITEM_CAP} items")
         member.items.append(self.bank.pop(bank_idx))
 
+    def sell_price_cp(self, name: str) -> int:
+        """What a creature fetches: half its price as if bought at the CURRENT
+        tier — training, items, and fusions add nothing (SPEC 18.8.4)."""
+        e = self.catalog.get(name)
+        return price_cp(e, self.cap()) // 2 if e else 0
+
     def sell(self, idx: int) -> int:
-        """Sell a stable member for half of everything invested (items lost)."""
+        """Sell a stable member for half its current-tier price (items lost)."""
         self._require("shop")
         if not (0 <= idx < len(self.stable)):
             raise FortuneError("no such stable member")
-        refund = self.stable[idx].invested_cp // 2
+        refund = self.sell_price_cp(self.stable[idx].name)
         del self.stable[idx]
         self.purse_cp += refund
         return refund
@@ -605,8 +611,8 @@ class FortuneRun:
         one stronger creature (SPEC 18.8.7): the result is drawn at random from
         the shared group's highest CR band at or under 1 + the average of the
         two CRs, capped by the stock tier. Kind outranks creed when both match.
-        Neither items nor training survive the fusion; invested gold
-        accumulates. Returns the new creature's name."""
+        Neither items nor training survive the fusion. Returns the new
+        creature's name."""
         self._require("shop")
         if i == j or not (0 <= i < len(self.stable)) or not (0 <= j < len(self.stable)):
             raise FortuneError("pick two different stable members")

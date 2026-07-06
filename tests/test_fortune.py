@@ -146,12 +146,20 @@ def stocked_run(seed: int = 9) -> FortuneRun:
     return run
 
 
-def test_buy_sell_refund_half_invested():
+def test_sell_fetches_half_the_current_tier_price():
     run = stocked_run()
     run.buy(0)
     assert run.purse_cp == 700 and run.stable[0].invested_cp == 300
-    refund = run.sell(0)
-    assert refund == 150 and run.purse_cp == 850 and not run.stable
+    name = run.stable[0].name
+    expected = price_cp(run.catalog[name], run.cap()) // 2
+    refund = run.sell(0)                 # half the CURRENT price — not invested
+    assert refund == expected == run.sell_price_cp(name)
+    assert run.purse_cp == 700 + expected and not run.stable
+    # training and items add nothing to the sale price
+    run.buy(1)
+    run.stable[0].elite = 3
+    run.stable[0].items = ["Rust-Ward Talisman"]
+    assert run.sell_price_cp(run.stable[0].name) == expected
 
 
 def test_buy_into_training_and_manual_train():

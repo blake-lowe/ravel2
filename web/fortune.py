@@ -166,6 +166,7 @@ def _stable_view(run: FortuneRun) -> list[dict]:
         md = apply_kit(content.get(m.name), m.elite, tuple(m.items))
         out.append({
             "name": m.name, "elite": m.elite, "invested_cp": m.invested_cp,
+            "sell_cp": run.sell_price_cp(m.name),
             "standby": m.standby,
             "items": [{"name": n, "rarity": ITEMS[n].rarity, "effect": ITEMS[n].effect,
                        "blurb": ITEMS[n].blurb} for n in m.items],

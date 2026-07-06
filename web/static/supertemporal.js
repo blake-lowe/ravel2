@@ -313,7 +313,7 @@ function memberCard(m, i) {
             ? "send to standby — trades places with the stall's occupant"
             : "send to standby (sits out the battles)"}">↦</button>`}
       <div class="btnrow bottom">
-        <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
+        <button data-sell="${i}" title="fetches half its price at the current tier: ${coinsFlat(m.sell_cp || 0)}">sell</button>
         ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 damage">train ★</button>` : ""}
         ${fusable ? `<button data-fuse="${i}"
             title="fuse with a creature of the same type or alignment into a stronger creature">fuse</button>` : ""}
@@ -454,9 +454,9 @@ function bestiaryLink(name) {
 // Affordability is the PURSE, plainly — a button greys the moment the purse
 // can't cover the price and lights again when coin comes back (selling pays
 // into the purse, so the sell path re-enables buttons by itself). liquidCp
-// (purse + half of everything invested) only decides which excuse to offer.
+// (purse + every sale price) only decides which excuse to offer.
 function liquidCp() {
-  return S.purse_cp + S.stable.reduce((t, m) => t + Math.floor(m.invested_cp / 2), 0);
+  return S.purse_cp + S.stable.reduce((t, m) => t + (m.sell_cp || 0), 0);
 }
 
 function brokeAttrs(price_cp, liquid) {
