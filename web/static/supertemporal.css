@@ -367,10 +367,12 @@ body.supertemporal {
                                  3px 3px 0 rgba(33, 29, 24, .18); }
 .fw .slot.overtier::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(105deg, transparent 40%,
-              rgba(140, 185, 235, .32) 45%, rgba(210, 232, 252, .55) 50%,
-              rgba(140, 185, 235, .32) 55%, transparent 60%) no-repeat;
-  background-size: 250% 100%;
+  /* the band sits mid-image on a 400% canvas, so both travel endpoints put it
+     WELL past the card edges — it enters from off-card and exits off-card */
+  background: linear-gradient(105deg, transparent 45%,
+              rgba(140, 185, 235, .32) 47%, rgba(210, 232, 252, .55) 50%,
+              rgba(140, 185, 235, .32) 53%, transparent 55%) no-repeat;
+  background-size: 400% 100%;
   animation: fw-sheen 3.2s ease-in-out infinite;
 }
 @keyframes fw-sheen { 0%   { background-position: 100% 0; }
