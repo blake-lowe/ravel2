@@ -999,7 +999,6 @@ function aeonCard(m) {
     : `<span class="tag" title="${esc(it.effect || "")} — ${esc(it.blurb || "")}">${esc(it.name)}</span>`
   ).join("");
   return `<div class="slot ${m.standby ? "aeon-standby" : ""}" data-name="${esc(m.name)}">
-    ${m.standby ? `<span class="slot-tag">standby</span>` : ""}
     ${tokenImg(m.art, m.name, m.size)}
     <div class="mname">${esc(m.name)}${stars}</div>
     ${legacy ? "" : `
