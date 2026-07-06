@@ -436,11 +436,13 @@ body.supertemporal {
 .fw .slot .price.p-silver { color: #4a4f54; }
 .fw .slot .price.p-copper { color: #a2653c; }
 
-/* hot stock: one small lacquer seal per full 3 gp of the price, stamped in a
-   row between the price and the buy button (exactly 3 gp earns none) */
-.fw .slot .seal-row { display: flex; gap: 3px; justify-content: center;
-                      align-items: center; min-height: 15px; }
-.fw .slot .seal { width: 14px; height: 14px; color: var(--lacquer); }
+/* hot stock: one lacquer star per full 3 gp of the price, stamped into the
+   gap between the price and the buy button (exactly 3 gp earns none). The
+   row is ZERO-height — card spacing stays exactly as it was. */
+.fw .slot .seal-row { height: 0; overflow: visible; display: flex; gap: 5px;
+                      justify-content: center; align-items: flex-start; }
+.fw .slot .seal { display: inline-block; font-size: 13px; line-height: 1;
+                  color: var(--lacquer); }
 
 @media (prefers-reduced-motion: reduce) {
   .fw .slot.reveal *, .fw .slot .rb, .fw .slot.overtier::after,

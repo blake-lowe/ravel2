@@ -58,22 +58,15 @@ function priceClass(cp) {
   return cp >= 100 ? "p-gold" : cp >= 10 ? "p-silver" : "p-copper";
 }
 
-// The house's seal: one small stamp per full 3 gp of the price (an exactly
-// 3 gp price earns none — hence the .01 in the divisor).
-const SEAL_SVG = `<svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
-  <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="5"/>
-  <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-dasharray="6 5"/>
-  <text x="50" y="63" text-anchor="middle" font-size="40" fill="currentColor"
-        font-family="serif" font-weight="bold">✦</text>
-</svg>`;
+// The house's seal: one lacquer star per full 3 gp of the price (an exactly
+// 3 gp price earns none — hence the .01 in the divisor). The row takes NO
+// layout height — the stars sit in the gap the card already had.
 function sealRow(price_cp) {
   const n = Math.floor(price_cp / 300.01);
   if (n < 1) return "";
   const stamps = Array.from({ length: n }, () => {
-    const deg = Math.round(Math.random() * 56 - 28);   // each pressed by hand
-    return SEAL_SVG.replace('class="seal"',
-      `class="seal" style="transform: rotate(${deg}deg)"`);
+    const deg = Math.round(Math.random() * 90 - 45);   // each pressed by hand
+    return `<span class="seal" style="transform: rotate(${deg}deg)">✦</span>`;
   }).join("");
   return `<div class="seal-row" title="each seal marks a full 3 gp — the pit rates this well above the stock tier">${stamps}</div>`;
 }
