@@ -248,10 +248,10 @@ function memberCard(m, i) {
     <div class="tags">${items}</div>
     ${targetable ? `<div class="btnrow bottom"><button>choose</button></div>` : `
       ${m.standby
-        ? `<button class="corner-bench" data-field="${i}" title="take the field">↥</button>`
+        ? `<button class="corner-bench" data-field="${i}" title="take the field">↤</button>`
         : `<button class="corner-bench" data-bench="${i}" title="${fieldFull && S.stable.some((x) => x.standby)
             ? "send to standby — trades places with the stall's occupant"
-            : "send to standby (sits out the battles)"}">↧</button>`}
+            : "send to standby (sits out the battles)"}">↦</button>`}
       <div class="btnrow bottom">
         <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
         ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 damage">train ★</button>` : ""}
@@ -423,7 +423,7 @@ function renderStock() {
       <div class="btnrow bottom">
         <button data-buy="${i}" ${broke ? "disabled" + brokeTip : ""}>buy</button>
         ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}" ${broke ? "disabled" : ""}
-            title="${broke ? "beyond your purse, even selling the stable"
+            title="${broke ? "beyond your purse"
               : "feed this copy straight to yours: +1 AC, +1 damage (max ★★★)"}">train ★</button>` : ""}
       </div>
     </div>`;
