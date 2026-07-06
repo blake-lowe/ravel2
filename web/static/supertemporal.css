@@ -138,8 +138,8 @@ body.supertemporal {
 .fw .slot .corner-link:hover { color: var(--ink); border-color: var(--ink); }
 .fw .slot .corner-link + .slot-tag,
 .fw .slot .corner-link ~ .slot-tag { left: 28px; }   /* make room beside the link */
-.fw .slot button:disabled { opacity: .4; cursor: not-allowed; }
-.fw .slot button:disabled:hover { border-color: var(--ink-hair); }
+.fw button:disabled { opacity: .4; cursor: not-allowed; }
+.fw button:disabled:hover { border-color: var(--ink-hair); }
 .fw .slot .tags { display: flex; flex-wrap: wrap; gap: 2px; justify-content: center; }
 .fw .slot .tag { border: 1px solid var(--ink-hair); font-size: 8.5px;
                  padding: 0 3px; border-radius: 2px; color: var(--ink-faint); }

@@ -220,7 +220,10 @@ function renderShop() {
   renderStock();
   renderBank();
   renderBattlePanel();
-  $("#btn-reroll").textContent = "Reroll the offerings (5 sp)";
+  const reroll = $("#btn-reroll");
+  reroll.textContent = "Reroll the offerings (5 sp)";
+  reroll.disabled = S.purse_cp < S.reroll_cp;
+  reroll.title = reroll.disabled ? "the purse can't cover the reroll" : "";
   $("#btn-sands").disabled = !S.stable.some((m) => !m.standby);
   if (S.phase === "over") { renderOver(); show("fw-over"); }
 }
@@ -293,9 +296,9 @@ function renderStable() {
       const m = S.stable[i];
       beginTargeting({
         label: `Fusing ${m.name}: pick its partner (same type or alignment)`,
-        note: `two creatures sharing a creature type or an alignment fuse into one `
-          + `of CR = 1 + the average of their CRs, capped at the stock tier `
-          + `(CR ${S.cap}); neither items nor training survive the fusion`,
+        note: `Two creatures sharing a creature type or an alignment fuse into one `
+          + `of CR = average of their CR + 1, capped at the stock tier `
+          + `(CR ${S.cap})`,
         filter: (o, j) => j !== i && canFuse(m, o),
         go: (j) => act({ action: "fuse", target: i, other: j }),
       });
@@ -391,10 +394,20 @@ function bestiaryLink(name) {
     target="_blank" title="the full chant, in the Bestiary">${LINK_SVG}</a>`;
 }
 
-// Coin the player could raise this instant: the purse plus half of everything
-// invested in the stable (selling is always on the table).
+// Affordability is the PURSE, plainly — a button greys the moment the purse
+// can't cover the price and lights again when coin comes back (selling pays
+// into the purse, so the sell path re-enables buttons by itself). liquidCp
+// (purse + half of everything invested) only decides which excuse to offer.
 function liquidCp() {
   return S.purse_cp + S.stable.reduce((t, m) => t + Math.floor(m.invested_cp / 2), 0);
+}
+
+function brokeAttrs(price_cp, liquid) {
+  if (price_cp <= S.purse_cp) return "";
+  const tip = price_cp <= liquid
+    ? "beyond your purse — selling stock could raise the coin"
+    : "beyond your purse, even selling the stable";
+  return `disabled title="${tip}"`;
 }
 
 function renderStock() {
@@ -405,8 +418,7 @@ function renderStock() {
     const owned = S.stable.findIndex((m) => m.name === s.name
       && m.elite < (S.train_cap || 3));
     const topTier = !s.overtier && s.cr === S.cap;  // book CR at the stock tier
-    const broke = s.price_cp > liquid;
-    const brokeTip = ` title="beyond your purse"`;
+    const broke = brokeAttrs(s.price_cp, liquid);
     return `<div class="slot ${s.frozen ? "is-frozen" : ""} ${topTier ? "top-tier" : ""}
                  ${s.overtier ? "overtier" : ""}" data-name="${esc(s.name)}">
       ${bestiaryLink(s.name)}
@@ -421,10 +433,9 @@ function renderStock() {
       <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)}</div>
       <div class="price">${esc(s.price)}</div>
       <div class="btnrow bottom">
-        <button data-buy="${i}" ${broke ? "disabled" + brokeTip : ""}>buy</button>
-        ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}" ${broke ? "disabled" : ""}
-            title="${broke ? "beyond your purse"
-              : "feed this copy straight to yours: +1 AC, +1 damage (max ★★★)"}">train ★</button>` : ""}
+        <button data-buy="${i}" ${broke}>buy</button>
+        ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}"
+            ${broke || `title="feed this copy straight to yours: +1 AC, +1 damage (max ★★★)"`}>train ★</button>` : ""}
       </div>
     </div>`;
   }).join("");
@@ -437,7 +448,7 @@ function renderStock() {
 
   $("#item-shelf").innerHTML = S.shop.items.map((s, i) => {
     if (!s) return `<div class="slot equip empty"></div>`;
-    const broke = s.price_cp > liquid;
+    const broke = brokeAttrs(s.price_cp, liquid);
     return `<div class="slot equip ${s.frozen ? "is-frozen" : ""}">
       <span class="rib ${esc(s.rarity)}"></span>
       <button class="freeze ${s.frozen ? "on" : ""}" data-ifreeze="${i}"
@@ -448,8 +459,7 @@ function renderStock() {
       <div class="iflavor">${esc(s.blurb)}</div>
       <div class="mmeta">${esc(s.rarity)}</div>
       <div class="price">${esc(s.price)}</div>
-      <div class="btnrow bottom"><button data-ibuy="${i}"
-        ${broke ? `disabled title="beyond your purse"` : ""}>buy</button></div>
+      <div class="btnrow bottom"><button data-ibuy="${i}" ${broke}>buy</button></div>
     </div>`;
   }).join("");
   $("#item-shelf").querySelectorAll("[data-ibuy]").forEach((b) =>
