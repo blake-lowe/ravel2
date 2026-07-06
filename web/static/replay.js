@@ -588,7 +588,8 @@ function create(opts) {
         const cur = st.current === id;
         const cause = dead && (state.deathInfo || {})[id];
         const conds = !dead && !fled ? condLine(tok) : "";
-        return `<span class="init-chip${cur ? " cur" : ""}${dead ? " dead" : ""}${fled ? " fled" : ""}"${
+        return `<span class="init-chip${cur ? " cur" : ""}${dead ? " dead" : ""}${fled ? " fled" : ""}"
+            data-name="${esc(nameOf(id))}"${
             cause ? ` title="${esc(nameOf(id))}: ${esc(cause)}"`
                   : conds ? ` title="${esc(nameOf(id))}: ${esc(conds)}"` : ""}>
           <span class="who"><b>${esc(dispId(id))}</b> ${esc(nameOf(id))}</span>${fled ? " (fled)" : ""}${

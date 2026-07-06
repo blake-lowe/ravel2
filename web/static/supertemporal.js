@@ -309,7 +309,7 @@ function memberCard(m, i) {
         <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
         ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 damage">train ★</button>` : ""}
         ${fusable ? `<button data-fuse="${i}"
-            title="fuse with a creature of the same type or alignment into stronger stock">fuse ◇</button>` : ""}
+            title="fuse with a creature of the same type or alignment into a stronger creature">fuse</button>` : ""}
       </div>`}
   </div>`;
 }
