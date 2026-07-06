@@ -560,11 +560,11 @@ function create(opts) {
         const p = events[j];
         if (p.kind === "damage" && p.actor === e.actor && !dtype) dtype = p.dtype;
         if (p.kind === "attack" && p.info === e.actor && p.amount > 0) {
-          cause = `slain by ${dispId(p.actor)}`;
+          cause = `slain by ${nameOf(p.actor)} (${dispId(p.actor)})`;
           break;
         }
         if (p.kind === "area") {
-          cause = `${p.info} (${dispId(p.actor)})`;
+          cause = `${p.info} (${nameOf(p.actor)}, ${dispId(p.actor)})`;
           break;
         }
         // don't attribute past the victim's own turn (hazards on its own move)
