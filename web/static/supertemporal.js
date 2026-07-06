@@ -248,6 +248,10 @@ function revealCard(card) {
   card.insertAdjacentHTML("beforeend",
     `<span class="rb rb-t"></span><span class="rb rb-r"></span>` +
     `<span class="rb rb-b"></span><span class="rb rb-l"></span>`);
+  setTimeout(() => {                   // the deal is done: real border back on,
+    card.classList.remove("reveal");   // strips away (overtier's overflow clip
+    card.querySelectorAll(".rb").forEach((el) => el.remove());   // eats them)
+  }, 2450);
 }
 
 function beginTargeting(t) {

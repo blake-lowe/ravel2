@@ -359,9 +359,10 @@ body.supertemporal {
   background: linear-gradient(160deg, #e5b58c, #b26c36 55%, #d8a271); }
 .fw .aeon-entry.podium-bronze .aeon-wins .val { color: #9c5a2d; }
 
-/* overtier stock: earned offerings from beyond the tier, azure-sheened */
-.fw .slot.overtier { border-color: #2e5f8a; position: relative; overflow: hidden;
-                     box-shadow: 0 0 0 2px rgba(66, 111, 160, .22),
+/* overtier stock: earned offerings from beyond the tier, azure-sheened —
+   the border wears the sheen's own blue */
+.fw .slot.overtier { border-color: #8cb9eb; position: relative; overflow: hidden;
+                     box-shadow: 0 0 0 2px rgba(140, 185, 235, .25),
                                  3px 3px 0 rgba(33, 29, 24, .18); }
 .fw .slot.overtier::after {
   content: ""; position: absolute; top: -60%; bottom: -60%; left: -60%; width: 45%;
@@ -389,7 +390,7 @@ body.supertemporal {
    clockwise from the top-left AND the bottom-right at once. */
 .fw .slot { --rb: var(--ink); }               /* the border the reveal draws */
 .fw .slot.top-tier { --rb: var(--gilt-bright); }
-.fw .slot.overtier { --rb: #2e5f8a; }
+.fw .slot.overtier { --rb: #8cb9eb; }
 .fw .slot.reveal { border-color: var(--ink-hair) !important; }
 .fw .slot.reveal .mname, .fw .slot.reveal .mmeta, .fw .slot.reveal .price,
 .fw .slot.reveal .tags, .fw .slot.reveal .ieffect, .fw .slot.reveal .iflavor {
