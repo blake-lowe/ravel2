@@ -385,7 +385,9 @@ body.supertemporal {
 .fw .slot.reveal { border-color: var(--ink-hair) !important; }
 .fw .slot.reveal .mname, .fw .slot.reveal .mmeta, .fw .slot.reveal .price,
 .fw .slot.reveal .tags, .fw .slot.reveal .ieffect, .fw .slot.reveal .iflavor {
-  animation: fw-type .45s steps(16, end) both;
+  /* fill BACKWARDS only: a forwards-filled clip-path lingers after the reveal
+     and shaves the right edge off the longest lines (3-denomination prices) */
+  animation: fw-type .45s steps(16, end) backwards;
 }
 .fw .slot.reveal .mname   { animation-delay: .05s; }
 .fw .slot.reveal .mmeta   { animation-delay: .35s; }
@@ -398,14 +400,14 @@ body.supertemporal {
 @keyframes fw-type { from { clip-path: inset(0 100% 0 0); }
                      to   { clip-path: inset(0 -2% 0 0); } }
 .fw .slot.reveal .mtoken, .fw .slot.reveal .equip-glyph {
-  animation: fw-swipe .5s ease-out both 1.15s;   /* after the last line types */
+  animation: fw-swipe .5s ease-out backwards 1.15s;   /* after the last line types */
 }
 @keyframes fw-swipe { from { clip-path: polygon(0 0, 0 0, 0 0); }
                       to   { clip-path: polygon(0 0, 250% 0, 0 250%); } }
 .fw .slot.reveal .btnrow, .fw .slot.reveal .corner-link, .fw .slot.reveal .freeze,
 .fw .slot.reveal .corner-bench, .fw .slot.reveal .slot-tag, .fw .slot.reveal .rib,
 .fw .slot.reveal .seal-row {
-  animation: fw-fade .35s both 1.7s;
+  animation: fw-fade .35s backwards 1.7s;
 }
 @keyframes fw-fade { from { opacity: 0; } }   /* fades to each element's own ink */
 /* the border strips: top->right drawn from the top-left corner, while
