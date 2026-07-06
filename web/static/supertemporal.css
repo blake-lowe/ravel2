@@ -372,8 +372,10 @@ body.supertemporal {
   animation: fw-sheen 3.2s ease-in-out infinite;
 }
 @keyframes fw-sheen { 0% { left: -60%; } 55% { left: 125%; } 100% { left: 125%; } }
-.fw .slot-tag.over { color: #2e5f8a; border-color: #2e5f8a;
-                     background: rgba(66, 111, 160, .10); }
+.fw .slot .slot-tag.over {           /* top-right, an opaque pill above the sheen */
+  left: auto; right: 4px; top: 4px; z-index: 2;
+  color: #2e5f8a; border: 1px solid #2e5f8a;
+  background: #e9eff7; border-radius: 999px; padding: 0 7px 1px; }
 
 /* set progress: the closest creature-type set still unclaimed */
 .fw .set-progress { margin-left: 10px; font-family: var(--mono); font-size: 11px;
