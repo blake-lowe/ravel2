@@ -23,7 +23,7 @@ def test_meta_lists_books_items_and_odds():
     m = client.get("/api/fortune/meta").json()
     labels = {b["label"] for b in m["books"]}
     assert "MM" in labels
-    assert len(m["items"]) == 22           # 4 common / 7 uncommon / 11 rare
+    assert len(m["items"]) == 23           # 4 common / 8 uncommon / 11 rare
     ring = m["wheel"]["outer_ring"]
     assert ring.count("none") == 3 and ring.count("common") == 5
     assert ring.count("advance") == 2
@@ -45,6 +45,7 @@ def test_new_run_state_shape():
     assert len(s["foresight"]) == 3
     assert s["enemy"] == [] and not s["scouted"], "the opposition is a paid secret"
     assert s["handle"] == "Testy"
+    assert s["train_cap"] == 3 and s["set_size"] == 4 and s["sets_awarded"] == []
 
 
 def test_scouting_reveals_the_bill():

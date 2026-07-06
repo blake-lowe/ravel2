@@ -201,6 +201,7 @@ function beginTargeting(t) {
 function renderShop() {
   renderStatus();
   renderStable();
+  renderSetProgress();
   renderStock();
   renderBank();
   renderBattlePanel();
@@ -214,7 +215,9 @@ function memberCard(m, i) {
   const stars = m.elite ? `<span class="stars">${"★".repeat(m.elite)}</span>` : "";
   const items = m.items.map((it) =>
     `<span class="tag" title="${esc(it.effect)} — ${esc(it.blurb)}">${esc(it.name)}</span>`).join("");
-  const twin = S.stable.some((o, j) => j !== i && o.name === m.name);
+  const cap = S.train_cap || 3;
+  const twin = S.stable.some((o, j) => j !== i && o.name === m.name
+    && m.elite + o.elite + 1 <= cap);        // a merge may not pass 3 stars
   const targetable = TARGETING && (!TARGETING.filter || TARGETING.filter(m, i));
   const fieldFull = S.stable.filter((x) => !x.standby).length >= S.team_cap;
   return `<div class="slot ${targetable ? "targetable" : ""}"
@@ -262,7 +265,8 @@ function renderStable() {
       const i = +b.dataset.train;
       beginTargeting({
         label: `Training ${S.stable[i].name}: pick the twin to merge in`,
-        filter: (m, j) => j !== i && m.name === S.stable[i].name,
+        filter: (m, j) => j !== i && m.name === S.stable[i].name
+          && S.stable[i].elite + m.elite + 1 <= (S.train_cap || 3),
         go: (j) => act({ action: "train", target: i, other: j }),
       });
     });
@@ -283,6 +287,28 @@ function renderStable() {
     });
   row.querySelectorAll("[data-pick]").forEach((card) =>
     card.onclick = () => TARGETING.go(+card.dataset.pick));
+}
+
+// Collecting a set: 4 owned creatures of one type summon an overtier specimen.
+// Show the closest set still unclaimed — "2/4 aberrations".
+const TYPE_PLURAL = { undead: "undead", fey: "fey" };
+function typePlural(t) {
+  return TYPE_PLURAL[t] || (t.endsWith("y") ? t.slice(0, -1) + "ies" : t + "s");
+}
+
+function renderSetProgress() {
+  const el = $("#set-progress");
+  if (!el) return;
+  const need = S.set_size || 4;
+  const counts = {};
+  for (const m of S.stable) {
+    const t = (m.type || "").split("(")[0].trim().toLowerCase();
+    if (!t || (S.sets_awarded || []).includes(t)) continue;
+    counts[t] = (counts[t] || 0) + 1;
+  }
+  const best = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+  el.textContent = best ? `${Math.min(best[1], need)}/${need} ${typePlural(best[0])}` : "";
+  el.hidden = !best;
 }
 
 // 5e.tools alignment codes ("L E", "U", "A") -> words; prose passes through
@@ -311,12 +337,15 @@ function renderStock() {
   const row = $("#stock-row");
   row.innerHTML = S.shop.monsters.map((s, i) => {
     if (!s) return `<div class="slot empty"></div>`;
-    const owned = S.stable.findIndex((m) => m.name === s.name);
-    const topTier = s.cr === S.cap;                 // book CR at the stock tier
-    return `<div class="slot ${s.frozen ? "is-frozen" : ""} ${topTier ? "top-tier" : ""}"
-                 data-name="${esc(s.name)}">
-      <button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
-        title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>
+    const owned = S.stable.findIndex((m) => m.name === s.name
+      && m.elite < (S.train_cap || 3));
+    const topTier = !s.overtier && s.cr === S.cap;  // book CR at the stock tier
+    return `<div class="slot ${s.frozen ? "is-frozen" : ""} ${topTier ? "top-tier" : ""}
+                 ${s.overtier ? "overtier" : ""}" data-name="${esc(s.name)}">
+      ${s.overtier
+        ? `<span class="slot-tag over" title="earned stock from beyond the tier — it waits until bought">overtier</span>`
+        : `<button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
+             title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>`}
       ${tokenImg(s.art, s.name)}
       <div class="mname">${esc(s.name)}</div>
       <div class="mmeta">CR ${crStr(s.cr)} · ${esc(s.size)}</div>
@@ -330,7 +359,7 @@ function renderStock() {
       <div class="btnrow">
         <button data-buy="${i}">buy</button>
         ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}"
-            title="feed this copy straight to yours: +1 AC, +1 damage">train ★</button>` : ""}
+            title="feed this copy straight to yours: +1 AC, +1 damage (max ★★★)">train ★</button>` : ""}
       </div>
     </div>`;
   }).join("");
@@ -357,11 +386,17 @@ function renderStock() {
     </div>`;
   }).join("");
   $("#item-shelf").querySelectorAll("[data-ibuy]").forEach((b) =>
-    b.onclick = () => beginTargeting({
-      label: `Buying ${S.shop.items[+b.dataset.ibuy].name}: which creature carries it?`,
-      filter: (m) => m.items.length < 3,
-      go: (j) => act({ action: "buy_item", slot: +b.dataset.ibuy, target: j }),
-    }));
+    b.onclick = () => {
+      const it = S.shop.items[+b.dataset.ibuy];
+      beginTargeting({
+        label: it.train
+          ? `${it.name}: which creature does the exercises?`
+          : `Buying ${it.name}: which creature carries it?`,
+        filter: it.train ? (m) => m.elite < (S.train_cap || 3)
+                         : (m) => m.items.length < 3,
+        go: (j) => act({ action: "buy_item", slot: +b.dataset.ibuy, target: j }),
+      });
+    });
   $("#item-shelf").querySelectorAll("[data-ifreeze]").forEach((f) =>
     f.onclick = () => act({ action: "freeze", kind: "item", slot: +f.dataset.ifreeze }));
 }
@@ -382,11 +417,17 @@ function renderBank() {
         <div class="btnrow bottom"><button data-bank="${i}">claim</button></div>
       </div>`).join("") + `</div>`;
   el.querySelectorAll("[data-bank]").forEach((b) =>
-    b.onclick = () => beginTargeting({
-      label: `Claiming ${S.bank[+b.dataset.bank].name}: which creature carries it?`,
-      filter: (m) => m.items.length < 3,
-      go: (j) => act({ action: "attach", slot: +b.dataset.bank, target: j }),
-    }));
+    b.onclick = () => {
+      const it = S.bank[+b.dataset.bank];
+      beginTargeting({
+        label: it.train
+          ? `${it.name}: which creature does the exercises?`
+          : `Claiming ${it.name}: which creature carries it?`,
+        filter: it.train ? (m) => m.elite < (S.train_cap || 3)
+                         : (m) => m.items.length < 3,
+        go: (j) => act({ action: "attach", slot: +b.dataset.bank, target: j }),
+      });
+    });
 }
 
 const WEATHER_GLYPH = { clear: "☀ clear", fog: "▒ fog", rain: "☂ rain", wind: "≋ wind" };
@@ -407,7 +448,7 @@ function renderBill() {
   const el = $("#the-bill");
   if (S.scouted && S.enemy.length) {
     el.innerHTML = `<div class="col-title">The Opposition</div>` +
-      S.enemy.map((e) => `<span class="bill-chip">${e.count}× ${esc(e.name)}
+      S.enemy.map((e) => `<span class="bill-chip" data-name="${esc(e.name)}">${e.count}× ${esc(e.name)}
         <span class="crtag">(CR ${crStr(e.cr)})</span></span>`).join("");
   } else {
     el.innerHTML = `<span class="odds-note">the chant of your opposition is shrouded.</span><br>
@@ -491,7 +532,7 @@ function renderDeployRoster() {
 
 function renderSandsBrief() {
   const opp = DEPLOY.scouted && DEPLOY.enemy.length
-    ? DEPLOY.enemy.map((e) => `${e.count}× ${esc(e.name)}`).join(", ") + " await."
+    ? DEPLOY.enemy.map((e) => `<span class="bill-chip" data-name="${esc(e.name)}">${e.count}× ${esc(e.name)}</span>`).join(" ") + " await."
     : `the far corner keeps to the dark
        <button id="btn-scout2">divine the future (5 sp)</button>`;
   $("#sands-brief").innerHTML = `
@@ -837,7 +878,8 @@ async function loadAges() {
 // renderer, statblock.js). Fetched once per creature, then cached.
 
 const SB_CACHE = new Map();
-let SB_TIMER = null;
+let SB_TIMER = null;   // pending show (hover intent)
+let SB_HIDE = null;    // pending hide (grace period to reach the popup)
 let SB_CARD = null;    // the card the pointer is resting on
 
 function wireStatblockHover() {
@@ -847,10 +889,11 @@ function wireStatblockHover() {
   document.body.appendChild(pop);
   document.addEventListener("mouseover", (ev) => {
     if (!ev.target.closest) return;
+    if (pop.contains(ev.target)) { clearTimeout(SB_HIDE); return; }   // reading it
     const card = ev.target.closest(".fw [data-name]");
+    if (card === SB_CARD) { clearTimeout(SB_HIDE); return; }          // back again
     if (!card) return;
-    if (card === SB_CARD) return;
-    hideStatblock();
+    hideStatblock();                        // a different card: switch at once
     SB_CARD = card;
     SB_TIMER = setTimeout(() => showStatblock(card), 350);   // hover intent
   });
@@ -858,21 +901,21 @@ function wireStatblockHover() {
     if (!SB_CARD) return;
     const to = ev.relatedTarget;
     if (to && (SB_CARD.contains(to) || pop.contains(to))) return;
-    hideStatblock();
+    if (pop.hidden) { hideStatblock(); return; }   // not shown yet: just cancel
+    // shown: linger long enough for the pointer to cross into the popup
+    clearTimeout(SB_HIDE);
+    SB_HIDE = setTimeout(hideStatblock, 300);
   });
   // page scroll dismisses the chant — but scrolling the chant itself must not
   window.addEventListener("scroll", (ev) => {
     if (ev.target instanceof Node && pop.contains(ev.target)) return;
     hideStatblock();
   }, true);
-  pop.addEventListener("mouseleave", (ev) => {
-    const to = ev.relatedTarget;
-    if (!(SB_CARD && to && SB_CARD.contains(to))) hideStatblock();
-  });
 }
 
 function hideStatblock() {
   clearTimeout(SB_TIMER);
+  clearTimeout(SB_HIDE);
   SB_CARD = null;
   const pop = $("#fw-statblock");
   if (pop) pop.hidden = true;

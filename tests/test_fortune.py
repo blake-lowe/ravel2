@@ -4,9 +4,9 @@ import pytest
 from ravel import content
 from ravel.fortune import (
     COMMON_ITEMS, ITEM_CAP, ITEMS, LIVES_START, MIDDLE_RING, OUTER_RING,
-    RARE_ITEMS, UNCOMMON_ITEMS,
+    RARE_ITEMS, SET_SIZE, TRAIN_CAP, TRAIN_ITEM, UNCOMMON_ITEMS,
     CatalogEntry, FortuneError, FortuneRun, ShopSlot, StableMember, apply_kit,
-    coins, cr_cap, enemy_size, is_boss_round, new_run, price_cp,
+    coins, cr_cap, enemy_size, is_boss_round, new_run, price_cp, type_key,
 )
 from ravel.sim import build_encounter, deployment_zone
 
@@ -215,6 +215,75 @@ def test_bench_moves_and_trades():
     assert FortuneRun.from_dict(d, run.catalog).to_dict() == d
     with pytest.raises(FortuneError):
         run.bench(9)
+
+
+# --- the training cap & overtier offerings -------------------------------------------
+
+def test_training_caps_at_three_and_summons_overtier():
+    run = stocked_run()
+    name = lowest_cr_name()
+    run.stable = [StableMember(name, elite=2), StableMember(name)]
+    run.train(0, 1)                                # 2 + 0 + 1 = all three stars
+    assert run.stable[0].elite == TRAIN_CAP
+    bonus = [s for s in run.shop_monsters if s is not None and s.overtier]
+    assert len(bonus) == 1, "a third star summons an overtier offering"
+    e = run.catalog[bonus[0].name]
+    assert run.cap() < e.cr <= run.cap() + 1       # the band above the tier
+    run.stable.append(StableMember(name))
+    with pytest.raises(FortuneError):              # no fourth star by merging
+        run.train(0, 1)
+    with pytest.raises(FortuneError):              # ...nor by feeding a shop copy
+        run.buy(0, train_into=0)
+    run.reroll()                                   # the earned offering rides out
+    assert any(s and s.overtier for s in run.shop_monsters)
+    idx = next(i for i, s in enumerate(run.shop_monsters) if s and s.overtier)
+    run.purse_cp = 10 ** 6
+    run.buy(idx)                                   # ...and buys like any stock
+    assert not any(s and s.overtier for s in run.shop_monsters)
+    assert run.stable[-1].name == bonus[0].name
+    d = run.to_dict()                              # overtier flag round-trips
+    assert FortuneRun.from_dict(d, run.catalog).to_dict() == d
+
+
+def test_manual_of_gainful_exercise_trains():
+    run = stocked_run()
+    run.buy(0)
+    run.shop_items = [ShopSlot(TRAIN_ITEM, 500), None]
+    run.buy_item(0, 0)
+    m = run.stable[0]
+    assert m.elite == 1 and m.items == []          # trained, not carried
+    assert run.purse_cp == 1000 - 300 - 500
+    assert m.invested_cp == 800                    # sell-back counts the manual
+    m.elite = TRAIN_CAP
+    run.shop_items = [ShopSlot(TRAIN_ITEM, 500), None]
+    with pytest.raises(FortuneError):              # no fourth star from a book
+        run.buy_item(0, 0)
+    run.bank.append(TRAIN_ITEM)                    # nor from a wheel-won manual
+    with pytest.raises(FortuneError):
+        run.attach_bank_item(0, 0)
+    m.elite = 1
+    run.attach_bank_item(0, 0)                     # the wheel's manual trains free
+    assert m.elite == 2 and not run.bank
+
+
+def test_type_set_of_four_summons_matching_overtier():
+    run = new_run(31, BOOKS, CATALOG)
+    beasts = sorted(n for n in CATALOG if type_key(CATALOG[n]) == "beast")[:SET_SIZE]
+    assert len(beasts) == SET_SIZE
+    run.purse_cp = 10 ** 6
+    run.shop_monsters = [ShopSlot(n, 10) for n in beasts] + [None]
+    for k in range(SET_SIZE):
+        run.buy(k)
+    bonus = [s for s in run.shop_monsters if s is not None and s.overtier]
+    assert len(bonus) == 1, "four of a kind completes the set"
+    assert type_key(run.catalog[bonus[0].name]) == "beast"   # the set's own kind
+    assert run.catalog[bonus[0].name].cr > run.cap()
+    assert run.sets_awarded == {"beast"}
+    run.shop_monsters[0] = ShopSlot(beasts[0], 10)
+    run.buy(0)                                     # a fifth beast pays nothing more
+    assert sum(1 for s in run.shop_monsters if s is not None and s.overtier) == 1
+    d = run.to_dict()                              # sets_awarded round-trips
+    assert FortuneRun.from_dict(d, run.catalog).to_dict() == d
 
 
 # --- kit application ---------------------------------------------------------------

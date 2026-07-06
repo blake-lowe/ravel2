@@ -21,7 +21,7 @@ from pydantic import BaseModel
 from ravel import content
 from ravel.fortune import (
     ITEM_PRICE_CP, ITEMS, LIVES_START, MIDDLE_RING, OUTER_RING, REROLL_CP,
-    SCOUT_CP, STABLE_CAP, TEAM_CAP,
+    SCOUT_CP, SET_SIZE, STABLE_CAP, TEAM_CAP, TRAIN_CAP,
     CatalogEntry, FortuneError, FortuneRun, apply_kit, coins, new_run,
 )
 from ravel.maps import MAPS
@@ -135,6 +135,7 @@ def _shop_view(run: FortuneRun) -> dict:
         md = content.get(s.name)
         monsters.append({"name": s.name, "price_cp": s.price_cp,
                          "price": coins(s.price_cp), "frozen": s.frozen,
+                         "overtier": s.overtier,
                          "cr": e.cr, "best_cr": e.best_cr, "source": e.source,
                          "ac": md.ac, "hp": md.hp, "speed": md.speed,
                          "fly": md.fly, "swim": md.swim, "size": md.size.value,
@@ -148,7 +149,8 @@ def _shop_view(run: FortuneRun) -> dict:
         it = ITEMS[s.name]
         items.append({"name": s.name, "price_cp": s.price_cp,
                       "price": coins(s.price_cp), "frozen": s.frozen,
-                      "rarity": it.rarity, "effect": it.effect, "blurb": it.blurb})
+                      "rarity": it.rarity, "effect": it.effect, "blurb": it.blurb,
+                      "train": it.train})
     return {"monsters": monsters, "items": items}
 
 
@@ -190,7 +192,10 @@ def _state(rid: str, run: FortuneRun) -> dict:
         "shop": _shop_view(run),
         "stable": _stable_view(run),
         "bank": [{"name": n, "rarity": ITEMS[n].rarity, "effect": ITEMS[n].effect,
-                  "blurb": ITEMS[n].blurb} for n in run.bank],
+                  "blurb": ITEMS[n].blurb, "train": ITEMS[n].train}
+                 for n in run.bank],
+        "train_cap": TRAIN_CAP, "set_size": SET_SIZE,
+        "sets_awarded": sorted(run.sets_awarded),
         "foresight": run.foresight(3),
         "enemy": (_enemy_view(run)
                   if run.phase == "shop" and run.scouted else []),

@@ -36,6 +36,10 @@ ITEM_CAP = 3                   # items a single monster can carry
 BASE_PRICE_CP = 300            # 3 gp x playtested CR / shop tier (SPEC 18.8.4)
 PRICE_FLOOR_CP = 5             # even a commoner costs pocket change
 TRAIN_AC, TRAIN_DMG = 1, 1     # per elite level: +1 AC, +1 damage
+TRAIN_CAP = 3                  # stars; a third star summons an overtier offering
+SET_SIZE = 4                   # owned creatures of one type that complete a set
+TRAIN_ITEM = "Manual of Gainful Exercise"
+TRAIN_ITEM_PRICE_CP = 500      # 5 gp for a level of training in a book
 ITEM_PRICE_CP = {"common": 200, "uncommon": 400, "rare": 600}
 ENEMY_BUDGET_FRAC = 0.75
 BOSS_BUDGET_MULT = 1.5         # a lone boss buys action economy with bulk
@@ -89,6 +93,7 @@ class ArenaItem:
     immune: tuple[str, ...] = ()      # damage immunities granted
     adv_types: tuple[str, ...] = ()   # attack advantage vs these creature types
     adv_aligns: tuple[str, ...] = ()  # ...and vs these alignments ("evil"/"good")
+    train: bool = False               # a manual: +1 elite level instead of a kit boon
     effect: str = ""           # the mechanics, plainly stated
     blurb: str = ""            # the flavor, italicized on the shelf
 
@@ -120,6 +125,9 @@ ITEMS: dict[str, ArenaItem] = {i.name: i for i in [
     ArenaItem("Githzerai Focus Bead", "uncommon", hit=2,
               effect="+2 to hit",
               blurb="Stillness, then the strike."),
+    ArenaItem(TRAIN_ITEM, "uncommon", train=True,
+              effect="Trains a creature one level (+1 AC, +1 damage; max ★★★)",
+              blurb="The yugoloth on the frontispiece counts your repetitions."),
     # uncommon wards — real magic items, resistance in a clasp
     ArenaItem("Ring of Warmth", "uncommon", resist=("cold",),
               effect="Resistance to cold damage",
@@ -169,6 +177,12 @@ ITEMS: dict[str, ArenaItem] = {i.name: i for i in [
 COMMON_ITEMS = tuple(sorted(n for n, i in ITEMS.items() if i.rarity == "common"))
 UNCOMMON_ITEMS = tuple(sorted(n for n, i in ITEMS.items() if i.rarity == "uncommon"))
 RARE_ITEMS = tuple(sorted(n for n, i in ITEMS.items() if i.rarity == "rare"))
+
+
+def item_price_cp(name: str) -> int:
+    """Shelf price: rarity sets it, except the training manual's flat 5 gp."""
+    it = ITEMS[name]
+    return TRAIN_ITEM_PRICE_CP if it.train else ITEM_PRICE_CP[it.rarity]
 
 
 def apply_kit(md: MonsterDef, elite: int = 0, items: tuple[str, ...] = ()) -> MonsterDef:
@@ -239,6 +253,11 @@ def price_cp(e: CatalogEntry, tier: int) -> int:
     return max(PRICE_FLOOR_CP, round(BASE_PRICE_CP * best / max(1, tier)))
 
 
+def type_key(e: CatalogEntry) -> str:
+    """A creature's base type, for squads and sets: 'humanoid (gnoll)' -> 'humanoid'."""
+    return e.mtype.split("(")[0].strip().lower() or "misc"
+
+
 # --- Run state -----------------------------------------------------------------
 
 @dataclass
@@ -246,6 +265,7 @@ class ShopSlot:
     name: str                 # monster or item name
     price_cp: int
     frozen: bool = False
+    overtier: bool = False    # an earned bonus offering from ABOVE the CR cap
 
 
 @dataclass
@@ -281,6 +301,7 @@ class FortuneRun:
     bank: list[str] = field(default_factory=list)   # unattached wheel-won items
     history: list[dict] = field(default_factory=list)
     scouted: bool = False          # paid this round to see the opposing composition
+    sets_awarded: set[str] = field(default_factory=set)   # type sets already paid out
 
     # -- randomness: one fresh RNG per draw, keyed by (seed, draws) --------------
     def _draw(self) -> RNG:
@@ -342,6 +363,8 @@ class FortuneRun:
             raise FortuneError("no monsters in the selected books at this CR")
         old_m = self.shop_monsters if keep_frozen else []
         old_i = self.shop_items if keep_frozen else []
+        # earned overtier offerings ride out rerolls AND fresh nights until bought
+        bonus = [s for s in self.shop_monsters if s is not None and s.overtier]
         self.shop_monsters = []
         for i in range(MONSTER_SLOTS):
             prev = old_m[i] if i < len(old_m) else None
@@ -350,6 +373,7 @@ class FortuneRun:
                 continue
             e = self._weighted_pick(self._draw(), pool)
             self.shop_monsters.append(ShopSlot(e.name, price_cp(e, self.cap())))
+        self.shop_monsters.extend(bonus)
         self.shop_items = []
         for i in range(ITEM_SLOTS):
             prev = old_i[i] if i < len(old_i) else None
@@ -360,7 +384,7 @@ class FortuneRun:
             rarity = "uncommon" if rng.randint(1, 4) == 4 else "common"
             name = rng.choice(list(UNCOMMON_ITEMS if rarity == "uncommon"
                                    else COMMON_ITEMS))
-            self.shop_items.append(ShopSlot(name, ITEM_PRICE_CP[rarity]))
+            self.shop_items.append(ShopSlot(name, item_price_cp(name)))
 
     def _require(self, phase: str) -> None:
         if self.phase != phase:
@@ -406,9 +430,12 @@ class FortuneRun:
             tgt = self.stable[train_into]
             if tgt.name != s.name:
                 raise FortuneError(f"{s.name} can only train a {s.name}")
+            if tgt.elite + 1 > TRAIN_CAP:
+                raise FortuneError(f"{tgt.name} already wears all {TRAIN_CAP} stars")
             self._spend(s.price_cp)
             tgt.elite += 1
             tgt.invested_cp += s.price_cp
+            self._on_trained(tgt)
         else:
             if len(self.stable) >= STABLE_CAP:
                 raise FortuneError(
@@ -417,7 +444,11 @@ class FortuneRun:
             self.stable.append(StableMember(
                 s.name, invested_cp=s.price_cp,
                 standby=len(self.fielded()) >= TEAM_CAP))   # a 6th waits in the stall
-        self.shop_monsters[slot] = None
+            self._check_set(s.name)
+        if s.overtier:
+            del self.shop_monsters[slot]     # bonus slots vanish once claimed
+        else:
+            self.shop_monsters[slot] = None
 
     def buy_item(self, slot: int, target: int) -> None:
         self._require("shop")
@@ -426,9 +457,18 @@ class FortuneRun:
         if not (0 <= target < len(self.stable)):
             raise FortuneError("no such stable member")
         member = self.stable[target]
+        s = self.shop_items[slot]
+        if ITEMS[s.name].train:              # the manual trains; it isn't carried
+            if member.elite >= TRAIN_CAP:
+                raise FortuneError(f"{member.name} already wears all {TRAIN_CAP} stars")
+            self._spend(s.price_cp)
+            member.elite += 1
+            member.invested_cp += s.price_cp
+            self.shop_items[slot] = None
+            self._on_trained(member)
+            return
         if len(member.items) >= ITEM_CAP:
             raise FortuneError(f"{member.name} already carries {ITEM_CAP} items")
-        s = self.shop_items[slot]
         self._spend(s.price_cp)
         member.items.append(s.name)
         self.shop_items[slot] = None
@@ -441,6 +481,13 @@ class FortuneRun:
         if not (0 <= target < len(self.stable)):
             raise FortuneError("no such stable member")
         member = self.stable[target]
+        if ITEMS[self.bank[bank_idx]].train:  # a manual from the wheel: free training
+            if member.elite >= TRAIN_CAP:
+                raise FortuneError(f"{member.name} already wears all {TRAIN_CAP} stars")
+            self.bank.pop(bank_idx)
+            member.elite += 1
+            self._on_trained(member)
+            return
         if len(member.items) >= ITEM_CAP:
             raise FortuneError(f"{member.name} already carries {ITEM_CAP} items")
         member.items.append(self.bank.pop(bank_idx))
@@ -456,20 +503,70 @@ class FortuneRun:
         return refund
 
     def train(self, i: int, j: int) -> None:
-        """Merge owned copy `j` into `i`: elite levels sum +1; items transfer up to
-        the cap (excess lost); invested gold accumulates (SPEC 18.8.7)."""
+        """Merge owned copy `j` into `i`: elite levels sum +1, capped at TRAIN_CAP
+        stars; items transfer up to the cap (excess lost); invested gold
+        accumulates (SPEC 18.8.7)."""
         self._require("shop")
         if i == j or not (0 <= i < len(self.stable)) or not (0 <= j < len(self.stable)):
             raise FortuneError("pick two different stable members")
         a, b = self.stable[i], self.stable[j]
         if a.name != b.name:
             raise FortuneError(f"{a.name} and {b.name} refuse to train together")
+        if a.elite + b.elite + 1 > TRAIN_CAP:
+            raise FortuneError(
+                f"training past {TRAIN_CAP} stars is beyond even Shemeshka's coin")
         a.elite += b.elite + 1
         for it in b.items:
             if len(a.items) < ITEM_CAP:
                 a.items.append(it)
         a.invested_cp += b.invested_cp
         del self.stable[j]
+        self._on_trained(a)
+
+    # -- overtier offerings: the shop's bonus 6th card ------------------------------
+    def _on_trained(self, member: StableMember) -> None:
+        """A third star summons an overtier offering — a random creature from the
+        band ABOVE the CR cap, stocked as a bonus sale slot (SPEC 18.8.7)."""
+        if member.elite >= TRAIN_CAP:
+            self._award_overtier()
+
+    def _check_set(self, name: str) -> None:
+        """Owning SET_SIZE creatures of one creature type (the standby included)
+        completes that type's set, once per run: an overtier offering of the SAME
+        type joins the shop (SPEC 18.8.7)."""
+        e = self.catalog.get(name)
+        if e is None:
+            return
+        kind = type_key(e)
+        if kind in self.sets_awarded:
+            return
+        count = sum(1 for m in self.stable
+                    if m.name in self.catalog
+                    and type_key(self.catalog[m.name]) == kind)
+        if count >= SET_SIZE:
+            self.sets_awarded.add(kind)
+            self._award_overtier(kind)
+
+    def _award_overtier(self, kind: str | None = None) -> None:
+        """Append a bonus sale slot holding a creature from the band above the
+        cap (cap < CR <= cap + 1), drawn at random — same-type when a set paid
+        for it. Shallow catalogs fall back to the strongest stock available."""
+        cap = self.cap()
+        ordered = [self.catalog[n] for n in sorted(self.catalog)]
+        if not ordered:
+            return
+        pool = ordered
+        if kind is not None:
+            typed = [e for e in ordered if type_key(e) == kind]
+            pool = typed or ordered            # a typeless catalog: any overtier
+        cands = [e for e in pool if cap < e.cr <= cap + 1]
+        if not cands:                          # nothing in the band: the nearest
+            above = [e for e in pool if e.cr > cap]   # above, else the pool's best
+            floor_cr = min((e.cr for e in above), default=max(e.cr for e in pool))
+            cands = [e for e in pool if e.cr == floor_cr]
+        rng = self._draw()
+        e = cands[rng.randint(0, len(cands) - 1)]
+        self.shop_monsters.append(ShopSlot(e.name, price_cp(e, cap), overtier=True))
 
     def fielded(self) -> list[StableMember]:
         return [m for m in self.stable if not m.standby]
@@ -530,8 +627,7 @@ class FortuneRun:
         # afford the budget the whole band stays on the table.
         groups: dict[str, list[CatalogEntry]] = {}
         for e in pool:
-            key = e.mtype.split("(")[0].strip().lower() or "misc"
-            groups.setdefault(key, []).append(e)
+            groups.setdefault(type_key(e), []).append(e)
         viable = {t: es for t, es in sorted(groups.items())
                   if any(xp(e) <= budget * 1.15 for e in es)}
         if viable:
@@ -679,12 +775,14 @@ class FortuneRun:
                        for m in self.stable],
             "shop_monsters": [None if s is None else
                               {"name": s.name, "price_cp": s.price_cp,
-                               "frozen": s.frozen} for s in self.shop_monsters],
+                               "frozen": s.frozen, "overtier": s.overtier}
+                              for s in self.shop_monsters],
             "shop_items": [None if s is None else
                            {"name": s.name, "price_cp": s.price_cp,
                             "frozen": s.frozen} for s in self.shop_items],
             "bank": list(self.bank), "history": list(self.history),
             "scouted": self.scouted,
+            "sets_awarded": sorted(self.sets_awarded),
         }
 
     @classmethod
@@ -696,7 +794,8 @@ class FortuneRun:
                                    m["invested_cp"], m.get("standby", False))
                       for m in d["stable"]]
         run.shop_monsters = [None if s is None else
-                             ShopSlot(s["name"], s["price_cp"], s["frozen"])
+                             ShopSlot(s["name"], s["price_cp"], s["frozen"],
+                                      s.get("overtier", False))
                              for s in d["shop_monsters"]]
         run.shop_items = [None if s is None else
                           ShopSlot(s["name"], s["price_cp"], s["frozen"])
@@ -704,6 +803,7 @@ class FortuneRun:
         run.bank = list(d["bank"])
         run.history = list(d["history"])
         run.scouted = d.get("scouted", False)
+        run.sets_awarded = set(d.get("sets_awarded", []))
         return run
 
 

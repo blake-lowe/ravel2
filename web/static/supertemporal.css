@@ -295,6 +295,28 @@ body.supertemporal {
   background: linear-gradient(160deg, #e5b58c, #b26c36 55%, #d8a271); }
 .fw .aeon-entry.podium-bronze .aeon-wins .val { color: #9c5a2d; }
 
+/* overtier stock: earned offerings from beyond the tier, azure-sheened */
+.fw .slot.overtier { border-color: #2e5f8a; position: relative; overflow: hidden;
+                     box-shadow: 0 0 0 2px rgba(66, 111, 160, .22),
+                                 3px 3px 0 rgba(33, 29, 24, .18); }
+.fw .slot.overtier::after {
+  content: ""; position: absolute; top: -60%; bottom: -60%; left: -60%; width: 45%;
+  background: linear-gradient(105deg, transparent,
+              rgba(140, 185, 235, .32) 40%, rgba(210, 232, 252, .55) 50%,
+              rgba(140, 185, 235, .32) 60%, transparent);
+  transform: rotate(8deg); pointer-events: none;
+  animation: fw-sheen 3.2s ease-in-out infinite;
+}
+@keyframes fw-sheen { 0% { left: -60%; } 55% { left: 125%; } 100% { left: 125%; } }
+.fw .slot-tag.over { color: #2e5f8a; border-color: #2e5f8a;
+                     background: rgba(66, 111, 160, .10); }
+
+/* set progress: the closest creature-type set still unclaimed */
+.fw .set-progress { margin-left: 10px; font-family: var(--mono); font-size: 11px;
+                    letter-spacing: 1px; color: #2e5f8a; border: 1px solid #2e5f8a;
+                    background: rgba(66, 111, 160, .08); padding: 1px 8px;
+                    vertical-align: 1px; }
+
 /* the hover chant: the Bestiary's full stat block beside any creature card */
 #fw-statblock {
   position: fixed; z-index: 90; width: 360px; max-height: 78vh;
