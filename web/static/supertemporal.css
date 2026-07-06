@@ -125,6 +125,11 @@ body.supertemporal {
   color: var(--silver); background: var(--paper); }
 .fw .slot .freeze.on { color: var(--paper); background: var(--gilt);
                        border-color: var(--gilt); }
+.fw .slot .corner-bench {
+  position: absolute; top: 3px; right: 3px; width: 21px; height: 21px;
+  padding: 0; font-size: 13px; line-height: 1; border-width: 1px;
+  color: var(--silver); background: var(--paper); }
+.fw .slot .corner-bench:hover { color: var(--ink); border-color: var(--ink); }
 .fw .slot .tags { display: flex; flex-wrap: wrap; gap: 2px; justify-content: center; }
 .fw .slot .tag { border: 1px solid var(--ink-hair); font-size: 8.5px;
                  padding: 0 3px; border-radius: 2px; color: var(--ink-faint); }

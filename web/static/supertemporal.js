@@ -246,16 +246,17 @@ function memberCard(m, i) {
     <div class="mmeta">${m.hp} hp · AC ${m.ac} · ${speedStr(m)}</div>
     <div class="tags">${items}</div>
     ${targetable ? `<div class="btnrow bottom"><button>choose</button></div>` : `
+      ${m.standby
+        ? `<button class="corner-bench" data-field="${i}" title="take the field">↥</button>`
+        : `<button class="corner-bench" data-bench="${i}" title="${fieldFull && S.stable.some((x) => x.standby)
+            ? "send to standby — trades places with the stall's occupant"
+            : "send to standby (sits out the battles)"}">↧</button>`}
       <div class="btnrow bottom">
         <a class="btnlink" href="/bestiary#${encodeURIComponent(m.name)}" target="_blank"
            title="the full chant, in the Bestiary">View in Bestiary</a>
       </div>
       <div class="btnrow">
         <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
-        ${m.standby
-          ? `<button data-field="${i}" title="take the field">field</button>`
-          : `<button data-bench="${i}" title="${fieldFull && S.stable.some((x) => x.standby)
-              ? "trade places with the standby stall" : "wait out the battles"}">standby</button>`}
         ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 damage">train ★</button>` : ""}
         ${fusable ? `<button data-fuse="${i}"
             title="fuse with a creature of the same type or alignment into stronger stock">merge ◇</button>` : ""}
@@ -294,7 +295,7 @@ function renderStable() {
       const i = +b.dataset.fuse;
       const m = S.stable[i];
       beginTargeting({
-        label: `Merging ${m.name}: pick its partner (same kind or creed)`,
+        label: `Merging ${m.name}: pick its partner (same type or alignment)`,
         note: `two creatures sharing a creature type or an alignment fuse into one `
           + `of CR = 1 + the average of their CRs, capped at the stock tier `
           + `(CR ${S.cap}); items carry over, training does not`,
