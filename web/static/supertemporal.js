@@ -75,6 +75,7 @@ function show(section) {
     $("#" + id).hidden = id !== section;
   $("#fw-status").hidden = section === "fw-lobby";
   $("#fw-ages").hidden = section !== "fw-lobby";   // the Book of Aeons stays at the gate
+  hideStatblock();                     // whatever was hovered just left the stage
 }
 
 // ---------------------- a name in the cant of the Cage -------------------------
@@ -195,10 +196,12 @@ async function act(body) {
 function beginTargeting(t) {
   TARGETING = t;
   $("#shop-error").textContent = t.label + " — pick one of your creatures (or reroll to cancel)";
+  hideStatblock();                     // the stable re-renders under the pointer
   renderStable();
 }
 
 function renderShop() {
+  hideStatblock();                     // cards are about to move or vanish
   renderStatus();
   renderStable();
   renderSetProgress();
@@ -289,8 +292,8 @@ function renderStable() {
     card.onclick = () => TARGETING.go(+card.dataset.pick));
 }
 
-// Collecting a set: 4 owned creatures of one type summon an overtier specimen.
-// Show the closest set still unclaimed — "2/4 aberrations".
+// Collecting a set: 5 owned creatures of one type summon an overtier specimen.
+// Show the closest set still unclaimed — "2/5 aberrations".
 const TYPE_PLURAL = { undead: "undead", fey: "fey" };
 function typePlural(t) {
   return TYPE_PLURAL[t] || (t.endsWith("y") ? t.slice(0, -1) + "ies" : t + "s");
@@ -299,7 +302,7 @@ function typePlural(t) {
 function renderSetProgress() {
   const el = $("#set-progress");
   if (!el) return;
-  const need = S.set_size || 4;
+  const need = S.set_size || 5;
   const counts = {};
   for (const m of S.stable) {
     const t = (m.type || "").split("(")[0].trim().toLowerCase();
@@ -930,10 +933,11 @@ async function showStatblock(card) {
     catch (e) { return; }              // an unknown name shows nothing, quietly
     SB_CACHE.set(name, d);
   }
-  if (SB_CARD !== card) return;        // the pointer moved on while we fetched
+  if (SB_CARD !== card || !card.isConnected) return;  // moved on / re-rendered away
   const pop = $("#fw-statblock");
   pop.innerHTML = RavelStatblock.statblockHtml({ statblock: d.statblock, images: [] });
   pop.hidden = false;
+  pop.scrollTop = 0;                   // each chant starts at its first line
   // beside the card: to the right when there's room, else the left, clamped
   const r = card.getBoundingClientRect();
   const pw = pop.offsetWidth, ph = pop.offsetHeight;

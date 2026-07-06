@@ -53,7 +53,7 @@ def _catalog() -> dict[str, CatalogEntry]:
         cat[name] = CatalogEntry(
             name=name, cr=float(cr), source=MONSTER_SOURCES.get(name, "Ravel"),
             best_cr=best, adjusted_xp=r.get("adjusted_xp"),
-            mtype=block.get("type", ""))
+            mtype=block.get("type", ""), alignment=block.get("alignment", ""))
     return cat
 
 

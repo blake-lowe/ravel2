@@ -5,8 +5,9 @@ from ravel import content
 from ravel.fortune import (
     COMMON_ITEMS, ITEM_CAP, ITEMS, LIVES_START, MIDDLE_RING, OUTER_RING,
     RARE_ITEMS, SET_SIZE, TRAIN_CAP, TRAIN_ITEM, UNCOMMON_ITEMS,
-    CatalogEntry, FortuneError, FortuneRun, ShopSlot, StableMember, apply_kit,
-    coins, cr_cap, enemy_size, is_boss_round, new_run, price_cp, type_key,
+    CatalogEntry, FortuneError, FortuneRun, ShopSlot, StableMember, align_key,
+    apply_kit, coins, cr_cap, enemy_size, is_boss_round, new_run, price_cp,
+    type_key,
 )
 from ravel.sim import build_encounter, deployment_zone
 
@@ -18,7 +19,7 @@ def full_catalog(max_cr: float = 3.0) -> dict[str, CatalogEntry]:
         md = content.get(name)
         if md.cr <= max_cr:
             out[name] = CatalogEntry(name=name, cr=md.cr, source="ALL",
-                                     mtype=md.mtype)
+                                     mtype=md.mtype, alignment=md.alignment)
     return out
 
 
@@ -358,19 +359,27 @@ def test_enemy_generation_properties():
                 assert run.catalog[name].cr <= cr_cap(r)
 
 
-def test_enemy_squads_share_one_creature_type():
-    def kind(name):
-        return CATALOG[name].mtype.split("(")[0].strip().lower()
-
-    seen = set()
-    for seed in (1, 5, 11, 23, 42):
+def test_enemy_squads_share_a_type_or_an_alignment():
+    typed = aligned_only = 0
+    for seed in (1, 5, 11, 23, 42, 57):
         run = new_run(seed, BOOKS, CATALOG)
         for r in (1, 2, 4, 5, 6):                          # non-boss rounds
             team = run.enemy_team(r)
-            kinds = {kind(n) for n in team}
-            assert len(kinds) == 1, (seed, r, team)        # a cohort, not a menagerie
-            seen |= kinds
-    assert len(seen) > 1, "different nights field different creature types"
+            kinds = {type_key(CATALOG[n]) for n in team}
+            aligns = {align_key(CATALOG[n]) for n in team}
+            assert len(kinds) == 1 or len(aligns) == 1, \
+                (seed, r, team)                            # a cohort, not a menagerie
+            typed += len(kinds) == 1
+            aligned_only += len(kinds) > 1                 # bound ONLY by alignment
+    assert typed and aligned_only, "both cohesion modes take the field"
+
+
+def test_align_key_normalizes_codes_and_prose():
+    def e(a):
+        return CatalogEntry("X", 1.0, "ALL", alignment=a)
+    assert align_key(e("C E")) == "chaotic evil" == align_key(e("chaotic evil"))
+    assert align_key(e("U")) == "unaligned" == align_key(e(""))
+    assert align_key(e("L G")) == "lawful good"
 
 
 def test_boss_rounds_field_a_single_xp_matched_monster():

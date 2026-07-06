@@ -37,7 +37,7 @@ BASE_PRICE_CP = 300            # 3 gp x playtested CR / shop tier (SPEC 18.8.4)
 PRICE_FLOOR_CP = 5             # even a commoner costs pocket change
 TRAIN_AC, TRAIN_DMG = 1, 1     # per elite level: +1 AC, +1 damage
 TRAIN_CAP = 3                  # stars; a third star summons an overtier offering
-SET_SIZE = 4                   # owned creatures of one type that complete a set
+SET_SIZE = 5                   # owned creatures of one type that complete a set
 TRAIN_ITEM = "Manual of Gainful Exercise"
 TRAIN_ITEM_PRICE_CP = 500      # 5 gp for a level of training in a book
 ITEM_PRICE_CP = {"common": 200, "uncommon": 400, "rare": 600}
@@ -244,6 +244,7 @@ class CatalogEntry:
     best_cr: float | None = None      # refined/adjusted CR when playtested
     adjusted_xp: float | None = None
     mtype: str = ""                   # creature type ("dragon", "fiend", ...)
+    alignment: str = ""               # "C E" / "chaotic evil" / "U" ...
 
 
 def price_cp(e: CatalogEntry, tier: int) -> int:
@@ -256,6 +257,22 @@ def price_cp(e: CatalogEntry, tier: int) -> int:
 def type_key(e: CatalogEntry) -> str:
     """A creature's base type, for squads and sets: 'humanoid (gnoll)' -> 'humanoid'."""
     return e.mtype.split("(")[0].strip().lower() or "misc"
+
+
+_ALIGN_WORD = {"L": "lawful", "N": "neutral", "C": "chaotic", "G": "good",
+               "E": "evil", "U": "unaligned", "A": "any"}
+
+
+def align_key(e: CatalogEntry) -> str:
+    """A creature's alignment as a squad-cohesion key. Data carries both 5e.tools
+    codes ('C E') and prose ('chaotic evil'); both normalize to the same words."""
+    a = e.alignment.strip()
+    if not a:
+        return "unaligned"
+    if any(c.islower() for c in a):
+        return a.lower()
+    words = [_ALIGN_WORD.get(tok, "") for tok in a.split()]
+    return " ".join(w for w in words if w) or "unaligned"
 
 
 # --- Run state -----------------------------------------------------------------
@@ -621,13 +638,15 @@ class FortuneRun:
                 return [window[rng.randint(0, len(window) - 1)].name]
             return [min(everyone, key=lambda e: abs(xp(e) - budget)).name]
 
-        # a squad keeps to ONE creature type — the pit sends cohorts, not
-        # menageries (SPEC 18.8.9). Pick a type weighted by how much of the
-        # unlocked band it fills, then shop only that pool; if no type can
-        # afford the budget the whole band stays on the table.
+        # a squad shares ONE cohesion trait — the pit sends cohorts, not
+        # menageries (SPEC 18.8.9): half the nights band by creature type,
+        # half by alignment. Pick a group weighted by how much of the unlocked
+        # band it fills, then shop only that pool; if no group can afford the
+        # budget the whole band stays on the table.
+        key = type_key if rng.randint(1, 2) == 1 else align_key
         groups: dict[str, list[CatalogEntry]] = {}
         for e in pool:
-            groups.setdefault(type_key(e), []).append(e)
+            groups.setdefault(key(e), []).append(e)
         viable = {t: es for t, es in sorted(groups.items())
                   if any(xp(e) <= budget * 1.15 for e in es)}
         if viable:

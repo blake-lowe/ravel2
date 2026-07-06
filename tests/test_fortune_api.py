@@ -45,7 +45,7 @@ def test_new_run_state_shape():
     assert len(s["foresight"]) == 3
     assert s["enemy"] == [] and not s["scouted"], "the opposition is a paid secret"
     assert s["handle"] == "Testy"
-    assert s["train_cap"] == 3 and s["set_size"] == 4 and s["sets_awarded"] == []
+    assert s["train_cap"] == 3 and s["set_size"] == 5 and s["sets_awarded"] == []
 
 
 def test_scouting_reveals_the_bill():
