@@ -1047,21 +1047,36 @@ function wireStatblockHover() {
     if (pop.contains(ev.target)) { clearTimeout(SB_HIDE); return; }   // reading it
     const card = ev.target.closest(".fw [data-name]");
     if (card === SB_CARD) { clearTimeout(SB_HIDE); return; }          // back again
-    if (!card) return;
+    if (!card) {
+      // pointer over open ground while the hovered node died in a re-render:
+      // that mouseout was swallowed, so retire the popup from here
+      if (SB_CARD && !SB_CARD.isConnected && !pop.hidden) {
+        clearTimeout(SB_HIDE);
+        SB_HIDE = setTimeout(hideStatblock, 300);
+      }
+      return;
+    }
     // the initiative panel re-renders every playback step: when the SAME
     // creature's chip is rebuilt under a still pointer, adopt the new node
     // instead of restarting the hover (or killing the open popup)
     if (SB_CARD && card.dataset.name === SB_CARD.dataset.name) {
       SB_CARD = card;
       clearTimeout(SB_HIDE);
+      if (pop.hidden && !SB_TIMER) showStatblock(card);   // lost a race: reshow
       return;
     }
     hideStatblock();                        // a different card: switch at once
     SB_CARD = card;
-    SB_TIMER = setTimeout(() => showStatblock(card), 350);   // hover intent
+    SB_TIMER = setTimeout(() => {           // hover intent
+      SB_TIMER = null;
+      showStatblock(card);
+    }, 350);
   });
   document.addEventListener("mouseout", (ev) => {
     if (!SB_CARD) return;
+    // a re-render removed the node under a still pointer — NOT a real exit;
+    // wait for the adoption mouseover instead of scheduling a hide
+    if (!SB_CARD.isConnected) return;
     const to = ev.relatedTarget;
     if (to && (SB_CARD.contains(to) || pop.contains(to))) return;
     if (pop.hidden) { hideStatblock(); return; }   // not shown yet: just cancel
@@ -1079,6 +1094,7 @@ function wireStatblockHover() {
 function hideStatblock() {
   clearTimeout(SB_TIMER);
   clearTimeout(SB_HIDE);
+  SB_TIMER = SB_HIDE = null;
   SB_CARD = null;
   const pop = $("#fw-statblock");
   if (pop) pop.hidden = true;
