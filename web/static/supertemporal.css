@@ -441,8 +441,8 @@ body.supertemporal {
 .fw .slot.hot { z-index: 0; }          /* let the seal sit under the ink */
 .fw .slot .hot-seal {
   position: absolute; z-index: -1; width: 82px; height: 82px;
-  left: 50%; top: 55%; transform: translate(-50%, -50%) rotate(-14deg);
-  color: var(--lacquer); opacity: .11; pointer-events: none;
+  left: 50%; top: 68%; transform: translate(-50%, -50%) rotate(-14deg);
+  color: var(--lacquer); opacity: .22; pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
