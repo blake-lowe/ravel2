@@ -344,31 +344,39 @@ class HeuristicController:
                 if t and not t.has("restrained") and not t.has("grappled"):
                     return o
 
-        # 7. martial: focus-fire the weakest reachable foe we can actually hurt.
-        # Flyers prefer a ranged attack so they can strike from altitude (kiting).
+        # 7. martial: the better of the best attack action and the best area on
+        #    however many foes it catches — a dragon breathes on a LONE foe when
+        #    16d6 beats bite-and-claws (the old cluster-only gate meant dragons
+        #    never breathed in small fights), and area-only kits (Hellfire
+        #    Engine, Eidolon) act instead of standing idle. Attacks keep the
+        #    focus-fire-the-weakest habit; flyers still prefer ranged (kiting).
+        best_area, best_area_ev = None, 0.0
+        for o in areas:
+            per = tactics.expected_damage(enc, actor, o)
+            n = max(1, _cluster_score(enc, actor, o))
+            if per > 0 and per * n > best_area_ev:
+                best_area, best_area_ev = o, per * n
         if attacks:
             pool = attacks
             if actor.md.fly > 0:
                 ranged = [o for o in attacks if _is_ranged_option(actor, o)]
                 if ranged:
                     pool = ranged
-            effective = [o for o in pool if tactics.expected_damage(enc, actor, o) > 0]
+            effective = [(tactics.expected_damage(enc, actor, o), o) for o in pool]
+            effective = [(d, o) for d, o in effective if d > 0]
+            if not effective and pool is not attacks:
+                # the kiting pool came up dry (a fire-immune foe vs an Efreeti's
+                # Hurl Flame): land and use the full arsenal instead of idling
+                effective = [(tactics.expected_damage(enc, actor, o), o)
+                             for o in attacks]
+                effective = [(d, o) for d, o in effective if d > 0]
             if effective:                      # don't swing at foes immune to our damage
-                return min(effective, key=lambda o: (_target(enc, o).hp, o.target_id))
-        # 7b. an at-will area even on a SINGLE foe: creatures whose whole kit is
-        #     area abilities (Hellfire Engine, Eidolon) otherwise stand idle in
-        #     one-on-ones — the cluster gate in step 2 never opens for them.
-        #     Recharge areas stay held for clusters (step 2's conservatism).
-        aoe1 = [(tactics.expected_damage(enc, actor, o), o) for o in areas
-                if any(a.name == o.name and a.recharge_min == 0
-                       for a in actor.md.areas)]
-        aoe1 = [(d, o) for d, o in aoe1 if d > 0]
-        if aoe1:
-            top = max(d for d, _ in aoe1)
-            best = [o for d, o in aoe1 if d == top]
-            best.sort(key=lambda o: (getattr(_target(enc, o), "hp", 1 << 30),
-                                     o.target_id or ""))
-            return best[0]
+                if best_area is not None and best_area_ev > max(d for d, _ in effective):
+                    return best_area
+                return min((o for _, o in effective),
+                           key=lambda o: (_target(enc, o).hp, o.target_id))
+        if best_area is not None:
+            return best_area
         # can't attack this turn: escape a grapple, else close the gap (Dash > Advance)
         escape = [o for o in options if o.kind == "escape"]
         if escape:

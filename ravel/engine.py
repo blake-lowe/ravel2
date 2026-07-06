@@ -22,6 +22,7 @@ from .rules import (apply_condition, apply_damage, area_damage_after_save, conte
                     resolve_attack, saving_throw, tick_conditions_end_of_turn)
 
 ROUND_CAP = 60
+STALL_ROUNDS = 15   # quiet rounds (no damage, no death) before early judgment
 SAFE_ALT = 20.0   # altitude (ft) a flyer climbs to when it can attack at range — out of melee
 _POLEARMS = frozenset({"Glaive", "Halberd", "Pike", "Quarterstaff", "Spear"})   # Polearm Master
 MORALE_DC = 10    # WIS save when first bloodied; failure routs the creature
@@ -132,6 +133,7 @@ class Encounter:
         self.darkness: list = []        # magical-darkness zones: {cells, level} (Darkness)
         self.fog: set = set()           # heavily-obscured cells (Fog Cloud / weather)
         self.round = 0
+        self.last_blood_round = 0        # last round any damage/death landed (stalemate clock)
         self._controllers: dict = {}     # team -> Controller (set by run(); drives the smite policy)
         for c in combatants:
             for area in c.md.areas:
@@ -156,7 +158,12 @@ class Encounter:
         return [o for o in self.living() if o.team != c.team and not o.untargetable]
 
     def over(self) -> bool:
-        return len(self.teams_alive()) <= 1 or self.round > ROUND_CAP
+        """One team left, the hard cap, or a bloodless stalemate: mutually
+        immune foes, a mutual charm-lock (two rakshasas suggesting a truce),
+        or beached swimmers who can never reach each other — after STALL_ROUNDS
+        quiet rounds the judgment (most HP) comes early instead of at round 60."""
+        return (len(self.teams_alive()) <= 1 or self.round > ROUND_CAP
+                or self.round - self.last_blood_round > STALL_ROUNDS)
 
     def winner(self) -> str | None:
         teams = self.teams_alive()
@@ -870,6 +877,8 @@ class Encounter:
         emit time, so a replay UI can scrub the grid and the combat log in sync."""
         kw.setdefault("round", self.round)
         kw.setdefault("log_index", len(self.log))
+        if kw.get("kind") in ("damage", "death"):
+            self.last_blood_round = self.round   # the stalemate clock resets
         self.events.append(Event(**kw))
         self._sync_condition_events()
 
