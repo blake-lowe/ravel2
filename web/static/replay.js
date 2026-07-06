@@ -242,13 +242,16 @@ function create(opts) {
     const r = tokenRadius(c);
     const color = cornerColor(c.team);
     const art = (c.token_art || [])[0];
+    // stretch the art to fill and overdraw past the ring — small tokens' source
+    // images carry the most transparent padding — letting the clip crop it
+    const ar = r * ({ Tiny: 1.35, Small: 1.25 }[c.size] || 1.12);
     return `<g class="token" id="tok-${esc(c.id)}" data-cells="${c.cells}" data-arti="0">
       <circle class="tok-body" r="${r}" fill="${color}" stroke="${INK}" stroke-width="1.5"/>
       <text class="tok-label" text-anchor="middle" dy="4" font-size="${(11 + 2 * (c.cells - 1)) * (SIZE_SCALE[c.size] || 1)}"
         fill="${PAPER}" font-weight="bold">${esc(dispId(c.id))}</text>
-      ${art ? `<image class="tok-art" href="${esc(art)}" x="${-r}" y="${-r}"
-        width="${2 * r}" height="${2 * r}" clip-path="url(#${clipId(r)})"
-        preserveAspectRatio="xMidYMid slice"/>
+      ${art ? `<image class="tok-art" href="${esc(art)}" x="${-ar}" y="${-ar}"
+        width="${2 * ar}" height="${2 * ar}" clip-path="url(#${clipId(r)})"
+        preserveAspectRatio="none"/>
       <circle class="tok-ring" r="${r - 0.5}" fill="none" stroke="${color}" stroke-width="3"/>
       <text class="tok-badge" y="${r - 1}" text-anchor="middle" font-size="9.5" font-weight="bold"
         fill="${color}" stroke="${PAPER}" stroke-width="2.5" paint-order="stroke">${esc(dispId(c.id))}</text>` : ""}
