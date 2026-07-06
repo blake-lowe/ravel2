@@ -16,6 +16,8 @@ let DEPLOY = null;    // current /deploy payload
 let PLACEMENTS = [];  // stable-index -> [x,y] | null
 let BATTLE = null;    // last battle payload
 let TARGETING = null; // {label, filter, go} while picking one of your creatures
+let PREV_STOCK = null;  // last-seen shop signatures: new cards get the reveal
+let PREV_SHELF = null;
 
 // ------------------------------- plumbing ------------------------------------
 
@@ -160,6 +162,7 @@ async function newRun() {
   S = await api("/api/fortune/new", body, $("#lob-error"));
   RID = S.run_id;
   localStorage.setItem("fw-run", RID);
+  PREV_STOCK = PREV_SHELF = null;      // a fresh table: deal every card in
   renderShop();
   show("fw-shop");
 }
@@ -195,6 +198,20 @@ async function act(body) {
   catch (e) { return; }
   TARGETING = null;
   renderShop();
+  if (body.action === "fuse") {        // the fusion result lands where the lower stood
+    const lo = Math.min(body.target, body.other);
+    revealCard($(`#stable-row .slot[data-idx="${lo}"]`));
+  }
+}
+
+// Deal-in animation: typewriter text, art swipe, then the border draws itself
+// clockwise from the top-left and the bottom-right at once (CSS does the work).
+function revealCard(card) {
+  if (!card || card.classList.contains("reveal")) return;
+  card.classList.add("reveal");
+  card.insertAdjacentHTML("beforeend",
+    `<span class="rb rb-t"></span><span class="rb rb-r"></span>` +
+    `<span class="rb rb-b"></span><span class="rb rb-l"></span>`);
 }
 
 function beginTargeting(t) {
@@ -239,7 +256,7 @@ function memberCard(m, i) {
   const fusable = S.stable.some((o, j) => j !== i && canFuse(m, o));
   const targetable = TARGETING && (!TARGETING.filter || TARGETING.filter(m, i));
   const fieldFull = S.stable.filter((x) => !x.standby).length >= S.team_cap;
-  return `<div class="slot ${targetable ? "targetable" : ""}"
+  return `<div class="slot ${targetable ? "targetable" : ""}" data-idx="${i}"
                data-name="${esc(m.name)}" ${targetable ? `data-pick="${i}"` : ""}>
     ${targetable ? "" : bestiaryLink(m.name)}
     ${m.standby ? `<span class="slot-tag">standby</span>` : ""}
@@ -431,7 +448,9 @@ function renderStock() {
       <div class="mmeta">CR ${crStr(s.cr)} · ${esc(s.size)}</div>
       <div class="mmeta">${esc(s.type)}${s.alignment ? " · " + esc(alignStr(s.alignment)) : ""}</div>
       <div class="mmeta">${s.hp} hp · AC ${s.ac} · ${speedStr(s)}</div>
-      <div class="price">${esc(s.price)}</div>
+      <div class="price ${s.best_cr != null && s.best_cr > s.cr ? "hot" : ""}">${esc(s.price)}${
+        s.best_cr != null && s.best_cr > s.cr
+          ? ` <span class="hot-mark" title="the pit rates this stronger than its book CR — priced accordingly">▲</span>` : ""}</div>
       <div class="btnrow bottom">
         <button data-buy="${i}" ${broke}>buy</button>
         ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}"
@@ -476,6 +495,20 @@ function renderStock() {
     });
   $("#item-shelf").querySelectorAll("[data-ifreeze]").forEach((f) =>
     f.onclick = () => act({ action: "freeze", kind: "item", slot: +f.dataset.ifreeze }));
+
+  // deal-in: any slot whose card changed since the last look gets the reveal —
+  // rerolls, fresh nights, and earned overtier stock animate; buys and plain
+  // re-renders (sell/bench/attach) do not.
+  const stockSig = S.shop.monsters.map((s) => (s ? s.name + (s.overtier ? "*" : "") : ""));
+  const shelfSig = S.shop.items.map((s) => (s ? s.name : ""));
+  row.querySelectorAll(".slot").forEach((card, i) => {
+    if (stockSig[i] && (!PREV_STOCK || PREV_STOCK[i] !== stockSig[i])) revealCard(card);
+  });
+  $("#item-shelf").querySelectorAll(".slot").forEach((card, i) => {
+    if (shelfSig[i] && (!PREV_SHELF || PREV_SHELF[i] !== shelfSig[i])) revealCard(card);
+  });
+  PREV_STOCK = stockSig;
+  PREV_SHELF = shelfSig;
 }
 
 // Wheel winnings sit under the standby stall until claimed onto a creature.
