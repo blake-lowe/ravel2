@@ -256,7 +256,7 @@ function memberCard(m, i) {
         <button data-sell="${i}" title="half of all coin invested comes back: ${coinsFlat(Math.floor(m.invested_cp / 2))}">sell</button>
         ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 damage">train ★</button>` : ""}
         ${fusable ? `<button data-fuse="${i}"
-            title="fuse with a creature of the same type or alignment into stronger stock">merge ◇</button>` : ""}
+            title="fuse with a creature of the same type or alignment into stronger stock">fuse ◇</button>` : ""}
       </div>`}
   </div>`;
 }
@@ -292,10 +292,10 @@ function renderStable() {
       const i = +b.dataset.fuse;
       const m = S.stable[i];
       beginTargeting({
-        label: `Merging ${m.name}: pick its partner (same type or alignment)`,
+        label: `Fusing ${m.name}: pick its partner (same type or alignment)`,
         note: `two creatures sharing a creature type or an alignment fuse into one `
           + `of CR = 1 + the average of their CRs, capped at the stock tier `
-          + `(CR ${S.cap}); items carry over, training does not`,
+          + `(CR ${S.cap}); neither items nor training survive the fusion`,
         filter: (o, j) => j !== i && canFuse(m, o),
         go: (j) => act({ action: "fuse", target: i, other: j }),
       });
@@ -406,12 +406,12 @@ function renderStock() {
       && m.elite < (S.train_cap || 3));
     const topTier = !s.overtier && s.cr === S.cap;  // book CR at the stock tier
     const broke = s.price_cp > liquid;
-    const brokeTip = ` title="beyond your purse, even selling the stable"`;
+    const brokeTip = ` title="beyond your purse"`;
     return `<div class="slot ${s.frozen ? "is-frozen" : ""} ${topTier ? "top-tier" : ""}
                  ${s.overtier ? "overtier" : ""}" data-name="${esc(s.name)}">
       ${bestiaryLink(s.name)}
       ${s.overtier
-        ? `<span class="slot-tag over" title="earned stock from beyond the tier — it waits until bought">overtier</span>`
+        ? `<span class="slot-tag over" title="earned stock from beyond the tier — it waits untilW bought">overtier</span>`
         : `<button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
              title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>`}
       ${tokenImg(s.art, s.name)}
@@ -449,7 +449,7 @@ function renderStock() {
       <div class="mmeta">${esc(s.rarity)}</div>
       <div class="price">${esc(s.price)}</div>
       <div class="btnrow bottom"><button data-ibuy="${i}"
-        ${broke ? `disabled title="beyond your purse, even selling the stable"` : ""}>buy</button></div>
+        ${broke ? `disabled title="beyond your purse"` : ""}>buy</button></div>
     </div>`;
   }).join("");
   $("#item-shelf").querySelectorAll("[data-ibuy]").forEach((b) =>

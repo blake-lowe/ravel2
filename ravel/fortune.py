@@ -601,12 +601,12 @@ class FortuneRun:
         self.shop_monsters.append(ShopSlot(e.name, price_cp(e, cap), overtier=True))
 
     def fuse(self, i: int, j: int) -> str:
-        """Merge two creatures that share a creature TYPE or an ALIGNMENT into
+        """Fuse two creatures that share a creature TYPE or an ALIGNMENT into
         one stronger creature (SPEC 18.8.7): the result is drawn at random from
         the shared group's highest CR band at or under 1 + the average of the
         two CRs, capped by the stock tier. Kind outranks creed when both match.
-        Items carry over up to the cap; training does not survive the fusion;
-        invested gold accumulates. Returns the new creature's name."""
+        Neither items nor training survive the fusion; invested gold
+        accumulates. Returns the new creature's name."""
         self._require("shop")
         if i == j or not (0 <= i < len(self.stable)) or not (0 <= j < len(self.stable)):
             raise FortuneError("pick two different stable members")
@@ -627,10 +627,9 @@ class FortuneRun:
         cands = [e for e in pool if e.cr == band_cr]
         rng = self._draw()
         pick = cands[rng.randint(0, len(cands) - 1)]
-        fused = StableMember(pick.name, elite=0,
-                             items=(a.items + b.items)[:ITEM_CAP],
-                             invested_cp=a.invested_cp + b.invested_cp,
-                             standby=a.standby and b.standby)
+        fused = StableMember(pick.name, elite=0,       # a fresh creature: neither
+                             invested_cp=a.invested_cp + b.invested_cp,   # items nor
+                             standby=a.standby and b.standby)             # stars survive
         hi, lo = max(i, j), min(i, j)
         del self.stable[hi]
         del self.stable[lo]

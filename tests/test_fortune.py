@@ -251,8 +251,8 @@ def test_fusion_by_kind_climbs_the_ladder():
     name = run.fuse(0, 1)
     assert len(run.stable) == 1
     m = run.stable[0]
-    assert m.name == name and m.elite == 0       # training does not survive
-    assert m.items == ["Rust-Ward Talisman"] and m.invested_cp == 150
+    assert m.name == name and m.elite == 0       # neither training...
+    assert m.items == [] and m.invested_cp == 150   # ...nor items survive
     e = run.catalog[name]
     assert type_key(e) == "beast"                # kind is kept
     target = 1 + (CATALOG[a].cr + CATALOG[b].cr) / 2
