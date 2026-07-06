@@ -79,13 +79,22 @@ function show(section) {
 }
 
 // ---------------------- a name in the cant of the Cage -------------------------
-// Planescape slang (theplanardm.com/planar-slang): pick an epithet and a station.
+// Planescape slang (theplanardm.com/planar-slang) plus the wider chant of the
+// multiverse — dungeon vernacular, planar scars, and famous bad decisions.
 
 const CANT_ADJ = ["Barmy", "Peery", "Clueless", "Leatherheaded", "Addle-Coved",
   "Jink-Flush", "Well-Lanned", "Cage-Born", "Gate-Touched", "Dustbound",
-  "Bone-Boxed", "Bloodless"];
+  "Bone-Boxed", "Bloodless",
+  "Underdark-Lost", "Feywild-Touched", "Dragon-Hoarding", "Mind-Flayed",
+  "Wild-Magicked", "Beholder-Eyed", "Styx-Dipped", "Tomb-Delving",
+  "Owlbear-Bitten", "Kobold-Cunning", "Illithid-Addled", "Modron-Minded",
+  "Abyss-Marked", "Vecna-Handed", "Tarrasque-Fleeing", "Mimic-Bitten",
+  "Spellplagued", "Nine-Fingered"];
 const CANT_NOUN = ["Berks", "Cutters", "Bloods", "Bashers", "Sods", "Bubbers",
-  "Touts", "Knights of the Post", "Mimirs", "Primes", "Spivs", "Cagers"];
+  "Touts", "Knights of the Post", "Mimirs", "Primes", "Spivs", "Cagers",
+  "Murderhobos", "Sellswords", "Torchbearers", "Meatshields", "Hirelings",
+  "Planewalkers", "Dungeoneers", "Grave-Robbers", "Owlbears", "Mimics",
+  "Kobolds", "Flumphs", "Harpers", "Zhents", "Red Wizards", "Githzerai"];
 let NAME_PICK = { adj: null, noun: null };
 
 function dealNames() {
