@@ -239,6 +239,10 @@ def monster_to_dict(md: MonsterDef) -> dict:
         out["temp_hp_on_kill"] = md.temp_hp_on_kill
     if md.save_advantages:
         out["save_advantages"] = sorted(md.save_advantages)
+    if md.adv_against_types:
+        out["attack_advantage_vs_types"] = sorted(md.adv_against_types)
+    if md.adv_against_aligns:
+        out["attack_advantage_vs_alignments"] = sorted(md.adv_against_aligns)
     if md.teleport_bonus:
         out["teleport_bonus"] = md.teleport_bonus
     if md.reckless:
@@ -323,6 +327,8 @@ def monster_from_dict(d: dict) -> MonsterDef:
         triggered_abilities=tuple(d.get("triggered_abilities", [])),
         temp_hp_on_kill=d.get("temp_hp_on_kill", 0),
         save_advantages=frozenset(d.get("save_advantages", [])),
+        adv_against_types=frozenset(d.get("attack_advantage_vs_types", [])),
+        adv_against_aligns=frozenset(d.get("attack_advantage_vs_alignments", [])),
         teleport_bonus=d.get("teleport_bonus", 0))
 
 

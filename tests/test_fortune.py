@@ -3,7 +3,8 @@ import pytest
 
 from ravel import content
 from ravel.fortune import (
-    COMMON_ITEMS, ITEM_CAP, ITEMS, LIVES_START, RARE_ITEMS, UNCOMMON_ITEMS,
+    COMMON_ITEMS, ITEM_CAP, ITEMS, LIVES_START, MIDDLE_RING, OUTER_RING,
+    RARE_ITEMS, UNCOMMON_ITEMS,
     CatalogEntry, FortuneError, FortuneRun, ShopSlot, StableMember, apply_kit,
     coins, cr_cap, enemy_size, is_boss_round, new_run, price_cp,
 )
@@ -16,7 +17,8 @@ def full_catalog(max_cr: float = 3.0) -> dict[str, CatalogEntry]:
     for name in content.all_names():
         md = content.get(name)
         if md.cr <= max_cr:
-            out[name] = CatalogEntry(name=name, cr=md.cr, source="ALL")
+            out[name] = CatalogEntry(name=name, cr=md.cr, source="ALL",
+                                     mtype=md.mtype)
     return out
 
 
@@ -222,13 +224,43 @@ def test_apply_kit_deltas():
     kitted = apply_kit(md, elite=2, items=("Oil of Keen Edges", "Rust-Ward Talisman",
                                            "Flask of Elemental Vigor"))
     assert kitted.ac == md.ac + 2 + 1              # 2 training + talisman
-    assert kitted.hp == md.hp + 2 + 5              # 2 training + flask
+    assert kitted.hp == md.hp + 5                  # the flask; training pays in damage
     assert kitted.name == md.name + " ★★"
     for name, atk in md.attacks.items():
         assert kitted.attacks[name].attack_bonus == atk.attack_bonus + 1
+        if atk.damage:                             # 2 training + the oil
+            assert kitted.attacks[name].damage[0].bonus == atk.damage[0].bonus + 3
+    assert md.ac == content.get(lowest_cr_name()).ac    # base untouched
+
+
+def test_apply_kit_wards_and_slayers():
+    md = content.get(lowest_cr_name())
+    kitted = apply_kit(md, items=("Ring of Warmth", "Periapt of Proof against Poison",
+                                  "Dragon Slayer"))
+    assert "cold" in kitted.resistances and "cold" not in md.resistances
+    assert "poison" in kitted.immunities
+    assert kitted.adv_against_types == frozenset({"dragon"})
+    assert kitted.ac == md.ac and kitted.hp == md.hp
+    for name, atk in md.attacks.items():           # Dragon Slayer is a +1 weapon
         if atk.damage:
             assert kitted.attacks[name].damage[0].bonus == atk.damage[0].bonus + 1
-    assert md.ac == content.get(lowest_cr_name()).ac    # base untouched
+
+
+def test_kit_advantage_matches_types_and_alignments():
+    from dataclasses import replace
+
+    from ravel.rules import kit_advantage
+    md = content.get(lowest_cr_name())
+    slayer = apply_kit(md, items=("Dragon Slayer",))
+    talisman = apply_kit(md, items=("Talisman of Pure Good",))
+    dragon = replace(md, mtype="dragon")
+    giant = replace(md, mtype="giant")
+    assert kit_advantage(slayer, dragon) and not kit_advantage(slayer, giant)
+    assert kit_advantage(talisman, replace(md, alignment="C E"))      # 5e.tools codes
+    assert kit_advantage(talisman, replace(md, alignment="chaotic evil"))  # prose
+    assert not kit_advantage(talisman, replace(md, alignment="L G"))
+    assert not kit_advantage(talisman, replace(md, alignment="U"))
+    assert not kit_advantage(md, dragon)           # bare claws favor no one
 
 
 def test_apply_kit_noop_returns_same_def():
@@ -255,6 +287,21 @@ def test_enemy_generation_properties():
             assert 1 <= len(team) <= enemy_size(r)
             for name in team:
                 assert run.catalog[name].cr <= cr_cap(r)
+
+
+def test_enemy_squads_share_one_creature_type():
+    def kind(name):
+        return CATALOG[name].mtype.split("(")[0].strip().lower()
+
+    seen = set()
+    for seed in (1, 5, 11, 23, 42):
+        run = new_run(seed, BOOKS, CATALOG)
+        for r in (1, 2, 4, 5, 6):                          # non-boss rounds
+            team = run.enemy_team(r)
+            kinds = {kind(n) for n in team}
+            assert len(kinds) == 1, (seed, r, team)        # a cohort, not a menagerie
+            seen |= kinds
+    assert len(seen) > 1, "different nights field different creature types"
 
 
 def test_boss_rounds_field_a_single_xp_matched_monster():
@@ -294,24 +341,27 @@ def test_wheel_odds_over_many_spins():
         tally[res["tier"]] += 1
         assert 1 <= res["outer"] <= 10
         if res["tier"] == "rare":
-            assert res["middle"] == 10 and res["center"] is not None
-    # expected: none .31, common .60, uncommon .08, rare .01
-    assert 0.26 <= tally["none"] / n <= 0.36
-    assert 0.55 <= tally["common"] / n <= 0.65
-    assert 0.05 <= tally["uncommon"] / n <= 0.11
-    assert 0.004 <= tally["rare"] / n <= 0.02
+            assert OUTER_RING[res["outer"] - 1] == "advance"
+            assert MIDDLE_RING[res["middle"] - 1] == "advance"
+            assert res["center"] is not None
+    # expected: none .32, common .50, uncommon .14, rare .04
+    assert 0.27 <= tally["none"] / n <= 0.37
+    assert 0.45 <= tally["common"] / n <= 0.55
+    assert 0.10 <= tally["uncommon"] / n <= 0.18
+    assert 0.025 <= tally["rare"] / n <= 0.055
 
 
 def test_wheel_prizes_land():
     run = new_run(10, BOOKS, CATALOG)
     for _ in range(400):
-        purse, bank, lives = run.purse_cp, len(run.bank), run.lives
+        bank, lives = len(run.bank), run.lives
         run.phase = "wheel"
         res = run.spin()
         kind = res["prize"]["kind"]
-        if kind == "gold":
-            assert run.purse_cp - purse == res["prize"]["cp"] + 1000  # + shop income
+        if kind == "gold":       # the purse resets to 10 gp, the prize lands on top
+            assert run.purse_cp == 1000 + res["prize"]["cp"]
         elif kind == "item":
+            assert run.purse_cp == 1000                    # reset, nothing on top
             assert len(run.bank) == bank + 1
             assert run.bank[-1] == res["prize"]["item"]
         elif kind == "life":
@@ -347,6 +397,16 @@ def test_fight_bookkeeping_to_run_end():
     assert run.history and all("won" in h for h in run.history)
     if run.phase == "over":
         assert run.lives == 0 and len([h for h in run.history if not h["won"]]) == 3
+
+
+def test_purse_resets_to_10_gp_each_night():
+    # a lone mook against ogres: a guaranteed beating — and then a fresh stake
+    strong = {n: e for n, e in full_catalog(4.0).items() if e.cr >= 2}
+    run = FortuneRun(seed=77, books=BOOKS, catalog=strong)
+    run.stable = [StableMember(lowest_cr_name())]
+    run.purse_cp = 40                        # nearly broke going in
+    run.fight()
+    assert run.phase == "shop" and run.purse_cp == 1000   # made whole — no more, no less
 
 
 def test_fight_requires_a_stable():

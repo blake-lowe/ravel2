@@ -26,8 +26,8 @@ TEAM_CAP = 5                   # creatures that take the field
 STANDBY_SLOTS = 1              # one stall sits out the battle
 STABLE_CAP = TEAM_CAP + STANDBY_SLOTS
 LIVES_START = 3
-START_PURSE_CP = 1000          # 10 gp
-INCOME_CP = 1000               # +10 gp per shop phase
+START_PURSE_CP = 1000          # 10 gp — the purse RESETS to this each shop phase
+                               # (unspent coin is forfeit; wheel gold lands on top)
 REROLL_CP = 50                 # 5 sp
 SCOUT_CP = 50                  # 5 sp divines tonight's opposition
 MONSTER_SLOTS = 5
@@ -35,19 +35,20 @@ ITEM_SLOTS = 2
 ITEM_CAP = 3                   # items a single monster can carry
 BASE_PRICE_CP = 300            # 3 gp x playtested CR / shop tier (SPEC 18.8.4)
 PRICE_FLOOR_CP = 5             # even a commoner costs pocket change
-TRAIN_AC, TRAIN_HP = 1, 1      # per elite level
+TRAIN_AC, TRAIN_DMG = 1, 1     # per elite level: +1 AC, +1 damage
 ITEM_PRICE_CP = {"common": 200, "uncommon": 400, "rare": 600}
 ENEMY_BUDGET_FRAC = 0.75
 BOSS_BUDGET_MULT = 1.5         # a lone boss buys action economy with bulk
 WEATHERS = ("clear", "clear", "clear", "clear", "fog", "rain", "wind")
 
 # The wheel's ring layouts, sector 1..10 (SPEC 18.8.8). Odds: outer 3 none /
-# 6 common / 1 advance; middle 1 none / 8 uncommon / 1 advance; center all rare.
-# No-prize sectors are spread to opposite sides of the wheel, never bunched.
-OUTER_RING = ("none", "common", "common", "none", "common", "common",
-              "none", "common", "common", "advance")
-MIDDLE_RING = ("uncommon", "uncommon", "uncommon", "uncommon", "none",
-               "uncommon", "uncommon", "uncommon", "uncommon", "advance")
+# 5 common / 2 advance; middle 1 none / 7 uncommon / 2 advance; center all rare.
+# No-prize sectors are spread out and the two advance stars sit on opposite
+# sides of each ring, never bunched.
+OUTER_RING = ("none", "common", "advance", "common", "none",
+              "common", "common", "advance", "none", "common")
+MIDDLE_RING = ("uncommon", "uncommon", "advance", "uncommon", "uncommon",
+               "none", "uncommon", "advance", "uncommon", "uncommon")
 
 
 def cr_cap(round_no: int) -> int:
@@ -84,6 +85,10 @@ class ArenaItem:
     hit: int = 0
     dmg: int = 0
     speed: int = 0
+    resist: tuple[str, ...] = ()      # damage resistances granted
+    immune: tuple[str, ...] = ()      # damage immunities granted
+    adv_types: tuple[str, ...] = ()   # attack advantage vs these creature types
+    adv_aligns: tuple[str, ...] = ()  # ...and vs these alignments ("evil"/"good")
     effect: str = ""           # the mechanics, plainly stated
     blurb: str = ""            # the flavor, italicized on the shelf
 
@@ -115,6 +120,16 @@ ITEMS: dict[str, ArenaItem] = {i.name: i for i in [
     ArenaItem("Githzerai Focus Bead", "uncommon", hit=2,
               effect="+2 to hit",
               blurb="Stillness, then the strike."),
+    # uncommon wards — real magic items, resistance in a clasp
+    ArenaItem("Ring of Warmth", "uncommon", resist=("cold",),
+              effect="Resistance to cold damage",
+              blurb="Warm as a hearth-stone smuggled out of Ysgard."),
+    ArenaItem("Armor of Fire Resistance", "uncommon", resist=("fire",),
+              effect="Resistance to fire damage",
+              blurb="Salamander hide, quenched in the Oceanus."),
+    ArenaItem("Brooch of Shielding", "uncommon", resist=("force",),
+              effect="Resistance to force damage",
+              blurb="Turns aside magic missiles and sharper insults."),
     # rare — the wheel's center ring only
     ArenaItem("Razorvine Edge", "rare", hit=2, dmg=2,
               effect="+2 to hit, +2 damage",
@@ -128,6 +143,27 @@ ITEMS: dict[str, ArenaItem] = {i.name: i for i in [
     ArenaItem("Shemeshka's Favor", "rare", hit=1, dmg=1, ac=1, hp=10,
               effect="+1 to hit, +1 damage, +1 AC, +10 HP",
               blurb="The King of the Cross-Trade smiles. Worry later."),
+    ArenaItem("Periapt of Proof against Poison", "rare", immune=("poison",),
+              effect="Immunity to poison damage",
+              blurb="Its last owner sipped tea with a marilith and lived."),
+    ArenaItem("Efreeti Chain", "rare", immune=("fire",),
+              effect="Immunity to fire damage",
+              blurb="Forged in the City of Brass. Still warm."),
+    ArenaItem("Dragon Slayer", "rare", dmg=1, adv_types=("dragon",),
+              effect="+1 damage; advantage against dragons",
+              blurb="The blade hums when wings darken the sky."),
+    ArenaItem("Giant Slayer", "rare", dmg=1, adv_types=("giant",),
+              effect="+1 damage; advantage against giants",
+              blurb="Notched once for every fallen jotun."),
+    ArenaItem("Mace of Disruption", "rare", adv_types=("fiend", "undead"),
+              effect="Advantage against fiends and undead",
+              blurb="It sheds a light the dead remember."),
+    ArenaItem("Talisman of Pure Good", "rare", adv_aligns=("evil",),
+              effect="Advantage against evil creatures",
+              blurb="It weighs nothing and judges everything."),
+    ArenaItem("Talisman of Ultimate Evil", "rare", adv_aligns=("good",),
+              effect="Advantage against good creatures",
+              blurb="Best not to ask where Shemeshka found it."),
 ]}
 
 COMMON_ITEMS = tuple(sorted(n for n, i in ITEMS.items() if i.rarity == "common"))
@@ -136,15 +172,21 @@ RARE_ITEMS = tuple(sorted(n for n, i in ITEMS.items() if i.rarity == "rare"))
 
 
 def apply_kit(md: MonsterDef, elite: int = 0, items: tuple[str, ...] = ()) -> MonsterDef:
-    """Return a MonsterDef with training (+1 AC/+1 HP per elite level, SPEC 18.8.7)
-    and item deltas applied. +dmg lands on the first damage component of each attack
-    so multi-rider attacks don't multiply the boon. Name gains one ★ per level."""
+    """Return a MonsterDef with training (+1 AC/+1 damage per elite level, SPEC
+    18.8.7) and item deltas applied. +dmg lands on the first damage component of
+    each attack so multi-rider attacks don't multiply the boon; item resistances,
+    immunities, and favored-foe advantage merge into the def's own sets. Name
+    gains one ★ per level."""
     ac = elite * TRAIN_AC + sum(ITEMS[n].ac for n in items)
-    hp = elite * TRAIN_HP + sum(ITEMS[n].hp for n in items)
+    hp = sum(ITEMS[n].hp for n in items)
     hit = sum(ITEMS[n].hit for n in items)
-    dmg = sum(ITEMS[n].dmg for n in items)
+    dmg = elite * TRAIN_DMG + sum(ITEMS[n].dmg for n in items)
     speed = sum(ITEMS[n].speed for n in items)
-    if not (ac or hp or hit or dmg or speed):
+    resist = frozenset(t for n in items for t in ITEMS[n].resist)
+    immune = frozenset(t for n in items for t in ITEMS[n].immune)
+    adv_t = frozenset(t for n in items for t in ITEMS[n].adv_types)
+    adv_a = frozenset(t for n in items for t in ITEMS[n].adv_aligns)
+    if not (ac or hp or hit or dmg or speed or resist or immune or adv_t or adv_a):
         return md
     attacks = md.attacks
     if hit or dmg:
@@ -158,7 +200,11 @@ def apply_kit(md: MonsterDef, elite: int = 0, items: tuple[str, ...] = ()) -> Mo
                                     damage=damage)
     stars = " " + "★" * elite if elite else ""
     return replace(md, name=md.name + stars, ac=md.ac + ac, hp=md.hp + hp,
-                   speed=md.speed + speed, attacks=attacks)
+                   speed=md.speed + speed, attacks=attacks,
+                   resistances=md.resistances | resist,
+                   immunities=md.immunities | immune,
+                   adv_against_types=md.adv_against_types | adv_t,
+                   adv_against_aligns=md.adv_against_aligns | adv_a)
 
 
 # --- Currency ----------------------------------------------------------------
@@ -183,6 +229,7 @@ class CatalogEntry:
     source: str                       # book label: "MM" | "MPMM" | "Ravel" | ...
     best_cr: float | None = None      # refined/adjusted CR when playtested
     adjusted_xp: float | None = None
+    mtype: str = ""                   # creature type ("dragon", "fiend", ...)
 
 
 def price_cp(e: CatalogEntry, tier: int) -> int:
@@ -477,6 +524,29 @@ class FortuneRun:
                 return [window[rng.randint(0, len(window) - 1)].name]
             return [min(everyone, key=lambda e: abs(xp(e) - budget)).name]
 
+        # a squad keeps to ONE creature type — the pit sends cohorts, not
+        # menageries (SPEC 18.8.9). Pick a type weighted by how much of the
+        # unlocked band it fills, then shop only that pool; if no type can
+        # afford the budget the whole band stays on the table.
+        groups: dict[str, list[CatalogEntry]] = {}
+        for e in pool:
+            key = e.mtype.split("(")[0].strip().lower() or "misc"
+            groups.setdefault(key, []).append(e)
+        viable = {t: es for t, es in sorted(groups.items())
+                  if any(xp(e) <= budget * 1.15 for e in es)}
+        if viable:
+            kinds = list(viable)
+            kw = [len(viable[t]) for t in kinds]
+            roll = rng.randint(1, sum(kw))
+            acc = 0
+            chosen = kinds[-1]
+            for t, w in zip(kinds, kw):
+                acc += w
+                if roll <= acc:
+                    chosen = t
+                    break
+            pool = viable[chosen]
+
         for _ in range(size):
             affordable = [e for e in pool if spent + xp(e) <= budget * 1.15]
             if not affordable:
@@ -537,8 +607,8 @@ class FortuneRun:
 
     def _next_shop(self) -> None:
         self.phase = "shop"
-        self.purse_cp += INCOME_CP
-        self._roll_shop()
+        self.purse_cp = START_PURSE_CP   # the house stakes the same 10 gp every
+        self._roll_shop()                # night; unspent coin is forfeit
 
     # -- the wheel -------------------------------------------------------------------
     def spin(self) -> dict:
@@ -561,8 +631,8 @@ class FortuneRun:
             else:                               # the middle ★: the center pays rare
                 center = rng.randint(1, 10)
                 tier = "rare"
-        prize = self._award(tier, rng)
-        self._next_shop()
+        self._next_shop()                  # the purse resets to the night's 10 gp...
+        prize = self._award(tier, rng)     # ...and the wheel's gift lands on top
         return {"outer": outer, "middle": middle, "center": center,
                 "tier": tier, "prize": prize}
 

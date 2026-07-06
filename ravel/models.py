@@ -189,6 +189,8 @@ class MonsterDef:
     elven_accuracy: bool = False                # advantage rolls 3 dice (keep best)
     magic_resistance: bool = False              # advantage on saves vs spells
     blood_frenzy: bool = False                  # advantage on melee vs any wounded creature
+    adv_against_types: frozenset[str] = frozenset()   # attack advantage vs these creature types
+    adv_against_aligns: frozenset[str] = frozenset()  # ...and alignments (slayer arms, SPEC 18.8.6)
     magic_weapons: bool = False                 # its attacks count as magical (bypass resist)
     leadership: bool = False                     # allies within 30 ft add 1d4 to attack rolls
     false_appearance: bool = False               # looks inert: ambushes (hidden until it acts)

@@ -23,11 +23,13 @@ def test_meta_lists_books_items_and_odds():
     m = client.get("/api/fortune/meta").json()
     labels = {b["label"] for b in m["books"]}
     assert "MM" in labels
-    assert len(m["items"]) == 12
+    assert len(m["items"]) == 22           # 4 common / 7 uncommon / 11 rare
     ring = m["wheel"]["outer_ring"]
-    assert ring.count("none") == 3 and ring.count("common") == 6
-    assert ring.count("advance") == 1
+    assert ring.count("none") == 3 and ring.count("common") == 5
+    assert ring.count("advance") == 2
     assert "nonenone" not in "".join(ring), "no-prize sectors are spread out"
+    mid = m["wheel"]["middle_ring"]
+    assert mid.count("none") == 1 and mid.count("advance") == 2
     assert m["team_cap"] == 5 and m["lives"] == 3
 
 

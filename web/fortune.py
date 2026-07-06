@@ -52,7 +52,8 @@ def _catalog() -> dict[str, CatalogEntry]:
                 else r.get("adjusted_cr"))
         cat[name] = CatalogEntry(
             name=name, cr=float(cr), source=MONSTER_SOURCES.get(name, "Ravel"),
-            best_cr=best, adjusted_xp=r.get("adjusted_xp"))
+            best_cr=best, adjusted_xp=r.get("adjusted_xp"),
+            mtype=block.get("type", ""))
     return cat
 
 

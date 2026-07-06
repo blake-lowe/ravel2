@@ -237,7 +237,7 @@ function memberCard(m, i) {
           ? `<button data-field="${i}" title="take the field">field</button>`
           : `<button data-bench="${i}" title="${fieldFull && S.stable.some((x) => x.standby)
               ? "trade places with the standby stall" : "wait out the battles"}">standby</button>`}
-        ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 HP">train ★</button>` : ""}
+        ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 damage">train ★</button>` : ""}
       </div>`}
   </div>`;
 }
@@ -330,7 +330,7 @@ function renderStock() {
       <div class="btnrow">
         <button data-buy="${i}">buy</button>
         ${owned >= 0 ? `<button data-buytrain="${i}" data-tgt="${owned}"
-            title="feed this copy straight to yours: +1 AC, +1 HP">train ★</button>` : ""}
+            title="feed this copy straight to yours: +1 AC, +1 damage">train ★</button>` : ""}
       </div>
     </div>`;
   }).join("");
@@ -814,8 +814,9 @@ async function loadAges() {
   let rows;
   try { rows = await api("/api/fortune/leaderboard"); } catch (e) { return; }
   if (!rows.length) return;
+  const podium = ["podium-gold", "podium-silver", "podium-bronze"];
   $("#ages-body").innerHTML = rows.map((r, i) => `
-    <div class="aeon-entry ${i === 0 ? "first" : ""}">
+    <div class="aeon-entry ${i === 0 ? "first" : ""} ${podium[i] || ""}">
       <div class="aeon-id">
         <span class="aeon-mark">${esc(r.initials || "—")}</span>
         <div class="aeon-who"><b>${esc(r.handle)}</b><br>
@@ -830,4 +831,76 @@ async function loadAges() {
     </div>`).join("");
 }
 
+// --------------------- hover: the full stat block, anywhere ---------------------
+// Rest the pointer on any creature card — stable, offerings, deploy roster, the
+// Book of Aeons — and the full chant appears beside it (the Bestiary's own
+// renderer, statblock.js). Fetched once per creature, then cached.
+
+const SB_CACHE = new Map();
+let SB_TIMER = null;
+let SB_CARD = null;    // the card the pointer is resting on
+
+function wireStatblockHover() {
+  const pop = document.createElement("div");
+  pop.id = "fw-statblock";
+  pop.hidden = true;
+  document.body.appendChild(pop);
+  document.addEventListener("mouseover", (ev) => {
+    if (!ev.target.closest) return;
+    const card = ev.target.closest(".fw [data-name]");
+    if (!card) return;
+    if (card === SB_CARD) return;
+    hideStatblock();
+    SB_CARD = card;
+    SB_TIMER = setTimeout(() => showStatblock(card), 350);   // hover intent
+  });
+  document.addEventListener("mouseout", (ev) => {
+    if (!SB_CARD) return;
+    const to = ev.relatedTarget;
+    if (to && (SB_CARD.contains(to) || pop.contains(to))) return;
+    hideStatblock();
+  });
+  // page scroll dismisses the chant — but scrolling the chant itself must not
+  window.addEventListener("scroll", (ev) => {
+    if (ev.target instanceof Node && pop.contains(ev.target)) return;
+    hideStatblock();
+  }, true);
+  pop.addEventListener("mouseleave", (ev) => {
+    const to = ev.relatedTarget;
+    if (!(SB_CARD && to && SB_CARD.contains(to))) hideStatblock();
+  });
+}
+
+function hideStatblock() {
+  clearTimeout(SB_TIMER);
+  SB_CARD = null;
+  const pop = $("#fw-statblock");
+  if (pop) pop.hidden = true;
+}
+
+async function showStatblock(card) {
+  const name = (card.dataset.name || "").replace(/\s*★+\s*$/, "").trim();
+  if (!name) return;
+  let d = SB_CACHE.get(name);
+  if (!d) {
+    try { d = await api(`/api/monsters/${encodeURIComponent(name)}`); }
+    catch (e) { return; }              // an unknown name shows nothing, quietly
+    SB_CACHE.set(name, d);
+  }
+  if (SB_CARD !== card) return;        // the pointer moved on while we fetched
+  const pop = $("#fw-statblock");
+  pop.innerHTML = RavelStatblock.statblockHtml({ statblock: d.statblock, images: [] });
+  pop.hidden = false;
+  // beside the card: to the right when there's room, else the left, clamped
+  const r = card.getBoundingClientRect();
+  const pw = pop.offsetWidth, ph = pop.offsetHeight;
+  let x = r.right + 12;
+  if (x + pw > window.innerWidth - 8) x = r.left - pw - 12;
+  if (x < 8) x = Math.max(8, Math.min(window.innerWidth - pw - 8, r.left));
+  const y = Math.max(8, Math.min(r.top, window.innerHeight - ph - 8));
+  pop.style.left = `${Math.round(x)}px`;
+  pop.style.top = `${Math.round(y)}px`;
+}
+
 boot();
+wireStatblockHover();

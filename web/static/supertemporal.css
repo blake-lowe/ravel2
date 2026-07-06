@@ -280,6 +280,32 @@ body.supertemporal {
 .fw .aeon-wins .val { font-size: 34px; font-weight: bold; font-family: var(--mono); }
 .fw .aeon-entry.first .aeon-wins .val { color: var(--gilt); }
 
+/* the podium: gold, silver, bronze plates for the top three entries */
+.fw .aeon-entry.podium-gold .aeon-mark {
+  color: #58430e; border-color: #8a6d1f;
+  background: linear-gradient(160deg, #ecd696, #c19a35 55%, #e0c67e); }
+.fw .aeon-entry.podium-silver { border-color: var(--silver); }
+.fw .aeon-entry.podium-silver .aeon-mark {
+  color: #3f4449; border-color: #83898f;
+  background: linear-gradient(160deg, #e9ebed, #aab1b7 55%, #d8dcdf); }
+.fw .aeon-entry.podium-silver .aeon-wins .val { color: var(--silver); }
+.fw .aeon-entry.podium-bronze { border-color: #9c5a2d; }
+.fw .aeon-entry.podium-bronze .aeon-mark {
+  color: #573013; border-color: #9c5a2d;
+  background: linear-gradient(160deg, #e5b58c, #b26c36 55%, #d8a271); }
+.fw .aeon-entry.podium-bronze .aeon-wins .val { color: #9c5a2d; }
+
+/* the hover chant: the Bestiary's full stat block beside any creature card */
+#fw-statblock {
+  position: fixed; z-index: 90; width: 360px; max-height: 78vh;
+  overflow-y: auto; overscroll-behavior: contain;
+  background: var(--paper); border: 2px solid var(--gilt);
+  box-shadow: 4px 4px 0 rgba(33, 29, 24, .25);
+  padding: 4px 14px 12px;
+}
+#fw-statblock[hidden] { display: none !important; }
+#fw-statblock .statblock h2 { margin: 8px 0 2px; }
+
 @media (max-width: 980px) {
   .fw .team-row, .fw .offer-row, .fw .lobby-grid, .fw .sands-grid {
     grid-template-columns: 1fr; }

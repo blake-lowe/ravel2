@@ -89,6 +89,29 @@ def contest(rng: RNG, a: Combatant, a_ability: Ability, b: Combatant,
     return a_total >= rng.d20(b_dis)[0] + b_best
 
 
+_ALIGN_CODE = {"L": "lawful", "N": "neutral", "C": "chaotic", "G": "good",
+               "E": "evil", "U": "unaligned", "NX": "neutral", "NY": "neutral",
+               "A": "any"}
+
+
+def kit_advantage(attacker_md, target_md) -> bool:
+    """Slayer arms and talismans (SPEC 18.8.6): advantage on attack rolls against
+    a favored creature type ("dragon", "giant"...) or alignment word ("evil",
+    "good"). Alignment data comes both as 5e.tools codes ("C E") and prose
+    ("chaotic evil"); both are matched."""
+    if attacker_md.adv_against_types:
+        t = target_md.mtype.lower()
+        if any(k in t for k in attacker_md.adv_against_types):
+            return True
+    if attacker_md.adv_against_aligns:
+        a = target_md.alignment
+        words = (a.lower().split() if any(c.islower() for c in a)
+                 else [_ALIGN_CODE.get(tok, "") for tok in a.split()])
+        if any(k in words for k in attacker_md.adv_against_aligns):
+            return True
+    return False
+
+
 def _dist_ft(attacker: Combatant, target: Combatant) -> float:
     return min(dist3d(attacker.pos, attacker.alt, s, target.alt)
                for s in target.occupied_squares())
@@ -392,6 +415,9 @@ def resolve_attack(attacker: Combatant, target: Combatant, atk: AttackDef,
         auto_crit = True
     if attacker.md.blood_frenzy and target.hp < target.max_hp:
         adv = True                           # Blood Frenzy: advantage vs a wounded creature
+    if ((attacker.md.adv_against_types or attacker.md.adv_against_aligns)
+            and kit_advantage(attacker.md, target.md)):
+        adv = True                           # slayer arms / talismans: a favored foe
     if attacker.vow_target_id == target.id:
         adv = True                           # Oath of Vengeance: Vow of Enmity (advantage vs the sworn foe)
     if enc is not None and not enc.can_see(target, attacker):
