@@ -185,6 +185,20 @@ def item_price_cp(name: str) -> int:
     return TRAIN_ITEM_PRICE_CP if it.train else ITEM_PRICE_CP[it.rarity]
 
 
+def item_rarity(tier: int, rng: RNG) -> str:
+    """Shelf rarity odds rise with the stock tier (SPEC 18.8.4): uncommon climbs
+    from 25%, and rare stock reaches the shelf from tier 3 (5% per tier past 2,
+    capped at 25%)."""
+    rare = min(25, max(0, (tier - 2) * 5))
+    uncommon = min(50, 20 + tier * 5)
+    roll = rng.randint(1, 100)
+    if roll <= rare:
+        return "rare"
+    if roll <= rare + uncommon:
+        return "uncommon"
+    return "common"
+
+
 def apply_kit(md: MonsterDef, elite: int = 0, items: tuple[str, ...] = ()) -> MonsterDef:
     """Return a MonsterDef with training (+1 AC/+1 damage per elite level, SPEC
     18.8.7) and item deltas applied. +dmg lands on the first damage component of
@@ -398,9 +412,10 @@ class FortuneRun:
                 self.shop_items.append(prev)
                 continue
             rng = self._draw()
-            rarity = "uncommon" if rng.randint(1, 4) == 4 else "common"
-            name = rng.choice(list(UNCOMMON_ITEMS if rarity == "uncommon"
-                                   else COMMON_ITEMS))
+            rarity = item_rarity(self.cap(), rng)
+            pool = {"common": COMMON_ITEMS, "uncommon": UNCOMMON_ITEMS,
+                    "rare": RARE_ITEMS}[rarity]
+            name = rng.choice(list(pool))
             self.shop_items.append(ShopSlot(name, item_price_cp(name)))
 
     def _require(self, phase: str) -> None:
@@ -584,6 +599,44 @@ class FortuneRun:
         rng = self._draw()
         e = cands[rng.randint(0, len(cands) - 1)]
         self.shop_monsters.append(ShopSlot(e.name, price_cp(e, cap), overtier=True))
+
+    def fuse(self, i: int, j: int) -> str:
+        """Merge two creatures that share a creature TYPE or an ALIGNMENT into
+        one stronger creature (SPEC 18.8.7): the result is drawn at random from
+        the shared group's highest CR band at or under 1 + the average of the
+        two CRs, capped by the stock tier. Kind outranks creed when both match.
+        Items carry over up to the cap; training does not survive the fusion;
+        invested gold accumulates. Returns the new creature's name."""
+        self._require("shop")
+        if i == j or not (0 <= i < len(self.stable)) or not (0 <= j < len(self.stable)):
+            raise FortuneError("pick two different stable members")
+        a, b = self.stable[i], self.stable[j]
+        ea, eb = self.catalog.get(a.name), self.catalog.get(b.name)
+        if ea is None or eb is None:
+            raise FortuneError("unknown stock cannot be fused")
+        ordered = [self.catalog[n] for n in sorted(self.catalog)]
+        if type_key(ea) == type_key(eb):
+            pool = [e for e in ordered if type_key(e) == type_key(ea)]
+        elif align_key(ea) == align_key(eb):
+            pool = [e for e in ordered if align_key(e) == align_key(ea)]
+        else:
+            raise FortuneError(f"{a.name} and {b.name} share neither kind nor creed")
+        target = min(float(self.cap()), 1 + (ea.cr + eb.cr) / 2)
+        under = [e for e in pool if e.cr <= target]
+        band_cr = max(e.cr for e in under) if under else min(e.cr for e in pool)
+        cands = [e for e in pool if e.cr == band_cr]
+        rng = self._draw()
+        pick = cands[rng.randint(0, len(cands) - 1)]
+        fused = StableMember(pick.name, elite=0,
+                             items=(a.items + b.items)[:ITEM_CAP],
+                             invested_cp=a.invested_cp + b.invested_cp,
+                             standby=a.standby and b.standby)
+        hi, lo = max(i, j), min(i, j)
+        del self.stable[hi]
+        del self.stable[lo]
+        self.stable.insert(lo, fused)
+        self._check_set(pick.name)     # a creed-fusion can grow another type's set
+        return pick.name
 
     def fielded(self) -> list[StableMember]:
         return [m for m in self.stable if not m.standby]

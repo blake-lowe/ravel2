@@ -195,7 +195,15 @@ async function act(body) {
 
 function beginTargeting(t) {
   TARGETING = t;
-  $("#shop-error").textContent = t.label + " — pick one of your creatures (or reroll to cancel)";
+  const el = $("#shop-error");
+  el.innerHTML = `${esc(t.label)} — pick one of your creatures
+    <button type="button" id="btn-cancel-target">cancel</button>
+    ${t.note ? `<br><span class="odds-note">${esc(t.note)}</span>` : ""}`;
+  $("#btn-cancel-target").onclick = () => {
+    TARGETING = null;
+    el.textContent = "";
+    renderStable();
+  };
   hideStatblock();                     // the stable re-renders under the pointer
   renderStable();
 }
@@ -221,6 +229,7 @@ function memberCard(m, i) {
   const cap = S.train_cap || 3;
   const twin = S.stable.some((o, j) => j !== i && o.name === m.name
     && m.elite + o.elite + 1 <= cap);        // a merge may not pass 3 stars
+  const fusable = S.stable.some((o, j) => j !== i && canFuse(m, o));
   const targetable = TARGETING && (!TARGETING.filter || TARGETING.filter(m, i));
   const fieldFull = S.stable.filter((x) => !x.standby).length >= S.team_cap;
   return `<div class="slot ${targetable ? "targetable" : ""}"
@@ -244,6 +253,8 @@ function memberCard(m, i) {
           : `<button data-bench="${i}" title="${fieldFull && S.stable.some((x) => x.standby)
               ? "trade places with the standby stall" : "wait out the battles"}">standby</button>`}
         ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 damage">train ★</button>` : ""}
+        ${fusable ? `<button data-fuse="${i}"
+            title="fuse with a creature of the same kind or creed into stronger stock">merge ◇</button>` : ""}
       </div>`}
   </div>`;
 }
@@ -271,6 +282,20 @@ function renderStable() {
         filter: (m, j) => j !== i && m.name === S.stable[i].name
           && S.stable[i].elite + m.elite + 1 <= (S.train_cap || 3),
         go: (j) => act({ action: "train", target: i, other: j }),
+      });
+    });
+  row.querySelectorAll("[data-fuse]").forEach((b) =>
+    b.onclick = (ev) => {
+      ev.stopPropagation();
+      const i = +b.dataset.fuse;
+      const m = S.stable[i];
+      beginTargeting({
+        label: `Merging ${m.name}: pick its partner (same kind or creed)`,
+        note: `two creatures sharing a creature type or an alignment fuse into one `
+          + `of CR = 1 + the average of their CRs, capped at the stock tier `
+          + `(CR ${S.cap}); items carry over, training does not`,
+        filter: (o, j) => j !== i && canFuse(m, o),
+        go: (j) => act({ action: "fuse", target: i, other: j }),
       });
     });
   row.querySelectorAll("[data-bench]").forEach((b) =>
@@ -312,6 +337,24 @@ function renderSetProgress() {
   const best = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
   el.textContent = best ? `${Math.min(best[1], need)}/${need} ${typePlural(best[0])}` : "";
   el.hidden = !best;
+}
+
+// Fusion (SPEC 18.8.7): two creatures of one kind or one creed merge into a
+// stronger one. Mirror the engine's grouping keys so the merge menu offers
+// exactly the partners the house will accept.
+function typeKeyOf(m) {
+  return (m.type || "").split("(")[0].trim().toLowerCase() || "misc";
+}
+function alignKeyOf(m) {
+  const a = (m.alignment || "").trim();
+  if (!a) return "unaligned";
+  if (/[a-z]/.test(a)) return a.toLowerCase();
+  const W = { L: "lawful", N: "neutral", C: "chaotic", G: "good", E: "evil",
+              U: "unaligned", A: "any" };
+  return a.split(/\s+/).map((t) => W[t] || "").filter(Boolean).join(" ") || "unaligned";
+}
+function canFuse(a, b) {
+  return typeKeyOf(a) === typeKeyOf(b) || alignKeyOf(a) === alignKeyOf(b);
 }
 
 // 5e.tools alignment codes ("L E", "U", "A") -> words; prose passes through
@@ -434,6 +477,13 @@ function renderBank() {
 }
 
 const WEATHER_GLYPH = { clear: "☀ clear", fog: "▒ fog", rain: "☂ rain", wind: "≋ wind" };
+// what each sky actually does on the sands (engine truth, plainly stated)
+const WEATHER_TIP = {
+  clear: "clear skies — no effect on the fighting",
+  fog: "fog: the whole field is heavily obscured — attacks against foes you can't see suffer disadvantage, unseen attackers strike with advantage; keen senses (blindsight, tremorsense) shine",
+  rain: "rain: open flames are doused",
+  wind: "strong wind: ranged attacks suffer disadvantage, nonmagical flyers are grounded, open flames are blown out",
+};
 
 function renderBattlePanel() {
   const rows = S.foresight.map((f, i) => `
@@ -441,7 +491,7 @@ function renderBattlePanel() {
       <td>${i === 0 ? "next" : "battle " + f.round}</td>
       <td>${esc(f.map || "the open floor")}
           ${f.boss ? `<span class="boss-mark" title="a single huge monster carries the house's whole purse">boss</span>` : ""}</td>
-      <td>${WEATHER_GLYPH[f.weather] || esc(f.weather)}</td>
+      <td title="${esc(WEATHER_TIP[f.weather] || "")}">${WEATHER_GLYPH[f.weather] || esc(f.weather)}</td>
     </tr>`).join("");
   $("#next-battle").innerHTML = `<table class="fore-table">${rows}</table>`;
   renderBill();
@@ -540,7 +590,7 @@ function renderSandsBrief() {
        <button id="btn-scout2">divine the future (5 sp)</button>`;
   $("#sands-brief").innerHTML = `
     <b>Battle ${DEPLOY.round}</b> — ${esc(DEPLOY.map || "the open floor")},
-    ${WEATHER_GLYPH[DEPLOY.weather] || esc(DEPLOY.weather)}<br>
+    <span title="${esc(WEATHER_TIP[DEPLOY.weather] || "")}">${WEATHER_GLYPH[DEPLOY.weather] || esc(DEPLOY.weather)}</span><br>
     <span class="odds-note">drag your creatures anywhere in the gilded ground,
     then sound the gong.</span><br>${opp}`;
   const b2 = $("#btn-scout2");

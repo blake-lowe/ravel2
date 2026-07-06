@@ -218,6 +218,73 @@ def test_bench_moves_and_trades():
         run.bench(9)
 
 
+# --- the shelf gilds with the tiers ---------------------------------------------------
+
+def test_item_rarity_scales_with_tier():
+    from ravel.dice import RNG
+    from ravel.fortune import item_rarity
+
+    def hist(tier):
+        rng = RNG(99)
+        out = {"common": 0, "uncommon": 0, "rare": 0}
+        for _ in range(4000):
+            out[item_rarity(tier, rng)] += 1
+        return out
+
+    t1, t5 = hist(1), hist(5)
+    assert t1["rare"] == 0                       # no rares on the early shelf
+    assert t5["rare"] > 0                        # ...but tier 5 stocks them
+    assert t5["uncommon"] > t1["uncommon"]       # the shelf gilds as tiers climb
+    assert t5["common"] < t1["common"]
+
+
+# --- fusion: old stock made new --------------------------------------------------------
+
+def test_fusion_by_kind_climbs_the_ladder():
+    beasts = sorted(n for n in CATALOG if type_key(CATALOG[n]) == "beast"
+                    and CATALOG[n].cr <= 0.5)
+    a, b = beasts[0], beasts[1]
+    run = new_run(8, BOOKS, CATALOG)
+    run.round = 9                                # cap 5: the formula runs uncapped
+    run.stable = [StableMember(a, items=["Rust-Ward Talisman"], invested_cp=100),
+                  StableMember(b, elite=2, invested_cp=50)]
+    name = run.fuse(0, 1)
+    assert len(run.stable) == 1
+    m = run.stable[0]
+    assert m.name == name and m.elite == 0       # training does not survive
+    assert m.items == ["Rust-Ward Talisman"] and m.invested_cp == 150
+    e = run.catalog[name]
+    assert type_key(e) == "beast"                # kind is kept
+    target = 1 + (CATALOG[a].cr + CATALOG[b].cr) / 2
+    band = max(x.cr for x in CATALOG.values()
+               if type_key(x) == "beast" and x.cr <= target)
+    assert e.cr == band                          # the highest band under 1 + avg
+
+
+def test_fusion_by_creed_keeps_the_creed_and_the_cap_binds():
+    ce = sorted(n for n in CATALOG if align_key(CATALOG[n]) == "chaotic evil")
+    x, y = next((x, y) for x in ce for y in ce
+                if type_key(CATALOG[x]) != type_key(CATALOG[y]))
+    run = new_run(12, BOOKS, CATALOG)            # round 1: the cap is CR 1
+    run.stable = [StableMember(x), StableMember(y)]
+    name = run.fuse(0, 1)
+    assert align_key(run.catalog[name]) == "chaotic evil"
+    assert run.catalog[name].cr <= run.cap()     # the stock tier binds the result
+
+
+def test_fusion_requires_shared_kind_or_creed():
+    ns = sorted(CATALOG)
+    x, y = next((x, y) for x in ns for y in ns
+                if type_key(CATALOG[x]) != type_key(CATALOG[y])
+                and align_key(CATALOG[x]) != align_key(CATALOG[y]))
+    run = new_run(13, BOOKS, CATALOG)
+    run.stable = [StableMember(x), StableMember(y)]
+    with pytest.raises(FortuneError):
+        run.fuse(0, 1)
+    with pytest.raises(FortuneError):
+        run.fuse(0, 0)
+
+
 # --- the training cap & overtier offerings -------------------------------------------
 
 def test_training_caps_at_three_and_summons_overtier():

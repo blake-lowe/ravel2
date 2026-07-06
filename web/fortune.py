@@ -280,6 +280,8 @@ def act(rid: str, req: Action) -> dict:
             run.sell(req.target)
         elif req.action == "train":
             run.train(req.target, req.other)
+        elif req.action == "fuse":
+            run.fuse(req.target, req.other)
         elif req.action == "bench":
             run.bench(req.target)
         elif req.action == "freeze":
