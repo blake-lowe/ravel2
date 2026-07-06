@@ -600,8 +600,10 @@ function renderBill() {
       S.enemy.map((e) => `<span class="bill-chip" data-name="${esc(e.name)}">${e.count}× ${esc(e.name)}
         <span class="crtag">(CR ${crStr(e.cr)})</span></span>`).join("");
   } else {
+    const broke = S.purse_cp < (S.scout_cp || 50);
     el.innerHTML = `<span class="odds-note">the chant of your opposition is shrouded.</span><br>
-      <button id="btn-scout">Divine the future (5 sp)</button>`;
+      <button id="btn-scout" ${broke
+        ? `disabled title="the purse can't cover the divination"` : ""}>Divine the future (5 sp)</button>`;
     const btn = $("#btn-scout");
     if (btn) btn.onclick = () => act({ action: "scout" });
   }
@@ -683,7 +685,8 @@ function renderSandsBrief() {
   const opp = DEPLOY.scouted && DEPLOY.enemy.length
     ? DEPLOY.enemy.map((e) => `<span class="bill-chip" data-name="${esc(e.name)}">${e.count}× ${esc(e.name)}</span>`).join(" ") + " await."
     : `the far corner keeps to the dark
-       <button id="btn-scout2">divine the future (5 sp)</button>`;
+       <button id="btn-scout2" ${S.purse_cp < (S.scout_cp || 50)
+         ? `disabled title="the purse can't cover the divination"` : ""}>divine the future (5 sp)</button>`;
   $("#sands-brief").innerHTML = `
     <b>Battle ${DEPLOY.round}</b> — ${esc(DEPLOY.map || "the open floor")},
     <span title="${esc(WEATHER_TIP[DEPLOY.weather] || "")}">${WEATHER_GLYPH[DEPLOY.weather] || esc(DEPLOY.weather)}</span><br>
