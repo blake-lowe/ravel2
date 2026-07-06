@@ -403,7 +403,7 @@ body.supertemporal {
                       to   { clip-path: polygon(0 0, 250% 0, 0 250%); } }
 .fw .slot.reveal .btnrow, .fw .slot.reveal .corner-link, .fw .slot.reveal .freeze,
 .fw .slot.reveal .corner-bench, .fw .slot.reveal .slot-tag, .fw .slot.reveal .rib,
-.fw .slot.reveal .hot-seal {
+.fw .slot.reveal .seal-row {
   animation: fw-fade .35s both 1.7s;
 }
 @keyframes fw-fade { from { opacity: 0; } }   /* fades to each element's own ink */
@@ -436,14 +436,11 @@ body.supertemporal {
 .fw .slot .price.p-silver { color: #4a4f54; }
 .fw .slot .price.p-copper { color: #a2653c; }
 
-/* hot stock (over 3 gp: rated above the tier): the house's lacquer seal,
-   watermarked behind the card's figures */
-.fw .slot.hot { z-index: 0; }          /* let the seal sit under the ink */
-.fw .slot .hot-seal {
-  position: absolute; z-index: -1; width: 82px; height: 82px;
-  left: 50%; top: 68%; transform: translate(-50%, -50%) rotate(-14deg);
-  color: var(--lacquer); opacity: .22; pointer-events: none;
-}
+/* hot stock: one small lacquer seal per full 3 gp of the price, stamped in a
+   row between the price and the buy button (exactly 3 gp earns none) */
+.fw .slot .seal-row { display: flex; gap: 3px; justify-content: center;
+                      align-items: center; min-height: 15px; }
+.fw .slot .seal { width: 14px; height: 14px; color: var(--lacquer); }
 
 @media (prefers-reduced-motion: reduce) {
   .fw .slot.reveal *, .fw .slot .rb, .fw .slot.overtier::after,
