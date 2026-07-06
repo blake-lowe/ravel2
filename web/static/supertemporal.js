@@ -83,18 +83,14 @@ function show(section) {
 // multiverse — dungeon vernacular, planar scars, and famous bad decisions.
 
 const CANT_ADJ = ["Barmy", "Peery", "Clueless", "Leatherheaded", "Addle-Coved",
-  "Jink-Flush", "Well-Lanned", "Cage-Born", "Gate-Touched", "Dustbound",
-  "Bone-Boxed", "Bloodless",
-  "Underdark-Lost", "Feywild-Touched", "Dragon-Hoarding", "Mind-Flayed",
-  "Wild-Magicked", "Beholder-Eyed", "Styx-Dipped", "Tomb-Delving",
-  "Owlbear-Bitten", "Kobold-Cunning", "Illithid-Addled", "Modron-Minded",
-  "Abyss-Marked", "Vecna-Handed", "Tarrasque-Fleeing", "Mimic-Bitten",
-  "Spellplagued", "Nine-Fingered"];
-const CANT_NOUN = ["Berks", "Cutters", "Bloods", "Bashers", "Sods", "Bubbers",
-  "Touts", "Knights of the Post", "Mimirs", "Primes", "Spivs", "Cagers",
-  "Murderhobos", "Sellswords", "Torchbearers", "Meatshields", "Hirelings",
-  "Planewalkers", "Dungeoneers", "Grave-Robbers", "Owlbears", "Mimics",
-  "Kobolds", "Flumphs", "Harpers", "Zhents", "Red Wizards", "Githzerai"];
+  "Jink-Flush", "Well-Lanned", "Cage-Born", "Gate-Touched", "Dustbound", "Ill-fated", "Wayward",
+  "Bone-Boxed", "Bloodless", "Fey-Touched", "Dragon-Hoarding", "Mind-Flayed", "Tarnished",
+  "Abyss-Marked", "Mimic-Bitten", "Arcane", "Unholy", "Eldritch", "Infernal", "Umbral",
+  "Spellplagued", "Nine-Fingered", "Cursed", "Blessed", "Celestial", "Profane"];
+const CANT_NOUN = ["Berks", "Cutters", "Bloods", "Bashers", "Sods", "Bubbers", "Petitioners", "Bleakers",
+  "Touts", "Knights of the Post", "Mimirs", "Primes", "Spivs", "Cagers", "Cultists", "Apprentices",
+  "Murderhobos", "Sellswords", "Meatshields", "Hirelings", "Diplomats", "Bait", "Interns",
+  "Planewalkers", "Dungeoneers", "Grave-Robbers", "Rejects", "Slayers", "Union", "Tourists"];
 let NAME_PICK = { adj: null, noun: null };
 
 function dealNames() {
@@ -159,9 +155,8 @@ async function boot() {
 
 async function newRun() {
   const books = [...document.querySelectorAll("#lob-books input:checked")].map((i) => i.value);
-  const seedRaw = $("#lob-seed").value;
+  // the house always picks the seed (the API keeps taking one for the tests)
   const body = { books, handle: `${NAME_PICK.adj} ${NAME_PICK.noun}` };
-  if (seedRaw !== "") body.seed = Number(seedRaw);
   S = await api("/api/fortune/new", body, $("#lob-error"));
   RID = S.run_id;
   localStorage.setItem("fw-run", RID);
@@ -263,7 +258,7 @@ function memberCard(m, i) {
               ? "trade places with the standby stall" : "wait out the battles"}">standby</button>`}
         ${twin ? `<button data-train="${i}" title="merge a twin into this one: +1 AC, +1 damage">train ★</button>` : ""}
         ${fusable ? `<button data-fuse="${i}"
-            title="fuse with a creature of the same kind or creed into stronger stock">merge ◇</button>` : ""}
+            title="fuse with a creature of the same type or alignment into stronger stock">merge ◇</button>` : ""}
       </div>`}
   </div>`;
 }

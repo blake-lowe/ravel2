@@ -40,12 +40,18 @@ HANDLES: dict[str, str] = {}
 
 # -- catalog: the shoppable world, built from the app's registries -------------
 
+# Spell-effect stat blocks (summons the engine spawns mid-battle) are not stock:
+# Spiritual Weapon lives in data/monsters/ so casters can summon it, but it is
+# not a creature anyone buys — keep it off the shelves and out of the book list.
+NONCOMBAT = {"Spiritual Weapon"}
+
+
 def _catalog() -> dict[str, CatalogEntry]:
     from .app import MONSTERS, MONSTER_SOURCES, RATINGS
     cat: dict[str, CatalogEntry] = {}
     for name, block in MONSTERS.items():
         cr = block.get("cr")
-        if cr is None:
+        if cr is None or name in NONCOMBAT:
             continue
         r = RATINGS.get(name) or {}
         best = (r.get("refined_cr") if r.get("refined_cr") is not None

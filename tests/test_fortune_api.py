@@ -23,6 +23,7 @@ def test_meta_lists_books_items_and_odds():
     m = client.get("/api/fortune/meta").json()
     labels = {b["label"] for b in m["books"]}
     assert "MM" in labels
+    assert "Ravel" not in labels, "spell-effect stat blocks are not a book"
     assert len(m["items"]) == 23           # 4 common / 8 uncommon / 11 rare
     ring = m["wheel"]["outer_ring"]
     assert ring.count("none") == 3 and ring.count("common") == 5
