@@ -72,12 +72,15 @@ function sealRow(price_cp) {
 }
 
 // Token art: walk the candidate URLs on error, fall back to an initial.
-function tokenImg(arts, name) {
+// The circle is a wrapper and the image scales INSIDE it — Tiny and Small
+// creatures' source art carries transparent padding, so it zooms to fill.
+function tokenImg(arts, name, size) {
   const letter = `<span class="mtoken letter">${esc(name[0] || "?")}</span>`;
   if (!arts || !arts.length) return letter;
   const chain = esc(JSON.stringify(arts.slice(1)));
-  return `<img class="mtoken" src="${esc(arts[0])}" alt=""
-    data-rest='${chain}' onerror="fwArtErr(this)">`;
+  const z = size === "Tiny" ? " z-tiny" : size === "Small" ? " z-small" : "";
+  return `<span class="mtoken"><img class="mart${z}" src="${esc(arts[0])}" alt=""
+    data-rest='${chain}' onerror="fwArtErr(this)"></span>`;
 }
 window.fwArtErr = function (img) {
   const rest = JSON.parse(img.dataset.rest || "[]");
@@ -86,7 +89,7 @@ window.fwArtErr = function (img) {
     const sp = document.createElement("span");
     sp.className = "mtoken letter";
     sp.textContent = (img.closest("[data-name]")?.dataset.name || "?")[0];
-    img.replaceWith(sp);
+    (img.closest(".mtoken") || img).replaceWith(sp);
   }
 };
 
@@ -293,7 +296,7 @@ function memberCard(m, i) {
                data-name="${esc(m.name)}" ${targetable ? `data-pick="${i}"` : ""}>
     ${targetable ? "" : bestiaryLink(m.name)}
     ${m.standby ? `<span class="slot-tag">standby</span>` : ""}
-    ${tokenImg(m.art, m.name)}
+    ${tokenImg(m.art, m.name, m.size)}
     <div class="mname">${esc(m.name)} ${stars}</div>
     <div class="mmeta">CR ${crStr(m.cr)} · ${esc(m.size)}</div>
     <div class="mmeta">${esc(m.type)}${m.alignment ? " · " + esc(alignStr(m.alignment)) : ""}</div>
@@ -476,7 +479,7 @@ function renderStock() {
         ? `<span class="slot-tag over" title="earned stock from beyond the tier — it waits untilW bought">overtier</span>`
         : `<button class="freeze ${s.frozen ? "on" : ""}" data-freeze="${i}"
              title="${s.frozen ? "unfreeze" : "freeze through the reroll"}">❄</button>`}
-      ${tokenImg(s.art, s.name)}
+      ${tokenImg(s.art, s.name, s.size)}
       <div class="mname">${esc(s.name)}</div>
       <div class="mmeta">CR ${crStr(s.cr)} · ${esc(s.size)}</div>
       <div class="mmeta">${esc(s.type)}${s.alignment ? " · " + esc(alignStr(s.alignment)) : ""}</div>
@@ -675,7 +678,7 @@ function renderDeployRoster() {
     DEPLOY.combatants.map((c) => `
       <div class="dr-card" data-name="${esc(c.name)}">
         <span class="dr-badge">${esc("G" + c.id.slice(1))}</span>
-        ${tokenImg(c.token_art, c.name)}
+        ${tokenImg(c.token_art, c.name, c.size)}
         <span class="dr-meta"><b>${esc(c.name)}</b><br>
           AC ${c.ac} · ${c.max_hp} hp</span>
       </div>`).join("");
@@ -993,7 +996,7 @@ function aeonCard(m) {
   ).join("");
   return `<div class="slot ${m.standby ? "aeon-standby" : ""}" data-name="${esc(m.name)}">
     ${m.standby ? `<span class="slot-tag">standby</span>` : ""}
-    ${tokenImg(m.art, m.name)}
+    ${tokenImg(m.art, m.name, m.size)}
     <div class="mname">${esc(m.name)}${stars}</div>
     ${legacy ? "" : `
       <div class="mmeta">CR ${crStr(m.cr)} · ${esc(m.size)}</div>

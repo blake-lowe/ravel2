@@ -130,8 +130,14 @@ body.supertemporal {
 .fw .slot.targetable { border-color: var(--gilt); cursor: pointer;
                        box-shadow: 0 0 0 3px var(--gilt-wash), 3px 3px 0 rgba(138,109,31,.3); }
 .fw .slot .mtoken { width: 48px; height: 48px; border-radius: 50%;
-                    border: 1.5px solid var(--ink); object-fit: cover;
+                    border: 1.5px solid var(--ink); overflow: hidden;
+                    display: flex; align-items: center; justify-content: center;
                     background: var(--paper-deep); flex: none; }
+/* the art lives INSIDE the circle and zooms to eat its transparent padding —
+   the wrapper's clip holds still while the image stretches */
+.fw .mtoken .mart { width: 100%; height: 100%; object-fit: cover; flex: none; }
+.fw .mtoken .mart.z-tiny { transform: scale(1.45); }
+.fw .mtoken .mart.z-small { transform: scale(1.22); }
 .fw .slot .mtoken.letter { display: flex; align-items: center; justify-content: center;
                            font-size: 22px; font-variant: small-caps; }
 .fw .slot .mname { font-weight: bold; font-size: 11.5px; line-height: 1.15;
