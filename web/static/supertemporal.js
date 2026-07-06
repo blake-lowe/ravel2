@@ -1048,6 +1048,14 @@ function wireStatblockHover() {
     const card = ev.target.closest(".fw [data-name]");
     if (card === SB_CARD) { clearTimeout(SB_HIDE); return; }          // back again
     if (!card) return;
+    // the initiative panel re-renders every playback step: when the SAME
+    // creature's chip is rebuilt under a still pointer, adopt the new node
+    // instead of restarting the hover (or killing the open popup)
+    if (SB_CARD && card.dataset.name === SB_CARD.dataset.name) {
+      SB_CARD = card;
+      clearTimeout(SB_HIDE);
+      return;
+    }
     hideStatblock();                        // a different card: switch at once
     SB_CARD = card;
     SB_TIMER = setTimeout(() => showStatblock(card), 350);   // hover intent
@@ -1085,13 +1093,17 @@ async function showStatblock(card) {
     catch (e) { return; }              // an unknown name shows nothing, quietly
     SB_CACHE.set(name, d);
   }
-  if (SB_CARD !== card || !card.isConnected) return;  // moved on / re-rendered away
+  // the pointer may have moved on, or the node may have been re-rendered and
+  // adopted (same creature, fresh element) — anchor to whichever node lives
+  if (!SB_CARD || SB_CARD.dataset.name !== card.dataset.name) return;
+  const anchor = SB_CARD.isConnected ? SB_CARD : (card.isConnected ? card : null);
+  if (!anchor) return;
   const pop = $("#fw-statblock");
   pop.innerHTML = RavelStatblock.statblockHtml({ statblock: d.statblock, images: [] });
   pop.hidden = false;
   pop.scrollTop = 0;                   // each chant starts at its first line
   // beside the card: to the right when there's room, else the left, clamped
-  const r = card.getBoundingClientRect();
+  const r = anchor.getBoundingClientRect();
   const pw = pop.offsetWidth, ph = pop.offsetHeight;
   let x = r.right + 12;
   if (x + pw > window.innerWidth - 8) x = r.left - pw - 12;
