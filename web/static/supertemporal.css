@@ -370,7 +370,7 @@ body.supertemporal {
               rgba(140, 185, 235, .32) 40%, rgba(210, 232, 252, .55) 50%,
               rgba(140, 185, 235, .32) 60%, transparent);
   transform: rotate(8deg); pointer-events: none;
-  animation: fw-sheen 3.2s ease-in-out infinite;
+  animation: fw-sheen 1.6s ease-in-out infinite;
 }
 @keyframes fw-sheen { 0% { left: -60%; } 55% { left: 125%; } 100% { left: 125%; } }
 .fw .slot .slot-tag.over {           /* top-right, an opaque pill above the sheen */
