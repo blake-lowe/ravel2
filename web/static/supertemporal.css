@@ -167,8 +167,6 @@ body.supertemporal {
   border: 1px solid var(--ink-hair); color: var(--silver);
   background: var(--paper); }
 .fw .slot .corner-link:hover { color: var(--ink); border-color: var(--ink); }
-.fw .slot .corner-link + .slot-tag,
-.fw .slot .corner-link ~ .slot-tag { left: 28px; }   /* make room beside the link */
 .fw button:disabled { opacity: .4; cursor: not-allowed; }
 .fw button:disabled:hover { border-color: var(--ink-hair); }
 .fw .slot .tags { display: flex; flex-wrap: wrap; gap: 2px; justify-content: center; }
@@ -193,7 +191,8 @@ body.supertemporal {
 .fw .slot .ieffect { font-size: 10.5px; font-weight: bold; }
 .fw .slot .iflavor { font-style: italic; color: var(--ink-faint); font-size: 9.5px;
                      line-height: 1.3; }
-.fw .slot-tag { position: absolute; top: 2px; left: 5px; font-variant: small-caps;
+.fw .slot-tag { position: absolute; top: -16px; left: 0; right: 0;
+                text-align: center; font-variant: small-caps;
                 letter-spacing: 1px; font-size: 9px; color: var(--silver); }
 .fw .standby-divider { width: 1px; align-self: stretch;
                        border-left: 1px dashed var(--ink-hair); }
@@ -370,7 +369,7 @@ body.supertemporal {
               rgba(140, 185, 235, .32) 40%, rgba(210, 232, 252, .55) 50%,
               rgba(140, 185, 235, .32) 60%, transparent);
   transform: rotate(8deg); pointer-events: none;
-  animation: fw-sheen 1.6s ease-in-out infinite;
+  animation: fw-sheen 3.2s ease-in-out infinite;
 }
 @keyframes fw-sheen { 0% { left: -60%; } 55% { left: 125%; } 100% { left: 125%; } }
 .fw .slot .slot-tag.over {           /* top-right, an opaque pill above the sheen */
