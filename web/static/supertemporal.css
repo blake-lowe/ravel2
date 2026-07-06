@@ -135,7 +135,8 @@ body.supertemporal {
 .fw .slot .mtoken.letter { display: flex; align-items: center; justify-content: center;
                            font-size: 22px; font-variant: small-caps; }
 .fw .slot .mname { font-weight: bold; font-size: 11.5px; line-height: 1.15;
-                   max-height: 27px; overflow: hidden; }
+                   height: 27px; overflow: hidden; }   /* two lines, always —
+                   short and wrapped names keep every card's rows aligned */
 .fw .slot .stars { color: var(--gilt); letter-spacing: 1px; font-size: 11px; }
 .fw .slot .mmeta { color: var(--ink-faint); font-size: 10px; line-height: 1.25; }
 .fw .mmeta .wing { vertical-align: -1px; }
@@ -440,7 +441,8 @@ body.supertemporal {
    gap between the price and the buy button (exactly 3 gp earns none). The
    row is ZERO-height — card spacing stays exactly as it was. */
 .fw .slot .seal-row { height: 0; overflow: visible; display: flex; gap: 5px;
-                      justify-content: center; align-items: flex-start; }
+                      justify-content: center; align-items: flex-start;
+                      margin-top: -3px; }   /* cancel the flex gap it adds */
 .fw .slot .seal { display: inline-block; font-size: 13px; line-height: 1;
                   color: var(--lacquer); }
 
