@@ -1084,10 +1084,14 @@ function wireStatblockHover() {
     clearTimeout(SB_HIDE);
     SB_HIDE = setTimeout(hideStatblock, 300);
   });
-  // page scroll dismisses the chant — but scrolling the chant itself must not
+  // a scroll dismisses the chant ONLY when it moves the hovered card: the page
+  // itself, or a container holding the card. The battle log auto-scrolls every
+  // playback step — that must not touch the popup (nor must the popup's own).
   window.addEventListener("scroll", (ev) => {
     if (ev.target instanceof Node && pop.contains(ev.target)) return;
-    hideStatblock();
+    const movesCard = ev.target === document
+      || (SB_CARD && ev.target instanceof Node && ev.target.contains(SB_CARD));
+    if (movesCard) hideStatblock();
   }, true);
 }
 
