@@ -346,6 +346,16 @@ function create(opts) {
       if (altEl) altEl.textContent = relAlt > 0 && tok.alive ? `↑${relAlt} ft` : "";
       el.classList.toggle("dead", !tok.alive);
       el.classList.toggle("current", st.current === id && tok.alive);
+      // the hover tooltip tracks the moment: current HP, conditions, the grave
+      const ttl = el.querySelector("title");
+      if (ttl) {
+        const c = b.combatants.find((x) => x.id === id);
+        const mx = maxHp[id] || tok.spawnHp || (c && c.max_hp) || 1;
+        const conds = tok.alive ? condLine(tok) : "";
+        ttl.textContent = `${c ? c.name : id} (${dispId(id)}) — AC ${c ? c.ac : "?"}, `
+          + `${Math.max(0, tok.hp)}/${mx} HP`
+          + (!tok.alive ? " — dead" : conds ? ` — ${conds}` : "");
+      }
     }
     // hide tokens not yet spawned (scrubbing backward past a summon) or fled
     E.board.querySelectorAll("#tokens .token").forEach((el) => {
